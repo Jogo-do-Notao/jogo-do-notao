@@ -1,4 +1,4 @@
-package com.poliedro.jogodonotao.jogodonotao;
+package com.poliedro.jogodonotao;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
