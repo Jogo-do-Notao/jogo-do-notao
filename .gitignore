@@ -6,6 +6,9 @@ target/
 # Compiled class file
 *.class
 
+# Backup files
+*~
+
 # Package Files #
 *.jar
 *.war
