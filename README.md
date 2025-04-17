@@ -4,6 +4,9 @@
 <p align="justify">Este projeto universitário foi desenvolvido como parte da disciplina <strong>Projeto Integrador Interdisciplinar - Programação (TTI105)</strong> dos cursos de <strong>Ciência da Computação</strong> e <strong>Inteligência Artificial e Ciência de Dados</strong> do Instituto Mauá de Tecnologia.</p>
 <p align="justify">O projeto visa desenvolver um jogo educacional para o <strong>Colégio Poliedro</strong> baseado no clássico jogo Show do Milhão. O jogo consiste em perguntas de múltipla escolha onde a cada resposta o aluno ganha uma recompensa e a dificuldade das perguntas vai aumentando. O principal objetivo do jogo é incentivar o estudo dos alunos.</p>
 
+## 🚀 Contribuir com o Projeto
+[Siga as instruções neste guia](./CONTRIBUTING.md)
+
 <!-- Tecnologias -->
 
 ## 🛠️ Tecnologias Utilizadas
