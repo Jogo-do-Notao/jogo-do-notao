@@ -10,7 +10,7 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/login-view.fxml")); // carregar o arquivo FXML (Scene Builder)
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/tela-login.fxml")); // carregar o arquivo FXML (Scene Builder)
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Jogo do Notão"); // Nome da janela
         stage.setScene(scene);
