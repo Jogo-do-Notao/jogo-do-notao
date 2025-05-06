@@ -5,7 +5,7 @@ import javafx.scene.input.MouseEvent;
 
 import javax.swing.*;
 
-public class LoginController {
+public class ControleLogin {
 
     @FXML
     void exibirMensagem(MouseEvent event) {
