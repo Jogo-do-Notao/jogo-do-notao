@@ -1,0 +1,27 @@
+/* Botões */
+
+/* Tamanhos */
+.button-lg {
+    -fx-padding: 8px 24px;
+    -fx-background-radius: 12px;
+    
+}
+.button-lg .text {
+    -fx-font-size: 16px;
+}
+
+/* Cores */
+/* Primário */
+.button-primary {
+    -fx-background-color: -poliedro-azul-500;
+}
+.button-primary:hover {
+    -fx-background-color: -poliedro-azul-600;
+}
+.button-primary:pressed {
+    -fx-background-color: -poliedro-azul-700;
+}
+.button-primary:disabled {
+    -fx-background-color: -poliedro-azul-950;
+    -fx-text-fill: -poliedro-azul-700;
+}
