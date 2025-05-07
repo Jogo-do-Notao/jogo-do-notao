@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -18,9 +19,12 @@
    <stylesheets>
       <URL value="@../css/colors.css" />
       <URL value="@../css/views/telalogin.css" />
+      <URL value="@../css/components/tabs/tab.css" />
+      <URL value="@../css/components/tabs/button.css" />
+      <URL value="@../css/sombras.css" />
    </stylesheets>
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="490.0" spacing="100.0" styleClass="background-default" HBox.hgrow="ALWAYS">
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="490.0" spacing="50.0" styleClass="background-default" HBox.hgrow="ALWAYS">
          <HBox.margin>
             <Insets />
          </HBox.margin>
@@ -30,31 +34,50 @@
                   <Font name="System Bold" size="60.0" />
                </font>
             </Text>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane prefWidth="200.0" styleClass="sombra" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Sou aluno">
                      <content>
-                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24;" styleClass="sombra">
                            <children>
                               <Label text="E-mail acadêmico ou RA" />
                               <TextField />
                               <Label text="Senha" />
                               <PasswordField />
-                              <Button mnemonicParsing="false" text="Jogar" />
+                              <Button mnemonicParsing="false" prefHeight="0.0" text="Jogar">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="button-primary" />
+                                    <String fx:value="button-lg" />
+                                 </styleClass>
+                              </Button>
                            </children>
+                           <padding>
+                              <Insets bottom="20.0" left="16.0" right="16.0" top="20.0" />
+                           </padding>
                         </VBox>
                      </content>
                 </Tab>
                 <Tab text="Sou professor">
                      <content>
-                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24px;">
                            <children>
                               <Label text="E-mail acadêmico" />
                               <TextField />
                               <Label text="Senha" />
                               <PasswordField />
-                              <Button mnemonicParsing="false" text="Entrar" />
+                              <Button mnemonicParsing="false" text="Entrar">
+                                 <styleClass>
+                                    <String fx:value="button-primary" />
+                                    <String fx:value="button-lg" />
+                                 </styleClass>
+                              </Button>
                            </children>
+                           <padding>
+                              <Insets bottom="20.0" left="16.0" right="16.0" top="20.0" />
+                           </padding>
                         </VBox>
                      </content>
                 </Tab>
