@@ -1,16 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControleLogin">
    <stylesheets>
       <URL value="@../css/colors.css" />
       <URL value="@../css/views/telalogin.css" />
    </stylesheets>
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="426.0" styleClass="background-default" />
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="490.0" spacing="100.0" styleClass="background-default" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -poliedro-vermelho;" text="Jogo do Notão">
+               <font>
+                  <Font name="System Bold" size="60.0" />
+               </font>
+            </Text>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Sou aluno">
+                     <content>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="E-mail acadêmico ou RA" />
+                              <TextField />
+                              <Label text="Senha" />
+                              <PasswordField />
+                              <Button mnemonicParsing="false" text="Jogar" />
+                           </children>
+                        </VBox>
+                     </content>
+                </Tab>
+                <Tab text="Sou professor">
+                     <content>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="E-mail acadêmico" />
+                              <TextField />
+                              <Label text="Senha" />
+                              <PasswordField />
+                              <Button mnemonicParsing="false" text="Entrar" />
+                           </children>
+                        </VBox>
+                     </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+         <padding>
+            <Insets bottom="28.0" left="24.0" right="24.0" top="56.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="522.0" layoutY="10.0" prefHeight="600.0" prefWidth="490.0" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets left="150.0" />
+         </HBox.margin>
+      </VBox>
    </children>
 </HBox>
