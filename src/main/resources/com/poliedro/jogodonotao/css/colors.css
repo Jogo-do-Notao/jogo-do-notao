@@ -41,4 +41,12 @@
     -poliedro-laranja-800: #91310F;
     -poliedro-laranja-900: #78290F;
     -poliedro-laranja-950: #451303;
+
+    /* Zinc */
+    -zinc-200: #E4E4E7;
+}
+
+/* Cor de background padrão */
+.background-default {
+    -fx-background-color: -zinc-200;
 }
