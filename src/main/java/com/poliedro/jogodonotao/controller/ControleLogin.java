@@ -1,7 +1,9 @@
 package com.poliedro.jogodonotao.controller;
 
 import com.poliedro.jogodonotao.database.ConexaoDB;
+import com.poliedro.jogodonotao.usuario.Aluno;
 import com.poliedro.jogodonotao.utils.ConexaoInternet;
+import com.poliedro.jogodonotao.utils.DataValidator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -85,6 +87,12 @@ public class ControleLogin {
         if (!checkConexao() || !isCamposPreenchidos(inputLoginAluno, inputSenhaAluno)) {
             return; // encerrar método
         }
+        // Verificar tipo de login (e-mail ou RA) e obter o ID
+        int AlunoId = getIdAluno(inputLoginAluno.getText());
+        if (AlunoId == -1){
+            return;
+        }
+
     }
 
     /**
@@ -99,6 +107,9 @@ public class ControleLogin {
         if (!checkConexao() || !isCamposPreenchidos(inputLoginProfessor, inputSenhaProfessor)) {
             return; // encerrar método
         }
+
+        // Obter ID do aluno no banco de dados
+
     }
 
     /**
@@ -148,5 +159,32 @@ public class ControleLogin {
             return false;
         }
         return true;
+    }
+
+    /**
+     * Método para obter o ID do aluno no banco de dados.
+     *
+     * @param inputValue O valor do campo de login do aluno.
+     */
+    int getIdAluno(String inputValue) {
+        // Verificar tipo de login
+        if (DataValidator.isEmailAlunoValido(inputValue)) {
+            // E-mail
+            System.out.println("Tipo de login: e-mail");
+            System.out.println("Buscando e-mail no banco de dados...");
+            return 1;
+        } else if (DataValidator.isRaValido(inputValue)) {
+            // RA
+            System.out.println("Tipo de login: RA");
+            System.out.println("Buscando RA no banco de dados...");
+            return 2;
+        } else {
+            // Inválido
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setHeaderText("Entrada inválida");
+            alert.setContentText("Os dados inseridos no campo de login são inválidos.\n\nÉ necessário inserir o e-mail acadêmico do Poliedro ou o RA (registro de matrícula) para realizar a autenticação.");
+            alert.showAndWait();
+            return -1;
+        }
     }
 }
