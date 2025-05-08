@@ -4,13 +4,9 @@ import com.poliedro.jogodonotao.database.ConexaoDB;
 import com.poliedro.jogodonotao.utils.ConexaoInternet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
-
-import javax.swing.JOptionPane;
 
 /**
  * Classe controladora da tela de login.
@@ -18,37 +14,57 @@ import javax.swing.JOptionPane;
  * @author Alexandre Raminelli
  */
 public class ControleLogin {
-    /** Formulário de autenticação do aluno. */
+    /**
+     * Formulário de autenticação do aluno.
+     */
     @FXML
     private VBox formAluno;
-    /** Campo de e-mail/RA do aluno. */
+    /**
+     * Campo de e-mail/RA do aluno.
+     */
     @FXML
     private TextField inputLoginAluno;
-    /** Campo de senha do aluno. */
+    /**
+     * Campo de senha do aluno.
+     */
     @FXML
     private PasswordField inputSenhaAluno;
 
-    /** Formulário de autenticação do professor. */
+    /**
+     * Formulário de autenticação do professor.
+     */
     @FXML
     private VBox formProfessor;
-    /** Campo de e-mail do professor. */
+    /**
+     * Campo de e-mail do professor.
+     */
     @FXML
     private TextField inputLoginProfessor;
-    /** Campo de senha do professor. */
+    /**
+     * Campo de senha do professor.
+     */
     @FXML
     private TextField inputSenhaProfessor;
 
-    /** Grupo de tabs com as opções de login. */
+    /**
+     * Grupo de tabs com as opções de login.
+     */
     @FXML
     private ToggleGroup loginOption;
-    /** Tab da opção de login do aluno. */
+    /**
+     * Tab da opção de login do aluno.
+     */
     @FXML
     private ToggleButton opcaoLoginAluno;
-    /** Tab da opção de login do professor. */
+    /**
+     * Tab da opção de login do professor.
+     */
     @FXML
     private ToggleButton opcaoLoginProfessor;
 
-    /** Método que altera o formulário de autenticação exibido quando houver uma interação com as tabs. */
+    /**
+     * Método que altera o formulário de autenticação exibido quando houver uma interação com as tabs.
+     */
     @FXML
     void alterarFormulario(ActionEvent event) {
         // Exibir/ocultar formulário de aluno
@@ -57,7 +73,9 @@ public class ControleLogin {
         formProfessor.setVisible(opcaoLoginProfessor.isSelected());
     }
 
-    /** Método que autentica o aluno. */
+    /**
+     * Método que autentica o aluno.
+     */
     @FXML
     void autenticarAluno(ActionEvent event) {
         // Verificar conexão com Internet e banco de dados
@@ -65,7 +83,9 @@ public class ControleLogin {
 
     }
 
-    /** Método que autentica o professor. */
+    /**
+     * Método que autentica o professor.
+     */
     @FXML
     void autenticarProfessor(ActionEvent event) {
         // Verificar conexão com Internet e banco de dados
@@ -79,23 +99,23 @@ public class ControleLogin {
     void checkConexao() {
         // Verificar conexão com a Internet
         if (!ConexaoInternet.checkInternet()) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Não foi possível acessar o sistema porque seu dispositivo está sem conexão com a Internet. \nVerifique se o Wi-Fi ou os dados móveis estão ativados e funcionando corretamente. \nO login só pode ser realizado quando houver conexão ativa.",
-                    "Sem conexão com a Internet",
-                    JOptionPane.WARNING_MESSAGE // ícone de aviso
-            );
+            /* Exibir mensagem de erro com Alert do JavaFX */
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setHeaderText("Não foi possível acessar o sistema");
+            alert.setContentText("Seu dispositivo está sem conexão com a Internet. \n\nVerifique se o Wi-Fi ou os dados móveis estão ativados e funcionando corretamente. \n\nO login só pode ser realizado quando houver conexão ativa.");
+            alert.showAndWait();
+
             return; // sair do método
         }
         System.out.println("Nenhum problema com a conexão a Internet.");
+
         // Verificar conexão com o banco de dados
         if (!ConexaoDB.checkConnection()) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Estamos enfrentando dificuldades para acessar os dados necessários. \nIsso pode ter ocorrido por instabilidade no servidor ou manutenção temporária. \nPor favor, tente novamente em alguns minutos. \nSe o problema continuar, entre em contato com o suporte da escola.",
-                    "Erro ao conectar ao sistema",
-                    JOptionPane.WARNING_MESSAGE // ícone de aviso
-            );
+            /* Exibir mensagem de erro com Alert do JavaFX */
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setHeaderText("Erro ao conectar ao sistema");
+            alert.setContentText("Estamos enfrentando dificuldades para acessar os dados necessários. \n\nIsso pode ter ocorrido por instabilidade no servidor ou manutenção temporária. \n\nPor favor, tente novamente em alguns minutos. \n\nSe o problema continuar, entre em contato com o suporte da escola.");
+            alert.showAndWait();
             return; // sair do método
         }
         System.out.println("Nenhum problema com a conexão com o banco de dados.");
