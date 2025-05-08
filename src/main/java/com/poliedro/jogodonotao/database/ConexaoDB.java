@@ -2,6 +2,11 @@ package com.poliedro.jogodonotao.database;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,6 +21,24 @@ public class ConexaoDB {
      * Conexão com o banco de dados MySQL no Aiven.
      */
     private static Connection connection;
+
+    /**
+     * Carrega as variáveis de ambiente do arquivo .env no classpath.
+     * Permite a conexão do banco de dados ao executar o arquivo JAR.
+     */
+    private static Dotenv loadDotenv() throws IOException {
+        InputStream input = ConexaoDB.class.getClassLoader().getResourceAsStream(".env");
+        // Verificar se o arquivo foi encontrado
+        if (input == null) throw new IOException(".env não encontrado no classpath!");
+        // Salvar .env em arquivo temporário
+        Path tempFile = Files.createTempFile(".env", null);
+        Files.copy(input, tempFile, StandardCopyOption.REPLACE_EXISTING);
+
+        return Dotenv.configure() // configurar o dotenv para ler o arquivo .env temporário
+                .directory(tempFile.getParent().toString()) // diretório do arquivo
+                .filename(tempFile.getFileName().toString()) // nome do arquivo
+                .load(); // ler o arquivo
+    }
 
     /**
      * Obtêm uma instância única da conexão com o banco de dados.
@@ -36,7 +59,6 @@ public class ConexaoDB {
 
                 // Estabelecer conexão com o banco de dados usando o URI
                 connection = DriverManager.getConnection(uri);
-
             } catch (SQLException | ClassNotFoundException e) {
                 // Se ocorrer um erro
                 System.err.println(
