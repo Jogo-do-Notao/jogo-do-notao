@@ -5,15 +5,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControleLogin">
    <stylesheets>
@@ -22,6 +22,7 @@
       <URL value="@../css/components/tabs/tab.css" />
       <URL value="@../css/components/tabs/button.css" />
       <URL value="@../css/sombras.css" />
+      <URL value="@../css/components/form/input.css" />
    </stylesheets>
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="490.0" spacing="50.0" styleClass="background-default" HBox.hgrow="ALWAYS">
@@ -34,55 +35,82 @@
                   <Font name="System Bold" size="60.0" />
                </font>
             </Text>
-            <TabPane prefWidth="200.0" styleClass="sombra" tabClosingPolicy="UNAVAILABLE">
-              <tabs>
-                <Tab text="Sou aluno">
-                     <content>
-                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24;" styleClass="sombra">
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="tab-group" VBox.vgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER" maxWidth="-Infinity" styleClass="tab-options">
+                     <children>
+                        <ToggleButton fx:id="opcaoLoginAluno" mnemonicParsing="false" selected="true" text="Sou aluno">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="loginOption" />
+                           </toggleGroup>
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/backpack.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="opcaoLoginProfessor" mnemonicParsing="false" text="Sou professor" toggleGroup="$loginOption">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/teacher.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </ToggleButton>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="formAluno" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="24.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24;" styleClass="sombra">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="16.0">
                            <children>
-                              <Label text="E-mail acadêmico ou RA" />
-                              <TextField />
-                              <Label text="Senha" />
-                              <PasswordField />
-                              <Button mnemonicParsing="false" prefHeight="0.0" text="Jogar">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="button-primary" />
-                                    <String fx:value="button-lg" />
-                                 </styleClass>
-                              </Button>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="input">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                       <image>
+                                          <Image url="@../icons/graduation-cap.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="E-mail acadêmico ou RA" />
+                                          <TextField fx:id="inputLoginAluno" promptText="nome@p4ed.com ou 00.000-0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="input">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                       <image>
+                                          <Image url="@../icons/graduation-cap.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="E-mail acadêmico ou RA" />
+                                          <TextField fx:id="inputLoginAluno1" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
                            </children>
-                           <padding>
-                              <Insets bottom="20.0" left="16.0" right="16.0" top="20.0" />
-                           </padding>
                         </VBox>
-                     </content>
-                </Tab>
-                <Tab text="Sou professor">
-                     <content>
-                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24px;">
-                           <children>
-                              <Label text="E-mail acadêmico" />
-                              <TextField />
-                              <Label text="Senha" />
-                              <PasswordField />
-                              <Button mnemonicParsing="false" text="Entrar">
-                                 <styleClass>
-                                    <String fx:value="button-primary" />
-                                    <String fx:value="button-lg" />
-                                 </styleClass>
-                              </Button>
-                           </children>
-                           <padding>
-                              <Insets bottom="20.0" left="16.0" right="16.0" top="20.0" />
-                           </padding>
-                        </VBox>
-                     </content>
-                </Tab>
-              </tabs>
-            </TabPane>
+                        <Button mnemonicParsing="false" text="Entrar">
+                           <styleClass>
+                              <String fx:value="button-primary" />
+                              <String fx:value="button-lg" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
          </children>
          <padding>
             <Insets bottom="28.0" left="24.0" right="24.0" top="56.0" />
