@@ -1,0 +1,40 @@
+/* Tab Group */
+.tab-group {
+  -fx-spacing: 24px;
+}
+
+/* Tab Options */
+.tab-options {
+  /* aparência */
+  -fx-background-color: -zinc-100;
+  -fx-background-radius: 16px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 2, 0, 0, 1);
+  /* layout */
+  -fx-padding: 4px;
+  -fx-spacing: 10px;
+}
+/* Tabs */
+.tab-options .toggle-button {
+  /* aparência */
+  -fx-background-color: transparent;
+  -fx-padding: 4px;
+  -fx-background-radius: 12px;
+  /* layout */
+  -fx-padding: 4px 8px;
+  /* tipografia */
+  -fx-font-size: 20px;
+  -fx-font-weight: 700;
+  /* cursor do mouse */
+  -fx-cursor: hand;
+}
+/* Tab selecionada */
+.tab-options .toggle-button:selected {
+  -fx-background-color: white;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 2, 0, 0, 1);
+}
+/* Ícone da tab */
+.tab-options .toggle-button .image-view {
+  /* tamanho */
+  -fx-fit-height: 32px;
+  -fx-fit-width: 32px;
+}

@@ -10,11 +10,19 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/tela-login.fxml")); // carregar o arquivo FXML (Scene Builder)
+        // Carregar arquivo FXML (Scene Builder) como scene
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/tela-login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Jogo do Notão"); // Nome da janela
-        stage.setScene(scene);
-        stage.show();
+
+        // Título da janela
+        stage.setTitle("Jogo do Notão");
+
+        // Definir tamanho mínimo da janela
+        stage.setMinWidth(800);
+        stage.setMinHeight(600);
+
+        stage.setScene(scene); // Atribuir scene ao stage
+        stage.show(); // exigir stage
     }
 
     public static void main(String[] args) {

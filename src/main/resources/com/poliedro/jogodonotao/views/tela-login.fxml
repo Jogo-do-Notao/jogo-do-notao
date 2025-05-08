@@ -1,21 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" minHeight="200.0" minWidth="400.0" prefHeight="400.0" prefWidth="700.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControleLogin">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControleLogin">
+   <stylesheets>
+      <URL value="@../css/colors.css" />
+      <URL value="@../css/views/telalogin.css" />
+      <URL value="@../css/components/tabs/tab.css" />
+      <URL value="@../css/components/tabs/button.css" />
+      <URL value="@../css/sombras.css" />
+      <URL value="@../css/components/form/input.css" />
+   </stylesheets>
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jogo do Notão" textAlignment="CENTER">
-         <font>
-            <Font size="33.0" />
-         </font>
-      </Text>
-      <Button mnemonicParsing="false" onMouseClicked="#exibirMensagem" text="Clique aqui!" />
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="490.0" spacing="50.0" styleClass="background-default" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -poliedro-vermelho;" text="Jogo do Notão">
+               <font>
+                  <Font name="System Bold" size="60.0" />
+               </font>
+            </Text>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="tab-group" VBox.vgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER" maxWidth="-Infinity" styleClass="tab-options">
+                     <children>
+                        <ToggleButton fx:id="opcaoLoginAluno" mnemonicParsing="false" onAction="#alterarFormulario" selected="true" text="Sou aluno">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="loginOption" />
+                           </toggleGroup>
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/backpack.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="opcaoLoginProfessor" mnemonicParsing="false" onAction="#alterarFormulario" text="Sou professor" toggleGroup="$loginOption">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/teacher.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </ToggleButton>
+                     </children>
+                  </HBox>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <VBox fx:id="formAluno" alignment="TOP_CENTER" prefWidth="100.0" spacing="24.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24;" styleClass="sombra">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="16.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="input">
+                                       <children>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../icons/graduation-cap.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="E-mail acadêmico ou RA" />
+                                                <TextField fx:id="inputLoginAluno" promptText="nome@p4ed.com ou 00.000-0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="input">
+                                       <children>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../icons/password.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Senha" />
+                                                <PasswordField fx:id="inputSenhaAluno" promptText="**********" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#autenticarAluno" text="Jogar">
+                                 <styleClass>
+                                    <String fx:value="button-primary" />
+                                    <String fx:value="button-lg" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/game.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="formProfessor" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="24.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24;" styleClass="sombra" visible="false">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="16.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="input">
+                                       <children>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../icons/graduation-cap.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="E-mail acadêmico" />
+                                                <TextField fx:id="inputLoginProfessor" promptText="nome@sistemapoliedro.com.br" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="input">
+                                       <children>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../icons/password.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Senha" />
+                                                <PasswordField fx:id="inputSenhaProfessor" promptText="**********" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" onAction="#autenticarProfessor" text="Entrar">
+                                 <styleClass>
+                                    <String fx:value="button-primary" />
+                                    <String fx:value="button-lg" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+            <ImageView accessibleText="Logo do Colégio Poliedro" fitHeight="96.0" fitWidth="314.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo-poliedro/poliedro-inline-colorido-preto.png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="28.0" left="24.0" right="24.0" top="56.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="522.0" layoutY="10.0" prefHeight="600.0" prefWidth="490.0" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets left="150.0" />
+         </HBox.margin>
+      </VBox>
    </children>
-</VBox>
+</HBox>
