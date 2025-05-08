@@ -44,7 +44,7 @@ public class ControleLogin {
      * Campo de senha do professor.
      */
     @FXML
-    private TextField inputSenhaProfessor;
+    private PasswordField inputSenhaProfessor;
 
     /**
      * Grupo de tabs com as opções de login.
@@ -78,11 +78,13 @@ public class ControleLogin {
      */
     @FXML
     void autenticarAluno(ActionEvent event) {
-        // Verificar conexão com Internet e banco de dados
-        if (!checkConexao()) {
+        /* Verificar:
+         * - Conexão com a Internet e banco de dados
+         * - Se os campos estão preenchidos
+         */
+        if (!checkConexao() || !isCamposPreenchidos(inputLoginAluno, inputSenhaAluno)) {
             return; // encerrar método
         }
-
     }
 
     /**
@@ -90,8 +92,13 @@ public class ControleLogin {
      */
     @FXML
     void autenticarProfessor(ActionEvent event) {
-        // Verificar conexão com Internet e banco de dados
-        checkConexao();
+        /* Verificar:
+         * - Conexão com a Internet e banco de dados
+         * - Se os campos estão preenchidos
+         */
+        if (!checkConexao() || !isCamposPreenchidos(inputLoginProfessor, inputSenhaProfessor)) {
+            return; // encerrar método
+        }
     }
 
     /**
@@ -121,6 +128,25 @@ public class ControleLogin {
             return false; // sair do método
         }
         System.out.println("Nenhum problema com a conexão com o banco de dados.");
+        return true;
+    }
+
+    /**
+     * Método para verificar se os campos estão preenchidos.
+     *
+     * @param campoLogin Campo de e-mail/RA do aluno ou professor.
+     * @param campoSenha Campo de senha.
+     */
+    boolean isCamposPreenchidos(
+            TextField campoLogin, PasswordField campoSenha
+    ) {
+        if (campoLogin.getText().isEmpty() || campoSenha.getText().isEmpty()) {
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setHeaderText("Campos incompletos");
+            alert.setContentText("Por favor, preencha todos os campos.");
+            alert.showAndWait();
+            return false;
+        }
         return true;
     }
 }
