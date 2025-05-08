@@ -47,7 +47,10 @@ public class ControleLogin {
     /** Método que altera o formulário de autenticação exibido quando houver uma interação com as tabs. */
     @FXML
     void alterarFormulario(ActionEvent event) {
-
+        // Exibir/ocultar formulário de aluno
+        formAluno.setVisible(opcaoLoginAluno.isSelected());
+        // Exibir/ocultar formulário de professor
+        formProfessor.setVisible(opcaoLoginProfessor.isSelected());
     }
 
     /** Método que autentica o aluno. */
