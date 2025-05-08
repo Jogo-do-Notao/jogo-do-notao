@@ -1,6 +1,6 @@
 /* Tab Group */
 .tab-group {
-  -fx-padding: 0px 24px;
+  -fx-spacing: 24px;
 }
 
 /* Tab Options */
