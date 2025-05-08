@@ -98,7 +98,7 @@
                                           <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label text="Senha" />
-                                                <PasswordField fx:id="inputSenhaAluno" />
+                                                <PasswordField fx:id="inputSenhaAluno" promptText="**********" />
                                              </children>
                                           </VBox>
                                        </children>
@@ -145,7 +145,7 @@
                                           <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label text="Senha" />
-                                                <PasswordField fx:id="inputSenhaProfessor" />
+                                                <PasswordField fx:id="inputSenhaProfessor" promptText="**********" />
                                              </children>
                                           </VBox>
                                        </children>
