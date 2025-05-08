@@ -11,6 +11,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -62,53 +63,104 @@
                         </ToggleButton>
                      </children>
                   </HBox>
-                  <VBox fx:id="formAluno" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="24.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24;" styleClass="sombra">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
                      <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="16.0">
+                        <VBox fx:id="formAluno" alignment="TOP_CENTER" prefWidth="100.0" spacing="24.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24;" styleClass="sombra">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
                            <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="input">
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="16.0">
                                  <children>
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                                       <image>
-                                          <Image url="@../icons/graduation-cap.png" />
-                                       </image>
-                                    </ImageView>
-                                    <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="input">
                                        <children>
-                                          <Label text="E-mail acadêmico ou RA" />
-                                          <TextField fx:id="inputLoginAluno" promptText="nome@p4ed.com ou 00.000-0" />
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../icons/graduation-cap.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="E-mail acadêmico ou RA" />
+                                                <TextField fx:id="inputLoginAluno" promptText="nome@p4ed.com ou 00.000-0" />
+                                             </children>
+                                          </VBox>
                                        </children>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="input">
-                                 <children>
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                                       <image>
-                                          <Image url="@../icons/graduation-cap.png" />
-                                       </image>
-                                    </ImageView>
-                                    <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="input">
                                        <children>
-                                          <Label text="E-mail acadêmico ou RA" />
-                                          <TextField fx:id="inputLoginAluno1" />
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../icons/password.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Senha" />
+                                                <TextField fx:id="inputSenhaAluno" promptText="**********" />
+                                             </children>
+                                          </VBox>
                                        </children>
-                                    </VBox>
+                                    </HBox>
                                  </children>
-                              </HBox>
+                              </VBox>
+                              <Button fx:id="autenticarAluno" mnemonicParsing="false" text="Jogar">
+                                 <styleClass>
+                                    <String fx:value="button-primary" />
+                                    <String fx:value="button-lg" />
+                                 </styleClass>
+                              </Button>
                            </children>
                         </VBox>
-                        <Button mnemonicParsing="false" text="Entrar">
-                           <styleClass>
-                              <String fx:value="button-primary" />
-                              <String fx:value="button-lg" />
-                           </styleClass>
-                        </Button>
+                        <VBox fx:id="formProfessor" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="24.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 24;" styleClass="sombra" visible="false">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" spacing="16.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="input">
+                                       <children>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../icons/graduation-cap.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="E-mail acadêmico" />
+                                                <TextField fx:id="inputLoginProfessor" promptText="nome@sistemapoliedro.com.br" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="input">
+                                       <children>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../icons/password.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox alignment="CENTER_LEFT" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Senha" />
+                                                <TextField fx:id="inputSenhaProfessor" promptText="**********" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="autenticarProfessor" mnemonicParsing="false" text="Entrar">
+                                 <styleClass>
+                                    <String fx:value="button-primary" />
+                                    <String fx:value="button-lg" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children>
-                  </VBox>
+                  </StackPane>
                </children>
             </VBox>
          </children>
