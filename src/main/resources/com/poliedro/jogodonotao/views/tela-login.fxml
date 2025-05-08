@@ -105,11 +105,18 @@
                                     </HBox>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" onAction="#autenticarAluno" text="Jogar">
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#autenticarAluno" text="Jogar">
                                  <styleClass>
                                     <String fx:value="button-primary" />
                                     <String fx:value="button-lg" />
                                  </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/game.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
                            </children>
                         </VBox>

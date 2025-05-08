@@ -6,12 +6,17 @@
 }
 
 /* Tamanhos */
+/* lg */
 .button-lg {
   -fx-padding: 8px 24px;
   -fx-background-radius: 12px;
 }
 .button-lg .text {
   -fx-font-size: 16px;
+}
+.button-lg .image-view {
+  -fx-fit-height: 24px;
+  -fx-fit-width: 24px;
 }
 
 /* Cores */
