@@ -79,7 +79,9 @@ public class ControleLogin {
     @FXML
     void autenticarAluno(ActionEvent event) {
         // Verificar conexão com Internet e banco de dados
-        checkConexao();
+        if (!checkConexao()) {
+            return; // encerrar método
+        }
 
     }
 
@@ -96,7 +98,7 @@ public class ControleLogin {
      * Método para verificar a conexão com a Internet e banco de dados.
      * Se houver um problema com a conexão, mostra um aviso ao usuário.
      */
-    void checkConexao() {
+    boolean checkConexao() {
         // Verificar conexão com a Internet
         if (!ConexaoInternet.checkInternet()) {
             /* Exibir mensagem de erro com Alert do JavaFX */
@@ -105,7 +107,7 @@ public class ControleLogin {
             alert.setContentText("Seu dispositivo está sem conexão com a Internet. \n\nVerifique se o Wi-Fi ou os dados móveis estão ativados e funcionando corretamente. \n\nO login só pode ser realizado quando houver conexão ativa.");
             alert.showAndWait();
 
-            return; // sair do método
+            return false; // sair do método
         }
         System.out.println("Nenhum problema com a conexão a Internet.");
 
@@ -116,8 +118,9 @@ public class ControleLogin {
             alert.setHeaderText("Erro ao conectar ao sistema");
             alert.setContentText("Estamos enfrentando dificuldades para acessar os dados necessários. \n\nIsso pode ter ocorrido por instabilidade no servidor ou manutenção temporária. \n\nPor favor, tente novamente em alguns minutos. \n\nSe o problema continuar, entre em contato com o suporte da escola.");
             alert.showAndWait();
-            return; // sair do método
+            return false; // sair do método
         }
         System.out.println("Nenhum problema com a conexão com o banco de dados.");
+        return true;
     }
 }
