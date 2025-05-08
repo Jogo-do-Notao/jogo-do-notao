@@ -24,6 +24,8 @@
   /* tipografia */
   -fx-font-size: 20px;
   -fx-font-weight: 700;
+  /* cursor do mouse */
+  -fx-cursor: hand;
 }
 /* Tab selecionada */
 .tab-options .toggle-button:selected {
