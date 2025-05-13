@@ -23,9 +23,13 @@
 /* Primário */
 .button-primary {
   -fx-background-color: -poliedro-azul-500;
+  /* Sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
 }
 .button-primary:hover {
   -fx-background-color: -poliedro-azul-600;
+  /* Sombra (efeito de brilho) */
+  -fx-effect: dropshadow(gaussian, rgba(31, 180, 195, 0.4), 15, 0, 0, 10);
 }
 .button-primary:pressed {
   -fx-background-color: -poliedro-azul-700;
