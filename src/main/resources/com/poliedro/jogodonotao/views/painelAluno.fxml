@@ -19,11 +19,7 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <ImageView fitHeight="62.0" fitWidth="70.0" layoutX="57.0" layoutY="150.0">
-         <image>
-            <Image url="@Jogo%20do%20Notão/icon/dinheiro.png" />
-         </image>
-      </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="70.0" layoutX="57.0" layoutY="150.0" />
       <Label layoutX="140.0" layoutY="158.0" prefHeight="54.0" prefWidth="209.0" text="Dinheiro Ganho" textFill="#faa41f">
          <font>
             <Font name="Dubai Bold" size="30.0" />
