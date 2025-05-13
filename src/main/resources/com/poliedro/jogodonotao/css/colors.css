@@ -1,54 +1,57 @@
 /* Variáveis CSS para cores */
 * {
-    /* Colégio Poliedro */
-    /* Principal */
-    -poliedro-azul: #1FB4C3;
-    -poliedro-vermelho: #EE2252;
-    -poliedro-laranja: #FAA41F;
-    /* Variação azul */
-    -poliedro-azul-50: #EEFDFD;
-    -poliedro-azul-100: #D4F7F9;
-    -poliedro-azul-200: #AFEFF2;
-    -poliedro-azul-300: #78E1E8;
-    -poliedro-azul-400: #3ACAD6;
-    -poliedro-azul-500: -poliedro-azul;
-    -poliedro-azul-600: #1C8C9E;
-    -poliedro-azul-700: #1D7081;
-    -poliedro-azul-800: #205C6A;
-    -poliedro-azul-900: #1F4D5A;
-    -poliedro-azul-950: #0F323D;
-    /* Variação vermelho */
-    -poliedro-vermelho-50: #FFF0F1;
-    -poliedro-vermelho-100: #FFE3E5;
-    -poliedro-vermelho-200: #FFCAD2;
-    -poliedro-vermelho-300: #FF9FAD;
-    -poliedro-vermelho-400: #FF6982;
-    -poliedro-vermelho-500: #FE355A;
-    -poliedro-vermelho-600: -poliedro-vermelho;
-    -poliedro-vermelho-700: #C8083A;
-    -poliedro-vermelho-800: #A70A38;
-    -poliedro-vermelho-900: #8E0D37;
-    -poliedro-vermelho-950: #500118;
-    /* Variação laranja */
-    -poliedro-laranja-50: #FFF9EB;
-    -poliedro-laranja-100: #FEEDC7;
-    -poliedro-laranja-200: #FDD98A;
-    -poliedro-laranja-300: #FBBF4E;
-    -poliedro-laranja-400: -poliedro-laranja;
-    -poliedro-laranja-500: #F4840C;
-    -poliedro-laranja-600: #D85F07;
-    -poliedro-laranja-700: #B3400A;
-    -poliedro-laranja-800: #91310F;
-    -poliedro-laranja-900: #78290F;
-    -poliedro-laranja-950: #451303;
+  /* Colégio Poliedro */
+  /* Principal */
+  -poliedro-azul: #1fb4c3;
+  -poliedro-vermelho: #ee2252;
+  -poliedro-laranja: #faa41f;
+  /* Variação azul */
+  -poliedro-azul-50: #eefdfd;
+  -poliedro-azul-100: #d4f7f9;
+  -poliedro-azul-200: #afeff2;
+  -poliedro-azul-300: #78e1e8;
+  -poliedro-azul-400: #3acad6;
+  -poliedro-azul-500: -poliedro-azul;
+  -poliedro-azul-600: #1c8c9e;
+  -poliedro-azul-700: #1d7081;
+  -poliedro-azul-800: #205c6a;
+  -poliedro-azul-900: #1f4d5a;
+  -poliedro-azul-950: #0f323d;
+  /* Variação vermelho */
+  -poliedro-vermelho-50: #fff0f1;
+  -poliedro-vermelho-100: #ffe3e5;
+  -poliedro-vermelho-200: #ffcad2;
+  -poliedro-vermelho-300: #ff9fad;
+  -poliedro-vermelho-400: #ff6982;
+  -poliedro-vermelho-500: #fe355a;
+  -poliedro-vermelho-600: -poliedro-vermelho;
+  -poliedro-vermelho-700: #c8083a;
+  -poliedro-vermelho-800: #a70a38;
+  -poliedro-vermelho-900: #8e0d37;
+  -poliedro-vermelho-950: #500118;
+  /* Variação laranja */
+  -poliedro-laranja-50: #fff9eb;
+  -poliedro-laranja-100: #feedc7;
+  -poliedro-laranja-200: #fdd98a;
+  -poliedro-laranja-300: #fbbf4e;
+  -poliedro-laranja-400: -poliedro-laranja;
+  -poliedro-laranja-500: #f4840c;
+  -poliedro-laranja-600: #d85f07;
+  -poliedro-laranja-700: #b3400a;
+  -poliedro-laranja-800: #91310f;
+  -poliedro-laranja-900: #78290f;
+  -poliedro-laranja-950: #451303;
 
-    /* Zinc */
-    -zinc-100: #F4F4F5;
-    -zinc-200: #E4E4E7;
-    -zinc-600: #52525C;
+  /* Zinc */
+  -zinc-100: #f4f4f5;
+  -zinc-200: #e4e4e7;
+  -zinc-300: #d4d4d8;
+  -zinc-400: #4b5154;
+  -zinc-500: #586064;
+  -zinc-600: #52525c;
 }
 
 /* Cor de background padrão */
 .background-default {
-    -fx-background-color: -zinc-200;
+  -fx-background-color: -zinc-200;
 }

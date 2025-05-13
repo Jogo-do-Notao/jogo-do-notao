@@ -8,7 +8,9 @@
   /* aparência */
   -fx-background-color: -zinc-100;
   -fx-background-radius: 16px;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 2, 0, 0, 1);
+  /* sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 24, 0, 0, 8);
+
   /* layout */
   -fx-padding: 4px;
   -fx-spacing: 10px;
@@ -21,16 +23,26 @@
   -fx-background-radius: 12px;
   /* layout */
   -fx-padding: 4px 8px;
+
   /* tipografia */
+  -fx-text-fill: -zinc-500;
   -fx-font-size: 20px;
   -fx-font-weight: 700;
+
   /* cursor do mouse */
   -fx-cursor: hand;
 }
 /* Tab selecionada */
 .tab-options .toggle-button:selected {
   -fx-background-color: white;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 2, 0, 0, 1);
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.22), 4, 0, 0, 2);
+  /* tipografia */
+  -fx-text-fill: black;
+}
+/* Tab ao passar o mouse */
+.tab-options .toggle-button:hover {
+  /* tipografia */
+  -fx-text-fill: -zinc-400;
 }
 /* Ícone da tab */
 .tab-options .toggle-button .image-view {
