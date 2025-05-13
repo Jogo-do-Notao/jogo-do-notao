@@ -3,6 +3,8 @@
 .button {
   /* cursor */
   -fx-cursor: hand;
+  /* texto */
+  -fx-font-weight: bold;
 }
 
 /* Tamanhos */
