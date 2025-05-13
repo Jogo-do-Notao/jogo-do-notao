@@ -5,17 +5,27 @@
   -fx-border-color: transparent;
   -fx-padding: 8px;
   -fx-spacing: 8px;
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 2, 0, 0, 1);
+  /* Sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.22), 4, 0, 0, 2);
 }
 .input:hover {
   -fx-background-color: #f2f2f3;
   -fx-border-color: -poliedro-azul-600;
+  /* Sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
 }
+/* Input selecionado */
+.input:pressed {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
+}
+
+/* Texto de label */
 .input .label {
   -fx-text-fill: -zinc-600;
   -fx-font-size: 16px;
   -fx-font-weight: 600;
 }
+/* Campo de entrada (textField ou similar) */
 .input .text-field,
 .input .password-field {
   /* Remover borda e background */
@@ -32,7 +42,7 @@
   /* Texto */
   -fx-font-size: 16px;
 }
-/* ícone */
+/* Ícone */
 .input .image-view {
   /* tamanho */
   -fx-fit-height: 40px;
