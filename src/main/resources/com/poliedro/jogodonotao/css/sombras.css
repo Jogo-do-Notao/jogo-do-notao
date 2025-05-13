@@ -1,3 +1,25 @@
 .sombra {
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 24, 0, 0, 8);
 }
+
+/* Elevações (segundo o Material Design 3) */
+/* Elevação 1 */
+.elevation1 {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
+}
+/* Elevação 2 */
+.elevation2 {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.22), 4, 0, 0, 2);
+}
+/* Elevação 3 */
+.elevation3 {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
+}
+/* Elevação 4 */
+.elevation4 {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.27), 8, 0, 0, 4);
+}
+/* Elevação 5 */
+.elevation5 {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+}
