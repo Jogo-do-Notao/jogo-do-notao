@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="1175.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="217.0" layoutX="36.0" layoutY="130.0" stroke="WHITE" strokeType="INSIDE" width="348.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.7105262875556946" green="0.7105262875556946" blue="0.7105262875556946" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="62.0" fitWidth="70.0" layoutX="57.0" layoutY="150.0">
+         <image>
+            <Image url="@Jogo%20do%20Notão/icon/dinheiro.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="140.0" layoutY="158.0" prefHeight="54.0" prefWidth="209.0" text="Dinheiro Ganho" textFill="#faa41f">
+         <font>
+            <Font name="Dubai Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="244.0" prefHeight="35.0" prefWidth="127.0" text="R$ 54.0980,00">
+         <font>
+            <Font name="Dubai Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="46.0" prefHeight="54.0" prefWidth="303.0" text="Bem-vindo,[nome aluno]" textFill="#ee2252">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="66.0" layoutY="288.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="84.0" style="-fx-background-color: #1FB4C3; -fx-background-radius: 10;" text="Visao Geral" />
+      <ImageView fitHeight="70.0" fitWidth="218.0" layoutX="914.0" layoutY="14.0">
+         <image>
+            <Image url="@Jogo%20do%20Notão%20(1)/Logo%20Poliedro/inline%20colorido%20preto.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="100.0" layoutX="66.0" layoutY="436.0" stroke="WHITE" strokeType="INSIDE" width="149.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.6184210777282715" green="0.6184210777282715" blue="0.6184210777282715" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <Label layoutX="115.0" layoutY="442.0" prefHeight="35.0" prefWidth="70.0" text="Conta" textFill="#ee2252">
+         <font>
+            <Font name="Dubai Regular" size="25.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="23.0" fitWidth="24.0" layoutX="80.0" layoutY="453.0">
+         <image>
+            <Image url="@Jogo%20do%20Notão%20(2)/lucide/user.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="77.0" layoutY="495.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="127.0" style="-fx-background-radius: 10; -fx-background-color: #EE2252;" text="Sair da conta" />
+      <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="85.0" layoutY="502.0">
+         <image>
+            <Image url="@startContent.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="462.0" layoutX="547.0" layoutY="155.0" stroke="WHITE" strokeType="INSIDE" width="592.0">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.6315789222717285" green="0.6315789222717285" blue="0.6315789222717285" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <Label layoutX="570.0" layoutY="168.0" prefHeight="54.0" prefWidth="119.0" text="Partidas" textFill="#ee2252">
+         <font>
+            <Font name="Dubai Regular" size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="970.0" layoutY="178.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="156.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 10;" text="+ Criar nova partida">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="589.0" layoutY="227.0" opacity="0.6" text="Para iniciar uma nova partida em uma disciplina, é necessário concluir a partida anterior primeiro." />
+      <Label layoutX="567.0" layoutY="253.0" prefHeight="35.0" prefWidth="553.0" style="-fx-background-radius: 10; -fx-background-color: #1FB4C3;" text="                                              PARTIDAS EM ANDAMENTO" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="277.0" layoutX="567.0" layoutY="303.0" stroke="BLACK" strokeType="INSIDE" width="553.0" />
+      <Rectangle arcHeight="35.0" arcWidth="25.0" fill="#d4f7f9" height="44.0" layoutX="581.0" layoutY="315.0" stroke="WHITE" strokeType="INSIDE" width="515.0" />
+      <Label layoutX="602.0" layoutY="329.0" text="Disciplina">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="750.0" layoutY="329.0" text="Progresso">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="871.0" layoutY="329.0" text="Ganhos">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="1009.0" layoutY="329.0" text="Opcoes">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
