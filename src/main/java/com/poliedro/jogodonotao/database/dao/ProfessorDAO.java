@@ -79,4 +79,13 @@ public class ProfessorDAO {
         // Se não encontrar
         return null;
     }
+
+    /**
+     * Obter professor do banco de dados a partir do seu e-mail.
+     * @param email E-mail do professor.
+     * @return Instância do professor ou {@code null} se ele não for encontrado.
+     */
+    public static Professor buscarPorEmail(String email) {
+        return buscarPorId(obterId(email));
+    }
 }
