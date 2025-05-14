@@ -8,6 +8,18 @@
 }
 
 /* Tamanhos */
+/* md */
+.button-md {
+  -fx-padding: 8px 16px;
+  -fx-background-radius: 12px;
+}
+.button-md .text {
+  -fx-font-size: 14px;
+}
+.button-md .image-view {
+  -fx-fit-height: 20px;
+  -fx-fit-width: 20px;
+}
 /* lg */
 .button-lg {
   -fx-padding: 8px 24px;
