@@ -89,7 +89,7 @@ public class ControleLogin {
         }
         // Verificar tipo de login (e-mail ou RA) e obter o ID
         int AlunoId = getIdAluno(inputLoginAluno.getText());
-        if (AlunoId == -1){
+        if (AlunoId == -1) {
             return;
         }
 
@@ -108,7 +108,24 @@ public class ControleLogin {
             return; // encerrar método
         }
 
-        // Obter ID do aluno no banco de dados
+        // Verificar e-mail
+        String email = inputLoginProfessor.getText();
+        if (!DataValidator.isEmailProfessorValido(email)) {
+            /* Mensagem de e-mail inválido */
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setHeaderText("E-mail institucional inválido!");
+            alert.setContentText(
+                    """
+                            O e-mail informado não pertence ao domínio institucional dos professores e funcionários (@sistemapoliedro.com.br).
+                            
+                            Por questões de segurança e controle de acesso, apenas professores e funcionários com e-mails acadêmicos do Poliedro podem acessar esta plataforma.
+                            
+                            Verifique se digitou o e-mail corretamente ou entre em contato com o suporte da instituição caso precise de ajuda para recuperar ou validar seu endereço institucional."""
+            );
+            alert.showAndWait();
+            return; // encerrar método
+        }
+
 
     }
 
