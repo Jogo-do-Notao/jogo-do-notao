@@ -127,7 +127,7 @@ public class ControleLogin {
 
             return false; // sair do método
         }
-        System.out.println("Nenhum problema com a conexão a Internet.");
+        // System.out.println("Nenhum problema com a conexão a Internet.");
 
         // Verificar conexão com o banco de dados
         if (!ConexaoDB.checkConnection()) {
@@ -138,7 +138,7 @@ public class ControleLogin {
             alert.showAndWait();
             return false; // sair do método
         }
-        System.out.println("Nenhum problema com a conexão com o banco de dados.");
+        // System.out.println("Nenhum problema com a conexão com o banco de dados.");
         return true;
     }
 
@@ -170,13 +170,13 @@ public class ControleLogin {
         // Verificar tipo de login
         if (DataValidator.isEmailAlunoValido(inputValue)) {
             // E-mail
-            System.out.println("Tipo de login: e-mail");
-            System.out.println("Buscando e-mail no banco de dados...");
+            // System.out.println("Tipo de login: e-mail");
+            // System.out.println("Buscando e-mail no banco de dados...");
             return 1;
         } else if (DataValidator.isRaValido(inputValue)) {
             // RA
-            System.out.println("Tipo de login: RA");
-            System.out.println("Buscando RA no banco de dados...");
+            // System.out.println("Tipo de login: RA");
+            // System.out.println("Buscando RA no banco de dados...");
             return 2;
         } else {
             // Inválido
