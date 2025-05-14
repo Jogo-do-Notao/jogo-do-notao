@@ -25,13 +25,13 @@
 /* Primário */
 .button-primary {
   -fx-background-color: -poliedro-azul-500;
-  /* Sombra */
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
+  /* Sombra (efeito de brilho) */
+  -fx-effect: dropshadow(gaussian, rgba(31, 180, 195, 0.4), 15, 0, 0, 10);
 }
 .button-primary:hover {
   -fx-background-color: -poliedro-azul-600;
-  /* Sombra (efeito de brilho) */
-  -fx-effect: dropshadow(gaussian, rgba(31, 180, 195, 0.4), 15, 0, 0, 10);
+  /* Sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
 }
 .button-primary:pressed {
   -fx-background-color: -poliedro-azul-700;
@@ -39,4 +39,22 @@
 .button-primary:disabled {
   -fx-background-color: -poliedro-azul-950;
   -fx-text-fill: -poliedro-azul-700;
+}
+/* Vermelho */
+.button-vermelho {
+  -fx-background-color: -poliedro-vermelho-600;
+  /* Sombra (efeito de brilho) */
+  -fx-effect: dropshadow(gaussian, rgba(238, 34, 82, 0.4), 15, 0, 0, 10);
+}
+.button-vermelho:hover {
+  -fx-background-color: -poliedro-vermelho-700;
+  /* Sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
+}
+.button-vermelho:pressed {
+  -fx-background-color: -poliedro-vermelho-800;
+}
+.button-vermelho:disabled {
+  -fx-background-color: -poliedro-vermelho-950;
+  -fx-text-fill: -poliedro-vermelho-700;
 }
