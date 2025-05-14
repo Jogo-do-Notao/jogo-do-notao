@@ -1,7 +1,9 @@
 package com.poliedro.jogodonotao.controller;
 
 import com.poliedro.jogodonotao.database.ConexaoDB;
+import com.poliedro.jogodonotao.database.dao.ProfessorDAO;
 import com.poliedro.jogodonotao.usuario.Aluno;
+import com.poliedro.jogodonotao.usuario.Professor;
 import com.poliedro.jogodonotao.utils.ConexaoInternet;
 import com.poliedro.jogodonotao.utils.DataValidator;
 import javafx.event.ActionEvent;
@@ -125,7 +127,21 @@ public class ControleLogin {
             alert.showAndWait();
             return; // encerrar método
         }
-
+        // Buscar professor por e-mail
+        Professor professor = ProfessorDAO.buscarPorEmail(email);
+        // Se professor não for encontrado
+        if (professor == null) {
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setHeaderText("E-mail não encontrado!");
+            alert.setContentText(
+                    """
+                            O e-mail fornecido não está cadastrado no nosso sistema!
+                            
+                            Verifique se digitou o e-mail corretamente ou entre em contato com o suporte da instituição caso precise de ajuda para recuperar ou validar seu endereço institucional."""
+            );
+            alert.showAndWait();
+            return; // encerrar método
+        }
 
     }
 
