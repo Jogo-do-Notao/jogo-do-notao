@@ -54,7 +54,7 @@ public class ConexaoDB {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
                 // Carregar URI das variáveis de ambiente
-                Dotenv dotenv = Dotenv.load();
+                Dotenv dotenv = loadDotenv();
                 String uri = dotenv.get("DB_SERVICE_URI");
 
                 // Estabelecer conexão com o banco de dados usando o URI
@@ -65,6 +65,8 @@ public class ConexaoDB {
                         "Erro ao conectar ao banco de dados: \n" +
                                 e.getMessage()
                 );
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
         // Retornar a conexão
