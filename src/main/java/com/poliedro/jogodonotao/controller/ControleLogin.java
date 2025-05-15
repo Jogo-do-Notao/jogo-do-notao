@@ -6,6 +6,7 @@ import com.poliedro.jogodonotao.usuario.Aluno;
 import com.poliedro.jogodonotao.usuario.Professor;
 import com.poliedro.jogodonotao.utils.ConexaoInternet;
 import com.poliedro.jogodonotao.utils.DataValidator;
+import com.poliedro.jogodonotao.utils.HashSenha;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -115,6 +116,7 @@ public class ControleLogin {
         if (!DataValidator.isEmailProfessorValido(email)) {
             /* Mensagem de e-mail inválido */
             Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Erro de autenticação!");
             alert.setHeaderText("E-mail institucional inválido!");
             alert.setContentText(
                     """
@@ -127,6 +129,7 @@ public class ControleLogin {
             alert.showAndWait();
             return; // encerrar método
         }
+
         // Buscar professor por e-mail
         Professor professor = ProfessorDAO.buscarPorEmail(email);
         // Se professor não for encontrado
@@ -143,6 +146,25 @@ public class ControleLogin {
             return; // encerrar método
         }
 
+        // Verificar senha do professor
+        if (!HashSenha.verificarSenha(
+                inputSenhaProfessor.getText(), professor.getSenha())) {
+            /* Se a senha estiver incorreta */
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Erro de autenticação!");
+            alert.setHeaderText("Senha inválida!");
+            alert.setContentText(
+                    """
+                            A senha informada é inválida!
+                            
+                            Verifique se digitou a senha corretamente ou entre em contato com o suporte da instituição caso precise de ajuda para recuperar ou validar sua senha."""
+            );
+            alert.showAndWait();
+            return; // encerrar método
+        } else {
+            /* Senha correta */
+
+        }
     }
 
     /**
