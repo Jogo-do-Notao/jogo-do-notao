@@ -1,14 +1,23 @@
 package com.poliedro.jogodonotao.controller;
 
+import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.database.ConexaoDB;
+import com.poliedro.jogodonotao.database.dao.ProfessorDAO;
 import com.poliedro.jogodonotao.usuario.Aluno;
+import com.poliedro.jogodonotao.usuario.Professor;
 import com.poliedro.jogodonotao.utils.ConexaoInternet;
 import com.poliedro.jogodonotao.utils.DataValidator;
+import com.poliedro.jogodonotao.utils.HashSenha;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * Classe controladora da tela de login.
@@ -89,7 +98,7 @@ public class ControleLogin {
         }
         // Verificar tipo de login (e-mail ou RA) e obter o ID
         int AlunoId = getIdAluno(inputLoginAluno.getText());
-        if (AlunoId == -1){
+        if (AlunoId == -1) {
             return;
         }
 
@@ -99,7 +108,7 @@ public class ControleLogin {
      * Método que autentica o professor.
      */
     @FXML
-    void autenticarProfessor(ActionEvent event) {
+    void autenticarProfessor(ActionEvent event) throws IOException {
         /* Verificar:
          * - Conexão com a Internet e banco de dados
          * - Se os campos estão preenchidos
@@ -108,8 +117,71 @@ public class ControleLogin {
             return; // encerrar método
         }
 
-        // Obter ID do aluno no banco de dados
+        // Verificar e-mail
+        String email = inputLoginProfessor.getText();
+        if (!DataValidator.isEmailProfessorValido(email)) {
+            /* Mensagem de e-mail inválido */
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Erro de autenticação!");
+            alert.setHeaderText("E-mail institucional inválido!");
+            alert.setContentText(
+                    """
+                            O e-mail informado não pertence ao domínio institucional dos professores e funcionários (@sistemapoliedro.com.br).
+                            
+                            Por questões de segurança e controle de acesso, apenas professores e funcionários com e-mails acadêmicos do Poliedro podem acessar esta plataforma.
+                            
+                            Verifique se digitou o e-mail corretamente ou entre em contato com o suporte da instituição caso precise de ajuda para recuperar ou validar seu endereço institucional."""
+            );
+            alert.showAndWait();
+            return; // encerrar método
+        }
 
+        // Buscar professor por e-mail
+        Professor professorLogando = ProfessorDAO.buscarPorEmail(email);
+        // Se professor não for encontrado
+        if (professorLogando == null) {
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setHeaderText("E-mail não encontrado!");
+            alert.setContentText(
+                    """
+                            O e-mail fornecido não está cadastrado no nosso sistema!
+                            
+                            Verifique se digitou o e-mail corretamente ou entre em contato com o suporte da instituição caso precise de ajuda para recuperar ou validar seu endereço institucional."""
+            );
+            alert.showAndWait();
+            return; // encerrar método
+        }
+
+        // Verificar senha do professor
+        if (!HashSenha.verificarSenha(
+                inputSenhaProfessor.getText(), professorLogando.getSenha())) {
+            /* Se a senha estiver incorreta */
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Erro de autenticação!");
+            alert.setHeaderText("Senha inválida!");
+            alert.setContentText(
+                    """
+                            A senha informada é inválida!
+                            
+                            Verifique se digitou a senha corretamente ou entre em contato com o suporte da instituição caso precise de ajuda para recuperar ou validar sua senha."""
+            );
+            alert.showAndWait();
+            return; // encerrar método
+        } else {
+            /* Senha correta */
+            // Exibir mensagem de sucesso
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Autenticação bem-sucedida!");
+            alert.setHeaderText("Autenticação bem-sucedida!");
+            alert.setContentText("Bem-vindo, " + professorLogando.getNome() + "!");
+            alert.show();
+
+            // Iniciar sessão do professor
+            Professor.iniciarSessao(professorLogando);
+
+            // Redirecionar pro painel do professor
+            App.changeScene("PainelProfessor", "Painel do Professor");
+        }
     }
 
     /**

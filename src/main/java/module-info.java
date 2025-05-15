@@ -8,6 +8,7 @@ module com.poliedro.jogodonotao.jogodonotao {
     requires java.desktop;
     requires java.sql;
     requires io.github.cdimascio.dotenv.java;
+    requires spring.security.crypto;
 
     opens com.poliedro.jogodonotao to javafx.fxml;
     exports com.poliedro.jogodonotao;
