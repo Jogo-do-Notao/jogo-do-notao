@@ -1,5 +1,6 @@
 package com.poliedro.jogodonotao.controller;
 
+import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.database.ConexaoDB;
 import com.poliedro.jogodonotao.database.dao.ProfessorDAO;
 import com.poliedro.jogodonotao.usuario.Aluno;
@@ -9,9 +10,14 @@ import com.poliedro.jogodonotao.utils.DataValidator;
 import com.poliedro.jogodonotao.utils.HashSenha;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * Classe controladora da tela de login.
@@ -102,7 +108,7 @@ public class ControleLogin {
      * Método que autentica o professor.
      */
     @FXML
-    void autenticarProfessor(ActionEvent event) {
+    void autenticarProfessor(ActionEvent event) throws IOException {
         /* Verificar:
          * - Conexão com a Internet e banco de dados
          * - Se os campos estão preenchidos
@@ -169,6 +175,9 @@ public class ControleLogin {
             alert.setHeaderText("Autenticação bem-sucedida!");
             alert.setContentText("Bem-vindo, " + professor.getNome() + "!");
             alert.show();
+
+            // Redirecionar pro painel do professor
+            changeScene("painelProfessor", "Painel do Professor");
         }
     }
 
@@ -247,4 +256,26 @@ public class ControleLogin {
             return -1;
         }
     }
+
+    /**
+     * Método para redirecionar o usuário para o painel do aluno ou painel do professor após a autenticação.
+     *
+     * @param nextScene Nome do arquivo FXML do painel do aluno ou professor (sem a extensão {@code .fxml}).
+     * @param titulo Título da janela do próximo scene.
+     */
+    void changeScene(String nextScene, String titulo) throws IOException {
+        // Obter o stage atual
+        Stage stage = (Stage) inputLoginProfessor.getScene().getWindow();
+        // Obter FXML do scene de destino
+        FXMLLoader nextViewFXML = new FXMLLoader(
+                App.class.getResource("views/" + nextScene + ".fxml")
+        );
+        // Criar scene a partir do FXML
+        Scene nextView = new Scene(nextViewFXML.load());
+        // Mudar título da janela
+        stage.setTitle("Jogo do Notão | " + titulo);
+        // Aplicar novo scene no stage
+        stage.setScene(nextView);
+    }
+
 }
