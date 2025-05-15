@@ -163,7 +163,12 @@ public class ControleLogin {
             return; // encerrar método
         } else {
             /* Senha correta */
-
+            // Exibir mensagem de sucesso
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Autenticação bem-sucedida!");
+            alert.setHeaderText("Autenticação bem-sucedida!");
+            alert.setContentText("Bem-vindo, " + professor.getNome() + "!");
+            alert.show();
         }
     }
 
