@@ -5,6 +5,10 @@ package com.poliedro.jogodonotao.usuario;
  */
 public class Professor extends Usuario {
     /**
+     * Sessão ativa do professor. Representa o professor que está logado no momento.
+     */
+    private static Professor sessaoAtiva;
+    /**
      * Descrição do professor, como matérias e séries lecionadas.
      */
     private String descricao;
@@ -35,6 +39,9 @@ public class Professor extends Usuario {
     }
 
     // Getters
+    public static Professor getSessaoAtiva() {
+        return sessaoAtiva;
+    }
 
     public String getDescricao() {
         return descricao;
@@ -43,4 +50,25 @@ public class Professor extends Usuario {
     public boolean isCoordenador() {
         return coordenador;
     }
+
+    // Setters
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setCoordenador(boolean coordenador) {
+        this.coordenador = coordenador;
+    }
+
+    // Métodos
+
+    /**
+     * Inicia a sessão do professor.
+     *
+     * @param professor Instância do professor que iniciou a sessão.
+     */
+    public static void iniciarSessao(Professor professor) {
+        sessaoAtiva = professor;
+    }
+
 }

@@ -137,9 +137,9 @@ public class ControleLogin {
         }
 
         // Buscar professor por e-mail
-        Professor professor = ProfessorDAO.buscarPorEmail(email);
+        Professor professorLogando = ProfessorDAO.buscarPorEmail(email);
         // Se professor não for encontrado
-        if (professor == null) {
+        if (professorLogando == null) {
             Alert alert = new Alert(AlertType.WARNING);
             alert.setHeaderText("E-mail não encontrado!");
             alert.setContentText(
@@ -154,7 +154,7 @@ public class ControleLogin {
 
         // Verificar senha do professor
         if (!HashSenha.verificarSenha(
-                inputSenhaProfessor.getText(), professor.getSenha())) {
+                inputSenhaProfessor.getText(), professorLogando.getSenha())) {
             /* Se a senha estiver incorreta */
             Alert alert = new Alert(AlertType.WARNING);
             alert.setTitle("Erro de autenticação!");
@@ -173,8 +173,11 @@ public class ControleLogin {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Autenticação bem-sucedida!");
             alert.setHeaderText("Autenticação bem-sucedida!");
-            alert.setContentText("Bem-vindo, " + professor.getNome() + "!");
+            alert.setContentText("Bem-vindo, " + professorLogando.getNome() + "!");
             alert.show();
+
+            // Iniciar sessão do professor
+            Professor.iniciarSessao(professorLogando);
 
             // Redirecionar pro painel do professor
             App.changeScene("PainelProfessor", "Painel do Professor");
