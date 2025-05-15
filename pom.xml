@@ -15,41 +15,49 @@
     </properties>
 
     <dependencies>
+        <!-- MySQL Connector/J: conexão com o banco de dados -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>9.3.0</version>
         </dependency>
+        <!-- Spring Security Crypto: inclui o algoritmo para criptografia e verificação de senhas -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
             <version>6.4.5</version>
         </dependency>
+        <!-- Apache Commons Logging -->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.3.5</version>
         </dependency>
+        <!-- Dotenv Java: carrega as variáveis de ambiente (como URI e credenciais do banco de dados) -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
             <artifactId>dotenv-java</artifactId>
             <version>3.2.0</version>
         </dependency>
+        <!-- JavaFX Controls: botões, tabelas, etc -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>17.0.6</version>
+            <version>24.0.1</version>
         </dependency>
+        <!-- JavaFX FXML: leitura de arquivos FXML para renderizar a GUI -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>17.0.6</version>
+            <version>24.0.1</version>
         </dependency>
+        <!-- ControlsFX: biblioteca de controles de UI e API -->
         <dependency>
             <groupId>org.controlsfx</groupId>
             <artifactId>controlsfx</artifactId>
-            <version>11.2.1</version>
+            <version>11.2.2</version>
         </dependency>
+        <!-- FormsFX Core: framework para criação de formulários -->
         <dependency>
             <groupId>com.dlsc.formsfx</groupId>
             <artifactId>formsfx-core</artifactId>
@@ -61,10 +69,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- ValidatorFX: biblioteca para validação de formulários -->
         <dependency>
             <groupId>net.synedra</groupId>
             <artifactId>validatorfx</artifactId>
-            <version>0.5.0</version>
+            <version>0.6.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.openjfx</groupId>
@@ -72,12 +81,14 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- JUnit Jupiter API -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- JUnit Jupiter Engine -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
