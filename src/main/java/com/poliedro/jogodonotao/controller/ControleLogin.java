@@ -177,7 +177,7 @@ public class ControleLogin {
             alert.show();
 
             // Redirecionar pro painel do professor
-            changeScene("painelProfessor", "Painel do Professor");
+            App.changeScene("painelProfessor", "Painel do Professor");
         }
     }
 
@@ -256,26 +256,4 @@ public class ControleLogin {
             return -1;
         }
     }
-
-    /**
-     * Método para redirecionar o usuário para o painel do aluno ou painel do professor após a autenticação.
-     *
-     * @param nextScene Nome do arquivo FXML do painel do aluno ou professor (sem a extensão {@code .fxml}).
-     * @param titulo Título da janela do próximo scene.
-     */
-    void changeScene(String nextScene, String titulo) throws IOException {
-        // Obter o stage atual
-        Stage stage = (Stage) inputLoginProfessor.getScene().getWindow();
-        // Obter FXML do scene de destino
-        FXMLLoader nextViewFXML = new FXMLLoader(
-                App.class.getResource("views/" + nextScene + ".fxml")
-        );
-        // Criar scene a partir do FXML
-        Scene nextView = new Scene(nextViewFXML.load());
-        // Mudar título da janela
-        stage.setTitle("Jogo do Notão | " + titulo);
-        // Aplicar novo scene no stage
-        stage.setScene(nextView);
-    }
-
 }
