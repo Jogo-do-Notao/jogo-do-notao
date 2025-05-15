@@ -177,7 +177,7 @@ public class ControleLogin {
             alert.show();
 
             // Redirecionar pro painel do professor
-            App.changeScene("painelProfessor", "Painel do Professor");
+            App.changeScene("PainelProfessor", "Painel do Professor");
         }
     }
 
