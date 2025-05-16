@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="950.0" prefWidth="1441.0" spacing="50.0" styleClass="background-default" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox minHeight="90.0" minWidth="900.0" prefHeight="132.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo, [nome do aluno]" wrappingWidth="1468.67529296875">
+                     <font>
+                        <Font name="System Bold" size="60.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="25.0" top="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ImageView fitHeight="147.0" fitWidth="439.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="16.0" right="16.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="814.0" prefWidth="1872.0">
+               <children>
+                  <VBox prefHeight="688.0" prefWidth="572.0">
+                     <children>
+                        <VBox maxHeight="216.0" maxWidth="626.0" minHeight="193.0" minWidth="350.0" prefHeight="216.0" prefWidth="474.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets left="30.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="329.0">
+                                 <children>
+                                    <ImageView fitHeight="76.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/dinheiro.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="15.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text fill="#faa41f" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinheiro ganho">
+                                       <font>
+                                          <Font name="System Bold" size="45.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="25.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="54.090,00">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="25.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <JFXButton prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: #1FB4C3; -fx-background-radius: 12;" styleClass="sombra" text=" ">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="10.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visão geral">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="172.0" prefWidth="343.0">
+                           <VBox.margin>
+                              <Insets right="130.0" top="300.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox maxWidth="263.0" prefHeight="162.0" prefWidth="249.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <HBox prefHeight="81.0" prefWidth="217.0">
+                                       <children>
+                                          <ImageView fitHeight="37.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/user.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="25.0" top="10.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Conta">
+                                             <font>
+                                                <Font name="System Bold" size="35.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <VBox prefHeight="40.0" prefWidth="233.0">
+                                       <children>
+                                          <Text opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: aluno@p4ed.edu.br" wrappingWidth="196.529296875">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="10.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="RA: 32.534-4">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="25.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox minHeight="60.0" prefHeight="47.0" prefWidth="233.0">
+                                       <children>
+                                          <JFXButton prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" text="Sair da conta">
+                                             <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/startContent.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <VBox.margin>
+                                                <Insets left="25.0" top="10.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                                 <opaqueInsets>
+                                    <Insets bottom="10.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="674.0" prefWidth="1208.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="70.0" left="110.0" right="30.0" top="70.0" />
+                     </HBox.margin>
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="SOMETIMES">
+                           <children>
+                              <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Partidas" wrappingWidth="894.93603515625">
+                                 <font>
+                                    <Font name="System Bold" size="45.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <JFXButton prefHeight="53.0" prefWidth="237.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Iniciar nova partida">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="15.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="579.0" prefWidth="1116.0">
+                           <children>
+                              <Text opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Para iniciar uma nova partida em uma disciplina, é necessário concluir a partida anterior primeiro.">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="100.0" right="20.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox prefHeight="62.0" prefWidth="1141.0" style="-fx-background-color: #1FB4C3; -fx-background-radius: 12;">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Partidas em andamento">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="430.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="294.0" prefWidth="1186.0">
+                                 <children>
+                                    <HBox prefHeight="55.0" prefWidth="1160.0" style="-fx-background-color: #D4F7F9; -fx-background-radius: 12;" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets bottom="290.0" left="20.0" right="20.0" top="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="160.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Progresso" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="160.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhos" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="160.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Opções" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="160.0" right="90.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <stylesheets>
+            <URL value="@../css/colors.css" />
+            <URL value="@../css/sombras.css" />
+            <URL value="@../css/components/tabs/button.css" />
+         </stylesheets>
+         <padding>
+            <Insets bottom="28.0" left="24.0" right="24.0" top="56.0" />
+         </padding>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../css/sombras.css" />
+      <URL value="@../css/colors.css" />
+      <URL value="@../css/views/telalogin.css" />
+      <URL value="@../css/components/form/input.css" />
+      <URL value="@../css/components/tabs/tab.css" />
+      <URL value="@../css/components/tabs/button.css" />
+   </stylesheets>
+</HBox>
