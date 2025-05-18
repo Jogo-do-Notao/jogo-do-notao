@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="background-default" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="1080.0" prefWidth="2149.0">
+         <children>
+            <HBox prefHeight="137.0" prefWidth="1920.0">
+               <children>
+                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo, [nome do administrador]" wrappingWidth="1542.6953125">
+                     <font>
+                        <Font name="System Bold" size="60.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" top="40.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ImageView fitHeight="145.0" fitWidth="359.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="746.0" prefWidth="1920.0">
+               <children>
+                  <VBox prefHeight="296.0" prefWidth="331.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" stylesheets="@../css/sombras.css">
+                     <HBox.margin>
+                        <Insets left="25.0" top="450.0" />
+                     </HBox.margin>
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="38.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/user.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="50.0" top="25.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Conta">
+                                 <font>
+                                    <Font name="System Bold" size="40.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <JFXButton prefHeight="73.0" prefWidth="243.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" styleClass="sombra" text="Sair da conta">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/startContent.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="25.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                        <JFXButton prefHeight="73.0" prefWidth="243.0" style="-fx-background-color: #1FB4C3; -fx-background-radius: 12;" styleClass="sombra" text="Alterar senha">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/icone%20senha.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="25.0" top="15.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="746.0" prefWidth="971.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra">
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                     <children>
+                        <VBox prefHeight="746.0" prefWidth="510.0">
+                           <children>
+                              <JFXButton prefHeight="199.0" prefWidth="409.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" styleClass="sombra" text=" ">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Pergunta">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets left="30.0" top="50.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton prefHeight="199.0" prefWidth="409.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" styleClass="sombra" text=" ">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Turmas">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets left="30.0" top="25.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton prefHeight="199.0" prefWidth="409.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" styleClass="sombra" text=" ">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Alunos">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets left="30.0" top="25.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="835.0" prefWidth="487.0">
+                           <children>
+                              <JFXButton prefHeight="199.0" prefWidth="409.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" styleClass="sombra" text=" ">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+ Criar Perguntas">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="50.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton prefHeight="199.0" prefWidth="409.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" styleClass="sombra" text=" ">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+ Criar Turmas">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="25.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton prefHeight="199.0" prefWidth="409.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" styleClass="sombra" text=" ">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <graphic>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+ Adicionar Alunos">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets left="25.0" top="25.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="59.0" prefWidth="241.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra">
+                     <HBox.margin>
+                        <Insets bottom="250.0" left="100.0" right="100.0" top="420.0" />
+                     </HBox.margin>
+                     <children>
+                        <JFXButton prefHeight="53.0" prefWidth="203.0" style="-fx-background-color: #49E643; -fx-background-radius: 12;" text="Acessar Menu Jogar">
+                           <VBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="80.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../css/sombras.css" />
+      <URL value="@../css/colors.css" />
+   </stylesheets>
+</HBox>
