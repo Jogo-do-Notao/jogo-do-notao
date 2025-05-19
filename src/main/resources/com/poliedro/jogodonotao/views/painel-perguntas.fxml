@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="background-default" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="1080.0" prefWidth="1315.0">
+         <children>
+            <VBox prefHeight="265.0" prefWidth="960.0" style="-fx-background-color: #18909c; -fx-background-radius: 20;">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <children>
+                  <VBox prefHeight="232.0" prefWidth="976.0" style="-fx-background-color: #1eb4c3; -fx-border-color: #000000; -fx-background-radius: 20; -fx-border-radius: 20;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="40.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantos Reais tem o Silvio???">
+                           <font>
+                              <Font name="System Bold" size="43.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="30.0" top="170.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="138.0" prefWidth="840.0" style="-fx-background-color: #18909c; -fx-background-radius: 45;">
+               <VBox.margin>
+                  <Insets left="30.0" right="50.0" top="20.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <HBox prefHeight="138.0" prefWidth="1067.0" styleClass="sombra">
+                     <children>
+                        <ImageView fitHeight="115.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Opção-circulo1.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="43.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="138.0" prefWidth="840.0" style="-fx-background-color: #18909c; -fx-background-radius: 45;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <HBox prefHeight="138.0" prefWidth="1067.0" styleClass="sombra">
+                     <children>
+                        <ImageView fitHeight="105.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Opção-circulo2.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="43.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" right="50.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="138.0" prefWidth="840.0" style="-fx-background-color: #18909c; -fx-background-radius: 45;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <HBox prefHeight="138.0" prefWidth="1067.0" styleClass="sombra">
+                     <children>
+                        <ImageView fitHeight="105.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Opção-circulo3.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="43.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" right="50.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="138.0" prefWidth="840.0" style="-fx-background-color: #18909c; -fx-background-radius: 45;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <HBox prefHeight="138.0" prefWidth="1067.0" styleClass="sombra">
+                     <children>
+                        <ImageView fitHeight="105.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Opção-circulo4.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="43.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" right="50.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="138.0" prefWidth="840.0" style="-fx-background-color: #18909c; -fx-background-radius: 45;" styleClass="sombra">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <HBox prefHeight="138.0" prefWidth="1067.0" styleClass="sombra">
+                     <children>
+                        <ImageView fitHeight="105.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Opção-circulo5.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="43.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="30.0" right="50.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+      <VBox prefHeight="1080.0" prefWidth="998.0">
+         <children>
+            <ImageView fitHeight="263.0" fitWidth="707.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="60.0" top="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <VBox prefHeight="560.0" prefWidth="742.0" style="-fx-background-color: #18909c; -fx-background-radius: 45;" styleClass="sombra">
+               <VBox.margin>
+                  <Insets left="60.0" right="40.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <VBox prefHeight="542.0" prefWidth="702.0" style="-fx-background-color: #1eb4c3; -fx-background-radius: 45;">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
+                           <font>
+                              <Font name="System Bold" size="56.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="245.0" top="30.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox prefHeight="363.0" prefWidth="662.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox prefHeight="287.0" prefWidth="216.0">
+                                 <children>
+                                    <JFXButton prefHeight="207.0" prefWidth="196.0" style="-fx-background-color: #2D62B5; -fx-background-radius: 40; -fx-border-color: #0063FF; -fx-border-radius: 40;" text="Pular" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="36.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="35.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="287.0" prefWidth="218.0">
+                                 <children>
+                                    <ImageView fitHeight="36.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" />
+                                    <JFXButton prefHeight="207.0" prefWidth="196.0" style="-fx-background-color: #AE551A; -fx-background-radius: 40;" text="Dica" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="38.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="-20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="287.0" prefWidth="262.0">
+                                 <children>
+                                    <ImageView fitHeight="36.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" />
+                                    <JFXButton prefHeight="207.0" prefWidth="196.0" style="-fx-background-color: #A12035; -fx-background-radius: 40;" text="Cartas" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="38.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="20.0" />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="-20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="216.0" prefWidth="802.0">
+               <children>
+                  <JFXButton prefHeight="135.0" prefWidth="224.0" style="-fx-background-color: #EE2252; -fx-background-radius: 40;" text="Parar">
+                     <font>
+                        <Font name="System Bold" size="38.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../css/sombras.css" />
+      <URL value="@../css/colors.css" />
+   </stylesheets>
+</HBox>
