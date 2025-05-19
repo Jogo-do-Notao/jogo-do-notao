@@ -76,7 +76,7 @@
                            <graphic>
                               <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icons/icone-senha.png" />
+                                    <Image url="@../icons/iconpassword.png" />
                                  </image>
                               </ImageView>
                            </graphic>
