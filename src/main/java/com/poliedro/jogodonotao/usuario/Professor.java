@@ -33,7 +33,7 @@ public class Professor extends Usuario {
         this.id = id;
         this.nome = nome;
         this.email = email;
-        this.senha = senha;
+        this.hashSenha = senha;
         this.descricao = descricao;
         this.coordenador = coordenador;
     }

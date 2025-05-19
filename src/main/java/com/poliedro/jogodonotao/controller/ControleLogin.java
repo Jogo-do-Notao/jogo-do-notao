@@ -3,19 +3,15 @@ package com.poliedro.jogodonotao.controller;
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.database.ConexaoDB;
 import com.poliedro.jogodonotao.database.dao.ProfessorDAO;
-import com.poliedro.jogodonotao.usuario.Aluno;
 import com.poliedro.jogodonotao.usuario.Professor;
 import com.poliedro.jogodonotao.utils.ConexaoInternet;
 import com.poliedro.jogodonotao.utils.DataValidator;
 import com.poliedro.jogodonotao.utils.HashSenha;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -154,7 +150,7 @@ public class ControleLogin {
 
         // Verificar senha do professor
         if (!HashSenha.verificarSenha(
-                inputSenhaProfessor.getText(), professorLogando.getSenha())) {
+                inputSenhaProfessor.getText(), professorLogando.getHashSenha())) {
             /* Se a senha estiver incorreta */
             Alert alert = new Alert(AlertType.WARNING);
             alert.setTitle("Erro de autenticação!");
