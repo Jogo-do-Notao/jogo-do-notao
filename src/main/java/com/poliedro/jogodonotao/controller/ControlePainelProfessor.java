@@ -33,7 +33,7 @@ public class ControlePainelProfessor implements Initializable {
         idText.setText("ID no banco de dados: " + Professor.getSessaoAtiva().getId());
         nomeText.setText("Nome: " + Professor.getSessaoAtiva().getNome());
         emailText.setText("Email: " + Professor.getSessaoAtiva().getEmail());
-        senhaText.setText("Hash da Senha: " + Professor.getSessaoAtiva().getSenha());
+        senhaText.setText("Hash da Senha: " + Professor.getSessaoAtiva().getHashSenha());
         descricaoText.setText("Descrição: " + Professor.getSessaoAtiva().getDescricao());
         coordenadorText.setText("Coordenador: " + Professor.getSessaoAtiva().isCoordenador());
     }

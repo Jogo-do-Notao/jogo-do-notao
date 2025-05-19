@@ -20,7 +20,7 @@ public abstract class Usuario {
     /**
      * Hash da senha do usuário.
      */
-    protected String senha;
+    protected String hashSenha;
 
     // Getters
     public int getId() {
@@ -35,7 +35,7 @@ public abstract class Usuario {
         return email;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getHashSenha() {
+        return hashSenha;
     }
 }
