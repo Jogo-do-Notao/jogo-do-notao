@@ -109,6 +109,17 @@ public class ControleLogin {
             alert.showAndWait();
             return;
         }
+        // Se o aluno não foi encontrado no db
+        if (alunoLogando == null) {
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Erro de autenticação do aluno!");
+            alert.setHeaderText("Aluno não encontrado!");
+            alert.setContentText(
+                    "O e-mail ou RA informado não foi encontrado no nosso sistema!\nVerifique se digitou o login corretamente ou entre em contato com seu professor ou coordenação da escola caso precise de ajuda para recuperar ou validar seu login."
+            );
+            alert.showAndWait();
+            return;
+        }
 
         // Verificar senha e iniciar sessão
         alunoLogando.iniciarSessao(inputSenhaAluno.getText());
