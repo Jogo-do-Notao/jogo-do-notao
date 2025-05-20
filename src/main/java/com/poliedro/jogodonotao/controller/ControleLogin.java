@@ -176,7 +176,7 @@ public class ControleLogin {
             Professor.iniciarSessao(professorLogando);
 
             // Redirecionar pro painel do professor
-            App.changeScene("PainelProfessor", "Painel do Professor");
+            App.changeScene("painel-administrador", "Painel do Professor");
         }
     }
 
