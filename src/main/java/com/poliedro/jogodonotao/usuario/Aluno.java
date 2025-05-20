@@ -77,7 +77,9 @@ public class Aluno extends Usuario {
     // Métodos
 
     /**
-     *
+     * Verifica se a senha informada corresponde ao aluno que está iniciando uma sessão. Em caso afirmativo, atribui a instância do aluno que está logando a variável de sessão ativa. Caso contrário, exibe uma mensagem de erro.
+     * @param senha Senha inserida no login que será autenticada.
+     * @throws IOException Exceção de entrada e saída.
      */
     public void iniciarSessao(String senha) throws IOException {
         if (HashSenha.verificarSenha(senha, this.getHashSenha())) {
