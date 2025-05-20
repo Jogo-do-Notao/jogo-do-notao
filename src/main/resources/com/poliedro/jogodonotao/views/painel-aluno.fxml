@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
@@ -74,21 +73,7 @@
                                     <Insets left="25.0" />
                                  </VBox.margin>
                               </Text>
-                              <JFXButton prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: #1FB4C3; -fx-background-radius: 12;" styleClass="sombra" text=" ">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="25.0" top="10.0" />
-                                 </VBox.margin>
-                                 <graphic>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visão geral">
-                                       <font>
-                                          <Font name="System Bold" size="20.0" />
-                                       </font>
-                                    </Text>
-                                 </graphic>
-                              </JFXButton>
+
                            </children>
                         </VBox>
                         <VBox prefHeight="172.0" prefWidth="343.0">
@@ -143,21 +128,7 @@
                                     </VBox>
                                     <VBox minHeight="60.0" prefHeight="47.0" prefWidth="233.0">
                                        <children>
-                                          <JFXButton prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" text="Sair da conta">
-                                             <graphic>
-                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../icons/startContent.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <VBox.margin>
-                                                <Insets left="25.0" top="10.0" />
-                                             </VBox.margin>
-                                             <font>
-                                                <Font size="20.0" />
-                                             </font>
-                                          </JFXButton>
+
                                        </children>
                                     </VBox>
                                  </children>
@@ -190,14 +161,7 @@
                                     <Insets left="20.0" top="15.0" />
                                  </HBox.margin>
                               </Text>
-                              <JFXButton prefHeight="53.0" prefWidth="237.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Iniciar nova partida">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets top="15.0" />
-                                 </HBox.margin>
-                              </JFXButton>
+
                            </children>
                         </HBox>
                         <VBox prefHeight="579.0" prefWidth="1116.0">
