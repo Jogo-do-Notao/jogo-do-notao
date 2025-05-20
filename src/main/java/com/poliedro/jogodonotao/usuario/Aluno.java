@@ -10,6 +10,11 @@ import java.util.ArrayList;
  */
 public class Aluno extends Usuario {
     /**
+     * Sessão ativa do aluno.
+     * Representa o aluno que está logado no momento.
+     */
+    private static Aluno sessaoAtiva;
+    /**
      * RA (registro de matrícula) do aluno.
      */
     private String ra;
@@ -31,6 +36,10 @@ public class Aluno extends Usuario {
     private ArrayList<PontuacaoMateria> pontuacaoMateria = new ArrayList<>();
 
     // Getters
+    public static Aluno getSessaoAtiva() {
+        return sessaoAtiva;
+    }
+
     public String getRa() {
         return ra;
     }
@@ -50,4 +59,6 @@ public class Aluno extends Usuario {
     public ArrayList<PontuacaoMateria> getPontuacaoMateria() {
         return pontuacaoMateria;
     }
+
+
 }
