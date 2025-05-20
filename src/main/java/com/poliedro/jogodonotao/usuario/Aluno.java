@@ -35,6 +35,16 @@ public class Aluno extends Usuario {
      */
     private ArrayList<PontuacaoMateria> pontuacaoMateria = new ArrayList<>();
 
+    // Construtor
+    public Aluno(int id, String nome, String email, String ra, String hashSenha, long pontuacao /*Turma turma*/) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.ra = ra;
+        this.hashSenha = hashSenha;
+        this.pontuacao = pontuacao;
+    }
+
     // Getters
     public static Aluno getSessaoAtiva() {
         return sessaoAtiva;
