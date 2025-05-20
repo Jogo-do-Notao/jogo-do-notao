@@ -47,7 +47,7 @@ public class AlunoDAO {
      * @param chave  O valor que será buscado no banco de dados.
      * @return Instância do aluno correspondente ou {@code null} se ele não for encontrado.
      */
-    public static Aluno buscarAluno(AlunoColunas coluna, String chave) {
+    private static Aluno buscarAluno(AlunoColunas coluna, String chave) {
         // Query SQL
         String sql = "SELECT * FROM aluno WHERE " + coluna.get() + " = ?";
 
@@ -104,7 +104,7 @@ public class AlunoDAO {
      * @param id ID do aluno no banco de dados.
      * @return A instância do aluno ou {@code null} se ele não for encontrado.
      */
-    public static Aluno buscarPorId(String id) {
-        return buscarAluno(AlunoColunas.ID, id);
+    public static Aluno buscarPorId(int id) {
+        return buscarAluno(AlunoColunas.ID, String.valueOf(id));
     }
 }
