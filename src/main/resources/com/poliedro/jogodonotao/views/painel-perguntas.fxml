@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
@@ -57,14 +56,7 @@
                               <Insets left="10.0" top="15.0" />
                            </HBox.margin>
                         </ImageView>
-                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="43.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
-                           </HBox.margin>
-                        </JFXButton>
+
                      </children>
                   </HBox>
                </children>
@@ -84,14 +76,7 @@
                               <Insets left="10.0" top="15.0" />
                            </HBox.margin>
                         </ImageView>
-                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="43.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
-                           </HBox.margin>
-                        </JFXButton>
+
                      </children>
                   </HBox>
                </children>
@@ -114,14 +99,7 @@
                               <Insets left="10.0" top="15.0" />
                            </HBox.margin>
                         </ImageView>
-                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="43.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
-                           </HBox.margin>
-                        </JFXButton>
+
                      </children>
                   </HBox>
                </children>
@@ -144,14 +122,7 @@
                               <Insets left="10.0" top="15.0" />
                            </HBox.margin>
                         </ImageView>
-                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="43.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
-                           </HBox.margin>
-                        </JFXButton>
+
                      </children>
                   </HBox>
                </children>
@@ -174,14 +145,7 @@
                               <Insets left="10.0" top="15.0" />
                            </HBox.margin>
                         </ImageView>
-                        <JFXButton prefHeight="154.0" prefWidth="1006.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 45;" text="Alternativa" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="43.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
-                           </HBox.margin>
-                        </JFXButton>
+
                      </children>
                      <HBox.margin>
                         <Insets />
@@ -232,14 +196,7 @@
                            <children>
                               <VBox prefHeight="287.0" prefWidth="216.0">
                                  <children>
-                                    <JFXButton prefHeight="207.0" prefWidth="196.0" style="-fx-background-color: #2D62B5; -fx-background-radius: 40; -fx-border-color: #0063FF; -fx-border-radius: 40;" text="Pular" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="36.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="35.0" />
-                                       </VBox.margin>
-                                    </JFXButton>
+
                                  </children>
                                  <HBox.margin>
                                     <Insets left="10.0" />
@@ -248,11 +205,7 @@
                               <VBox prefHeight="287.0" prefWidth="218.0">
                                  <children>
                                     <ImageView fitHeight="36.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" />
-                                    <JFXButton prefHeight="207.0" prefWidth="196.0" style="-fx-background-color: #AE551A; -fx-background-radius: 40;" text="Dica" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="38.0" />
-                                       </font>
-                                    </JFXButton>
+
                                  </children>
                                  <HBox.margin>
                                     <Insets left="20.0" right="-20.0" />
@@ -261,14 +214,7 @@
                               <VBox prefHeight="287.0" prefWidth="262.0">
                                  <children>
                                     <ImageView fitHeight="36.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" />
-                                    <JFXButton prefHeight="207.0" prefWidth="196.0" style="-fx-background-color: #A12035; -fx-background-radius: 40;" text="Cartas" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="38.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets left="20.0" />
-                                       </VBox.margin>
-                                    </JFXButton>
+
                                  </children>
                                  <HBox.margin>
                                     <Insets left="20.0" right="-20.0" />
@@ -282,14 +228,7 @@
             </VBox>
             <HBox prefHeight="216.0" prefWidth="802.0">
                <children>
-                  <JFXButton prefHeight="135.0" prefWidth="224.0" style="-fx-background-color: #EE2252; -fx-background-radius: 40;" text="Parar">
-                     <font>
-                        <Font name="System Bold" size="38.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" top="5.0" />
-                     </HBox.margin>
-                  </JFXButton>
+                
                </children>
             </HBox>
          </children>
