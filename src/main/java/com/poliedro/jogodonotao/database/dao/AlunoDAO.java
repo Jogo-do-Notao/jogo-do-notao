@@ -41,14 +41,15 @@ public class AlunoDAO {
     }
 
     /**
-     * Procura e retorna uma instância aluno a partir de seu e-mail.
+     * Busca aluno no banco de dados a partir de um atributo chave (ID, e-mail ou RA).
      *
-     * @param email E-mail acadêmico do aluno.
-     * @return O ID do aluno ou {@code -1} se ele não for encontrado.
+     * @param coluna O atributo/coluna chave usada na busca. Pode ser ID, e-mail ou RA.
+     * @param chave  O valor que será buscado no banco de dados.
+     * @return Instância do aluno correspondente ou {@code null} se ele não for encontrado.
      */
-    public static Aluno buscarPorEmail(String email) {
+    public static Aluno buscarAluno(AlunoColunas coluna, String chave) {
         // Query SQL
-        String sql = "SELECT * FROM aluno WHERE email = ?";
+        String sql = "SELECT * FROM aluno WHERE " + coluna.get() + " = ?";
 
         // Executar query
         try (
@@ -56,7 +57,7 @@ public class AlunoDAO {
                 PreparedStatement stmt = conexao.prepareStatement(sql)
         ) {
             // Substituir placeholder
-            stmt.setString(1, email); // e-mail sendo buscado
+            stmt.setString(1, chave); // e-mail sendo buscado
             // Executar query e obter resultado
             ResultSet res = stmt.executeQuery();
 
@@ -71,8 +72,6 @@ public class AlunoDAO {
                         res.getLong(AlunoColunas.PONTUACAO.get())
                 );
             }
-
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -80,12 +79,54 @@ public class AlunoDAO {
         return null;
     }
 
+    /**
+     * Procura e retorna uma instância aluno a partir de seu e-mail.
+     *
+     * @param email E-mail acadêmico do aluno.
+     * @return A instância do aluno ou {@code null} se ele não for encontrado.
+     */
+    public static Aluno buscarPorEmail(String email) {
+        return buscarAluno(AlunoColunas.EMAIL, email);
+    }
+
+    /**
+     * Procura e retorna uma instância aluno a partir de seu RA.
+     *
+     * @param ra RA (registro acadêmico) do aluno.
+     * @return A instância do aluno ou {@code null} se ele não for encontrado.
+     */
+    public static Aluno buscarPorRa(String ra) {
+        return buscarAluno(AlunoColunas.RA, ra);
+    }
+
+    /**
+     * Procura e retorna uma instância aluno a partir de seu ID.
+     * @param id ID do aluno no banco de dados.
+     * @return A instância do aluno ou {@code null} se ele não for encontrado.
+     */
+    public static Aluno buscarPorId(String id) {
+        return buscarAluno(AlunoColunas.ID, id);
+    }
+
     // TESTE
     public static void main(String[] args) {
-        Aluno aluno = buscarPorEmail("poliedro1@p4ed.com");
-
-        System.out.println("Nome: " + aluno.getNome());
-        System.out.println("RA: " + aluno.getRa());
-        System.out.println("Pontuação: " + aluno.getPontuacao());
+        // E-mail
+        System.out.println("Buscar por e-mail:");
+        Aluno aluno1 = buscarPorEmail("poliedro1@p4ed.com");
+        System.out.println("Nome: " + aluno1.getNome());
+        System.out.println("RA: " + aluno1.getRa());
+        System.out.println("Pontuação: " + aluno1.getPontuacao());
+        // RA
+        System.out.println("\nBuscar por RA:");
+        Aluno aluno2 = buscarPorRa("15.458-2");
+        System.out.println("Nome: " + aluno2.getNome());
+        System.out.println("RA: " + aluno2.getRa());
+        System.out.println("Pontuação: " + aluno2.getPontuacao());
+        // RA
+        System.out.println("\nBuscar por ID:");
+        Aluno aluno3 = buscarPorId("2");
+        System.out.println("Nome: " + aluno3.getNome());
+        System.out.println("RA: " + aluno3.getRa());
+        System.out.println("Pontuação: " + aluno3.getPontuacao());
     }
 }
