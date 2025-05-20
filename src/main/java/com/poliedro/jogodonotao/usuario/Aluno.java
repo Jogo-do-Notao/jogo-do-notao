@@ -1,8 +1,12 @@
 package com.poliedro.jogodonotao.usuario;
 
+import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
+import com.poliedro.jogodonotao.utils.HashSenha;
+import javafx.scene.control.Alert;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -70,5 +74,35 @@ public class Aluno extends Usuario {
         return pontuacaoMateria;
     }
 
+    // Métodos
 
+    /**
+     *
+     */
+    public void iniciarSessao(String senha) throws IOException {
+        if (HashSenha.verificarSenha(senha, this.getHashSenha())) {
+            /* Se a senha estiver correta */
+            // Exibir mensagem de sucesso
+            // Exibir mensagem de sucesso
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Aluno logado com sucesso!");
+            alert.setHeaderText("Autenticação bem-sucedida!");
+            alert.setContentText("Bem-vindo, " + this.getNome() + "!");
+            alert.show();
+
+            // Iniciar sessão do aluno
+            sessaoAtiva = this;
+
+            // Redirecionar para o Painel do Aluno
+            App.changeScene("painel-aluno", "Painel do Aluno");
+        } else {
+            /* Se a senha estiver incorreta */
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erro de autenticação!");
+            alert.setHeaderText("Senha inválida!");
+            alert.setContentText("A senha informada é inválida!\n\nVerifique se digitou a senha corretamente ou entre em contato com o suporte da instituição caso precise de ajuda para recuperar ou validar sua senha."
+            );
+            alert.showAndWait();
+        }
+    }
 }

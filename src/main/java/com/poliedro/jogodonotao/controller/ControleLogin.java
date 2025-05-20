@@ -86,7 +86,7 @@ public class ControleLogin {
      * Método que autentica o aluno.
      */
     @FXML
-    void autenticarAluno(ActionEvent event) {
+    void autenticarAluno(ActionEvent event) throws IOException {
         /* Verificar:
          * - Conexão com a Internet e banco de dados
          * - Se os campos estão preenchidos
@@ -109,6 +109,9 @@ public class ControleLogin {
             alert.showAndWait();
             return;
         }
+
+        // Verificar senha e iniciar sessão
+        alunoLogando.iniciarSessao(inputSenhaAluno.getText());
 
     }
 
