@@ -73,22 +73,22 @@ public class Professor extends Usuario {
      * Em caso afirmativo, atribui a instância do professosr que está logando a variável de sessão ativa.
      * Caso contrário, exibe uma mensagem de erro.
      *
-     * @param professor Instância do professor que está iniciando a sessão.
+     * @param senha Senha inserida no login que será autenticada.
      */
-    public void iniciarSessao(Professor professor, String senha) throws IOException {
-        if (HashSenha.verificarSenha(senha, professor.getHashSenha())) {
+    public void iniciarSessao(String senha) throws IOException {
+        if (HashSenha.verificarSenha(senha, this.getHashSenha())) {
             /* Se a senha estiver correta */
             // Exibir mensagem de sucesso
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Autenticação bem-sucedida!");
             alert.setHeaderText("Autenticação bem-sucedida!");
-            alert.setContentText("Bem-vindo, " + professor.getNome() + "!");
+            alert.setContentText("Bem-vindo, " + this.getNome() + "!");
             alert.show();
 
             // Iniciar sessão do professor
-            sessaoAtiva = professor;
+            sessaoAtiva = this;
 
-            // Redirecionar pro Painel do Administrador
+            // Redirecionar para o Painel do Administrador
             App.changeScene("painel-administrador", "Painel do Administrador");
         } else {
             /* Se a senha estiver incorreta */

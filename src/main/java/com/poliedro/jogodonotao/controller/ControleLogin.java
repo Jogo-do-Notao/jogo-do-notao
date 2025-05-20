@@ -148,7 +148,7 @@ public class ControleLogin {
             return; // encerrar método
         }
         // Verificar senha e iniciar sessão
-        professorLogando.iniciarSessao(professorLogando, inputSenhaProfessor.getText());
+        professorLogando.iniciarSessao(inputSenhaProfessor.getText());
     }
 
     /**
