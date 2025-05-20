@@ -1,0 +1,15 @@
+.background {
+    
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 100% 50%;
+}
+.aluno-bg {
+    -fx-background-image: url("../../images/backgrounds/aluno-bg.jpg");
+}
+.pergunta-bg{
+    -fx-background-image: url("../../images/backgrounds/pergunta-bg.jpg");
+}
+.turma-bg{
+    -fx-background-image: url("../../images/backgrounds/turma-bg.jpg");
+}
