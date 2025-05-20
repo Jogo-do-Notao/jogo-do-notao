@@ -147,37 +147,8 @@ public class ControleLogin {
             alert.showAndWait();
             return; // encerrar método
         }
-
-        // Verificar senha do professor
-        if (!HashSenha.verificarSenha(
-                inputSenhaProfessor.getText(), professorLogando.getHashSenha())) {
-            /* Se a senha estiver incorreta */
-            Alert alert = new Alert(AlertType.WARNING);
-            alert.setTitle("Erro de autenticação!");
-            alert.setHeaderText("Senha inválida!");
-            alert.setContentText(
-                    """
-                            A senha informada é inválida!
-                            
-                            Verifique se digitou a senha corretamente ou entre em contato com o suporte da instituição caso precise de ajuda para recuperar ou validar sua senha."""
-            );
-            alert.showAndWait();
-            return; // encerrar método
-        } else {
-            /* Senha correta */
-            // Exibir mensagem de sucesso
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Autenticação bem-sucedida!");
-            alert.setHeaderText("Autenticação bem-sucedida!");
-            alert.setContentText("Bem-vindo, " + professorLogando.getNome() + "!");
-            alert.show();
-
-            // Iniciar sessão do professor
-            Professor.iniciarSessao(professorLogando);
-
-            // Redirecionar pro painel do professor
-            App.changeScene("painel-administrador", "Painel do Professor");
-        }
+        // Verificar senha e iniciar sessão
+        professorLogando.iniciarSessao(professorLogando, inputSenhaProfessor.getText());
     }
 
     /**
