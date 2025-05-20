@@ -107,26 +107,4 @@ public class AlunoDAO {
     public static Aluno buscarPorId(String id) {
         return buscarAluno(AlunoColunas.ID, id);
     }
-
-    // TESTE
-    public static void main(String[] args) {
-        // E-mail
-        System.out.println("Buscar por e-mail:");
-        Aluno aluno1 = buscarPorEmail("poliedro1@p4ed.com");
-        System.out.println("Nome: " + aluno1.getNome());
-        System.out.println("RA: " + aluno1.getRa());
-        System.out.println("Pontuação: " + aluno1.getPontuacao());
-        // RA
-        System.out.println("\nBuscar por RA:");
-        Aluno aluno2 = buscarPorRa("15.458-2");
-        System.out.println("Nome: " + aluno2.getNome());
-        System.out.println("RA: " + aluno2.getRa());
-        System.out.println("Pontuação: " + aluno2.getPontuacao());
-        // RA
-        System.out.println("\nBuscar por ID:");
-        Aluno aluno3 = buscarPorId("2");
-        System.out.println("Nome: " + aluno3.getNome());
-        System.out.println("RA: " + aluno3.getRa());
-        System.out.println("Pontuação: " + aluno3.getPontuacao());
-    }
 }
