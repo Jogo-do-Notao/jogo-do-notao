@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="background-default" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="1080.0" prefWidth="1977.0">
+         <children>
+            <VBox prefHeight="1016.0" prefWidth="666.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="15.0" right="1200.0" top="30.0" />
+               </VBox.margin>
+               <children>
+                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Criar uma Nova  " wrappingWidth="325.76171875">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="170.0" top="15.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="  Pergunta" wrappingWidth="300.76171875">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="190.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox prefHeight="47.0" prefWidth="675.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Icon-Start.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox prefHeight="100.0" prefWidth="607.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enunciado da pergunta">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="84.0" prefWidth="675.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Icone-livro.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox prefHeight="100.0" prefWidth="607.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <MenuButton mnemonicParsing="false" prefHeight="39.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Historia" />
+                                  <MenuItem mnemonicParsing="false" text="Geografia" />
+                                </items>
+                              </MenuButton>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="97.0" prefWidth="675.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+                     <children>
+                        <ImageView fitHeight="59.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Icon-dificuldade.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox prefHeight="100.0" prefWidth="607.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dificuldade">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox prefHeight="39.0" prefWidth="607.0" styleClass="tab-options" stylesheets="@../css/components/tabs/tab.css">
+                                 <children>
+                                    <ToggleButton mnemonicParsing="false" prefHeight="43.0" prefWidth="206.0" style="-fx-background-radius: 15;" text="Fácil">
+                                       <HBox.margin>
+                                          <Insets left="15.0" />
+                                       </HBox.margin>
+                                    </ToggleButton>
+                                    <ToggleButton mnemonicParsing="false" prefHeight="43.0" prefWidth="206.0" style="-fx-background-radius: 15;" text="Médio">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ToggleButton>
+                                    <ToggleButton mnemonicParsing="false" prefHeight="43.0" prefWidth="206.0" style="-fx-background-radius: 15;" text="Díficil" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="75.0" prefWidth="675.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+                     <children>
+                        <ImageView fitHeight="39.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Icone-dica.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox prefHeight="100.0" prefWidth="607.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dica">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../css/sombras.css" />
+      <URL value="@../css/colors.css" />
+   </stylesheets>
+</HBox>
