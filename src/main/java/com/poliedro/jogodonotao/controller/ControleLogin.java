@@ -2,7 +2,9 @@ package com.poliedro.jogodonotao.controller;
 
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.database.ConexaoDB;
+import com.poliedro.jogodonotao.database.dao.AlunoDAO;
 import com.poliedro.jogodonotao.database.dao.ProfessorDAO;
+import com.poliedro.jogodonotao.usuario.Aluno;
 import com.poliedro.jogodonotao.usuario.Professor;
 import com.poliedro.jogodonotao.utils.ConexaoInternet;
 import com.poliedro.jogodonotao.utils.DataValidator;
@@ -92,9 +94,19 @@ public class ControleLogin {
         if (!checkConexao() || !isCamposPreenchidos(inputLoginAluno, inputSenhaAluno)) {
             return; // encerrar método
         }
-        // Verificar tipo de login (e-mail ou RA) e obter o ID
-        int AlunoId = getIdAluno(inputLoginAluno.getText());
-        if (AlunoId == -1) {
+        // Verificar tipo de login (e-mail ou RA) e obter aluno do db
+        String loginInformado = inputLoginAluno.getText();
+        Aluno alunoLogando;
+        if (DataValidator.isEmailAlunoValido(loginInformado)) { // e-mail
+            alunoLogando = AlunoDAO.buscarPorEmail(loginInformado);
+        } else if (DataValidator.isRaValido(loginInformado)) { // RA
+            alunoLogando = AlunoDAO.buscarPorRa(loginInformado);
+        } else { // inválido
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Entrada de login de aluno inválida!");
+            alert.setHeaderText("Por favor, insira um e-mail acadêmico ou RA válido.");
+            alert.setContentText("O login deve ser feito usando seu e-mail acadêmico (@p4ed.com) ou registro do aluno (RA) do Colégio Poliedro.\nVerifique se digitou corretamente e tente novamente.\nSe tiver dúvidas, entre em contato com seu professor ou coordenação da escola.");
+            alert.showAndWait();
             return;
         }
 
@@ -198,32 +210,5 @@ public class ControleLogin {
             return false;
         }
         return true;
-    }
-
-    /**
-     * Método para obter o ID do aluno no banco de dados.
-     *
-     * @param inputValue O valor do campo de login do aluno.
-     */
-    int getIdAluno(String inputValue) {
-        // Verificar tipo de login
-        if (DataValidator.isEmailAlunoValido(inputValue)) {
-            // E-mail
-            // System.out.println("Tipo de login: e-mail");
-            // System.out.println("Buscando e-mail no banco de dados...");
-            return 1;
-        } else if (DataValidator.isRaValido(inputValue)) {
-            // RA
-            // System.out.println("Tipo de login: RA");
-            // System.out.println("Buscando RA no banco de dados...");
-            return 2;
-        } else {
-            // Inválido
-            Alert alert = new Alert(AlertType.WARNING);
-            alert.setHeaderText("Entrada inválida");
-            alert.setContentText("Os dados inseridos no campo de login são inválidos.\n\nÉ necessário inserir o e-mail acadêmico do Poliedro ou o RA (registro de matrícula) para realizar a autenticação.");
-            alert.showAndWait();
-            return -1;
-        }
     }
 }
