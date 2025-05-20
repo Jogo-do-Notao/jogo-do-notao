@@ -8,7 +8,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Font?>
-<?import com.jfoenix.controls.JFXButton?>
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="background-default" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="1080.0" prefWidth="2149.0">
