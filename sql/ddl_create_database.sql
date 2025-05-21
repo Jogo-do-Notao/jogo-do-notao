@@ -77,24 +77,53 @@ CREATE TABLE pergunta (
     FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
     FOREIGN KEY (criador) REFERENCES professor (id_professor),
 );
+-- Tabela Partida
 CREATE TABLE partida (
+    -- Colunas:
     id_partida INT PRIMARY KEY,
-    id_aluno INT,
-    id_materia INT,
-    FOREIGN KEY (id_aluno) REFERENCES aluno (id_aluno),
-    FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
+    id_aluno INT NOT NULL,
+    -- se for null, partida tem perguntas de todas as matérias
+    id_materia INT NULL,
+    -- status da partida
     status ENUM(
-        'Em andamento',
+        'Em Andamento',
+        'Não Concluída',
+        'Ganha',
         'Perdida',
-        'Concluida',
         'Abandonada'
-    ) NOT NULL,
+    ) NOT NULL DEFAULT 'Não Concluída',
+    -- rodada atual: entre 1 a 15
     rodada TINYINT NOT NULL,
-    pontuacao_acumulada INT NULL,
-    pontuacao_checkpoint INT NULL,
+    -- pontuacao da partida
+    pontuacao_acumulada INT DEFAULT 0,
+    pontuacao_checkpoint INT DEFAULT 0,
+    -- uso de ajudas (máx 2)
     ajuda_eliminar TINYINT NULL,
     ajuda_dica TINYINT NULL,
-    ajuda_pular TINYINT NULL
+    ajuda_pular TINYINT NULL,
+    -- FKs:
+    FOREIGN KEY (id_aluno) REFERENCES aluno (id_aluno),
+    FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
+    -- Validações:
+    -- rodada esteja entre 1 e 15
+    CONSTRAINT check_rodada CHECK (
+        rodada >= 1
+        AND rodada <= 15
+    ),
+    -- pontuacao seja um valor positivo
+    CONSTRAINT check_pontuacao CHECK (
+        pontuacao_acumulada >= 0
+        AND pontuacao_checkpoint >= 0
+    ),
+    -- ajudas esteja entre 0 e 2
+    CONSTRAINT check_valor_ajuda CHECK (
+        ajuda_eliminar >= 0
+        AND ajuda_eliminar <= 2
+        AND ajuda_dica >= 0
+        AND ajuda_dica <= 2
+        AND ajuda_pular >= 0
+        AND ajuda_pular <= 2
+    ),
 );
 CREATE TABLE pergunta_partida (
     id_pergunta INT,
