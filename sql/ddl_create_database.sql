@@ -125,11 +125,16 @@ CREATE TABLE partida (
         AND ajuda_pular <= 2
     ),
 );
+-- Tabela associativa entre Pergunta e Partida
 CREATE TABLE pergunta_partida (
-    id_pergunta INT,
-    id_partida INT,
+    -- Colunas:
+    id_pergunta INT NOT NULL,
+    id_partida INT NOT NULL,
+    -- rodada onde a pergunta foi feita na partida
+    rodada TINYINT NOT NULL,
+    -- PK composta
+    PRIMARY KEY (id_partida, rodada),
+    -- FKs:
     FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),
     FOREIGN KEY (id_partida) REFERENCES partida (id_partida),
-    rodada TINYINT,
-    PRIMARY KEY (rodada, id_partida)
 );
