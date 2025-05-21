@@ -18,7 +18,9 @@ CREATE TABLE IF NOT EXISTS professor (
     coordenador BOOLEAN NOT NULL DEFAULT FALSE,
     -- Validações:
     -- domínio do email
-    CONSTRAINT check_email_professor CHECK (email LIKE '%@sistemapoliedro.com.br')
+    CONSTRAINT check_email_professor CHECK (email LIKE '%@sistemapoliedro.com.br'),
+    -- garantir que coordenador seja booleano
+    CONSTRAINT check_coordenador_boolean CHECK (coordenador IN (0, 1))
 );
 -- Tabela Turma
 CREATE TABLE IF NOT EXISTS turma (
@@ -27,7 +29,7 @@ CREATE TABLE IF NOT EXISTS turma (
     professor_responsavel INT NOT NULL,
     nome VARCHAR(45) NOT NULL,
     serie INT NOT NULL,
-    descricao VARCHAR(60) NOT NULL,
+    descricao VARCHAR(150) NOT NULL,
     -- FKs:
     FOREIGN KEY (professor_responsavel) REFERENCES professor (id_professor)
 );
@@ -49,8 +51,8 @@ CREATE TABLE IF NOT EXISTS aluno (
 -- Tabela Matéria
 CREATE TABLE IF NOT EXISTS materia (
     -- Colunas:
-    id_materia INT PRIMARY KEY,
-    nome VARCHAR(30) NOT NULL
+    id_materia INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(35) NOT NULL UNIQUE
 );
 -- Tabela associativa entre Aluno e Matéria
 CREATE TABLE IF NOT EXISTS pontuacao_materia (
@@ -85,7 +87,10 @@ CREATE TABLE IF NOT EXISTS alternativa (
     titulo VARCHAR(100) NOT NULL,
     correta BOOLEAN NOT NULL DEFAULT FALSE,
     -- FKs:
-    FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta)
+    FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),
+    -- Validações:
+    -- garantir que correta seja booleano
+    CONSTRAINT check_correta_boolean CHECK (correta IN (0, 1))
 );
 -- Tabela Edição-Pergunta
 CREATE TABLE IF NOT EXISTS edicao_pergunta(

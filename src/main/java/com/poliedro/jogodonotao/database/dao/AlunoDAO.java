@@ -24,7 +24,7 @@ public class AlunoDAO {
         NOME("nome"),
         EMAIL("email"),
         RA("ra"),
-        HASH_SENHA("senha"),
+        HASH_SENHA("hash_senha"),
         PONTUACAO("pontuacao_geral");
 
         // Construtor
