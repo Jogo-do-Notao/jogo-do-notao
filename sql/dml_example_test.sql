@@ -73,5 +73,36 @@ VALUES(
 ;
 -- ---------------------------------------------------
 -- Turmas de exemplo
+INSERT INTO turma (professor_responsavel, nome, serie, descricao)
+VALUES (
+        1,
+        '2025 - Vila Mariana - 2º EM - A',
+        2,
+        'Turma do 2º ano do Ensino Médio, turma A, unidade Vila Mariana'
+    ),
+    (
+        2,
+        '2025 - Vila Mariana - 9º EF - B',
+        9,
+        'Turma do 9º ano do Ensino Fundamental, turma B, unidade Vila Mariana'
+    ),
+    (
+        4,
+        '2025 - Tatuapé - 1º EM - A',
+        1,
+        'Turma do 1º ano do Ensino Médio, turma A, unidade Tatuapé'
+    ),
+    (
+        6,
+        '2025 - Tatuapé - 3º EM - A',
+        3,
+        'Turma do 3º ano do Ensino Médio, turma A, unidade Tatuapé'
+    ),
+    (
+        3,
+        '2025 - Vila Mariana - 8º EF - A',
+        8,
+        'Turma do 8º ano do Ensino Fundamental, turma A, unidade Vila Mariana'
+    );
 -- ---------------------------------------------------
 -- Alunos de exemplo
