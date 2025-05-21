@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -61,7 +62,7 @@
                   </Text>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="176.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" styleClass="sombra" text="Sair da conta">
+            <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="176.0" text="Sair da conta">
                <font>
                   <Font size="15.0" />
                </font>
@@ -75,8 +76,12 @@
                <VBox.margin>
                   <Insets left="25.0" />
                </VBox.margin>
+               <styleClass>
+                  <String fx:value="button-vermelho" />
+                  <String fx:value="button-lg" />
+               </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="176.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" styleClass="sombra" text="Alterar senha">
+            <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="176.0" text="Alterar senha">
                <font>
                   <Font size="15.0" />
                </font>
@@ -90,6 +95,10 @@
                      </image>
                   </ImageView>
                </graphic>
+               <styleClass>
+                  <String fx:value="button-lg" />
+                  <String fx:value="button-primary" />
+               </styleClass>
             </Button>
          </children>
       </VBox>
@@ -169,5 +178,6 @@
       <URL value="@../css/colors.css" />
       <URL value="@../css/colors.css" />
       <URL value="@../css/views/background.css" />
+      <URL value="@../css/components/tabs/button.css" />
    </stylesheets>
 </AnchorPane>
