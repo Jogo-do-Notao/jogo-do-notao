@@ -6,9 +6,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class App extends Application {
-    /** Referência estática ao stage principal da aplicação. */
+    /**
+     * Referência estática ao stage principal da aplicação.
+     */
     private static Stage mainStage;
 
     @Override
@@ -38,7 +41,7 @@ public class App extends Application {
      * Método para redirecionar o usuário para o painel do aluno ou painel do professor após a autenticação.
      *
      * @param nextScene Nome do arquivo FXML do painel do aluno ou professor (sem a extensão {@code .fxml}).
-     * @param titulo Título da janela do próximo scene.
+     * @param titulo    Título da janela do próximo scene.
      */
     public static void changeScene(String nextScene, String titulo) throws IOException {
         // Obter o stage atual
@@ -50,7 +53,11 @@ public class App extends Application {
         // Criar scene a partir do FXML
         Scene nextView = new Scene(nextViewFXML.load());
         // Mudar título da janela
-        stage.setTitle("Jogo do Notão | " + titulo);
+        if (titulo.isEmpty()) {
+            stage.setTitle("Jogo do Notão");
+        } else {
+            stage.setTitle("Jogo do Notão | " + titulo);
+        }
         // Aplicar novo scene no stage
         stage.setScene(nextView);
     }
