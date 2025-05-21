@@ -1,12 +1,13 @@
 package com.poliedro.jogodonotao;
 
+import com.poliedro.jogodonotao.usuario.Aluno;
+import com.poliedro.jogodonotao.usuario.Professor;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class App extends Application {
     /**
@@ -52,12 +53,20 @@ public class App extends Application {
         );
         // Criar scene a partir do FXML
         Scene nextView = new Scene(nextViewFXML.load());
+
         // Mudar título da janela
-        if (titulo.isEmpty()) {
-            stage.setTitle("Jogo do Notão");
-        } else {
-            stage.setTitle("Jogo do Notão | " + titulo);
+        String tituloString = "Jogo do Notão"; // título padrão
+        // Adicionar nome do usuário com sessão ativa
+        if (Aluno.getSessaoAtiva() != null) {
+            tituloString += " | " + Aluno.getSessaoAtiva().getNome();
+        } else if (Professor.getSessaoAtiva() != null) {
+            tituloString += " | " + Professor.getSessaoAtiva().getNome();
         }
+        if (!titulo.isEmpty()) {
+            tituloString += " | " + titulo; // Adicionar título da nova tela
+        }
+        stage.setTitle(tituloString); // aplicar novo título
+
         // Aplicar novo scene no stage
         stage.setScene(nextView);
     }
