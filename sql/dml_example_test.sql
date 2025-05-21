@@ -18,7 +18,7 @@ VALUES(
         'Ana Souza',
         'ana.souza@sistemapoliedro.com.br',
         '$2a$14$3eO2exkRHAJgDKdJPINiRe7Urdhqx1UV6HblLzSZlmKtKwnSMMTIu',
-        'professora de Língua Portuguesa do Ensino Médio',
+        'Professora de Língua Portuguesa do Ensino Médio',
         FALSE
     ),
     (
@@ -26,7 +26,7 @@ VALUES(
         'carlos.oliveira@sistemapoliedro.com.br',
         '$2a$14$EsbwCM5dodNEc1WQZWwzgeh0aWf0PemjxRi2o.UhMpmHgWpx4MxXi',
         'Professor de Matemática do Ensino Fundamental II',
-        TRUE
+        FALSE
     ),
     (
         'Fernanda Lima',
@@ -47,7 +47,7 @@ VALUES(
         'luciana.almeida@sistemapoliedro.com.br',
         '$2a$14$DOQh5/hRZSLDmkhVB5n2OeGk0vYAqhgQ6GfgvjtuYUnbdZCIM0SI6',
         'Professora de Geografia do Ensino Médio',
-        TRUE
+        FALSE
     ),
     (
         'Roberto Martins',
@@ -55,6 +55,20 @@ VALUES(
         '$2a$14$AmltJIoWrrlQkZ91I80iDekNvhiG0N74XF8oBFzXdVwKzEWPkoLMm',
         'Professor de Física do Ensino Médio',
         FALSE
+    ),
+    (
+        'Marcos Pereira',
+        'marcos.pereira@sistemapoliedro.com.br',
+        '$2a$14$WevUnRp3uZ.uUPAZ5If.EObHoKF.Y/Ss/2ne7WTgPrtj2V/3XF90G',
+        'Coordenador pedagógico da unidade Vila Mariana',
+        TRUE
+    ),
+    (
+        'Patrícia Ramos',
+        'patricia.ramos@sistemapoliedro.com.br',
+        '$2a$14$xXHlOd.LUwI6rVexOqAQdOEk529UAcO0BvVCfQMG4CIwbGtAYrl62',
+        'Coordenadora administrativa da unidade Tatuapé',
+        TRUE
     );
 ;
 -- ---------------------------------------------------
