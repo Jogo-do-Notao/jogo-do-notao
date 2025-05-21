@@ -22,12 +22,14 @@ CREATE TABLE professor (
 );
 -- Tabela Turma
 CREATE TABLE turma (
-    id_turma INT PRIMARY KEY,
-    professor_responsavel INT,
-    FOREIGN KEY (professor_responsavel) REFERENCES professor (id_professor),
+    -- Colunas:
+    id_turma INT PRIMARY KEY AUTO_INCREMENT,
+    professor_responsavel INT NOT NULL,
     nome VARCHAR(45) NOT NULL,
     serie INT NOT NULL,
-    descricao VARCHAR(60) NOT NULL
+    descricao VARCHAR(60) NOT NULL, 
+    -- FKs:
+    FOREIGN KEY (professor_responsavel) REFERENCES professor (id_professor),
 );
 CREATE TABLE aluno (
     id_aluno INT PRIMARY KEY,
