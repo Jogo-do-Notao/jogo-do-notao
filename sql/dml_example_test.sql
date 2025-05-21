@@ -106,3 +106,91 @@ VALUES (
     );
 -- ---------------------------------------------------
 -- Alunos de exemplo
+INSERT INTO aluno (
+        id_turma,
+        nome,
+        email,
+        ra,
+        hash_senha,
+        pontuacao_geral
+    )
+VALUES (
+        1,
+        'Bruno Carvalho',
+        'bruno.carvalho@p4ed.com',
+        '21.123-4',
+        '$2a$14$.AZqkriN0YBDzFbR5Qa5tun1rGCnolB97L5zNM7fZlQw2faXiB3wu',
+        150000
+    ),
+    (
+        1,
+        'Larissa Mendes',
+        'larissa.mendes@p4ed.com',
+        '21.124-5',
+        '$2a$14$klW5NqFz68yzOCkU1aXBD.N3rxMJj7M/8b7gFanns0DzPZ9iVwo4m',
+        300000
+    ),
+    (
+        2,
+        'Gabriel Rocha',
+        'gabriel.rocha@p4ed.com',
+        '21.125-6',
+        '$2a$14$sgOKse2OTg2Hq6gnUBeG7e4sNs6zZsH/Qp.GYYfQiNBbIFoV.sG4y',
+        50000
+    ),
+    (
+        2,
+        'Juliana Teixeira',
+        'juliana.teixeira@p4ed.com',
+        '21.126-7',
+        '$2a$14$WnHm5k4aJW48y6QXqfmORO2LE9ZITTZT6/mk6dXH.Tvn6UZWax99m',
+        100000
+    ),
+    (
+        3,
+        'Vinícius Almeida',
+        'vinicius.almeida@p4ed.com',
+        '21.127-8',
+        '$2a$14$YMB1O9PQuL6tltMMNM0rneN/0uL9VevbJyJ53iTbab.x0z4LapRWu',
+        750000
+    ),
+    (
+        3,
+        'Rafaela Santos',
+        'rafaela.santos@p4ed.com',
+        '21.128-9',
+        '$2a$14$Tv9haLv9CAQ7eL5ECxZwW.61HUo6UmYAq7O5ifGjACHm5hWi3JS/.',
+        250000
+    ),
+    (
+        4,
+        'Pedro Henrique',
+        'pedro.henrique@p4ed.com',
+        '21.129-0',
+        '$2a$14$I0MXj0IF8rOKDQEsQtqR1ewy6qZYHQTSgf7UW.WD7.uViouQ5OX6u',
+        500000
+    ),
+    (
+        4,
+        'Amanda Costa',
+        'amanda.costa@p4ed.com',
+        '21.130-1',
+        '$2a$14$fROhUtWk2YM2PWVy4kVhS.KMSwPWBOkEQQ.43PFGrqTiQEt3IphLG',
+        1000000
+    ),
+    (
+        5,
+        'Lucas Nogueira',
+        'lucas.nogueira@p4ed.com',
+        '21.131-2',
+        '$2a$14$v2dSo88KOPFrTThVuubS8uiT9rEZfcpRzSLcQ1q5dRl7EKwIc4I7m',
+        400000
+    ),
+    (
+        5,
+        'Isabela Martins',
+        'isabela.martins@p4ed.com',
+        '21.132-3',
+        '$2a$14$BK0v8lWogOwF7zBpV1CuUeZ1PpZWo5PQXghGBe7V4dLOTdj97NhYe',
+        100000
+    );
