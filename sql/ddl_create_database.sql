@@ -46,9 +46,11 @@ CREATE TABLE aluno (
     -- Validações:
     CONSTRAINT check_email CHECK (email LIKE '%@p4ed.com'),
 );
+-- Tabela Matéria
 CREATE TABLE materia (
+    -- Colunas:
     id_materia INT PRIMARY KEY,
-    nome VARCHAR (30) NOT NULL
+    nome VARCHAR(30) NOT NULL
 );
 CREATE TABLE pontuacao_materia (
     id_aluno INT,
