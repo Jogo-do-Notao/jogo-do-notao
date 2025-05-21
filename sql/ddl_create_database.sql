@@ -64,15 +64,18 @@ CREATE TABLE pontuacao_materia (
     FOREIGN KEY (id_aluno) REFERENCES aluno (id_aluno),
     FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
 );
+-- Tabela Pergunta
 CREATE TABLE pergunta (
+    -- Colunas:
     id_pergunta INT PRIMARY KEY,
-    id_materia INT,
-    criador INT,
+    id_materia INT NOT NULL,
+    criador INT NOT NULL,
+    titulo VARCHAR(200) NOT NULL,
+    dificuldade ENUM('Fácil', 'Médio', 'Difícil') NOT NULL,
+    dica VARCHAR(200) NOT NULL,
+    -- FKs:
     FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
     FOREIGN KEY (criador) REFERENCES professor (id_professor),
-    titulo VARCHAR(100) NOT NULL,
-    dificuldade ENUM('Facil', 'Medio', 'Dificil') NOT NULL,
-    dica VARCHAR(100) NOT NULL
 );
 CREATE TABLE partida (
     id_partida INT PRIMARY KEY,
