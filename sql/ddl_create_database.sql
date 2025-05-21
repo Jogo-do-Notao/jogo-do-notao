@@ -36,10 +36,10 @@ CREATE TABLE aluno (
     -- Colunas:
     id_aluno INT PRIMARY KEY AUTO_INCREMENT,
     id_turma INT NOT NULL,
-    nome VARCHAR (100) NOT NULL,
-    email VARCHAR (80) NOT NULL UNIQUE,
-    ra CHAR (8) NOT NULL UNIQUE,
-    hash_senha CHAR (64) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(80) NOT NULL UNIQUE,
+    ra CHAR(8) NOT NULL UNIQUE,
+    hash_senha CHAR(64) NOT NULL,
     pontuacao_geral BIGINT DEFAULT 0,
     -- FKs:
     FOREIGN KEY (id_turma) REFERENCES turma (id_turma),
