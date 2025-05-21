@@ -52,13 +52,17 @@ CREATE TABLE materia (
     id_materia INT PRIMARY KEY,
     nome VARCHAR(30) NOT NULL
 );
+-- Tabela associativa entre Aluno e Matéria
 CREATE TABLE pontuacao_materia (
-    id_aluno INT,
-    id_materia INT,
+    -- Colunas:
+    id_aluno INT NOT NULL,
+    id_materia INT NOT NULL,
+    pontuacao BIGINT DEFAULT 0,
+    -- PK composta
+    PRIMARY KEY (id_aluno, id_materia),
+    -- FKs:
     FOREIGN KEY (id_aluno) REFERENCES aluno (id_aluno),
     FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
-    PRIMARY KEY (id_aluno, id_materia),
-    pontuacao BIGINT NOT NULL
 );
 CREATE TABLE pergunta (
     id_pergunta INT PRIMARY KEY,
