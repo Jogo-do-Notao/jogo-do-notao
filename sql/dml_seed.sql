@@ -1,0 +1,1 @@
+-- Dados para semear o banco de dados com valores pré-definidos, como matérias e conta root
