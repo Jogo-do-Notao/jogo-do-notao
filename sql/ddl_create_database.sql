@@ -15,7 +15,7 @@ CREATE TABLE professor (
     hash_senha CHAR(64) NOT NULL,
     descricao VARCHAR(100) NULL,
     -- se possui permissões de gerenciar outros professores
-    coordenador BOOLEAN NOT NULL,
+    coordenador BOOLEAN NOT NULL DEFAULT FALSE,
     -- Validações:
     -- domínio do email
     CONSTRAINT check_email CHECK (email LIKE '%@sistemapoliedro.com.br')
@@ -67,7 +67,7 @@ CREATE TABLE pontuacao_materia (
 -- Tabela Pergunta
 CREATE TABLE pergunta (
     -- Colunas:
-    id_pergunta INT PRIMARY KEY,
+    id_pergunta INT PRIMARY KEY AUTO_INCREMENT,
     id_materia INT NOT NULL,
     criador INT NOT NULL,
     titulo VARCHAR(200) NOT NULL,
@@ -76,6 +76,16 @@ CREATE TABLE pergunta (
     -- FKs:
     FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
     FOREIGN KEY (criador) REFERENCES professor (id_professor),
+);
+-- Tabela Alternativa
+CREATE TABLE alternativa (
+    -- Colunas:
+    id_alternativa INT PRIMARY KEY AUTO_INCREMENT,
+    id_pergunta INT NOT NULL,
+    titulo VARCHAR(100) NOT NULL,
+    correta BOOLEAN NOT NULL DEFAULT FALSE,
+    -- FKs:
+    FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),
 );
 -- Tabela Partida
 CREATE TABLE partida (
