@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS professor (
     coordenador BOOLEAN NOT NULL DEFAULT FALSE,
     -- Validações:
     -- domínio do email
-    CONSTRAINT check_email CHECK (email LIKE '%@sistemapoliedro.com.br')
+    CONSTRAINT check_email_professor CHECK (email LIKE '%@sistemapoliedro.com.br')
 );
 -- Tabela Turma
 CREATE TABLE IF NOT EXISTS turma (
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS turma (
     serie INT NOT NULL,
     descricao VARCHAR(60) NOT NULL,
     -- FKs:
-    FOREIGN KEY (professor_responsavel) REFERENCES professor (id_professor),
+    FOREIGN KEY (professor_responsavel) REFERENCES professor (id_professor)
 );
 -- Tabela Aluno
 CREATE TABLE IF NOT EXISTS aluno (
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS aluno (
     -- FKs:
     FOREIGN KEY (id_turma) REFERENCES turma (id_turma),
     -- Validações:
-    CONSTRAINT check_email CHECK (email LIKE '%@p4ed.com'),
+    CONSTRAINT check_email_aluno CHECK (email LIKE '%@p4ed.com')
 );
 -- Tabela Matéria
 CREATE TABLE IF NOT EXISTS materia (
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS pontuacao_materia (
     PRIMARY KEY (id_aluno, id_materia),
     -- FKs:
     FOREIGN KEY (id_aluno) REFERENCES aluno (id_aluno),
-    FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
+    FOREIGN KEY (id_materia) REFERENCES materia (id_materia)
 );
 -- Tabela Pergunta
 CREATE TABLE IF NOT EXISTS pergunta (
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS pergunta (
     dica VARCHAR(200) NOT NULL,
     -- FKs:
     FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
-    FOREIGN KEY (criador) REFERENCES professor (id_professor),
+    FOREIGN KEY (criador) REFERENCES professor (id_professor)
 );
 -- Tabela Alternativa
 CREATE TABLE IF NOT EXISTS alternativa (
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS alternativa (
     titulo VARCHAR(100) NOT NULL,
     correta BOOLEAN NOT NULL DEFAULT FALSE,
     -- FKs:
-    FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),
+    FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta)
 );
 -- Tabela Edição-Pergunta
 CREATE TABLE IF NOT EXISTS edicao_pergunta(
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS edicao_pergunta(
     data_hora DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     -- FKs:
     FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),
-    FOREIGN KEY (id_professor) REFERENCES professor (id_professor),
+    FOREIGN KEY (id_professor) REFERENCES professor (id_professor)
 );
 -- Tabela Partida
 CREATE TABLE IF NOT EXISTS partida (
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS partida (
         AND ajuda_dica <= 2
         AND ajuda_pular >= 0
         AND ajuda_pular <= 2
-    ),
+    )
 );
 -- Tabela associativa entre Pergunta e Partida
 CREATE TABLE IF NOT EXISTS pergunta_partida (
@@ -157,5 +157,5 @@ CREATE TABLE IF NOT EXISTS pergunta_partida (
     PRIMARY KEY (id_partida, rodada),
     -- FKs:
     FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),
-    FOREIGN KEY (id_partida) REFERENCES partida (id_partida),
+    FOREIGN KEY (id_partida) REFERENCES partida (id_partida)
 );
