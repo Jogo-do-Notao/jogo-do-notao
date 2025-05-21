@@ -1,3 +1,11 @@
+-- Script SQL DDL para criar o banco de dados e as tabelas
+-- Apagar o banco de dados caso exista (para recriação)
+DROP DATABASE IF EXISTS jogo_do_notao_db;
+-- Criar o banco de dados
+CREATE DATABASE IF NOT EXISTS jogo_do_notao_db;
+USE jogo_do_notao_db;
+-- ---------------------------------------------------------
+-- Criar as tabelas:
 CREATE TABLE professor (
     id_professor INT PRIMARY KEY,
     nome VARCHAR(300) NOT NULL,
