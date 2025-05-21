@@ -70,3 +70,21 @@
   -fx-background-color: -poliedro-vermelho-950;
   -fx-text-fill: -poliedro-vermelho-700;
 }
+/* Laranja */
+.button-laranja {
+  -fx-background-color: -poliedro-laranja-400;
+  /* Sombra (efeito de brilho) */
+  -fx-effect: dropshadow(gaussian, rgba(250, 164, 31, 0.4), 15, 0, 0, 10);
+}
+.button-laranja:hover {
+  -fx-background-color: -poliedro-laranja-500;
+  /* Sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
+}
+.button-laranja:pressed {
+  -fx-background-color: -poliedro-laranja-700;
+}
+.button-laranja:disabled {
+  -fx-background-color: -poliedro-laranja-900;
+  -fx-text-fill: -poliedro-laranja-600;
+}
