@@ -1,5 +1,11 @@
 package com.poliedro.jogodonotao.usuario;
 
+import com.poliedro.jogodonotao.App;
+import com.poliedro.jogodonotao.utils.HashSenha;
+import javafx.scene.control.Alert;
+
+import java.io.IOException;
+
 /**
  * Classe que representa um professor do jogo.
  */
@@ -63,12 +69,41 @@ public class Professor extends Usuario {
     // Métodos
 
     /**
-     * Inicia a sessão do professor.
+     * Verifica se a senha informada corresponde ao professor que iniciou a sessão.
+     * Em caso afirmativo, atribui a instância do professosr que está logando a variável de sessão ativa.
+     * Caso contrário, exibe uma mensagem de erro.
      *
-     * @param professor Instância do professor que iniciou a sessão.
+     * @param senha Senha inserida no login que será autenticada.
      */
-    public static void iniciarSessao(Professor professor) {
-        sessaoAtiva = professor;
+    public void iniciarSessao(String senha) throws IOException {
+        if (HashSenha.verificarSenha(senha, this.getHashSenha())) {
+            /* Se a senha estiver correta */
+            // Exibir mensagem de sucesso
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Autenticação bem-sucedida!");
+            alert.setHeaderText("Autenticação bem-sucedida!");
+            alert.setContentText("Bem-vindo, " + this.getNome() + "!");
+            alert.show();
+
+            // Iniciar sessão do professor
+            sessaoAtiva = this;
+
+            // Redirecionar para o Painel do Administrador
+            App.changeScene("painel-administrador", "Painel do Administrador");
+        } else {
+            /* Se a senha estiver incorreta */
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erro de autenticação!");
+            alert.setHeaderText("Senha inválida!");
+            alert.setContentText(
+                    """
+                                    A senha informada é inválida!
+                            
+                                    Verifique se digitou a senha corretamente ou entre em contato com o suporte da instituição caso precise de ajuda para recuperar ou validar sua senha.
+                            """
+            );
+            alert.showAndWait();
+        }
     }
 
 }
