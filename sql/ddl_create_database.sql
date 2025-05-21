@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS aluno (
 -- Tabela Matéria
 CREATE TABLE IF NOT EXISTS materia (
     -- Colunas:
-    id_materia INT PRIMARY KEY,
+    id_materia INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(30) NOT NULL
 );
 -- Tabela associativa entre Aluno e Matéria
