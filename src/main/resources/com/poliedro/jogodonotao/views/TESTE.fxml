@@ -22,7 +22,7 @@
       </Text>
       <ImageView fitHeight="107.0" fitWidth="256.0" layoutX="1105.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0">
          <image>
-            <Image url="@jogo-do-notao-main/jogo-do-notao-main/src/main/resources/com/poliedro/jogodonotao/images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
+            <Image url="@../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
          </image>
       </ImageView>
       <VBox layoutX="42.0" layoutY="134.0" maxHeight="216.0" maxWidth="626.0" minHeight="190.0" minWidth="350.0" prefHeight="194.0" prefWidth="370.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra">
@@ -31,7 +31,7 @@
                <children>
                   <ImageView fitHeight="57.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../IdeaProjects/jogo-do-notao/src/main/resources/com/poliedro/jogodonotao/icons/dinheiro.png" />
+                        <Image url="@../icons/dinheiro.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="25.0" top="15.0" />
@@ -74,7 +74,7 @@
                         <Insets left="25.0" top="10.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@jogo-do-notao-main/jogo-do-notao-main/src/main/resources/com/poliedro/jogodonotao/icons/user.png" />
+                        <Image url="@../icons/user.png" />
                      </image>
                   </ImageView>
                   <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Conta">
@@ -110,7 +110,7 @@
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@jogo-do-notao-main/jogo-do-notao-main/src/main/resources/com/poliedro/jogodonotao/icons/startContent.png" />
+                        <Image url="@../icons/startContent.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -174,9 +174,9 @@
       </VBox>
    </children>
    <stylesheets>
-      <URL value="@jogo-do-notao-main/jogo-do-notao-main/src/main/resources/com/poliedro/jogodonotao/css/sombras.css" />
-      <URL value="@jogo-do-notao-main/jogo-do-notao-main/src/main/resources/com/poliedro/jogodonotao/css/colors.css" />
-      <URL value="@jogo-do-notao-main/jogo-do-notao-main/src/main/resources/com/poliedro/jogodonotao/css/colors.css" />
-      <URL value="@jogo-do-notao-main/jogo-do-notao-main/src/main/resources/com/poliedro/jogodonotao/css/views/background.css" />
+      <URL value="@../css/sombras.css" />
+      <URL value="@../css/colors.css" />
+      <URL value="@../css/colors.css" />
+      <URL value="@../css/views/background.css" />
    </stylesheets>
 </AnchorPane>
