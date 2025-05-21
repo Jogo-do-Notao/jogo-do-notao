@@ -7,7 +7,7 @@ USE jogo_do_notao_db;
 -- ---------------------------------------------------------
 -- Criar as tabelas:
 -- Tabela Professor
-CREATE TABLE professor (
+CREATE TABLE IF NOT EXISTS professor (
     -- Colunas:
     id_professor INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE professor (
     CONSTRAINT check_email CHECK (email LIKE '%@sistemapoliedro.com.br')
 );
 -- Tabela Turma
-CREATE TABLE turma (
+CREATE TABLE IF NOT EXISTS turma (
     -- Colunas:
     id_turma INT PRIMARY KEY AUTO_INCREMENT,
     professor_responsavel INT NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE turma (
     FOREIGN KEY (professor_responsavel) REFERENCES professor (id_professor),
 );
 -- Tabela Aluno
-CREATE TABLE aluno (
+CREATE TABLE IF NOT EXISTS aluno (
     -- Colunas:
     id_aluno INT PRIMARY KEY AUTO_INCREMENT,
     id_turma INT NOT NULL,
@@ -47,13 +47,13 @@ CREATE TABLE aluno (
     CONSTRAINT check_email CHECK (email LIKE '%@p4ed.com'),
 );
 -- Tabela Matéria
-CREATE TABLE materia (
+CREATE TABLE IF NOT EXISTS materia (
     -- Colunas:
     id_materia INT PRIMARY KEY,
     nome VARCHAR(30) NOT NULL
 );
 -- Tabela associativa entre Aluno e Matéria
-CREATE TABLE pontuacao_materia (
+CREATE TABLE IF NOT EXISTS pontuacao_materia (
     -- Colunas:
     id_aluno INT NOT NULL,
     id_materia INT NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE pontuacao_materia (
     FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
 );
 -- Tabela Pergunta
-CREATE TABLE pergunta (
+CREATE TABLE IF NOT EXISTS pergunta (
     -- Colunas:
     id_pergunta INT PRIMARY KEY AUTO_INCREMENT,
     id_materia INT NOT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE pergunta (
     FOREIGN KEY (criador) REFERENCES professor (id_professor),
 );
 -- Tabela Alternativa
-CREATE TABLE alternativa (
+CREATE TABLE IF NOT EXISTS alternativa (
     -- Colunas:
     id_alternativa INT PRIMARY KEY AUTO_INCREMENT,
     id_pergunta INT NOT NULL,
@@ -87,8 +87,10 @@ CREATE TABLE alternativa (
     -- FKs:
     FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),
 );
+-- Tabela Edição-Pergunta
+CREATE TABLE IF NOT EXISTS edicao_pergunta();
 -- Tabela Partida
-CREATE TABLE partida (
+CREATE TABLE IF NOT EXISTS partida (
     -- Colunas:
     id_partida INT PRIMARY KEY,
     id_aluno INT NOT NULL,
@@ -136,7 +138,7 @@ CREATE TABLE partida (
     ),
 );
 -- Tabela associativa entre Pergunta e Partida
-CREATE TABLE pergunta_partida (
+CREATE TABLE IF NOT EXISTS pergunta_partida (
     -- Colunas:
     id_pergunta INT NOT NULL,
     id_partida INT NOT NULL,
