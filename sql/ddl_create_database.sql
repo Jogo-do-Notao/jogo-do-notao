@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS turma (
     professor_responsavel INT NOT NULL,
     nome VARCHAR(45) NOT NULL,
     serie INT NOT NULL,
-    descricao VARCHAR(60) NOT NULL,
+    descricao VARCHAR(150) NOT NULL,
     -- FKs:
     FOREIGN KEY (professor_responsavel) REFERENCES professor (id_professor)
 );
