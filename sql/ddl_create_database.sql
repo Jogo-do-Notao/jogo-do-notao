@@ -88,11 +88,20 @@ CREATE TABLE IF NOT EXISTS alternativa (
     FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),
 );
 -- Tabela Edição-Pergunta
-CREATE TABLE IF NOT EXISTS edicao_pergunta();
+CREATE TABLE IF NOT EXISTS edicao_pergunta(
+    -- Colunas:
+    id_edicao_pergunta INT PRIMARY KEY AUTO_INCREMENT,
+    id_pergunta INT NOT NULL,
+    id_professor INT NOT NULL,
+    data_hora DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    -- FKs:
+    FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),
+    FOREIGN KEY (id_professor) REFERENCES professor (id_professor),
+);
 -- Tabela Partida
 CREATE TABLE IF NOT EXISTS partida (
     -- Colunas:
-    id_partida INT PRIMARY KEY,
+    id_partida INT PRIMARY KEY AUTO_INCREMENT,
     id_aluno INT NOT NULL,
     -- se for null, partida tem perguntas de todas as matérias
     id_materia INT NULL,
