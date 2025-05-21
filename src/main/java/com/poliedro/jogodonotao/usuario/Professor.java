@@ -106,4 +106,21 @@ public class Professor extends Usuario {
         }
     }
 
+    /**
+     * Encerra a sessão ativa do aluno que está logado no momento.
+     */
+    public static void efetuarLogout() throws IOException {
+        // Mensagem de saindo da conta
+        Alert alertLogout = new Alert(Alert.AlertType.INFORMATION);
+        alertLogout.setTitle("Saindo da conta");
+        alertLogout.setHeaderText("Encerrando sessão...");
+        alertLogout.setContentText("Volte sempre, " + Professor.getSessaoAtiva().getNome() + "!");
+        alertLogout.show();
+
+        // Encerrar sessão do professor
+        sessaoAtiva = null;
+
+        // Redirecionar para a tela de login
+        App.changeScene("tela-login", "");
+    }
 }

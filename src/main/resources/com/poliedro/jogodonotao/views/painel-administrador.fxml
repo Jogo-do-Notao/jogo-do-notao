@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1069.0" prefWidth="1832.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1069.0" prefWidth="1832.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControlePainelAdministrador">
    <children>
       <Text fill="#ee2252" layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo, [nome do administrador]" AnchorPane.leftAnchor="14.0">
          <font>
@@ -62,7 +62,7 @@
                   </Text>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="176.0" text="Sair da conta">
+            <Button mnemonicParsing="false" onAction="#realizarLogout" prefHeight="55.0" prefWidth="176.0" text="Sair da conta">
                <font>
                   <Font size="15.0" />
                </font>
