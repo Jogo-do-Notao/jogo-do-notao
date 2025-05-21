@@ -107,7 +107,7 @@
                   <Insets left="25.0" />
                </VBox.margin>
             </Text>
-            <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="176.0" text="Sair da conta">
+            <Button mnemonicParsing="false" onAction="#realizarLogout" prefHeight="48.0" prefWidth="176.0" text="Sair da conta">
                <font>
                   <Font size="15.0" />
                </font>

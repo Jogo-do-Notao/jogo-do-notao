@@ -1,6 +1,6 @@
 package com.poliedro.jogodonotao.controller;
 
-import com.poliedro.jogodonotao.usuario.Aluno;
+import com.poliedro.jogodonotao.usuario.Professor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -10,9 +10,9 @@ import java.io.IOException;
 import java.util.Optional;
 
 /**
- * Classe controladora da tela do painel do aluno.
+ * Classe controladora da tela do painel do professor.
  */
-public class ControlePainelAluno {
+public class ControlePainelAdministrador {
 
     /**
      * Método que realiza o logout do aluno e redireciona para a tela de login.
@@ -30,7 +30,8 @@ public class ControlePainelAluno {
             return; // encerrar método
         } else if (decisao.get() == ButtonType.OK) {
             /* Se clicou em OK */
-            Aluno.efetuarLogout();
+            Professor.efetuarLogout();
         }
     }
+
 }
