@@ -1,4 +1,4 @@
--- Script SQL DDL para criar o banco de dados e as tabelas
+-- Script MySQL DDL para criar o banco de dados e as tabelas
 -- Apagar o banco de dados caso exista (para recriação)
 DROP DATABASE IF EXISTS jogo_do_notao_db;
 -- Criar o banco de dados
@@ -6,14 +6,21 @@ CREATE DATABASE IF NOT EXISTS jogo_do_notao_db;
 USE jogo_do_notao_db;
 -- ---------------------------------------------------------
 -- Criar as tabelas:
+-- Tabela Professor
 CREATE TABLE professor (
-    id_professor INT PRIMARY KEY,
-    nome VARCHAR(300) NOT NULL,
-    email VARCHAR(80) NOT NULL,
-    senha CHAR(54) NOT NULL,
+    -- Colunas:
+    id_professor INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(80) NOT NULL UNIQUE,
+    hash_senha CHAR(64) NOT NULL,
     descricao VARCHAR(100) NULL,
-    coordenador TINYINT NOT NULL
+    -- se possui permissões de gerenciar outros professores
+    coordenador BOOLEAN NOT NULL,
+    -- Validações:
+    -- domínio do email
+    CONSTRAINT check_email CHECK (email LIKE '%@sistemapoliedro.com.br')
 );
+-- Tabela Turma
 CREATE TABLE turma (
     id_turma INT PRIMARY KEY,
     professor_responsavel INT,
@@ -29,7 +36,7 @@ CREATE TABLE aluno (
     nome VARCHAR (300) NOT NULL,
     email VARCHAR (80) NOT NULL,
     ra CHAR (8) NOT NULL,
-    senha CHAR (6) NOT NULL,
+    hash_senha CHAR (6) NOT NULL,
     pontuacao_geral BIGINT NULL
 );
 CREATE TABLE materia (
