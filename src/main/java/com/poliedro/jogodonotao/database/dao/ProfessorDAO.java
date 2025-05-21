@@ -68,7 +68,7 @@ public class ProfessorDAO {
                         res.getInt("id_professor"),
                         res.getString("nome"),
                         res.getString("email"),
-                        res.getString("senha"),
+                        res.getString("hash_senha"),
                         res.getString("descricao"),
                         res.getBoolean("coordenador")
                 );
