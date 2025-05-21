@@ -27,19 +27,24 @@ CREATE TABLE turma (
     professor_responsavel INT NOT NULL,
     nome VARCHAR(45) NOT NULL,
     serie INT NOT NULL,
-    descricao VARCHAR(60) NOT NULL, 
+    descricao VARCHAR(60) NOT NULL,
     -- FKs:
     FOREIGN KEY (professor_responsavel) REFERENCES professor (id_professor),
 );
+-- Tabela Aluno
 CREATE TABLE aluno (
-    id_aluno INT PRIMARY KEY,
-    id_turma INT,
+    -- Colunas:
+    id_aluno INT PRIMARY KEY AUTO_INCREMENT,
+    id_turma INT NOT NULL,
+    nome VARCHAR (100) NOT NULL,
+    email VARCHAR (80) NOT NULL UNIQUE,
+    ra CHAR (8) NOT NULL UNIQUE,
+    hash_senha CHAR (64) NOT NULL,
+    pontuacao_geral BIGINT DEFAULT 0,
+    -- FKs:
     FOREIGN KEY (id_turma) REFERENCES turma (id_turma),
-    nome VARCHAR (300) NOT NULL,
-    email VARCHAR (80) NOT NULL,
-    ra CHAR (8) NOT NULL,
-    hash_senha CHAR (6) NOT NULL,
-    pontuacao_geral BIGINT NULL
+    -- Validações:
+    CONSTRAINT check_email CHECK (email LIKE '%@p4ed.com'),
 );
 CREATE TABLE materia (
     id_materia INT PRIMARY KEY,
