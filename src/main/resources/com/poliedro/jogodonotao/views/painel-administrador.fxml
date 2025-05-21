@@ -59,7 +59,7 @@
                               </Text>
                            </children>
                         </HBox>
-                        <JFXButton prefHeight="73.0" prefWidth="243.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" styleClass="sombra" text="Sair da conta">
+                        < prefHeight="73.0" prefWidth="243.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" styleClass="sombra" text="Sair da conta">
                            <graphic>
                               <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -73,7 +73,7 @@
                            <VBox.margin>
                               <Insets left="25.0" />
                            </VBox.margin>
-                        </JFXButton>
+                        </>
                         <JFXButton prefHeight="73.0" prefWidth="243.0" style="-fx-background-color: #1FB4C3; -fx-background-radius: 12;" styleClass="sombra" text="Alterar senha">
                            <graphic>
                               <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
