@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -15,14 +16,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1319.0" styleClass="pergunta-bg" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
       <URL value="@../css/views/background.css" />
       <URL value="@../css/sombras.css" />
       <URL value="@../css/colors.css" />
-      <URL value="@../css/components/tabs/button.css" />
-      <URL value="@../css/components/tabs/tab.css" />
+      <URL value="@../css/components/tab.css" />
+      <URL value="@../css/components/button.css" />
    </stylesheets>
    <children>
       <VBox layoutX="43.0" layoutY="32.8" prefHeight="667.0" prefWidth="430.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="20.0">
@@ -34,7 +34,7 @@
                         <Font name="System Bold" size="30.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="55.0" />
+                        <Insets left="55.0" top="5.0" />
                      </VBox.margin>
                   </Text>
                   <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="  Pergunta" wrappingWidth="245.56170654296875">
@@ -115,7 +115,7 @@
                   <Insets left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </HBox>
-            <HBox prefHeight="103.0" prefWidth="410.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+            <HBox prefHeight="90.0" prefWidth="410.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -135,26 +135,26 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <HBox prefHeight="6.0" prefWidth="371.0" styleClass="tab-options">
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="6.0" prefWidth="371.0" stylesheets="@../css/components/tab.css">
                            <children>
-                              <ToggleButton mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Fácil">
+                              <ToggleButton mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" styleClass="tab-options" text="Fácil" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
-                                    <Insets left="5.0" top="5.0" />
+                                    <Insets left="5.0" right="5.0" top="5.0" />
                                  </HBox.margin>
                               </ToggleButton>
-                              <ToggleButton mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Médio">
+                              <ToggleButton mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" styleClass="tab-options" text="Médio">
                                  <HBox.margin>
-                                    <Insets top="5.0" />
+                                    <Insets right="5.0" top="5.0" />
                                  </HBox.margin>
                               </ToggleButton>
-                              <ToggleButton mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Díficil">
+                              <ToggleButton mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" styleClass="tab-options" text="Díficil">
                                  <HBox.margin>
                                     <Insets top="5.0" />
                                  </HBox.margin>
                               </ToggleButton>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                              <Insets left="5.0" right="10.0" top="5.0" />
                            </VBox.margin>
                         </HBox>
                      </children>
@@ -196,22 +196,105 @@
                   <Insets left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </HBox>
-            <VBox alignment="CENTER" prefHeight="216.0" prefWidth="410.0" style="-fx-background-color: #52525c; -fx-background-radius: 15;" VBox.vgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="270.0" prefWidth="410.0" style="-fx-background-color: #52525c; -fx-background-radius: 15;" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="22.0" prefWidth="410.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+                     <children>
+                        <VBox prefHeight="47.0" prefWidth="410.0">
+                           <children>
+                              <Text opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Alternativa 1">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="51.0" prefWidth="410.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+                     <children>
+                        <VBox prefHeight="0.0" prefWidth="410.0">
+                           <children>
+                              <Text opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Alternativa 1">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="51.0" prefWidth="410.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+                     <children>
+                        <VBox prefHeight="0.0" prefWidth="410.0">
+                           <children>
+                              <Text opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Alternativa 1">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="15.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
             </VBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="142.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Button">
+                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="+ Criar pergunta">
                      <HBox.margin>
-                        <Insets left="60.0" right="10.0" top="10.0" />
+                        <Insets left="30.0" right="10.0" top="10.0" />
                      </HBox.margin>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-azul" />
+                     </styleClass>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="142.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Button">
+                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Descartar">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-vermelho" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Iconelixeira.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                </children>
             </HBox>
