@@ -24,7 +24,7 @@
       <URL value="@../css/components/tab.css" />
       <URL value="@../css/components/button.css" />
       <URL value="@../css/sombras.css" />
-      <URL value="@../css/components/form/input.css" />
+      <URL value="@../css/components/input.css" />
    </stylesheets>
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="490.0" spacing="50.0" styleClass="background-default" HBox.hgrow="ALWAYS">
