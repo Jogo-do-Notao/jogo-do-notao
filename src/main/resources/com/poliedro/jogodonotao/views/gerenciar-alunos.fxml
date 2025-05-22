@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="pergunta-bg" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+      <URL value="@../css/colors.css" />
+      <URL value="@../css/sombras.css" />
+      <URL value="@../css/views/background.css" />
+      <URL value="@../css/components/input.css" />
+      <URL value="@../css/components/button.css" />
+   </stylesheets>
+   <children>
+      <Button layoutX="55.0" layoutY="28.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" text="Voltar">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/startContent2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="button-lg" />
+            <String fx:value="button-vermelho" />
+         </styleClass>
+      </Button>
+      <Button layoutX="1622.0" layoutY="28.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="241.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Adicionar novo aluno" AnchorPane.rightAnchor="56.40000000000009">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="button-lg" />
+            <String fx:value="button-laranja" />
+         </styleClass>
+      </Button>
+      <HBox layoutX="55.0" layoutY="110.0" prefHeight="0.0" prefWidth="1809.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0">
+         <children>
+            <ImageView fitHeight="39.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Icon-lupa.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="15.0" top="15.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox prefHeight="10.0" prefWidth="1258.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="182.0" text="Pesquisar aluno">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField prefHeight="69.0" prefWidth="1248.0" promptText="Pesquisar aluno" style="-fx-background-color: -zinc-100;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox layoutX="33.0" layoutY="220.0" prefHeight="834.0" prefWidth="1809.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12; -fx-border-color: #ee2252; -fx-border-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="220.0">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="1786.0" style="-fx-background-color: #D4F7F9; -fx-background-radius: 15;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do aluno" wrappingWidth="507.92138671875">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" right="150.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turma" wrappingWidth="359.2626953125">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="200.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Opções">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="130.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
