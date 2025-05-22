@@ -130,25 +130,32 @@
       </VBox>
       <VBox layoutX="549.0" layoutY="204.0" prefHeight="538.0" prefWidth="747.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="549.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="204.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="74.0" prefWidth="747.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="74.0" prefWidth="747.0">
                <children>
-                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Partidas" wrappingWidth="546.72802734375" HBox.hgrow="ALWAYS">
+                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Partidas" wrappingWidth="492.3281555175781">
                      <font>
                         <Font name="System Bold" size="35.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="15.0" top="15.0" />
+                        <Insets left="10.0" />
                      </HBox.margin>
                   </Text>
-                  <Button mnemonicParsing="false" text="+ Iniciar nova partida">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                  </Button>
+                  <StackPane alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="774.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="214.0" text="+ Iniciar nova partida">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="button-lg" />
+                              <String fx:value="button-laranja" />
+                           </styleClass>
+                           <StackPane.margin>
+                              <Insets right="10.0" />
+                           </StackPane.margin>
+                        </Button>
+                     </children>
+                  </StackPane>
                </children>
             </HBox>
             <StackPane prefHeight="35.0" prefWidth="747.0">
