@@ -49,7 +49,7 @@ public class AlunoDAO {
      */
     private static Aluno buscarAluno(AlunoColunas coluna, String chave) {
         // Query SQL
-        String sql = "SELECT * FROM aluno WHERE " + coluna.get() + " = ?";
+        final String sql = "SELECT * FROM aluno WHERE " + coluna.get() + " = ?";
 
         // Executar query
         try (
@@ -107,4 +107,23 @@ public class AlunoDAO {
     public static Aluno buscarPorId(int id) {
         return buscarAluno(AlunoColunas.ID, String.valueOf(id));
     }
+
+    /**
+     * Verifica se um e-mail de um aluno está cadastrado no banco de dados.
+     * @param email E-mail acadêmico
+     * @return {@code true} se o e-mail estiver cadastrado, {@code false} se não.
+     */
+    public static boolean existeEmail(String email) {
+        return buscarPorEmail(email) != null;
+    }
+
+    /**
+     * Verifica se um RA (registro de matrícula) de um aluno está cadastrado no banco de dados.
+     * @param ra RA (registro de matrícula)
+     * @return {@code true} se o RA estiver cadastrado, {@code false} se não.
+     */
+    public static boolean existeRa(String ra) {
+        return buscarPorRa(ra) != null;
+    }
+
 }
