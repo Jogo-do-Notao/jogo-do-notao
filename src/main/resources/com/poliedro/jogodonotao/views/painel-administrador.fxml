@@ -114,11 +114,15 @@
                <children>
                   <Button mnemonicParsing="false" prefHeight="180.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Pergunta" HBox.hgrow="ALWAYS">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="25.0" />
                      </font>
                      <HBox.margin>
                         <Insets left="30.0" top="20.0" />
                      </HBox.margin>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-laranja" />
+                     </styleClass>
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="180.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Perguntas">
                      <font>
@@ -127,6 +131,10 @@
                      <HBox.margin>
                         <Insets left="10.0" right="30.0" top="20.0" />
                      </HBox.margin>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-laranja" />
+                     </styleClass>
                   </Button>
                </children>
             </HBox>
@@ -139,6 +147,10 @@
                      <HBox.margin>
                         <Insets left="30.0" top="10.0" />
                      </HBox.margin>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-laranja" />
+                     </styleClass>
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="180.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Turmas">
                      <font>
@@ -147,6 +159,10 @@
                      <HBox.margin>
                         <Insets left="10.0" right="30.0" top="10.0" />
                      </HBox.margin>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-laranja" />
+                     </styleClass>
                   </Button>
                </children>
                <VBox.margin>
@@ -162,6 +178,10 @@
                      <HBox.margin>
                         <Insets left="30.0" top="10.0" />
                      </HBox.margin>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-laranja" />
+                     </styleClass>
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="180.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Gerenciar Aluno">
                      <font>
@@ -170,6 +190,10 @@
                      <HBox.margin>
                         <Insets left="10.0" right="30.0" top="10.0" />
                      </HBox.margin>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-laranja" />
+                     </styleClass>
                   </Button>
                </children>
                <VBox.margin>
