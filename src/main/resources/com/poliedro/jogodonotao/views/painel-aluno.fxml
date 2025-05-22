@@ -64,7 +64,7 @@
                </VBox.margin>
                <styleClass>
                   <String fx:value="button-md" />
-                  <String fx:value="button-primary" />
+                  <String fx:value="button-azul" />
                </styleClass>
             </Button>
          </children>

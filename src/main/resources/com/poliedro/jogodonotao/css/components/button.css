@@ -34,21 +34,21 @@
 }
 
 /* Cores */
-/* Primário */
-.button-primary {
+/* Azul */
+.button-azul {
   -fx-background-color: -poliedro-azul-500;
   /* Sombra (efeito de brilho) */
   -fx-effect: dropshadow(gaussian, rgba(31, 180, 195, 0.4), 15, 0, 0, 10);
 }
-.button-primary:hover {
+.button-azul:hover {
   -fx-background-color: -poliedro-azul-600;
   /* Sombra */
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
 }
-.button-primary:pressed {
+.button-azul:pressed {
   -fx-background-color: -poliedro-azul-700;
-}
-.button-primary:disabled {
+}x''
+.button-azul:disabled {
   -fx-background-color: -poliedro-azul-950;
   -fx-text-fill: -poliedro-azul-700;
 }

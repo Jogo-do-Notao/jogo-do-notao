@@ -96,8 +96,14 @@
                   </ImageView>
                </graphic>
                <styleClass>
+
+
+
+
+
+
                   <String fx:value="button-lg" />
-                  <String fx:value="button-primary" />
+                  <String fx:value="button-azul" />
                </styleClass>
             </Button>
          </children>

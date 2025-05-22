@@ -107,7 +107,7 @@
                               </VBox>
                               <Button alignment="CENTER" mnemonicParsing="false" onAction="#autenticarAluno" text="Jogar">
                                  <styleClass>
-                                    <String fx:value="button-primary" />
+                                    <String fx:value="button-azul" />
                                     <String fx:value="button-lg" />
                                  </styleClass>
                                  <graphic>
@@ -161,7 +161,7 @@
                               </VBox>
                               <Button mnemonicParsing="false" onAction="#autenticarProfessor" text="Entrar">
                                  <styleClass>
-                                    <String fx:value="button-primary" />
+                                    <String fx:value="button-azul" />
                                     <String fx:value="button-lg" />
                                  </styleClass>
                               </Button>
