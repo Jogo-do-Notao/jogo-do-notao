@@ -21,8 +21,8 @@
    <stylesheets>
       <URL value="@../css/colors.css" />
       <URL value="@../css/views/telalogin.css" />
-      <URL value="@../css/components/tabs/tab.css" />
-      <URL value="@../css/components/tabs/button.css" />
+      <URL value="@../css/components/tab.css" />
+      <URL value="@../css/components/button.css" />
       <URL value="@../css/sombras.css" />
       <URL value="@../css/components/form/input.css" />
    </stylesheets>

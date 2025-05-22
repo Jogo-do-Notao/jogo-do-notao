@@ -19,7 +19,7 @@
       <URL value="@../css/sombras.css" />
       <URL value="@../css/views/background.css" />
       <URL value="@../css/components/form/input.css" />
-      <URL value="@../css/components/tabs/button.css" />
+      <URL value="@../css/components/button.css" />
    </stylesheets>
    <children>
       <Button layoutX="55.0" layoutY="28.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" styleClass="sombra" text="Voltar">

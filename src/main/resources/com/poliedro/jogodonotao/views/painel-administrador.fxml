@@ -178,6 +178,6 @@
       <URL value="@../css/colors.css" />
       <URL value="@../css/colors.css" />
       <URL value="@../css/views/background.css" />
-      <URL value="@../css/components/tabs/button.css" />
+      <URL value="@../css/components/button.css" />
    </stylesheets>
 </AnchorPane>
