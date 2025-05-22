@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -22,7 +23,7 @@
       <URL value="@../css/components/button.css" />
    </stylesheets>
    <children>
-      <Button layoutX="55.0" layoutY="28.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" styleClass="sombra" text="Voltar">
+      <Button layoutX="55.0" layoutY="28.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" text="Voltar">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -33,11 +34,19 @@
          <font>
             <Font size="20.0" />
          </font>
+         <styleClass>
+            <String fx:value="button-lg" />
+            <String fx:value="button-vermelho" />
+         </styleClass>
       </Button>
-      <Button layoutX="1622.0" layoutY="28.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="241.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" styleClass="sombra" text="+ Criar nova pergunta" AnchorPane.rightAnchor="56.40000000000009">
+      <Button layoutX="1622.0" layoutY="28.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="241.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Criar nova pergunta" AnchorPane.rightAnchor="56.40000000000009">
          <font>
             <Font size="20.0" />
          </font>
+         <styleClass>
+            <String fx:value="button-lg" />
+            <String fx:value="button-laranja" />
+         </styleClass>
       </Button>
       <HBox layoutX="55.0" layoutY="110.0" prefHeight="0.0" prefWidth="1809.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0">
          <children>
@@ -78,7 +87,7 @@
                   <Insets left="10.0" right="10.0" top="20.0" />
                </VBox.margin>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="210.92138671875">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
@@ -86,7 +95,7 @@
                         <Insets left="30.0" right="150.0" top="15.0" />
                      </HBox.margin>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pergunta">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pergunta" wrappingWidth="138.2626953125">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
@@ -118,7 +127,7 @@
                         <Insets left="50.0" right="110.0" top="15.0" />
                      </HBox.margin>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Editado por">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Editado por" wrappingWidth="126.47509765625">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
