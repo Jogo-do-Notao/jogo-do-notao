@@ -47,6 +47,10 @@ public class App extends Application {
     public static void changeScene(String nextScene, String titulo) throws IOException {
         // Obter o stage atual
         Stage stage = (Stage) mainStage.getScene().getWindow();
+        // Salvar dimensões atuais da janela
+        double width = stage.getWidth();
+        double height = stage.getHeight();
+
         // Obter FXML do scene de destino
         FXMLLoader nextViewFXML = new FXMLLoader(
                 App.class.getResource("views/" + nextScene + ".fxml")
@@ -69,5 +73,8 @@ public class App extends Application {
 
         // Aplicar novo scene no stage
         stage.setScene(nextView);
+        // Manter dimensões da janela
+        stage.setWidth(width);
+        stage.setHeight(height);
     }
 }
