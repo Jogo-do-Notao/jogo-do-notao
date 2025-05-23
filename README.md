@@ -20,10 +20,19 @@
     </a>
 </div>
 
-## 🚀 Contribuir com o Projeto
+<!-- Integrantes -->
 
-[Siga as instruções neste guia](./CONTRIBUTING.md)
+## 🧑🏻‍💻 Integrantes do Projeto
 
+|                               Aluno                               |     RA     | Função |
+|:-----------------------------------------------------------------:|:----------:|:------:|
+|   [Alexandre Raminelli](https://github.com/alexandreraminelli)    | 24.01625-0 |        |
+| [Felipe Eros Bressani Bittencourt](https://github.com/FelipeEros) | 25.00262-7 |        |
+|                          Gabriel Borges                           | 25.01694-0 |        |
+|        [Patrick Gomes de Sousa](https://github.com/Pgs-0)         | 25.01699-9 |        |
+| [Vinicius Cavalcante Tavarez](https://github.com/viniciusct0626)  | 25.01685-8 |        |
+
+---
 <!-- Tecnologias -->
 
 ## 🛠️ Tecnologias Utilizadas
@@ -39,16 +48,6 @@
 - Git
 - GitHub
 
-<!-- Integrantes -->
+## 🚀 Contribuir com o Projeto
 
-## 🧑🏻‍💻 Integrantes do Projeto
-
-|                               Aluno                               |     RA     | Função |
-|:-----------------------------------------------------------------:|:----------:|:------:|
-|   [Alexandre Raminelli](https://github.com/alexandreraminelli)    | 24.01625-0 |        |
-| [Felipe Eros Bressani Bittencourt](https://github.com/FelipeEros) | 25.00262-7 |        |
-|                          Gabriel Borges                           | 25.01694-0 |        |
-|        [Patrick Gomes de Sousa](https://github.com/Pgs-0)         | 25.01699-9 |        |
-| [Vinicius Cavalcante Tavarez](https://github.com/viniciusct0626)  | 25.01685-8 |        |
-
-
+[Siga as instruções neste guia](./CONTRIBUTING.md)
