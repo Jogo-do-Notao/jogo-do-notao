@@ -1,89 +1,124 @@
 /* Botões */
 
+/* Todos os botões */
 .button {
   /* cursor */
   -fx-cursor: hand;
   /* texto */
   -fx-font-weight: bold;
 }
+/* Botão ao passar o mouse */
+.button:hover {
+  /* Sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
+}
+/* Botão com foco (ao usar tecla tab) */
+.button:focused {
+  /* Borda */
+  -fx-border-color: black;
+  -fx-border-width: 2px;
+}
+/* Botão pressionado */
+.button:pressed,
+.button:armed {
+  -fx-effect: none;
+}
 
+/* ------------------------------------------------------- */
 /* Tamanhos */
 /* md */
 .button-md {
   -fx-padding: 8px 16px;
   -fx-background-radius: 12px;
+  -fx-border-radius: 12px;
 }
+/* texto md */
 .button-md .text {
   -fx-font-size: 14px;
 }
+/* imagem md */
 .button-md .image-view {
   -fx-fit-height: 20px;
   -fx-fit-width: 20px;
 }
+
 /* lg */
 .button-lg {
   -fx-padding: 8px 24px;
   -fx-background-radius: 12px;
+  -fx-border-radius: 12px;
 }
+/* texto lg */
 .button-lg .text {
   -fx-font-size: 16px;
 }
+/* imagem lg */
 .button-lg .image-view {
   -fx-fit-height: 24px;
   -fx-fit-width: 24px;
 }
 
+/* ------------------------------------------------------- */
 /* Cores */
+
 /* Azul */
 .button-azul {
   -fx-background-color: -poliedro-azul-500;
   /* Sombra (efeito de brilho) */
   -fx-effect: dropshadow(gaussian, rgba(31, 180, 195, 0.4), 15, 0, 0, 10);
 }
+/* azul ao passar o mouse */
 .button-azul:hover {
   -fx-background-color: -poliedro-azul-600;
-  /* Sombra */
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
 }
-.button-azul:pressed {
+/* azul selecionado */
+.button-azul:pressed,
+.button-azul:armed {
   -fx-background-color: -poliedro-azul-700;
-}x''
+}
+/* azul desabilitado */
 .button-azul:disabled {
   -fx-background-color: -poliedro-azul-950;
   -fx-text-fill: -poliedro-azul-700;
 }
+
 /* Vermelho */
 .button-vermelho {
   -fx-background-color: -poliedro-vermelho-600;
   /* Sombra (efeito de brilho) */
   -fx-effect: dropshadow(gaussian, rgba(238, 34, 82, 0.4), 15, 0, 0, 10);
 }
+/* vermelho ao passar o mouse */
 .button-vermelho:hover {
   -fx-background-color: -poliedro-vermelho-700;
-  /* Sombra */
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
 }
-.button-vermelho:pressed {
+/* vermelho selecionado */
+.button-vermelho:pressed,
+.button-vermelho:armed {
   -fx-background-color: -poliedro-vermelho-800;
 }
+/* vermelho desabilitado */
 .button-vermelho:disabled {
   -fx-background-color: -poliedro-vermelho-950;
   -fx-text-fill: -poliedro-vermelho-700;
 }
+
 /* Laranja */
 .button-laranja {
   -fx-background-color: -poliedro-laranja-400;
   /* Sombra (efeito de brilho) */
   -fx-effect: dropshadow(gaussian, rgba(250, 164, 31, 0.4), 15, 0, 0, 10);
 }
+/* laranja ao passar o mouse */
 .button-laranja:hover {
   -fx-background-color: -poliedro-laranja-500;
-  /* Sombra */
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
 }
-.button-laranja:pressed {
+/* laranja selecionado */
+.button-laranja:pressed,
+.button-laranja:armed {
   -fx-background-color: -poliedro-laranja-700;
 }
+/* laranja desabilitado */
 .button-laranja:disabled {
   -fx-background-color: -poliedro-laranja-900;
   -fx-text-fill: -poliedro-laranja-600;
