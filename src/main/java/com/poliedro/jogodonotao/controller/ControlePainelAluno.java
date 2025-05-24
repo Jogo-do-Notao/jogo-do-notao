@@ -1,5 +1,6 @@
 package com.poliedro.jogodonotao.controller;
 
+import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.usuario.Aluno;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,6 +50,14 @@ public class ControlePainelAluno implements Initializable {
         textEmail.setText("E-mail: " + Aluno.getSessaoAtiva().getEmail());
         textRA.setText("RA: " + Aluno.getSessaoAtiva().getRa());
         textPontuacao.setText(Aluno.getSessaoAtiva().getPontuacaoFormatada());
+    }
+
+    /**
+     * Abre a tela de iniciar uma nova partida.
+     */
+    @FXML
+    void iniciarNovaPartida(ActionEvent event) throws IOException {
+        App.changeScene("area-aluno/partida/tela-criar-partida", "Iniciar nova partida");
     }
 
     /**

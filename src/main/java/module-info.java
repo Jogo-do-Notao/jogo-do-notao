@@ -14,4 +14,6 @@ module com.poliedro.jogodonotao.jogodonotao {
     exports com.poliedro.jogodonotao;
     exports com.poliedro.jogodonotao.controller;
     opens com.poliedro.jogodonotao.controller to javafx.fxml;
+    exports com.poliedro.jogodonotao.controller.areaAluno.partidas;
+    opens com.poliedro.jogodonotao.controller.areaAluno.partidas to javafx.fxml;
 }

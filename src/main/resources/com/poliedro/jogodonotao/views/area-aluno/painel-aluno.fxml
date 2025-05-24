@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -128,11 +129,11 @@
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="549.0" layoutY="204.0" prefHeight="538.0" prefWidth="747.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="549.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="204.0">
+      <VBox layoutX="549.0" layoutY="204.0" prefHeight="538.0" prefWidth="747.0" spacing="20.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="549.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="204.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="74.0" prefWidth="747.0">
+            <HBox alignment="CENTER">
                <children>
-                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Partidas" wrappingWidth="492.3281555175781">
+                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Partidas">
                      <font>
                         <Font name="System Bold" size="35.0" />
                      </font>
@@ -140,27 +141,21 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </Text>
-                  <StackPane alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="774.0">
-                     <children>
-                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="214.0" text="+ Iniciar nova partida">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="button-lg" />
-                              <String fx:value="button-laranja" />
-                           </styleClass>
-                           <StackPane.margin>
-                              <Insets right="10.0" />
-                           </StackPane.margin>
-                        </Button>
-                     </children>
-                  </StackPane>
+                  <Pane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#iniciarNovaPartida" text="+ Iniciar nova partida">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-laranja" />
+                     </styleClass>
+                  </Button>
                </children>
             </HBox>
             <StackPane prefHeight="35.0" prefWidth="747.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Para iniciar uma nova partida em uma disciplina, é necessário concluir a partida anterior primeiro." StackPane.alignment="TOP_CENTER">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -zinc-500;" text="Para iniciar uma nova partida em uma disciplina, é necessário concluir a partida anterior primeiro." StackPane.alignment="TOP_CENTER">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -239,6 +234,9 @@
                </children>
             </VBox>
          </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
       </VBox>
    </children>
    <stylesheets>
