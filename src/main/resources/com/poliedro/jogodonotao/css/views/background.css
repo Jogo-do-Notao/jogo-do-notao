@@ -1,15 +1,26 @@
+/* Estilos gerais para background */
 .background {
-    
-    -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: 100% 50%;
+  -fx-background-size: cover;
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: 100% 50%;
 }
+
+/* Tela de login */
+.home-bg {
+  -fx-background-image: url("../../images/backgrounds/homepage.jpg");
+}
+
+/* Telas de gerenciar aluno */
 .aluno-bg {
-    -fx-background-image: url("../../images/backgrounds/aluno-bg.jpg");
+  -fx-background-image: url("../../images/backgrounds/aluno-bg.jpg");
 }
-.pergunta-bg{
-    -fx-background-image: url("../../images/backgrounds/pergunta-bg.jpg");
+
+/* Telas de gerenciar perguntas */
+.pergunta-bg {
+  -fx-background-image: url("../../images/backgrounds/pergunta-bg.jpg");
 }
-.turma-bg{
-    -fx-background-image: url("../../images/backgrounds/turma-bg.jpg");
+
+/* Telas de gerenciar turmas */
+.turma-bg {
+  -fx-background-image: url("../../images/backgrounds/turma-bg.jpg");
 }
