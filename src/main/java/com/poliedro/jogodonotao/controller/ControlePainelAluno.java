@@ -3,16 +3,53 @@ package com.poliedro.jogodonotao.controller;
 import com.poliedro.jogodonotao.usuario.Aluno;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 /**
  * Classe controladora da tela do painel do aluno.
  */
-public class ControlePainelAluno {
+public class ControlePainelAluno implements Initializable {
+
+    /**
+     * Texto de boas-vindas com o nome do aluno.
+     */
+    @FXML
+    private Text textNome;
+    /**
+     * Texto com o e-mail do aluno.
+     */
+    @FXML
+    private Text textEmail;
+    /**
+     * Texto com o RA do aluno.
+     */
+    @FXML
+    private Text textRA;
+    /**
+     * Texto com a pontuação total do aluno.
+     */
+    @FXML
+    private Text textPontuacao;
+
+    /**
+     * Método executado ao abrir o scene.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Exibir dados do aluno nos textos.
+        textNome.setText("Bem-vindo, " + Aluno.getSessaoAtiva().getNome());
+        textEmail.setText("E-mail: " + Aluno.getSessaoAtiva().getEmail());
+        textRA.setText("RA: " + Aluno.getSessaoAtiva().getRa());
+        textPontuacao.setText(Aluno.getSessaoAtiva().getPontuacaoFormatada());
+    }
 
     /**
      * Método que realiza o logout do aluno e redireciona para a tela de login.
@@ -33,4 +70,6 @@ public class ControlePainelAluno {
             Aluno.efetuarLogout();
         }
     }
+
+
 }

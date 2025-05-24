@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1319.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControlePainelAluno">
    <children>
-      <Text fill="#ee2252" layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo, [nome do aluno]" AnchorPane.leftAnchor="14.0">
+      <Text fx:id="textNome" fill="#ee2252" layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo, [nome do aluno]" AnchorPane.leftAnchor="14.0">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
@@ -47,7 +47,7 @@
                   </Text>
                </children>
             </HBox>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="54.090,00">
+            <Text fx:id="textPontuacao" strokeType="OUTSIDE" strokeWidth="0.0" text="54.090,00">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -91,7 +91,7 @@
                   </Text>
                </children>
             </HBox>
-            <Text opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: aluno@p4ed.edu.br">
+            <Text fx:id="textEmail" opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: aluno@p4ed.edu.br">
                <font>
                   <Font size="17.0" />
                </font>
@@ -99,7 +99,7 @@
                   <Insets left="25.0" right="10.0" />
                </VBox.margin>
             </Text>
-            <Text opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="RA: 32.534-4">
+            <Text fx:id="textRA" opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="RA: 32.534-4">
                <font>
                   <Font size="17.0" />
                </font>

@@ -7,7 +7,9 @@ import com.poliedro.jogodonotao.utils.HashSenha;
 import javafx.scene.control.Alert;
 
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Classe que representa um aluno do jogo.
@@ -62,6 +64,12 @@ public class Aluno extends Usuario {
         return pontuacao;
     }
 
+    public String getPontuacaoFormatada() {
+        NumberFormat formatoMoeda = NumberFormat
+                .getCurrencyInstance(new Locale("pt", "BR"));
+        return formatoMoeda.format(pontuacao);
+    }
+
     public Turma getTurma() {
         return turma;
     }
@@ -78,6 +86,7 @@ public class Aluno extends Usuario {
 
     /**
      * Verifica se a senha informada corresponde ao aluno que está iniciando uma sessão. Em caso afirmativo, atribui a instância do aluno que está logando a variável de sessão ativa. Caso contrário, exibe uma mensagem de erro.
+     *
      * @param senha Senha inserida no login que será autenticada.
      * @throws IOException Exceção de entrada e saída.
      */
