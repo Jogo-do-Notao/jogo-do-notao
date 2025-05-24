@@ -99,3 +99,18 @@ Recomendamos usar um banco de dados MySQL local ou no Aiven.
 - `ddl_create_database.sql`
 - `ddl_schema.sql`
 - `ddl_example_test.sql` (opcional, contém alguns dados de exemplo para testes)
+
+# 📦 Construir `.jar` executável
+
+Para construir o `.jar` executável, execute o seguinte comando no terminal:
+
+```bash
+mvn clean package
+```
+
+> Se estiver no IntelliJ, você executar o comando no Run Anything (atalho `Ctrl + Ctrl`) sem precisar instalar o Maven
+> na sua máquina.
+
+O arquivo `.jar` será criado na pasta `target/` com o nome `jogo-do-notao-1.0-SNAPSHOT-jar-with-dependencies.jar`.
+
+> Nota: é necessário ter o JDK 24 ou superior para executar o arquivo `.jar`.
