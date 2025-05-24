@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1069.0" prefWidth="1832.0" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControlePainelAdministrador">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1069.0" prefWidth="1832.0" style="-fx-background-color: -zinc-200;" styleClass="background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControlePainelAdministrador">
    <children>
-      <Text fill="#ee2252" layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo, [nome do administrador]" AnchorPane.leftAnchor="14.0">
+      <Text fx:id="textNome" fill="#ee2252" layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo, [nome do administrador]" AnchorPane.leftAnchor="14.0">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
@@ -40,13 +40,13 @@
             </HBox>
          </children>
       </VBox>
-      <VBox layoutX="29.0" layoutY="567.0" maxWidth="626.0" minHeight="174.0" minWidth="238.0" prefHeight="195.0" prefWidth="238.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="70.0">
+      <VBox alignment="TOP_CENTER" layoutX="29.0" layoutY="567.0" spacing="8.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="70.0">
          <children>
-            <HBox prefHeight="64.0" prefWidth="329.0">
+            <HBox alignment="CENTER_LEFT" spacing="4.0">
                <children>
                   <ImageView fitHeight="37.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
-                        <Insets left="25.0" top="10.0" />
+                        <Insets />
                      </HBox.margin>
                      <image>
                         <Image url="@../icons/user.png" />
@@ -54,61 +54,68 @@
                   </ImageView>
                   <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Conta">
                      <font>
-                        <Font name="System Bold" size="35.0" />
+                        <Font name="System Bold" size="36.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="10.0" top="5.0" />
+                        <Insets />
                      </HBox.margin>
                   </Text>
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#realizarLogout" prefHeight="55.0" prefWidth="176.0" text="Sair da conta">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/startContent.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <VBox.margin>
-                  <Insets left="25.0" />
-               </VBox.margin>
-               <styleClass>
-                  <String fx:value="button-vermelho" />
-                  <String fx:value="button-lg" />
-               </styleClass>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="176.0" text="Alterar senha">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="25.0" top="10.0" />
-               </VBox.margin>
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/iconpassword.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <styleClass>
-
-
-
-
-
-
-                  <String fx:value="button-lg" />
-                  <String fx:value="button-azul" />
-               </styleClass>
-            </Button>
+            <VBox alignment="CENTER" spacing="16.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#realizarLogout" prefHeight="70.0" text="Sair da conta">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/startContent.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="button-vermelho" />
+                        <String fx:value="button-lg" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="70.0" text="Alterar senha">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/iconpassword.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+      
+            
+            
+            
+            
+            
+                              <String fx:value="button-lg" />
+                        <String fx:value="button-azul" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </VBox>
          </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
       </VBox>
-      <VBox alignment="TOP_CENTER" layoutX="349.0" layoutY="210.0" prefHeight="688.0" prefWidth="802.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="210.0">
+      <VBox alignment="TOP_CENTER" layoutX="349.0" layoutY="210.0" prefHeight="688.0" prefWidth="802.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="210.0">
          <children>
             <HBox prefHeight="188.0" prefWidth="983.0">
                <children>
@@ -230,10 +237,14 @@
             </HBox>
          </children>
       </VBox>
+      <Text fx:id="textEmail" layoutX="14.0" layoutY="97.0" opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: professor@sistemapoliedro.com.br" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
    </children>
    <stylesheets>
       <URL value="@../css/sombras.css" />
-      <URL value="@../css/colors.css" />
       <URL value="@../css/colors.css" />
       <URL value="@../css/views/background.css" />
       <URL value="@../css/components/button.css" />
