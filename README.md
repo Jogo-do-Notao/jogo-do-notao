@@ -80,4 +80,16 @@ No IntelliJ IDEA, execute os seguintes passos:
 2.2. Certifique-se de configurar o SDK com o JDK 24: `File > Project Structure > Project > SDK`.
 
 ### 3. Executar o projeto
+
 No IntelliJ, abra as classes `App` ou `Main` e clique no botão `Run▶️` no canto superior ou use o atalho `Ctrl + F5`.
+
+### 4. Configurar variáveis de ambiente
+
+4.1. Copie o arquivo `.env.example` para `.env`:
+
+```bash
+cp src/main/resources/.env.example src/main/resources/.env
+```
+
+4.2. Adicione as variáveis de ambiente para conexão com o banco de dados.
+Recomendamos usar um banco de dados MySQL local ou no Aiven.
