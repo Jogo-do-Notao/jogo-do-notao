@@ -21,7 +21,7 @@
       </Text>
       <ImageView fitHeight="164.0" fitWidth="331.0" layoutX="1506.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="29.0">
          <image>
-            <Image url="@../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
+            <Image url="@../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
          </image>
       </ImageView>
       <VBox layoutX="1538.0" layoutY="750.0" maxHeight="216.0" maxWidth="626.0" minHeight="47.0" minWidth="180.0" prefHeight="64.0" prefWidth="192.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="255.0" AnchorPane.rightAnchor="102.0">
@@ -49,7 +49,7 @@
                         <Insets />
                      </HBox.margin>
                      <image>
-                        <Image url="@../icons/user.png" />
+                        <Image url="@../../icons/user.png" />
                      </image>
                   </ImageView>
                   <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Conta">
@@ -74,7 +74,7 @@
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/startContent.png" />
+                              <Image url="@../../icons/startContent.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -93,7 +93,7 @@
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/iconpassword.png" />
+                              <Image url="@../../icons/iconpassword.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -244,9 +244,9 @@
       </Text>
    </children>
    <stylesheets>
-      <URL value="@../css/sombras.css" />
-      <URL value="@../css/colors.css" />
-      <URL value="@../css/views/background.css" />
-      <URL value="@../css/components/button.css" />
+      <URL value="@../../css/sombras.css" />
+      <URL value="@../../css/colors.css" />
+      <URL value="@../../css/views/background.css" />
+      <URL value="@../../css/components/button.css" />
    </stylesheets>
 </AnchorPane>

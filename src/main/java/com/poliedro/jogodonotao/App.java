@@ -41,7 +41,7 @@ public class App extends Application {
     /**
      * Método para redirecionar o usuário para o painel do aluno ou painel do professor após a autenticação.
      *
-     * @param nextScene Nome do arquivo FXML do painel do aluno ou professor (sem a extensão {@code .fxml}).
+     * @param nextScene Nome da pasta (se houver) e arquivo FXML do scene de destino dentro da pasta {@code views/} (sem a extensão {@code .fxml}).
      * @param titulo    Título da janela do próximo scene.
      */
     public static void changeScene(String nextScene, String titulo) throws IOException {

@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="128.0" fitWidth="337.0" layoutX="913.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="19.0">
          <image>
-            <Image url="@../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
+            <Image url="@../../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
          </image>
       </ImageView>
       <HBox layoutX="496.0" layoutY="230.0" prefHeight="709.0" prefWidth="969.0" style="-fx-background-color: #fafafa; -fx-background-radius: 32;" AnchorPane.leftAnchor="496.0" AnchorPane.topAnchor="230.0">
@@ -202,7 +202,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/startContent2.png" />
+                  <Image url="@../../../icons/startContent2.png" />
                </image>
             </ImageView>
          </graphic>

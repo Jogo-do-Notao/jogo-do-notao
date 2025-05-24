@@ -17,11 +17,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1319.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
-      <URL value="@../css/views/background.css" />
-      <URL value="@../css/sombras.css" />
-      <URL value="@../css/colors.css" />
-      <URL value="@../css/components/button.css" />
-      <URL value="@../css/components/tab.css" />
+      <URL value="@../../../css/views/background.css" />
+      <URL value="@../../../css/sombras.css" />
+      <URL value="@../../../css/colors.css" />
+      <URL value="@../../../css/components/button.css" />
+      <URL value="@../../../css/components/tab.css" />
    </stylesheets>
    <children>
       <VBox layoutX="43.0" layoutY="32.8" prefHeight="704.0" prefWidth="511.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra" AnchorPane.bottomAnchor="74.0" AnchorPane.topAnchor="20.0">
@@ -40,7 +40,7 @@
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/Icon-Start.png" />
+                              <Image url="@../../../icons/Icon-Start.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="10.0" top="20.0" />
@@ -74,7 +74,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icone-turma.png" />
+                        <Image url="@../../../icons/Icone-turma.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="-70.0" top="20.0" />
@@ -110,7 +110,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icon-email.png" />
+                        <Image url="@../../../icons/Icon-email.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
@@ -142,7 +142,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icone-registro.png" />
+                        <Image url="@../../../icons/Icone-registro.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
@@ -174,7 +174,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/password.png" />
+                        <Image url="@../../../icons/password.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
@@ -199,7 +199,7 @@
                   </VBox>
                   <ImageView accessibleRole="BUTTON" fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icone-visualizar.png" />
+                        <Image url="@../../../icons/Icone-visualizar.png" />
                      </image>
                      <HBox.margin>
                         <Insets right="10.0" top="20.0" />
@@ -214,7 +214,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/password.png" />
+                        <Image url="@../../../icons/password.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
@@ -239,7 +239,7 @@
                   </VBox>
                   <ImageView accessibleRole="BUTTON" fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icone-visualizar.png" />
+                        <Image url="@../../../icons/Icone-visualizar.png" />
                      </image>
                      <HBox.margin>
                         <Insets right="10.0" top="20.0" />
@@ -269,7 +269,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/Iconelixeira.png" />
+                              <Image url="@../../../icons/Iconelixeira.png" />
                            </image>
                         </ImageView>
                      </graphic>

@@ -35,7 +35,7 @@
       </HBox>
       <ImageView fitHeight="154.0" fitWidth="395.0" layoutX="913.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="19.0">
          <image>
-            <Image url="@../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
+            <Image url="@../../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
          </image>
       </ImageView>
       <HBox layoutX="824.0" layoutY="212.0" prefHeight="398.0" prefWidth="462.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.rightAnchor="32.59999999999991" AnchorPane.topAnchor="212.0">
@@ -59,7 +59,7 @@
                            <children>
                               <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icons/seta-botao-pular.png" />
+                                    <Image url="@../../../icons/seta-botao-pular.png" />
                                  </image>
                                  <viewport>
                                     <Rectangle2D />
@@ -88,7 +88,7 @@
                            <children>
                               <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icons/lampada-botao-ajuda.png" />
+                                    <Image url="@../../../icons/lampada-botao-ajuda.png" />
                                  </image>
                                  <viewport>
                                     <Rectangle2D />
@@ -117,7 +117,7 @@
                            <children>
                               <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icons/logo-botao-cartas.png" />
+                                    <Image url="@../../../icons/logo-botao-cartas.png" />
                                  </image>
                                  <viewport>
                                     <Rectangle2D />
@@ -151,7 +151,7 @@
                      <children>
                         <ImageView fitHeight="91.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/botão_2.png" />
+                              <Image url="@../../../icons/botão_2.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="10.0" />
@@ -159,7 +159,7 @@
                         </ImageView>
                         <ImageView fitHeight="91.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/botão_2.png" />
+                              <Image url="@../../../icons/botão_2.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="20.0" />
@@ -167,7 +167,7 @@
                         </ImageView>
                         <ImageView fitHeight="91.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/botão_2.png" />
+                              <Image url="@../../../icons/botão_2.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="15.0" />
@@ -183,7 +183,7 @@
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/Opção-circulo1.png" />
+                  <Image url="@../../../icons/Opção-circulo1.png" />
                </image>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" top="10.0" />
@@ -206,7 +206,7 @@
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/Opção-circulo2.png" />
+                  <Image url="@../../../icons/Opção-circulo2.png" />
                </image>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" top="10.0" />
@@ -229,7 +229,7 @@
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/Opção-circulo3.png" />
+                  <Image url="@../../../icons/Opção-circulo3.png" />
                </image>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" top="10.0" />
@@ -252,7 +252,7 @@
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/Opção-circulo4.png" />
+                  <Image url="@../../../icons/Opção-circulo4.png" />
                </image>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" top="10.0" />
@@ -275,7 +275,7 @@
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                <image>
-                  <Image url="@../icons/Opção-circulo5.png" />
+                  <Image url="@../../../icons/Opção-circulo5.png" />
                </image>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" top="10.0" />
@@ -323,17 +323,17 @@
                   <Insets left="5.0" />
                </HBox.margin>
             </HBox>
-            <HBox accessibleRole="BUTTON" prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 32; -fx-background-color: #EE2252;">
+            <HBox accessibleRole="BUTTON" prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 32; -fx-background-color: #49E643;">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
                <children>
-                  <Text accessibleRole="BUTTON" strokeType="OUTSIDE" strokeWidth="0.0" text="Parar">
+                  <Text accessibleRole="BUTTON" strokeType="OUTSIDE" strokeWidth="0.0" text="Salvar">
                      <font>
                         <Font name="System Bold" size="40.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="25.0" top="20.0" />
+                        <Insets left="18.0" top="20.0" />
                      </HBox.margin>
                      <cursor>
                         <Cursor fx:constant="HAND" />

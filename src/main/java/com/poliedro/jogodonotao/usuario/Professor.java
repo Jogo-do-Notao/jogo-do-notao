@@ -89,7 +89,7 @@ public class Professor extends Usuario {
             sessaoAtiva = this;
 
             // Redirecionar para o Painel do Administrador
-            App.changeScene("painel-administrador", "Painel do Administrador");
+            App.changeScene("area-adm/painel-administrador", "Painel do Administrador");
         } else {
             /* Se a senha estiver incorreta */
             Alert alert = new Alert(Alert.AlertType.WARNING);

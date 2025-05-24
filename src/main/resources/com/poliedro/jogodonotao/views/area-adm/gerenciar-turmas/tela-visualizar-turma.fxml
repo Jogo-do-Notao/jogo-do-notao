@@ -17,11 +17,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1319.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
-      <URL value="@../css/views/background.css" />
-      <URL value="@../css/sombras.css" />
-      <URL value="@../css/colors.css" />
-      <URL value="@../css/components/button.css" />
-      <URL value="@../css/components/tab.css" />
+      <URL value="@../../../css/views/background.css" />
+      <URL value="@../../../css/sombras.css" />
+      <URL value="@../../../css/colors.css" />
+      <URL value="@../../../css/components/button.css" />
+      <URL value="@../../../css/components/tab.css" />
    </stylesheets>
    <children>
       <VBox layoutX="710.0" layoutY="51.0" prefHeight="580.0" prefWidth="511.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra" AnchorPane.bottomAnchor="104.0" AnchorPane.topAnchor="51.0">
@@ -40,7 +40,7 @@
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/Icon-Start.png" />
+                              <Image url="@../../../icons/Icon-Start.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="10.0" top="20.0" />
@@ -74,7 +74,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icone-Professor.png" />
+                        <Image url="@../../../icons/Icone-Professor.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="-70.0" top="20.0" />
@@ -110,7 +110,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icone-livrocheck.png" />
+                        <Image url="@../../../icons/Icone-livrocheck.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="-70.0" top="20.0" />
@@ -146,7 +146,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icone-tres-tracos.png" />
+                        <Image url="@../../../icons/Icone-tres-tracos.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
@@ -184,7 +184,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/IconeSalvar.png" />
+                              <Image url="@../../../icons/IconeSalvar.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -200,7 +200,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/startContent2.png" />
+                              <Image url="@../../../icons/startContent2.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -220,7 +220,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/Iconelixeira.png" />
+                              <Image url="@../../../icons/Iconelixeira.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -236,7 +236,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/startContent2.png" />
+                  <Image url="@../../../icons/startContent2.png" />
                </image>
             </ImageView>
          </graphic>
@@ -248,7 +248,7 @@
             <String fx:value="button-laranja" />
          </styleClass>
       </Button>
-      <VBox alignment="TOP_CENTER" layoutX="22.0" layoutY="113.0" prefHeight="98.0" prefWidth="443.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra" stylesheets="@../css/colors.css">
+      <VBox alignment="TOP_CENTER" layoutX="22.0" layoutY="113.0" prefHeight="98.0" prefWidth="443.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra" stylesheets="@../../../css/colors.css">
          <children>
             <Text fill="#faa41f" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Alunos">
                <VBox.margin>

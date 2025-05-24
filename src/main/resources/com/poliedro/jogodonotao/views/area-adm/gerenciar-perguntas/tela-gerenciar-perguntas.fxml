@@ -16,18 +16,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
-      <URL value="@../css/colors.css" />
-      <URL value="@../css/sombras.css" />
-      <URL value="@../css/views/background.css" />
-      <URL value="@../css/components/input.css" />
-      <URL value="@../css/components/button.css" />
+      <URL value="@../../../css/colors.css" />
+      <URL value="@../../../css/sombras.css" />
+      <URL value="@../../../css/views/background.css" />
+      <URL value="@../../../css/components/input.css" />
+      <URL value="@../../../css/components/button.css" />
    </stylesheets>
    <children>
       <Button layoutX="55.0" layoutY="28.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" text="Voltar">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/startContent2.png" />
+                  <Image url="@../../../icons/startContent2.png" />
                </image>
             </ImageView>
          </graphic>
@@ -39,7 +39,7 @@
             <String fx:value="button-vermelho" />
          </styleClass>
       </Button>
-      <Button layoutX="1622.0" layoutY="28.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="241.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Criar nova turma" AnchorPane.rightAnchor="56.40000000000009">
+      <Button layoutX="1622.0" layoutY="28.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="241.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Criar nova pergunta" AnchorPane.rightAnchor="56.40000000000009">
          <font>
             <Font size="20.0" />
          </font>
@@ -52,7 +52,7 @@
          <children>
             <ImageView fitHeight="39.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/Icon-lupa.png" />
+                  <Image url="@../../../icons/Icon-lupa.png" />
                </image>
                <HBox.margin>
                   <Insets left="15.0" top="15.0" />
@@ -60,7 +60,7 @@
             </ImageView>
             <VBox prefHeight="10.0" prefWidth="1258.0">
                <children>
-                  <Label prefHeight="18.0" prefWidth="182.0" text="Pesquisar turma">
+                  <Label prefHeight="18.0" prefWidth="182.0" text="Pesquisar pergunta">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -68,7 +68,7 @@
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField prefHeight="69.0" prefWidth="1248.0" promptText="Pesquisar turma" style="-fx-background-color: -zinc-100;">
+                  <TextField prefHeight="69.0" prefWidth="1248.0" promptText="Pesquisar pergunta" style="-fx-background-color: -zinc-100;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -82,31 +82,66 @@
       </HBox>
       <VBox layoutX="33.0" layoutY="220.0" prefHeight="834.0" prefWidth="1809.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12; -fx-border-color: #ee2252; -fx-border-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="220.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="1787.0" style="-fx-background-color: #D4F7F9; -fx-background-radius: 15;">
+            <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="1786.0" style="-fx-background-color: #D4F7F9; -fx-background-radius: 15;">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="20.0" />
                </VBox.margin>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turma" wrappingWidth="421.92138671875">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="210.92138671875">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="250.0" right="150.0" top="10.0" />
+                        <Insets left="30.0" right="150.0" top="15.0" />
                      </HBox.margin>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Professor" wrappingWidth="529.2626953125">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pergunta" wrappingWidth="138.2626953125">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="200.0" top="10.0" />
+                        <Insets right="200.0" top="15.0" />
                      </HBox.margin>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Opções" wrappingWidth="70.92138671875">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets right="90.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dificuldade">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="80.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Criado por">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" right="110.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Editado por" wrappingWidth="126.47509765625">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Opções">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="130.0" top="15.0" />
+                     </HBox.margin>
                   </Text>
                </children>
             </HBox>
@@ -114,7 +149,7 @@
       </VBox>
    </children>
    <styleClass>
-      <String fx:value="turma-bg" />
+      <String fx:value="pergunta-bg" />
       <String fx:value="background" />
    </styleClass>
 </AnchorPane>

@@ -18,18 +18,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1319.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
-      <URL value="@../css/views/background.css" />
-      <URL value="@../css/sombras.css" />
-      <URL value="@../css/colors.css" />
-      <URL value="@../css/components/tab.css" />
-      <URL value="@../css/components/button.css" />
+      <URL value="@../../../css/views/background.css" />
+      <URL value="@../../../css/sombras.css" />
+      <URL value="@../../../css/colors.css" />
+      <URL value="@../../../css/components/tab.css" />
+      <URL value="@../../../css/components/button.css" />
    </stylesheets>
    <children>
-      <VBox layoutX="516.0" layoutY="20.0" prefHeight="860.0" prefWidth="789.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0">
+      <VBox layoutX="43.0" layoutY="32.8" prefHeight="860.0" prefWidth="789.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
-            <VBox alignment="TOP_CENTER" prefHeight="118.0" prefWidth="789.0">
+            <VBox alignment="TOP_CENTER" prefHeight="103.0" prefWidth="430.0">
                <children>
-                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Editar Pergunta" wrappingWidth="279.36175537109375">
+                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Criar uma Nova  " wrappingWidth="279.36175537109375">
                      <font>
                         <Font name="System Bold" size="35.0" />
                      </font>
@@ -37,11 +37,19 @@
                         <Insets left="55.0" top="5.0" />
                      </VBox.margin>
                   </Text>
+                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="  Pergunta" wrappingWidth="245.56170654296875">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="70.0" />
+                     </VBox.margin>
+                  </Text>
                   <HBox prefHeight="47.0" prefWidth="675.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/Icon-Start.png" />
+                              <Image url="@../../../icons/Icon-Start.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="10.0" top="20.0" />
@@ -75,7 +83,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icone-livro.png" />
+                        <Image url="@../../../icons/Icone-livro.png" />
                      </image>
                      <HBox.margin>
                         <Insets top="20.0" />
@@ -111,7 +119,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icon-dificuldade.png" />
+                        <Image url="@../../../icons/Icon-dificuldade.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
@@ -127,7 +135,7 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="592.0" stylesheets="@../css/components/tab.css">
+                        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="592.0" stylesheets="@../../../css/components/tab.css">
                            <children>
                               <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="145.0" styleClass="tab-options" text="Fácil" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
@@ -160,7 +168,7 @@
                <children>
                   <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Icone-dica.png" />
+                        <Image url="@../../../icons/Icone-dica.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
@@ -199,7 +207,7 @@
                            <children>
                               <Text opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Alternativa 1">
                                  <VBox.margin>
-                                    <Insets left="10.0" top="15.0" />
+                                    <Insets top="15.0" />
                                  </VBox.margin>
                                  <font>
                                     <Font size="14.0" />
@@ -326,7 +334,7 @@
             </VBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="206.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="Salvar alterações">
+                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="+ Criar pergunta">
                      <HBox.margin>
                         <Insets left="200.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -334,38 +342,11 @@
                         <String fx:value="button-lg" />
                         <String fx:value="button-azul" />
                      </styleClass>
-                     <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icons/IconeSalvar.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Descartar">
+                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Descartar">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                     <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icons/startContent2.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="198.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Exclui pergunta">
                      <styleClass>
                         <String fx:value="button-lg" />
                         <String fx:value="button-vermelho" />
@@ -373,60 +354,13 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/Iconelixeira.png" />
+                              <Image url="@../../../icons/Iconelixeira.png" />
                            </image>
                         </ImageView>
                      </graphic>
-                     <HBox.margin>
-                        <Insets left="300.0" />
-                     </HBox.margin>
                   </Button>
                </children>
             </HBox>
-         </children>
-      </VBox>
-      <Button layoutX="23.0" layoutY="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Voltar">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/startContent2.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="20.0" />
-         </font>
-         <styleClass>
-            <String fx:value="button-lg" />
-            <String fx:value="button-laranja" />
-         </styleClass>
-      </Button>
-      <VBox alignment="TOP_CENTER" layoutX="23.0" layoutY="149.0" prefHeight="527.0" prefWidth="443.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra" stylesheets="@../css/colors.css" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="900.0">
-         <children>
-            <Text fill="#faa41f" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações Gerais">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-               <font>
-                  <Font name="System Bold" size="35.0" />
-               </font>
-            </Text>
-            <Text fill="#1fb4c3" strokeType="OUTSIDE" strokeWidth="0.0" text="Estatísticas">
-               <font>
-                  <Font name="System Bold" size="35.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="80.0" />
-               </VBox.margin>
-            </Text>
-            <Text fill="#1fb4c3" strokeType="OUTSIDE" strokeWidth="0.0" text="Histórico" wrappingWidth="166.57470703125">
-               <font>
-                  <Font name="System Bold" size="35.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="100.0" />
-               </VBox.margin>
-            </Text>
          </children>
       </VBox>
    </children>

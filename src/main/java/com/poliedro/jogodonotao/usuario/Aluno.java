@@ -105,7 +105,7 @@ public class Aluno extends Usuario {
             sessaoAtiva = this;
 
             // Redirecionar para o Painel do Aluno
-            App.changeScene("painel-aluno", "Painel do Aluno");
+            App.changeScene("area-aluno/painel-aluno", "Painel do Aluno");
         } else {
             /* Se a senha estiver incorreta */
             Alert alert = new Alert(Alert.AlertType.WARNING);
