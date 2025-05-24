@@ -12,11 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1319.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox layoutX="-8.0" layoutY="11.2" prefHeight="146.0" prefWidth="878.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="11.0">
+      <HBox layoutX="-8.0" layoutY="11.2" prefHeight="146.0" prefWidth="580.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="11.0">
          <children>
-            <HBox prefHeight="126.0" prefWidth="864.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;" HBox.hgrow="ALWAYS">
+            <HBox prefHeight="126.0" prefWidth="499.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -38,7 +38,7 @@
             <Image url="@../../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
          </image>
       </ImageView>
-      <HBox layoutX="824.0" layoutY="212.0" prefHeight="398.0" prefWidth="462.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.rightAnchor="32.59999999999991" AnchorPane.topAnchor="212.0">
+      <HBox layoutX="535.0" layoutY="179.0" prefHeight="363.0" prefWidth="462.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="179.0">
          <children>
             <VBox prefHeight="398.0" prefWidth="491.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;">
                <HBox.margin>
@@ -179,7 +179,7 @@
             </VBox>
          </children>
       </HBox>
-      <HBox layoutX="20.8" layoutY="203.0" prefHeight="82.0" prefWidth="777.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="170.0">
+      <HBox layoutX="20.8" layoutY="171.2" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="171.0">
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -202,7 +202,7 @@
             </ToggleButton>
          </children>
       </HBox>
-      <HBox layoutX="20.0" layoutY="281.0" prefHeight="82.0" prefWidth="777.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="280.0">
+      <HBox layoutX="20.0" layoutY="281.0" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="280.0">
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -225,7 +225,7 @@
             </ToggleButton>
          </children>
       </HBox>
-      <HBox layoutX="38.0" layoutY="401.0" prefHeight="82.0" prefWidth="777.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="390.0">
+      <HBox layoutX="38.0" layoutY="391.2" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="391.0">
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -248,7 +248,7 @@
             </ToggleButton>
          </children>
       </HBox>
-      <HBox layoutX="23.0" layoutY="504.0" prefHeight="82.0" prefWidth="777.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="500.0">
+      <HBox layoutX="23.0" layoutY="504.0" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="500.0">
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -271,7 +271,7 @@
             </ToggleButton>
          </children>
       </HBox>
-      <HBox layoutX="43.0" layoutY="630.0" prefHeight="82.0" prefWidth="777.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="610.0">
+      <HBox layoutX="20.0" layoutY="610.0" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="610.0">
          <children>
             <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                <image>
@@ -294,7 +294,7 @@
             </ToggleButton>
          </children>
       </HBox>
-      <HBox layoutX="823.0" layoutY="627.0" prefHeight="100.0" prefWidth="445.0" AnchorPane.rightAnchor="50.39999999999998">
+      <HBox layoutX="522.0" layoutY="560.0" prefHeight="100.0" prefWidth="445.0" AnchorPane.rightAnchor="56.39999999999998">
          <children>
             <HBox prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 32; -fx-background-color: #FBA41F;">
                <children>
@@ -343,7 +343,7 @@
             </HBox>
          </children>
       </HBox>
-      <HBox layoutX="802.0" layoutY="734.0" prefHeight="83.0" prefWidth="475.0" AnchorPane.rightAnchor="41.80000000000001">
+      <HBox layoutX="507.0" layoutY="636.0" prefHeight="83.0" prefWidth="475.0" AnchorPane.rightAnchor="41.799999999999955">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Errou">
                <font>
