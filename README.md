@@ -1,4 +1,8 @@
-<h1 align="center">Jogo do Notão</h1>
+<h1 align="center">
+    Projeto Integrador Interdisciplinar:<br>
+    Desenvolvimento de jogo educacional para o Colégio Poliedro<br>
+    Jogo do Notão
+</h1>
 
 <!-- Introdução -->
 <p align="justify">Este projeto universitário foi desenvolvido como parte da disciplina <strong>Projeto Integrador Interdisciplinar - Programação (TTI105)</strong> dos cursos de <strong>Ciência da Computação</strong> e <strong>Inteligência Artificial e Ciência de Dados</strong> do Instituto Mauá de Tecnologia.</p>
