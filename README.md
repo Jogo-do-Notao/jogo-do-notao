@@ -48,6 +48,36 @@
 - Git
 - GitHub
 
-## 🚀 Contribuir com o Projeto
+---
 
-[Siga as instruções neste guia](./CONTRIBUTING.md)
+## 🔧 Requisitos
+
+### Para execução
+
+- [Git](https://git-scm.com/downloads) (para clonar o repositório)
+- [Java Development Kit (JDK)](https://www.oracle.com/br/java/technologies/downloads/) - 24 ou superior
+
+### Para desenvolvimento
+
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) (para abrir o projeto)
+- [Scene Builder](https://gluonhq.com/products/scene-builder/)
+
+## 🚀 Como executar o projeto
+
+### 1. Clonar o repositório
+
+Clone o repositório executando o seguinte comando no seu terminal:
+
+```bash
+git clone https://github.com/Jogo-do-Notao/jogo-do-notao.git
+```
+
+### 2. Abrir projeto no IntelliJ IDEA
+
+No IntelliJ IDEA, execute os seguintes passos:
+
+2.1. Vá em `File > Open` e selecione a pasta do projeto.
+2.2. Certifique-se de configurar o SDK com o JDK 24: `File > Project Structure > Project > SDK`.
+
+### 3. Executar o projeto
+No IntelliJ, abra as classes `App` ou `Main` e clique no botão `Run▶️` no canto superior ou use o atalho `Ctrl + F5`.
