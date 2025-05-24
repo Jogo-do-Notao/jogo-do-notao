@@ -93,3 +93,9 @@ cp src/main/resources/.env.example src/main/resources/.env
 
 4.2. Adicione as variáveis de ambiente para conexão com o banco de dados.
 Recomendamos usar um banco de dados MySQL local ou no Aiven.
+
+4.3. No seu SGBD, execute os comandos SQL na pasta `sql/` na seguinte ordem:
+
+- `ddl_create_database.sql`
+- `ddl_schema.sql`
+- `ddl_example_test.sql` (opcional, contém alguns dados de exemplo para testes)
