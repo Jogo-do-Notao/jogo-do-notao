@@ -74,9 +74,9 @@ public class AlunoDAO {
                 );
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e); // tratar o erro
         }
-        // Se não for encontrado
+        // Se aluno não for encontrado
         return null;
     }
 

@@ -41,77 +41,62 @@ public class ProfessorDAO {
     }
 
     /**
-     * Procura e retorna o ID de um professor a partir de seu e-mail.
+     * Busca um professor no banco de dados a partir de um atributo chave (ID ou e-mail).
      *
-     * @param email E-mail do professor.
-     * @return O ID do professor ou {@code -1} se ele não for encontrado.
+     * @param coluna O atributo/coluna chave usada na busca. Pode ser ID ou e-mail.
+     * @param chave  O valor que será buscado no banco de dados.
      */
-    public static int obterId(String email) {
+    private static Professor buscarProfessor(ProfessorColuna coluna, String chave) {
         // Query SQL
-        String sql = "SELECT id_professor FROM professor WHERE email = ?";
+        final String sql = "SELECT * FROM professor WHERE " + coluna.get() + " = ?";
 
         // Executar query
         try (
                 Connection conexao = ConexaoDB.getConnection();
                 PreparedStatement stmt = conexao.prepareStatement(sql)
-        ) {
-            // Substituir placeholder
-            stmt.setString(1, email);
-            // Executar query e obter resultado
-            ResultSet res = stmt.executeQuery();
-            // Extrair o valor da coluna id_professor
-            if (res.next()) {
-                return res.getInt("id_professor");
-            }
-        } catch (SQLException e) { // Tratamento de erros
-            throw new RuntimeException("Erro ao buscar o professor: ", e);
-        }
-        // Se não encontrar
-        return -1;
-    }
 
-    /**
-     * Obter professor do banco de dados a partir do seu ID.
-     *
-     * @param id ID do professor.
-     * @return Instância do professor ou {@code null} se ele não for encontrado.
-     */
-    public static Professor buscarPorId(int id) {
-        // Query SQL
-        String sql = "SELECT * FROM professor WHERE id_professor = ?";
-        try (
-                Connection conexao = ConexaoDB.getConnection();
-                PreparedStatement stmt = conexao.prepareStatement(sql)
         ) {
             // Substituir placeholder
-            stmt.setInt(1, id);
+            stmt.setString(1, chave);
             // Executar query e obter resultado
             ResultSet res = stmt.executeQuery();
-            // Extrair o valor da coluna id_professor
+
+            // Extrair tupla correspondente
             if (res.next()) {
+                // criar instância do professor com os dados do banco
                 return new Professor(
-                        res.getInt("id_professor"),
-                        res.getString("nome"),
-                        res.getString("email"),
-                        res.getString("hash_senha"),
-                        res.getString("descricao"),
-                        res.getBoolean("coordenador")
+                        res.getInt(ProfessorColuna.ID.get()), // id
+                        res.getString(ProfessorColuna.NOME.get()), // nome
+                        res.getString(ProfessorColuna.EMAIL.get()), // email
+                        res.getString(ProfessorColuna.HASH_SENHA.get()), // hash senha
+                        res.getString(ProfessorColuna.DESCRICAO.get()), // descricao
+                        res.getBoolean(ProfessorColuna.COORDENADOR.get()) // coordenador
                 );
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e); // tratar o erro
         }
-        // Se não encontrar
+        // Se professor não for encontrado
         return null;
     }
 
     /**
-     * Obter professor do banco de dados a partir do seu e-mail.
+     * Procura e retorna uma instância de professor a partir de seu ID.
+     *
+     * @param id ID do professor no banco de dados.
+     * @return Instância do professor ou {@code null} se ele não for encontrado.
+     */
+    public static Professor buscarPorId(int id) {
+        return buscarProfessor(ProfessorColuna.ID, String.valueOf(id));
+    }
+
+    /**
+     * Procura e retorna uma instância de professor a partir de seu e-mail.
      *
      * @param email E-mail do professor.
      * @return Instância do professor ou {@code null} se ele não for encontrado.
      */
     public static Professor buscarPorEmail(String email) {
-        return buscarPorId(obterId(email));
+        return buscarProfessor(ProfessorColuna.EMAIL, email);
     }
 }
