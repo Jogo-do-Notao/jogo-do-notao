@@ -35,6 +35,11 @@ public class ControlePainelAluno implements Initializable {
     @FXML
     private Text textRA;
     /**
+     * Texto com a turma do aluno.
+     */
+    @FXML
+    private Text textTurma;
+    /**
      * Texto com a pontuação total do aluno.
      */
     @FXML
@@ -49,6 +54,7 @@ public class ControlePainelAluno implements Initializable {
         textNome.setText("Bem-vindo, " + Aluno.getSessaoAtiva().getNome());
         textEmail.setText("E-mail: " + Aluno.getSessaoAtiva().getEmail());
         textRA.setText("RA: " + Aluno.getSessaoAtiva().getRa());
+        textTurma.setText("Turma: " + Aluno.getSessaoAtiva().getTurma().getNome());
         textPontuacao.setText(Aluno.getSessaoAtiva().getPontuacaoFormatada());
     }
 

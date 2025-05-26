@@ -110,6 +110,11 @@
                   <Insets left="25.0" />
                </VBox.margin>
             </Text>
+            <Text fx:id="textTurma" opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma: [turma]">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
             <Button mnemonicParsing="false" onAction="#realizarLogout" prefHeight="48.0" prefWidth="176.0" text="Sair da conta">
                <font>
                   <Font size="15.0" />
