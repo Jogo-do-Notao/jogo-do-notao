@@ -16,9 +16,10 @@ import java.sql.SQLException;
  */
 public class AlunoDAO {
     /**
-     * Colunas da tabela aluno.
+     * Colunas da tabela {@code aluno}.
      */
-    enum AlunoColunas {
+    private enum AlunoColuna {
+        // Colunas
         ID("id_aluno"),
         ID_TURMA("id_turma"),
         NOME("nome"),
@@ -30,7 +31,7 @@ public class AlunoDAO {
         // Construtor
         private final String coluna;
 
-        AlunoColunas(String coluna) {
+        AlunoColuna(String coluna) {
             this.coluna = coluna;
         }
 
@@ -47,7 +48,7 @@ public class AlunoDAO {
      * @param chave  O valor que será buscado no banco de dados.
      * @return Instância do aluno correspondente ou {@code null} se ele não for encontrado.
      */
-    private static Aluno buscarAluno(AlunoColunas coluna, String chave) {
+    private static Aluno buscarAluno(AlunoColuna coluna, String chave) {
         // Query SQL
         final String sql = "SELECT * FROM aluno WHERE " + coluna.get() + " = ?";
 
@@ -64,12 +65,12 @@ public class AlunoDAO {
             // Extrair tupla correspondente
             if (res.next()) {
                 return new Aluno(
-                        res.getInt(AlunoColunas.ID.get()),
-                        res.getString(AlunoColunas.NOME.get()),
-                        res.getString(AlunoColunas.EMAIL.get()),
-                        res.getString(AlunoColunas.RA.get()),
-                        res.getString(AlunoColunas.HASH_SENHA.get()),
-                        res.getLong(AlunoColunas.PONTUACAO.get())
+                        res.getInt(AlunoColuna.ID.get()),
+                        res.getString(AlunoColuna.NOME.get()),
+                        res.getString(AlunoColuna.EMAIL.get()),
+                        res.getString(AlunoColuna.RA.get()),
+                        res.getString(AlunoColuna.HASH_SENHA.get()),
+                        res.getLong(AlunoColuna.PONTUACAO.get())
                 );
             }
         } catch (SQLException e) {
@@ -86,7 +87,7 @@ public class AlunoDAO {
      * @return A instância do aluno ou {@code null} se ele não for encontrado.
      */
     public static Aluno buscarPorEmail(String email) {
-        return buscarAluno(AlunoColunas.EMAIL, email);
+        return buscarAluno(AlunoColuna.EMAIL, email);
     }
 
     /**
@@ -96,7 +97,7 @@ public class AlunoDAO {
      * @return A instância do aluno ou {@code null} se ele não for encontrado.
      */
     public static Aluno buscarPorRa(String ra) {
-        return buscarAluno(AlunoColunas.RA, ra);
+        return buscarAluno(AlunoColuna.RA, ra);
     }
 
     /**
@@ -105,7 +106,7 @@ public class AlunoDAO {
      * @return A instância do aluno ou {@code null} se ele não for encontrado.
      */
     public static Aluno buscarPorId(int id) {
-        return buscarAluno(AlunoColunas.ID, String.valueOf(id));
+        return buscarAluno(AlunoColuna.ID, String.valueOf(id));
     }
 
     /**

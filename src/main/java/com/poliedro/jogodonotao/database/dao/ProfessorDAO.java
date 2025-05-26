@@ -16,6 +16,31 @@ import java.sql.SQLException;
  */
 public class ProfessorDAO {
     /**
+     * Colunas da tabela {@code professor}.
+     */
+    private enum ProfessorColuna {
+        // Colunas
+        ID("id_professor"),
+        NOME("nome"),
+        EMAIL("email"),
+        HASH_SENHA("hash_senha"),
+        DESCRICAO("descricao"),
+        COORDENADOR("coordenador");
+
+        // Construtor
+        private final String coluna;
+
+        ProfessorColuna(String coluna) {
+            this.coluna = coluna;
+        }
+
+        // Getter do valor
+        public String get() {
+            return coluna;
+        }
+    }
+
+    /**
      * Procura e retorna o ID de um professor a partir de seu e-mail.
      *
      * @param email E-mail do professor.
@@ -82,6 +107,7 @@ public class ProfessorDAO {
 
     /**
      * Obter professor do banco de dados a partir do seu e-mail.
+     *
      * @param email E-mail do professor.
      * @return Instância do professor ou {@code null} se ele não for encontrado.
      */
