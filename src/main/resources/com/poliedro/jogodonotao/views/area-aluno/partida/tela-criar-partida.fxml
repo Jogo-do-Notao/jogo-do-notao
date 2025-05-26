@@ -20,6 +20,7 @@
       <URL value="@../../../css/colors.css" />
       <URL value="@../../../css/sombras.css" />
       <URL value="@../../../css/components/button.css" />
+      <URL value="@../../../css/views/background.css" />
    </stylesheets>
    <padding>
       <Insets top="20.0" />
@@ -30,9 +31,9 @@
             <Insets left="20.0" right="20.0" />
          </padding>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -poliedro-vermelho; -fx-font-weight: bold;" text="Criar Nova Partida">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -poliedro-vermelho;" text="Criar Nova Partida">
                <font>
-                  <Font size="48.0" />
+                  <Font name="System Bold" size="48.0" />
                </font>
             </Text>
             <Pane HBox.hgrow="ALWAYS" />
@@ -45,7 +46,7 @@
       </HBox>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" HBox.hgrow="ALWAYS">
+            <VBox alignment="TOP_CENTER" minWidth="650.0" spacing="20.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -poliedro-laranja;" text="Escolha a Matéria:">
                      <font>
@@ -85,12 +86,20 @@
                <padding>
                   <Insets bottom="20.0" left="28.0" right="28.0" top="20.0" />
                </padding>
+               <HBox.margin>
+                  <Insets bottom="20.0" />
+               </HBox.margin>
             </VBox>
-            <ImageView fitHeight="252.0" fitWidth="281.0" pickOnBounds="true" preserveRatio="true" style="-fx-pref-width: 100%;" HBox.hgrow="ALWAYS">
-               <image>
-                  <Image url="@../../../images/backgrounds/criar-partida-bg.jpg" />
-               </image>
-            </ImageView>
+            <VBox style="-fx-background-radius: 32;" HBox.hgrow="ALWAYS">
+               <children>
+                  <Pane style="-fx-background-position: center center;" VBox.vgrow="ALWAYS">
+                     <styleClass>
+                        <String fx:value="background" />
+                        <String fx:value="criar-partida-bg" />
+                     </styleClass>
+                  </Pane>
+               </children>
+            </VBox>
          </children>
          <padding>
             <Insets left="20.0" />
