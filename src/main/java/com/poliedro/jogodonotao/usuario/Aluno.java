@@ -42,12 +42,13 @@ public class Aluno extends Usuario {
     private ArrayList<PontuacaoMateria> pontuacaoMateria = new ArrayList<>();
 
     // Construtor
-    public Aluno(int id, String nome, String email, String ra, String hashSenha, long pontuacao /*Turma turma*/) {
+    public Aluno(int id, String nome, String email, String ra, String hashSenha, Turma turma, long pontuacao /*Turma turma*/) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.ra = ra;
         this.hashSenha = hashSenha;
+        this.turma = turma;
         this.pontuacao = pontuacao;
     }
 

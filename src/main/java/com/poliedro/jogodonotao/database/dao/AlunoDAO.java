@@ -1,5 +1,6 @@
 package com.poliedro.jogodonotao.database.dao;
 
+import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.ConexaoDB;
 import com.poliedro.jogodonotao.usuario.Aluno;
 
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 
 /**
  * Classe DAO para a entidade Aluno.
- * Responsável por obter e manipular os dados da tabela {@code professor} no banco de dados.
+ * Responsável por obter e manipular os dados da tabela {@code aluno} no banco de dados.
  *
  * @author Alexandre Raminelli
  */
@@ -64,14 +65,16 @@ public class AlunoDAO {
 
             // Extrair tupla correspondente
             if (res.next()) {
-                return new Aluno(
-                        res.getInt(AlunoColuna.ID.get()),
-                        res.getString(AlunoColuna.NOME.get()),
-                        res.getString(AlunoColuna.EMAIL.get()),
-                        res.getString(AlunoColuna.RA.get()),
-                        res.getString(AlunoColuna.HASH_SENHA.get()),
-                        res.getLong(AlunoColuna.PONTUACAO.get())
-                );
+                // Extrair dados do aluno
+                int id = res.getInt(AlunoColuna.ID.get());
+                String nome = res.getString(AlunoColuna.NOME.get());
+                String email = res.getString(AlunoColuna.EMAIL.get());
+                String ra = res.getString(AlunoColuna.RA.get());
+                String hashSenha = res.getString(AlunoColuna.HASH_SENHA.get());
+                int idTurma = res.getInt(AlunoColuna.ID_TURMA.get());
+                long pontuacao = res.getLong(AlunoColuna.PONTUACAO.get());
+
+                return new Aluno(id, nome, email, ra, hashSenha, TurmaDAO.buscarPorId(idTurma), pontuacao);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratar o erro
@@ -102,6 +105,7 @@ public class AlunoDAO {
 
     /**
      * Procura e retorna uma instância aluno a partir de seu ID.
+     *
      * @param id ID do aluno no banco de dados.
      * @return A instância do aluno ou {@code null} se ele não for encontrado.
      */
@@ -111,6 +115,7 @@ public class AlunoDAO {
 
     /**
      * Verifica se um e-mail de um aluno está cadastrado no banco de dados.
+     *
      * @param email E-mail acadêmico
      * @return {@code true} se o e-mail estiver cadastrado, {@code false} se não.
      */
@@ -120,6 +125,7 @@ public class AlunoDAO {
 
     /**
      * Verifica se um RA (registro de matrícula) de um aluno está cadastrado no banco de dados.
+     *
      * @param ra RA (registro de matrícula)
      * @return {@code true} se o RA estiver cadastrado, {@code false} se não.
      */
