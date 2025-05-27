@@ -2,6 +2,7 @@ package com.poliedro.jogodonotao.database.dao;
 
 import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.database.ConexaoDB;
+import com.poliedro.jogodonotao.usuario.Aluno;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -67,13 +68,35 @@ public class MateriaDAO {
         return materias;
     }
 
-    // Teste
-    public static void main(String[] args) {
-        ArrayList<Materia> materias = obterMaterias();
+    /**
+     * Busca e retorna uma instância de Matéria a partir de seu ID.
+     *
+     * @param id ID da matéria no banco de dados usado para busca.
+     * @return Instância da matéria correspondente ou {@code null} se ela não for encontrada.
+     */
+    public static Materia buscarPorId(int id) {
+        // Query SQL
+        final String sql = "SELECT * FROM materia WHERE " + MateriaColuna.ID.get() + " = ?";
 
-        System.out.println("Matérias:");
-        for (Materia materia : materias) {
-            System.out.println("\t- " + materia.getNome());
+        // Executar query
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql)
+        ) {
+            // Substituir placeholder
+            stmt.setInt(1, id); // e-mail sendo buscado
+            // Executar query e obter resultado
+            ResultSet res = stmt.executeQuery();
+
+            // Extrair tupla correspondente
+            if (res.next()) {
+                // criar e retornar instância
+                return new Materia(res.getInt(MateriaColuna.ID.get()), res.getString(MateriaColuna.NOME.get()));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e); // tratar o erro
         }
+        // Se matéria não for encontrada
+        return null;
     }
 }
