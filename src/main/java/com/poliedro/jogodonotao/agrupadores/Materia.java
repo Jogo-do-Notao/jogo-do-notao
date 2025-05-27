@@ -19,6 +19,10 @@ public class Materia {
         this.id = id;
         this.nome = nome;
     }
+    public Materia(String nome) {
+        this.id = 0;
+        this.nome = nome;
+    }
 
     // Getters
     public String getNome() {

@@ -39,7 +39,9 @@ public class ControleTelaCriarPartida implements Initializable {
         // Vincular colunas com atributos da classe
         colunaNomeMateria.setCellValueFactory(new PropertyValueFactory<>("nome"));
         // Obter matérias do DB
-        ObservableList<Materia> materias = FXCollections.observableArrayList(MateriaDAO.obterMaterias());
+        ObservableList<Materia> materias = FXCollections.observableArrayList();
+        materias.add(new Materia(0,"Todas as Matérias"));
+        materias.addAll(FXCollections.observableArrayList(MateriaDAO.obterMaterias()));
         // Adicionar matérias na tabela
         opcoesMateria.setItems(materias);
 

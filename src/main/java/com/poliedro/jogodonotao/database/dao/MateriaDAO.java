@@ -43,6 +43,7 @@ public class MateriaDAO {
         // query SQL
         final String sql = "SELECT * FROM materia";
         // lista de matérias
+
         ArrayList<Materia> materias = new ArrayList<>();
 
         // Executar query
