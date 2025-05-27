@@ -4,6 +4,7 @@ import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.database.ConexaoDB;
 import com.poliedro.jogodonotao.jogo.Partida;
 import com.poliedro.jogodonotao.jogo.PartidaStatus;
+import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
 
 import java.sql.*;
@@ -58,24 +59,12 @@ public class PartidaDAO {
         int idMateria = materia.getId();
 
         // query SQL
-        String sql = "INSERT INTO partida ";
-        // Campos e valores que serão adicionados na query
-        String campos = PartidaColuna.ALUNO.get();
-        String placeholders = "?";
-
-        // Verificar se aluno selecionou "Todas as Matérias" ou uma matéria específica
-        if (idMateria != 0) {
-            // Aluno selecionou matéria específica
-            campos += ", " + PartidaColuna.MATERIA.get();
-            placeholders += ", ?";
-        }
-        // adicionar campos e valores na query
-        sql += "(" + campos + ") VALUES (" + placeholders + ")";
+        String sql = getInsertSQL(idMateria);
 
         // Executar query
         try (
                 Connection conexao = ConexaoDB.getConnection();
-                PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)
         ) {
             // Substituir placeholders
             stmt.setInt(1, idAluno);
@@ -103,6 +92,23 @@ public class PartidaDAO {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static String getInsertSQL(int idMateria) {
+        String sql = "INSERT INTO partida ";
+        // Campos e valores que serão adicionados na query
+        String campos = PartidaColuna.ALUNO.get();
+        String placeholders = "?";
+
+        // Verificar se aluno selecionou "Todas as Matérias" ou uma matéria específica
+        if (idMateria != 0) {
+            // Aluno selecionou matéria específica
+            campos += ", " + PartidaColuna.MATERIA.get();
+            placeholders += ", ?";
+        }
+        // adicionar campos e valores na query
+        sql += "(" + campos + ") VALUES (" + placeholders + ")";
+        return sql;
     }
 
     /**
@@ -142,9 +148,9 @@ public class PartidaDAO {
                 int idPartida = res.getInt(PartidaColuna.ID.get());
                 int idAluno = res.getInt(PartidaColuna.ALUNO.get());
                 int idMateria = res.getInt(PartidaColuna.MATERIA.get());
-                PartidaStatus status = PartidaStatus.valueOf(res.getString(PartidaColuna.STATUS.get()));
+                PartidaStatus status = PartidaStatus.fromString(res.getString(PartidaColuna.STATUS.get()));
                 int rodada = res.getInt(PartidaColuna.RODADA.get());
-                // perguntas
+                // lista de perguntas
                 int pontuacaoAcumulada = res.getInt(PartidaColuna.PONTUACAO_ACUMULADA.get());
                 int pontuacaoCheckpoint = res.getInt(PartidaColuna.PONTUACAO_CHECKPOINT.get());
                 int ajudaEliminar = res.getInt(PartidaColuna.AJUDA_ELIMINAR.get());
@@ -153,16 +159,17 @@ public class PartidaDAO {
 
 
                 // Criar e retornar instância
+                Partida partida;
                 if (Aluno.getSessaoAtiva().getId() == idAluno) { // Aluno logado é o jogador da partida
-                    // Partida está sendo criada
-                    if (recemCriada) {
-                        return new Partida(idPartida, MateriaDAO.buscarPorId(idMateria));
-                    } else {
-                        // Aluno está carregando partida para continuar jogando
-                    }
+                    // Instância partida vinculada ao aluno logado
+                    partida = new Partida(idPartida, MateriaDAO.buscarPorId(idMateria), status, rodada, new Pergunta[15], pontuacaoAcumulada, pontuacaoCheckpoint, ajudaEliminar, ajudaDica, ajudaPular);
+                } else {
+                    // Instância vinculada a uma nova instância de Aluno
+                    partida = new Partida(idPartida, AlunoDAO.buscarPorId(idAluno), MateriaDAO.buscarPorId(idMateria), status, rodada, new Pergunta[15], pontuacaoAcumulada, pontuacaoCheckpoint, ajudaEliminar, ajudaDica, ajudaPular);
                 }
 
-
+                // retornar instância
+                return partida;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratar o erro
