@@ -90,7 +90,7 @@ public class Partida {
     public Partida(
             int id, Materia materia, PartidaStatus status, int rodada, Pergunta[] perguntas, int pontuacaoAcumulada, int pontuacaoCheckpoint, int ajudaEliminar, int ajudaDica, int ajudaPular
     ) {
-        new Partida(
+        this(
                 id, Aluno.getSessaoAtiva(), materia, status, rodada, perguntas,
                 pontuacaoAcumulada, pontuacaoCheckpoint, ajudaEliminar, ajudaDica, ajudaPular
         );
@@ -100,7 +100,7 @@ public class Partida {
      * Construtor da classe {@code Partida} para partida que acabou de ser criada.
      */
     public Partida(int id, Materia materia) {
-        new Partida(
+        this(
                 id, materia, PartidaStatus.ANDAMENTO, 1, new Pergunta[15], 0, 0, 0, 0, 0
         );
     }

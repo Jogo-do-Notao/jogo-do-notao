@@ -3,6 +3,7 @@ package com.poliedro.jogodonotao.controller.areaAluno.partidas;
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.database.dao.MateriaDAO;
+import com.poliedro.jogodonotao.jogo.Partida;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,8 +47,6 @@ public class ControleTelaCriarPartida implements Initializable {
         materias.addAll(FXCollections.observableArrayList(MateriaDAO.obterMaterias()));
         // Adicionar matérias na tabela
         opcoesMateria.setItems(materias);
-
-        System.out.println("Materias encontradas:" + materias.size()); // Verifica se há dados
     }
 
     /**
@@ -59,9 +58,27 @@ public class ControleTelaCriarPartida implements Initializable {
         // Obter matéria selecionada
         Materia materia = opcoesMateria.getSelectionModel().getSelectedItem();
 
+        // Criar nova partida
+        Partida.criarPartida(materia);
+
+        // DEBUG
+        Partida p = Partida.getPartidaEmAndamento();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Matéria selecionada: " + materia.getNome());
-        alert.setContentText("ID da matéria no DB: " + materia.getId());
+        alert.setTitle("Partida criada");
+        alert.setHeaderText("Nova Partida: " + materia.getNome());
+        alert.setContentText(
+                "Informações da partida: \n" +
+                        "ID: " + p.getId() + "\n" +
+                        "Aluno: " + p.getAluno().getNome() + "\n" +
+                        "Materia: " + p.getMateria().getNome() + "\n" +
+                        "Status: " + p.getStatusText() + "\n" +
+                        "Rodada: " + p.getRodada() + "\n" +
+                        "Pontuação Acumulada: " + p.getPontuacaoAcumulada() + "\n" +
+                        "Pontuação Checkpoint: " + p.getPontuacaoCheckpoint() + "\n" +
+                        "Ajuda Eliminar: " + p.getAjudaEliminar() + "\n" +
+                        "Ajuda Dica: " + p.getAjudaDica() + "\n" +
+                        "Ajuda Pular: " + p.getAjudaPular()
+        );
         alert.show();
     }
 
