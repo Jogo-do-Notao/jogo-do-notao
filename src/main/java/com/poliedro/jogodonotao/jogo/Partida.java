@@ -1,6 +1,7 @@
 package com.poliedro.jogodonotao.jogo;
 
 import com.poliedro.jogodonotao.agrupadores.Materia;
+import com.poliedro.jogodonotao.database.dao.PartidaDAO;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
 
@@ -11,6 +12,11 @@ import java.util.Locale;
  * Classe que representa uma partida do jogo.
  */
 public class Partida {
+    // Atributos estáticos
+    /**
+     * Partida que está sendo jogada no momento.
+     */
+    private static Partida partidaEmAndamento;
     // Atributos
     /**
      * ID da partida no banco de dados.
@@ -145,5 +151,20 @@ public class Partida {
 
     public int getAjudaPular() {
         return ajudaPular;
+    }
+
+    /**
+     * Cria uma nova partida no banco de dados e depois inicia ela.
+     *
+     * @materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
+     */
+    public static Partida criarPartida(Materia materia) {
+        // Criar partida no banco de dados
+        Partida novaPartida = PartidaDAO.criarPartida(materia);
+
+        // Atribui nova partida a partida em andamento
+        partidaEmAndamento = novaPartida;
+
+        return partidaEmAndamento;
     }
 }
