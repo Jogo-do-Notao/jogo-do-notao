@@ -64,18 +64,12 @@ public class Partida {
     private int ajudaPular = 0;
 
     // Construtor
+
+    /**
+     * Construtor da classe {@code Partida} com todos os atributos.
+     */
     public Partida(
-            int id,
-            Aluno aluno,
-            Materia materia,
-            PartidaStatus status,
-            int rodada,
-            Pergunta[] perguntas,
-            int pontuacaoAcumulada,
-            int pontuacaoCheckpoint,
-            int ajudaEliminar,
-            int ajudaDica,
-            int ajudaPular
+            int id, Aluno aluno, Materia materia, PartidaStatus status, int rodada, Pergunta[] perguntas, int pontuacaoAcumulada, int pontuacaoCheckpoint, int ajudaEliminar, int ajudaDica, int ajudaPular
     ) {
         this.id = id;
         this.aluno = aluno;
@@ -90,7 +84,31 @@ public class Partida {
         this.ajudaPular = ajudaPular;
     }
 
+    /**
+     * Construtor da classe {@code Partida} para o aluno atual.
+     */
+    public Partida(
+            int id, Materia materia, PartidaStatus status, int rodada, Pergunta[] perguntas, int pontuacaoAcumulada, int pontuacaoCheckpoint, int ajudaEliminar, int ajudaDica, int ajudaPular
+    ) {
+        new Partida(
+                id, Aluno.getSessaoAtiva(), materia, status, rodada, perguntas,
+                pontuacaoAcumulada, pontuacaoCheckpoint, ajudaEliminar, ajudaDica, ajudaPular
+        );
+    }
+
+    /**
+     * Construtor da classe {@code Partida} para partida que acabou de ser criada.
+     */
+    public Partida(int id, Materia materia) {
+        new Partida(
+                id, materia, PartidaStatus.ANDAMENTO, 1, new Pergunta[15], 0, 0, 0, 0, 0
+        );
+    }
+
     // Getters
+    public static Partida getPartidaEmAndamento() {
+        return partidaEmAndamento;
+    }
 
     public int getId() {
         return id;
