@@ -175,11 +175,11 @@ public class Partida {
     }
 
     /**
-     * Cria uma nova partida no banco de dados e depois inicia ela.
+     * Cria uma nova partida no banco de dados e depois abre a Tela de Partida com a nova partida criada.
      *
-     * @materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
+     * @param materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
      */
-    public static Partida criarPartida(Materia materia) throws IOException {
+    public static void criarPartida(Materia materia) throws IOException {
         // Criar partida no banco de dados
         Partida novaPartida = PartidaDAO.criarPartida(materia);
 
@@ -193,7 +193,7 @@ public class Partida {
         // DEBUG: exibir informações da partida criada
         Partida p = Partida.getPartidaEmAndamento();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Partida criada");
+        alert.setTitle("DEBUG: Nova Partida Criada");
         alert.setHeaderText("Nova Partida: " + materia.getNome());
         alert.setContentText(
                 "Informações da partida: \n" +
@@ -209,8 +209,5 @@ public class Partida {
                         "Ajuda Pular: " + p.getAjudaPular()
         );
         alert.show();
-
-
-        return partidaEmAndamento;
     }
 }
