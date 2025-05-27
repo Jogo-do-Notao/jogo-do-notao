@@ -24,3 +24,8 @@
 .turma-bg {
   -fx-background-image: url("../../images/backgrounds/turma-bg.jpg");
 }
+
+.criar-partida-bg {
+  -fx-background-image: url("../../images/backgrounds/criar-partidabg.jpg");
+}
+
