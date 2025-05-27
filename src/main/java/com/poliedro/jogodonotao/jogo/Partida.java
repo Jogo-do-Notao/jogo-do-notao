@@ -54,4 +54,30 @@ public class Partida {
      */
     private int ajudaPular = 0;
 
+    // Construtor
+    public Partida(
+            int id,
+            Aluno aluno,
+            Materia materia,
+            PartidaStatus status,
+            int rodada,
+            Pergunta[] perguntas,
+            int pontuacaoAcumulada,
+            int pontuacaoCheckpoint,
+            int ajudaEliminar,
+            int ajudaDica,
+            int ajudaPular
+    ) {
+        this.id = id;
+        this.aluno = aluno;
+        this.materia = materia;
+        this.status = status;
+        this.rodada = rodada;
+        this.perguntas = perguntas;
+        this.pontuacaoAcumulada = pontuacaoAcumulada;
+        this.pontuacaoCheckpoint = pontuacaoCheckpoint;
+        this.ajudaEliminar = ajudaEliminar;
+        this.ajudaDica = ajudaDica;
+        this.ajudaPular = ajudaPular;
+    }
 }
