@@ -4,6 +4,9 @@ import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 /**
  * Classe que representa uma partida do jogo.
  */
@@ -79,5 +82,68 @@ public class Partida {
         this.ajudaEliminar = ajudaEliminar;
         this.ajudaDica = ajudaDica;
         this.ajudaPular = ajudaPular;
+    }
+
+    // Getters
+
+    public int getId() {
+        return id;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public PartidaStatus getStatus() {
+        return status;
+    }
+
+    public String getStatusText() {
+        return status.get();
+    }
+
+    public int getRodada() {
+        return rodada;
+    }
+
+    public Pergunta[] getPerguntas() {
+        return perguntas;
+    }
+
+    public int getPontuacaoAcumulada() {
+        return pontuacaoAcumulada;
+    }
+
+    public String getPontuacaoAcumuladaFormatada() {
+        NumberFormat formatoMoeda = NumberFormat
+                .getCurrencyInstance(new Locale("pt", "BR"));
+        return formatoMoeda.format(this.pontuacaoAcumulada);
+    }
+
+    public int getPontuacaoCheckpoint() {
+        return pontuacaoCheckpoint;
+    }
+
+    public String getPontuacaoCheckpointFormatada() {
+        NumberFormat formatoMoeda = NumberFormat
+                .getCurrencyInstance(new Locale("pt", "BR"));
+        return formatoMoeda.format(this.pontuacaoCheckpoint);
+    }
+
+
+    public int getAjudaEliminar() {
+        return ajudaEliminar;
+    }
+
+    public int getAjudaDica() {
+        return ajudaDica;
+    }
+
+    public int getAjudaPular() {
+        return ajudaPular;
     }
 }
