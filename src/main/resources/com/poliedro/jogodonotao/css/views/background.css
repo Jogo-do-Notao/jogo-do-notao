@@ -2,7 +2,7 @@
 .background {
   -fx-background-size: cover;
   -fx-background-repeat: no-repeat;
-  -fx-background-position: 100% 50%;
+  -fx-background-position: center center;
 }
 
 /* Tela de login */
@@ -25,7 +25,7 @@
   -fx-background-image: url("../../images/backgrounds/turma-bg.jpg");
 }
 
+/* Telas de criar partida */
 .criar-partida-bg {
-  -fx-background-image: url("../../images/backgrounds/criar-partidabg.jpg");
+  -fx-background-image: url("../../images/backgrounds/criar-partida-bg.jpg");
 }
-

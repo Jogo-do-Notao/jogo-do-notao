@@ -113,20 +113,19 @@ CREATE TABLE IF NOT EXISTS partida (
     -- status da partida
     status ENUM(
         'Em Andamento',
-        'Não Concluída',
         'Ganha',
         'Perdida',
         'Abandonada'
-    ) NOT NULL DEFAULT 'Não Concluída',
+    ) NOT NULL DEFAULT 'Em Andamento',
     -- rodada atual: entre 1 a 15
-    rodada TINYINT NOT NULL,
+    rodada TINYINT NOT NULL DEFAULT 1,
     -- pontuacao da partida
     pontuacao_acumulada INT DEFAULT 0,
     pontuacao_checkpoint INT DEFAULT 0,
     -- uso de ajudas (máx 2)
-    ajuda_eliminar TINYINT NULL,
-    ajuda_dica TINYINT NULL,
-    ajuda_pular TINYINT NULL,
+    ajuda_eliminar TINYINT DEFAULT 0,
+    ajuda_dica TINYINT DEFAULT 0,
+    ajuda_pular TINYINT DEFAULT 0,
     -- FKs:
     FOREIGN KEY (id_aluno) REFERENCES aluno (id_aluno),
     FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
