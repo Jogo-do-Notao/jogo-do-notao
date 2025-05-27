@@ -1,5 +1,6 @@
 package com.poliedro.jogodonotao.controller;
 
+import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.usuario.Professor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,6 +57,9 @@ public class ControlePainelAdministrador implements Initializable {
             Professor.efetuarLogout();
         }
     }
-
+    @FXML
+    void abrirTelaAdicionarAluno(ActionEvent event) throws IOException {
+        App.changeScene("area-/gerenciar-turmas/tela-gerenciar-turmas", "Gerenciar Turmas");
+    }
 
 }

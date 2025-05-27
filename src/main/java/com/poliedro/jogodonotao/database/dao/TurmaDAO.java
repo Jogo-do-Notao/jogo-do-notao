@@ -85,4 +85,6 @@ public class TurmaDAO {
     public static Turma buscarPorId(int id) {
         return buscarTurma(TurmaColuna.ID, String.valueOf(id));
     }
+
+    public static Turma buscarPorNome(String nome) { return buscarTurma(TurmaColuna.NOME, nome); }
 }

@@ -56,7 +56,7 @@
                                     <Insets left="10.0" top="15.0" />
                                  </VBox.margin>
                               </Text>
-                              <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                              <TextField fx:id="campoNome" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                                  <VBox.margin>
                                     <Insets bottom="5.0" right="10.0" />
                                  </VBox.margin>
@@ -90,7 +90,7 @@
                               <Insets left="10.0" top="10.0" />
                            </VBox.margin>
                         </Text>
-                        <MenuButton mnemonicParsing="false" prefHeight="10.0" prefWidth="371.0" style="-fx-background-color: -zinc-100;">
+                        <MenuButton fx:id="campoTurma" mnemonicParsing="false" prefHeight="10.0" prefWidth="371.0" style="-fx-background-color: -zinc-100;">
                            <items>
                               <MenuItem mnemonicParsing="false" text="Turma 1" />
                               <MenuItem mnemonicParsing="false" text="Turma 2" />
@@ -126,7 +126,7 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                        <TextField fx:id="campoEmail" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" />
                            </VBox.margin>
@@ -158,7 +158,7 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                        <TextField fx:id="campoRegistroMatricula" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" />
                            </VBox.margin>
@@ -190,21 +190,13 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                        <TextField fx:id="campoSenha" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" />
                            </VBox.margin>
                         </TextField>
                      </children>
                   </VBox>
-                  <ImageView accessibleRole="BUTTON" fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icons/Icone-visualizar.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="10.0" top="20.0" />
-                     </HBox.margin>
-                  </ImageView>
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -230,21 +222,13 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                        <TextField fx:id="campoConfirmarSenha" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" />
                            </VBox.margin>
                         </TextField>
                      </children>
                   </VBox>
-                  <ImageView accessibleRole="BUTTON" fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icons/Icone-visualizar.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="10.0" top="20.0" />
-                     </HBox.margin>
-                  </ImageView>
                </children>
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="10.0" />
@@ -252,7 +236,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="498.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="+ Adicionar aluno">
+                  <Button mnemonicParsing="false" onAction="#adicionarAluno" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="+ Adicionar aluno">
                      <styleClass>
                         <String fx:value="button-lg" />
                         <String fx:value="button-azul" />
@@ -261,7 +245,7 @@
                         <Insets left="65.0" right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Descartar">
+                  <Button mnemonicParsing="false" onAction="#voltarParaPainel" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Descartar">
                      <styleClass>
                         <String fx:value="button-lg" />
                         <String fx:value="button-vermelho" />
