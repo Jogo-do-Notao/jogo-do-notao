@@ -32,6 +32,8 @@ public class ControleTelaCriarPartida implements Initializable {
 
     /**
      * Método executado ao abrir o scene.
+     * <p>
+     * Lista as matérias disponíveis para criar uma partida.
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,7 +42,7 @@ public class ControleTelaCriarPartida implements Initializable {
         colunaNomeMateria.setCellValueFactory(new PropertyValueFactory<>("nome"));
         // Obter matérias do DB
         ObservableList<Materia> materias = FXCollections.observableArrayList();
-        materias.add(new Materia(0,"Todas as Matérias"));
+        materias.add(new Materia(0, "Todas as Matérias"));
         materias.addAll(FXCollections.observableArrayList(MateriaDAO.obterMaterias()));
         // Adicionar matérias na tabela
         opcoesMateria.setItems(materias);
@@ -50,12 +52,16 @@ public class ControleTelaCriarPartida implements Initializable {
 
     /**
      * Cria uma nova partida.
+     * Obtêm a matéria selecionada, cria uma nova partida no banco de dados e abre a tela de partida.
      */
     @FXML
     void criarPartida(ActionEvent event) {
+        // Obter matéria selecionada
+        Materia materia = opcoesMateria.getSelectionModel().getSelectedItem();
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Matéria selecionada: ");
-        alert.setContentText("ID da matéria no DB: ");
+        alert.setHeaderText("Matéria selecionada: " + materia.getNome());
+        alert.setContentText("ID da matéria no DB: " + materia.getId());
         alert.show();
     }
 
