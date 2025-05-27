@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<HBox stylesheets="@../../css/views/background.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="676.0" prefWidth="1004.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 15;" styleClass="sombra">
+         <children>
+            <Text fill="#faa41f" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações Gerais">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Text>
+            <Text fill="#1fb4c3" strokeType="OUTSIDE" strokeWidth="0.0" text="Estatísticas">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="80.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text fill="#1fb4c3" strokeType="OUTSIDE" strokeWidth="0.0" text="Pontuação Geral">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="150.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text fill="#1fb4c3" strokeType="OUTSIDE" strokeWidth="0.0" text="Pontuação por Matéria">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="90.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+         </children>
+         <stylesheets>
+            <URL value="@../../css/colors.css" />
+            <URL value="@../../css/sombras.css" />
+         </stylesheets>
+         <HBox.margin>
+            <Insets bottom="50.0" left="50.0" top="50.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../../css/views/background.css" />
+   </children>
+   <styleClass>
+      <String fx:value="criar-partida-bg" />
+      <String fx:value="background" />
+   </styleClass>
+</HBox>
