@@ -1,10 +1,13 @@
 package com.poliedro.jogodonotao.jogo;
 
+import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.database.dao.PartidaDAO;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
+import javafx.scene.control.Alert;
 
+import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -176,12 +179,37 @@ public class Partida {
      *
      * @materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
      */
-    public static Partida criarPartida(Materia materia) {
+    public static Partida criarPartida(Materia materia) throws IOException {
         // Criar partida no banco de dados
         Partida novaPartida = PartidaDAO.criarPartida(materia);
 
         // Atribui nova partida a partida em andamento
         partidaEmAndamento = novaPartida;
+
+        // redirecionar para Tela de Partida
+        App.changeScene("area-aluno/partida/tela-partida", "Partida em Andamento");
+
+        // Exibir mensagem com regras da partida
+        // DEBUG: exibir informações da partida criada
+        Partida p = Partida.getPartidaEmAndamento();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Partida criada");
+        alert.setHeaderText("Nova Partida: " + materia.getNome());
+        alert.setContentText(
+                "Informações da partida: \n" +
+                        "ID: " + p.getId() + "\n" +
+                        "Aluno: " + p.getAluno().getNome() + "\n" +
+                        "Materia: " + p.getMateria().getNome() + "\n" +
+                        "Status: " + p.getStatusText() + "\n" +
+                        "Rodada: " + p.getRodada() + "\n" +
+                        "Pontuação Acumulada: " + p.getPontuacaoAcumulada() + "\n" +
+                        "Pontuação Checkpoint: " + p.getPontuacaoCheckpoint() + "\n" +
+                        "Ajuda Eliminar: " + p.getAjudaEliminar() + "\n" +
+                        "Ajuda Dica: " + p.getAjudaDica() + "\n" +
+                        "Ajuda Pular: " + p.getAjudaPular()
+        );
+        alert.show();
+
 
         return partidaEmAndamento;
     }

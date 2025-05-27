@@ -9,7 +9,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -54,32 +53,12 @@ public class ControleTelaCriarPartida implements Initializable {
      * Obtêm a matéria selecionada, cria uma nova partida no banco de dados e abre a tela de partida.
      */
     @FXML
-    void criarPartida(ActionEvent event) {
+    void criarPartida(ActionEvent event) throws IOException {
         // Obter matéria selecionada
         Materia materia = opcoesMateria.getSelectionModel().getSelectedItem();
 
         // Criar nova partida
         Partida.criarPartida(materia);
-
-        // DEBUG
-        Partida p = Partida.getPartidaEmAndamento();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Partida criada");
-        alert.setHeaderText("Nova Partida: " + materia.getNome());
-        alert.setContentText(
-                "Informações da partida: \n" +
-                        "ID: " + p.getId() + "\n" +
-                        "Aluno: " + p.getAluno().getNome() + "\n" +
-                        "Materia: " + p.getMateria().getNome() + "\n" +
-                        "Status: " + p.getStatusText() + "\n" +
-                        "Rodada: " + p.getRodada() + "\n" +
-                        "Pontuação Acumulada: " + p.getPontuacaoAcumulada() + "\n" +
-                        "Pontuação Checkpoint: " + p.getPontuacaoCheckpoint() + "\n" +
-                        "Ajuda Eliminar: " + p.getAjudaEliminar() + "\n" +
-                        "Ajuda Dica: " + p.getAjudaDica() + "\n" +
-                        "Ajuda Pular: " + p.getAjudaPular()
-        );
-        alert.show();
     }
 
     /**
