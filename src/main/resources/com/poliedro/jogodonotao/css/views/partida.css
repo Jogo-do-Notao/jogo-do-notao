@@ -1,0 +1,59 @@
+/* Estilo pra Tela de Partida */
+
+/* -------------------------------------------------------------- */
+/* Botões de ajuda */
+.botao-ajuda {
+  /* tamanho */
+  -fx-pref-height: 288px;
+  -fx-pref-width: 160px;
+  /* cantos arredondados */
+  -fx-background-radius: 32px;
+  /* borda */
+  -fx-border-width: 6px;
+  -fx-border-radius: 29px;
+}
+/* ao passar o mouse */
+.botao-ajuda:focused {
+  /* borda */
+  -fx-border-width: 6px;
+  -fx-border-color: white;
+}
+/* Texto dos botões */
+.botao-ajuda .text {
+  /* tamanho do texto */
+  -fx-font-size: 32px;
+  /* cor do texto */
+  -fx-fill: white;
+}
+/* Ícones dos botões de ajuda */
+.botao-ajuda .image-view {
+  /* tamanho do ícone */
+  -fx-fit-height: 80px;
+  -fx-fit-width: 80px;
+}
+
+/* Botão de pular */
+.ajuda-pular {
+  /* cor de fundo */
+  -fx-background-color: #2d62b5;
+  /* cor da borda */
+  -fx-border-color: #0063ff;
+}
+
+/* Botão dica */
+.ajuda-dica {
+  /* cor de fundo */
+  -fx-background-color: #ae551a;
+  /* cor da borda */
+  -fx-border-color: #fba41f;
+}
+
+/* Botão cardas */
+.ajuda-cartas {
+  /* cor de fundo */
+  -fx-background-color: #a12035;
+  /* cor da borda */
+  -fx-border-color: #ee2252;
+}
+
+/* -------------------------------------------------------------- */
