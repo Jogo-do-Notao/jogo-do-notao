@@ -7,15 +7,14 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class ControleGerenciarTurmas {
+public class ControleGerenciarProfessor {
 
     @FXML
-    private TextField campoPesquisarTurma;
+    private TextField pesquisarProfessor;
 
     @FXML
-    void criarTurma(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/gerenciar-turmas/tela-criar-turma", "Tela Criar Turma");
-
+    void adicionarProfessor(ActionEvent event) throws IOException {
+        App.changeScene("area-adm/gerenciar-professor/tela-cadastrar-professor", "Tela Criar Pergunta");
     }
 
     @FXML
