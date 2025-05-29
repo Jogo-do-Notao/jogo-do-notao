@@ -84,8 +84,13 @@
   -fx-effect: none;
 }
 
+.botao-alternativa HBox {
+  /* espaçamento */
+  -fx-spacing: 12px;
+}
+
 /* Círculo com número da alternativa */
-.botao-alternativa StackPane {
+.botao-alternativa StackPane.circulo {
   /* círculo */
   -fx-background-radius: 50%;
   /* cor */
@@ -95,9 +100,35 @@
   -fx-pref-width: 52px;
 }
 /* Número da alternativa */
-.botao-alternativa StackPane Text {
+.botao-alternativa StackPane.circulo Text {
   /* tamanho do texto */
   -fx-font-size: 32px;
   /* cor do texto */
   -fx-fill: black;
+}
+
+/* Texto da alternativa */
+.botao-alternativa StackPane.alternativa {
+  /* espaçamento */
+  -fx-padding: 2px 16px;
+  /* cantos */
+  -fx-background-radius: 22px;
+  /* cor */
+  -fx-background-color: -poliedro-azul-600;
+}
+.botao-alternativa StackPane.alternativa Text {
+  /* tipografia */
+  -fx-font-size: 36px;
+  -fx-fill: white;
+}
+/* ao selecionar */
+.botao-alternativa:selected StackPane.alternativa {
+  /* cor ao selecionar */
+  -fx-background-color: -poliedro-azul-700;
+  /* sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
+}
+.botao-alternativa:selected StackPane.alternativa Text {
+  /* cor do texto ao selecionar */
+  -fx-fill: -poliedro-laranja;
 }
