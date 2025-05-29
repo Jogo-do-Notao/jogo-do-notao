@@ -170,10 +170,6 @@
                         </HBox>
                      </graphic>
                   </ToggleButton>
-               </children>
-            </VBox>
-            <VBox HBox.hgrow="NEVER">
-               <children>
                   <HBox alignment="CENTER" spacing="16.0">
                      <children>
                         <VBox spacing="16.0" HBox.hgrow="ALWAYS">
@@ -238,23 +234,54 @@
                         </VBox>
                      </children>
                   </HBox>
+               </children>
+            </VBox>
+            <VBox HBox.hgrow="NEVER">
+               <children>
                   <VBox alignment="CENTER" spacing="8.0">
                      <children>
-                        <Text layoutX="140.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria: [matéria da partida]">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pontuação Acumulada: R$ 0,00">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pontuação do Checkpoint: R$ 0,00">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
+                        <HBox alignment="CENTER" spacing="8.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../icons/livros.png" />
+                                 </image>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria: [matéria da partida]">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="26.0" spacing="8.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../icons/dinheiro.png" />
+                                 </image>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pontuação Acumulada: R$ 0,00">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="64.0" spacing="8.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../icons/checkpoint.png" />
+                                 </image>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pontuação do Checkpoint: R$ 0,00">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
                         <HBox alignment="CENTER" spacing="16.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pergunta: 1/15">
