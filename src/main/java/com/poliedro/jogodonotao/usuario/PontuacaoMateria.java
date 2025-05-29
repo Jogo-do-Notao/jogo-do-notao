@@ -1,33 +1,34 @@
 package com.poliedro.jogodonotao.usuario;
 
+import com.poliedro.jogodonotao.agrupadores.Materia;
+
 public class PontuacaoMateria {
-    private int idAluno;
-    private int idMateria;
+    private Aluno aluno;
+    private Materia materia;
     private long pontuacao;
 
-    public PontuacaoMateria() {
-    }
+    public PontuacaoMateria() {}
 
-    public PontuacaoMateria(int idAluno, int idMateria, long pontuacao) {
-        this.idAluno = idAluno;
-        this.idMateria = idMateria;
+    public PontuacaoMateria(Aluno aluno, Materia materia, long pontuacao) {
+        this.aluno = aluno;
+        this.materia = materia;
         this.pontuacao = pontuacao;
     }
 
-    public int getIdAluno() {
-        return idAluno;
+    public Aluno getAluno() {
+        return aluno;
     }
 
-    public void setIdAluno(int idAluno) {
-        this.idAluno = idAluno;
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
     }
 
-    public int getIdMateria() {
-        return idMateria;
+    public Materia getMateria() {
+        return materia;
     }
 
-    public void setIdMateria(int idMateria) {
-        this.idMateria = idMateria;
+    public void setMateria(Materia materia) {
+        this.materia = materia;
     }
 
     public long getPontuacao() {
