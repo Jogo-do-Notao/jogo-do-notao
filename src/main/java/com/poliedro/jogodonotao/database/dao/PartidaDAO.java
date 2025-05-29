@@ -56,7 +56,7 @@ public class PartidaDAO {
         // id do aluno
         int idAluno = Aluno.getSessaoAtiva().getId();
         // id da materia
-        int idMateria = materia.getId();
+        int idMateria = materia.getId(); // se for "Todas as Matérias", o id será 0
 
         // query SQL
         String sql = getInsertSQL(idMateria);

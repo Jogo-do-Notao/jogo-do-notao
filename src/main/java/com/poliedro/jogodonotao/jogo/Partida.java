@@ -199,7 +199,8 @@ public class Partida {
                 "Informações da partida: \n" +
                         "ID: " + p.getId() + "\n" +
                         "Aluno: " + p.getAluno().getNome() + "\n" +
-                        "Materia: " + p.getMateria().getNome() + "\n" +
+                        "Materia: " + (
+                        (p.getMateria() != null) ? p.getMateria().getNome() : "Todas as Matérias") + "\n" +
                         "Status: " + p.getStatusText() + "\n" +
                         "Rodada: " + p.getRodada() + "\n" +
                         "Pontuação Acumulada: " + p.getPontuacaoAcumulada() + "\n" +

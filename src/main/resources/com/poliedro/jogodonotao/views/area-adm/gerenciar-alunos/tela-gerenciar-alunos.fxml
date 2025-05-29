@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControleGerenciarAluno">
    <stylesheets>
       <URL value="@../../../css/colors.css" />
       <URL value="@../../../css/sombras.css" />
@@ -25,7 +25,7 @@
       <URL value="@../../../css/components/button.css" />
    </stylesheets>
    <children>
-      <Button layoutX="55.0" layoutY="28.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" text="Voltar">
+      <Button layoutX="55.0" layoutY="28.0" mnemonicParsing="false" onAction="#voltarParaPainel" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" text="Voltar">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -41,7 +41,7 @@
             <String fx:value="button-vermelho" />
          </styleClass>
       </Button>
-      <Button layoutX="1622.0" layoutY="28.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="241.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Adicionar novo aluno" AnchorPane.rightAnchor="56.40000000000009">
+      <Button layoutX="1622.0" layoutY="28.0" mnemonicParsing="false" onAction="#adicionarAluno" prefHeight="46.0" prefWidth="241.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Adicionar novo aluno" AnchorPane.rightAnchor="56.40000000000009">
          <font>
             <Font size="20.0" />
          </font>
@@ -70,7 +70,7 @@
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField prefHeight="69.0" prefWidth="1248.0" promptText="Pesquisar aluno" style="-fx-background-color: -zinc-100;">
+                  <TextField fx:id="campoPesquisarAluno" prefHeight="69.0" prefWidth="1248.0" promptText="Pesquisar aluno" style="-fx-background-color: -zinc-100;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
