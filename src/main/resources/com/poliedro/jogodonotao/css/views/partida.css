@@ -22,15 +22,15 @@
 /* Texto dos botões */
 .botao-ajuda .text {
   /* tamanho do texto */
-  -fx-font-size: 32px;
+  -fx-font-size: 24px;
   /* cor do texto */
   -fx-fill: white;
 }
 /* Ícones dos botões de ajuda */
 .botao-ajuda .image-view {
   /* tamanho do ícone */
-  -fx-fit-height: 80px;
-  -fx-fit-width: 80px;
+  -fx-fit-height: 64px;
+  -fx-fit-width: 64px;
 }
 
 /* Botão de pular */

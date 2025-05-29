@@ -62,7 +62,7 @@
             <Insets left="20.0" right="20.0" />
          </padding>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="16.0" VBox.vgrow="ALWAYS">
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" VBox.vgrow="ALWAYS">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -170,70 +170,6 @@
                         </HBox>
                      </graphic>
                   </ToggleButton>
-                  <HBox alignment="CENTER" spacing="16.0">
-                     <children>
-                        <VBox spacing="16.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <Button disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Responder">
-                                 <styleClass>
-                                    <String fx:value="button-xl" />
-                                    <String fx:value="button-laranja" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../icons/pergunta.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Como Jogar">
-                                 <styleClass>
-                                    <String fx:value="button-xl" />
-                                    <String fx:value="button-azul" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../icons/manual.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </VBox>
-                        <VBox spacing="16.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sair">
-                                 <styleClass>
-                                    <String fx:value="button-xl" />
-                                    <String fx:value="button-vermelho" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../icons/startContent2.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Desistir">
-                                 <styleClass>
-                                    <String fx:value="button-xl" />
-                                    <String fx:value="button-vermelho" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../icons/desistir.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
                </children>
             </VBox>
             <VBox HBox.hgrow="NEVER">
@@ -297,9 +233,76 @@
                         </HBox>
                      </children>
                      <padding>
-                        <Insets bottom="16.0" top="16.0" />
+                        <Insets bottom="16.0" />
                      </padding>
                   </VBox>
+                  <HBox alignment="CENTER" spacing="16.0">
+                     <children>
+                        <VBox spacing="16.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Responder">
+                                 <styleClass>
+                                    <String fx:value="button-xl" />
+                                    <String fx:value="button-laranja" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/pergunta.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Como Jogar">
+                                 <styleClass>
+                                    <String fx:value="button-xl" />
+                                    <String fx:value="button-azul" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/manual.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox spacing="16.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sair">
+                                 <styleClass>
+                                    <String fx:value="button-xl" />
+                                    <String fx:value="button-vermelho" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/startContent2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Desistir">
+                                 <styleClass>
+                                    <String fx:value="button-xl" />
+                                    <String fx:value="button-vermelho" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/desistir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="16.0" />
+                     </padding>
+                  </HBox>
                   <StackPane prefHeight="250.0" style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra" VBox.vgrow="NEVER">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -307,11 +310,11 @@
                      <children>
                         <VBox>
                            <children>
-                              <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
+                              <VBox alignment="TOP_CENTER" spacing="16.0" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
                                  <children>
                                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajudas">
                                        <font>
-                                          <Font name="System Bold" size="47.0" />
+                                          <Font name="System Bold" size="40.0" />
                                        </font>
                                     </Text>
                                     <HBox alignment="TOP_CENTER" spacing="16.0" VBox.vgrow="NEVER">
@@ -395,7 +398,7 @@
                                     </HBox>
                                  </children>
                                  <padding>
-                                    <Insets bottom="16.0" left="12.0" right="12.0" top="16.0" />
+                                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                  </padding>
                               </VBox>
                            </children>
