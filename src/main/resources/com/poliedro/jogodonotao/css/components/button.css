@@ -1,7 +1,8 @@
 /* Botões */
 
 /* Todos os botões */
-.button {
+.button,
+.toggle-button {
   /* cursor */
   -fx-cursor: hand;
   /* texto */

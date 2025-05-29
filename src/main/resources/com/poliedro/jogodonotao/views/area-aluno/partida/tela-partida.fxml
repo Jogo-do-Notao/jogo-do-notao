@@ -10,11 +10,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+
 
 <VBox alignment="TOP_CENTER" prefHeight="692.0" prefWidth="1024.0" spacing="16.0" style="-fx-background-color: -zinc-200;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.areaAluno.partidas.ControleTelaPartida">
    <stylesheets>
@@ -30,9 +30,9 @@
    <children>
       <HBox alignment="CENTER" prefWidth="200.0" spacing="16.0">
          <children>
-            <StackPane style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra">
+            <StackPane maxWidth="1.7976931348623157E308" style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra">
                <children>
-                  <StackPane style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
+                  <StackPane maxWidth="1.7976931348623157E308" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
                      <children>
                         <Text fx:id="textoEnunciado" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -poliedro-ve;" text="[Enunciado da Pergunta]">
                            <font>
@@ -52,7 +52,6 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </StackPane>
-            <Pane HBox.hgrow="ALWAYS" />
             <ImageView fitHeight="115.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
@@ -63,7 +62,7 @@
             <Insets left="20.0" right="20.0" />
          </padding>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="16.0" VBox.vgrow="ALWAYS">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -71,9 +70,9 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="16.0" />
          </padding>
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" HBox.hgrow="ALWAYS">
+            <VBox spacing="20.0" style="-fx-background-color: green;" HBox.hgrow="ALWAYS">
                <children>
-                  <ToggleButton mnemonicParsing="false" onAction="#alternativaSelecionada" text="ToggleButton">
+                  <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" text="ToggleButton" VBox.vgrow="ALWAYS">
                      <graphic>
                         <StackPane>
                            <children>
@@ -85,7 +84,7 @@
                         <ToggleGroup fx:id="alternativaGroup" />
                      </toggleGroup>
                   </ToggleButton>
-                  <ToggleButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#alternativaSelecionada" text="ToggleButton" toggleGroup="$alternativaGroup">
+                  <ToggleButton layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" text="ToggleButton" toggleGroup="$alternativaGroup" VBox.vgrow="ALWAYS">
                      <graphic>
                         <StackPane>
                            <children>
@@ -94,7 +93,7 @@
                         </StackPane>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onAction="#alternativaSelecionada" text="ToggleButton" toggleGroup="$alternativaGroup">
+                  <ToggleButton layoutX="10.0" layoutY="56.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" text="ToggleButton" toggleGroup="$alternativaGroup" VBox.vgrow="ALWAYS">
                      <graphic>
                         <StackPane>
                            <children>
@@ -103,7 +102,7 @@
                         </StackPane>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton layoutX="10.0" layoutY="101.0" mnemonicParsing="false" onAction="#alternativaSelecionada" text="ToggleButton" toggleGroup="$alternativaGroup">
+                  <ToggleButton layoutX="10.0" layoutY="101.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" text="ToggleButton" toggleGroup="$alternativaGroup" VBox.vgrow="ALWAYS">
                      <graphic>
                         <StackPane>
                            <children>
@@ -112,7 +111,7 @@
                         </StackPane>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton layoutX="10.0" layoutY="147.0" mnemonicParsing="false" onAction="#alternativaSelecionada" text="ToggleButton" toggleGroup="$alternativaGroup">
+                  <ToggleButton layoutX="10.0" layoutY="147.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" text="ToggleButton" toggleGroup="$alternativaGroup" VBox.vgrow="ALWAYS">
                      <graphic>
                         <StackPane>
                            <children>
@@ -123,14 +122,14 @@
                   </ToggleButton>
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+            <VBox style="-fx-background-color: red;" HBox.hgrow="NEVER">
                <children>
-                  <StackPane style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra">
+                  <StackPane style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra" VBox.vgrow="NEVER">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
-                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="24.0" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
+                        <VBox alignment="TOP_CENTER" spacing="24.0" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
                            <children>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
                                  <font>
@@ -199,7 +198,7 @@
                         </VBox>
                      </children>
                   </StackPane>
-                  <HBox />
+                  <HBox prefHeight="546.0" prefWidth="532.0" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
          </children>

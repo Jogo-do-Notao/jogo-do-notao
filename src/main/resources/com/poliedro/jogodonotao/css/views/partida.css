@@ -5,6 +5,7 @@
 .botao-ajuda {
   /* tamanho */
   -fx-pref-height: 288px;
+  -fx-min-width: 152px;
   -fx-pref-width: 160px;
   /* cantos arredondados */
   -fx-background-radius: 32px;
@@ -57,3 +58,46 @@
 }
 
 /* -------------------------------------------------------------- */
+/* Botões de alternativa */
+.botao-alternativa {
+  /* espaçamento */
+  -fx-padding: 12px;
+  /* dimensões */
+  -fx-min-width: 480px;
+  -fx-min-height: 80px;
+  /* cor */
+  -fx-background-color: -poliedro-azul-700;
+  /* cantos arredondados */
+  -fx-background-radius: 28px;
+  /* sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+}
+.botao-alternativa:hover {
+  /* cor ao passar o mouse */
+  -fx-background-color: -poliedro-azul-800;
+}
+/* botão de alternativa selecionado */
+.botao-alternativa:selected {
+  /* cor */
+  -fx-background-color: -poliedro-azul-600;
+  /* sombra interna */
+  -fx-effect: none;
+}
+
+/* Círculo com número da alternativa */
+.botao-alternativa StackPane {
+  /* círculo */
+  -fx-background-radius: 50%;
+  /* cor */
+  -fx-background-color: -zinc-200;
+  /* dimensões */
+  -fx-pref-height: 52px;
+  -fx-pref-width: 52px;
+}
+/* Número da alternativa */
+.botao-alternativa StackPane Text {
+  /* tamanho do texto */
+  -fx-font-size: 32px;
+  /* cor do texto */
+  -fx-fill: black;
+}
