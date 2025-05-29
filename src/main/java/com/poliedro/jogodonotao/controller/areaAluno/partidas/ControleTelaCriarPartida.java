@@ -9,26 +9,20 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.ListView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ControleTelaCriarPartida implements Initializable {
     /**
-     * Tabela com as opções de matérias disponíveis para a partida.
+     * Lista com as opções de matérias disponíveis para a partida.
      */
     @FXML
-    private TableView<Materia> opcoesMateria;
-    /**
-     * Coluna com o nome das matérias.
-     */
-    @FXML
-    private TableColumn<Materia, String> colunaNomeMateria;
-
+    private ListView<Materia> opcoesMateria;
 
     /**
      * Método executado ao abrir o scene.
@@ -37,15 +31,27 @@ public class ControleTelaCriarPartida implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Listar matérias disponíveis na tabela
-        // Vincular colunas com atributos da classe
-        colunaNomeMateria.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        // Obter matérias do DB
-        ObservableList<Materia> materias = FXCollections.observableArrayList();
-        materias.add(new Materia(0, "Todas as Matérias"));
-        materias.addAll(FXCollections.observableArrayList(MateriaDAO.obterMaterias()));
-        // Adicionar matérias na tabela
+        /* Listar as matérias disponíveis */
+        // Converter lista de matérias em ObservableList
+        ObservableList<Materia> materias = FXCollections.observableArrayList(
+                new Materia(0, "Todas as Matérias") // Adiciona a opção de todas as matérias
+        );
+        materias.addAll(FXCollections.observableArrayList(
+                MateriaDAO.obterMaterias() // obter matérias do banco de dados
+        ));
+        // Adicionar ObservableList na ListView
         opcoesMateria.setItems(materias);
+
+        // Configurar a ListView para exibir o nome da matéria
+        opcoesMateria.setCellFactory(
+                listView -> new javafx.scene.control.ListCell<>() {
+                    @Override
+                    protected void updateItem(Materia materia, boolean empty) {
+                        super.updateItem(materia, empty);
+                        setText((empty || materia == null) ? null : materia.getNome());
+                    }
+                });
+
     }
 
     /**
