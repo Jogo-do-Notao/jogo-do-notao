@@ -10,6 +10,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -69,7 +70,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="16.0" />
          </padding>
          <children>
-            <VBox spacing="20.0" HBox.hgrow="ALWAYS">
+            <VBox maxWidth="1.7976931348623157E308" spacing="20.0" HBox.hgrow="ALWAYS">
                <children>
                   <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" VBox.vgrow="ALWAYS">
                      <graphic>
@@ -173,81 +174,177 @@
             </VBox>
             <VBox HBox.hgrow="NEVER">
                <children>
-                  <StackPane style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra" VBox.vgrow="NEVER">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
+                  <VBox alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
                      <children>
-                        <VBox alignment="TOP_CENTER" spacing="24.0" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
+                        <VBox spacing="20.0">
                            <children>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
-                                 <font>
-                                    <Font name="System Bold" size="47.0" />
-                                 </font>
-                              </Text>
-                              <HBox alignment="TOP_CENTER" spacing="16.0" VBox.vgrow="NEVER">
+                              <HBox alignment="CENTER" spacing="20.0">
                                  <children>
-                                    <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaPular" text="Pular">
+                                    <Button disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Responder" HBox.hgrow="ALWAYS">
+                                       <styleClass>
+                                          <String fx:value="button-xl" />
+                                          <String fx:value="button-laranja" />
+                                       </styleClass>
                                        <graphic>
-                                          <ImageView fitHeight="65.0" fitWidth="321.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../icons/seta-botao-pular.png" />
+                                                <Image url="@../../../icons/pergunta.png" />
                                              </image>
-                                             <viewport>
-                                                <Rectangle2D />
-                                             </viewport>
                                           </ImageView>
                                        </graphic>
-                                       <styleClass>
-                                          <String fx:value="botao-ajuda" />
-                                          <String fx:value="ajuda-pular" />
-                                       </styleClass>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="275.0" layoutY="10.0" mnemonicParsing="false" onAction="#usarAjudaDica" text="Dica">
+                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Como Jogar" HBox.hgrow="ALWAYS">
+                                       <styleClass>
+                                          <String fx:value="button-xl" />
+                                          <String fx:value="button-azul" />
+                                       </styleClass>
                                        <graphic>
-                                          <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../icons/lampada-botao-ajuda.png" />
+                                                <Image url="@../../../icons/manual.png" />
                                              </image>
-                                             <viewport>
-                                                <Rectangle2D />
-                                             </viewport>
                                           </ImageView>
                                        </graphic>
-                                       <styleClass>
-                                          <String fx:value="botao-ajuda" />
-                                          <String fx:value="ajuda-dica" />
-                                       </styleClass>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="302.0" layoutY="10.0" mnemonicParsing="false" onAction="#usarAjudaCartas" text="Cartas">
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="20.0">
+                                 <children>
+                                    <Button layoutX="240.0" layoutY="30.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sair" HBox.hgrow="ALWAYS">
+                                       <styleClass>
+                                          <String fx:value="button-xl" />
+                                          <String fx:value="button-vermelho" />
+                                       </styleClass>
                                        <graphic>
-                                          <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../icons/logo-botao-cartas.png" />
+                                                <Image url="@../../../icons/startContent2.png" />
                                              </image>
-                                             <viewport>
-                                                <Rectangle2D />
-                                             </viewport>
                                           </ImageView>
                                        </graphic>
+                                    </Button>
+                                    <Button layoutX="178.0" layoutY="80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Desistir" HBox.hgrow="ALWAYS">
                                        <styleClass>
-                                          <String fx:value="botao-ajuda" />
-                                          <String fx:value="ajuda-cartas" />
+                                          <String fx:value="button-xl" />
+                                          <String fx:value="button-vermelho" />
                                        </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../icons/desistir.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
                                     </Button>
                                  </children>
                               </HBox>
                            </children>
-                           <StackPane.margin>
-                              <Insets />
-                           </StackPane.margin>
-                           <padding>
-                              <Insets bottom="36.0" left="12.0" right="12.0" top="16.0" />
-                           </padding>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <Pane maxHeight="1.7976931348623157E308" prefWidth="532.0" VBox.vgrow="ALWAYS" />
+                  <StackPane prefHeight="250.0" style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra" VBox.vgrow="NEVER">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <VBox>
+                           <children>
+                              <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajudas">
+                                       <font>
+                                          <Font name="System Bold" size="47.0" />
+                                       </font>
+                                    </Text>
+                                    <HBox alignment="TOP_CENTER" spacing="16.0" VBox.vgrow="NEVER">
+                                       <children>
+                                          <VBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaPular" text="Pular">
+                                                   <graphic>
+                                                      <ImageView fitHeight="65.0" fitWidth="321.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../icons/seta-botao-pular.png" />
+                                                         </image>
+                                                         <viewport>
+                                                            <Rectangle2D />
+                                                         </viewport>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <styleClass>
+                                                      <String fx:value="botao-ajuda" />
+                                                      <String fx:value="ajuda-pular" />
+                                                   </styleClass>
+                                                </Button>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0/2">
+                                                   <font>
+                                                      <Font size="30.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaDica" text="Dica">
+                                                   <graphic>
+                                                      <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../icons/lampada-botao-ajuda.png" />
+                                                         </image>
+                                                         <viewport>
+                                                            <Rectangle2D />
+                                                         </viewport>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <styleClass>
+                                                      <String fx:value="botao-ajuda" />
+                                                      <String fx:value="ajuda-dica" />
+                                                   </styleClass>
+                                                </Button>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0/2">
+                                                   <font>
+                                                      <Font size="30.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaCartas" text="Cartas">
+                                                   <graphic>
+                                                      <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../icons/logo-botao-cartas.png" />
+                                                         </image>
+                                                         <viewport>
+                                                            <Rectangle2D />
+                                                         </viewport>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <styleClass>
+                                                      <String fx:value="botao-ajuda" />
+                                                      <String fx:value="ajuda-cartas" />
+                                                   </styleClass>
+                                                </Button>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0/2">
+                                                   <font>
+                                                      <Font size="30.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="16.0" left="12.0" right="12.0" top="16.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
                         </VBox>
                      </children>
                   </StackPane>
-                  <HBox prefHeight="546.0" prefWidth="532.0" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
          </children>

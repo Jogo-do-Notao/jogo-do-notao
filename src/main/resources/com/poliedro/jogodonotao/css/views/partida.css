@@ -118,7 +118,7 @@
 }
 .botao-alternativa StackPane.alternativa Text {
   /* tipografia */
-  -fx-font-size: 36px;
+  -fx-font-size: 32px;
   -fx-fill: white;
 }
 /* ao selecionar */
