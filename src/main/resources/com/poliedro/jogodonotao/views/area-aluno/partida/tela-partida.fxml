@@ -1,367 +1,418 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
-<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" prefHeight="692.0" prefWidth="1024.0" spacing="16.0" style="-fx-background-color: -zinc-200;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.areaAluno.partidas.ControleTelaPartida">
+   <stylesheets>
+      <URL value="@../../../css/colors.css" />
+      <URL value="@../../../css/sombras.css" />
+      <URL value="@../../../css/components/button.css" />
+      <URL value="@../../../css/views/background.css" />
+      <URL value="@../../../css/views/partida.css" />
+   </stylesheets>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
    <children>
-      <HBox layoutX="-8.0" layoutY="11.2" prefHeight="146.0" prefWidth="580.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="11.0">
+      <HBox alignment="CENTER" prefWidth="200.0" spacing="16.0">
          <children>
-            <HBox prefHeight="126.0" prefWidth="499.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
+            <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra" HBox.hgrow="ALWAYS">
                <children>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual a idade do Silvio?" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font name="System Bold" size="36.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" top="75.0" />
-                     </HBox.margin>
-                  </Text>
-               </children>
-            </HBox>
-         </children>
-      </HBox>
-      <ImageView fitHeight="154.0" fitWidth="395.0" layoutX="913.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="19.0">
-         <image>
-            <Image url="@../../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
-         </image>
-      </ImageView>
-      <HBox layoutX="535.0" layoutY="179.0" prefHeight="363.0" prefWidth="462.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="179.0">
-         <children>
-            <VBox prefHeight="398.0" prefWidth="491.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <children>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda">
-                     <font>
-                        <Font name="System Bold" size="47.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="150.0" />
-                     </VBox.margin>
-                  </Text>
-                  <HBox prefHeight="253.0" prefWidth="431.0">
+                  <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
                      <children>
-                        <VBox accessibleRole="BUTTON" prefHeight="151.0" prefWidth="126.0" style="-fx-background-color: #2D62B5; -fx-background-radius: 32; -fx-border-color: #0063FF; -fx-border-radius: 28; -fx-border-width: 5;">
-                           <children>
-                              <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../icons/seta-botao-pular.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                                 <VBox.margin>
-                                    <Insets left="20.0" top="25.0" />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pular">
-                                 <font>
-                                    <Font name="System Bold" size="32.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="18.0" />
-                                 </VBox.margin>
-                              </Text>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <HBox.margin>
-                              <Insets bottom="20.0" top="20.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <VBox accessibleRole="BUTTON" prefHeight="151.0" prefWidth="126.0" style="-fx-background-color: #AE551A; -fx-background-radius: 32; -fx-border-color: #FBA41F; -fx-border-radius: 28; -fx-border-width: 5;">
-                           <children>
-                              <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../icons/lampada-botao-ajuda.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                                 <VBox.margin>
-                                    <Insets bottom="-5.0" left="30.0" top="25.0" />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dica">
-                                 <font>
-                                    <Font name="System Bold" size="32.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="27.0" />
-                                 </VBox.margin>
-                              </Text>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <HBox.margin>
-                              <Insets bottom="20.0" left="10.0" top="20.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <VBox accessibleRole="BUTTON" prefHeight="151.0" prefWidth="126.0" style="-fx-background-color: #A12035; -fx-background-radius: 32; -fx-border-color: #EE2252; -fx-border-radius: 28; -fx-border-width: 5;">
-                           <children>
-                              <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../icons/logo-botao-cartas.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                                 <VBox.margin>
-                                    <Insets left="25.0" top="25.0" />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Cartas">
-                                 <font>
-                                    <Font name="System Bold" size="32.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="12.0" />
-                                 </VBox.margin>
-                              </Text>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <HBox.margin>
-                              <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
-                           </HBox.margin>
-                        </VBox>
+                        <Text fx:id="textEnunciado" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -poliedro-ve;" text="[Enunciado da Pergunta]">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
                      </children>
-                     <VBox.margin>
-                        <Insets left="20.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox prefHeight="197.0" prefWidth="442.0">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </StackPane>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </StackPane>
+            <ImageView fitHeight="115.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+      <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: -zinc-200;" VBox.vgrow="ALWAYS">
+         <content>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" style="-fx-background-color: -zinc-200;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="16.0" />
+               </padding>
+               <children>
+                  <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <ImageView fitHeight="91.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../icons/botão_2.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <ImageView fitHeight="91.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../icons/botão_2.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <ImageView fitHeight="91.0" fitWidth="147.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../icons/botão_2.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </ImageView>
+                        <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" VBox.vgrow="ALWAYS">
+                           <graphic>
+                              <HBox>
+                                 <children>
+                                    <StackPane styleClass="circulo">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+                                       </children>
+                                    </StackPane>
+                                    <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="alternativaGroup" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
+                           <graphic>
+                              <HBox>
+                                 <children>
+                                    <StackPane styleClass="circulo">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2" />
+                                       </children>
+                                    </StackPane>
+                                    <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton layoutX="10.0" layoutY="92.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
+                           <graphic>
+                              <HBox>
+                                 <children>
+                                    <StackPane styleClass="circulo">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+                                       </children>
+                                    </StackPane>
+                                    <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton layoutX="10.0" layoutY="173.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
+                           <graphic>
+                              <HBox>
+                                 <children>
+                                    <StackPane styleClass="circulo">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" />
+                                       </children>
+                                    </StackPane>
+                                    <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton layoutX="10.0" layoutY="315.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
+                           <graphic>
+                              <HBox>
+                                 <children>
+                                    <StackPane styleClass="circulo">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5" />
+                                       </children>
+                                    </StackPane>
+                                    <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
                      </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <HBox layoutX="20.8" layoutY="171.2" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="171.0">
-         <children>
-            <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../icons/Opção-circulo1.png" />
-               </image>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" top="10.0" />
-               </HBox.margin>
-            </ImageView>
-            <ToggleButton mnemonicParsing="false" prefHeight="73.0" prefWidth="757.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;" text="Alternativa" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="34.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ToggleButton>
-         </children>
-      </HBox>
-      <HBox layoutX="20.0" layoutY="281.0" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="280.0">
-         <children>
-            <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../icons/Opção-circulo2.png" />
-               </image>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" top="10.0" />
-               </HBox.margin>
-            </ImageView>
-            <ToggleButton mnemonicParsing="false" prefHeight="73.0" prefWidth="757.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;" text="Alternativa" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="34.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ToggleButton>
-         </children>
-      </HBox>
-      <HBox layoutX="38.0" layoutY="391.2" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="391.0">
-         <children>
-            <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../icons/Opção-circulo3.png" />
-               </image>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" top="10.0" />
-               </HBox.margin>
-            </ImageView>
-            <ToggleButton mnemonicParsing="false" prefHeight="73.0" prefWidth="757.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;" text="Alternativa" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="34.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ToggleButton>
-         </children>
-      </HBox>
-      <HBox layoutX="23.0" layoutY="504.0" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="500.0">
-         <children>
-            <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../icons/Opção-circulo4.png" />
-               </image>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" top="10.0" />
-               </HBox.margin>
-            </ImageView>
-            <ToggleButton mnemonicParsing="false" prefHeight="73.0" prefWidth="757.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;" text="Alternativa" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="34.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ToggleButton>
-         </children>
-      </HBox>
-      <HBox layoutX="20.0" layoutY="610.0" prefHeight="98.0" prefWidth="475.0" style="-fx-background-color: #18909C; -fx-background-radius: 32;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="610.0">
-         <children>
-            <ImageView fitHeight="80.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-               <image>
-                  <Image url="@../../../icons/Opção-circulo5.png" />
-               </image>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" top="10.0" />
-               </HBox.margin>
-            </ImageView>
-            <ToggleButton mnemonicParsing="false" prefHeight="73.0" prefWidth="757.0" style="-fx-background-color: #1DB5C1; -fx-background-radius: 32;" text="Alternativa" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="34.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ToggleButton>
-         </children>
-      </HBox>
-      <HBox layoutX="522.0" layoutY="560.0" prefHeight="100.0" prefWidth="445.0" AnchorPane.rightAnchor="56.39999999999998">
-         <children>
-            <HBox prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 32; -fx-background-color: #FBA41F;">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="500">
-                     <font>
-                        <Font name="System Bold" size="40.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="40.0" top="20.0" />
-                     </HBox.margin>
-                  </Text>
+                  </VBox>
+                  <VBox HBox.hgrow="NEVER">
+                     <children>
+                        <VBox alignment="CENTER" spacing="8.0">
+                           <children>
+                              <HBox alignment="CENTER" spacing="8.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/livros.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text fx:id="textMateria" strokeType="OUTSIDE" strokeWidth="0.0" text="Matéria: [matéria da partida]">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="26.0" spacing="8.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/dinheiro.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text fx:id="textPontuacaoAcumulada" strokeType="OUTSIDE" strokeWidth="0.0" text="Pontuação Acumulada: R$ 0,00">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="64.0" spacing="8.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../icons/checkpoint.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text fx:id="textPontuacaoCheckpoint" strokeType="OUTSIDE" strokeWidth="0.0" text="Pontuação do Checkpoint: R$ 0,00">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="16.0">
+                                 <children>
+                                    <Text fx:id="textProgresso" strokeType="OUTSIDE" strokeWidth="0.0" text="Pergunta: 1/15">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <ProgressBar fx:id="barraProgresso" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="0.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="16.0" />
+                           </padding>
+                        </VBox>
+                        <HBox alignment="CENTER" spacing="16.0">
+                           <children>
+                              <VBox spacing="16.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Button disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#verificarResposta" text="Responder">
+                                       <styleClass>
+                                          <String fx:value="button-xl" />
+                                          <String fx:value="button-laranja" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../icons/pergunta.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#exibirInstrucoes" text="Como Jogar">
+                                       <styleClass>
+                                          <String fx:value="button-xl" />
+                                          <String fx:value="button-azul" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../icons/manual.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox spacing="16.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#sairDaPartida" text="Sair">
+                                       <styleClass>
+                                          <String fx:value="button-xl" />
+                                          <String fx:value="button-vermelho" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../icons/startContent2.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#desistirDaPartida" text="Desistir">
+                                       <styleClass>
+                                          <String fx:value="button-xl" />
+                                          <String fx:value="button-vermelho" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../icons/desistir.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="16.0" />
+                           </padding>
+                        </HBox>
+                        <StackPane prefHeight="250.0" style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra" VBox.vgrow="NEVER">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" spacing="16.0" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajudas">
+                                             <font>
+                                                <Font name="System Bold" size="40.0" />
+                                             </font>
+                                          </Text>
+                                          <HBox alignment="TOP_CENTER" spacing="16.0" VBox.vgrow="NEVER">
+                                             <children>
+                                                <VBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaPular" text="Pular">
+                                                         <graphic>
+                                                            <ImageView fitHeight="65.0" fitWidth="321.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../icons/seta-botao-pular.png" />
+                                                               </image>
+                                                               <viewport>
+                                                                  <Rectangle2D />
+                                                               </viewport>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <styleClass>
+                                                            <String fx:value="botao-ajuda" />
+                                                            <String fx:value="ajuda-pular" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Text fx:id="usoAjudaPular" strokeType="OUTSIDE" strokeWidth="0.0" text="0/2">
+                                                         <font>
+                                                            <Font size="30.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaDica" text="Dica">
+                                                         <graphic>
+                                                            <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../icons/lampada-botao-ajuda.png" />
+                                                               </image>
+                                                               <viewport>
+                                                                  <Rectangle2D />
+                                                               </viewport>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <styleClass>
+                                                            <String fx:value="botao-ajuda" />
+                                                            <String fx:value="ajuda-dica" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Text fx:id="usoAjudaDica" strokeType="OUTSIDE" strokeWidth="0.0" text="0/2">
+                                                         <font>
+                                                            <Font size="30.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaCartas" text="Cartas">
+                                                         <graphic>
+                                                            <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../icons/logo-botao-cartas.png" />
+                                                               </image>
+                                                               <viewport>
+                                                                  <Rectangle2D />
+                                                               </viewport>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <styleClass>
+                                                            <String fx:value="botao-ajuda" />
+                                                            <String fx:value="ajuda-cartas" />
+                                                         </styleClass>
+                                                      </Button>
+                                                      <Text fx:id="usoAjudaCartas" strokeType="OUTSIDE" strokeWidth="0.0" text="0/2">
+                                                         <font>
+                                                            <Font size="30.0" />
+                                                         </font>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
                </children>
             </HBox>
-            <HBox prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 32; -fx-background-color: #FBA41F;">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1000">
-                     <font>
-                        <Font name="System Bold" size="40.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="30.0" top="20.0" />
-                     </HBox.margin>
-                  </Text>
-               </children>
-               <HBox.margin>
-                  <Insets left="5.0" />
-               </HBox.margin>
-            </HBox>
-            <HBox accessibleRole="BUTTON" prefHeight="85.0" prefWidth="167.0" style="-fx-background-radius: 32; -fx-background-color: #EE2252;">
-               <HBox.margin>
-                  <Insets left="10.0" />
-               </HBox.margin>
-               <children>
-                  <Text accessibleRole="BUTTON" strokeType="OUTSIDE" strokeWidth="0.0" text="Parar">
-                     <font>
-                        <Font name="System Bold" size="40.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="25.0" top="20.0" />
-                     </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Text>
-               </children>
-            </HBox>
-         </children>
-      </HBox>
-      <HBox layoutX="507.0" layoutY="636.0" prefHeight="83.0" prefWidth="475.0" AnchorPane.rightAnchor="41.799999999999955">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Errou">
-               <font>
-                  <Font name="System Bold" size="35.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="50.0" />
-               </HBox.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Acertou">
-               <font>
-                  <Font name="System Bold" size="35.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="45.0" />
-               </HBox.margin>
-            </Text>
-         </children>
-      </HBox>
+         </content>
+      </ScrollPane>
    </children>
-</AnchorPane>
+</VBox>

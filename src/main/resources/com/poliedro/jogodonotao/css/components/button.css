@@ -1,26 +1,31 @@
 /* Botões */
 
 /* Todos os botões */
-.button {
+.button,
+.toggle-button {
   /* cursor */
   -fx-cursor: hand;
   /* texto */
   -fx-font-weight: bold;
 }
 /* Botão ao passar o mouse */
-.button:hover {
+.button:hover,
+.toggle-button:hover {
   /* Sombra */
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 3);
 }
 /* Botão com foco (ao usar tecla tab) */
-.button:focused {
+.button:focused,
+.toggle-button:focused {
   /* Borda */
   -fx-border-color: black;
   -fx-border-width: 2px;
 }
 /* Botão pressionado */
 .button:pressed,
-.button:armed {
+.button:armed,
+.toggle-button:pressed,
+.toggle-button:armed {
   -fx-effect: none;
 }
 
@@ -56,6 +61,22 @@
 .button-lg .image-view {
   -fx-fit-height: 24px;
   -fx-fit-width: 24px;
+}
+
+/* xl */
+.button-xl {
+  -fx-padding: 12px 32px;
+  -fx-background-radius: 16px;
+  -fx-border-radius: 16px;
+}
+/* texto xl */
+.button-xl .text {
+  -fx-font-size: 20px;
+}
+/* imagem xl */
+.button-xl .image-view {
+  -fx-fit-height: 32px;
+  -fx-fit-width: 32px;
 }
 
 /* ------------------------------------------------------- */
@@ -121,5 +142,4 @@
 /* laranja desabilitado */
 .button-laranja:disabled {
   -fx-background-color: -poliedro-laranja-900;
-  -fx-text-fill: -poliedro-laranja-600;
 }

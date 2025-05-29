@@ -1,0 +1,139 @@
+/* Estilo pra Tela de Partida */
+
+/* -------------------------------------------------------------- */
+/* Botões de ajuda */
+.botao-ajuda {
+  /* tamanho */
+  -fx-pref-height: 288px;
+  -fx-min-width: 152px;
+  -fx-pref-width: 160px;
+  /* cantos arredondados */
+  -fx-background-radius: 32px;
+  /* borda */
+  -fx-border-width: 6px;
+  -fx-border-radius: 29px;
+}
+/* ao passar o mouse */
+.botao-ajuda:focused {
+  /* borda */
+  -fx-border-width: 6px;
+  -fx-border-color: white;
+}
+/* Texto dos botões */
+.botao-ajuda .text {
+  /* tamanho do texto */
+  -fx-font-size: 24px;
+  /* cor do texto */
+  -fx-fill: white;
+}
+/* Ícones dos botões de ajuda */
+.botao-ajuda .image-view {
+  /* tamanho do ícone */
+  -fx-fit-height: 64px;
+  -fx-fit-width: 64px;
+}
+
+/* Botão de pular */
+.ajuda-pular {
+  /* cor de fundo */
+  -fx-background-color: #2d62b5;
+  /* cor da borda */
+  -fx-border-color: #0063ff;
+}
+
+/* Botão dica */
+.ajuda-dica {
+  /* cor de fundo */
+  -fx-background-color: #ae551a;
+  /* cor da borda */
+  -fx-border-color: #fba41f;
+}
+
+/* Botão cardas */
+.ajuda-cartas {
+  /* cor de fundo */
+  -fx-background-color: #a12035;
+  /* cor da borda */
+  -fx-border-color: #ee2252;
+}
+
+/* -------------------------------------------------------------- */
+/* Botões de alternativa */
+.botao-alternativa {
+  /* espaçamento */
+  -fx-padding: 12px;
+  /* dimensões */
+  -fx-min-width: 480px;
+  -fx-min-height: 80px;
+  /* cor */
+  -fx-background-color: -poliedro-azul-700;
+  /* cantos arredondados */
+  -fx-background-radius: 28px;
+  /* sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+}
+.botao-alternativa:hover {
+  /* cor ao passar o mouse */
+  -fx-background-color: -poliedro-azul-800;
+}
+/* botão de alternativa selecionado */
+.botao-alternativa:selected {
+  /* cor */
+  -fx-background-color: -poliedro-azul-600;
+  /* sombra interna */
+  -fx-effect: none;
+}
+/* botão de alternativa com foco */
+.botao-alternativa:focused {
+  /* arredondamento */
+  -fx-border-radius: 28px;
+}
+
+.botao-alternativa HBox {
+  /* espaçamento */
+  -fx-spacing: 12px;
+}
+
+/* Círculo com número da alternativa */
+.botao-alternativa StackPane.circulo {
+  /* círculo */
+  -fx-background-radius: 50%;
+  /* cor */
+  -fx-background-color: -zinc-200;
+  /* dimensões */
+  -fx-pref-height: 52px;
+  -fx-pref-width: 52px;
+}
+/* Número da alternativa */
+.botao-alternativa StackPane.circulo Text {
+  /* tamanho do texto */
+  -fx-font-size: 32px;
+  /* cor do texto */
+  -fx-fill: black;
+}
+
+/* Texto da alternativa */
+.botao-alternativa StackPane.alternativa {
+  /* espaçamento */
+  -fx-padding: 2px 16px;
+  /* cantos */
+  -fx-background-radius: 22px;
+  /* cor */
+  -fx-background-color: -poliedro-azul-600;
+}
+.botao-alternativa StackPane.alternativa Text {
+  /* tipografia */
+  -fx-font-size: 32px;
+  -fx-fill: white;
+}
+/* ao selecionar */
+.botao-alternativa:selected StackPane.alternativa {
+  /* cor ao selecionar */
+  -fx-background-color: -poliedro-azul-700;
+  /* sombra */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
+}
+.botao-alternativa:selected StackPane.alternativa Text {
+  /* cor do texto ao selecionar */
+  -fx-fill: -poliedro-laranja;
+}
