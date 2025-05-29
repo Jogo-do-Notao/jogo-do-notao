@@ -83,6 +83,11 @@
   /* sombra interna */
   -fx-effect: none;
 }
+/* botão de alternativa com foco */
+.botao-alternativa:focused {
+  /* arredondamento */
+  -fx-border-radius: 28px;
+}
 
 .botao-alternativa HBox {
   /* espaçamento */
