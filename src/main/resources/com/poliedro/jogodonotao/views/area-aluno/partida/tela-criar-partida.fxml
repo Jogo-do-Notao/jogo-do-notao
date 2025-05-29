@@ -51,7 +51,7 @@
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Text>
-                  <ListView fx:id="opcoesMateria" />
+                  <ListView fx:id="opcoesMateria" style="-fx-font-size: 18px;" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="16.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#voltarProPainel" text="Cancelar">
