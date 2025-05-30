@@ -3,11 +3,9 @@ package com.poliedro.jogodonotao.database.dao;
 import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.ConexaoDB;
 import com.poliedro.jogodonotao.usuario.Aluno;
+import com.poliedro.jogodonotao.utils.HashSenha;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * Classe DAO para a entidade Aluno.
@@ -123,6 +121,27 @@ public class AlunoDAO {
         return buscarPorEmail(email) != null;
     }
 
+    /*private static String getInsertSQL(int idMateria) {
+        String sql = "INSERT INTO aluno ";
+
+        String campos =
+
+        // Campos e valores que serão adicionados na query
+        String campos = PartidaDAO.PartidaColuna.ALUNO.get();
+        String placeholders = "?";
+
+        // Verificar se aluno selecionou "Todas as Matérias" ou uma matéria específica
+        if (idMateria != 0) {
+            // Aluno selecionou matéria específica
+            campos += ", " + PartidaDAO.PartidaColuna.MATERIA.get();
+            placeholders += ", ?";
+        }
+        // adicionar campos e valores na query
+        sql += "(" + campos + ") VALUES (" + placeholders + ")";
+        return sql;
+    }
+    */
+
     /**
      * Verifica se um RA (registro de matrícula) de um aluno está cadastrado no banco de dados.
      *
@@ -133,4 +152,47 @@ public class AlunoDAO {
         return buscarPorRa(ra) != null;
     }
 
+    public static Aluno adicionarAluno(String nome, Turma turma, String ra, String email, String senha) {
+
+        // Criptografar senha
+        String hashSenha = HashSenha.obterHash(senha);
+
+        // Montar query SQL
+        String sql = "INSERT INTO aluno";
+        String campos = AlunoColuna.NOME.get() + ", " + AlunoColuna.RA.get() + "," + AlunoColuna.EMAIL.get() + "," + AlunoColuna.HASH_SENHA.get() + "," + AlunoColuna.ID_TURMA.get();
+        String placeholders = "?, ?, ?, ?, ?";
+        sql += "(" + campos + ") VALUES (" + placeholders + ")";
+
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setString(1, nome);
+            stmt.setInt(2, turma.getId());
+            stmt.setString(3, ra);
+            stmt.setString(4, email);
+            stmt.setString(5, hashSenha);
+
+            //execuatr query
+            int linhasAfetadas = stmt.executeUpdate();
+
+            if (linhasAfetadas == 0) {
+                throw new RuntimeException("Erro ao criar partida: nenhuma linha  foi afetada.");
+            }
+
+            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    // Obter ID da nova partida e retorna-lá
+                    int idAluno = generatedKeys.getInt(1);
+                    return buscarPorId(idAluno);
+                } else {
+                    throw new RuntimeException("Erro ao criar partida: nenhum ID foi gerado.");
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
+
+
+

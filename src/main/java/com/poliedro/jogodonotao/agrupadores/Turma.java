@@ -1,6 +1,14 @@
 package com.poliedro.jogodonotao.agrupadores;
 
+import com.poliedro.jogodonotao.database.ConexaoDB;
+import com.poliedro.jogodonotao.database.dao.MateriaDAO;
 import com.poliedro.jogodonotao.usuario.Professor;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Turma utilizada para agrupar os alunos e facilitar a busca e gerenciamento.

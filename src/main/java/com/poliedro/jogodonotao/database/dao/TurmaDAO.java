@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Classe DAO para a entidade Turma.
@@ -86,5 +87,38 @@ public class TurmaDAO {
         return buscarTurma(TurmaColuna.ID, String.valueOf(id));
     }
 
-    public static Turma buscarPorNome(String nome) { return buscarTurma(TurmaColuna.NOME, nome); }
+    public static Turma buscarPorNome(String nome) {
+        return buscarTurma(TurmaColuna.NOME, nome);
+    }
+
+    public static ArrayList<Turma> obterTurma() {
+        // query SQL
+        final String sql = "SELECT * FROM turma";
+        // lista de matérias
+
+        ArrayList<Turma> turmas = new ArrayList<>();
+
+        // Executar query
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql);
+                ResultSet res = stmt.executeQuery()
+        ) {
+            // Extrair tuplas da tabela
+            while (res.next()) {
+                // extrair atributos
+                int id = res.getInt(TurmaColuna.ID.get());
+                String nome = res.getString(TurmaColuna.NOME.get());
+                byte serie = res.getByte(TurmaColuna.SERIE.get());
+                String descrição = res.getString(TurmaColuna.DESCRICAO.get());
+                // adicionar a lista
+                turmas.add(new Turma(id, nome, serie,descrição ));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e); // tratamento de erro
+        }
+        // retornar lista de matérias
+        return turmas;
+
+    }
 }
