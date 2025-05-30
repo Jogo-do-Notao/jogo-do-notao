@@ -1,248 +1,248 @@
-<?xml version="1.0" encoding="UTF-8"?>
+   <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+   <?import java.lang.*?>
+   <?import java.net.*?>
+   <?import javafx.geometry.*?>
+   <?import javafx.scene.control.*?>
+   <?import javafx.scene.image.*?>
+   <?import javafx.scene.layout.*?>
+   <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" style="-fx-background-color: -zinc-200;" styleClass="background" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControlePainelAdministrador">
-   <children>
-      <Text fx:id="textNome" fill="#ee2252" layoutX="17.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo, [nome do administrador]" wrappingWidth="613.3563232421875" AnchorPane.leftAnchor="17.0">
-         <font>
-            <Font name="System Bold" size="48.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="164.0" fitWidth="331.0" layoutX="1506.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="29.0">
-         <image>
-            <Image url="@../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
-         </image>
-      </ImageView>
-      <VBox layoutX="1538.0" layoutY="750.0" maxHeight="216.0" maxWidth="626.0" minHeight="47.0" minWidth="180.0" prefHeight="64.0" prefWidth="192.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="255.0" AnchorPane.rightAnchor="102.0">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="329.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="170.0" style="-fx-background-color: #49e643; -fx-background-radius: 12;" text="Acessar Menu Jogar">
-                     <HBox.margin>
-                        <Insets left="10.0" top="15.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-      <VBox alignment="TOP_CENTER" layoutX="29.0" layoutY="567.0" spacing="8.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="70.0">
-         <children>
-            <HBox alignment="CENTER_LEFT" spacing="4.0">
-               <children>
-                  <ImageView fitHeight="37.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <image>
-                        <Image url="@../../icons/user.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Conta">
-                     <font>
-                        <Font name="System Bold" size="36.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Text>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <VBox alignment="CENTER" spacing="16.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#realizarLogout" prefHeight="70.0" text="Sair da conta">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../icons/startContent.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <styleClass>
-                        <String fx:value="button-vermelho" />
-                        <String fx:value="button-lg" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="70.0" text="Alterar senha">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../icons/iconpassword.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <styleClass>
-      
-            
-            
-            
-            
-            
-                              <String fx:value="button-lg" />
-                        <String fx:value="button-azul" />
-                     </styleClass>
-                  </Button>
-               </children>
-            </VBox>
-         </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </VBox>
-      <VBox alignment="TOP_CENTER" layoutX="349.0" layoutY="210.0" prefHeight="688.0" prefWidth="802.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="210.0">
-         <children>
-            <HBox prefHeight="188.0" prefWidth="983.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#abrirTelaGerenciarPerguntas" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Pergunta" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="30.0" top="20.0" />
-                     </HBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Perguntas">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="30.0" top="20.0" />
-                     </HBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox prefHeight="175.0" prefWidth="983.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Turmas" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="30.0" top="10.0" />
-                     </HBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Turmas">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="30.0" top="10.0" />
-                     </HBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                  </Button>
-               </children>
-               <VBox.margin>
-                  <Insets top="40.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="207.0" prefWidth="983.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Alunos" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="30.0" top="10.0" />
-                     </HBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#abrirTelaAdicionarAluno" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Adicionar Aluno">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="30.0" top="10.0" />
-                     </HBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                  </Button>
-               </children>
-               <VBox.margin>
-                  <Insets top="40.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="207.0" prefWidth="983.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Professor" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="30.0" top="10.0" />
-                     </HBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Adicionar Professor">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" right="30.0" top="10.0" />
-                     </HBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-laranja" />
-                     </styleClass>
-                  </Button>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-      <Text fx:id="textEmail" layoutX="14.0" layoutY="142.0" opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: professor@sistemapoliedro.com.br" textAlignment="CENTER">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Text>
-   </children>
-   <stylesheets>
-      <URL value="@../../css/sombras.css" />
-      <URL value="@../../css/colors.css" />
-      <URL value="@../../css/views/background.css" />
-      <URL value="@../../css/components/button.css" />
-   </stylesheets>
-</AnchorPane>
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" style="-fx-background-color: -zinc-200;" styleClass="background" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControlePainelAdministrador">
+      <children>
+         <Text fx:id="textNome" fill="#ee2252" layoutX="17.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-vindo, [nome do administrador]" wrappingWidth="613.3563232421875" AnchorPane.leftAnchor="17.0">
+            <font>
+               <Font name="System Bold" size="48.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="164.0" fitWidth="331.0" layoutX="1506.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="29.0">
+            <image>
+               <Image url="@../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
+            </image>
+         </ImageView>
+         <VBox layoutX="1538.0" layoutY="750.0" maxHeight="216.0" maxWidth="626.0" minHeight="47.0" minWidth="180.0" prefHeight="64.0" prefWidth="192.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="255.0" AnchorPane.rightAnchor="102.0">
+            <children>
+               <HBox prefHeight="100.0" prefWidth="329.0">
+                  <children>
+                     <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="170.0" style="-fx-background-color: #49e643; -fx-background-radius: 12;" text="Acessar Menu Jogar">
+                        <HBox.margin>
+                           <Insets left="10.0" top="15.0" />
+                        </HBox.margin>
+                        <font>
+                           <Font size="14.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="29.0" layoutY="567.0" spacing="8.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="70.0">
+            <children>
+               <HBox alignment="CENTER_LEFT" spacing="4.0">
+                  <children>
+                     <ImageView fitHeight="37.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                        <image>
+                           <Image url="@../../icons/user.png" />
+                        </image>
+                     </ImageView>
+                     <Text fill="#ee2252" strokeType="OUTSIDE" strokeWidth="0.0" text="Conta">
+                        <font>
+                           <Font name="System Bold" size="36.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                     </Text>
+                  </children>
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </HBox>
+               <VBox alignment="CENTER" spacing="16.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#realizarLogout" prefHeight="70.0" text="Sair da conta">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                        <graphic>
+                           <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../icons/startContent.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <styleClass>
+                           <String fx:value="button-vermelho" />
+                           <String fx:value="button-lg" />
+                        </styleClass>
+                     </Button>
+                     <Button mnemonicParsing="false" prefHeight="70.0" text="Alterar senha">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                        <graphic>
+                           <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../icons/iconpassword.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        <styleClass>
+
+
+
+
+
+
+                                 <String fx:value="button-lg" />
+                           <String fx:value="button-azul" />
+                        </styleClass>
+                     </Button>
+                  </children>
+               </VBox>
+            </children>
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="349.0" layoutY="210.0" prefHeight="688.0" prefWidth="802.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="210.0">
+            <children>
+               <HBox prefHeight="188.0" prefWidth="983.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#abrirTelaGerenciarPerguntas" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Pergunta" HBox.hgrow="ALWAYS">
+                        <font>
+                           <Font size="25.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="30.0" top="20.0" />
+                        </HBox.margin>
+                        <styleClass>
+                           <String fx:value="button-lg" />
+                           <String fx:value="button-laranja" />
+                        </styleClass>
+                     </Button>
+                     <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Perguntas">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="10.0" right="30.0" top="20.0" />
+                        </HBox.margin>
+                        <styleClass>
+                           <String fx:value="button-lg" />
+                           <String fx:value="button-laranja" />
+                        </styleClass>
+                     </Button>
+                  </children>
+               </HBox>
+               <HBox prefHeight="175.0" prefWidth="983.0">
+                  <children>
+                     <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Turmas" HBox.hgrow="ALWAYS">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="30.0" top="10.0" />
+                        </HBox.margin>
+                        <styleClass>
+                           <String fx:value="button-lg" />
+                           <String fx:value="button-laranja" />
+                        </styleClass>
+                     </Button>
+                     <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Turmas">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="10.0" right="30.0" top="10.0" />
+                        </HBox.margin>
+                        <styleClass>
+                           <String fx:value="button-lg" />
+                           <String fx:value="button-laranja" />
+                        </styleClass>
+                     </Button>
+                  </children>
+                  <VBox.margin>
+                     <Insets top="40.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox prefHeight="207.0" prefWidth="983.0">
+                  <children>
+                     <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Alunos" HBox.hgrow="ALWAYS">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="30.0" top="10.0" />
+                        </HBox.margin>
+                        <styleClass>
+                           <String fx:value="button-lg" />
+                           <String fx:value="button-laranja" />
+                        </styleClass>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#abrirTelaAdicionarAluno" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Adicionar Aluno">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="10.0" right="30.0" top="10.0" />
+                        </HBox.margin>
+                        <styleClass>
+                           <String fx:value="button-lg" />
+                           <String fx:value="button-laranja" />
+                        </styleClass>
+                     </Button>
+                  </children>
+                  <VBox.margin>
+                     <Insets top="40.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox prefHeight="207.0" prefWidth="983.0">
+                  <children>
+                     <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Professor" HBox.hgrow="ALWAYS">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="30.0" top="10.0" />
+                        </HBox.margin>
+                        <styleClass>
+                           <String fx:value="button-lg" />
+                           <String fx:value="button-laranja" />
+                        </styleClass>
+                     </Button>
+                     <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Adicionar Professor">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="10.0" right="30.0" top="10.0" />
+                        </HBox.margin>
+                        <styleClass>
+                           <String fx:value="button-lg" />
+                           <String fx:value="button-laranja" />
+                        </styleClass>
+                     </Button>
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+         <Text fx:id="textEmail" layoutX="14.0" layoutY="142.0" opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: professor@sistemapoliedro.com.br" textAlignment="CENTER">
+            <font>
+               <Font size="17.0" />
+            </font>
+         </Text>
+      </children>
+      <stylesheets>
+         <URL value="@../../css/sombras.css" />
+         <URL value="@../../css/colors.css" />
+         <URL value="@../../css/views/background.css" />
+         <URL value="@../../css/components/button.css" />
+      </stylesheets>
+   </AnchorPane>
