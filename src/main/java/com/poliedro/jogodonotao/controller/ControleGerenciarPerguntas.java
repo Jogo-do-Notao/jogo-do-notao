@@ -38,9 +38,6 @@ public class ControleGerenciarPerguntas {
     private TableColumn<Pergunta, String> materiaColuna;
 
     @FXML
-    private TableColumn<?,?> opçõesColuna;
-
-    @FXML
     private TableColumn<Pergunta, String> perguntaColuna;
 
     @FXML
