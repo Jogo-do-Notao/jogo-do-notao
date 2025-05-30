@@ -10,6 +10,7 @@ module com.poliedro.jogodonotao.jogodonotao {
     requires io.github.cdimascio.dotenv.java;
     requires spring.security.crypto;
     requires javafx.base;
+    requires javafx.graphics;
 
     opens com.poliedro.jogodonotao to javafx.fxml;
     exports com.poliedro.jogodonotao;

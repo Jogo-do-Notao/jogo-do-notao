@@ -70,8 +70,4 @@ public class ControleGerenciarPerguntas {
         App.changeScene("area-adm/painel-administrador", "Painel Admnistrador");
 
     }
-
-
-
-
 }
