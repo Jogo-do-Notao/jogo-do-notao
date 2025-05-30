@@ -3,6 +3,7 @@ package com.poliedro.jogodonotao.jogo;
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.database.dao.PartidaDAO;
+import com.poliedro.jogodonotao.pergunta.DificuldadePergunta;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
 import javafx.scene.control.Alert;
@@ -175,6 +176,25 @@ public class Partida {
     }
 
     /**
+     * Retorna a dificuldade da partida, dependendo da rodada atual.
+     * Dificuldade é definida como:
+     * - Fácil: Rodadas 1 a 5
+     * - Médio: Rodadas 6 a 10
+     * - Difícil: Rodadas 11 a 15
+     *
+     * @return Enumeration {@code DificuldadePergunta} correspondente à rodada atual.
+     */
+    public DificuldadePergunta getDificuldade() {
+        if (rodada <= 5) {
+            return DificuldadePergunta.FACIL;
+        } else if (rodada <= 10) {
+            return DificuldadePergunta.MEDIO;
+        } else {
+            return DificuldadePergunta.DIFICIL;
+        }
+    }
+
+    /**
      * Cria uma nova partida no banco de dados e depois abre a Tela de Partida com a nova partida criada.
      *
      * @param materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
@@ -210,5 +230,12 @@ public class Partida {
                         "Ajuda Pular: " + p.getAjudaPular()
         );
         alert.show();
+    }
+
+    /**
+     * Sorteia uma pergunta aleatória.
+     */
+    public Pergunta sortearPergunta() {
+        // Obter array de perguntas disponíveis
     }
 }

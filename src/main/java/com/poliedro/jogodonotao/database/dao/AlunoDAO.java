@@ -19,7 +19,7 @@ public class AlunoDAO {
     /**
      * Colunas da tabela {@code aluno}.
      */
-    private enum AlunoColuna {
+    public enum AlunoColuna {
         // Colunas
         ID("id_aluno"),
         ID_TURMA("id_turma"),

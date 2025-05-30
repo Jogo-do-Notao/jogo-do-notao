@@ -17,7 +17,7 @@ public class PartidaDAO {
     /**
      * Colunas da tabela {@code partida}.
      */
-    private enum PartidaColuna {
+    public enum PartidaColuna {
         // Colunas
         ID("id_partida"),
         ALUNO("id_aluno"),
