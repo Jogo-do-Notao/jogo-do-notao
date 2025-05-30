@@ -63,7 +63,7 @@ public class ControlePainelAdministrador implements Initializable {
     }
     @FXML
     void abrirTelaGerenciarPerguntas(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/gerenciar-perguntas/tela-gerenciar-perguntas", "Gerenciar Perguntas");
+        App.changeScene("area-/gerenciar-perguntas/tela-gerenciar-perguntas", "Gerenciar Perguntas");
     }
 
 
