@@ -115,7 +115,7 @@
          <children>
             <HBox prefHeight="188.0" prefWidth="983.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Pergunta" HBox.hgrow="ALWAYS">
+                  <Button mnemonicParsing="false" onAction="#abrirTelaGerenciarPerguntas" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Gerenciar Pergunta" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="25.0" />
                      </font>

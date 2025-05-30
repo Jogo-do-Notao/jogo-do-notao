@@ -61,5 +61,10 @@ public class ControlePainelAdministrador implements Initializable {
     void abrirTelaAdicionarAluno(ActionEvent event) throws IOException {
         App.changeScene("area-adm/gerenciar-alunos/tela-cadastrar-aluno", "Adicionar Aluno");
     }
+    @FXML
+    void abrirTelaGerenciarPerguntas(ActionEvent event) throws IOException {
+        App.changeScene("area-/gerenciar-perguntas/tela-gerenciar-perguntas", "Gerenciar Perguntas");
+    }
+
 
 }

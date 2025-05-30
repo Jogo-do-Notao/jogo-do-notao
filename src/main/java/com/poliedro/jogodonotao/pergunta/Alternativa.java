@@ -4,15 +4,13 @@ public class Alternativa {
     private int idAlternativa;
     private String texto;
     private boolean correta;
-    private Pergunta pergunta;
 
     public Alternativa() {}
 
-    public Alternativa(int idAlternativa, String texto, boolean correta, Pergunta pergunta) {
+    public Alternativa(int idAlternativa, String texto, boolean correta) {
         this.idAlternativa = idAlternativa;
         this.texto = texto;
         this.correta = correta;
-        this.pergunta = pergunta;
     }
 
     public int getIdAlternativa() {
@@ -37,13 +35,5 @@ public class Alternativa {
 
     public void setCorreta(boolean correta) {
         this.correta = correta;
-    }
-
-    public Pergunta getPergunta() {
-        return pergunta;
-    }
-
-    public void setPergunta(Pergunta pergunta) {
-        this.pergunta = pergunta;
     }
 }
