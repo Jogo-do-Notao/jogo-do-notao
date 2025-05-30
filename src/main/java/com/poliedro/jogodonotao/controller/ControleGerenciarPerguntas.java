@@ -53,12 +53,8 @@ public class ControleGerenciarPerguntas {
         materiaColuna.setCellValueFactory(new PropertyValueFactory<>("materia"));
         perguntaColuna.setCellValueFactory(new PropertyValueFactory<>("pergunta"));
 
-        obterPerguntas();
-
-        tabelaPerguntas.setItems(perguntas);
-    }
-    private void obterPerguntas() throws SQLException {
         perguntas = FXCollections.observableArrayList(PerguntaDAO.obterPerguntas());
+        tabelaPerguntas.setItems(perguntas);
     }
 
 

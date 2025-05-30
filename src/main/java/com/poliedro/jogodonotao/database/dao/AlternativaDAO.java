@@ -39,27 +39,26 @@ public class AlternativaDAO {
 
     public static ArrayList<Alternativa> obterAlternativa(int idPergunta) {
         final String sql = String.format("SELECT * FROM alternativa WHERE %s = ?",
-            AlternativaColuna.PERGUNTA.get());
+                AlternativaColuna.PERGUNTA.get());
         ArrayList<Alternativa> alternativas = new ArrayList<>();
-        
+
         try (Connection conexao = ConexaoDB.getConnection();
-             PreparedStatement stmt = conexao.prepareStatement(sql);
-             ResultSet res = stmt.executeQuery()) {
-            
+             PreparedStatement stmt = conexao.prepareStatement(sql)) {
+
             stmt.setInt(1, idPergunta);
-            var rs = stmt.executeQuery();
-            
-            while (rs.next()) {
-                var alternativa = new Alternativa();
-                alternativa.setIdAlternativa(rs.getInt(AlternativaColuna.ID.get()));
-                alternativa.setTexto(rs.getString(AlternativaColuna.TEXTO.get()));
-                alternativa.setCorreta(rs.getBoolean(AlternativaColuna.CORRETA.get()));
-                alternativas.add(alternativa);
+
+            try (ResultSet rs = stmt.executeQuery()) {  // Only one ResultSet now
+                while (rs.next()) {
+                    var alternativa = new Alternativa();
+                    alternativa.setIdAlternativa(rs.getInt(AlternativaColuna.ID.get()));
+                    alternativa.setTexto(rs.getString(AlternativaColuna.TEXTO.get()));
+                    alternativa.setCorreta(rs.getBoolean(AlternativaColuna.CORRETA.get()));
+                    alternativas.add(alternativa);
+                }
             }
-            
         } catch (SQLException e) {
             e.printStackTrace();
-            // Considerar usar um sistema de logging adequado em produção
+            // Consider using a proper logging system in production
         }
 
         return alternativas;
