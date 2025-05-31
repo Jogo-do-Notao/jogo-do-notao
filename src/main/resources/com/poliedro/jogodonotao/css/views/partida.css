@@ -124,6 +124,7 @@
 .botao-alternativa StackPane.alternativa Text {
   /* tipografia */
   -fx-font-size: 32px;
+  -fx-font-weight: bold;
   -fx-fill: white;
 }
 /* ao selecionar */
@@ -136,4 +137,14 @@
 .botao-alternativa:selected StackPane.alternativa Text {
   /* cor do texto ao selecionar */
   -fx-fill: -poliedro-laranja;
+}
+
+/* -------------------------------------------------------------- */
+
+/* Scroll Pane do enunciado */
+.scroll-pane.scroll-enunciado {
+  -fx-background-color: transparent; /* Mantém as bordas transparentes */
+}
+.scroll-pane.scroll-enunciado > .viewport {
+  -fx-background-color: -poliedro-azul-600;
 }

@@ -5,7 +5,6 @@ import com.poliedro.jogodonotao.pergunta.Pergunta;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
@@ -102,14 +101,15 @@ public class ControleTelaPartida implements Initializable {
         // Sortear pergunta
         Pergunta perguntaAtual = Partida.getPartidaEmAndamento().sortearPergunta();
         // Exibir pergunta na tela
-        textEnunciado.setText(perguntaAtual.getEnunciado());
+        atualizarPergunta(perguntaAtual);
     }
 
     /**
      * Atualiza a pergunta na tela.
      */
-    private void atualizarPergunta() {
-        Pergunta perguntaAtual = Partida.getPartidaEmAndamento().sortearPergunta();
-        textEnunciado.setText(perguntaAtual.getEnunciado());
+    private void atualizarPergunta(Pergunta pergunta) {
+        // Atualizar enunciado
+        //textEnunciado.setText(pergunta.getEnunciado());
+        textEnunciado.setText(pergunta.getEnunciado());
     }
 }

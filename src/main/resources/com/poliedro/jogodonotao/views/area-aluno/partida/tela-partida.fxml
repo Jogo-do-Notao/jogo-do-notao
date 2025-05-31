@@ -31,19 +31,27 @@
    <children>
       <HBox alignment="CENTER" prefWidth="200.0" spacing="16.0">
          <children>
-            <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra" HBox.hgrow="ALWAYS">
+            <StackPane alignment="CENTER_LEFT" style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra" HBox.hgrow="ALWAYS">
                <children>
-                  <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
-                     <children>
-                        <Text fx:id="textEnunciado" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="[Enunciado da Pergunta]">
-                           <font>
-                              <Font name="System Bold" size="36.0" />
-                           </font>
-                        </Text>
-                     </children>
+                  <StackPane alignment="CENTER_LEFT" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
                      <padding>
                         <Insets left="20.0" right="20.0" />
                      </padding>
+                     <children>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="scroll-enunciado">
+                           <content>
+                              <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <Text fx:id="textEnunciado" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="[Enunciado]" wrappingWidth="800.0">
+                                       <font>
+                                          <Font name="System Bold" size="32.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
                   </StackPane>
                </children>
                <HBox.margin>
@@ -87,7 +95,10 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Text>
                                        </children>
                                     </StackPane>
                                  </children>
@@ -109,7 +120,10 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Text>
                                        </children>
                                     </StackPane>
                                  </children>
@@ -128,7 +142,10 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Text>
                                        </children>
                                     </StackPane>
                                  </children>
@@ -147,7 +164,10 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Text>
                                        </children>
                                     </StackPane>
                                  </children>
@@ -166,7 +186,10 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Text>
                                        </children>
                                     </StackPane>
                                  </children>
