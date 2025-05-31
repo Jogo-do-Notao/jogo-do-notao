@@ -6,10 +6,7 @@ import com.poliedro.jogodonotao.pergunta.Pergunta;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -20,7 +17,6 @@ import java.util.ResourceBundle;
  * Responsável por gerenciar os eventos e a interação do usuário durante uma partida.
  */
 public class ControleTelaPartida implements Initializable {
-
 
     @FXML
     private ToggleButton alternativa1;
@@ -86,6 +82,11 @@ public class ControleTelaPartida implements Initializable {
     private Text usoAjudaPular;
 
     /**
+     * Alternativas exibidas na tela.
+     */
+    private Alternativa[] alternativas;
+
+    /**
      * Método chamado quando uma alternativa é selecionada ou desmarcada.
      */
     @FXML
@@ -126,9 +127,54 @@ public class ControleTelaPartida implements Initializable {
 
     }
 
+    /**
+     * Array com os botões de alternativas.
+     */
+    private ToggleButton[] botoesAlternativas;
+
+    /**
+     * Verifica se a resposta selecionada está correta.
+     * <ul>
+     * <li> Se estiver correta, exibe mensagem de resposta correta, atualiza a pontuação e avança para a próxima rodada (ou finaliza se for a última).
+     * <li> Se estiver incorreta, exibe mensagem de resposta incorreta e finaliza a partida.
+     * </ul>
+     */
     @FXML
     void verificarResposta(ActionEvent event) {
+        // Obter alternativa selecionada
+        Alternativa alternativaSelecionada = null;
+        Alternativa alternativaCorreta = null;
+        for (int i = 0; i < 5; i++) {
+            if (botoesAlternativas[i].isSelected()) { // buscar alternativa selecionada
+                alternativaSelecionada = alternativas[i];
+            }
+            if (alternativas[i].isCorreta()) { // buscar alternativa correta
+                alternativaCorreta = alternativas[i];
+            }
+        }
 
+        // Verificar se alguma alternativa foi selecionada
+        if (alternativaSelecionada == null) {
+            return;
+        }
+
+        if (alternativaSelecionada.isCorreta()) {
+            /* Alternativa correta */
+            // Exibir mensagem de resposta correta
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Resposta Correta");
+            alert.setHeaderText("Resposta Correta!");
+            alert.setContentText("Parabéns! Você acertou a resposta.");
+            alert.show();
+        } else {
+            /* Alternativa incorreta */
+            // Exibir mensagem de resposta incorreta
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Resposta Errada");
+            alert.setHeaderText("Resposta Errada!");
+            alert.setContentText("Você errou a resposta. \n\nA resposta correta era: " + alternativaCorreta.getTexto() + ".");
+            alert.showAndWait();
+        }
     }
 
     /**
@@ -136,6 +182,11 @@ public class ControleTelaPartida implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Iniciar array com os botões de alternativas
+        this.botoesAlternativas = new ToggleButton[] {
+                alternativa1, alternativa2, alternativa3, alternativa4, alternativa5
+        };
+
         // Exibir matéria
         textMateria.setText(
                 "Matéria: " + Partida.getPartidaEmAndamento().getMateria().getNome());
@@ -155,12 +206,12 @@ public class ControleTelaPartida implements Initializable {
         textEnunciado.setText(pergunta.getEnunciado());
 
         // Aleatorizar ordem das alternativas
-        Alternativa[] alternativasEmbaralhadas = Alternativa.embaralhar(pergunta.getAlternativas());
+        this.alternativas = Alternativa.embaralhar(pergunta.getAlternativas());
 
         // Exibir alternativas
         Text[] textos = {alternativa1texto, alternativa2texto, alternativa3texto, alternativa4texto, alternativa5texto};
         for (int i = 0; i < 5; i++) {
-            textos[i].setText(alternativasEmbaralhadas[i].getTexto());
+            textos[i].setText(this.alternativas[i].getTexto());
         }
 
     }
