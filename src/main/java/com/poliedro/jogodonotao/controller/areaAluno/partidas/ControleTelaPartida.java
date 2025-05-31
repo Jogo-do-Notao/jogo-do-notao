@@ -154,7 +154,14 @@ public class ControleTelaPartida implements Initializable {
         }
         // Verificar respostas e prosseguir com a partida
         if (alternativaSelecionada != null && alternativaCorreta != null) {
-            Partida.getPartidaEmAndamento().verificarResposta(alternativaSelecionada, alternativaCorreta);
+            if (
+                    Partida.getPartidaEmAndamento().verificarResposta(alternativaSelecionada, alternativaCorreta)
+            ) {
+                // Próxima pergunta
+            } else {
+                // Finalizar partida
+            }
+
         }
     }
 

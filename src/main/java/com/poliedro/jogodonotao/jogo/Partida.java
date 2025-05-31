@@ -2,19 +2,17 @@ package com.poliedro.jogodonotao.jogo;
 
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Materia;
-import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.dao.PartidaDAO;
 import com.poliedro.jogodonotao.database.dao.PerguntaDAO;
 import com.poliedro.jogodonotao.pergunta.Alternativa;
 import com.poliedro.jogodonotao.pergunta.DificuldadePergunta;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
+import com.poliedro.jogodonotao.utils.Formatador;
 import javafx.scene.control.Alert;
 
 import java.io.IOException;
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Random;
 
 /**
@@ -157,9 +155,7 @@ public class Partida {
     }
 
     public String getPontuacaoAcumuladaFormatada() {
-        NumberFormat formatoMoeda = NumberFormat
-                .getCurrencyInstance(new Locale("pt", "BR"));
-        return formatoMoeda.format(this.pontuacaoAcumulada);
+        return Formatador.formatoMonetario(this.pontuacaoAcumulada);
     }
 
     public int getPontuacaoCheckpoint() {
@@ -167,9 +163,7 @@ public class Partida {
     }
 
     public String getPontuacaoCheckpointFormatada() {
-        NumberFormat formatoMoeda = NumberFormat
-                .getCurrencyInstance(new Locale("pt", "BR"));
-        return formatoMoeda.format(this.pontuacaoCheckpoint);
+        return Formatador.formatoMonetario(this.pontuacaoAcumulada);
     }
 
 
@@ -188,8 +182,8 @@ public class Partida {
     /**
      * Retorna o prêmio ganho na rodada atual ao acertar a pergunta.
      */
-    public int getGanhoNaRodada() {
-        return premioPorRodada[this.getRodada()];
+    public String getGanhoNaRodada() {
+        return Formatador.formatoMonetario(premioPorRodada[this.rodada]);
     }
 
     /**
@@ -250,14 +244,11 @@ public class Partida {
     ) {
         if (selecionada.isCorreta()) {
             /* Resposta está correta */
-            // Calcular prêmio
-            int premio = this.getGanhoNaRodada();
-
             // Exibir mensagem de resposta correta
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Resposta Correta");
             alert.setHeaderText("Resposta Correta!");
-            alert.setContentText("Parabéns! Você acertou a resposta.\n\nVocê ganhou " + premio + "  nesta rodada.");
+            alert.setContentText("Parabéns! Você acertou a resposta.\n\nVocê ganhou " + this.getGanhoNaRodada() + "  nesta rodada.");
             alert.show();
         } else {
             /* Resposta está errada */

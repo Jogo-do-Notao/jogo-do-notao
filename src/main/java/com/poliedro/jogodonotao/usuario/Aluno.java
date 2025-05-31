@@ -3,6 +3,7 @@ package com.poliedro.jogodonotao.usuario;
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
+import com.poliedro.jogodonotao.utils.Formatador;
 import com.poliedro.jogodonotao.utils.HashSenha;
 import javafx.scene.control.Alert;
 
@@ -66,9 +67,7 @@ public class Aluno extends Usuario {
     }
 
     public String getPontuacaoFormatada() {
-        NumberFormat formatoMoeda = NumberFormat
-                .getCurrencyInstance(new Locale("pt", "BR"));
-        return formatoMoeda.format(pontuacao);
+        return Formatador.formatoMonetario(this.pontuacao);
     }
 
     public Turma getTurma() {
