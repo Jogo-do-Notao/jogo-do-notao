@@ -226,6 +226,13 @@ public class Partida {
     }
 
     /**
+     * Incrementa a rodada atual da partida.
+     */
+    public void proximaRodada() {
+        this.rodada++;
+    }
+
+    /**
      * Cria uma nova partida no banco de dados e depois abre a Tela de Partida com a nova partida criada.
      *
      * @param materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
@@ -277,6 +284,8 @@ public class Partida {
 
             // Atualizar pontuação acumulada
             this.addPontuacaoAcumulada();
+            // Incrementar rodada
+            this.proximaRodada();
         } else {
             /* Resposta está errada */
             // Exibir mensagem de resposta incorreta
