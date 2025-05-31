@@ -9,7 +9,9 @@ import com.poliedro.jogodonotao.pergunta.DificuldadePergunta;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
 import com.poliedro.jogodonotao.utils.Formatador;
+import javafx.animation.PauseTransition;
 import javafx.scene.control.Alert;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -237,15 +239,30 @@ public class Partida {
      *
      * @param materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
      */
-    public static void criarPartida(Materia materia) throws IOException {
-        // Criar partida no banco de dados
-        Partida novaPartida = PartidaDAO.criarPartida(materia);
+    public static void criarPartida(Materia materia) {
+        // Exibir mensagem de criando partida
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Criando Partida");
+        alert.setHeaderText("Criando Partida...");
+        alert.setContentText("A partida está sendo criada.\n\nMatéria selecionada: " + (
+                materia == null ? "Todas as Matérias" : materia.getNome()) + ".");
+        alert.show();
 
-        // Atribui nova partida a partida em andamento
-        partidaEmAndamento = novaPartida;
+        // Criar partida no banco de dados e atribuir nova partida a partida em andamento
+        assert materia != null; // Garantir que a matéria não é nula
+        partidaEmAndamento = PartidaDAO.criarPartida(materia);
 
-        // redirecionar para Tela de Partida
-        App.changeScene("area-aluno/partida/tela-partida", "Partida em Andamento");
+        // Espera 1 segundo antes de trocar a cena e fechar o alerta
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        pause.setOnFinished(event -> {
+            try {
+                App.changeScene("area-aluno/partida/tela-partida", "Partida em Andamento");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            alert.close();
+        });
+        pause.play();
     }
 
     /**
