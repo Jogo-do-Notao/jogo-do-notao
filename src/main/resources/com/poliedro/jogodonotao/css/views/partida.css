@@ -79,7 +79,7 @@
 /* botão de alternativa selecionado */
 .botao-alternativa:selected {
   /* cor */
-  -fx-background-color: -poliedro-azul-600;
+  -fx-background-color: -poliedro-laranja-500;
   /* sombra interna */
   -fx-effect: none;
 }
@@ -130,13 +130,9 @@
 /* ao selecionar */
 .botao-alternativa:selected StackPane.alternativa {
   /* cor ao selecionar */
-  -fx-background-color: -poliedro-azul-700;
+  -fx-background-color: -poliedro-laranja-400;
   /* sombra */
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
-}
-.botao-alternativa:selected StackPane.alternativa Text {
-  /* cor do texto ao selecionar */
-  -fx-fill: -poliedro-laranja;
 }
 
 /* -------------------------------------------------------------- */
