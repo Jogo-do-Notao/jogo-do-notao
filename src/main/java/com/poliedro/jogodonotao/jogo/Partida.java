@@ -2,7 +2,9 @@ package com.poliedro.jogodonotao.jogo;
 
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Materia;
+import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.dao.PartidaDAO;
+import com.poliedro.jogodonotao.database.dao.PerguntaDAO;
 import com.poliedro.jogodonotao.pergunta.DificuldadePergunta;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
@@ -10,7 +12,9 @@ import javafx.scene.control.Alert;
 
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Random;
 
 /**
  * Classe que representa uma partida do jogo.
@@ -233,9 +237,41 @@ public class Partida {
     }
 
     /**
-     * Sorteia uma pergunta aleatória.
+     * Sorteia uma pergunta aleatória que o aluno não respondeu anteriormente.
      */
     public Pergunta sortearPergunta() {
-        // Obter array de perguntas disponíveis
+        // Obter array com ids perguntas disponíveis
+        ArrayList<Integer> listaPerguntas = PerguntaDAO.obterListaDeSorteio(this);
+        System.out.println(listaPerguntas);
+
+        // Sortear pergunta aleatória
+        Random rd = new Random();
+        /*return PerguntaDAO.buscarPorId(
+                listaPerguntas.get(rd.nextInt(listaPerguntas.size()))
+        );*/
+        return null;
+    }
+
+    public static void main(String[] args) {
+        // Criar aluno de exemplo
+        Aluno aluno = new Aluno(2, "Aluno Teste", "aluno@teste.com", "43.535-3", "", new Turma(1, "Turma A", (byte) 2, "2023/2"), 453);
+
+        // Criar matéria de exemplo
+        Materia materia = new Materia(-1, "Todas");
+
+        // Criar partida de exemplo
+        Partida partida = new Partida(
+                1, aluno, materia, PartidaStatus.ANDAMENTO, 2, new Pergunta[15], 0, 0, 0, 0, 0
+        );
+
+        // Testar sorteio de pergunta
+        Pergunta pergunta = partida.sortearPergunta();
+        if (pergunta != null) {
+            System.out.println("Pergunta sorteada:");
+            System.out.println("ID: " + pergunta.getId());
+            System.out.println("Enunciado: " + pergunta.getEnunciado());
+        } else {
+            System.out.println("Nenhuma pergunta disponível para sorteio.");
+        }
     }
 }

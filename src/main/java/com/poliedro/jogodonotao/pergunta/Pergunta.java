@@ -1,39 +1,46 @@
 package com.poliedro.jogodonotao.pergunta;
 
+import com.poliedro.jogodonotao.usuario.Professor;
+
 public class Pergunta {
-    private int idPergunta;
+    private int id;
     private String enunciado;
+    private Alternativa[] alternativas;
     private DificuldadePergunta dificuldade;
+    private String dica;
+    private Professor criador;
 
-    public Pergunta() {}
-
-    public Pergunta(int idPergunta, String enunciado, DificuldadePergunta dificuldade) {
-        this.idPergunta = idPergunta;
+    public Pergunta(int id, String enunciado, Alternativa[] alternativas, DificuldadePergunta dificuldade, String dica, Professor criador) {
+        this.id = id;
         this.enunciado = enunciado;
+        this.alternativas = alternativas;
         this.dificuldade = dificuldade;
+        this.dica = dica;
+        this.criador = criador;
     }
 
-    public int getIdPergunta() {
-        return idPergunta;
-    }
-
-    public void setIdPergunta(int idPergunta) {
-        this.idPergunta = idPergunta;
+    // Getters
+    public int getId() {
+        return id;
     }
 
     public String getEnunciado() {
         return enunciado;
     }
 
-    public void setEnunciado(String enunciado) {
-        this.enunciado = enunciado;
+    public Alternativa[] getAlternativas() {
+        return alternativas;
     }
 
     public DificuldadePergunta getDificuldade() {
         return dificuldade;
     }
 
-    public void setDificuldade(DificuldadePergunta dificuldade) {
-        this.dificuldade = dificuldade;
+    public String getDica() {
+        return dica;
+    }
+
+    public Professor getCriador() {
+        return criador;
     }
 }
