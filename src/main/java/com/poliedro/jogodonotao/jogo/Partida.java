@@ -242,14 +242,13 @@ public class Partida {
     public Pergunta sortearPergunta() {
         // Obter array com ids perguntas disponíveis
         ArrayList<Integer> listaPerguntas = PerguntaDAO.obterListaDeSorteio(this);
-        System.out.println(listaPerguntas);
+        System.out.println(listaPerguntas); // DEBUG
 
         // Sortear pergunta aleatória
         Random rd = new Random();
-        /*return PerguntaDAO.buscarPorId(
+        return PerguntaDAO.buscarPorId(
                 listaPerguntas.get(rd.nextInt(listaPerguntas.size()))
-        );*/
-        return null;
+        );
     }
 
     public static void main(String[] args) {
@@ -270,6 +269,12 @@ public class Partida {
             System.out.println("Pergunta sorteada:");
             System.out.println("ID: " + pergunta.getId());
             System.out.println("Enunciado: " + pergunta.getEnunciado());
+            System.out.println("Dica:" + pergunta.getDica());
+
+            System.out.println("Alternativas:");
+            for (int i = 0; i < pergunta.getAlternativas().length; i++) {
+                System.out.println((i + 1) + ") " + pergunta.getAlternativas()[i].getTexto());
+            }
         } else {
             System.out.println("Nenhuma pergunta disponível para sorteio.");
         }
