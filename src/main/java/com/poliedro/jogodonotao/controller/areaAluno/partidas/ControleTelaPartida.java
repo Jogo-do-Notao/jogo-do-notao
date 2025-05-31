@@ -147,6 +147,11 @@ public class ControleTelaPartida implements Initializable {
         // Aleatorizar ordem das alternativas
         Alternativa[] alternativasEmbaralhadas = Alternativa.embaralhar(pergunta.getAlternativas());
 
-        
+        // Exibir alternativas
+        Text[] textos = {alternativa1texto, alternativa2texto, alternativa3texto, alternativa4texto, alternativa5texto};
+        for (int i = 0; i < 5; i++) {
+            textos[i].setText(alternativasEmbaralhadas[i].getTexto());
+        }
+
     }
 }
