@@ -206,7 +206,9 @@ public class ControleTelaPartida implements Initializable {
         textPontuacaoCheckpoint.setText("Pontuação do Checkpoint: " + partida.getPontuacaoCheckpointFormatada());
 
         // atualizar progresso
-        textProgresso.setText(partida.getRodada() + "/15");
+        textProgresso.setText((partida.getRodada() - 1) + "/15");
+        barraProgresso.setProgress( // barra de progresso
+                (partida.getRodada() - 1) / 15.0);
     }
 
     /**
