@@ -29,6 +29,10 @@ public class Partida {
      * Usado para calcular a pontuação acumulada do aluno até chegar em 1 milhão na última rodada (15º).
      */
     private static final int[] premioPorRodada = {500, 500, 1_000, 1_000, 2_000, 5_000, 5_000, 5_000, 10_000, 20_000, 50_000, 50_000, 150_000, 200_000, 500_000};
+    /**
+     * Checkpoints do jogo.
+     */
+    private static final int[] checkpoints = {5, 10};
     // Atributos
     /**
      * ID da partida no banco de dados.
@@ -163,7 +167,7 @@ public class Partida {
     }
 
     public String getPontuacaoCheckpointFormatada() {
-        return Formatador.formatoMonetario(this.pontuacaoAcumulada);
+        return Formatador.formatoMonetario(this.pontuacaoCheckpoint);
     }
 
 
@@ -182,8 +186,15 @@ public class Partida {
     /**
      * Retorna o prêmio ganho na rodada atual ao acertar a pergunta.
      */
-    public String getGanhoNaRodada() {
-        return Formatador.formatoMonetario(premioPorRodada[this.rodada]);
+    public int getGanhoNaRodada() {
+        return premioPorRodada[this.rodada - 1];
+    }
+
+    /**
+     * Retorna o prêmio, formatado como monetário, ganho na rodada atual ao acertar a pergunta.
+     */
+    public String getGanhoNaRodadaFormatada() {
+        return Formatador.formatoMonetario(premioPorRodada[this.rodada - 1]);
     }
 
     /**
@@ -203,6 +214,15 @@ public class Partida {
         } else {
             return DificuldadePergunta.DIFICIL;
         }
+    }
+
+    // Setters
+
+    /**
+     * Aumentar pontuação acumulada da partida.
+     */
+    public void addPontuacaoAcumulada() {
+        this.pontuacaoAcumulada += this.getGanhoNaRodada();
     }
 
     /**
@@ -237,7 +257,11 @@ public class Partida {
     }
 
     /**
-     * Verifica se a alternativa selecionada é a correta.
+     * Verifica se a alternativa selecionada é a correta e exibe uma mensagem.
+     *
+     * @param selecionada Alternativa selecionada pelo aluno.
+     * @param correta     Alternativa correta da pergunta.
+     * @return {@code true} se a resposta estiver correta, {@code false} caso contrário.
      */
     public boolean verificarResposta(
             Alternativa selecionada, Alternativa correta
@@ -248,8 +272,11 @@ public class Partida {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Resposta Correta");
             alert.setHeaderText("Resposta Correta!");
-            alert.setContentText("Parabéns! Você acertou a resposta.\n\nVocê ganhou " + this.getGanhoNaRodada() + "  nesta rodada.");
+            alert.setContentText("Parabéns! Você acertou a resposta.\n\nVocê ganhou " + this.getGanhoNaRodadaFormatada() + "  nesta rodada.");
             alert.show();
+
+            // Atualizar pontuação acumulada
+            this.addPontuacaoAcumulada();
         } else {
             /* Resposta está errada */
             // Exibir mensagem de resposta incorreta
@@ -259,7 +286,6 @@ public class Partida {
             alert.setContentText("Você errou a resposta. \n\nA resposta correta era: " + correta.getTexto() + ".");
             alert.showAndWait();
         }
-
         return selecionada.isCorreta();
     }
 }

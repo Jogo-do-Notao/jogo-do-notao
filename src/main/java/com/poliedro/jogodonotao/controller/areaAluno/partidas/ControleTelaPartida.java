@@ -82,6 +82,11 @@ public class ControleTelaPartida implements Initializable {
     private Text usoAjudaPular;
 
     /**
+     * Partida em andamento.
+     */
+    private Partida partida = Partida.getPartidaEmAndamento();
+
+    /**
      * Alternativas exibidas na tela.
      */
     private Alternativa[] alternativas;
@@ -155,10 +160,15 @@ public class ControleTelaPartida implements Initializable {
         // Verificar respostas e prosseguir com a partida
         if (alternativaSelecionada != null && alternativaCorreta != null) {
             if (
-                    Partida.getPartidaEmAndamento().verificarResposta(alternativaSelecionada, alternativaCorreta)
+                    partida.verificarResposta(alternativaSelecionada, alternativaCorreta)
             ) {
+                /* Correto */
+                // atualizar informações na tela
+                atualizarInfo();
+
                 // Próxima pergunta
             } else {
+                /* Incorreto */
                 // Finalizar partida
             }
 
@@ -177,12 +187,25 @@ public class ControleTelaPartida implements Initializable {
 
         // Exibir matéria
         textMateria.setText(
-                "Matéria: " + Partida.getPartidaEmAndamento().getMateria().getNome());
+                "Matéria: " + partida.getMateria().getNome());
+        // Exibir pontuação
+        atualizarInfo();
 
         // Sortear pergunta
-        Pergunta perguntaAtual = Partida.getPartidaEmAndamento().sortearPergunta();
+        Pergunta perguntaAtual = partida.sortearPergunta();
         // Exibir pergunta na tela
         atualizarPergunta(perguntaAtual);
+    }
+
+    /**
+     * Atualiza as informações da partida na tela.
+     */
+    private void atualizarInfo() {
+        // atualizar pontuação
+        textPontuacaoAcumulada.setText("Pontuação Acumulada: " + partida.getPontuacaoAcumuladaFormatada());
+        textPontuacaoCheckpoint.setText("Pontuação do Checkpoint: " + partida.getPontuacaoCheckpointFormatada());
+
+        // atualizar progresso
     }
 
     /**
@@ -201,6 +224,5 @@ public class ControleTelaPartida implements Initializable {
         for (int i = 0; i < 5; i++) {
             textos[i].setText(this.alternativas[i].getTexto());
         }
-
     }
 }
