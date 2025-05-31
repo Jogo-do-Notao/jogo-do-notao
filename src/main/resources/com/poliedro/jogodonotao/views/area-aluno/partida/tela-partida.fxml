@@ -83,7 +83,7 @@
                <children>
                   <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" VBox.vgrow="ALWAYS">
+                        <ToggleButton fx:id="alternativa1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" VBox.vgrow="ALWAYS">
                            <graphic>
                               <HBox>
                                  <children>
@@ -95,7 +95,7 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                          <Text fx:id="alternativa1texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Text>
@@ -108,7 +108,7 @@
                               <ToggleGroup fx:id="alternativaGroup" />
                            </toggleGroup>
                         </ToggleButton>
-                        <ToggleButton layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
+                        <ToggleButton fx:id="alternativa2" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
                            <graphic>
                               <HBox>
                                  <children>
@@ -120,7 +120,7 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                          <Text fx:id="alternativa2texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Text>
@@ -130,7 +130,7 @@
                               </HBox>
                            </graphic>
                         </ToggleButton>
-                        <ToggleButton layoutX="10.0" layoutY="92.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
+                        <ToggleButton fx:id="alternativa3" layoutX="10.0" layoutY="92.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
                            <graphic>
                               <HBox>
                                  <children>
@@ -142,7 +142,7 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                          <Text fx:id="alternativa3texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Text>
@@ -152,7 +152,7 @@
                               </HBox>
                            </graphic>
                         </ToggleButton>
-                        <ToggleButton layoutX="10.0" layoutY="173.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
+                        <ToggleButton fx:id="alternativa4" layoutX="10.0" layoutY="173.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
                            <graphic>
                               <HBox>
                                  <children>
@@ -164,7 +164,7 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                          <Text fx:id="alternativa4texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Text>
@@ -174,7 +174,7 @@
                               </HBox>
                            </graphic>
                         </ToggleButton>
-                        <ToggleButton layoutX="10.0" layoutY="315.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
+                        <ToggleButton fx:id="alternativa5" layoutX="10.0" layoutY="315.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#alternativaSelecionada" styleClass="botao-alternativa" toggleGroup="$alternativaGroup">
                            <graphic>
                               <HBox>
                                  <children>
@@ -186,7 +186,7 @@
                                     </StackPane>
                                     <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" styleClass="alternativa" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
+                                          <Text fx:id="alternativa5texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Text>

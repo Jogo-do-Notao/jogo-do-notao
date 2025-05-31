@@ -1,11 +1,13 @@
 package com.poliedro.jogodonotao.controller.areaAluno.partidas;
 
 import com.poliedro.jogodonotao.jogo.Partida;
+import com.poliedro.jogodonotao.pergunta.Alternativa;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 
@@ -17,6 +19,37 @@ import java.util.ResourceBundle;
  * Responsável por gerenciar os eventos e a interação do usuário durante uma partida.
  */
 public class ControleTelaPartida implements Initializable {
+
+
+    @FXML
+    private ToggleButton alternativa1;
+
+    @FXML
+    private Text alternativa1texto;
+
+    @FXML
+    private ToggleButton alternativa2;
+
+    @FXML
+    private Text alternativa2texto;
+
+    @FXML
+    private ToggleButton alternativa3;
+
+    @FXML
+    private Text alternativa3texto;
+
+    @FXML
+    private ToggleButton alternativa4;
+
+    @FXML
+    private Text alternativa4texto;
+
+    @FXML
+    private ToggleButton alternativa5;
+
+    @FXML
+    private Text alternativa5texto;
 
     @FXML
     private ToggleGroup alternativaGroup;
@@ -98,7 +131,6 @@ public class ControleTelaPartida implements Initializable {
                 "Matéria: " + Partida.getPartidaEmAndamento().getMateria().getNome());
 
         // Sortear pergunta
-        // Sortear pergunta
         Pergunta perguntaAtual = Partida.getPartidaEmAndamento().sortearPergunta();
         // Exibir pergunta na tela
         atualizarPergunta(perguntaAtual);
@@ -111,5 +143,10 @@ public class ControleTelaPartida implements Initializable {
         // Atualizar enunciado
         //textEnunciado.setText(pergunta.getEnunciado());
         textEnunciado.setText(pergunta.getEnunciado());
+
+        // Aleatorizar ordem das alternativas
+        Alternativa[] alternativasEmbaralhadas = Alternativa.embaralhar(pergunta.getAlternativas());
+
+        
     }
 }
