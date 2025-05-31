@@ -266,7 +266,7 @@
                            <children>
                               <VBox spacing="16.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Button disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#verificarResposta" text="Responder">
+                                    <Button fx:id="botaoResponder" disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#verificarResposta" text="Responder">
                                        <styleClass>
                                           <String fx:value="button-xl" />
                                           <String fx:value="button-laranja" />

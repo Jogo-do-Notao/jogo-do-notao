@@ -6,6 +6,7 @@ import com.poliedro.jogodonotao.pergunta.Pergunta;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
@@ -58,6 +59,9 @@ public class ControleTelaPartida implements Initializable {
     private ProgressBar barraProgresso;
 
     @FXML
+    private Button botaoResponder;
+
+    @FXML
     private Text textEnunciado;
 
     @FXML
@@ -81,9 +85,15 @@ public class ControleTelaPartida implements Initializable {
     @FXML
     private Text usoAjudaPular;
 
+    /**
+     * Método chamado quando uma alternativa é selecionada ou desmarcada.
+     */
     @FXML
     void alternativaSelecionada(ActionEvent event) {
-
+        // Habilitar/desabilitar o botão de verificar resposta
+        botaoResponder.setDisable(
+                alternativaGroup.getSelectedToggle() == null
+        );
     }
 
     @FXML
