@@ -5,6 +5,7 @@ import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.dao.PartidaDAO;
 import com.poliedro.jogodonotao.database.dao.PerguntaDAO;
+import com.poliedro.jogodonotao.pergunta.Alternativa;
 import com.poliedro.jogodonotao.pergunta.DificuldadePergunta;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
@@ -25,6 +26,11 @@ public class Partida {
      * Partida que está sendo jogada no momento.
      */
     private static Partida partidaEmAndamento;
+    /**
+     * Valores do prêmio de cada rodada.
+     * Usado para calcular a pontuação acumulada do aluno até chegar em 1 milhão na última rodada (15º).
+     */
+    private static final int[] premioPorRodada = {500, 500, 1_000, 1_000, 2_000, 5_000, 5_000, 5_000, 10_000, 20_000, 50_000, 50_000, 150_000, 200_000, 500_000};
     // Atributos
     /**
      * ID da partida no banco de dados.
@@ -180,6 +186,13 @@ public class Partida {
     }
 
     /**
+     * Retorna o prêmio ganho na rodada atual ao acertar a pergunta.
+     */
+    public int getGanhoNaRodada() {
+        return premioPorRodada[this.getRodada()];
+    }
+
+    /**
      * Retorna a dificuldade da partida, dependendo da rodada atual.
      * Dificuldade é definida como:
      * - Fácil: Rodadas 1 a 5
@@ -229,32 +242,33 @@ public class Partida {
         );
     }
 
-    public static void main(String[] args) {
-        // Criar aluno de exemplo
-        Aluno aluno = new Aluno(2, "Aluno Teste", "aluno@teste.com", "43.535-3", "", new Turma(1, "Turma A", (byte) 2, "2023/2"), 453);
+    /**
+     * Verifica se a alternativa selecionada é a correta.
+     */
+    public boolean verificarResposta(
+            Alternativa selecionada, Alternativa correta
+    ) {
+        if (selecionada.isCorreta()) {
+            /* Resposta está correta */
+            // Calcular prêmio
+            int premio = this.getGanhoNaRodada();
 
-        // Criar matéria de exemplo
-        Materia materia = new Materia(-1, "Todas");
-
-        // Criar partida de exemplo
-        Partida partida = new Partida(
-                1, aluno, materia, PartidaStatus.ANDAMENTO, 2, new Pergunta[15], 0, 0, 0, 0, 0
-        );
-
-        // Testar sorteio de pergunta
-        Pergunta pergunta = partida.sortearPergunta();
-        if (pergunta != null) {
-            System.out.println("Pergunta sorteada:");
-            System.out.println("ID: " + pergunta.getId());
-            System.out.println("Enunciado: " + pergunta.getEnunciado());
-            System.out.println("Dica:" + pergunta.getDica());
-
-            System.out.println("Alternativas:");
-            for (int i = 0; i < pergunta.getAlternativas().length; i++) {
-                System.out.println((i + 1) + ") " + pergunta.getAlternativas()[i].getTexto());
-            }
+            // Exibir mensagem de resposta correta
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Resposta Correta");
+            alert.setHeaderText("Resposta Correta!");
+            alert.setContentText("Parabéns! Você acertou a resposta.\n\nVocê ganhou " + premio + "  nesta rodada.");
+            alert.show();
         } else {
-            System.out.println("Nenhuma pergunta disponível para sorteio.");
+            /* Resposta está errada */
+            // Exibir mensagem de resposta incorreta
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Resposta Errada");
+            alert.setHeaderText("Resposta Errada!");
+            alert.setContentText("Você errou a resposta. \n\nA resposta correta era: " + correta.getTexto() + ".");
+            alert.showAndWait();
         }
+
+        return selecionada.isCorreta();
     }
 }

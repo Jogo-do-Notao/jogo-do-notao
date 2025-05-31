@@ -152,28 +152,9 @@ public class ControleTelaPartida implements Initializable {
                 alternativaCorreta = alternativas[i];
             }
         }
-
-        // Verificar se alguma alternativa foi selecionada
-        if (alternativaSelecionada == null) {
-            return;
-        }
-
-        if (alternativaSelecionada.isCorreta()) {
-            /* Alternativa correta */
-            // Exibir mensagem de resposta correta
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Resposta Correta");
-            alert.setHeaderText("Resposta Correta!");
-            alert.setContentText("Parabéns! Você acertou a resposta.");
-            alert.show();
-        } else {
-            /* Alternativa incorreta */
-            // Exibir mensagem de resposta incorreta
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Resposta Errada");
-            alert.setHeaderText("Resposta Errada!");
-            alert.setContentText("Você errou a resposta. \n\nA resposta correta era: " + alternativaCorreta.getTexto() + ".");
-            alert.showAndWait();
+        // Verificar respostas e prosseguir com a partida
+        if (alternativaSelecionada != null && alternativaCorreta != null) {
+            Partida.getPartidaEmAndamento().verificarResposta(alternativaSelecionada, alternativaCorreta);
         }
     }
 
@@ -183,7 +164,7 @@ public class ControleTelaPartida implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Iniciar array com os botões de alternativas
-        this.botoesAlternativas = new ToggleButton[] {
+        this.botoesAlternativas = new ToggleButton[]{
                 alternativa1, alternativa2, alternativa3, alternativa4, alternativa5
         };
 
