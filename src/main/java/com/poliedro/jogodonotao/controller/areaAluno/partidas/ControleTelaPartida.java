@@ -94,29 +94,22 @@ public class ControleTelaPartida implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        do {
-            // Sortear pergunta
-            Pergunta perguntaAtual = Partida.getPartidaEmAndamento().sortearPergunta();
+        // Exibir matéria
+        textMateria.setText(
+                "Matéria: " + Partida.getPartidaEmAndamento().getMateria().getNome());
 
-            // DEBUG: exibir dados da pergunta
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("DEBUG: Pergunta Sorteada");
-            alert.setHeaderText("Pergunta Sorteada");
-            alert.setContentText(
-                    "ID: " + perguntaAtual.getId() + "\n" +
-                            "Enunciado: " + perguntaAtual.getEnunciado() + "\n" +
-                            "Dificuldade: " + perguntaAtual.getDificuldade().get() + "\n" +
-                            "Dica: " + perguntaAtual.getDica() + "\n" +
-                            "Criador: " + perguntaAtual.getCriador().getNome() + "\n" +
-                            "Alternativas: " + "\n" +
-                            "1) " + perguntaAtual.getAlternativas()[0].getTexto() + "\n" +
-                            "2) " + perguntaAtual.getAlternativas()[1].getTexto() + "\n" +
-                            "3) " + perguntaAtual.getAlternativas()[2].getTexto() + "\n" +
-                            "4) " + perguntaAtual.getAlternativas()[3].getTexto()
-                            + "\n" +
-                            "5) " + perguntaAtual.getAlternativas()[4].getTexto()
-            );
+        // Sortear pergunta
+        // Sortear pergunta
+        Pergunta perguntaAtual = Partida.getPartidaEmAndamento().sortearPergunta();
+        // Exibir pergunta na tela
+        textEnunciado.setText(perguntaAtual.getEnunciado());
+    }
 
-        } while (false);
+    /**
+     * Atualiza a pergunta na tela.
+     */
+    private void atualizarPergunta() {
+        Pergunta perguntaAtual = Partida.getPartidaEmAndamento().sortearPergunta();
+        textEnunciado.setText(perguntaAtual.getEnunciado());
     }
 }

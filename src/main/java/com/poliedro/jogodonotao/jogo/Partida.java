@@ -212,28 +212,6 @@ public class Partida {
 
         // redirecionar para Tela de Partida
         App.changeScene("area-aluno/partida/tela-partida", "Partida em Andamento");
-
-        // Exibir mensagem com regras da partida
-        // DEBUG: exibir informações da partida criada
-        Partida p = Partida.getPartidaEmAndamento();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("DEBUG: Nova Partida Criada");
-        alert.setHeaderText("Nova Partida: " + materia.getNome());
-        alert.setContentText(
-                "Informações da partida: \n" +
-                        "ID: " + p.getId() + "\n" +
-                        "Aluno: " + p.getAluno().getNome() + "\n" +
-                        "Materia: " + (
-                        (p.getMateria() != null) ? p.getMateria().getNome() : "Todas as Matérias") + "\n" +
-                        "Status: " + p.getStatusText() + "\n" +
-                        "Rodada: " + p.getRodada() + "\n" +
-                        "Pontuação Acumulada: " + p.getPontuacaoAcumulada() + "\n" +
-                        "Pontuação Checkpoint: " + p.getPontuacaoCheckpoint() + "\n" +
-                        "Ajuda Eliminar: " + p.getAjudaEliminar() + "\n" +
-                        "Ajuda Dica: " + p.getAjudaDica() + "\n" +
-                        "Ajuda Pular: " + p.getAjudaPular()
-        );
-        alert.show();
     }
 
     /**

@@ -35,7 +35,7 @@
                <children>
                   <StackPane alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" style="-fx-background-color: -poliedro-azul-600; -fx-background-radius: 20;">
                      <children>
-                        <Text fx:id="textEnunciado" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -poliedro-ve;" text="[Enunciado da Pergunta]">
+                        <Text fx:id="textEnunciado" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="[Enunciado da Pergunta]">
                            <font>
                               <Font name="System Bold" size="36.0" />
                            </font>
