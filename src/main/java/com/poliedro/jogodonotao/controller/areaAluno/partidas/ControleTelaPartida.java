@@ -87,6 +87,11 @@ public class ControleTelaPartida implements Initializable {
     private Partida partida = Partida.getPartidaEmAndamento();
 
     /**
+     * Pergunta da partida atual exibida na tela.
+     */
+    private Pergunta perguntaAtual;
+
+    /**
      * Alternativas exibidas na tela.
      */
     private Alternativa[] alternativas;
@@ -167,6 +172,8 @@ public class ControleTelaPartida implements Initializable {
                 atualizarInfo();
 
                 // Próxima pergunta
+                this.atualizarPergunta();
+
             } else {
                 /* Incorreto */
                 // Finalizar partida
@@ -193,12 +200,10 @@ public class ControleTelaPartida implements Initializable {
                                 partida.getMateria().getNome()
                 ));
         // Exibir pontuação
-        atualizarInfo();
+        this.atualizarInfo();
 
-        // Sortear pergunta
-        Pergunta perguntaAtual = partida.sortearPergunta();
-        // Exibir pergunta na tela
-        atualizarPergunta(perguntaAtual);
+        // Sortear e exibir pergunta
+        this.atualizarPergunta();
     }
 
     /**
@@ -218,13 +223,19 @@ public class ControleTelaPartida implements Initializable {
     /**
      * Atualiza a pergunta na tela.
      */
-    private void atualizarPergunta(Pergunta pergunta) {
+    private void atualizarPergunta() {
+        // Sortear pergunta
+        this.perguntaAtual = partida.sortearPergunta();
+
         // Atualizar enunciado
         //textEnunciado.setText(pergunta.getEnunciado());
-        textEnunciado.setText(pergunta.getEnunciado());
+        textEnunciado.setText(this.perguntaAtual.getEnunciado());
+
+        // Deselecionar botões de alternativas
+        alternativaGroup.selectToggle(null);
 
         // Aleatorizar ordem das alternativas
-        this.alternativas = Alternativa.embaralhar(pergunta.getAlternativas());
+        this.alternativas = Alternativa.embaralhar(this.perguntaAtual.getAlternativas());
 
         // Exibir alternativas
         Text[] textos = {alternativa1texto, alternativa2texto, alternativa3texto, alternativa4texto, alternativa5texto};
