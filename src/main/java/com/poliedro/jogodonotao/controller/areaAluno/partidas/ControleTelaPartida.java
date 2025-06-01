@@ -169,10 +169,23 @@ public class ControleTelaPartida implements Initializable {
             ) {
                 /* Correto */
                 // atualizar informações na tela
-                atualizarInfo();
+                this.atualizarInfo();
 
-                // Próxima pergunta
-                this.atualizarPergunta();
+                // Verificar se terminou
+                if (partida.getRodada() <= 15) {
+                    // Próxima pergunta
+                    this.atualizarRodada();
+                } else {
+                    /* Partida finalizada */
+                    // Exibir mensagem de vitória
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Parabéns!");
+                    alert.setHeaderText("Você completou a partida!");
+                    alert.setContentText("Sua pontuação final é: " + partida.getPontuacaoAcumuladaFormatada());
+                    alert.showAndWait();
+
+                    // Encerrar partida
+                }
 
             } else {
                 /* Incorreto */
@@ -203,7 +216,7 @@ public class ControleTelaPartida implements Initializable {
         this.atualizarInfo();
 
         // Sortear e exibir pergunta
-        this.atualizarPergunta();
+        this.atualizarRodada();
     }
 
     /**
@@ -215,15 +228,16 @@ public class ControleTelaPartida implements Initializable {
         textPontuacaoCheckpoint.setText("Pontuação do Checkpoint: " + partida.getPontuacaoCheckpointFormatada());
 
         // atualizar progresso
-        textProgresso.setText((partida.getRodada() - 1) + "/15");
+        int rodada = partida.getRodada();
+        textProgresso.setText((rodada <= 15 ? rodada : "Concluído") + "/15");
         barraProgresso.setProgress( // barra de progresso
-                (partida.getRodada() - 1) / 15.0);
+                (rodada / 16.0));
     }
 
     /**
      * Atualiza a pergunta na tela.
      */
-    private void atualizarPergunta() {
+    private void atualizarRodada() {
         // Sortear pergunta
         this.perguntaAtual = partida.sortearPergunta();
 
