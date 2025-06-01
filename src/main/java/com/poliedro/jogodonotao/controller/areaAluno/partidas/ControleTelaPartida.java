@@ -185,6 +185,7 @@ public class ControleTelaPartida implements Initializable {
                     alert.showAndWait();
 
                     // Encerrar partida
+                    partida.vitoria();
                 }
 
             } else {
@@ -247,6 +248,8 @@ public class ControleTelaPartida implements Initializable {
 
         // Deselecionar botões de alternativas
         alternativaGroup.selectToggle(null);
+        // Desabilitar botão de responder (evitar bug)
+        botaoResponder.setDisable(true);
 
         // Aleatorizar ordem das alternativas
         this.alternativas = Alternativa.embaralhar(this.perguntaAtual.getAlternativas());

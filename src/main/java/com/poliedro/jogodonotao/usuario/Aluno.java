@@ -82,6 +82,17 @@ public class Aluno extends Usuario {
         return pontuacaoMateria;
     }
 
+    // Setters
+
+    /**
+     * Atualiza a pontuação do aluno.
+     *
+     * @param pontuacao Pontuação a ser adicionada à pontuação total do aluno.
+     */
+    public void setPontuacao(long pontuacao) {
+        this.pontuacao += pontuacao;
+    }
+
     // Métodos
 
     /**

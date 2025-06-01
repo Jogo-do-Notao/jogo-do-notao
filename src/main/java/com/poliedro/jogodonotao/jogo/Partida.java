@@ -242,6 +242,14 @@ public class Partida {
     }
 
     /**
+     * Atualiza o status da partida.
+     */
+    public void setStatus(PartidaStatus status) {
+        this.status = status; // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.STATUS);
+    }
+
+    /**
      * Cria uma nova partida no banco de dados e depois abre a Tela de Partida com a nova partida criada.
      *
      * @param materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
@@ -331,5 +339,22 @@ public class Partida {
             alert.showAndWait();
         }
         return selecionada.isCorreta();
+    }
+
+    /**
+     * Encerra a partida após responder corretamente todas as perguntas e atingir o prêmio máximo.
+     */
+    public void vitoria() {
+        // Atualizar status da partida
+        this.setStatus(PartidaStatus.GANHA);
+        // Atualizar pontuação do aluno
+        this.aluno.setPontuacao(this.getPontuacaoAcumulada());
+
+        // Redirecionar para a tela de fim da partida
+        try {
+            App.changeScene("area-aluno/partida/tela-partida-concluida", "Partida Concluída");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
