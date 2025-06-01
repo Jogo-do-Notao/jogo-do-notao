@@ -7,6 +7,7 @@ import com.poliedro.jogodonotao.database.dao.TurmaDAO;
 import com.poliedro.jogodonotao.usuario.Professor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -16,7 +17,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ControleCriarTurma {
+public class ControleCriarTurma implements Initializable {
 
     @FXML
     private TextField campoDescricaoTurma;
