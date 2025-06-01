@@ -220,21 +220,25 @@ public class Partida {
      * Aumentar pontuação acumulada da partida.
      */
     public void addPontuacaoAcumulada() {
-        this.pontuacaoAcumulada += this.getGanhoNaRodada();
+        this.pontuacaoAcumulada += this.getGanhoNaRodada(); // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.PONTUACAO_ACUMULADA); // atualizar no db
     }
 
     /**
      * Incrementa a rodada atual da partida.
      */
     public void proximaRodada() {
-        this.rodada++;
+        this.rodada++; // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.RODADA); // atualizar no db
     }
 
     /**
      * Salva a pontuação acumulada atual como pontuação de checkpoint.
      */
     public void salvarCheckpoint() {
-        this.pontuacaoCheckpoint = this.pontuacaoAcumulada;
+        this.pontuacaoCheckpoint = this.pontuacaoAcumulada; // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.PONTUACAO_CHECKPOINT); // atualizar no db
+
     }
 
     /**
