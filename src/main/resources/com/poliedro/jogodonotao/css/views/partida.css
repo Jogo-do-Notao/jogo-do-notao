@@ -100,10 +100,13 @@
   -fx-background-radius: 50%;
   /* cor */
   -fx-background-color: -zinc-200;
+
   /* dimensões */
   -fx-pref-height: 52px;
+  -fx-min-height: 52px;
   -fx-max-height: 52px;
   -fx-pref-width: 52px;
+  -fx-min-width: 52px;
   -fx-max-width: 52px;
 }
 /* Número da alternativa */
