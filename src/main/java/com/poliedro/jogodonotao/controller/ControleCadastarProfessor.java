@@ -16,7 +16,7 @@ public class ControleCadastarProfessor {
     private TextField campoConfirmarSenha;
 
     @FXML
-    private TextField campoDescrição;
+    private TextField campoDescricao;
 
     @FXML
     private TextField campoEmail;
@@ -30,11 +30,11 @@ public class ControleCadastarProfessor {
     @FXML
     void adicionarProfessor(ActionEvent event) throws IOException {
         String nome = campoNome.getText();
-        String descrição = campoDescrição.getText();
+        String descricao = campoDescricao.getText();
         String senha = campoSenha.getText();
         String confirmarsenha = campoConfirmarSenha.getText();
         String email = campoEmail.getText();
-// verificar se nome ja esta sendo usado
+// verificar se o email ja esta sendo usado
         if (ProfessorDAO.buscarPorEmail(email) != null) {
             // inválido
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -43,15 +43,17 @@ public class ControleCadastarProfessor {
             alert.setContentText("O E-mail digitado no campo E-mail, ja esta registrado no sistema.\nPor favor digite um e-mail diferente");
             alert.showAndWait();
             return;
-    }else {
+        }else {
             //salvar no banco de dados
-            App.changeScene("area-adm/gerenciar-professores/tela-gerenciar-professores", "Gerenciar Professores");
+            ProfessorDAO.adicionarProfessor(nome, descricao, email, senha);
+            //trocar de tela
+            App.changeScene("area-adm/painel-administrador", "Gerenciar Alunos");//temporario
         }
     }
 
     @FXML
     void voltarParaPainel(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/gerenciar-professores/tela-gerenciar-professores", "Gerenciar Professores");
+        App.changeScene("area-adm/painel-administrador", "Gerenciar Alunos");//temporario
     }
 
 }

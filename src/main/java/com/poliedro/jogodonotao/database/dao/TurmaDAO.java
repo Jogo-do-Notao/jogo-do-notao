@@ -2,12 +2,8 @@ package com.poliedro.jogodonotao.database.dao;
 
 import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.ConexaoDB;
-import com.poliedro.jogodonotao.usuario.Professor;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -66,7 +62,7 @@ public class TurmaDAO {
                 return new Turma(
                         res.getInt(TurmaColuna.ID.get()), // id
                         res.getString(TurmaColuna.NOME.get()), // nome
-                        ProfessorDAO.buscarPorId(res.getInt(TurmaColuna.PROFESSOR.get())), // responsavel
+                        // res.getString(TurmaColuna.PROFESSOR.get()), // responsavel
                         res.getByte(TurmaColuna.SERIE.get()), // serie
                         res.getString(TurmaColuna.DESCRICAO.get()) // descricao
                 );
@@ -112,9 +108,8 @@ public class TurmaDAO {
                 String nome = res.getString(TurmaColuna.NOME.get());
                 byte serie = res.getByte(TurmaColuna.SERIE.get());
                 String descrição = res.getString(TurmaColuna.DESCRICAO.get());
-                Professor professor = ProfessorDAO.buscarPorId(res.getInt(TurmaColuna.PROFESSOR.get()));
                 // adicionar a lista
-                turmas.add(new Turma(id, nome, professor,serie,descrição));
+                turmas.add(new Turma(id, nome, serie,descrição ));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratamento de erro
@@ -122,5 +117,42 @@ public class TurmaDAO {
         // retornar lista de matérias
         return turmas;
 
+    }
+    public static void adicionarTurma(String nome, String professor, String serie, String descricao) {
+
+
+        // Montar query SQL
+        String sql = "INSERT INTO turma";
+        String campos = TurmaDAO.TurmaColuna.NOME.get() + ", " + TurmaColuna.PROFESSOR.get() + "," + TurmaColuna.SERIE.get() + "," + TurmaColuna.DESCRICAO.get() ;
+        String placeholders = "?, ?, ?, ?";
+        sql += "(" + campos + ") VALUES (" + placeholders + ")";
+
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setString(1, nome);
+            stmt.setString(2, professor);
+            stmt.setString(3, serie);
+            stmt.setString(4, descricao);
+
+            //execuatr query
+            int linhasAfetadas = stmt.executeUpdate();
+
+            if (linhasAfetadas == 0) {
+                throw new RuntimeException("Erro ao criar turma: nenhuma linha  foi afetada.");
+            }
+
+            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    // Obter ID da nova partida e retorna-lá
+                    int idTurma = generatedKeys.getInt(1);
+                    buscarPorId(idTurma);
+                } else {
+                    throw new RuntimeException("Erro ao criar turma: nenhum ID foi gerado.");
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

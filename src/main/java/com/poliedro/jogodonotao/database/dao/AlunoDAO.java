@@ -152,7 +152,7 @@ public class AlunoDAO {
         return buscarPorRa(ra) != null;
     }
 
-    public static Aluno adicionarAluno(String nome, Turma turma, String ra, String email, String senha) {
+    public static void adicionarAluno(String nome, Turma turma, String ra, String email, String senha) {
 
         // Criptografar senha
         String hashSenha = HashSenha.obterHash(senha);
@@ -167,25 +167,25 @@ public class AlunoDAO {
                 Connection conexao = ConexaoDB.getConnection();
                 PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, nome);
-            stmt.setInt(2, turma.getId());
-            stmt.setString(3, ra);
-            stmt.setString(4, email);
-            stmt.setString(5, hashSenha);
+            stmt.setString(2, ra);
+            stmt.setString(3, email);
+            stmt.setString(4, hashSenha);
+            stmt.setInt(5, turma.getId());
 
             //execuatr query
             int linhasAfetadas = stmt.executeUpdate();
 
             if (linhasAfetadas == 0) {
-                throw new RuntimeException("Erro ao criar partida: nenhuma linha  foi afetada.");
+                throw new RuntimeException("Erro ao criar aluno: nenhuma linha  foi afetada.");
             }
 
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     // Obter ID da nova partida e retorna-lá
                     int idAluno = generatedKeys.getInt(1);
-                    return buscarPorId(idAluno);
+                    buscarPorId(idAluno);
                 } else {
-                    throw new RuntimeException("Erro ao criar partida: nenhum ID foi gerado.");
+                    throw new RuntimeException("Erro ao criar aluno: nenhum ID foi gerado.");
                 }
             }
         } catch (Exception e) {
@@ -193,6 +193,3 @@ public class AlunoDAO {
         }
     }
 }
-
-
-

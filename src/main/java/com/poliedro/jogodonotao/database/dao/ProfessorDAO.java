@@ -1,12 +1,13 @@
 package com.poliedro.jogodonotao.database.dao;
 
+import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.ConexaoDB;
+import com.poliedro.jogodonotao.usuario.Aluno;
 import com.poliedro.jogodonotao.usuario.Professor;
+import com.poliedro.jogodonotao.utils.HashSenha;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * Classe DAO para a entidade Professor.
@@ -98,5 +99,70 @@ public class ProfessorDAO {
      */
     public static Professor buscarPorEmail(String email) {
         return buscarProfessor(ProfessorColuna.EMAIL, email);
+    }
+
+    public static Professor adicionarProfessor(String nome, String descricao, String email, String senha) {
+
+        // Criptografar senha
+        String hashSenha = HashSenha.obterHash(senha);
+
+        // Montar query SQL
+        String sql = "INSERT INTO professor";
+        String campos = ProfessorDAO.ProfessorColuna.NOME.get() + ", " + ProfessorDAO.ProfessorColuna.DESCRICAO.get() + "," + ProfessorDAO.ProfessorColuna.EMAIL.get() + "," + ProfessorDAO.ProfessorColuna.HASH_SENHA.get();
+        String placeholders = "?, ?, ?, ?";
+        sql += "(" + campos + ") VALUES (" + placeholders + ")";
+
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setString(1, nome);
+            stmt.setString(2, descricao);
+            stmt.setString(3, email);
+            stmt.setString(4, hashSenha);
+
+
+            //execuatr query
+            int linhasAfetadas = stmt.executeUpdate();
+
+            if (linhasAfetadas == 0) {
+                throw new RuntimeException("Erro ao criar professor: nenhuma linha  foi afetada.");
+            }
+
+            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    // Obter ID da nova partida e retorna-lá
+                    int idProfessor = generatedKeys.getInt(1);
+                    return buscarPorId(idProfessor);
+                } else {
+                    throw new RuntimeException("Erro ao criar professor: nenhum ID foi gerado.");
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static ArrayList<Professor> obterProfessores() {
+        ArrayList<Professor> professores = new ArrayList<>();
+        String sql = "SELECT * FROM professor";
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql);
+                ResultSet res = stmt.executeQuery()
+        ) {
+            while (res.next()) {
+                Professor professor = new Professor(
+                        res.getInt("id_professor"),
+                        res.getString("nome"),
+                        res.getString("email"),
+                        res.getString("hash_senha"),
+                        res.getString("descricao"),
+                        res.getBoolean("coordenador")
+                );
+                professores.add(professor);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return professores;
     }
 }

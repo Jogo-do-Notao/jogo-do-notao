@@ -9,10 +9,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-
+import javafx.fxml.Initializable;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class ControleAdicionarAluno {
+public class ControleAdicionarAluno implements Initializable {
 
     @FXML
     private TextField campoConfirmarSenha;
@@ -29,8 +32,25 @@ public class ControleAdicionarAluno {
     @FXML
     private TextField campoSenha;
 
+
+    private ArrayList<Turma> turmas;//atributo classe
+
     @FXML
-    private ComboBox<Turma> campoTurma;
+    private ComboBox<String> campoTurma;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //obter turmas do banco de dados
+        turmas = TurmaDAO.obterTurma();
+        //obter apenas nome da turma
+        ArrayList<String> nomeTurma= new ArrayList<>();
+        //inserir turmas no combobox
+        for(Turma t: turmas){
+            nomeTurma.add(t.getNome());
+        }
+        //Inserir todos o nomes da turma na combobox
+        campoTurma.getItems().addAll(nomeTurma);
+    }
 
     @FXML
     void adicionarAluno(ActionEvent event) throws IOException {
@@ -40,6 +60,7 @@ public class ControleAdicionarAluno {
         String confirmarsenha = campoConfirmarSenha.getText();
         String email = campoEmail.getText();
 
+
         if (campoTurma.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Aviso");
@@ -48,27 +69,32 @@ public class ControleAdicionarAluno {
             alert.showAndWait();
             return;
         }
-        int idTurma = campoTurma.getValue().getId();
-// verificar se nome ja esta sendo usado
+        String nomeTurmaSelecionada = campoTurma.getValue();
+        Turma turmaSelecionada = null;
+        for (Turma t : turmas) {
+            if (t.getNome().equals(nomeTurmaSelecionada)) {
+                turmaSelecionada = t;
+                break;
+            }
+        }
+
+
         if (AlunoDAO.buscarPorRa(ra) != null) {
-            // inválido
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Erro ao cadastrar aluno");
             alert.setHeaderText("Registro de matricula já cadastrado no sistema");
-            alert.setContentText("O registro de matricula digitado no campo Registro de matricula, ja esta registrado no sistema.\nPor favor digite um registro diferente");
+            alert.setContentText("O registro de matricula digitado no campo Registro de matricula já está registrado no sistema.\nPor favor digite um registro diferente.");
             alert.showAndWait();
             return;
         } else {
-         AlunoDAO.adicionarAluno(nome, TurmaDAO.buscarPorId(idTurma), ra, email,senha);
-            App.changeScene("area-adm/gerenciar-alunos/tela-gerenciar-alunos", "Gerenciar Alunos");
+            AlunoDAO.adicionarAluno(nome, turmaSelecionada, ra, email, senha);
+            App.changeScene("area-adm/painel-administrador", "Gerenciar Alunos");
         }
     }
 
-
     @FXML
-    void voltarParaPainel(ActionEvent event) throws IOException{
-            App.changeScene("area-adm/gerenciar-alunos/tela-gerenciar-alunos", "Gerenciar Alunos");
+    void voltarParaPainel(ActionEvent event) throws IOException {
+        App.changeScene("area-adm/painel-administrador", "Gerenciar Alunos");
+
     }
 }
-
-
