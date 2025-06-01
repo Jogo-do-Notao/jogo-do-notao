@@ -2,6 +2,7 @@ package com.poliedro.jogodonotao.usuario;
 
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Turma;
+import com.poliedro.jogodonotao.database.dao.AlunoDAO;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.utils.Formatador;
 import com.poliedro.jogodonotao.utils.HashSenha;
@@ -90,7 +91,8 @@ public class Aluno extends Usuario {
      * @param pontuacao Pontuação a ser adicionada à pontuação total do aluno.
      */
     public void setPontuacao(long pontuacao) {
-        this.pontuacao += pontuacao;
+        this.pontuacao += pontuacao; // atualizar objeto
+        AlunoDAO.atualizarAluno(this, AlunoDAO.AlunoColuna.PONTUACAO); // atualizar no db
     }
 
     // Métodos

@@ -133,4 +133,54 @@ public class AlunoDAO {
         return buscarPorRa(ra) != null;
     }
 
+    /**
+     * Atualiza os dados de um aluno no banco de dados.
+     *
+     * @params aluno Instância do aluno com os dados atualizados.
+     * @params atributo Atributo que será atualizado.
+     */
+    public static void atualizarAluno(Aluno aluno, AlunoColuna atributo) {
+        // Query SQL
+        final String sql = "UPDATE aluno SET " + atributo.get() + " = ? " + // atualizar atributo
+                "WHERE " + AlunoColuna.ID.get() + " = ?"; // encontrar aluno
+
+        // Executar query
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql)
+        ) {
+            // Substituir placeholders
+            switch (atributo) {
+                case ID_TURMA:
+                    stmt.setInt(1, aluno.getTurma().getId());
+                    break;
+                case NOME:
+                    stmt.setString(1, aluno.getNome());
+                    break;
+                case EMAIL:
+                    stmt.setString(1, aluno.getEmail());
+                    break;
+                case RA:
+                    stmt.setString(1, aluno.getRa());
+                    break;
+                case HASH_SENHA:
+                    stmt.setString(1, aluno.getHashSenha());
+                    break;
+                case PONTUACAO:
+                    stmt.setLong(1, aluno.getPontuacao());
+                    break;
+            }
+            // ID do aluno
+            stmt.setInt(2, aluno.getId());
+
+            // Executar update
+            int linhasAfetadas = stmt.executeUpdate();
+            // Se não houver linhas afetadas (não conseguiu atualizar aluno)
+            if (linhasAfetadas == 0) {
+                throw new IllegalArgumentException("Não foi possível atualizar o aluno com ID: " + aluno.getId());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e); // tratar o erro
+        }
+    }
 }
