@@ -71,7 +71,7 @@
             <Insets left="20.0" right="20.0" />
          </padding>
       </HBox>
-      <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: -zinc-200;" VBox.vgrow="ALWAYS">
+      <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: -zinc-200;" VBox.vgrow="ALWAYS">
          <content>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" style="-fx-background-color: -zinc-200;">
                <opaqueInsets>
@@ -89,7 +89,7 @@
                                  <children>
                                     <StackPane styleClass="circulo">
                                        <children>
-                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <HBox />
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
                                        </children>
                                     </StackPane>
@@ -98,7 +98,8 @@
                                           <Text fx:id="alternativa1texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
-                                             </font></Text>
+                                             </font>
+                                          </Text>
                                        </children>
                                     </StackPane>
                                  </children>
@@ -114,7 +115,7 @@
                                  <children>
                                     <StackPane styleClass="circulo">
                                        <children>
-                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <HBox />
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2" />
                                        </children>
                                     </StackPane>
@@ -123,7 +124,8 @@
                                           <Text fx:id="alternativa2texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
-                                             </font></Text>
+                                             </font>
+                                          </Text>
                                        </children>
                                     </StackPane>
                                  </children>
@@ -136,7 +138,7 @@
                                  <children>
                                     <StackPane styleClass="circulo">
                                        <children>
-                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <HBox />
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
                                        </children>
                                     </StackPane>
@@ -145,7 +147,8 @@
                                           <Text fx:id="alternativa3texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
-                                             </font></Text>
+                                             </font>
+                                          </Text>
                                        </children>
                                     </StackPane>
                                  </children>
@@ -158,7 +161,7 @@
                                  <children>
                                     <StackPane styleClass="circulo">
                                        <children>
-                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <HBox />
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" />
                                        </children>
                                     </StackPane>
@@ -167,7 +170,8 @@
                                           <Text fx:id="alternativa4texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
-                                             </font></Text>
+                                             </font>
+                                          </Text>
                                        </children>
                                     </StackPane>
                                  </children>
@@ -180,7 +184,7 @@
                                  <children>
                                     <StackPane styleClass="circulo">
                                        <children>
-                                          <HBox prefHeight="100.0" prefWidth="200.0" />
+                                          <HBox />
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5" />
                                        </children>
                                     </StackPane>
@@ -189,7 +193,8 @@
                                           <Text fx:id="alternativa5texto" strokeType="OUTSIDE" strokeWidth="0.0" text="[Alternativa]" wrappingWidth="350.0">
                                              <font>
                                                 <Font size="16.0" />
-                                             </font></Text>
+                                             </font>
+                                          </Text>
                                        </children>
                                     </StackPane>
                                  </children>
