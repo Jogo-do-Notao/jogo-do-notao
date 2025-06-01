@@ -37,10 +37,10 @@ public class Turma {
     private String descricao;
 
     // Construtor
-    public Turma(int id, String nome, /*Professor professor, */ byte serie, String descricao) {
+    public Turma(int id, String nome,Professor professor, byte serie, String descricao) {
         this.id = id;
         this.nome = nome;
-        //this.professor = professor;
+        this.professor = professor;
         this.serie = serie;
         this.descricao = descricao;
     }

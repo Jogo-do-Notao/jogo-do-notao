@@ -2,6 +2,7 @@ package com.poliedro.jogodonotao.database.dao;
 
 import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.ConexaoDB;
+import com.poliedro.jogodonotao.usuario.Professor;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -65,7 +66,7 @@ public class TurmaDAO {
                 return new Turma(
                         res.getInt(TurmaColuna.ID.get()), // id
                         res.getString(TurmaColuna.NOME.get()), // nome
-                        // res.getString(TurmaColuna.PROFESSOR.get()), // responsavel
+                        ProfessorDAO.buscarPorId(res.getInt(TurmaColuna.PROFESSOR.get())), // responsavel
                         res.getByte(TurmaColuna.SERIE.get()), // serie
                         res.getString(TurmaColuna.DESCRICAO.get()) // descricao
                 );
@@ -111,8 +112,9 @@ public class TurmaDAO {
                 String nome = res.getString(TurmaColuna.NOME.get());
                 byte serie = res.getByte(TurmaColuna.SERIE.get());
                 String descrição = res.getString(TurmaColuna.DESCRICAO.get());
+                Professor professor = ProfessorDAO.buscarPorId(res.getInt(TurmaColuna.PROFESSOR.get()));
                 // adicionar a lista
-                turmas.add(new Turma(id, nome, serie,descrição ));
+                turmas.add(new Turma(id, nome, professor,serie,descrição));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratamento de erro
