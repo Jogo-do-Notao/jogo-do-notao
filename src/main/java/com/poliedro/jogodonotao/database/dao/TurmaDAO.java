@@ -2,6 +2,7 @@ package com.poliedro.jogodonotao.database.dao;
 
 import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.ConexaoDB;
+import com.poliedro.jogodonotao.usuario.Professor;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -59,13 +60,17 @@ public class TurmaDAO {
             // Extrair tupla correspondente
             if (res.next()) {
                 // criar instância da turma com os dados do banco
+                String emailProfessor = res.getString(TurmaColuna.PROFESSOR.get());
+                Professor professor = ProfessorDAO.buscarPorEmail(emailProfessor);
+
                 return new Turma(
                         res.getInt(TurmaColuna.ID.get()), // id
                         res.getString(TurmaColuna.NOME.get()), // nome
-                        // res.getString(TurmaColuna.PROFESSOR.get()), // responsavel
+                        professor, // objeto Professor
                         res.getByte(TurmaColuna.SERIE.get()), // serie
                         res.getString(TurmaColuna.DESCRICAO.get()) // descricao
                 );
+
             }
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratar o erro
@@ -103,13 +108,13 @@ public class TurmaDAO {
         ) {
             // Extrair tuplas da tabela
             while (res.next()) {
-                // extrair atributos
                 int id = res.getInt(TurmaColuna.ID.get());
                 String nome = res.getString(TurmaColuna.NOME.get());
+                String emailProfessor = res.getString(TurmaColuna.PROFESSOR.get());
+                Professor professor = ProfessorDAO.buscarPorEmail(emailProfessor);
                 byte serie = res.getByte(TurmaColuna.SERIE.get());
-                String descrição = res.getString(TurmaColuna.DESCRICAO.get());
-                // adicionar a lista
-                turmas.add(new Turma(id, nome, serie,descrição ));
+                String descricao = res.getString(TurmaColuna.DESCRICAO.get());
+                turmas.add(new Turma(id, nome, professor, serie, descricao));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratamento de erro
