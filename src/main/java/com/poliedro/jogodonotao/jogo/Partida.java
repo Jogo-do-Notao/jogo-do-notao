@@ -31,10 +31,6 @@ public class Partida {
      * Usado para calcular a pontuação acumulada do aluno até chegar em 1 milhão na última rodada (15º).
      */
     private static final int[] premioPorRodada = {500, 500, 1_000, 1_000, 2_000, 5_000, 5_000, 5_000, 10_000, 20_000, 50_000, 50_000, 150_000, 200_000, 500_000};
-    /**
-     * Checkpoints do jogo.
-     */
-    private static final int[] checkpoints = {5, 10};
     // Atributos
     /**
      * ID da partida no banco de dados.
@@ -235,6 +231,13 @@ public class Partida {
     }
 
     /**
+     * Salva a pontuação acumulada atual como pontuação de checkpoint.
+     */
+    public void salvarCheckpoint() {
+        this.pontuacaoCheckpoint = this.pontuacaoAcumulada;
+    }
+
+    /**
      * Cria uma nova partida no banco de dados e depois abre a Tela de Partida com a nova partida criada.
      *
      * @param materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
@@ -303,6 +306,17 @@ public class Partida {
             this.addPontuacaoAcumulada();
             // Incrementar rodada
             this.proximaRodada();
+            // Se for checkpoint, salvar pontuação
+            if (this.rodada == 6 || this.rodada == 11) {
+                // Salvar pontuação
+                this.salvarCheckpoint();
+
+                // Exibir mensagem de checkpoint
+                Alert checkpointAlert = new Alert(Alert.AlertType.INFORMATION);
+                checkpointAlert.setTitle("Checkpoint Atingido");
+                checkpointAlert.setHeaderText("Checkpoint Atingido!");
+                checkpointAlert.setContentText("Parabéns! Você atingiu um checkpoint.\n\nSua pontuação atual é: " + this.getPontuacaoCheckpointFormatada() + ".");
+            }
         } else {
             /* Resposta está errada */
             // Exibir mensagem de resposta incorreta
