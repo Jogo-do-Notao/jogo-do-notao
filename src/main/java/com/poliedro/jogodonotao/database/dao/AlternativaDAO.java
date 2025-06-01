@@ -17,7 +17,7 @@ public class AlternativaDAO {
     /**
      * Colunas da tabela {@code alternativa}.
      */
-    private enum AlternativaColuna {
+    public enum AlternativaColuna {
         // Colunas
         ID("id_alternativa"),
         PERGUNTA("id_pergunta"),
@@ -61,6 +61,43 @@ public class AlternativaDAO {
             // Consider using a proper logging system in production
         }
 
+    /**
+     * Obtém as alternativas do banco de dados correspondentes a uma pergunta.
+     *
+     * @param id ID da pergunta a quais as alternativas pertencem.
+     * @return Lista com as 5 alternativas da pergunta.
+     */
+    public static Alternativa[] buscarPorPergunta(int id) {
+        // Query SQL
+        final String sql = "SELECT * FROM alternativa WHERE " + AlternativaColuna.PERGUNTA.get() + " = ?";
+
+        // Lista para armazenar as alternativas
+        Alternativa[] alternativas = new Alternativa[5];
+
+        // Executar query
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql)
+        ) {
+            // Substituir placeholder
+            stmt.setInt(1, id); // ID da pergunta sendo buscada
+
+            // Executar query e obter resultado
+            ResultSet rs = stmt.executeQuery();
+            int index = 0; // índice da lista
+            while (rs.next() && index < alternativas.length) {
+                // Criar nova alternativa com os dados do ResultSet
+                alternativas[index] = new Alternativa(
+                        rs.getInt(AlternativaColuna.ID.get()),
+                        rs.getString(AlternativaColuna.TEXTO.get()),
+                        rs.getBoolean(AlternativaColuna.CORRETA.get())
+                );
+                index++;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e); // tratar o erro
+        }
+        // Retornar lista de alternativas
         return alternativas;
     }
 }

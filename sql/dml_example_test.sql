@@ -7,14 +7,7 @@ USE jogo_do_notao_db;
 -- ---------------------------------------------------
 -- Professores de exemplo
 INSERT INTO professor (nome, email, hash_senha, descricao, coordenador)
-VALUES(
-        'Conta de Administrador',
-        'admin@sistemapoliedro.com.br',
-        '$2a$14$NRkBtc2yqhMHeVeXAdrHceXhXlImXDbkO8hGr.RpJh6pBz37uDFqW',
-        'Exemplo de conta de administrador/coordenador',
-        TRUE
-    ),
-    (
+VALUES (
         'Ana Souza',
         'ana.souza@sistemapoliedro.com.br',
         '$2a$14$3eO2exkRHAJgDKdJPINiRe7Urdhqx1UV6HblLzSZlmKtKwnSMMTIu',

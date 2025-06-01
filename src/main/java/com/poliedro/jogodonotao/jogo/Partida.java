@@ -3,13 +3,19 @@ package com.poliedro.jogodonotao.jogo;
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.database.dao.PartidaDAO;
+import com.poliedro.jogodonotao.database.dao.PerguntaDAO;
+import com.poliedro.jogodonotao.pergunta.Alternativa;
+import com.poliedro.jogodonotao.pergunta.DificuldadePergunta;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
+import com.poliedro.jogodonotao.utils.Formatador;
+import javafx.animation.PauseTransition;
 import javafx.scene.control.Alert;
+import javafx.util.Duration;
 
 import java.io.IOException;
-import java.text.NumberFormat;
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Classe que representa uma partida do jogo.
@@ -20,6 +26,11 @@ public class Partida {
      * Partida que está sendo jogada no momento.
      */
     private static Partida partidaEmAndamento;
+    /**
+     * Valores do prêmio de cada rodada.
+     * Usado para calcular a pontuação acumulada do aluno até chegar em 1 milhão na última rodada (15º).
+     */
+    private static final int[] premioPorRodada = {500, 500, 1_000, 1_000, 2_000, 5_000, 5_000, 5_000, 10_000, 20_000, 50_000, 50_000, 150_000, 200_000, 500_000};
     // Atributos
     /**
      * ID da partida no banco de dados.
@@ -146,9 +157,7 @@ public class Partida {
     }
 
     public String getPontuacaoAcumuladaFormatada() {
-        NumberFormat formatoMoeda = NumberFormat
-                .getCurrencyInstance(new Locale("pt", "BR"));
-        return formatoMoeda.format(this.pontuacaoAcumulada);
+        return Formatador.formatoMonetario(this.pontuacaoAcumulada);
     }
 
     public int getPontuacaoCheckpoint() {
@@ -156,9 +165,7 @@ public class Partida {
     }
 
     public String getPontuacaoCheckpointFormatada() {
-        NumberFormat formatoMoeda = NumberFormat
-                .getCurrencyInstance(new Locale("pt", "BR"));
-        return formatoMoeda.format(this.pontuacaoCheckpoint);
+        return Formatador.formatoMonetario(this.pontuacaoCheckpoint);
     }
 
 
@@ -175,40 +182,179 @@ public class Partida {
     }
 
     /**
+     * Retorna o prêmio ganho na rodada atual ao acertar a pergunta.
+     */
+    public int getGanhoNaRodada() {
+        return premioPorRodada[this.rodada - 1];
+    }
+
+    /**
+     * Retorna o prêmio, formatado como monetário, ganho na rodada atual ao acertar a pergunta.
+     */
+    public String getGanhoNaRodadaFormatada() {
+        return Formatador.formatoMonetario(premioPorRodada[this.rodada - 1]);
+    }
+
+    /**
+     * Retorna a dificuldade da partida, dependendo da rodada atual.
+     * Dificuldade é definida como:
+     * - Fácil: Rodadas 1 a 5
+     * - Médio: Rodadas 6 a 10
+     * - Difícil: Rodadas 11 a 15
+     *
+     * @return Enumeration {@code DificuldadePergunta} correspondente à rodada atual.
+     */
+    public DificuldadePergunta getDificuldade() {
+        if (rodada <= 5) {
+            return DificuldadePergunta.FACIL;
+        } else if (rodada <= 10) {
+            return DificuldadePergunta.MEDIO;
+        } else {
+            return DificuldadePergunta.DIFICIL;
+        }
+    }
+
+    // Setters
+
+    /**
+     * Aumentar pontuação acumulada da partida.
+     */
+    public void addPontuacaoAcumulada() {
+        this.pontuacaoAcumulada += this.getGanhoNaRodada(); // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.PONTUACAO_ACUMULADA); // atualizar no db
+    }
+
+    /**
+     * Incrementa a rodada atual da partida.
+     */
+    public void proximaRodada() {
+        this.rodada++; // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.RODADA); // atualizar no db
+    }
+
+    /**
+     * Salva a pontuação acumulada atual como pontuação de checkpoint.
+     */
+    public void salvarCheckpoint() {
+        this.pontuacaoCheckpoint = this.pontuacaoAcumulada; // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.PONTUACAO_CHECKPOINT); // atualizar no db
+
+    }
+
+    /**
+     * Atualiza o status da partida.
+     */
+    public void setStatus(PartidaStatus status) {
+        this.status = status; // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.STATUS);
+    }
+
+    /**
      * Cria uma nova partida no banco de dados e depois abre a Tela de Partida com a nova partida criada.
      *
      * @param materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
      */
-    public static void criarPartida(Materia materia) throws IOException {
-        // Criar partida no banco de dados
-        Partida novaPartida = PartidaDAO.criarPartida(materia);
-
-        // Atribui nova partida a partida em andamento
-        partidaEmAndamento = novaPartida;
-
-        // redirecionar para Tela de Partida
-        App.changeScene("area-aluno/partida/tela-partida", "Partida em Andamento");
-
-        // Exibir mensagem com regras da partida
-        // DEBUG: exibir informações da partida criada
-        Partida p = Partida.getPartidaEmAndamento();
+    public static void criarPartida(Materia materia) {
+        // Exibir mensagem de criando partida
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("DEBUG: Nova Partida Criada");
-        alert.setHeaderText("Nova Partida: " + materia.getNome());
-        alert.setContentText(
-                "Informações da partida: \n" +
-                        "ID: " + p.getId() + "\n" +
-                        "Aluno: " + p.getAluno().getNome() + "\n" +
-                        "Materia: " + (
-                        (p.getMateria() != null) ? p.getMateria().getNome() : "Todas as Matérias") + "\n" +
-                        "Status: " + p.getStatusText() + "\n" +
-                        "Rodada: " + p.getRodada() + "\n" +
-                        "Pontuação Acumulada: " + p.getPontuacaoAcumulada() + "\n" +
-                        "Pontuação Checkpoint: " + p.getPontuacaoCheckpoint() + "\n" +
-                        "Ajuda Eliminar: " + p.getAjudaEliminar() + "\n" +
-                        "Ajuda Dica: " + p.getAjudaDica() + "\n" +
-                        "Ajuda Pular: " + p.getAjudaPular()
-        );
+        alert.setTitle("Criando Partida");
+        alert.setHeaderText("Criando Partida...");
+        alert.setContentText("A partida está sendo criada.\n\nMatéria selecionada: " + (
+                materia == null ? "Todas as Matérias" : materia.getNome()) + ".");
         alert.show();
+
+        // Criar partida no banco de dados e atribuir nova partida a partida em andamento
+        assert materia != null; // Garantir que a matéria não é nula
+        partidaEmAndamento = PartidaDAO.criarPartida(materia);
+
+        // Espera 1 segundo antes de trocar a cena e fechar o alerta
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        pause.setOnFinished(event -> {
+            try {
+                App.changeScene("area-aluno/partida/tela-partida", "Partida em Andamento");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            alert.close();
+        });
+        pause.play();
+    }
+
+    /**
+     * Sorteia uma pergunta aleatória que o aluno não respondeu anteriormente.
+     */
+    public Pergunta sortearPergunta() {
+        // Obter array com ids perguntas disponíveis
+        ArrayList<Integer> listaPerguntas = PerguntaDAO.obterListaDeSorteio(this);
+        System.out.println(listaPerguntas); // DEBUG
+
+        // Sortear pergunta aleatória
+        Random rd = new Random();
+        return PerguntaDAO.buscarPorId(
+                listaPerguntas.get(rd.nextInt(listaPerguntas.size()))
+        );
+    }
+
+    /**
+     * Verifica se a alternativa selecionada é a correta e exibe uma mensagem.
+     *
+     * @param selecionada Alternativa selecionada pelo aluno.
+     * @param correta     Alternativa correta da pergunta.
+     * @return {@code true} se a resposta estiver correta, {@code false} caso contrário.
+     */
+    public boolean verificarResposta(
+            Alternativa selecionada, Alternativa correta
+    ) {
+        if (selecionada.isCorreta()) {
+            /* Resposta está correta */
+            // Exibir mensagem de resposta correta
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Resposta Correta");
+            alert.setHeaderText("Resposta Correta!");
+            alert.setContentText("Parabéns! Você acertou a resposta.\n\nVocê ganhou " + this.getGanhoNaRodadaFormatada() + "  nesta rodada.");
+            alert.show();
+
+            // Atualizar pontuação acumulada
+            this.addPontuacaoAcumulada();
+            // Incrementar rodada
+            this.proximaRodada();
+            // Se for checkpoint, salvar pontuação
+            if (this.rodada == 6 || this.rodada == 11) {
+                // Salvar pontuação
+                this.salvarCheckpoint();
+
+                // Exibir mensagem de checkpoint
+                Alert checkpointAlert = new Alert(Alert.AlertType.INFORMATION);
+                checkpointAlert.setTitle("Checkpoint Atingido");
+                checkpointAlert.setHeaderText("Checkpoint Atingido!");
+                checkpointAlert.setContentText("Parabéns! Você atingiu um checkpoint.\n\nSua pontuação atual é: " + this.getPontuacaoCheckpointFormatada() + ".");
+            }
+        } else {
+            /* Resposta está errada */
+            // Exibir mensagem de resposta incorreta
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Resposta Errada");
+            alert.setHeaderText("Resposta Errada!");
+            alert.setContentText("Você errou a resposta. \n\nA resposta correta era: " + correta.getTexto() + ".");
+            alert.showAndWait();
+        }
+        return selecionada.isCorreta();
+    }
+
+    /**
+     * Encerra a partida após responder corretamente todas as perguntas e atingir o prêmio máximo.
+     */
+    public void vitoria() {
+        // Atualizar status da partida
+        this.setStatus(PartidaStatus.GANHA);
+        // Atualizar pontuação do aluno
+        this.aluno.setPontuacao(this.getPontuacaoAcumulada());
+
+        // Redirecionar para a tela de fim da partida
+        try {
+            App.changeScene("area-aluno/partida/tela-partida-concluida", "Partida Concluída");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

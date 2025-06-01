@@ -1,24 +1,25 @@
 package com.poliedro.jogodonotao.pergunta;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Alternativa {
-    private int idAlternativa;
+    private int id;
     private String texto;
     private boolean correta;
 
-    public Alternativa() {}
+    public Alternativa() {
+    }
 
-    public Alternativa(int idAlternativa, String texto, boolean correta) {
-        this.idAlternativa = idAlternativa;
+    public Alternativa(int id, String texto, boolean correta) {
+        this.id = id;
         this.texto = texto;
         this.correta = correta;
     }
 
-    public int getIdAlternativa() {
-        return idAlternativa;
-    }
-
-    public void setIdAlternativa(int idAlternativa) {
-        this.idAlternativa = idAlternativa;
+    public int getId() {
+        return id;
     }
 
     public String getTexto() {
@@ -33,7 +34,18 @@ public class Alternativa {
         return correta;
     }
 
-    public void setCorreta(boolean correta) {
-        this.correta = correta;
+    /**
+     * Embaralha as alternativas de uma pergunta.
+     *
+     * @param alternativas Array de alternativas a serem embaralhadas.
+     * @return Um novo array de alternativas embaralhadas.
+     */
+    public static Alternativa[] embaralhar(Alternativa[] alternativas) {
+        // Converter para lista
+        List<Alternativa> lista = Arrays.asList(alternativas);
+        // Embaralhar a lista
+        Collections.shuffle(lista);
+        // Retornar como array
+        return lista.toArray(new Alternativa[5]);
     }
 }

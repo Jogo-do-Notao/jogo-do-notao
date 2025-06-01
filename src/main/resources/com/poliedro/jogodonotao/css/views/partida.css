@@ -79,7 +79,7 @@
 /* botão de alternativa selecionado */
 .botao-alternativa:selected {
   /* cor */
-  -fx-background-color: -poliedro-azul-600;
+  -fx-background-color: -poliedro-laranja-500;
   /* sombra interna */
   -fx-effect: none;
 }
@@ -100,9 +100,14 @@
   -fx-background-radius: 50%;
   /* cor */
   -fx-background-color: -zinc-200;
+
   /* dimensões */
   -fx-pref-height: 52px;
+  -fx-min-height: 52px;
+  -fx-max-height: 52px;
   -fx-pref-width: 52px;
+  -fx-min-width: 52px;
+  -fx-max-width: 52px;
 }
 /* Número da alternativa */
 .botao-alternativa StackPane.circulo Text {
@@ -124,16 +129,23 @@
 .botao-alternativa StackPane.alternativa Text {
   /* tipografia */
   -fx-font-size: 32px;
+  -fx-font-weight: bold;
   -fx-fill: white;
 }
 /* ao selecionar */
 .botao-alternativa:selected StackPane.alternativa {
   /* cor ao selecionar */
-  -fx-background-color: -poliedro-azul-700;
+  -fx-background-color: -poliedro-laranja-400;
   /* sombra */
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0, 0, 1);
 }
-.botao-alternativa:selected StackPane.alternativa Text {
-  /* cor do texto ao selecionar */
-  -fx-fill: -poliedro-laranja;
+
+/* -------------------------------------------------------------- */
+
+/* Scroll Pane do enunciado */
+.scroll-pane.scroll-enunciado {
+  -fx-background-color: transparent; /* Mantém as bordas transparentes */
+}
+.scroll-pane.scroll-enunciado > .viewport {
+  -fx-background-color: -poliedro-azul-600;
 }

@@ -72,9 +72,9 @@ CREATE TABLE IF NOT EXISTS pergunta (
     id_pergunta INT PRIMARY KEY AUTO_INCREMENT,
     id_materia INT NOT NULL,
     criador INT NOT NULL,
-    titulo VARCHAR(200) NOT NULL,
+    titulo VARCHAR(300) NOT NULL,
     dificuldade ENUM('Fácil', 'Médio', 'Difícil') NOT NULL,
-    dica VARCHAR(200) NOT NULL,
+    dica VARCHAR(300) NOT NULL,
     -- FKs:
     FOREIGN KEY (id_materia) REFERENCES materia (id_materia),
     FOREIGN KEY (criador) REFERENCES professor (id_professor)
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS alternativa (
     -- Colunas:
     id_alternativa INT PRIMARY KEY AUTO_INCREMENT,
     id_pergunta INT NOT NULL,
-    titulo VARCHAR(100) NOT NULL,
+    titulo VARCHAR(300) NOT NULL,
     correta BOOLEAN NOT NULL DEFAULT FALSE,
     -- FKs:
     FOREIGN KEY (id_pergunta) REFERENCES pergunta (id_pergunta),

@@ -2,7 +2,9 @@ package com.poliedro.jogodonotao.usuario;
 
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Turma;
+import com.poliedro.jogodonotao.database.dao.AlunoDAO;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
+import com.poliedro.jogodonotao.utils.Formatador;
 import com.poliedro.jogodonotao.utils.HashSenha;
 import javafx.scene.control.Alert;
 
@@ -66,9 +68,7 @@ public class Aluno extends Usuario {
     }
 
     public String getPontuacaoFormatada() {
-        NumberFormat formatoMoeda = NumberFormat
-                .getCurrencyInstance(new Locale("pt", "BR"));
-        return formatoMoeda.format(pontuacao);
+        return Formatador.formatoMonetario(this.pontuacao);
     }
 
     public Turma getTurma() {
@@ -81,6 +81,18 @@ public class Aluno extends Usuario {
 
     public ArrayList<PontuacaoMateria> getPontuacaoMateria() {
         return pontuacaoMateria;
+    }
+
+    // Setters
+
+    /**
+     * Atualiza a pontuação do aluno.
+     *
+     * @param pontuacao Pontuação a ser adicionada à pontuação total do aluno.
+     */
+    public void setPontuacao(long pontuacao) {
+        this.pontuacao += pontuacao; // atualizar objeto
+        AlunoDAO.atualizarAluno(this, AlunoDAO.AlunoColuna.PONTUACAO); // atualizar no db
     }
 
     // Métodos

@@ -1,10 +1,14 @@
 package com.poliedro.jogodonotao.database.dao;
 
+/**
+ * Classe DAO para a entidade PerguntaPartida.
+ * Responsável por obter e manipular os dados da tabela {@code pergunta_partida} no banco de dados.
+ */
 public class PerguntaPartidaDAO {
     /**
      * Colunas da tabela {@code pergunta_partida}.
      */
-    private enum PerguntaPartidaColuna {
+    public enum PerguntaPartidaColuna {
         // Colunas
         ID("id_pergunta"),
         PARTIDA("id_partida"),

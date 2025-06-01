@@ -17,7 +17,7 @@ public class PartidaDAO {
     /**
      * Colunas da tabela {@code partida}.
      */
-    private enum PartidaColuna {
+    public enum PartidaColuna {
         // Colunas
         ID("id_partida"),
         ALUNO("id_aluno"),
@@ -176,5 +176,67 @@ public class PartidaDAO {
         }
         // Se partida não for encontrada
         return null;
+    }
+
+    /**
+     * Atualiza os dados de uma partida no banco de dados.
+     *
+     * @param partida  Instância da partida que possui os dados atualizados.
+     * @param atributo Atributo que será atualizado na partida.
+     */
+    public static void atualizarPartida(Partida partida, PartidaColuna atributo) {
+        // Query SQL
+        final String sql = "UPDATE partida SET " + atributo.get() + " = ?" + // atualizar atributo
+                " WHERE " + PartidaColuna.ID.get() + " = ?"; // encontrar partida
+
+        // Executar query
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql)
+        ) {
+            // Substituir placeholders
+            // Atributo
+            switch (atributo) {
+                case RODADA:
+                    // Se for a 15º (última), não atualizar
+                    if (partida.getRodada() > 15) {
+                        //throw new IllegalArgumentException("Não é possível atualizar a rodada para um valor maior que 15.");
+                        return; // não atualizar rodada
+                    }
+                    stmt.setInt(1, partida.getRodada());
+                    break;
+                case PONTUACAO_ACUMULADA:
+                    stmt.setInt(1, partida.getPontuacaoAcumulada());
+                    break;
+                case PONTUACAO_CHECKPOINT:
+                    stmt.setInt(1, partida.getPontuacaoCheckpoint());
+                    break;
+                case AJUDA_DICA:
+                    stmt.setInt(1, partida.getAjudaDica());
+                    break;
+                case AJUDA_ELIMINAR:
+                    stmt.setInt(1, partida.getAjudaEliminar());
+                    break;
+                case AJUDA_PULAR:
+                    stmt.setInt(1, partida.getAjudaPular());
+                    break;
+                case STATUS:
+                    stmt.setString(1, partida.getStatusText());
+                    break;
+            }
+            // ID
+            stmt.setInt(2, partida.getId());
+
+            // Executar query
+            int linhasAfetadas = stmt.executeUpdate();
+
+            // Se não houver linhas afetadas (não conseguiu atualizar partida)
+            if (linhasAfetadas == 0) {
+                throw new RuntimeException("Erro ao atualizar partida: nenhuma linha foi afetada.");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e); // tratar o erro
+        }
     }
 }

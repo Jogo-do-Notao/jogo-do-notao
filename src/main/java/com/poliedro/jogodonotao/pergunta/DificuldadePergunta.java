@@ -1,26 +1,34 @@
 package com.poliedro.jogodonotao.pergunta;
 
+import com.poliedro.jogodonotao.jogo.PartidaStatus;
+
 public enum DificuldadePergunta {
-        FACIL("Fácil"),
-        MEDIA("Médio"),
-        DIFICIL("Difícil");
+    // Dificuldades possíveis
+    FACIL("Fácil"),
+    MEDIO("Médio"),
+    DIFICIL("Difícil");
 
-        private final String descricao;
+    // Construtor
+    private final String dificuldade;
 
-        DificuldadePergunta(String descricao) {
-                this.descricao = descricao;
+    DificuldadePergunta(String dificuldade) {
+        this.dificuldade = dificuldade;
+    }
+
+    // Getter do valor
+    public String get() {
+        return dificuldade;
+    }
+
+    /**
+     * Converter texto salvo no banco de dados para o enum correto.
+     */
+    public static DificuldadePergunta fromString(String status) {
+        for (DificuldadePergunta ps : DificuldadePergunta.values()) {
+            if (ps.get().equalsIgnoreCase(status) || ps.name().equalsIgnoreCase(status)) {
+                return ps;
+            }
         }
-
-        public String getDescricao() {
-                return descricao;
-        }
-
-        public static DificuldadePergunta fromDescricao(String descricao) {
-                for (DificuldadePergunta dificuldade : values()) {
-                        if (dificuldade.descricao.equals(descricao)) {
-                                return dificuldade;
-                        }
-                }
-                throw new IllegalArgumentException("Dificuldade não encontrada: " + descricao);
-        }
+        throw new IllegalArgumentException("Status inválido: " + status);
+    }
 }
