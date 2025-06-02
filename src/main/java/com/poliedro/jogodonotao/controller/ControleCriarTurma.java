@@ -46,8 +46,8 @@ public class ControleCriarTurma implements Initializable {
         //Inserir todos os nomes dos professores na combobox
         campoResponsavel.getItems().addAll(nomeProfessores);
 
-        //inserir series no combobox
-        campoSerie.getItems().addAll("1º Ano", "2º Ano", "3º Ano", "4º Ano", "5º Ano", "6º Ano", "7º Ano", "8º Ano", "9º Ano");
+
+
     }
 
 
@@ -69,7 +69,7 @@ public class ControleCriarTurma implements Initializable {
             return;
         }else{
             //salvar no banco de dados
-            TurmaDAO.adicionarTurma(nome, descricao, professor, serie);
+            TurmaDAO.adicionarTurma(nome, professor, serie, descricao);
             // mudar de interface
             App.changeScene("area-adm/gerenciar-turmas/tela-gerenciar-turmas", "Gerenciar Turmas");
         }

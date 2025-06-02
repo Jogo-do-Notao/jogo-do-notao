@@ -4,7 +4,10 @@ import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.ConexaoDB;
 import com.poliedro.jogodonotao.usuario.Professor;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -107,13 +110,14 @@ public class TurmaDAO {
         ) {
             // Extrair tuplas da tabela
             while (res.next()) {
+                // extrair atributos
                 int id = res.getInt(TurmaColuna.ID.get());
                 String nome = res.getString(TurmaColuna.NOME.get());
-                String emailProfessor = res.getString(TurmaColuna.PROFESSOR.get());
-                Professor professor = ProfessorDAO.buscarPorEmail(emailProfessor);
                 byte serie = res.getByte(TurmaColuna.SERIE.get());
-                String descricao = res.getString(TurmaColuna.DESCRICAO.get());
-                turmas.add(new Turma(id, nome, professor, serie, descricao));
+                String descrição = res.getString(TurmaColuna.DESCRICAO.get());
+                Professor professor = ProfessorDAO.buscarPorId(res.getInt(TurmaColuna.PROFESSOR.get()));
+                // adicionar a lista
+                turmas.add(new Turma(id, nome, professor,serie,descrição));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratamento de erro
@@ -124,39 +128,26 @@ public class TurmaDAO {
     }
 
     public static void adicionarTurma(String nome, String professor, String serie, String descricao) {
-
-
-        // Montar query SQL
-        String sql = "INSERT INTO turma";
-        String campos = TurmaDAO.TurmaColuna.NOME.get() + ", " + TurmaColuna.PROFESSOR.get() + "," + TurmaColuna.SERIE.get() + "," + TurmaColuna.DESCRICAO.get();
-        String placeholders = "?, ?, ?, ?";
-        sql += "(" + campos + ") VALUES (" + placeholders + ")";
+        String sql = "INSERT INTO turma (" +
+                TurmaColuna.NOME.get() + ", " +
+                TurmaColuna.PROFESSOR.get() + ", " +
+                TurmaColuna.SERIE.get() + ", " +
+                TurmaColuna.DESCRICAO.get() +
+                ") VALUES (?, ?, ?, ?)";
 
         try (
                 Connection conexao = ConexaoDB.getConnection();
-                PreparedStatement stmt = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                PreparedStatement stmt = conexao.prepareStatement(sql)
+        ) {
             stmt.setString(1, nome);
             stmt.setString(2, professor);
             stmt.setString(3, serie);
             stmt.setString(4, descricao);
-
-            //execuatr query
             int linhasAfetadas = stmt.executeUpdate();
-
             if (linhasAfetadas == 0) {
-                throw new RuntimeException("Erro ao criar turma: nenhuma linha  foi afetada.");
+                throw new RuntimeException("Erro ao criar turma: nenhuma linha foi afetada.");
             }
-
-            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    // Obter ID da nova partida e retorna-lá
-                    int idTurma = generatedKeys.getInt(1);
-                    buscarPorId(idTurma);
-                } else {
-                    throw new RuntimeException("Erro ao criar turma: nenhum ID foi gerado.");
-                }
-            }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
