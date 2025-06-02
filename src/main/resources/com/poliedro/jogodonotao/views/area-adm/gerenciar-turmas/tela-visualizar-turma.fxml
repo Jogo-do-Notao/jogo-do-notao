@@ -56,7 +56,7 @@
                                     <Insets left="10.0" top="15.0" />
                                  </VBox.margin>
                               </Text>
-                              <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                              <TextField fx:id="campoNome" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                                  <VBox.margin>
                                     <Insets bottom="5.0" right="10.0" />
                                  </VBox.margin>
@@ -90,14 +90,11 @@
                               <Insets left="10.0" top="10.0" />
                            </VBox.margin>
                         </Text>
-                        <MenuButton mnemonicParsing="false" prefHeight="10.0" prefWidth="371.0" style="-fx-background-color: -zinc-100;">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Professor 1" />
-                              <MenuItem mnemonicParsing="false" text="professor2" />
-                           </items>
-                           <VBox.margin>
-                              <Insets bottom="15.0" />
-                           </VBox.margin>
+                        <MenuButton fx:id="campoResponsavel" mnemonicParsing="false" prefHeight="25.0" prefWidth="360.0" text="MenuButton">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                          </items>
                         </MenuButton>
                      </children>
                   </VBox>
@@ -126,14 +123,11 @@
                               <Insets left="10.0" top="10.0" />
                            </VBox.margin>
                         </Text>
-                        <MenuButton mnemonicParsing="false" prefHeight="10.0" prefWidth="371.0" style="-fx-background-color: -zinc-100;">
+                        <MenuButton fx:id="campoSerie" mnemonicParsing="false" prefHeight="25.0" prefWidth="360.0" text="MenuButton">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="2 ano" />
-                              <MenuItem mnemonicParsing="false" text="3 ano" />
+                              <MenuItem mnemonicParsing="false" text="Action 1" />
+                              <MenuItem mnemonicParsing="false" text="Action 2" />
                            </items>
-                           <VBox.margin>
-                              <Insets bottom="15.0" />
-                           </VBox.margin>
                         </MenuButton>
                      </children>
                   </VBox>
@@ -162,7 +156,7 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="55.0" prefWidth="448.0" style="-fx-background-color: -zinc-100;">
+                        <TextField fx:id="campoDescricaoTurma" prefHeight="55.0" prefWidth="448.0" style="-fx-background-color: -zinc-100;">
                            <VBox.margin>
                               <Insets bottom="5.0" right="5.0" />
                            </VBox.margin>
@@ -176,7 +170,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="511.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="Salvar alterações">
+                  <Button mnemonicParsing="false" onAction="#salvarAlteração" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="Salvar alterações">
                      <styleClass>
                         <String fx:value="button-lg" />
                         <String fx:value="button-azul" />
@@ -192,7 +186,7 @@
                         <Insets left="50.0" right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Descartar alterações">
+                  <Button mnemonicParsing="false" onAction="#descartarAlteração" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Descartar alterações">
                      <styleClass>
                         <String fx:value="button-lg" />
                         <String fx:value="button-laranja" />
@@ -212,7 +206,7 @@
             </HBox>
             <HBox prefHeight="99.0" prefWidth="511.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Excluir Turma">
+                  <Button mnemonicParsing="false" onAction="#excluirTurma" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Excluir Turma">
                      <styleClass>
                         <String fx:value="button-lg" />
                         <String fx:value="button-vermelho" />
@@ -232,7 +226,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="33.0" layoutY="30.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Voltar">
+      <Button layoutX="33.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltar" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="Voltar">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -258,7 +252,8 @@
                   <Font name="System Bold" size="35.0" />
                </font>
             </Text>
-            <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="+ Adicionar aluno">
+            <Text fx:id="listaAluno" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="147.13671875" />
+            <Button mnemonicParsing="false" onAction="#adiconarAluno" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="+ Adicionar aluno">
                <styleClass>
                   <String fx:value="button-lg" />
                   <String fx:value="button-azul" />
