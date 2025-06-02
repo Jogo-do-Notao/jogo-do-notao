@@ -1,5 +1,6 @@
 package com.poliedro.jogodonotao.database.dao;
 
+import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.database.ConexaoDB;
 import com.poliedro.jogodonotao.jogo.Partida;
 import com.poliedro.jogodonotao.pergunta.DificuldadePergunta;
@@ -11,7 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Classe DAO para a entidade Pergunta.
@@ -89,17 +90,19 @@ public class PerguntaDAO {
                 for (int id : ids) {
                     String titulo = titulos.get(id);
                     String dica = dicas.get(id);
-                    DificuldadePergunta dificuldade = DificuldadePergunta.fromDescricao(dificuldades.get(id));
+                    DificuldadePergunta dificuldade = DificuldadePergunta.fromString(dificuldades.get(id));
                     Materia materia = materias.get(materiasIds.get(id));
                     Professor criador = criadores.get(criadoresIds.get(id));
-                    List<Alternativa> alternativas = AlternativaDAO.obterAlternativa(id);
+                    Alternativa[] alternativas = AlternativaDAO.obterAlternativa(id);
 
-                    perguntas.add(new Pergunta(id, titulo, dica, dificuldade, materia, criador, alternativas));
+                    perguntas.add(new Pergunta(id, titulo, alternativas, dificuldade, dica, criador));
                 }
             }
         }
 
         return perguntas;
+    }
+
     /**
      * Obtém uma pergunta do banco de dados pelo seu ID.
      *

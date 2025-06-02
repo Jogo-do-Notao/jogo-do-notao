@@ -192,7 +192,8 @@ public class AlunoDAO {
             throw new RuntimeException(e);
         }
     }
-}
+
+
     /**
      * Atualiza os dados de um aluno no banco de dados.
      *

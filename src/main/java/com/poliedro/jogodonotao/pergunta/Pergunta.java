@@ -1,11 +1,13 @@
 package com.poliedro.jogodonotao.pergunta;
 
+import com.poliedro.jogodonotao.agrupadores.Materia;
 import com.poliedro.jogodonotao.usuario.Professor;
 
 public class Pergunta {
     private int id;
     private String enunciado;
     private Alternativa[] alternativas;
+    private Materia materia;
     private DificuldadePergunta dificuldade;
     private String dica;
     private Professor criador;
@@ -28,10 +30,6 @@ public class Pergunta {
         return enunciado;
     }
 
-    public Alternativa[] getAlternativas() {
-        return alternativas;
-    }
-
     public DificuldadePergunta getDificuldade() {
         return dificuldade;
     }
@@ -46,6 +44,8 @@ public class Pergunta {
 
     public void setMateria(Materia materia) {
         this.materia = materia;
+    }
+
     public String getDica() {
         return dica;
     }
@@ -58,11 +58,11 @@ public class Pergunta {
         this.criador = criador;
     }
 
-    public List<Alternativa> getAlternativas() {
+    public Alternativa[] getAlternativas() {
         return alternativas;
     }
 
-    public void setAlternativas(List<Alternativa> alternativas) {
+    public void setAlternativas(Alternativa[] alternativas) {
         this.alternativas = alternativas;
     }
 }

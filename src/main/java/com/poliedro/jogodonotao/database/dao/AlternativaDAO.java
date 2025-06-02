@@ -7,7 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 /**
  * Classe DAO para a entidade Alternativa.
@@ -37,29 +36,33 @@ public class AlternativaDAO {
         }
     }
 
-    public static ArrayList<Alternativa> obterAlternativa(int idPergunta) {
+    public static Alternativa[] obterAlternativa(int idPergunta) {
         final String sql = String.format("SELECT * FROM alternativa WHERE %s = ?",
                 AlternativaColuna.PERGUNTA.get());
-        ArrayList<Alternativa> alternativas = new ArrayList<>();
+        Alternativa[] alternativas = new Alternativa[5];
 
         try (Connection conexao = ConexaoDB.getConnection();
              PreparedStatement stmt = conexao.prepareStatement(sql)) {
 
             stmt.setInt(1, idPergunta);
 
-            try (ResultSet rs = stmt.executeQuery()) {  // Only one ResultSet now
-                while (rs.next()) {
-                    var alternativa = new Alternativa();
-                    alternativa.setIdAlternativa(rs.getInt(AlternativaColuna.ID.get()));
-                    alternativa.setTexto(rs.getString(AlternativaColuna.TEXTO.get()));
-                    alternativa.setCorreta(rs.getBoolean(AlternativaColuna.CORRETA.get()));
-                    alternativas.add(alternativa);
+            try (ResultSet rs = stmt.executeQuery()) {
+                int i = 0;
+                while (rs.next() && i < alternativas.length) {
+                    // Buscar e add alternativa à lista
+                    alternativas[i++] = new Alternativa(
+                            rs.getInt(AlternativaColuna.ID.get()),
+                            rs.getString(AlternativaColuna.TEXTO.get()),
+                            rs.getBoolean(AlternativaColuna.CORRETA.get())
+                    );
+
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Consider using a proper logging system in production
         }
+        return alternativas;
+    }
 
     /**
      * Obtém as alternativas do banco de dados correspondentes a uma pergunta.

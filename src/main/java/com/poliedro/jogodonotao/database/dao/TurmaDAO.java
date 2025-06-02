@@ -59,17 +59,16 @@ public class TurmaDAO {
 
             // Extrair tupla correspondente
             if (res.next()) {
-                // criar instância da turma com os dados do banco
+                // Extrair dados da tupla
+                int id = res.getInt(TurmaColuna.ID.get());
+                String nome = res.getString(TurmaColuna.NOME.get());
                 String emailProfessor = res.getString(TurmaColuna.PROFESSOR.get());
+                byte serie = res.getByte(TurmaColuna.SERIE.get());
+                String descricao = res.getString(TurmaColuna.DESCRICAO.get());
+                // Buscar professor responsável
                 Professor professor = ProfessorDAO.buscarPorEmail(emailProfessor);
 
-                return new Turma(
-                        res.getInt(TurmaColuna.ID.get()), // id
-                        res.getString(TurmaColuna.NOME.get()), // nome
-                        professor, // objeto Professor
-                        res.getByte(TurmaColuna.SERIE.get()), // serie
-                        res.getString(TurmaColuna.DESCRICAO.get()) // descricao
-                );
+                return new Turma(id, nome, professor, serie, descricao);
 
             }
         } catch (SQLException e) {
@@ -123,12 +122,13 @@ public class TurmaDAO {
         return turmas;
 
     }
+
     public static void adicionarTurma(String nome, String professor, String serie, String descricao) {
 
 
         // Montar query SQL
         String sql = "INSERT INTO turma";
-        String campos = TurmaDAO.TurmaColuna.NOME.get() + ", " + TurmaColuna.PROFESSOR.get() + "," + TurmaColuna.SERIE.get() + "," + TurmaColuna.DESCRICAO.get() ;
+        String campos = TurmaDAO.TurmaColuna.NOME.get() + ", " + TurmaColuna.PROFESSOR.get() + "," + TurmaColuna.SERIE.get() + "," + TurmaColuna.DESCRICAO.get();
         String placeholders = "?, ?, ?, ?";
         sql += "(" + campos + ") VALUES (" + placeholders + ")";
 
