@@ -25,8 +25,6 @@ public class ControleCriarTurma implements Initializable {
     @FXML
     private TextField campoNome;
 
-
-
     @FXML
     private ComboBox<String> campoResponsavel;
 
@@ -46,10 +44,20 @@ public class ControleCriarTurma implements Initializable {
         //Inserir todos os nomes dos professores na combobox
         campoResponsavel.getItems().addAll(nomeProfessores);
 
-
-
+        // Obter séries das turmas do banco de dados
+        ArrayList<Turma> turmas = TurmaDAO.obterTurma();
+        // criar uma lista para armazenar as séries
+        ArrayList<String> series = new ArrayList<>();
+        //obter apenas as séries das turmas e verificar se já existe
+        for (Turma t : turmas) {
+            String serieStr = String.valueOf(t.getSerie());
+            if (!series.contains(serieStr)) {
+                series.add(serieStr);
+            }
+        }
+        //Inserir todos os nomes das series na combobox
+        campoSerie.getItems().addAll(series);
     }
-
 
     @FXML
     void criarTurma(ActionEvent event) throws IOException {
@@ -73,17 +81,11 @@ public class ControleCriarTurma implements Initializable {
             // mudar de interface
             App.changeScene("area-adm/gerenciar-turmas/tela-gerenciar-turmas", "Gerenciar Turmas");
         }
-
-
-
-
     }
 
     @FXML
     void voltarParaPainel(ActionEvent event) throws IOException {
         App.changeScene("area-adm/gerenciar-turmas/tela-gerenciar-turmas", "Gerenciar Turmas");
-
-
     }
-
 }
+
