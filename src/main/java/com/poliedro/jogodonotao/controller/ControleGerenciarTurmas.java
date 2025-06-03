@@ -30,15 +30,10 @@ public class ControleGerenciarTurmas {
 
     private ObservableList<Turma> turmas;
 
+    @FXML
     public void initialize() {
-        turmaColuna.setCellValueFactory( new PropertyValueFactory<>("nome"));
-        professorColuna.setCellValueFactory(cellData -> {
-            if (cellData.getValue().getProfessor() != null) {
-                return new javafx.beans.property.SimpleStringProperty(cellData.getValue().getProfessor().getNome());
-            } else {
-                return new javafx.beans.property.SimpleStringProperty("");
-            }
-        });
+        turmaColuna.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        professorColuna.setCellValueFactory(new PropertyValueFactory<>("professor"));
 
         turmas = FXCollections.observableArrayList(TurmaDAO.obterTurma());
         tabelaTurmas.setItems(turmas);

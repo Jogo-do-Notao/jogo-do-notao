@@ -45,17 +45,9 @@ public class ControleGerenciarPerguntas {
 
     private ObservableList<Pergunta> perguntas;
 
-    public void initialize() throws SQLException {
-        criadoPorColuna.setCellValueFactory(new PropertyValueFactory<>("criado por"));
-        dificuldadeColuna.setCellValueFactory(new PropertyValueFactory<>("dificuldade"));
-        editadoPorColuna.setCellValueFactory(new PropertyValueFactory<>("editado por"));
-        idColuna.setCellValueFactory(new PropertyValueFactory<>("id"));
-        materiaColuna.setCellValueFactory(new PropertyValueFactory<>("materia"));
-        perguntaColuna.setCellValueFactory(new PropertyValueFactory<>("pergunta"));
 
-        perguntas = FXCollections.observableArrayList(PerguntaDAO.obterPerguntas());
-        tabelaPerguntas.setItems(perguntas);
-    }
+
+
 
 
 

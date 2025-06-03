@@ -96,35 +96,49 @@ public class TurmaDAO {
     }
 
     public static ArrayList<Turma> obterTurma() {
-        // query SQL
         final String sql = "SELECT * FROM turma";
-        // lista de matérias
-
         ArrayList<Turma> turmas = new ArrayList<>();
 
-        // Executar query
         try (
                 Connection conexao = ConexaoDB.getConnection();
                 PreparedStatement stmt = conexao.prepareStatement(sql);
                 ResultSet res = stmt.executeQuery()
         ) {
-            // Extrair tuplas da tabela
+            // Lista temporária para armazenar dados das turmas
+            class TurmaTemp {
+                int id;
+                String nome;
+                String emailProfessor;
+                byte serie;
+                String descricao;
+                TurmaTemp(int id, String nome, String emailProfessor, byte serie, String descricao) {
+                    this.id = id;
+                    this.nome = nome;
+                    this.emailProfessor = emailProfessor;
+                    this.serie = serie;
+                    this.descricao = descricao;
+                }
+            }
+            ArrayList<TurmaTemp> tempList = new ArrayList<>();
+
             while (res.next()) {
-                // extrair atributos
                 int id = res.getInt(TurmaColuna.ID.get());
                 String nome = res.getString(TurmaColuna.NOME.get());
+                String emailProfessor = res.getString(TurmaColuna.PROFESSOR.get());
                 byte serie = res.getByte(TurmaColuna.SERIE.get());
-                String descrição = res.getString(TurmaColuna.DESCRICAO.get());
-                Professor professor = ProfessorDAO.buscarPorId(res.getInt(TurmaColuna.PROFESSOR.get()));
-                // adicionar a lista
-                turmas.add(new Turma(id, nome, professor,serie,descrição));
+                String descricao = res.getString(TurmaColuna.DESCRICAO.get());
+                tempList.add(new TurmaTemp(id, nome, emailProfessor, serie, descricao));
+            }
+
+            // Agora, para cada turma, buscar o professor e criar o objeto Turma
+            for (TurmaTemp temp : tempList) {
+                Professor professor = ProfessorDAO.buscarPorEmail(temp.emailProfessor);
+                turmas.add(new Turma(temp.id, temp.nome, professor, temp.serie, temp.descricao));
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e); // tratamento de erro
+            throw new RuntimeException(e);
         }
-        // retornar lista de matérias
         return turmas;
-
     }
 
     public static void adicionarTurma(String nome, String professor, String serie, String descricao) {
