@@ -2,12 +2,14 @@ package com.poliedro.jogodonotao.controller;
 
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.usuario.Aluno;
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -63,7 +65,24 @@ public class ControlePainelAluno implements Initializable {
      */
     @FXML
     void iniciarNovaPartida(ActionEvent event) throws IOException {
-        App.changeScene("area-aluno/partida/tela-criar-partida", "Iniciar nova partida");
+        // Exibir mensagem
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Carregando tela de criar partida...");
+        alert.setHeaderText("Carregando tela de criar partida...");
+        alert.setContentText("Por favor, aguarde enquanto a tela é carregada.");
+        alert.show();
+
+        // Espera meio segundo antes de trocar a cena e fechar o alerta
+        PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
+        pause.setOnFinished(eventPause -> {
+            try {
+                App.changeScene("area-aluno/partida/tela-criar-partida", "Iniciar nova partida");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            alert.close();
+        });
+        pause.play();
     }
 
     /**
