@@ -184,4 +184,59 @@ public class PerguntaDAO {
 
         return lista;
     }
+    public static void adicionarPergunta(
+            String enunciado,
+            String alternativa1,
+            String alternativa2,
+            String alternativa3,
+            String alternativa4,
+            String alternativa5,
+            String dica,
+            String materia
+    ) {
+        String sql = "INSERT INTO pergunta (enunciado, alternativa1, alternativa2, alternativa3, alternativa4, alternativa5, dica, materia) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = ConexaoDB.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, enunciado);
+            stmt.setString(2, dica);
+            stmt.setString(3, materia);
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static Pergunta buscarPorEnunciado(String enunciado) {
+        final String sql = "SELECT * FROM pergunta WHERE titulo = ?";
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql)
+        ) {
+            stmt.setString(1, enunciado);
+            ResultSet res = stmt.executeQuery();
+
+            if (res.next()) {
+                int idPergunta = res.getInt("id_pergunta");
+                String titulo = res.getString("titulo");
+                String dificuldadeStr = res.getString("dificuldade");
+                String dica = res.getString("dica");
+                int criadorId = res.getInt("criador");
+
+                Alternativa[] alternativas = AlternativaDAO.buscarPorPergunta(idPergunta);
+                DificuldadePergunta dificuldade = DificuldadePergunta.fromString(dificuldadeStr);
+                Professor criador = ProfessorDAO.buscarPorId(criadorId);
+
+                return new Pergunta(idPergunta, titulo, alternativas, dificuldade, dica, criador);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }

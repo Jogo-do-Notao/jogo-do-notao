@@ -65,4 +65,9 @@ public class Pergunta {
     public void setAlternativas(Alternativa[] alternativas) {
         this.alternativas = alternativas;
     }
-}
+
+
+
+
+    }
+
