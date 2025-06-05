@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 
 import java.io.IOException;
 
@@ -25,6 +26,10 @@ public class App extends Application {
 
         // Título da janela
         stage.setTitle("Jogo do Notão");
+
+        // Definir ícone da janela
+        stage.getIcons().add(new Image(
+                "https://www.colegiopoliedro.com.br/app/uploads/2021/03/cropped-favicon-new-32x32.png"));
 
         // Definir tamanho mínimo da janela
         stage.setMinWidth(800);
