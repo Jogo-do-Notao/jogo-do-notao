@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
@@ -295,6 +296,27 @@ public class ControleTelaPartida implements Initializable {
      */
     @FXML
     void usarAjudaEliminar(ActionEvent event) {
+        // Quantidade de alternativas a eliminar
+        // 1º uso: 3 alternativas | 2º uso: 2 alternativas
+        int quantEliminar = partida.getAjudaEliminar() == 0 ? 3 : 2;
+
+        // Mensagem de confirmação
+        Alert msgConfirmacao = new Alert(Alert.AlertType.CONFIRMATION);
+        msgConfirmacao.setTitle("Usar Ajuda Cartas");
+        msgConfirmacao.setHeaderText("Você tem certeza que deseja usar essa ajuda?");
+        msgConfirmacao.setContentText(
+                "Essa ajuda eliminará " + quantEliminar + " alternativas incorretas.\n\n" +
+                        "O preço da ajuda é de " + Partida.getPrecoAjudaEliminarFormatado() + " do seu prêmio atual.\n\n"
+        );
+        // Obter resposta
+        Optional<ButtonType> decisao = msgConfirmacao.showAndWait();
+
+        // Se cancelou, encerra o método
+        if (decisao.isEmpty() || decisao.get() == ButtonType.CANCEL) {
+            /* Negou uso da ajuda */
+            return; // encerrar método
+        }
+        /* Confirmou uso da ajuda */
 
         // Incrementar uso da ajuda
         partida.addAjudaEliminar();
@@ -308,6 +330,22 @@ public class ControleTelaPartida implements Initializable {
      */
     @FXML
     void usarAjudaDica(ActionEvent event) {
+        // Mensagem de confirmação
+        Alert msgConfirmacao = new Alert(Alert.AlertType.CONFIRMATION);
+        msgConfirmacao.setTitle("Usar Ajuda Dica do Professor");
+        msgConfirmacao.setHeaderText("Você tem certeza que deseja usar essa ajuda?");
+        msgConfirmacao.setContentText(
+                "Essa ajuda irá exibir a ajuda do professor na tela.\n\n" +
+                        "O preço da ajuda é de " + Partida.getPrecoAjudaDicaFormatado() + " do seu prêmio atual.\n\n"
+        );
+        // Obter resposta
+        Optional<ButtonType> decisao = msgConfirmacao.showAndWait();
+
+        // Se cancelou, encerra o método
+        if (decisao.isEmpty() || decisao.get() == ButtonType.CANCEL) {
+            /* Negou uso da ajuda */
+            return; // encerrar método
+        }
 
         // Incrementar uso da ajuda
         partida.addAjudaDica();
@@ -321,6 +359,23 @@ public class ControleTelaPartida implements Initializable {
      */
     @FXML
     void usarAjudaPular(ActionEvent event) {
+        // Mensagem de confirmação
+        Alert msgConfirmacao = new Alert(Alert.AlertType.CONFIRMATION);
+        msgConfirmacao.setTitle("Usar Ajuda Pular Pergunta");
+        msgConfirmacao.setHeaderText("Você tem certeza que deseja usar essa ajuda?");
+        msgConfirmacao.setContentText(
+                "Essa ajuda irá substituir a pergunta atual e sortear outra pergunta.\n\n" +
+                        "O preço da ajuda é de " + Partida.getPrecoAjudaPularFormatado() + " do seu prêmio atual.\n\n"
+        );
+        // Obter resposta
+        Optional<ButtonType> decisao = msgConfirmacao.showAndWait();
+
+        // Se cancelou, encerra o método
+        if (decisao.isEmpty() || decisao.get() == ButtonType.CANCEL) {
+            /* Negou uso da ajuda */
+            return; // encerrar método
+        }
+
         // Incrementar uso da ajuda
         partida.addAjudaPular();
         // Atualizar botões de ajuda
