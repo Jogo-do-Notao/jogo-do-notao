@@ -263,7 +263,7 @@ public class ControleTelaPartida implements Initializable {
      * <p>
      * Desabilita os botões de ajuda na última rodada (15º) ou se o limite tiver sido atingido.
      */
-    private void atualizarBotoesAjuda() {
+    private void atualizarBotoesAjuda(boolean usoNaRodada) {
         // Obter usos das ajudas
         int[] usosAjuda = {
                 partida.getAjudaEliminar(),
@@ -275,15 +275,23 @@ public class ControleTelaPartida implements Initializable {
         Button[] botoesAjuda = {botaoAjudaEliminar, botaoAjudaDica, botaoAjudaPular};
 
         for (int i = 0; i < 3; i++) {
-            // Atualizar uso das ajudas
+            // Atualizar texto com uso das ajudas
             infosAjuda[i].setText(usosAjuda[i] + "/2");
 
             // Habilitar/desabilitar botões com limite ainda disponível
             botoesAjuda[i].setDisable(
                     usosAjuda[i] >= 2 // não atingiu o limite
-                            || partida.getRodada() >= 15 // não for a última rodada
+                            || partida.getRodada() >= 15 || // não for a última rodada
+                            usoNaRodada // se uma ajuda já foi usada nesta rodada
             );
         }
+    }
+
+    /**
+     * Chama o método {@code atualizarBotoesAjuda(boolean usoNaRodada)} quando o chamado não for um chamado na rodada atual.
+     */
+    private void atualizarBotoesAjuda() {
+        this.atualizarBotoesAjuda(false);
     }
 
     /**
@@ -319,12 +327,15 @@ public class ControleTelaPartida implements Initializable {
             /* Negou uso da ajuda */
             return; // encerrar método
         }
-        /* Confirmou uso da ajuda */
+
+        /* Eliminar alternativas */
+        // TODO: eliminar 2/3 alternativas incorretas
 
         /* finalizar uso da ajuda */
         partida.usoAjudaEliminar(); // Incrementar uso da ajuda
         this.atualizarInfo(); // atualizar pontuação
-        this.atualizarBotoesAjuda(); // Atualizar botões de ajuda
+        this.atualizarBotoesAjuda(true); // Atualizar botões de ajuda
+        botaoAjudaEliminar.setDisable(true); // desabilitar botão até próxima rodada
     }
 
     /**
@@ -358,10 +369,14 @@ public class ControleTelaPartida implements Initializable {
             return; // encerrar método
         }
 
+        /* tornar dica da pergunta visível */
+        // TODO: ajuda dica do professor
+
         /* finalizar uso da ajuda */
         partida.addAjudaDica(); // Incrementar uso da ajuda
         this.atualizarInfo(); // atualizar pontuação
-        this.atualizarBotoesAjuda(); // Atualizar botões de ajuda
+        this.atualizarBotoesAjuda(true); // Atualizar botões de ajuda
+        botaoAjudaDica.setDisable(true); // desabilitar botão até próxima rodada
     }
 
     /**
@@ -395,10 +410,14 @@ public class ControleTelaPartida implements Initializable {
             return; // encerrar método
         }
 
+        /* Pular pergunta */
+        // TODO: pular a pergunta atual e sortear uma nova
+
         /* finalizar uso da ajuda */
         partida.addAjudaPular(); // Incrementar uso da ajuda
         this.atualizarInfo(); // atualizar pontuação
-        this.atualizarBotoesAjuda(); // Atualizar botões de ajuda
+        this.atualizarBotoesAjuda(true); // Atualizar botões de ajuda
+        botaoAjudaPular.setDisable(true); // desabilitar botão até próxima rodada
     }
 
     /**
