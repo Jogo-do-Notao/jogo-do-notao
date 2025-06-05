@@ -321,10 +321,10 @@ public class ControleTelaPartida implements Initializable {
         }
         /* Confirmou uso da ajuda */
 
-        // Incrementar uso da ajuda
-        partida.addAjudaEliminar();
-        // Atualizar botões de ajuda
-        this.atualizarBotoesAjuda();
+        /* finalizar uso da ajuda */
+        partida.usoAjudaEliminar(); // Incrementar uso da ajuda
+        this.atualizarInfo(); // atualizar pontuação
+        this.atualizarBotoesAjuda(); // Atualizar botões de ajuda
     }
 
     /**
@@ -358,10 +358,10 @@ public class ControleTelaPartida implements Initializable {
             return; // encerrar método
         }
 
-        // Incrementar uso da ajuda
-        partida.addAjudaDica();
-        // Atualizar botões de ajuda
-        this.atualizarBotoesAjuda();
+        /* finalizar uso da ajuda */
+        partida.addAjudaDica(); // Incrementar uso da ajuda
+        this.atualizarInfo(); // atualizar pontuação
+        this.atualizarBotoesAjuda(); // Atualizar botões de ajuda
     }
 
     /**
@@ -395,10 +395,10 @@ public class ControleTelaPartida implements Initializable {
             return; // encerrar método
         }
 
-        // Incrementar uso da ajuda
-        partida.addAjudaPular();
-        // Atualizar botões de ajuda
-        this.atualizarBotoesAjuda();
+        /* finalizar uso da ajuda */
+        partida.addAjudaPular(); // Incrementar uso da ajuda
+        this.atualizarInfo(); // atualizar pontuação
+        this.atualizarBotoesAjuda(); // Atualizar botões de ajuda
     }
 
     /**

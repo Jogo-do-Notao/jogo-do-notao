@@ -290,7 +290,25 @@ public class Partida {
      * Aumentar pontuação acumulada da partida.
      */
     public void addPontuacaoAcumulada() {
-        this.pontuacaoAcumulada += this.getGanhoNaRodada(); // atualizar objeto
+        this.setPontuacaoAcumulada(this.getGanhoNaRodada());
+    }
+
+    /**
+     * Desconta um valor da pontuação acumulada da partida.
+     *
+     * @param valor Valor a ser descontado da pontuação acumulada.
+     */
+    public void subPontuacaoAcumulada(int valor) {
+        this.setPontuacaoAcumulada(valor * -1);
+    }
+
+    /**
+     * Setter da pontuação acumulada.
+     *
+     * @param pontuacaoAcumulada Valor que será adicionado (ou subtraído se for negativo) da pontuação acumulada.
+     */
+    public void setPontuacaoAcumulada(int pontuacaoAcumulada) {
+        this.pontuacaoAcumulada += pontuacaoAcumulada; // atualizar objeto
         PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.PONTUACAO_ACUMULADA); // atualizar no db
     }
 
@@ -320,27 +338,39 @@ public class Partida {
     }
 
     /**
-     * Incrementa o uso da ajuda de eliminar alternativas.
+     * Registra o uso da ajuda de eliminar alternativas na partida.
+     * Incrementa o contador de uso da ajuda e desconta o preço da ajuda da pontuação acumulada.
      */
-    public void addAjudaEliminar() {
+    public void usoAjudaEliminar() {
+        // incrementar uso da ajuda
         this.ajudaEliminar++; // atualizar objeto
-        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.AJUDA_ELIMINAR);
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.AJUDA_ELIMINAR); // atualizar no db
+        // Descontar o preço da ajuda
+        this.subPontuacaoAcumulada(this.getPrecoAjudaEliminar());
     }
 
     /**
-     * Incrementa o uso da ajuda de exibir dica do professor.
+     * Registra o uso da ajuda de exibir dica do professor na partida.
+     * Incrementa o contador de uso da ajuda e desconta o preço da ajuda da pontuação acumulada.
      */
     public void addAjudaDica() {
+        // incrementar uso da ajuda
         this.ajudaDica++; // atualizar objeto
         PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.AJUDA_DICA);
+        // Descontar o preço da ajuda
+        this.subPontuacaoAcumulada(this.getPrecoAjudaDica());
     }
 
     /**
-     * Incrementa o uso da ajuda de pular pergunta.
+     * Registra o uso da ajuda de pular pergunta na partida.
+     * Incrementa o contador de uso da ajuda e desconta o preço da ajuda da pontuação acumulada.
      */
     public void addAjudaPular() {
+        // incrementar uso da ajuda
         this.ajudaPular++; // atualizar objeto
         PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.AJUDA_PULAR);
+        // Descontar o preço da ajuda
+        this.subPontuacaoAcumulada(this.getPrecoAjudaPular());
     }
 
 
