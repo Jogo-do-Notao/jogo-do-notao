@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
  * Responsável por gerenciar os eventos e a interação do usuário durante uma partida.
  */
 public class ControleTelaPartida implements Initializable {
-
+    // Componentes FXML
     @FXML
     private ToggleButton alternativa1;
 
@@ -55,6 +55,15 @@ public class ControleTelaPartida implements Initializable {
     private ProgressBar barraProgresso;
 
     @FXML
+    private Button botaoAjudaDica;
+
+    @FXML
+    private Button botaoAjudaEliminar;
+
+    @FXML
+    private Button botaoAjudaPular;
+
+    @FXML
     private Button botaoResponder;
 
     @FXML
@@ -73,13 +82,15 @@ public class ControleTelaPartida implements Initializable {
     private Text textProgresso;
 
     @FXML
-    private Text usoAjudaCartas;
-
-    @FXML
     private Text usoAjudaDica;
 
     @FXML
+    private Text usoAjudaEliminar;
+
+    @FXML
     private Text usoAjudaPular;
+
+    // Atributos
 
     /**
      * Partida em andamento.
@@ -119,21 +130,6 @@ public class ControleTelaPartida implements Initializable {
 
     @FXML
     void sairDaPartida(ActionEvent event) {
-
-    }
-
-    @FXML
-    void usarAjudaCartas(ActionEvent event) {
-
-    }
-
-    @FXML
-    void usarAjudaDica(ActionEvent event) {
-
-    }
-
-    @FXML
-    void usarAjudaPular(ActionEvent event) {
 
     }
 
@@ -251,6 +247,9 @@ public class ControleTelaPartida implements Initializable {
         // Desabilitar botão de responder (evitar bug)
         botaoResponder.setDisable(true);
 
+        // Atualizar ajuda
+        this.atualizarBotoesAjuda();
+
         // Aleatorizar ordem das alternativas
         this.alternativas = Alternativa.embaralhar(this.perguntaAtual.getAlternativas());
 
@@ -259,5 +258,53 @@ public class ControleTelaPartida implements Initializable {
         for (int i = 0; i < 5; i++) {
             textos[i].setText(this.alternativas[i].getTexto());
         }
+    }
+
+    // Ajudas
+
+    /**
+     * Atualiza os botões de ajuda caso ainda haja limite disponível na partida.
+     * <p>
+     * Desabilita os botões de ajuda na última rodada (15º) ou se o limite tiver sido atingido.
+     */
+    private void atualizarBotoesAjuda() {
+        // Desabilitar botões na última rodada
+        if (partida.getRodada() >= 15) {
+            botaoAjudaEliminar.setDisable(true);
+            botaoAjudaDica.setDisable(true);
+            botaoAjudaPular.setDisable(true);
+            return;
+        }
+
+        // Habilitar/desabilitar botões com limite ainda disponível
+        botaoAjudaEliminar.setDisable(partida.getAjudaEliminar() >= 2);
+        botaoAjudaDica.setDisable(partida.getAjudaEliminar() >= 2);
+        botaoAjudaPular.setDisable(partida.getAjudaPular() >= 2);
+    }
+
+    /**
+     * Utiliza a ajuda de Eliminar (eliminar alternativas incorretas).
+     */
+    @FXML
+    void usarAjudaEliminar(ActionEvent event) {
+
+    }
+
+    /**
+     * Utiliza a ajuda de dica.
+     * Torna a dica do professor da pergunta visível na tela.
+     */
+    @FXML
+    void usarAjudaDica(ActionEvent event) {
+
+    }
+
+    /**
+     * Utiliza a ajuda de pular pergunta.
+     * Sorteia uma nova pergunta para a rodada.
+     */
+    @FXML
+    void usarAjudaPular(ActionEvent event) {
+
     }
 }
