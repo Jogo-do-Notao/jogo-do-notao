@@ -30,20 +30,34 @@ public class Partida {
      * Valores do prêmio de cada rodada.
      * Usado para calcular a pontuação acumulada do aluno até chegar em 1 milhão na última rodada (15º).
      */
-    private static final int[] premioPorRodada = {500, 500, 1_000, 1_000, 2_000, 5_000, 5_000, 5_000, 10_000, 20_000, 50_000, 50_000, 150_000, 200_000, 500_000};
+    private static final int[] PREMIO_POR_RODADA = {500, 500, 1_000, 1_000, 2_000, 5_000, 5_000, 5_000, 10_000, 20_000, 50_000, 50_000, 150_000, 200_000, 500_000};
+    // Preços das ajudas
+    /**
+     * Preço para usar a ajuda de eliminar alternativas.
+     */
+    private static final int PRECO_AJUDA_ELIMINAR = 50_000;
+    /**
+     * Preço para usar a ajuda de exibir dica do professor.
+     */
+    private static final int PRECO_AJUDA_DICA = 5_000;
+    /**
+     * Preço para usar a ajuda de pular pergunta.
+     */
+    private static final int PRECO_AJUDA_PULAR = 25_000;
+
     // Atributos
     /**
      * ID da partida no banco de dados.
      */
-    private int id;
+    private final int ID;
     /**
      * Aluno que criou a partida.
      */
-    private Aluno aluno;
+    private final Aluno ALUNO;
     /**
      * Matéria da partida (se for {@code null}, partida é de todas as matérias).
      */
-    private Materia materia;
+    private final Materia MATERIA;
     /**
      * Status da partida (em andamento, ganha, perdida ou abandonada).
      */
@@ -83,11 +97,11 @@ public class Partida {
      * Construtor da classe {@code Partida} com todos os atributos.
      */
     public Partida(
-            int id, Aluno aluno, Materia materia, PartidaStatus status, int rodada, Pergunta[] perguntas, int pontuacaoAcumulada, int pontuacaoCheckpoint, int ajudaEliminar, int ajudaDica, int ajudaPular
+            int ID, Aluno ALUNO, Materia MATERIA, PartidaStatus status, int rodada, Pergunta[] perguntas, int pontuacaoAcumulada, int pontuacaoCheckpoint, int ajudaEliminar, int ajudaDica, int ajudaPular
     ) {
-        this.id = id;
-        this.aluno = aluno;
-        this.materia = materia;
+        this.ID = ID;
+        this.ALUNO = ALUNO;
+        this.MATERIA = MATERIA;
         this.status = status;
         this.rodada = rodada;
         this.perguntas = perguntas;
@@ -102,10 +116,10 @@ public class Partida {
      * Construtor da classe {@code Partida} para o aluno atual.
      */
     public Partida(
-            int id, Materia materia, PartidaStatus status, int rodada, Pergunta[] perguntas, int pontuacaoAcumulada, int pontuacaoCheckpoint, int ajudaEliminar, int ajudaDica, int ajudaPular
+            int ID, Materia MATERIA, PartidaStatus status, int rodada, Pergunta[] perguntas, int pontuacaoAcumulada, int pontuacaoCheckpoint, int ajudaEliminar, int ajudaDica, int ajudaPular
     ) {
         this(
-                id, Aluno.getSessaoAtiva(), materia, status, rodada, perguntas,
+                ID, Aluno.getSessaoAtiva(), MATERIA, status, rodada, perguntas,
                 pontuacaoAcumulada, pontuacaoCheckpoint, ajudaEliminar, ajudaDica, ajudaPular
         );
     }
@@ -113,27 +127,53 @@ public class Partida {
     /**
      * Construtor da classe {@code Partida} para partida que acabou de ser criada.
      */
-    public Partida(int id, Materia materia) {
+    public Partida(int ID, Materia MATERIA) {
         this(
-                id, materia, PartidaStatus.ANDAMENTO, 1, new Pergunta[15], 0, 0, 0, 0, 0
+                ID, MATERIA, PartidaStatus.ANDAMENTO, 1, new Pergunta[15], 0, 0, 0, 0, 0
         );
     }
 
-    // Getters
+    // Getters estáticos
     public static Partida getPartidaEmAndamento() {
         return partidaEmAndamento;
     }
 
-    public int getId() {
-        return id;
+    public static int getPrecoAjudaEliminar() {
+        return PRECO_AJUDA_ELIMINAR;
     }
 
-    public Aluno getAluno() {
-        return aluno;
+    public static String getPrecoAjudaEliminarFormatado() {
+        return Formatador.formatoMonetario(PRECO_AJUDA_ELIMINAR);
     }
 
-    public Materia getMateria() {
-        return materia;
+    public static int getPrecoAjudaDica() {
+        return PRECO_AJUDA_DICA;
+    }
+
+    public static String getPrecoAjudaDicaFormatado() {
+        return Formatador.formatoMonetario(PRECO_AJUDA_DICA);
+    }
+
+    public static int getPrecoAjudaPular() {
+        return PRECO_AJUDA_PULAR;
+    }
+
+    public static String getPrecoAjudaPularFormatado() {
+        return Formatador.formatoMonetario(PRECO_AJUDA_PULAR);
+    }
+
+    // Getters de objetos
+
+    public int getID() {
+        return ID;
+    }
+
+    public Aluno getALUNO() {
+        return ALUNO;
+    }
+
+    public Materia getMATERIA() {
+        return MATERIA;
     }
 
     public PartidaStatus getStatus() {
@@ -185,14 +225,14 @@ public class Partida {
      * Retorna o prêmio ganho na rodada atual ao acertar a pergunta.
      */
     public int getGanhoNaRodada() {
-        return premioPorRodada[this.rodada - 1];
+        return PREMIO_POR_RODADA[this.rodada - 1];
     }
 
     /**
      * Retorna o prêmio, formatado como monetário, ganho na rodada atual ao acertar a pergunta.
      */
     public String getGanhoNaRodadaFormatada() {
-        return Formatador.formatoMonetario(premioPorRodada[this.rodada - 1]);
+        return Formatador.formatoMonetario(PREMIO_POR_RODADA[this.rodada - 1]);
     }
 
     /**
@@ -375,7 +415,7 @@ public class Partida {
         // Atualizar status da partida
         this.setStatus(PartidaStatus.GANHA);
         // Atualizar pontuação do aluno
-        this.aluno.setPontuacao(this.getPontuacaoAcumulada());
+        this.ALUNO.setPontuacao(this.getPontuacaoAcumulada());
 
         // Redirecionar para a tela de fim da partida
         try {

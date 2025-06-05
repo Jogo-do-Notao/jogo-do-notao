@@ -225,7 +225,7 @@ public class PartidaDAO {
                     break;
             }
             // ID
-            stmt.setInt(2, partida.getId());
+            stmt.setInt(2, partida.getID());
 
             // Executar query
             int linhasAfetadas = stmt.executeUpdate();

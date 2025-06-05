@@ -205,9 +205,9 @@ public class ControleTelaPartida implements Initializable {
         // Exibir matéria
         textMateria.setText(
                 "Matéria: " + (
-                        partida.getMateria() == null ?
+                        partida.getMATERIA() == null ?
                                 "Todas as Matérias" :
-                                partida.getMateria().getNome()
+                                partida.getMATERIA().getNome()
                 ));
         // Exibir pontuação
         this.atualizarInfo();
