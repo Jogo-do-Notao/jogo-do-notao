@@ -5,6 +5,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,9 +14,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControleGerenciarProfessor">
    <stylesheets>
       <URL value="@../../../css/colors.css" />
       <URL value="@../../../css/sombras.css" />
@@ -23,7 +24,7 @@
       <URL value="@../../../css/components/button.css" />
    </stylesheets>
    <children>
-      <Button layoutX="55.0" layoutY="28.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" text="Voltar">
+      <Button layoutX="55.0" layoutY="28.0" mnemonicParsing="false" onAction="#voltarParaPainel" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #EE2252; -fx-background-radius: 12;" text="Voltar">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -39,7 +40,7 @@
             <String fx:value="button-vermelho" />
          </styleClass>
       </Button>
-      <Button layoutX="1622.0" layoutY="28.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="259.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Adicionar novo professor" AnchorPane.rightAnchor="38.0">
+      <Button layoutX="1622.0" layoutY="28.0" mnemonicParsing="false" onAction="#adicionarProfessor" prefHeight="46.0" prefWidth="259.0" style="-fx-background-color: #FAA41F; -fx-background-radius: 12;" text="+ Adicionar novo professor" AnchorPane.rightAnchor="38.0">
          <font>
             <Font size="20.0" />
          </font>
@@ -68,7 +69,7 @@
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField prefHeight="69.0" prefWidth="1248.0" promptText="Pesquisar professor" style="-fx-background-color: -zinc-100;">
+                  <TextField fx:id="pesquisarProfessor" prefHeight="69.0" prefWidth="1248.0" promptText="Pesquisar professor" style="-fx-background-color: -zinc-100;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -82,39 +83,16 @@
       </HBox>
       <VBox layoutX="33.0" layoutY="220.0" prefHeight="834.0" prefWidth="1809.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12; -fx-border-color: #ee2252; -fx-border-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="220.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="1787.0" style="-fx-background-color: #D4F7F9; -fx-background-radius: 15;">
+            <TableView fx:id="tabelaProfessores" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 12;" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="colunaNomeProfessor" prefWidth="350.0" text="Nome do professor" />
+                <TableColumn fx:id="colunaRegistro" prefWidth="300.0" text="Registro" />
+                  <TableColumn fx:id="colunaEmail" prefWidth="350.0" text="Email" />
+              </columns>
                <VBox.margin>
-                  <Insets left="10.0" right="10.0" top="20.0" />
+                  <Insets top="5.0" />
                </VBox.margin>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do professor" wrappingWidth="421.92138671875">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="250.0" right="150.0" top="10.0" />
-                     </HBox.margin>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Registro" wrappingWidth="179.2626953125">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="200.0" top="10.0" />
-                     </HBox.margin>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="451.2626953125">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Opções" wrappingWidth="70.92138671875">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
+            </TableView>
          </children>
       </VBox>
    </children>
