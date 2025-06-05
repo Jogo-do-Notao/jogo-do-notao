@@ -296,6 +296,14 @@ public class ControleTelaPartida implements Initializable {
      */
     @FXML
     void usarAjudaEliminar(ActionEvent event) {
+        // Verificar se usuário tem pontos suficientes para usar a ajuda
+        if (partida.getPontuacaoAcumulada() < Partida.getPrecoAjudaEliminar()) {
+            this.exibirMsgPontosInsuficienteAjuda(
+                    Partida.getPrecoAjudaEliminarFormatado()
+            ); // exibir mensagem de pontos insuficientes
+            return; // encerrar método
+        }
+
         // Quantidade de alternativas a eliminar
         // 1º uso: 3 alternativas | 2º uso: 2 alternativas
         int quantEliminar = partida.getAjudaEliminar() == 0 ? 3 : 2;
@@ -330,6 +338,14 @@ public class ControleTelaPartida implements Initializable {
      */
     @FXML
     void usarAjudaDica(ActionEvent event) {
+        // Verificar se usuário tem pontos suficientes para usar a ajuda
+        if (partida.getPontuacaoAcumulada() < Partida.getPrecoAjudaDica()) {
+            this.exibirMsgPontosInsuficienteAjuda(
+                    Partida.getPrecoAjudaDicaFormatado()
+            ); // exibir mensagem de pontos insuficientes
+            return; // encerrar método
+        }
+
         // Mensagem de confirmação
         Alert msgConfirmacao = new Alert(Alert.AlertType.CONFIRMATION);
         msgConfirmacao.setTitle("Usar Ajuda Dica do Professor");
@@ -359,6 +375,14 @@ public class ControleTelaPartida implements Initializable {
      */
     @FXML
     void usarAjudaPular(ActionEvent event) {
+        // Verificar se usuário tem pontos suficientes para usar a ajuda
+        if (partida.getPontuacaoAcumulada() < Partida.getPrecoAjudaPular()) {
+            this.exibirMsgPontosInsuficienteAjuda(
+                    Partida.getPrecoAjudaPularFormatado()
+            ); // exibir mensagem de pontos insuficientes
+            return; // encerrar método
+        }
+
         // Mensagem de confirmação
         Alert msgConfirmacao = new Alert(Alert.AlertType.CONFIRMATION);
         msgConfirmacao.setTitle("Usar Ajuda Pular Pergunta");
@@ -380,5 +404,21 @@ public class ControleTelaPartida implements Initializable {
         partida.addAjudaPular();
         // Atualizar botões de ajuda
         this.atualizarBotoesAjuda();
+    }
+
+    /**
+     * Exibe a mensagem de pontuação insuficiente para usar uma ajuda.
+     */
+    private void exibirMsgPontosInsuficienteAjuda(
+            String precoAjudaFormatado
+    ) {
+        Alert msgNegacao = new Alert(Alert.AlertType.WARNING);
+        msgNegacao.setTitle("Pontos Insuficientes");
+        msgNegacao.setHeaderText("Você não tem pontos suficientes para usar essa ajuda.");
+        msgNegacao.setContentText(
+                "Para usar essa ajuda, é necessário pagar " + precoAjudaFormatado + " do seu prêmio atual.\n" +
+                        "Seu prêmio atual é de " + partida.getPontuacaoAcumuladaFormatada() + "."
+        );
+        msgNegacao.showAndWait();
     }
 }
