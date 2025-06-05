@@ -268,26 +268,38 @@ public class ControleTelaPartida implements Initializable {
      * Desabilita os botões de ajuda na última rodada (15º) ou se o limite tiver sido atingido.
      */
     private void atualizarBotoesAjuda() {
-        // Desabilitar botões na última rodada
-        if (partida.getRodada() >= 15) {
-            botaoAjudaEliminar.setDisable(true);
-            botaoAjudaDica.setDisable(true);
-            botaoAjudaPular.setDisable(true);
-            return;
-        }
+        // Obter usos das ajudas
+        int[] usosAjuda = {
+                partida.getAjudaEliminar(),
+                partida.getAjudaDica(),
+                partida.getAjudaPular()
+        };
+        // Elementos da tela
+        Text[] infosAjuda = {usoAjudaEliminar, usoAjudaDica, usoAjudaPular};
+        Button[] botoesAjuda = {botaoAjudaEliminar, botaoAjudaDica, botaoAjudaPular};
 
-        // Habilitar/desabilitar botões com limite ainda disponível
-        botaoAjudaEliminar.setDisable(partida.getAjudaEliminar() >= 2);
-        botaoAjudaDica.setDisable(partida.getAjudaEliminar() >= 2);
-        botaoAjudaPular.setDisable(partida.getAjudaPular() >= 2);
+        for (int i = 0; i < 3; i++) {
+            // Atualizar uso das ajudas
+            infosAjuda[i].setText(usosAjuda[i] + "/2");
+
+            // Habilitar/desabilitar botões com limite ainda disponível
+            botoesAjuda[i].setDisable(
+                    usosAjuda[i] >= 2 // não atingiu o limite
+                            || partida.getRodada() >= 15 // não for a última rodada
+            );
+        }
     }
 
     /**
-     * Utiliza a ajuda de Eliminar (eliminar alternativas incorretas).
+     * Utiliza a ajuda de eliminar (cartas). Elimina 3 (no 1º uso) ou 2 (no 2º uso) alternativas incorretas.
      */
     @FXML
     void usarAjudaEliminar(ActionEvent event) {
 
+        // Incrementar uso da ajuda
+        partida.addAjudaEliminar();
+        // Atualizar botões de ajuda
+        this.atualizarBotoesAjuda();
     }
 
     /**
@@ -297,6 +309,10 @@ public class ControleTelaPartida implements Initializable {
     @FXML
     void usarAjudaDica(ActionEvent event) {
 
+        // Incrementar uso da ajuda
+        partida.addAjudaDica();
+        // Atualizar botões de ajuda
+        this.atualizarBotoesAjuda();
     }
 
     /**
@@ -305,6 +321,9 @@ public class ControleTelaPartida implements Initializable {
      */
     @FXML
     void usarAjudaPular(ActionEvent event) {
-
+        // Incrementar uso da ajuda
+        partida.addAjudaPular();
+        // Atualizar botões de ajuda
+        this.atualizarBotoesAjuda();
     }
 }

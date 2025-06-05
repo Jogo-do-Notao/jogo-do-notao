@@ -250,6 +250,33 @@ public class Partida {
     }
 
     /**
+     * Incrementa o uso da ajuda de eliminar alternativas.
+     */
+    public void addAjudaEliminar() {
+        this.ajudaEliminar++; // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.AJUDA_ELIMINAR);
+    }
+
+    /**
+     * Incrementa o uso da ajuda de exibir dica do professor.
+     */
+    public void addAjudaDica() {
+        this.ajudaDica++; // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.AJUDA_DICA);
+    }
+
+    /**
+     * Incrementa o uso da ajuda de pular pergunta.
+     */
+    public void addAjudaPular() {
+        this.ajudaPular++; // atualizar objeto
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.AJUDA_PULAR);
+    }
+
+
+    // Métodos
+
+    /**
      * Cria uma nova partida no banco de dados e depois abre a Tela de Partida com a nova partida criada.
      *
      * @param materia Matéria selecionada pelo aluno ou opção "Todas as Matérias".
