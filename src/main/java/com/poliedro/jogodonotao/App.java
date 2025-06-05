@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class App extends Application {
     /**
@@ -28,8 +29,13 @@ public class App extends Application {
         stage.setTitle("Jogo do Notão");
 
         // Definir ícone da janela
-        stage.getIcons().add(new Image(
-                "https://www.colegiopoliedro.com.br/app/uploads/2021/03/cropped-favicon-new-32x32.png"));
+        Image icon = new Image( // Carregar png dos recursos
+                Objects.requireNonNull(
+                        App.class.getResourceAsStream("/com/poliedro/jogodonotao/images/logo-poliedro/poliedro-favicon.png")
+                )
+        );
+        stage.getIcons().add(icon);
+        // URL: https://www.colegiopoliedro.com.br/app/uploads/2021/03/cropped-favicon-new-32x32.png
 
         // Definir tamanho mínimo da janela
         stage.setMinWidth(800);
