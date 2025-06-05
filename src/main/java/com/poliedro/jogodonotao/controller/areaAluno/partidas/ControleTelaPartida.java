@@ -241,24 +241,27 @@ public class ControleTelaPartida implements Initializable {
         // Ocultar dica caso esteja visível
         dicaContainer.setVisible(false);
 
+        this.atualizarPergunta(); // atualizar pergunta
+        this.atualizarBotoesAjuda(); // atualizar botões de ajuda
+    }
+
+    /**
+     * Atualiza a pergunta na tela.
+     */
+    private void atualizarPergunta() {
         // Sortear pergunta
         Pergunta perguntaAtual = partida.sortearPergunta();
 
         // Atualizar enunciado
-        //textEnunciado.setText(pergunta.getEnunciado());
         textEnunciado.setText(perguntaAtual.getEnunciado());
 
-        // Deselecionar botões de alternativas
+        // Desmarcar botões de alternativas
         alternativaGroup.selectToggle(null);
         // Desabilitar botão de responder (evitar bug)
         botaoResponder.setDisable(true);
 
-        // Atualizar ajuda
-        this.atualizarBotoesAjuda();
-
         // Aleatorizar ordem das alternativas
         this.alternativas = Alternativa.embaralhar(perguntaAtual.getAlternativas());
-
         // Exibir alternativas
         Text[] textos = {alternativa1texto, alternativa2texto, alternativa3texto, alternativa4texto, alternativa5texto};
         for (int i = 0; i < 5; i++) {
@@ -430,7 +433,15 @@ public class ControleTelaPartida implements Initializable {
         }
 
         /* Pular pergunta */
-        // TODO: pular a pergunta atual e sortear uma nova
+        // Mensagem de pulando pergunta
+        Alert msgPular = new Alert(Alert.AlertType.INFORMATION);
+        msgPular.setTitle("Sorteando Nova Pergunta");
+        msgPular.setHeaderText("Sorteando Nova Pergunta...");
+        msgPular.setContentText("Aguarde enquanto a nova pergunta é carregada...");
+        msgPular.show();
+        // Sortear nova pergunta
+        this.atualizarPergunta();
+        msgPular.close();
 
         /* finalizar uso da ajuda */
         partida.addAjudaPular(); // Incrementar uso da ajuda
