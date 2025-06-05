@@ -11,8 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 import java.net.URL;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Controle da tela de partida do jogo.
@@ -240,6 +239,10 @@ public class ControleTelaPartida implements Initializable {
     private void atualizarRodada() {
         // Ocultar dica caso esteja visível
         dicaContainer.setVisible(false);
+        // Habilitar alternativas caso estejam desabilitadas
+        for (ToggleButton alternativa : botoesAlternativas) {
+            alternativa.setDisable(false);
+        }
 
         this.atualizarPergunta(); // atualizar pergunta
         this.atualizarBotoesAjuda(); // atualizar botões de ajuda
@@ -342,7 +345,27 @@ public class ControleTelaPartida implements Initializable {
         }
 
         /* Eliminar alternativas */
-        // TODO: eliminar 2/3 alternativas incorretas
+        // Mensagem de eliminando alternativas
+        Alert msgEliminar = new Alert(Alert.AlertType.INFORMATION);
+        msgEliminar.setTitle("Eliminando Alternativas");
+        msgEliminar.setHeaderText("Eliminando alternativas...");
+        msgEliminar.setContentText("Aguarde enquanto as alternativas são eliminadas...");
+        msgEliminar.show();
+        // Identificar índices das alternativas incorretas
+        List<Integer> incorretas = new ArrayList<>();
+        for (int i = 0; i < alternativas.length; i++) {
+            if (!alternativas[i].isCorreta()) {
+                incorretas.add(i); // adicionar índice da alternativa incorreta
+            }
+        }
+        // Embaralhar índices
+        Collections.shuffle(incorretas);
+        // Escolher 2 ou 3 para eliminar
+        for (int i = 0; (i < quantEliminar && i < incorretas.size()); i++) {
+            int idx = incorretas.get(i); // obter índice da alternativa
+            botoesAlternativas[idx].setDisable(true); // desabilitar botão
+        }
+        msgEliminar.close(); // fechar mensagem de eliminação
 
         /* finalizar uso da ajuda */
         partida.usoAjudaEliminar(); // Incrementar uso da ajuda
