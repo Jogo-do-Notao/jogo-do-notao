@@ -3,6 +3,7 @@ package com.poliedro.jogodonotao.controller;
 import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.agrupadores.Turma;
 import com.poliedro.jogodonotao.database.dao.TurmaDAO;
+import com.poliedro.jogodonotao.usuario.Professor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,7 +21,7 @@ public class ControleGerenciarTurmas {
     private TextField campoPesquisarTurma;
 
     @FXML
-    private TableColumn<Turma, String> professorColuna;
+    private TableColumn<Turma, Professor> professorColuna;
 
     @FXML
     private TableView<Turma> tabelaTurmas;

@@ -6,6 +6,8 @@ import com.poliedro.jogodonotao.usuario.Aluno;
 import com.poliedro.jogodonotao.utils.HashSenha;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Classe DAO para a entidade Aluno.
@@ -243,5 +245,31 @@ public class AlunoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratar o erro
         }
+    }
+    public static List<Aluno> obterAlunos() {
+        List<Aluno> alunos = new ArrayList<>();
+        final String sql = "SELECT * FROM aluno";
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql);
+                ResultSet res = stmt.executeQuery()
+        ) {
+            while (res.next()) {
+                int id = res.getInt(AlunoColuna.ID.get());
+                String nome = res.getString(AlunoColuna.NOME.get());
+                String email = res.getString(AlunoColuna.EMAIL.get());
+                String ra = res.getString(AlunoColuna.RA.get());
+                String hashSenha = res.getString(AlunoColuna.HASH_SENHA.get());
+                int idTurma = res.getInt(AlunoColuna.ID_TURMA.get());
+                long pontuacao = res.getLong(AlunoColuna.PONTUACAO.get());
+
+                Turma turma = TurmaDAO.buscarPorId(idTurma);
+
+                alunos.add(new Aluno(id, nome, email, ra, hashSenha, turma, pontuacao));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return alunos;
     }
 }

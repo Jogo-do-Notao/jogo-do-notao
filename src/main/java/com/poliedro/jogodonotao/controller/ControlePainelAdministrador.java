@@ -30,7 +30,9 @@ public class ControlePainelAdministrador implements Initializable {
     @FXML
     private Text textEmail;
 
-    /** Método executado ao abrir o scene. */
+    /**
+     * Método executado ao abrir o scene.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Exibir dados do professor nos textos.
@@ -57,24 +59,38 @@ public class ControlePainelAdministrador implements Initializable {
             Professor.efetuarLogout();
         }
     }
+
     @FXML
     void abrirTelaAdicionarAluno(ActionEvent event) throws IOException {
         App.changeScene("area-adm/gerenciar-alunos/tela-cadastrar-aluno", "Adicionar Aluno");
     }
+
     @FXML
     void abrirTelaGerenciarPerguntas(ActionEvent event) throws IOException {
         App.changeScene("area-adm/gerenciar-perguntas/tela-gerenciar-perguntas", "Gerenciar Perguntas");
     }
+
     @FXML
     void irParaMenuPartida(ActionEvent event) throws IOException {
         App.changeScene("area-aluno/partida/tela-criar-partida", "Tela Criar Partida");
     }
+
     @FXML
     void abrirTelaAdicionarProfessor(ActionEvent event) throws IOException {
         App.changeScene("area-adm/gerenciar-professores/tela-cadastrar-professor", "Adicionar Professor");
     }
+
     @FXML
     public void abrirTelaGerenciarTurmas(ActionEvent event) throws IOException {
         App.changeScene("area-adm/gerenciar-turmas/tela-gerenciar-turmas", "Gerenciar Turmas");
+    }
+    @FXML
+    void abrirTelaGerenciarAlunos(ActionEvent event) throws IOException {
+        App.changeScene("area-adm/gerenciar-alunos/tela-gerenciar-alunos", "Gerenciar Alunos");
+
+    }
+    @FXML
+    void abrirTelaGerenciarProfessor(ActionEvent event) throws IOException {
+         App.changeScene("area-adm/gerenciar-professores/tela-gerenciar-professores", "Gerenciar Professores");
     }
 }
