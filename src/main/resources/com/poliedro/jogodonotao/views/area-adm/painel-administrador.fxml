@@ -24,22 +24,6 @@
             <Image url="@../../images/logo-jogo-do-notao/logo-jogo-do-notao.png" />
          </image>
       </ImageView>
-      <VBox layoutX="1538.0" layoutY="750.0" maxHeight="216.0" maxWidth="626.0" minHeight="47.0" minWidth="180.0" prefHeight="64.0" prefWidth="192.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="255.0" AnchorPane.rightAnchor="102.0">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="329.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#irParaMenuPartida" prefHeight="38.0" prefWidth="170.0" style="-fx-background-color: #49e643; -fx-background-radius: 12;" text="Acessar Menu Partida">
-                     <HBox.margin>
-                        <Insets left="10.0" top="15.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
       <VBox alignment="TOP_CENTER" layoutX="29.0" layoutY="567.0" spacing="8.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="70.0">
          <children>
             <HBox alignment="CENTER_LEFT" spacing="4.0">
@@ -115,7 +99,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
-      <VBox alignment="TOP_CENTER" layoutX="349.0" layoutY="210.0" prefHeight="688.0" prefWidth="802.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="210.0">
+      <VBox alignment="TOP_CENTER" layoutX="349.0" layoutY="210.0" prefHeight="437.0" prefWidth="613.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="62.0" AnchorPane.topAnchor="210.0">
          <children>
             <HBox prefHeight="188.0" prefWidth="983.0">
                <children>
