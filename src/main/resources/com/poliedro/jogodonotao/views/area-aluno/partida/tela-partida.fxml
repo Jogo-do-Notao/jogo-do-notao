@@ -338,6 +338,23 @@
                                         <Insets bottom="16.0" />
                                     </padding>
                                 </HBox>
+                        <HBox fx:id="dicaContainer" alignment="CENTER" spacing="8.0" visible="false">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../icons/lampada-botao-ajuda.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fx:id="dicaText" strokeType="OUTSIDE" strokeWidth="0.0" text="Dica do professor: [Dica]" wrappingWidth="400.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin>
+                        </HBox>
                                 <StackPane prefHeight="250.0" style="-fx-background-color: -poliedro-azul-700; -fx-background-radius: 25;" styleClass="sombra" VBox.vgrow="NEVER">
                                     <padding>
                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -356,7 +373,7 @@
                                                             <children>
                                                                 <VBox alignment="CENTER" spacing="10.0">
                                                                     <children>
-                                                                        <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaPular" text="Pular">
+                                                                        <Button fx:id="botaoAjudaPular" contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaPular" text="Pular">
                                                                             <graphic>
                                                                                 <ImageView fitHeight="65.0" fitWidth="321.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
@@ -381,7 +398,7 @@
                                                                 </VBox>
                                                                 <VBox alignment="CENTER" spacing="10.0">
                                                                     <children>
-                                                                        <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaDica" text="Dica">
+                                                                        <Button fx:id="botaoAjudaDica" contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaDica" text="Dica">
                                                                             <graphic>
                                                                                 <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
@@ -406,7 +423,7 @@
                                                                 </VBox>
                                                                 <VBox alignment="CENTER" spacing="10.0">
                                                                     <children>
-                                                                        <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaCartas" text="Cartas">
+                                                                        <Button fx:id="botaoAjudaEliminar" contentDisplay="TOP" mnemonicParsing="false" onAction="#usarAjudaEliminar" text="Cartas">
                                                                             <graphic>
                                                                                 <ImageView fitHeight="65.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                                                                                     <image>
@@ -422,7 +439,7 @@
                                                                                 <String fx:value="ajuda-cartas" />
                                                                             </styleClass>
                                                                         </Button>
-                                                                        <Text fx:id="usoAjudaCartas" strokeType="OUTSIDE" strokeWidth="0.0" text="0/2">
+                                                                        <Text fx:id="usoAjudaEliminar" strokeType="OUTSIDE" strokeWidth="0.0" text="0/2">
                                                                             <font>
                                                                                 <Font size="30.0" />
                                                                             </font>

@@ -169,9 +169,9 @@ public class PerguntaDAO {
                 Connection conexao = ConexaoDB.getConnection();
                 PreparedStatement stmt = conexao.prepareStatement(sql)
         ) {
-            stmt.setInt(1, partida.getAluno().getId());
-            stmt.setInt(2, partida.getMateria() != null ? partida.getMateria().getId() : -1);
-            stmt.setInt(3, partida.getMateria() != null ? partida.getMateria().getId() : -1);
+            stmt.setInt(1, partida.getALUNO().getId());
+            stmt.setInt(2, partida.getMATERIA() != null ? partida.getMATERIA().getId() : -1);
+            stmt.setInt(3, partida.getMATERIA() != null ? partida.getMATERIA().getId() : -1);
             stmt.setString(4, partida.getDificuldade().get());
 
             ResultSet rs = stmt.executeQuery();
