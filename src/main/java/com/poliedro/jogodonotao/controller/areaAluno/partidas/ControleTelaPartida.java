@@ -380,8 +380,16 @@ public class ControleTelaPartida implements Initializable {
         }
 
         /* tornar dica da pergunta visível */
+        // Mensagem de obtendo dica
+        Alert msgDica = new Alert(Alert.AlertType.INFORMATION);
+        msgDica.setTitle("Obtendo Dica do Professor");
+        msgDica.setHeaderText("Obtendo dica do professor...");
+        msgDica.setContentText("Aguarde enquanto a dica é carregada...");
+        msgDica.show();
+        // Exibir dica do professor
         dicaText.setText("Dica do Professor: " + partida.getPerguntaAtual().getDica());
         dicaContainer.setVisible(true); // Exibir dica
+        msgDica.close();
 
         /* finalizar uso da ajuda */
         partida.addAjudaDica(); // Incrementar uso da ajuda
