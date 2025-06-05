@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -66,6 +67,12 @@ public class ControleTelaPartida implements Initializable {
 
     @FXML
     private Button botaoResponder;
+
+    @FXML
+    private HBox dicaContainer;
+
+    @FXML
+    private Text dicaText;
 
     @FXML
     private Text textEnunciado;
@@ -231,6 +238,9 @@ public class ControleTelaPartida implements Initializable {
      * Atualiza a pergunta na tela.
      */
     private void atualizarRodada() {
+        // Ocultar dica caso esteja visível
+        dicaContainer.setVisible(false);
+
         // Sortear pergunta
         Pergunta perguntaAtual = partida.sortearPergunta();
 
@@ -370,7 +380,8 @@ public class ControleTelaPartida implements Initializable {
         }
 
         /* tornar dica da pergunta visível */
-        // TODO: ajuda dica do professor
+        dicaText.setText("Dica do Professor: " + partida.getPerguntaAtual().getDica());
+        dicaContainer.setVisible(true); // Exibir dica
 
         /* finalizar uso da ajuda */
         partida.addAjudaDica(); // Incrementar uso da ajuda

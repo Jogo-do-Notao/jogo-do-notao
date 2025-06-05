@@ -218,8 +218,18 @@ public class Partida {
         return rodada;
     }
 
+    /**
+     * Getter das perguntas feitas durante a partida atual.
+     */
     public Pergunta[] getPerguntas() {
         return perguntas;
+    }
+
+    /**
+     * Getter da pergunta da rodada atual.
+     */
+    public Pergunta getPerguntaAtual() {
+        return this.perguntas[this.rodada - 1];
     }
 
     public int getPontuacaoAcumulada() {
@@ -417,9 +427,11 @@ public class Partida {
 
         // Sortear pergunta aleatória
         Random rd = new Random();
-        return PerguntaDAO.buscarPorId(
-                listaPerguntas.get(rd.nextInt(listaPerguntas.size()))
-        );
+        Pergunta perguntaSorteada = PerguntaDAO.buscarPorId(
+                listaPerguntas.get(rd.nextInt(listaPerguntas.size())));
+
+        this.perguntas[this.rodada - 1] = perguntaSorteada; // Adicionar pergunta ao array
+        return perguntaSorteada; // retornar pergunta sorteada
     }
 
     /**
