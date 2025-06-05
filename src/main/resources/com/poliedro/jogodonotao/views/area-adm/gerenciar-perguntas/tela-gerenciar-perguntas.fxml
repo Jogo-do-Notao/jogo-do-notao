@@ -85,12 +85,12 @@
          <children>
             <TableView fx:id="tabelaPerguntas" prefHeight="451.0" prefWidth="911.0" style="-fx-background-radius: 12;" VBox.vgrow="ALWAYS">
               <columns>
-                <TableColumn fx:id="idColuna" prefWidth="200.0" text="ID" />
-                <TableColumn fx:id="perguntaColuna" prefWidth="400.0" text="Pergunta" />
+                <TableColumn fx:id="idColuna" prefWidth="120.0" text="ID" />
+                <TableColumn fx:id="perguntaColuna" prefWidth="370.0" text="Pergunta" />
                   <TableColumn fx:id="materiaColuna" prefWidth="200.0" text="Matéria" />
-                  <TableColumn fx:id="dificuldadeColuna" prefWidth="200.0" text="Dificuldade" />
+                  <TableColumn fx:id="dificuldadeColuna" prefWidth="180.0" text="Dificuldade" />
                   <TableColumn fx:id="criadoPorColuna" prefWidth="250.0" text="Criado por" />
-                  <TableColumn fx:id="editadoPorColuna" prefWidth="350.0" text="Editado por" />
+                  <TableColumn fx:id="editadoPorColuna" prefWidth="320.0" text="Editado por" />
               </columns>
                <VBox.margin>
                   <Insets />
