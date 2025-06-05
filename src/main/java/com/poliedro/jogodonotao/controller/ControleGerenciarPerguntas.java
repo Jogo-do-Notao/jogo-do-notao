@@ -49,6 +49,13 @@ public class ControleGerenciarPerguntas {
     private ObservableList<Pergunta> perguntas;
 
     public void initialize() throws SQLException {
+        // Mensagem de tela carregando
+        Alert msgCarregando = new Alert(Alert.AlertType.INFORMATION);
+        msgCarregando.setTitle("Carregando Perguntas");
+        msgCarregando.setHeaderText("Aguarde enquanto as perguntas estão sendo carregadas.");
+        msgCarregando.setContentText("Isso pode levar alguns segundos.");
+        msgCarregando.show();
+
         // Configura a coluna de pergunta
         perguntaColuna.setCellValueFactory(cellData -> 
             new SimpleStringProperty(cellData.getValue().getEnunciado())
@@ -98,6 +105,9 @@ public class ControleGerenciarPerguntas {
 
         // Carrega as perguntas
         carregarPerguntas();
+
+        // Fecha a mensagem de carregamento
+        msgCarregando.close();
     }
     
     private void carregarPerguntas() throws SQLException {
