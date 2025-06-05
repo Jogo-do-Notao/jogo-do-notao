@@ -33,17 +33,17 @@ public class Partida {
     private static final int[] PREMIO_POR_RODADA = {500, 500, 1_000, 1_000, 2_000, 5_000, 5_000, 5_000, 10_000, 20_000, 50_000, 50_000, 150_000, 200_000, 500_000};
     // Preços das ajudas
     /**
-     * Preço para usar a ajuda de eliminar alternativas.
+     * Lista de preço para usar a ajuda de eliminar alternativas para cada nível de dificuldade (fácil, médio e difícil).
      */
-    private static final int PRECO_AJUDA_ELIMINAR = 50_000;
+    private static final int[] PRECO_AJUDA_ELIMINAR = {800, 4_000, 40_000};
     /**
-     * Preço para usar a ajuda de exibir dica do professor.
+     * Lista de preço para usar a ajuda de exibir dica do professor para cada nível de dificuldade (fácil, médio e difícil).
      */
-    private static final int PRECO_AJUDA_DICA = 5_000;
+    private static final int[] PRECO_AJUDA_DICA = {250, 1_500, 10_000};
     /**
-     * Preço para usar a ajuda de pular pergunta.
+     * Lista de preço para usar a ajuda de pular pergunta para cada nível de dificuldade (fácil, médio e difícil).
      */
-    private static final int PRECO_AJUDA_PULAR = 25_000;
+    private static final int[] PRECO_AJUDA_PULAR = {500, 3_000, 25_000};
 
     // Atributos
     /**
@@ -65,7 +65,7 @@ public class Partida {
     /**
      * Rodada atual (entre 1 e 15).
      */
-    private int rodada;
+    private int rodada = 1;
     /**
      * Perguntas feitas durante a partida.
      */
@@ -138,28 +138,58 @@ public class Partida {
         return partidaEmAndamento;
     }
 
-    public static int getPrecoAjudaEliminar() {
-        return PRECO_AJUDA_ELIMINAR;
+    /**
+     * Getter do preço da ajuda de eliminar alternativas, dependendo da dificuldade da partida.
+     */
+    public int getPrecoAjudaEliminar() {
+        return switch (this.getDificuldade()) {
+            case FACIL -> PRECO_AJUDA_ELIMINAR[0];
+            case MEDIO -> PRECO_AJUDA_ELIMINAR[1];
+            case DIFICIL -> PRECO_AJUDA_ELIMINAR[2];
+        };
     }
 
-    public static String getPrecoAjudaEliminarFormatado() {
-        return Formatador.formatoMonetario(PRECO_AJUDA_ELIMINAR);
+    /**
+     * Getter do preço da ajuda de eliminar alternativas, formatado como monetário.
+     */
+    public String getPrecoAjudaEliminarFormatado() {
+        return Formatador.formatoMonetario(this.getPrecoAjudaEliminar());
     }
 
-    public static int getPrecoAjudaDica() {
-        return PRECO_AJUDA_DICA;
+    /**
+     * Getter do preço da ajuda de exibir dica do professor, dependendo da dificuldade da partida.
+     */
+    public int getPrecoAjudaDica() {
+        return switch (this.getDificuldade()) {
+            case FACIL -> PRECO_AJUDA_DICA[0];
+            case MEDIO -> PRECO_AJUDA_DICA[1];
+            case DIFICIL -> PRECO_AJUDA_DICA[2];
+        };
     }
 
-    public static String getPrecoAjudaDicaFormatado() {
-        return Formatador.formatoMonetario(PRECO_AJUDA_DICA);
+    /**
+     * Getter do preço da ajuda de exibir dica do professor, formatado como monetário.
+     */
+    public String getPrecoAjudaDicaFormatado() {
+        return Formatador.formatoMonetario(this.getPrecoAjudaDica());
     }
 
-    public static int getPrecoAjudaPular() {
-        return PRECO_AJUDA_PULAR;
+    /**
+     * Getter do preço da ajuda de pular pergunta, dependendo da dificuldade da partida.
+     */
+    public int getPrecoAjudaPular() {
+        return switch (this.getDificuldade()) {
+            case FACIL -> PRECO_AJUDA_PULAR[0];
+            case MEDIO -> PRECO_AJUDA_PULAR[1];
+            case DIFICIL -> PRECO_AJUDA_PULAR[2];
+        };
     }
 
-    public static String getPrecoAjudaPularFormatado() {
-        return Formatador.formatoMonetario(PRECO_AJUDA_PULAR);
+    /**
+     * Getter do preço da ajuda de pular pergunta, formatado como monetário.
+     */
+    public String getPrecoAjudaPularFormatado() {
+        return Formatador.formatoMonetario(this.getPrecoAjudaPular());
     }
 
     // Getters de objetos

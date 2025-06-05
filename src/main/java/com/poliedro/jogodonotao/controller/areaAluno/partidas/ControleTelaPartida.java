@@ -96,12 +96,7 @@ public class ControleTelaPartida implements Initializable {
     /**
      * Partida em andamento.
      */
-    private Partida partida = Partida.getPartidaEmAndamento();
-
-    /**
-     * Pergunta da partida atual exibida na tela.
-     */
-    private Pergunta perguntaAtual;
+    private final Partida partida = Partida.getPartidaEmAndamento();
 
     /**
      * Alternativas exibidas na tela.
@@ -237,11 +232,11 @@ public class ControleTelaPartida implements Initializable {
      */
     private void atualizarRodada() {
         // Sortear pergunta
-        this.perguntaAtual = partida.sortearPergunta();
+        Pergunta perguntaAtual = partida.sortearPergunta();
 
         // Atualizar enunciado
         //textEnunciado.setText(pergunta.getEnunciado());
-        textEnunciado.setText(this.perguntaAtual.getEnunciado());
+        textEnunciado.setText(perguntaAtual.getEnunciado());
 
         // Deselecionar botões de alternativas
         alternativaGroup.selectToggle(null);
@@ -252,7 +247,7 @@ public class ControleTelaPartida implements Initializable {
         this.atualizarBotoesAjuda();
 
         // Aleatorizar ordem das alternativas
-        this.alternativas = Alternativa.embaralhar(this.perguntaAtual.getAlternativas());
+        this.alternativas = Alternativa.embaralhar(perguntaAtual.getAlternativas());
 
         // Exibir alternativas
         Text[] textos = {alternativa1texto, alternativa2texto, alternativa3texto, alternativa4texto, alternativa5texto};
@@ -297,9 +292,9 @@ public class ControleTelaPartida implements Initializable {
     @FXML
     void usarAjudaEliminar(ActionEvent event) {
         // Verificar se usuário tem pontos suficientes para usar a ajuda
-        if (partida.getPontuacaoAcumulada() < Partida.getPrecoAjudaEliminar()) {
+        if (partida.getPontuacaoAcumulada() < partida.getPrecoAjudaEliminar()) {
             this.exibirMsgPontosInsuficienteAjuda(
-                    Partida.getPrecoAjudaEliminarFormatado()
+                    partida.getPrecoAjudaEliminarFormatado()
             ); // exibir mensagem de pontos insuficientes
             return; // encerrar método
         }
@@ -314,7 +309,7 @@ public class ControleTelaPartida implements Initializable {
         msgConfirmacao.setHeaderText("Você tem certeza que deseja usar essa ajuda?");
         msgConfirmacao.setContentText(
                 "Essa ajuda eliminará " + quantEliminar + " alternativas incorretas.\n\n" +
-                        "O preço da ajuda é de " + Partida.getPrecoAjudaEliminarFormatado() + " do seu prêmio atual.\n\n"
+                        "O preço da ajuda é de " + partida.getPrecoAjudaEliminarFormatado() + " do seu prêmio atual.\n\n"
         );
         // Obter resposta
         Optional<ButtonType> decisao = msgConfirmacao.showAndWait();
@@ -339,9 +334,9 @@ public class ControleTelaPartida implements Initializable {
     @FXML
     void usarAjudaDica(ActionEvent event) {
         // Verificar se usuário tem pontos suficientes para usar a ajuda
-        if (partida.getPontuacaoAcumulada() < Partida.getPrecoAjudaDica()) {
+        if (partida.getPontuacaoAcumulada() < partida.getPrecoAjudaDica()) {
             this.exibirMsgPontosInsuficienteAjuda(
-                    Partida.getPrecoAjudaDicaFormatado()
+                    partida.getPrecoAjudaDicaFormatado()
             ); // exibir mensagem de pontos insuficientes
             return; // encerrar método
         }
@@ -352,7 +347,7 @@ public class ControleTelaPartida implements Initializable {
         msgConfirmacao.setHeaderText("Você tem certeza que deseja usar essa ajuda?");
         msgConfirmacao.setContentText(
                 "Essa ajuda irá exibir a ajuda do professor na tela.\n\n" +
-                        "O preço da ajuda é de " + Partida.getPrecoAjudaDicaFormatado() + " do seu prêmio atual.\n\n"
+                        "O preço da ajuda é de " + partida.getPrecoAjudaDicaFormatado() + " do seu prêmio atual.\n\n"
         );
         // Obter resposta
         Optional<ButtonType> decisao = msgConfirmacao.showAndWait();
@@ -376,9 +371,9 @@ public class ControleTelaPartida implements Initializable {
     @FXML
     void usarAjudaPular(ActionEvent event) {
         // Verificar se usuário tem pontos suficientes para usar a ajuda
-        if (partida.getPontuacaoAcumulada() < Partida.getPrecoAjudaPular()) {
+        if (partida.getPontuacaoAcumulada() < partida.getPrecoAjudaPular()) {
             this.exibirMsgPontosInsuficienteAjuda(
-                    Partida.getPrecoAjudaPularFormatado()
+                    partida.getPrecoAjudaPularFormatado()
             ); // exibir mensagem de pontos insuficientes
             return; // encerrar método
         }
@@ -389,7 +384,7 @@ public class ControleTelaPartida implements Initializable {
         msgConfirmacao.setHeaderText("Você tem certeza que deseja usar essa ajuda?");
         msgConfirmacao.setContentText(
                 "Essa ajuda irá substituir a pergunta atual e sortear outra pergunta.\n\n" +
-                        "O preço da ajuda é de " + Partida.getPrecoAjudaPularFormatado() + " do seu prêmio atual.\n\n"
+                        "O preço da ajuda é de " + partida.getPrecoAjudaPularFormatado() + " do seu prêmio atual.\n\n"
         );
         // Obter resposta
         Optional<ButtonType> decisao = msgConfirmacao.showAndWait();
