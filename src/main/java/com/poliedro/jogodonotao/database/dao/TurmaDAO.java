@@ -141,7 +141,21 @@ public class TurmaDAO {
         return turmas;
     }
 
-    public static void adicionarTurma(String nome, String professor, String serie, String descricao) {
+    public static void adicionarTurma(String nome, String nomeProfessor, String serie, String descricao) {
+        // Primeiro, obter o email do professor pelo nome
+        String emailProfessor = null;
+        ArrayList<Professor> professores = ProfessorDAO.obterProfessores();
+        for (Professor prof : professores) {
+            if (prof.getNome().equals(nomeProfessor)) {
+                emailProfessor = prof.getEmail();
+                break;
+            }
+        }
+        
+        if (emailProfessor == null) {
+            throw new RuntimeException("Professor não encontrado: " + nomeProfessor);
+        }
+
         String sql = "INSERT INTO turma (" +
                 TurmaColuna.NOME.get() + ", " +
                 TurmaColuna.PROFESSOR.get() + ", " +
@@ -154,7 +168,7 @@ public class TurmaDAO {
                 PreparedStatement stmt = conexao.prepareStatement(sql)
         ) {
             stmt.setString(1, nome);
-            stmt.setString(2, professor);
+            stmt.setString(2, emailProfessor);  // Salva o email do professor
             stmt.setString(3, serie);
             stmt.setString(4, descricao);
             int linhasAfetadas = stmt.executeUpdate();

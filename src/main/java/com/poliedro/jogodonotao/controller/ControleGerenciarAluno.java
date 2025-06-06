@@ -16,7 +16,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 
 public class ControleGerenciarAluno {
-    //falta adicionar id e acoes para a tabela
     @FXML
     private TextField campoPesquisarAluno;
 
@@ -24,33 +23,39 @@ public class ControleGerenciarAluno {
     private TableColumn<Aluno, String> colunaAlunos;
 
     @FXML
-    private TableColumn<Aluno, Turma> colunaTurmas;
+    private TableColumn<Aluno, String> colunaTurmas;
 
     @FXML
     private TableView<Aluno> tabelaAlunos;
 
-    @FXML
     private ObservableList<Aluno> alunos;
 
     @FXML
     public void initialize() {
+        // Configura a coluna de alunos
         colunaAlunos.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        colunaTurmas.setCellValueFactory(new PropertyValueFactory<>("turma"));
+        
+        // Configura a coluna de turmas para mostrar o nome da turma
+        colunaTurmas.setCellValueFactory(cellData -> {
+            Turma turma = cellData.getValue().getTurma();
+            String nomeTurma = turma != null ? turma.getNome() : "Sem turma";
+            return javafx.beans.binding.Bindings.createStringBinding(() -> nomeTurma);
+        });
 
-        alunos = FXCollections.observableArrayList(AlunoDAO.obterAlunos());
-        tabelaAlunos.setItems(alunos);
-
-
-
+        // Carrega os alunos
+        carregarAlunos();
     }
 
 
-
-
-
-
-
-
+    private void carregarAlunos() {
+        try {
+            alunos = FXCollections.observableArrayList(AlunoDAO.obterAlunos());
+            tabelaAlunos.setItems(alunos);
+        } catch (Exception e) {
+            System.err.println("Erro ao carregar alunos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void adicionarAluno(ActionEvent event) throws IOException {
@@ -59,7 +64,6 @@ public class ControleGerenciarAluno {
 
     @FXML
     void voltarParaPainel(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/painel-administrador", "Painel Admnistrador");
+        App.changeScene("area-adm/painel-administrador", "Painel Administrador");
     }
-
 }

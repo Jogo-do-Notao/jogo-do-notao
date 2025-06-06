@@ -1,24 +1,18 @@
-module com.poliedro.jogodonotao.jogodonotao {
+module com.poliedro.jogodonotao {
     requires javafx.controls;
     requires javafx.fxml;
-
-    requires org.controlsfx.controls;
-    requires com.dlsc.formsfx;
-    requires net.synedra.validatorfx;
-    requires java.desktop;
     requires java.sql;
     requires io.github.cdimascio.dotenv.java;
     requires spring.security.crypto;
-    requires javafx.base;
-    requires javafx.graphics;
 
-    opens com.poliedro.jogodonotao to javafx.fxml;
-    exports com.poliedro.jogodonotao;
-    exports com.poliedro.jogodonotao.controller;
+    // Abre os pacotes necessários para o JavaFX
+    opens com.poliedro.jogodonotao to javafx.fxml, javafx.base;
+    opens com.poliedro.jogodonotao.usuario to javafx.base, javafx.fxml;
     opens com.poliedro.jogodonotao.controller to javafx.fxml;
-    exports com.poliedro.jogodonotao.controller.areaAluno.partidas;
-    opens com.poliedro.jogodonotao.controller.areaAluno.partidas to javafx.fxml;
-    opens com.poliedro.jogodonotao.agrupadores to javafx.base;
-
-
+    
+    // Exporta os pacotes necessários
+    exports com.poliedro.jogodonotao;
+    exports com.poliedro.jogodonotao.usuario;
+    exports com.poliedro.jogodonotao.controller;
+    exports com.poliedro.jogodonotao.agrupadores;
 }

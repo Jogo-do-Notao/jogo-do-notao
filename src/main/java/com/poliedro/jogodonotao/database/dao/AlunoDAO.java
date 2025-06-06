@@ -249,11 +249,18 @@ public class AlunoDAO {
     public static List<Aluno> obterAlunos() {
         List<Aluno> alunos = new ArrayList<>();
         final String sql = "SELECT * FROM aluno";
-        try (
-                Connection conexao = ConexaoDB.getConnection();
-                PreparedStatement stmt = conexao.prepareStatement(sql);
-                ResultSet res = stmt.executeQuery()
-        ) {
+        
+        Connection conexao = null;
+        PreparedStatement stmt = null;
+        ResultSet res = null;
+        
+        try {
+            conexao = ConexaoDB.getConnection();
+            stmt = conexao.prepareStatement(sql);
+            res = stmt.executeQuery();
+            
+            // Primeiro, obter todos os alunos
+            List<AlunoTemp> alunosTemp = new ArrayList<>();
             while (res.next()) {
                 int id = res.getInt(AlunoColuna.ID.get());
                 String nome = res.getString(AlunoColuna.NOME.get());
@@ -262,14 +269,62 @@ public class AlunoDAO {
                 String hashSenha = res.getString(AlunoColuna.HASH_SENHA.get());
                 int idTurma = res.getInt(AlunoColuna.ID_TURMA.get());
                 long pontuacao = res.getLong(AlunoColuna.PONTUACAO.get());
-
-                Turma turma = TurmaDAO.buscarPorId(idTurma);
-
-                alunos.add(new Aluno(id, nome, email, ra, hashSenha, turma, pontuacao));
+                
+                alunosTemp.add(new AlunoTemp(id, nome, email, ra, hashSenha, idTurma, pontuacao));
             }
+            
+            // Fechar o ResultSet e o Statement após ler todos os dados
+            if (res != null) {
+                try { res.close(); } catch (SQLException e) { /* Ignorar erro ao fechar */ }
+            }
+            if (stmt != null) {
+                try { stmt.close(); } catch (SQLException e) { /* Ignorar erro ao fechar */ }
+            }
+            
+            // Agora, para cada aluno, buscar a turma correspondente
+            for (AlunoTemp temp : alunosTemp) {
+                Turma turma = TurmaDAO.buscarPorId(temp.idTurma);
+                alunos.add(new Aluno(temp.id, temp.nome, temp.email, temp.ra, temp.hashSenha, turma, temp.pontuacao));
+            }
+            
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.err.println("Erro ao obter alunos:");
+            e.printStackTrace();
+            throw new RuntimeException("Erro ao carregar alunos do banco de dados", e);
+        } finally {
+            // Garantir que os recursos sejam fechados
+            if (res != null) {
+                try { res.close(); } catch (SQLException e) { /* Ignorar erro ao fechar */ }
+            }
+            if (stmt != null) {
+                try { stmt.close(); } catch (SQLException e) { /* Ignorar erro ao fechar */ }
+            }
+            if (conexao != null) {
+                try { conexao.close(); } catch (SQLException e) { /* Ignorar erro ao fechar */ }
+            }
         }
+        
         return alunos;
+    }
+    
+    // Classe temporária para armazenar os dados do aluno antes de buscar a turma
+    private static class AlunoTemp {
+        int id;
+        String nome;
+        String email;
+        String ra;
+        String hashSenha;
+        int idTurma;
+        long pontuacao;
+        
+        AlunoTemp(int id, String nome, String email, String ra, String hashSenha, int idTurma, long pontuacao) {
+            this.id = id;
+            this.nome = nome;
+            this.email = email;
+            this.ra = ra;
+            this.hashSenha = hashSenha;
+            this.idTurma = idTurma;
+            this.pontuacao = pontuacao;
+        }
     }
 }

@@ -13,7 +13,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.Callback;
 
 import java.io.IOException;
 
@@ -35,49 +34,46 @@ public class ControleGerenciarTurmas {
 
     @FXML
     public void initialize() {
-        // Configura as colunas
-        turmaColuna.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        // Configura a coluna de turma
+        turmaColuna.setCellValueFactory(cellData -> 
+            javafx.beans.binding.Bindings.createStringBinding(
+                () -> cellData.getValue() != null ? cellData.getValue().getNome() : ""
+            )
+        );
         
         // Configura a coluna do professor
-        professorColuna.setCellFactory(column -> new TableCell<Turma, String>() {
-            @Override
-            protected void updateItem(String item, boolean empty) {
-                super.updateItem(item, empty);
-                if (empty) {
-                    setText(null);
-                } else {
-                    Turma turma = getTableView().getItems().get(getIndex());
-                    if (turma != null) {
-                        Professor prof = turma.getProfessor();
-                        setText(prof != null ? prof.getNome() : "Nenhum");
-                    } else {
-                        setText("");
-                    }
+        professorColuna.setCellValueFactory(cellData -> 
+            javafx.beans.binding.Bindings.createStringBinding(
+                () -> {
+                    if (cellData.getValue() == null) return "";
+                    Professor prof = cellData.getValue().getProfessor();
+                    return prof != null ? prof.getNome() : "Sem professor";
                 }
-            }
-        });
+            )
+        );
 
         // Carrega as turmas
         carregarTurmas();
     }
     
     private void carregarTurmas() {
-        turmas = FXCollections.observableArrayList(TurmaDAO.obterTurma());
-        tabelaTurmas.setItems(turmas);
-        // Atualiza a tabela para mostrar as mudanças
-        tabelaTurmas.refresh();
+        try {
+            turmas = FXCollections.observableArrayList(TurmaDAO.obterTurma());
+            tabelaTurmas.setItems(turmas);
+            tabelaTurmas.refresh();
+        } catch (Exception e) {
+            System.err.println("Erro ao carregar turmas: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
-
 
     @FXML
     void criarTurma(ActionEvent event) throws IOException {
         App.changeScene("area-adm/gerenciar-turmas/tela-criar-turma", "Tela Criar Turma");
-
     }
 
     @FXML
     void voltarParaPainel(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/painel-administrador", "Painel Admnistrador");
+        App.changeScene("area-adm/painel-administrador", "Painel Administrador");
     }
-
 }
