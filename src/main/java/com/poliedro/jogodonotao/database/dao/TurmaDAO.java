@@ -108,13 +108,13 @@ public class TurmaDAO {
             class TurmaTemp {
                 int id;
                 String nome;
-                String emailProfessor;
+                int idProfessor;  
                 byte serie;
                 String descricao;
-                TurmaTemp(int id, String nome, String emailProfessor, byte serie, String descricao) {
+                TurmaTemp(int id, String nome, int idProfessor, byte serie, String descricao) {
                     this.id = id;
                     this.nome = nome;
-                    this.emailProfessor = emailProfessor;
+                    this.idProfessor = idProfessor;
                     this.serie = serie;
                     this.descricao = descricao;
                 }
@@ -124,18 +124,27 @@ public class TurmaDAO {
             while (res.next()) {
                 int id = res.getInt(TurmaColuna.ID.get());
                 String nome = res.getString(TurmaColuna.NOME.get());
-                String emailProfessor = res.getString(TurmaColuna.PROFESSOR.get());
+                int idProfessor = res.getInt(TurmaColuna.PROFESSOR.get());  
                 byte serie = res.getByte(TurmaColuna.SERIE.get());
                 String descricao = res.getString(TurmaColuna.DESCRICAO.get());
-                tempList.add(new TurmaTemp(id, nome, emailProfessor, serie, descricao));
+                System.out.println("Turma encontrada - Nome: " + nome + ", ID do professor: " + idProfessor);
+                tempList.add(new TurmaTemp(id, nome, idProfessor, serie, descricao));
             }
 
-            // Agora, para cada turma, buscar o professor e criar o objeto Turma
+            // Agora, para cada turma, buscar o professor pelo ID e criar o objeto Turma
             for (TurmaTemp temp : tempList) {
-                Professor professor = ProfessorDAO.buscarPorEmail(temp.emailProfessor);
+                System.out.println("Buscando professor com ID: " + temp.idProfessor);
+                Professor professor = ProfessorDAO.buscarPorId(temp.idProfessor);
+                if (professor == null) {
+                    System.err.println("ERRO: Professor não encontrado para o ID: " + temp.idProfessor);
+                } else {
+                    System.out.println("Professor encontrado: " + professor.getNome() + " (ID: " + temp.idProfessor + ")");
+                }
                 turmas.add(new Turma(temp.id, temp.nome, professor, temp.serie, temp.descricao));
             }
         } catch (SQLException e) {
+            System.err.println("Erro ao carregar turmas: " + e.getMessage());
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
         return turmas;
