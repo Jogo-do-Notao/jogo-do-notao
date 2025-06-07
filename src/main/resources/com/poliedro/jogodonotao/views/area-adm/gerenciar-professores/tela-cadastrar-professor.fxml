@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poliedro.jogodonotao.controller.ControleCadastarProfessor">
    <stylesheets>
       <URL value="@../../../css/views/background.css" />
       <URL value="@../../../css/sombras.css" />
@@ -54,7 +54,7 @@
                                     <Insets left="10.0" top="15.0" />
                                  </VBox.margin>
                               </Text>
-                              <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                              <TextField fx:id="campoNome" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                                  <VBox.margin>
                                     <Insets bottom="5.0" right="10.0" />
                                  </VBox.margin>
@@ -88,7 +88,7 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                        <TextField fx:id="campoEmail" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" />
                            </VBox.margin>
@@ -120,7 +120,7 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                        <TextField fx:id="campoDescricao" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" />
                            </VBox.margin>
@@ -152,7 +152,7 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                        <TextField fx:id="campoSenha" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" />
                            </VBox.margin>
@@ -192,7 +192,7 @@
                               <Insets left="10.0" top="15.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
+                        <TextField fx:id="campoConfirmarSenha" prefHeight="57.0" prefWidth="607.0" style="-fx-background-color: -zinc-100;">
                            <VBox.margin>
                               <Insets bottom="5.0" right="10.0" />
                            </VBox.margin>
@@ -214,16 +214,16 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="498.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="+ Adicionar aluno">
+                  <Button mnemonicParsing="false" onAction="#adicionarProfessor" prefHeight="42.0" prefWidth="216.0" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;" text="+ Adicionar professor">
                      <styleClass>
                         <String fx:value="button-lg" />
                         <String fx:value="button-azul" />
                      </styleClass>
                      <HBox.margin>
-                        <Insets left="65.0" right="10.0" />
+                        <Insets left="50.0" right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Descartar">
+                  <Button mnemonicParsing="false" onAction="#voltarParaPainel" prefHeight="42.0" prefWidth="184.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Descartar">
                      <styleClass>
                         <String fx:value="button-lg" />
                         <String fx:value="button-vermelho" />

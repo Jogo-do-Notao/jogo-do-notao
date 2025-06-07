@@ -47,7 +47,8 @@ public class ControleGerenciarTurmas {
                 () -> {
                     if (cellData.getValue() == null) return "";
                     Professor prof = cellData.getValue().getProfessor();
-                    return prof != null ? prof.getNome() : "Sem professor";
+                    return (prof != null && prof.getNome() != null && !prof.getNome().trim().isEmpty()) ? 
+                           prof.getNome().trim() : "Sem professor";
                 }
             )
         );

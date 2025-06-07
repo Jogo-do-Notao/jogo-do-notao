@@ -99,7 +99,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
-      <VBox alignment="TOP_CENTER" layoutX="349.0" layoutY="210.0" prefHeight="437.0" prefWidth="613.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="62.0" AnchorPane.topAnchor="210.0">
+      <VBox alignment="TOP_CENTER" layoutX="315.0" layoutY="210.0" prefHeight="437.0" prefWidth="491.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 16;" styleClass="sombra" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="210.0">
          <children>
             <HBox prefHeight="230.0" prefWidth="613.0">
                <children>
@@ -115,7 +115,7 @@
                         <String fx:value="button-laranja" />
                      </styleClass>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Perguntas">
+                  <Button mnemonicParsing="false" onAction="#abrirTelaCriarPergunta" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Perguntas">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -143,7 +143,7 @@
                         <String fx:value="button-laranja" />
                      </styleClass>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Turmas">
+                  <Button mnemonicParsing="false" onAction="#abrirTelaCriarTurma" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Criar  Turmas">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -205,7 +205,7 @@
                         <String fx:value="button-laranja" />
                      </styleClass>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Adicionar Professor">
+                  <Button mnemonicParsing="false" onAction="#abrirTelaAdicionarProfessor" prefHeight="150.0" prefWidth="575.0" style="-fx-background-color: #faa41f; -fx-background-radius: 12;" text="+ Adicionar Professor">
                      <font>
                         <Font size="20.0" />
                      </font>

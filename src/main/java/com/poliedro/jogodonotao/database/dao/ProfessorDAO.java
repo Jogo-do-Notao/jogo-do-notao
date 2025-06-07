@@ -49,7 +49,7 @@ public class ProfessorDAO {
      */
     private static Professor buscarProfessor(ProfessorColuna coluna, String chave) {
         // Query SQL
-        final String sql = "SELECT * FROM professor WHERE " + coluna.get() + " = ?";
+        final String sql = "SELECT * FROM professor WHERE LOWER(" + coluna.get() + ") = LOWER(?)";
 
         // Executar query
         try (

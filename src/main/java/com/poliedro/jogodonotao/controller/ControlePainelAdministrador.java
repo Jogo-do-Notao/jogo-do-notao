@@ -71,16 +71,6 @@ public class ControlePainelAdministrador implements Initializable {
     }
 
     @FXML
-    void irParaMenuPartida(ActionEvent event) throws IOException {
-        App.changeScene("area-aluno/partida/tela-criar-partida", "Tela Criar Partida");
-    }
-
-    @FXML
-    void abrirTelaAdicionarProfessor(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/gerenciar-professores/tela-cadastrar-professor", "Adicionar Professor");
-    }
-
-    @FXML
     public void abrirTelaGerenciarTurmas(ActionEvent event) throws IOException {
         App.changeScene("area-adm/gerenciar-turmas/tela-gerenciar-turmas", "Gerenciar Turmas");
     }
@@ -92,5 +82,21 @@ public class ControlePainelAdministrador implements Initializable {
     @FXML
     void abrirTelaGerenciarProfessor(ActionEvent event) throws IOException {
          App.changeScene("area-adm/gerenciar-professores/tela-gerenciar-professores", "Gerenciar Professores");
+    }
+    @FXML
+    void abrirTelaCriarPergunta(ActionEvent event) throws IOException {
+        App.changeScene("area-adm/gerenciar-perguntas/tela-criar-pergunta", "Criar Pergunta");
+
+    }
+
+    @FXML
+    void abrirTelaCriarTurma(ActionEvent event) throws IOException {
+        App.changeScene("area-adm/gerenciar-turmas/tela-criar-turma", "Criar Turma");
+
+    }
+    @FXML
+    void abrirTelaAdicionarProfessor(ActionEvent event) throws IOException {
+        App.changeScene("area-adm/gerenciar-professores/tela-cadastrar-professor", "Adicionar Professor");
+
     }
 }
