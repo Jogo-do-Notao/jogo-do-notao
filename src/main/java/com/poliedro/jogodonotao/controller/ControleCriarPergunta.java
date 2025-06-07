@@ -31,6 +31,8 @@ public class ControleCriarPergunta implements Initializable {
     @FXML
     private TextField campoAlternativa3;
 
+    private String dificuldadeSelecionada = null;
+
     @FXML
     private TextField campoAlternativa4;
 
@@ -68,14 +70,18 @@ public class ControleCriarPergunta implements Initializable {
     @FXML
     void criarPergunta(ActionEvent event) throws IOException {
         String enunciado = campoEnunciadoPergunta.getText();
-        String alternativa1 = campoAlternativa1.getText();
-        String alternativa2 = campoAlternativa2.getText();
-        String alternativa3 = campoAlternativa3.getText();
-        String alternativa4 = campoAlternativa4.getText();
-        String alternativa5 = campoAlternativa5.getText();
         String dica = campoDica.getText();
         String materia = campoMateria.getValue();
-    // verificar se o email ja esta sendo usado
+
+        if (dificuldadeSelecionada == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erro ao cadastrar Pergunta");
+            alert.setHeaderText("Dificuldade não selecionada");
+            alert.setContentText("Por favor, selecione a dificuldade da pergunta.");
+            alert.showAndWait();
+            return;
+        }
+
         if (PerguntaDAO.buscarPorEnunciado(enunciado) != null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Erro ao cadastrar Pergunta");
@@ -84,27 +90,39 @@ public class ControleCriarPergunta implements Initializable {
             alert.showAndWait();
             return;
         } else {
-            // salvar no banco de dados
-            PerguntaDAO.adicionarPergunta(enunciado, alternativa1, alternativa2, alternativa3, alternativa4, alternativa5, dica, materia);
-            // trocar de tela
+            // Salva a pergunta e obtém o ID gerado, agora incluindo a dificuldade
+            int perguntaId = PerguntaDAO.adicionarPergunta(enunciado, dica, materia, dificuldadeSelecionada);
+
+            List<String> alternativas = List.of(
+                    campoAlternativa1.getText(),
+                    campoAlternativa2.getText(),
+                    campoAlternativa3.getText(),
+                    campoAlternativa4.getText(),
+                    campoAlternativa5.getText()
+            );
+
+            for (int i = 0; i < alternativas.size(); i++) {
+                int correta = (i == 0) ? 1 : 0;
+                PerguntaDAO.adicionarAlternativa(perguntaId, alternativas.get(i), correta);
+            }
+
             App.changeScene("area-adm/painel-administrador", "Gerenciar Perguntas");
         }
     }
 
     @FXML
-    void dificil(ActionEvent event) {
-
-    }
-
-    @FXML
     void facil(ActionEvent event) {
-
+        dificuldadeSelecionada = "Fácil";
     }
 
     @FXML
     void medio(ActionEvent event) {
-
+        dificuldadeSelecionada = "Médio";
     }
 
+    @FXML
+    void dificil(ActionEvent event) {
+        dificuldadeSelecionada = "Difícil";
+    }
 
 }

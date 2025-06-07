@@ -8,10 +8,7 @@ import com.poliedro.jogodonotao.pergunta.Alternativa;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Professor;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.*;
 
 /**
@@ -184,32 +181,41 @@ public class PerguntaDAO {
 
         return lista;
     }
-    public static void adicionarPergunta(
-            String enunciado,
-            String alternativa1,
-            String alternativa2,
-            String alternativa3,
-            String alternativa4,
-            String alternativa5,
-            String dica,
-            String materia
-    ) {
-        String sql = "INSERT INTO pergunta (enunciado, alternativa1, alternativa2, alternativa3, alternativa4, alternativa5, dica, materia) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
+    public static int adicionarPergunta(String enunciado, String dica, String materia, String dificuldade) {
+        int idGerado = -1;
+        String sql = "INSERT INTO pergunta (enunciado, dica, materia, dificuldade) VALUES (?, ?, ?, ?)";
         try (Connection conn = ConexaoDB.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, enunciado);
             stmt.setString(2, dica);
             stmt.setString(3, materia);
+            stmt.setString(4, dificuldade);
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            if (rs.next()) {
+                idGerado = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return idGerado;
+    }
 
+    public static void adicionarAlternativa(int perguntaId, String texto, int correta) {
+        String sql = "INSERT INTO alternativa (pergunta_id, texto, correta) VALUES (?, ?, ?)";
+        try (Connection conn = ConexaoDB.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, perguntaId);
+            stmt.setString(2, texto);
+            stmt.setInt(3, correta);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
     }
+
+
+
 
     public static Pergunta buscarPorEnunciado(String enunciado) {
         final String sql = "SELECT * FROM pergunta WHERE titulo = ?";
