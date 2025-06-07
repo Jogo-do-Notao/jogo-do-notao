@@ -94,7 +94,7 @@ public class ControleAdicionarAluno implements Initializable {
 
     @FXML
     void voltarParaPainel(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/painel-administrador", "Gerenciar Alunos");
+        App.changeScene("area-adm/gerenciar-alunos/tela-gerenciar-alunos", "Gerenciar Alunos");
 
     }
 }

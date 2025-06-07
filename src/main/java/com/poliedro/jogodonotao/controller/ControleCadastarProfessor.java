@@ -53,7 +53,7 @@ public class ControleCadastarProfessor {
 
     @FXML
     void voltarParaPainel(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/painel-administrador", "Gerenciar Alunos");//temporario
+        App.changeScene("area-adm/gerenciar-professores/tela-gerenciar-professores", "Gerenciar Professores");//temporario
     }
 
 }
