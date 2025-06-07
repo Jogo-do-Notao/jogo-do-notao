@@ -47,6 +47,8 @@ public class ControleCriarPergunta implements Initializable {
 
     @FXML
     private ComboBox<String> campoMateria;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Exemplo: buscar as matérias do banco ou de uma lista
