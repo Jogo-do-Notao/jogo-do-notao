@@ -48,7 +48,7 @@ public class ControleGerenciarProfessor {
 
     @FXML
     void adicionarProfessor(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/gerenciar-professores/tela-adicionar-professor", "Tela Adicionar Professor");
+        App.changeScene("area-adm/gerenciar-professores/tela-cadastrar-professor", "Tela Cadastrar Professor");
 
     }
 
