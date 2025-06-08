@@ -92,7 +92,7 @@ public class PerguntaDAO {
                     Professor criador = criadores.get(criadoresIds.get(id));
                     Alternativa[] alternativas = AlternativaDAO.obterAlternativa(id);
 
-                    perguntas.add(new Pergunta(id, titulo, alternativas, dificuldade, dica, criador));
+                    perguntas.add(new Pergunta(id, titulo, alternativas, dificuldade, dica, criador, materia));
                 }
             }
         }
@@ -122,14 +122,16 @@ public class PerguntaDAO {
                 String dificuldadeStr = res.getString(PerguntaColuna.DIFICULDADE.get()); // string para DificuldadePergunta
                 String dica = res.getString(PerguntaColuna.DICA.get()); // Dica
                 int criadorId = res.getInt(PerguntaColuna.CRIADOR.get()); // ID do criador
+                int materiaId = res.getInt(PerguntaColuna.MATERIA.get()); // ID da matéria
 
                 // Usar dados extraídos
                 Alternativa[] alternativas = AlternativaDAO.buscarPorPergunta(idPergunta);
                 DificuldadePergunta dificuldade = DificuldadePergunta.fromString(dificuldadeStr);
                 Professor criador = ProfessorDAO.buscarPorId(criadorId); // Criador (professor)
+                Materia materia = MateriaDAO.buscarPorId(materiaId); // Matéria
 
                 return new Pergunta(
-                        idPergunta, enunciado, alternativas, dificuldade, dica, criador
+                        idPergunta, enunciado, alternativas, dificuldade, dica, criador, materia
                 );
             }
             // Se não for encontrada
@@ -232,12 +234,14 @@ public class PerguntaDAO {
                 String dificuldadeStr = res.getString("dificuldade");
                 String dica = res.getString("dica");
                 int criadorId = res.getInt("criador");
+                int materiaId = res.getInt("id_materia");
 
                 Alternativa[] alternativas = AlternativaDAO.buscarPorPergunta(idPergunta);
                 DificuldadePergunta dificuldade = DificuldadePergunta.fromString(dificuldadeStr);
                 Professor criador = ProfessorDAO.buscarPorId(criadorId);
+                Materia materia = MateriaDAO.buscarPorId(materiaId);
 
-                return new Pergunta(idPergunta, titulo, alternativas, dificuldade, dica, criador);
+                return new Pergunta(idPergunta, enunciado, alternativas, dificuldade, dica, criador,materia);
             }
         } catch (SQLException e) {
             e.printStackTrace();

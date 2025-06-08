@@ -12,13 +12,14 @@ public class Pergunta {
     private String dica;
     private Professor criador;
 
-    public Pergunta(int id, String enunciado, Alternativa[] alternativas, DificuldadePergunta dificuldade, String dica, Professor criador) {
+    public Pergunta(int id, String enunciado, Alternativa[] alternativas, DificuldadePergunta dificuldade, String dica, Professor criador, Materia materia) {
         this.id = id;
         this.enunciado = enunciado;
         this.alternativas = alternativas;
         this.dificuldade = dificuldade;
         this.dica = dica;
         this.criador = criador;
+        this.materia = materia;
     }
 
     // Getters
@@ -65,9 +66,4 @@ public class Pergunta {
     public void setAlternativas(Alternativa[] alternativas) {
         this.alternativas = alternativas;
     }
-
-
-
-
-    }
-
+}

@@ -4,8 +4,7 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -90,15 +89,7 @@
                               <Insets left="10.0" top="10.0" />
                            </VBox.margin>
                         </Text>
-                        <MenuButton fx:id="campoResponsavel" mnemonicParsing="false" prefHeight="10.0" prefWidth="371.0" style="-fx-background-color: -zinc-100;">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Historia" />
-                              <MenuItem mnemonicParsing="false" text="Geografia" />
-                           </items>
-                           <VBox.margin>
-                              <Insets bottom="15.0" />
-                           </VBox.margin>
-                        </MenuButton>
+                        <ComboBox fx:id="campoResponsavel" prefHeight="40.0" prefWidth="371.0" style="-fx-background-color: -zinc-100;" />
                      </children>
                   </VBox>
                </children>
@@ -126,15 +117,7 @@
                               <Insets left="10.0" top="10.0" />
                            </VBox.margin>
                         </Text>
-                        <MenuButton fx:id="campoSerie" mnemonicParsing="false" prefHeight="10.0" prefWidth="371.0" style="-fx-background-color: -zinc-100;">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Historia" />
-                              <MenuItem mnemonicParsing="false" text="Geografia" />
-                           </items>
-                           <VBox.margin>
-                              <Insets bottom="15.0" />
-                           </VBox.margin>
-                        </MenuButton>
+                        <ComboBox fx:id="campoSerie" prefHeight="40.0" prefWidth="371.0" style="-fx-background-color: -zinc-100;" />
                      </children>
                   </VBox>
                </children>

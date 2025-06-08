@@ -59,7 +59,7 @@ public class ControleGerenciarAluno {
 
     @FXML
     void adicionarAluno(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/gerenciar-alunos/tela-gerenciar-alunos", "Tela Adicionar Aluno");
+        App.changeScene("area-adm/gerenciar-alunos/tela-cadastrar-aluno", "Tela Adicionar Aluno");
     }
 
     @FXML
