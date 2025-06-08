@@ -63,7 +63,9 @@ public class ControleGerenciarPerguntas {
         
         // Configura a coluna de matéria
         materiaColuna.setCellValueFactory(cellData -> 
-            new SimpleStringProperty(String.valueOf(cellData.getValue().getMateria()))
+            new SimpleStringProperty(cellData.getValue().getMateria() != null ? 
+                cellData.getValue().getMateria().getNome() : 
+                "Não especificada")
         );
         
         // Configura a coluna de dificuldade
