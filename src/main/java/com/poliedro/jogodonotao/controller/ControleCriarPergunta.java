@@ -51,7 +51,7 @@ public class ControleCriarPergunta implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Exemplo: buscar as matérias do banco ou de uma lista
+        //  buscar as matérias
         ArrayList<Materia> materias = MateriaDAO.obterMaterias();
         ArrayList<String> nomesMaterias = new ArrayList<>();
 
@@ -75,6 +75,54 @@ public class ControleCriarPergunta implements Initializable {
         String dica = campoDica.getText();
         String materia = campoMateria.getValue();
 
+        int materiaId = 0;
+        switch (materia) {
+            case "Língua Portuguesa":
+                materiaId = 1;
+                break;
+            case "Matemática":
+                materiaId = 2;
+                break;
+            case "História":
+                materiaId = 6;
+                break;
+            case "Geografia":
+                materiaId = 7;
+                break;
+            case "Ciências(Fundamental)":
+                materiaId = 13;
+                break;
+            case "Inglês":
+                materiaId = 10;
+                break;
+            case "Arte":
+                materiaId = 12;
+                break;
+            case "Física":
+                materiaId = 4;
+                break;
+            case "Química":
+                materiaId = 5;
+                break;
+            case "Biologia":
+                materiaId = 3;
+                break;
+            case "Sociologia":
+                materiaId = 9;
+                break;
+            case "Filosofia":
+                materiaId = 8;
+                break;
+            case "Espanhol":
+                materiaId = 11;
+                break;
+            default:
+                // Se nenhuma matéria for selecionada
+                materiaId = 0;
+        }
+
+
+
         if (dificuldadeSelecionada == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Erro ao cadastrar Pergunta");
@@ -92,8 +140,8 @@ public class ControleCriarPergunta implements Initializable {
             alert.showAndWait();
             return;
         } else {
-            // Salva a pergunta e obtém o ID gerado, agora incluindo a dificuldade
-            int perguntaId = PerguntaDAO.adicionarPergunta(enunciado, dica, materia, dificuldadeSelecionada);
+            // Salva a pergunta e obtém o ID gerado
+            int perguntaId = PerguntaDAO.adicionarPergunta(enunciado, dica, materiaId, dificuldadeSelecionada);
 
             List<String> alternativas = List.of(
                     campoAlternativa1.getText(),
