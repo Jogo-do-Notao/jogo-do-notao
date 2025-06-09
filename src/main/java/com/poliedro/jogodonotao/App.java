@@ -88,4 +88,27 @@ public class App extends Application {
         stage.setWidth(width);
         stage.setHeight(height);
     }
+    public static void abrirTelaCriarPergunta(String emailProfessor) throws IOException {
+        Stage stage = (Stage) mainStage.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
+
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("views/area-adm/gerenciar-perguntas/tela-criar-pergunta.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        // Passa o e-mail para o controlador
+        com.poliedro.jogodonotao.controller.ControleCriarPergunta controller = loader.getController();
+        controller.setEmailProfessor(emailProfessor);
+
+        String tituloString = "Jogo do Notão";
+        if (Professor.getSessaoAtiva() != null) {
+            tituloString += " | " + Professor.getSessaoAtiva().getNome();
+        }
+        tituloString += " | Criar Pergunta";
+        stage.setTitle(tituloString);
+
+        stage.setScene(scene);
+        stage.setWidth(width);
+        stage.setHeight(height);
+    }
 }
