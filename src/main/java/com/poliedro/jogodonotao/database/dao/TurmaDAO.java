@@ -65,11 +65,11 @@ public class TurmaDAO {
                 // Extrair dados da tupla
                 int id = res.getInt(TurmaColuna.ID.get());
                 String nome = res.getString(TurmaColuna.NOME.get());
-                String emailProfessor = res.getString(TurmaColuna.PROFESSOR.get());
+                int idProfessor = res.getInt(TurmaColuna.PROFESSOR.get());
                 byte serie = res.getByte(TurmaColuna.SERIE.get());
                 String descricao = res.getString(TurmaColuna.DESCRICAO.get());
                 // Buscar professor responsável
-                Professor professor = ProfessorDAO.buscarPorEmail(emailProfessor);
+                Professor professor = ProfessorDAO.buscarPorId(idProfessor);
 
                 return new Turma(id, nome, professor, serie, descricao);
 
@@ -151,17 +151,17 @@ public class TurmaDAO {
     }
 
     public static void adicionarTurma(String nome, String nomeProfessor, String serie, String descricao) {
-        // Primeiro, obter o email do professor pelo nome
-        String emailProfessor = null;
+        // Primeiro, obter o id do professor pelo nome
+        int idProfessor = 0;
         ArrayList<Professor> professores = ProfessorDAO.obterProfessores();
         for (Professor prof : professores) {
             if (prof.getNome().equals(nomeProfessor)) {
-                emailProfessor = prof.getEmail();
+                idProfessor = prof.getId();
                 break;
             }
         }
         
-        if (emailProfessor == null) {
+        if (idProfessor == 0) {
             throw new RuntimeException("Professor não encontrado: " + nomeProfessor);
         }
 
@@ -177,7 +177,7 @@ public class TurmaDAO {
                 PreparedStatement stmt = conexao.prepareStatement(sql)
         ) {
             stmt.setString(1, nome);
-            stmt.setString(2, emailProfessor);  // Salva o email do professor
+            stmt.setInt(2, idProfessor);  // Salva o email do professor
             stmt.setString(3, serie);
             stmt.setString(4, descricao);
             int linhasAfetadas = stmt.executeUpdate();

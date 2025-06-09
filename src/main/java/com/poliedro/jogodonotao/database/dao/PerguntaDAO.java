@@ -183,15 +183,15 @@ public class PerguntaDAO {
 
         return lista;
     }
-    public static int adicionarPergunta(String enunciado, String dica, String materia, String dificuldade) {
+    public static int adicionarPergunta(String enunciado, String dica, Integer materia, String dificuldade) {
         int idGerado = -1;
-        String sql = "INSERT INTO pergunta (enunciado, dica, materia, dificuldade) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO pergunta (id_materia, titulo, dificuldade, dica) VALUES (?, ?, ?, ?)";
         try (Connection conn = ConexaoDB.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, enunciado);
-            stmt.setString(2, dica);
-            stmt.setString(3, materia);
-            stmt.setString(4, dificuldade);
+            stmt.setInt(1, materia);
+            stmt.setString(2, enunciado);
+            stmt.setString(3, dificuldade);
+            stmt.setString(4, dica);
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             if (rs.next()) {
@@ -204,7 +204,7 @@ public class PerguntaDAO {
     }
 
     public static void adicionarAlternativa(int perguntaId, String texto, int correta) {
-        String sql = "INSERT INTO alternativa (pergunta_id, texto, correta) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES (?, ?, ?)";
         try (Connection conn = ConexaoDB.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, perguntaId);
