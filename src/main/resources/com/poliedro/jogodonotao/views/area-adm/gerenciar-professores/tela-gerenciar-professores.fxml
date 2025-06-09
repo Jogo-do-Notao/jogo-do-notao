@@ -69,7 +69,7 @@
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="pesquisarProfessor" prefHeight="69.0" prefWidth="1248.0" promptText="Pesquisar professor" style="-fx-background-color: -zinc-100;">
+                  <TextField fx:id="campoPesquisarProfessor" prefHeight="69.0" prefWidth="1248.0" promptText="Pesquisar por nome, email ou descricao..." style="-fx-background-color: -zinc-100;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>

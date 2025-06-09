@@ -46,7 +46,8 @@ public class PerguntaDAO {
 
         try (Connection conexao = ConexaoDB.getConnection()) {
             // Primeiro, obtemos todas as perguntas
-            String sqlPerguntas = "SELECT * FROM pergunta";
+            String sqlPerguntas = "SELECT pergunta.*, professor.nome as nome_criador FROM pergunta " +
+                    "LEFT JOIN professor ON criador = professor.id_professor";
 
             try (PreparedStatement stmt = conexao.prepareStatement(sqlPerguntas);
                  ResultSet res = stmt.executeQuery()) {
@@ -57,7 +58,7 @@ public class PerguntaDAO {
                 Map<Integer, String> dicas = new HashMap<>();
                 Map<Integer, String> dificuldades = new HashMap<>();
                 Map<Integer, Integer> materiasIds = new HashMap<>();
-                Map<Integer, Integer> criadoresIds = new HashMap<>();
+                Map<Integer, String> nomesCriadores = new HashMap<>();
 
                 while (res.next()) {
                     int id = res.getInt("id_pergunta");
@@ -66,7 +67,8 @@ public class PerguntaDAO {
                     dicas.put(id, res.getString("dica"));
                     dificuldades.put(id, res.getString("dificuldade"));
                     materiasIds.put(id, res.getInt("id_materia"));
-                    criadoresIds.put(id, res.getInt("criador"));
+                    // Usamos o nome do criador diretamente da consulta
+                    nomesCriadores.put(id, res.getString("nome_criador"));
                 }
 
                 // Buscamos todos os materiais necessários de uma vez
@@ -76,25 +78,26 @@ public class PerguntaDAO {
                     materias.put(idMateria, MateriaDAO.buscarPorId(idMateria));
                 }
 
-                // Buscamos todos os professores necessários de uma vez
-                Set<Integer> idsCriadoresUnicos = new HashSet<>(criadoresIds.values());
-                Map<Integer, Professor> criadores = new HashMap<>();
-                for (int idCriador : idsCriadoresUnicos) {
-                    criadores.put(idCriador, ProfessorDAO.buscarPorId(idCriador));
-                }
-
                 // Agora criamos as perguntas com todos os dados
                 for (int id : ids) {
                     String titulo = titulos.get(id);
                     String dica = dicas.get(id);
                     DificuldadePergunta dificuldade = DificuldadePergunta.fromString(dificuldades.get(id));
                     Materia materia = materias.get(materiasIds.get(id));
-                    Professor criador = criadores.get(criadoresIds.get(id));
+
+                    // Criamos um professor temporário apenas com o nome
+                    Professor criador = new Professor(0, nomesCriadores.get(id), "sem-email@exemplo.com", "", "", false);
+
+                    // Carregamos as alternativas
                     Alternativa[] alternativas = AlternativaDAO.obterAlternativa(id);
 
                     perguntas.add(new Pergunta(id, titulo, alternativas, dificuldade, dica, criador, materia));
                 }
             }
+        } catch (SQLException e) {
+            System.err.println("Erro ao carregar perguntas: " + e.getMessage());
+            e.printStackTrace();
+            throw e; // Relançar a exceção para tratamento no controlador
         }
 
         return perguntas;
@@ -157,11 +160,11 @@ public class PerguntaDAO {
         String dificuldade = PerguntaColuna.DIFICULDADE.get();
         String idMateria = PerguntaColuna.MATERIA.get();
 
-        String sql = "SELECT p." + idPergunta + " FROM pergunta p " +
-                "LEFT JOIN pergunta_partida pp ON p." + idPergunta + " = pp." + idPergunta + " " +
+        String sql = "SELECT pergunta." + idPergunta + " FROM pergunta " +
+                "LEFT JOIN pergunta_partida pp ON pergunta." + idPergunta + " = pp." + idPergunta + " " +
                 "LEFT JOIN partida pa ON pp.id_partida = pa.id_partida AND pa.id_aluno = ? " +
-                "WHERE (p." + idMateria + " = ? OR ? = -1) " +
-                "AND p." + dificuldade + " = ? " +
+                "WHERE (pergunta." + idMateria + " = ? OR ? = -1) " +
+                "AND pergunta." + dificuldade + " = ? " +
                 "AND pa.id_aluno IS NULL";
 
         try (
@@ -183,6 +186,7 @@ public class PerguntaDAO {
 
         return lista;
     }
+
     public static int adicionarPergunta(String enunciado, String dica, String materia, String dificuldade) {
         int idGerado = -1;
         String sql = "INSERT INTO pergunta (enunciado, dica, materia, dificuldade) VALUES (?, ?, ?, ?)";
@@ -216,9 +220,6 @@ public class PerguntaDAO {
         }
     }
 
-
-
-
     public static Pergunta buscarPorEnunciado(String enunciado) {
         final String sql = "SELECT * FROM pergunta WHERE titulo = ?";
         try (
@@ -241,7 +242,7 @@ public class PerguntaDAO {
                 Professor criador = ProfessorDAO.buscarPorId(criadorId);
                 Materia materia = MateriaDAO.buscarPorId(materiaId);
 
-                return new Pergunta(idPergunta, enunciado, alternativas, dificuldade, dica, criador,materia);
+                return new Pergunta(idPergunta, enunciado, alternativas, dificuldade, dica, criador, materia);
             }
         } catch (SQLException e) {
             e.printStackTrace();

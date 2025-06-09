@@ -6,6 +6,8 @@ import com.poliedro.jogodonotao.database.dao.TurmaDAO;
 import com.poliedro.jogodonotao.usuario.Professor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -32,7 +34,8 @@ public class ControleGerenciarTurmas {
     @FXML
     private TableColumn<Turma, String> turmaColuna;
 
-    private ObservableList<Turma> turmas;
+    private ObservableList<Turma> listaCompletaTurmas;
+    private FilteredList<Turma> dadosFiltrados;
 
     @FXML
     public void initialize() {
@@ -49,20 +52,16 @@ public class ControleGerenciarTurmas {
                 () -> {
                     if (cellData.getValue() == null) return "";
                     Professor prof = cellData.getValue().getProfessor();
-                    if (prof != null) {
-                        System.out.println("Professor encontrado para turma " + cellData.getValue().getNome() + 
-                                         ": " + prof.getNome() + " (" + prof.getEmail() + ")");
-                        return prof.getNome();
-                    } else {
-                        System.err.println("AVISO: Nenhum professor encontrado para a turma " + cellData.getValue().getNome());
-                        return "Sem professor";
-                    }
+                    return prof != null ? prof.getNome() : "Sem professor";
                 }
             )
         );
 
         // Carrega as turmas
         carregarTurmas();
+        
+        // Configura a pesquisa
+        configurarPesquisa();
     }
     
     private void carregarTurmas() {
@@ -71,17 +70,22 @@ public class ControleGerenciarTurmas {
             ArrayList<Turma> turmasCarregadas = TurmaDAO.obterTurma();
             System.out.println("Total de turmas carregadas: " + turmasCarregadas.size());
             
-            turmas = FXCollections.observableArrayList(turmasCarregadas);
-            tabelaTurmas.setItems(turmas);
+            listaCompletaTurmas = FXCollections.observableArrayList(turmasCarregadas);
+            dadosFiltrados = new FilteredList<>(listaCompletaTurmas, p -> true);
+            
+            // Ordena os dados
+            SortedList<Turma> dadosOrdenados = new SortedList<>(dadosFiltrados);
+            dadosOrdenados.comparatorProperty().bind(tabelaTurmas.comparatorProperty());
+            
+            tabelaTurmas.setItems(dadosOrdenados);
             
             // Verificar se há professores nas turmas
-            for (Turma turma : turmas) {
+            for (Turma turma : listaCompletaTurmas) {
                 if (turma.getProfessor() == null) {
                     System.err.println("AVISO: Turma " + turma.getNome() + " não tem professor associado");
                 }
             }
             
-            tabelaTurmas.refresh();
         } catch (Exception e) {
             System.err.println("Erro ao carregar turmas: " + e.getMessage());
             e.printStackTrace();
@@ -93,6 +97,49 @@ public class ControleGerenciarTurmas {
             alert.setContentText("Ocorreu um erro ao carregar as turmas. Por favor, tente novamente mais tarde.");
             alert.showAndWait();
         }
+    }
+    
+    private void configurarPesquisa() {
+        // Adiciona um listener ao campo de pesquisa
+        campoPesquisarTurma.textProperty().addListener((observable, valorAntigo, novoValor) -> {
+            // Se o texto da pesquisa estiver vazio, mostra todas as turmas
+            if (novoValor == null || novoValor.isEmpty()) {
+                dadosFiltrados.setPredicate(turma -> true);
+            } else {
+                // Converte o texto de pesquisa para minúsculas para busca case-insensitive
+                String termoPesquisa = novoValor.trim().toLowerCase();
+                
+                // Define o predicado para filtrar as turmas
+                dadosFiltrados.setPredicate(turma -> {
+                    // Se o termo de pesquisa estiver vazio, mostra todas as turmas
+                    if (termoPesquisa.isEmpty()) {
+                        return true;
+                    }
+                    
+                    // Verifica se o nome da turma contém o termo de pesquisa
+                    if (turma.getNome() != null && turma.getNome().toLowerCase().contains(termoPesquisa)) {
+                        return true;
+                    }
+                    
+                    // Verifica se o nome do professor contém o termo de pesquisa
+                    Professor professor = turma.getProfessor();
+                    if (professor != null) {
+                        if (professor.getNome() != null && professor.getNome().toLowerCase().contains(termoPesquisa)) {
+                            return true;
+                        }
+                        if (professor.getEmail() != null && professor.getEmail().toLowerCase().contains(termoPesquisa)) {
+                            return true;
+                        }
+                    }
+                    
+                    // Se não encontrou correspondência em nenhum campo
+                    return false;
+                });
+            }
+        });
+        
+        // Adiciona um placeholder ao campo de pesquisa
+        campoPesquisarTurma.setPromptText("Pesquisar por nome da turma ou professor...");
     }
 
     @FXML
