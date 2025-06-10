@@ -6,6 +6,7 @@ import com.poliedro.jogodonotao.jogo.Partida;
 import com.poliedro.jogodonotao.jogo.PartidaStatus;
 import com.poliedro.jogodonotao.usuario.Aluno;
 import javafx.animation.PauseTransition;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -100,11 +101,18 @@ public class ControlePainelAluno implements Initializable {
                 PartidaStatus.ANDAMENTO
         );
 
-        // Adicionar as partidas à tabela
-        for (Partida partida : partidasEmAndamentoLista) {
-            // Adiciona a partida à tabela
-            this.partidasEmAndamento.getItems().add(partida);
-        }
+        // Configurar as colunas
+        colunaMateria.setCellValueFactory(cellData -> // Matéria
+                new SimpleStringProperty(cellData.getValue().getMATERIA().getNome()));
+        colunaProgresso.setCellValueFactory(cellData -> // Progresso
+                new SimpleStringProperty(cellData.getValue().getRodada() + "/15"));
+        colunaPontuacaoAcumulada.setCellValueFactory(cellData -> // Pontuação acumulada
+                new SimpleStringProperty(String.valueOf(cellData.getValue().getPontuacaoAcumuladaFormatada())));
+        colunaPontuacaoCheckpoint.setCellValueFactory(cellData -> // Checkpoint
+                new SimpleStringProperty(String.valueOf(cellData.getValue().getPontuacaoCheckpointFormatada())));
+
+        // Adicionar partidas à tabela
+        partidasEmAndamento.getItems().addAll(partidasEmAndamentoLista);
     }
 
     /**
