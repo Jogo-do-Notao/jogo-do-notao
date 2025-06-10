@@ -87,4 +87,17 @@ public class ConexaoDB {
             return false; // se ocorrer uma exceção, retorna false
         }
     }
+
+    /**
+     * Fecha a conexão com o banco de dados, se estiver aberta.
+     */
+    public static void closeConnection() {
+        if (connection != null) {
+            try {
+                connection.close(); // fecha a conexão
+            } catch (SQLException e) {
+                System.err.println("Erro ao fechar a conexão com o banco de dados: " + e.getMessage());
+            }
+        }
+    }
 }
