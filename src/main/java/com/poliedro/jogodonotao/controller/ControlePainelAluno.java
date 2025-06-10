@@ -87,6 +87,12 @@ public class ControlePainelAluno implements Initializable {
         textTurma.setText("Turma: " + Aluno.getSessaoAtiva().getTurma().getNome());
         textPontuacao.setText(Aluno.getSessaoAtiva().getPontuacaoFormatada());
 
+        // Fazer binding entre a tabela de partidas em andamento e o botão de continuar partida
+        // Habilitar o botão apenas se houver uma partida selecionada
+        botaoContinuarPartida.disableProperty().bind(
+                partidasEmAndamento.getSelectionModel().selectedItemProperty().isNull()
+        );
+
         // Carregar as partidas em andamento do aluno
         exibirPartidasEmAndamento();
     }
@@ -148,7 +154,7 @@ public class ControlePainelAluno implements Initializable {
      */
     @FXML
     void continuarPartida(ActionEvent event) {
-
+        System.out.println("Carregar partida");
     }
 
     /**
