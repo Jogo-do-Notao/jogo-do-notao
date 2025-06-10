@@ -129,8 +129,36 @@ public class ControleTelaPartida implements Initializable {
         partida.abandonar();
     }
 
+    /**
+     * Exibe as instruções do jogo.
+     */
     @FXML
     void exibirInstrucoes(ActionEvent event) {
+        Alert instrucoes = new Alert(Alert.AlertType.INFORMATION);
+        instrucoes.setTitle("Instruções do Jogo");
+        instrucoes.setHeaderText("Como Jogar o Jogo do Notão");
+        // Texto das instruções
+        instrucoes.setContentText(
+                "Bem-vindo ao Jogo do Notão!\n\n" +
+                        "OBJETIVO\n" +
+                        "Seu objetivo é responder corretamente a 15 perguntas de conhecimento para acumular a pontuação máxima.\n\n" +
+                        "COMO JOGAR\n" +
+                        "• A partida tem 15 rodadas com dificuldade progressiva.\n" +
+                        "• Em cada rodada, escolha a alternativa que julgar correta.\n" +
+                        "• Acertando: você acumula os pontos da rodada e avança.\n" +
+                        "• Errando: o jogo termina e você garante apenas os pontos salvos no último checkpoint.\n\n" +
+                        "AJUDAS\n" +
+                        "Para os momentos de dúvida, você pode usar 3 tipos de ajuda (até 2 vezes cada):\n" +
+                        "\t\t• Eliminar Alternativas: Remove duas opções incorretas.\n" +
+                        "\t\t• Dica do Professor: Exibe uma informação extra sobre a pergunta.\n" +
+                        "\t\t• Pular Pergunta: Substitui a pergunta atual por outra de mesma dificuldade.\n" +
+                        "*Atenção: Usar uma ajuda descontará pontos do seu placar.*\n\n" +
+                        "OPÇÕES DA PARTIDA\n" +
+                        "• Parar e Levar: A qualquer momento, você pode encerrar o jogo e sair com todos os pontos acumulados até então.\n" +
+                        "• Sair e Salvar: Precisa de uma pausa? Saia do jogo e seu progresso será salvo para você continuar depois.\n\n" +
+                        "Mostre seu conhecimento e boa sorte!"
+        );
+        instrucoes.showAndWait();
     }
 
     @FXML
