@@ -552,8 +552,8 @@ public class Partida {
     public void abandonar() {
         // Mensagem de confirmação
         Alert msgConfirmacao = new Alert(Alert.AlertType.CONFIRMATION);
-        msgConfirmacao.setTitle("Desistir do Jogo");
-        msgConfirmacao.setHeaderText("Você tem certeza que deseja desistir do jogo?");
+        msgConfirmacao.setTitle("Desistir da Partida");
+        msgConfirmacao.setHeaderText("Você tem certeza que deseja desistir da partida?");
         msgConfirmacao.setContentText("A pontuação acumulada será adicionada ao seu perfil, mas você não poderá retomar a partida.");
         // Obter resposta
         Optional<ButtonType> decisao = msgConfirmacao.showAndWait();

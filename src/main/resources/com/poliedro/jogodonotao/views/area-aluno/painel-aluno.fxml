@@ -212,22 +212,39 @@
                         <TableColumn fx:id="colunaPontuacaoCheckpoint" minWidth="0.0" prefWidth="169.59994506835938" text="Pontuação Checkpoint" />
                     </columns>
                   </TableView>
-                  <Button fx:id="botaoContinuarPartida" disable="true" mnemonicParsing="false" onAction="#continuarPartida" text="Continuar Partida">
+                  <HBox alignment="CENTER" spacing="16.0">
                      <VBox.margin>
                         <Insets bottom="-4.0" top="-4.0" />
                      </VBox.margin>
-                     <styleClass>
-                        <String fx:value="button-lg" />
-                        <String fx:value="button-azul" />
-                     </styleClass>
-                     <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../icons/game.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
+                     <children>
+                        <Button fx:id="botaoContinuarPartida" disable="true" mnemonicParsing="false" onAction="#continuarPartida" text="Continuar Partida">
+                           <styleClass>
+                              <String fx:value="button-lg" />
+                              <String fx:value="button-azul" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icons/game.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="botaoAbandonarPartida" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#desistirDaPartida" text="Desistir">
+                           <styleClass>
+                              <String fx:value="button-lg" />
+                              <String fx:value="button-vermelho" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icons/desistir.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
