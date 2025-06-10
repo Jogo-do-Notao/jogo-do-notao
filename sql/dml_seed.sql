@@ -5522,6 +5522,618 @@ VALUES (
 -- ||                       História                              ||
 -- =================================================================
 -- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual civilização antiga se desenvolveu no vale do rio Nilo?', 'Fácil', 'São famosos por suas pirâmides e faraós.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Grega', 0),
+(@id_pergunta, 'Romana', 0),
+(@id_pergunta, 'Egípcia', 1),
+(@id_pergunta, 'Mesopotâmica', 0),
+(@id_pergunta, 'Chinesa', 0);
+
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Quem foi o primeiro imperador do Brasil?', 'Fácil', 'Ele proclamou a independência às margens do rio Ipiranga.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Dom João VI', 0),
+(@id_pergunta, 'Dom Pedro I', 1),
+(@id_pergunta, 'Dom Pedro II', 0),
+(@id_pergunta, 'Marechal Deodoro', 0),
+(@id_pergunta, 'Tiradentes', 0);
+
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual evento é considerado o marco inicial da Primeira Guerra Mundial?', 'Fácil', 'O assassinato de um arquiduque em Sarajevo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A invasão da Polônia', 0),
+(@id_pergunta, 'O ataque a Pearl Harbor', 0),
+(@id_pergunta, 'O assassinato de Francisco Ferdinando', 1),
+(@id_pergunta, 'A Revolução Russa', 0),
+(@id_pergunta, 'A queda da Bastilha', 0);
+
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual era o principal sistema de organização social e econômica durante a Idade Média na Europa?', 'Fácil', 'Baseava-se na posse de terras (feudos) e relações de suserania e vassalagem.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Capitalismo', 0),
+(@id_pergunta, 'Feudalismo', 1),
+(@id_pergunta, 'Comunismo', 0),
+(@id_pergunta, 'Democracia', 0),
+(@id_pergunta, 'Mercantilismo', 0);
+
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual país europeu colonizou o Brasil?', 'Fácil', 'O idioma oficial do Brasil deriva deste país.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Espanha', 0),
+(@id_pergunta, 'França', 0),
+(@id_pergunta, 'Holanda', 0),
+(@id_pergunta, 'Inglaterra', 0),
+(@id_pergunta, 'Portugal', 1);
+
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A Guerra Fria foi uma disputa ideológica entre quais duas superpotências?', 'Fácil', 'Uma defendia o capitalismo e a outra o socialismo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Alemanha e Japão', 0),
+(@id_pergunta, 'Inglaterra e França', 0),
+(@id_pergunta, 'Estados Unidos e União Soviética', 1),
+(@id_pergunta, 'China e Índia', 0),
+(@id_pergunta, 'Brasil e Argentina', 0);
+
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual lei aboliu oficialmente a escravidão no Brasil em 1888?', 'Fácil', 'O nome da lei significa "Lei Dourada".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Lei do Ventre Livre', 0),
+(@id_pergunta, 'Lei Áurea', 1),
+(@id_pergunta, 'Lei Eusébio de Queirós', 0),
+(@id_pergunta, 'Lei dos Sexagenários', 0),
+(@id_pergunta, 'Lei de Terras', 0);
+
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Quem foi o líder do Partido Nazista e chanceler da Alemanha durante a Segunda Guerra Mundial?', 'Fácil', 'Ele é o autor de "Mein Kampf".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Benito Mussolini', 0),
+(@id_pergunta, 'Joseph Stalin', 0),
+(@id_pergunta, 'Winston Churchill', 0),
+(@id_pergunta, 'Adolf Hitler', 1),
+(@id_pergunta, 'Franklin Roosevelt', 0);
+
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A civilização romana teve sua capital em qual cidade atual?', 'Fácil', 'É a capital da Itália.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Atenas', 0),
+(@id_pergunta, 'Paris', 0),
+(@id_pergunta, 'Londres', 0),
+(@id_pergunta, 'Roma', 1),
+(@id_pergunta, 'Cairo', 0);
+
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Em que ano foi proclamada a República no Brasil?', 'Fácil', 'Ocorreu no dia 15 de novembro.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, '1822', 0),
+(@id_pergunta, '1888', 0),
+(@id_pergunta, '1889', 1),
+(@id_pergunta, '1930', 0),
+(@id_pergunta, '1964', 0);
+
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Quem iniciou a Reforma Protestante ao fixar suas 95 Teses na porta da igreja?', 'Fácil', 'Era um monge alemão.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'João Calvino', 0),
+(@id_pergunta, 'Henrique VIII', 0),
+(@id_pergunta, 'Martinho Lutero', 1),
+(@id_pergunta, 'Inácio de Loyola', 0),
+(@id_pergunta, 'Galileu Galilei', 0);
+
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual civilização antiga é conhecida como o "berço da democracia"?', 'Fácil', 'A cidade-estado de Atenas é o principal exemplo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Egito', 0),
+(@id_pergunta, 'Roma', 0),
+(@id_pergunta, 'Pérsia', 0),
+(@id_pergunta, 'Grécia', 1),
+(@id_pergunta, 'Esparta', 0);
+
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A queda de qual cidade em 1453 é frequentemente usada para marcar o fim da Idade Média?', 'Fácil', 'Era a capital do Império Bizantino.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Roma', 0),
+(@id_pergunta, 'Jerusalém', 0),
+(@id_pergunta, 'Constantinopla', 1),
+(@id_pergunta, 'Alexandria', 0),
+(@id_pergunta, 'Atenas', 0);
+
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Em qual ano os portugueses, liderados por Pedro Álvares Cabral, chegaram ao Brasil?', 'Fácil', 'Foi no início do século XVI.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, '1492', 0),
+(@id_pergunta, '1500', 1),
+(@id_pergunta, '1530', 0),
+(@id_pergunta, '1600', 0),
+(@id_pergunta, '1822', 0);
+
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual foi a primeira capital do Brasil?', 'Fácil', 'É uma grande cidade no estado da Bahia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Rio de Janeiro', 0),
+(@id_pergunta, 'São Paulo', 0),
+(@id_pergunta, 'Salvador', 1),
+(@id_pergunta, 'Brasília', 0),
+(@id_pergunta, 'Ouro Preto', 0);
+
+-- Pergunta 16
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O Muro de Berlim dividiu qual cidade durante a Guerra Fria?', 'Fácil', 'O nome do muro já diz o nome da cidade.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Moscou', 0),
+(@id_pergunta, 'Paris', 0),
+(@id_pergunta, 'Varsóvia', 0),
+(@id_pergunta, 'Berlim', 1),
+(@id_pergunta, 'Viena', 0);
+
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A invenção da prensa de tipos móveis, por Gutenberg, foi fundamental para qual movimento?', 'Fácil', 'Facilitou a disseminação de novas ideias religiosas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Revolução Industrial', 0),
+(@id_pergunta, 'Reforma Protestante', 1),
+(@id_pergunta, 'Revolução Francesa', 0),
+(@id_pergunta, 'Iluminismo', 0),
+(@id_pergunta, 'Cruzadas', 0);
+
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual destes é um famoso monumento do Império Romano?', 'Fácil', 'Era uma arena para batalhas de gladiadores.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Acrópole', 0),
+(@id_pergunta, 'Coliseu', 1),
+(@id_pergunta, 'Pirâmides de Gizé', 0),
+(@id_pergunta, 'Muralha da China', 0),
+(@id_pergunta, 'Torre Eiffel', 0);
+
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Como ficou conhecido o período em que Getúlio Vargas governou o Brasil?', 'Fácil', 'O nome faz referência ao tempo em que ele esteve no poder.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'República Velha', 0),
+(@id_pergunta, 'Ditadura Militar', 0),
+(@id_pergunta, 'Era Vargas', 1),
+(@id_pergunta, 'Período Regencial', 0),
+(@id_pergunta, 'Segundo Reinado', 0);
+
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O principal objetivo das Cruzadas medievais era:', 'Fácil', 'Envolvia uma cidade sagrada para os cristãos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Descobrir novas rotas comerciais', 0),
+(@id_pergunta, 'Conquistar a Terra Santa (Jerusalém)', 1),
+(@id_pergunta, 'Combater os vikings', 0),
+(@id_pergunta, 'Unificar a Europa sob um único rei', 0),
+(@id_pergunta, 'Espalhar o feudalismo', 0);
+
+
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi a Revolta da Vacina, ocorrida no Rio de Janeiro em 1904?', 'Médio', 'Foi uma rebelião popular motivada por uma campanha de saúde pública.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma revolta de médicos por melhores salários', 0),
+(@id_pergunta, 'Um motim popular contra a vacinação obrigatória', 1),
+(@id_pergunta, 'Uma campanha para erradicar a varíola', 0),
+(@id_pergunta, 'Uma greve de enfermeiros', 0),
+(@id_pergunta, 'Uma revolta contra a falta de vacinas', 0);
+
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual tratado, assinado em 1494, dividiu as terras "descobertas e por descobrir" entre Portugal e Espanha?', 'Médio', 'O nome do tratado é o de uma cidade espanhola.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Tratado de Madri', 0),
+(@id_pergunta, 'Tratado de Versalhes', 0),
+(@id_pergunta, 'Tratado de Tordesilhas', 1),
+(@id_pergunta, 'Bula Inter Coetera', 0),
+(@id_pergunta, 'Tratado de Utrecht', 0);
+
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A "Queda da Bastilha" é o evento simbólico que marca o início de qual revolução?', 'Médio', 'O lema desta revolução era "Liberdade, Igualdade e Fraternidade".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Revolução Russa', 0),
+(@id_pergunta, 'Revolução Industrial', 0),
+(@id_pergunta, 'Revolução Francesa', 1),
+(@id_pergunta, 'Revolução Americana', 0),
+(@id_pergunta, 'Revolução Gloriosa', 0);
+
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual foi a principal consequência da Guerra do Paraguai para o Brasil?', 'Médio', 'Envolveu o aumento do poder de uma instituição e o endividamento do país.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A perda de territórios para a Argentina', 0),
+(@id_pergunta, 'O fortalecimento do Exército e o aumento da dívida externa', 1),
+(@id_pergunta, 'A abolição imediata da escravidão', 0),
+(@id_pergunta, 'A proclamação da República', 0),
+(@id_pergunta, 'O início da industrialização', 0);
+
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi a Inconfidência Mineira?', 'Médio', 'Ocorreu em Minas Gerais e um de seus líderes foi Tiradentes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma revolta de escravos na Bahia', 0),
+(@id_pergunta, 'Um movimento separatista da elite mineira contra Portugal', 1),
+(@id_pergunta, 'Uma guerra contra os holandeses em Pernambuco', 0),
+(@id_pergunta, 'Um movimento pela abolição da escravatura', 0),
+(@id_pergunta, 'Uma rebelião de tropeiros no Sul', 0);
+
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi o "Plano Marshall" no pós-Segunda Guerra Mundial?', 'Médio', 'Foi um programa de ajuda econômica para a reconstrução da Europa.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um plano de ataque militar da União Soviética', 0),
+(@id_pergunta, 'Um programa de ajuda econômica dos EUA para a Europa', 1),
+(@id_pergunta, 'A criação da Organização das Nações Unidas (ONU)', 0),
+(@id_pergunta, 'A divisão da Alemanha em duas partes', 0),
+(@id_pergunta, 'A criação da aliança militar OTAN', 0);
+
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O regime de segregação racial que vigorou na África do Sul entre 1948 e 1994 foi chamado de:', 'Médio', 'Nelson Mandela foi o maior líder da luta contra este regime.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Holocausto', 0),
+(@id_pergunta, 'Apartheid', 1),
+(@id_pergunta, 'Imperialismo', 0),
+(@id_pergunta, 'Comunismo', 0),
+(@id_pergunta, 'Segregação', 0);
+
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A Revolução Industrial teve início em qual país?', 'Médio', 'Este país era uma grande potência naval e possuía ricas minas de carvão.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'França', 0),
+(@id_pergunta, 'Alemanha', 0),
+(@id_pergunta, 'Inglaterra', 1),
+(@id_pergunta, 'Estados Unidos', 0),
+(@id_pergunta, 'Rússia', 0);
+
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual presidente brasileiro ficou conhecido pela política do "Pão, Terra e Trabalho" e pela criação da CLT?', 'Médio', 'Ele governou o Brasil de 1930 a 1945 e depois de 1951 a 1954.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Juscelino Kubitschek', 0),
+(@id_pergunta, 'Getúlio Vargas', 1),
+(@id_pergunta, 'João Goulart', 0),
+(@id_pergunta, 'Eurico Gaspar Dutra', 0),
+(@id_pergunta, 'Washington Luís', 0);
+
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O movimento "Diretas Já", entre 1983 e 1984, reivindicava o quê?', 'Médio', 'Foi uma das maiores manifestações populares da história do Brasil.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O fim da Ditadura Militar', 0),
+(@id_pergunta, 'A anistia para os presos políticos', 0),
+(@id_pergunta, 'Eleições diretas para presidente da República', 1),
+(@id_pergunta, 'A criação de uma nova Constituição', 0),
+(@id_pergunta, 'A reforma agrária', 0);
+
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A Crise dos Mísseis de 1962 foi um tenso confronto entre os EUA e a União Soviética devido à instalação de mísseis em qual país?', 'Médio', 'É uma ilha caribenha próxima aos Estados Unidos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Vietnã', 0),
+(@id_pergunta, 'Coreia', 0),
+(@id_pergunta, 'Cuba', 1),
+(@id_pergunta, 'Turquia', 0),
+(@id_pergunta, 'Angola', 0);
+
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual o nome do líder messiânico da Guerra de Canudos?', 'Médio', 'Ele era visto como um profeta pelos seus seguidores no sertão baiano.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Lampião', 0),
+(@id_pergunta, 'Zumbi dos Palmares', 0),
+(@id_pergunta, 'Antônio Conselheiro', 1),
+(@id_pergunta, 'Padre Cícero', 0),
+(@id_pergunta, 'José do Contestado', 0);
+
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foram as Capitanias Hereditárias no Brasil Colônia?', 'Médio', 'Foi a primeira forma de administração territorial implementada por Portugal.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Províncias governadas por presidentes eleitos', 0),
+(@id_pergunta, 'Grandes lotes de terra doados a nobres (donatários) para colonização', 1),
+(@id_pergunta, 'Territórios indígenas protegidos pela Coroa', 0),
+(@id_pergunta, 'Distritos de mineração de ouro e diamantes', 0),
+(@id_pergunta, 'Fortalezas militares no litoral', 0);
+
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A política econômica dos reinos europeus na Idade Moderna, baseada no metalismo e na balança comercial favorável, era chamada de:', 'Médio', 'O objetivo era acumular riquezas para o Estado.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Fisiocracia', 0),
+(@id_pergunta, 'Liberalismo', 0),
+(@id_pergunta, 'Mercantilismo', 1),
+(@id_pergunta, 'Socialismo', 0),
+(@id_pergunta, 'Feudalismo', 0);
+
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A Unificação Alemã, em 1871, foi liderada por qual estado e por qual chanceler?', 'Médio', 'O chanceler era conhecido como o "Chanceler de Ferro".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Áustria e Metternich', 0),
+(@id_pergunta, 'Prússia e Otto von Bismarck', 1),
+(@id_pergunta, 'Baviera e Luís II', 0),
+(@id_pergunta, 'Saxônia e Frederico Augusto', 0),
+(@id_pergunta, 'França e Napoleão III', 0);
+
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi a "Marcha sobre Roma" em 1922?', 'Médio', 'Foi um evento que marcou a ascensão do fascismo na Itália.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma peregrinação religiosa ao Vaticano', 0),
+(@id_pergunta, 'Uma manifestação de fascistas que levou Mussolini ao poder', 1),
+(@id_pergunta, 'A invasão de Roma pelo exército alemão', 0),
+(@id_pergunta, 'Uma greve geral dos trabalhadores romanos', 0),
+(@id_pergunta, 'Uma parada militar para celebrar o fim da Primeira Guerra', 0);
+
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O Iluminismo foi um movimento intelectual que defendia:', 'Médio', 'Seus pensadores eram críticos do absolutismo e do clero.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O poder absoluto dos reis', 0),
+(@id_pergunta, 'O uso da razão, a liberdade e os direitos individuais', 1),
+(@id_pergunta, 'A superioridade da fé sobre a ciência', 0),
+(@id_pergunta, 'O sistema feudal', 0),
+(@id_pergunta, 'A expansão do colonialismo', 0);
+
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'No Brasil, a chamada "República do Café com Leite" foi caracterizada pela alternância de poder entre as oligarquias de:', 'Médio', 'Esses estados eram os maiores produtores de café e de laticínios.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Rio de Janeiro e Bahia', 0),
+(@id_pergunta, 'São Paulo e Minas Gerais', 1),
+(@id_pergunta, 'Pernambuco e Rio Grande do Sul', 0),
+(@id_pergunta, 'Bahia e Pernambuco', 0),
+(@id_pergunta, 'São Paulo e Rio de Janeiro', 0);
+
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual foi a principal consequência da Revolução dos Cravos em Portugal, em 1974?', 'Médio', 'O evento teve grande impacto nas colônias portuguesas na África.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A entrada de Portugal na União Europeia', 0),
+(@id_pergunta, 'O fim da ditadura salazarista e o início da descolonização', 1),
+(@id_pergunta, 'A restauração da monarquia', 0),
+(@id_pergunta, 'O início de uma guerra civil', 0),
+(@id_pergunta, 'A adoção do euro como moeda', 0);
+
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'As civilizações pré-colombianas Asteca e Inca se desenvolveram, respectivamente, nas regiões que hoje correspondem a:', 'Médio', 'Uma se localizava na América Central e a outra na Cordilheira dos Andes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Brasil e Argentina', 0),
+(@id_pergunta, 'México e Peru', 1),
+(@id_pergunta, 'Estados Unidos e Canadá', 0),
+(@id_pergunta, 'Colômbia e Chile', 0),
+(@id_pergunta, 'Caribe e Patagônia', 0);
+
+
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi a "Questão Christie", ocorrida durante o Segundo Reinado no Brasil?', 'Difícil', 'Envolveu o embaixador britânico William Christie e navios naufragados.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma disputa de terras entre Brasil e Argentina', 0),
+(@id_pergunta, 'Um conflito diplomático que levou ao rompimento de relações entre Brasil e Grã-Bretanha', 1),
+(@id_pergunta, 'Um debate sobre a sucessão do trono imperial', 0),
+(@id_pergunta, 'Uma crise econômica causada pela queda do preço do café', 0),
+(@id_pergunta, 'Uma revolta de escravos liderada por uma mulher chamada Christie', 0);
+
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A Conjuração Baiana (ou Revolta dos Alfaiates) se diferenciou da Inconfidência Mineira principalmente por:', 'Difícil', 'Suas propostas eram mais radicais e envolviam diferentes classes sociais.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ser um movimento monarquista', 0),
+(@id_pergunta, 'Ter um caráter popular e defender o fim da escravidão', 1),
+(@id_pergunta, 'Ser liderada exclusivamente por membros do clero', 0),
+(@id_pergunta, 'Buscar apoio da coroa francesa', 0),
+(@id_pergunta, 'Ter ocorrido no Rio de Janeiro', 0);
+
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi o "New Deal", implementado nos EUA por Franklin D. Roosevelt?', 'Difícil', 'Foi uma resposta à Grande Depressão de 1929.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma política de expansão militar na Ásia', 0),
+(@id_pergunta, 'Um conjunto de programas de intervenção estatal para recuperar a economia', 1),
+(@id_pergunta, 'Um acordo de livre comércio com a Europa', 0),
+(@id_pergunta, 'Uma lei de segregação racial nos estados do sul', 0),
+(@id_pergunta, 'O programa de desenvolvimento da bomba atômica', 0);
+
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A Revolta dos Malês, em 1835 na Bahia, foi uma rebelião notável por ser organizada principalmente por:', 'Difícil', 'Eles possuíam uma religião e uma forma de escrita em comum.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Militares de baixa patente', 0),
+(@id_pergunta, 'Escravos africanos de religião muçulmana', 1),
+(@id_pergunta, 'Grandes fazendeiros de café', 0),
+(@id_pergunta, 'Imigrantes italianos anarquistas', 0),
+(@id_pergunta, 'Seringueiros da Amazônia', 0);
+
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi o "Plano Cohen", no contexto da Era Vargas?', 'Difícil', 'O plano foi usado como justificativa para um golpe de estado.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um plano de desenvolvimento econômico para o Nordeste', 0),
+(@id_pergunta, 'Um suposto plano comunista forjado para justificar a implantação do Estado Novo', 1),
+(@id_pergunta, 'Um acordo secreto entre Vargas e os nazistas', 0),
+(@id_pergunta, 'Um projeto de reforma agrária', 0),
+(@id_pergunta, 'O plano de criação da Petrobras', 0);
+
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A Comuna de Paris, em 1871, é considerada por muitos historiadores como a primeira experiência de:', 'Difícil', 'Inspirou pensadores como Karl Marx.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Governo fascista', 0),
+(@id_pergunta, 'Governo operário ou socialista', 1),
+(@id_pergunta, 'Teocracia', 0),
+(@id_pergunta, 'Monarquia absolutista', 0),
+(@id_pergunta, 'República liberal', 0);
+
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi o "Macartismo" nos Estados Unidos durante a Guerra Fria?', 'Difícil', 'O senador Joseph McCarthy foi a figura central deste período.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um movimento pelos direitos civis', 0),
+(@id_pergunta, 'Uma intensa perseguição a supostos comunistas e simpatizantes', 1),
+(@id_pergunta, 'Um programa de exploração espacial', 0),
+(@id_pergunta, 'Uma política de aproximação com a China', 0),
+(@id_pergunta, 'Um movimento artístico de vanguarda', 0);
+
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'As políticas da "Glasnost" (transparência) e "Perestroika" (reestruturação) foram implementadas por qual líder soviético?', 'Difícil', 'Suas reformas contribuíram para o fim da União Soviética.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Joseph Stalin', 0),
+(@id_pergunta, 'Leonid Brejnev', 0),
+(@id_pergunta, 'Nikita Khrushchev', 0),
+(@id_pergunta, 'Mikhail Gorbachev', 1),
+(@id_pergunta, 'Vladimir Putin', 0);
+
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A "Paz de Vestfália" (1648), que encerrou a Guerra dos Trinta Anos, é um marco para o estabelecimento de qual princípio nas relações internacionais?', 'Difícil', 'É a ideia de que cada Estado tem autoridade exclusiva sobre seu território.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O princípio da intervenção humanitária', 0),
+(@id_pergunta, 'O princípio da soberania dos Estados', 1),
+(@id_pergunta, 'O princípio do livre comércio global', 0),
+(@id_pergunta, 'O direito à autodeterminação dos povos', 0),
+(@id_pergunta, 'O princípio da segurança coletiva', 0);
+
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi a "Revolta da Chibata" no Rio de Janeiro em 1910?', 'Difícil', 'Foi liderada por João Cândido, o "Almirante Negro".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma revolta de operários por melhores salários', 0),
+(@id_pergunta, 'Um motim de marinheiros contra os castigos corporais na Marinha', 1),
+(@id_pergunta, 'Uma rebelião de sertanejos contra os coronéis', 0),
+(@id_pergunta, 'Um levante militar para derrubar o presidente', 0),
+(@id_pergunta, 'Um protesto de estudantes contra o aumento das mensalidades', 0);
+
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O conceito de "Destino Manifesto" foi usado no século XIX para justificar a expansão territorial de qual país?', 'Difícil', 'Era a crença de que a expansão "de mar a mar" era uma vontade divina.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Império Britânico', 0),
+(@id_pergunta, 'Estados Unidos', 1),
+(@id_pergunta, 'Império Russo', 0),
+(@id_pergunta, 'Império do Brasil', 0),
+(@id_pergunta, 'França Napoleônica', 0);
+
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O "Ato Institucional Número 5" (AI-5) é considerado o mais duro da Ditadura Militar brasileira porque:', 'Difícil', 'Aprofundou a repressão e a censura.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Iniciou o período da Ditadura Militar', 0),
+(@id_pergunta, 'Fechou o Congresso Nacional, suspendeu garantias constitucionais e instituiu a censura prévia', 1),
+(@id_pergunta, 'Concedeu anistia aos presos políticos', 0),
+(@id_pergunta, 'Criou o bipartidarismo (ARENA e MDB)', 0),
+(@id_pergunta, 'Estabeleceu eleições diretas para governadores', 0);
+
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'As "Reformas de Base" propostas pelo presidente João Goulart, e que serviram como pretexto para o Golpe de 1964, incluíam:', 'Difícil', 'Visavam mudanças estruturais no país.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Apenas a privatização de empresas estatais', 0),
+(@id_pergunta, 'Reformas agrária, urbana, tributária e educacional', 1),
+(@id_pergunta, 'O alinhamento militar com os Estados Unidos', 0),
+(@id_pergunta, 'A proibição de greves e sindicatos', 0),
+(@id_pergunta, 'A adoção do parlamentarismo', 0);
+
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi a "Guerra do Ópio" em meados do século XIX?', 'Difícil', 'Foi um conflito entre uma potência europeia e a China.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma guerra entre traficantes na Colômbia', 0),
+(@id_pergunta, 'Um conflito entre o Império Britânico e a China pelo comércio de ópio', 1),
+(@id_pergunta, 'Uma rebelião de camponeses no Afeganistão', 0),
+(@id_pergunta, 'Uma guerra entre EUA e México', 0),
+(@id_pergunta, 'Uma campanha de saúde pública na Índia', 0);
+
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O Plano Schlieffen foi uma estratégia militar de qual país no início da Primeira Guerra Mundial?', 'Difícil', 'Previa uma guerra em duas frentes, contra a França e a Rússia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'França', 0),
+(@id_pergunta, 'Rússia', 0),
+(@id_pergunta, 'Grã-Bretanha', 0),
+(@id_pergunta, 'Alemanha', 1),
+(@id_pergunta, 'Áustria-Hungria', 0);
+
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'A transferência da capital do Brasil Colônia de Salvador para o Rio de Janeiro em 1763 está diretamente ligada à:', 'Difícil', 'A nova capital ficava mais perto da principal atividade econômica da época.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Produção de açúcar no Nordeste', 0),
+(@id_pergunta, 'Exploração de ouro e diamantes na região de Minas Gerais', 1),
+(@id_pergunta, 'Criação de gado no Sul', 0),
+(@id_pergunta, 'Ameaça de invasões francesas em Salvador', 0),
+(@id_pergunta, 'Exploração do pau-brasil na Mata Atlântica', 0);
+
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi a "Querela das Investiduras" na Idade Média?', 'Difícil', 'Foi uma disputa de poder entre o Papa e o Imperador.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um debate teológico sobre a natureza de Cristo', 0),
+(@id_pergunta, 'Um conflito entre o Papado e o Sacro Império pela nomeação de bispos', 1),
+(@id_pergunta, 'Uma guerra entre reinos cristãos e muçulmanos', 0),
+(@id_pergunta, 'Uma disputa pela posse de relíquias sagradas', 0),
+(@id_pergunta, 'Uma controvérsia sobre a tradução da Bíblia', 0);
+
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O que foi a "Doutrina Truman", enunciada no início da Guerra Fria?', 'Difícil', 'Marcou o posicionamento dos EUA contra o avanço do socialismo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A política de boa vizinhança com a América Latina', 0),
+(@id_pergunta, 'A política de apoiar nações livres contra a subjugação comunista (contenção)', 1),
+(@id_pergunta, 'O plano de criação da CIA', 0),
+(@id_pergunta, 'A doutrina de não intervenção em conflitos europeus', 0),
+(@id_pergunta, 'O programa de desenvolvimento nuclear americano', 0);
+
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'O movimento artístico e cultural que floresceu na Europa no século XV e XVI, caracterizado pela revalorização da cultura greco-romana, foi o:', 'Difícil', 'Significa "nascer de novo".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Gótico', 0),
+(@id_pergunta, 'Barroco', 0),
+(@id_pergunta, 'Renascentismo', 1),
+(@id_pergunta, 'Romantismo', 0),
+(@id_pergunta, 'Iluminismo', 0);
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (6, 1, 'Qual foi a principal característica da "Noite das Garrafadas", no Período Regencial brasileiro?', 'Difícil', 'Foi um confronto de rua entre apoiadores e opositores de Dom Pedro I.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma celebração pacífica pela abdicação de Dom Pedro I', 0),
+(@id_pergunta, 'Um confronto entre brasileiros e portugueses no Rio de Janeiro', 1),
+(@id_pergunta, 'Uma revolta de escravos em uma fazenda de café', 0),
+(@id_pergunta, 'A quebra de garrafas de vinho importado em protesto', 0),
+(@id_pergunta, 'Um motim no Exército pedindo a volta do Imperador', 0);
+-- =================================================================
 -- ||                      Geografia                              ||
 -- =================================================================
 -- =================================================================
