@@ -12,7 +12,7 @@ VALUES ('Língua Portuguesa'),
     ('Filosofia'),
     ('Sociologia'),
     ('Inglês'),
-    -- ('Espanhol'),
+    ('Espanhol'),
     ('Artes');
 -- Conta root
 INSERT INTO professor (nome, email, hash_senha, descricao, coordenador)
@@ -8207,7 +8207,8 @@ INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
 (@id_pergunta, 'Ferdinand Tönnies', 0);
 
 -- Pergunta 16
-INSERT INTO pergunta (id_pergunta, titulo, dificuldade, dica) VALUES (9, 1, 'O que é a "indústria cultural", segundo Adorno e Horkheimer?', 'Fácil', 'Relaciona-se com a produção em massa de filmes, músicas e programas de TV.');
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é a "indústria cultural", segundo Adorno e Horkheimer?', 'Fácil', 'Relaciona-se com a produção em massa de filmes, músicas e programas de TV.');
+SET @id_pergunta = LAST_INSERT_ID();
 INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
 (@id_pergunta, 'O conjunto de museus e teatros de uma cidade', 0),
 (@id_pergunta, 'A transformação da cultura em mercadoria para consumo em massa', 1),
