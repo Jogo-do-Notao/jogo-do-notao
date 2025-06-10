@@ -8,6 +8,7 @@ import com.poliedro.jogodonotao.pergunta.Pergunta;
 import com.poliedro.jogodonotao.usuario.Aluno;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * Classe DAO para a entidade Partida.
@@ -238,5 +239,57 @@ public class PartidaDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratar o erro
         }
+    }
+
+    /**
+     * Obtêm as partidas de um aluno, filtrada pelo status da partida.
+     *
+     * @param aluno         Aluno cujas partidas serão buscadas.
+     * @param partidaStatus Status da partida para filtrar as partidas buscadas.
+     */
+    public static ArrayList<Partida> buscarPartidas(Aluno aluno, PartidaStatus partidaStatus) {
+        // Query SQL
+        final String sql = "SELECT * FROM partida WHERE " + PartidaColuna.ALUNO.get() + " = ? AND " + PartidaColuna.STATUS.get() + " = ?";
+
+        // Lista de partidas a serem retornadas
+        ArrayList<Partida> partidas = new ArrayList<>();
+
+        // Executar query
+        try (
+                Connection conexao = ConexaoDB.getConnection();
+                PreparedStatement stmt = conexao.prepareStatement(sql)
+        ) {
+            // Substituir placeholders
+            stmt.setInt(1, aluno.getId());
+            stmt.setString(2, partidaStatus.get());
+
+            // Executar query e obter resultado
+            ResultSet res = stmt.executeQuery();
+
+            // Extrair tuplas correspondentes
+            while (res.next()) {
+                // Extrair atributos
+                int idPartida = res.getInt(PartidaColuna.ID.get());
+                int idMateria = res.getInt(PartidaColuna.MATERIA.get());
+                int rodada = res.getInt(PartidaColuna.RODADA.get());
+                int pontuacaoAcumulada = res.getInt(PartidaColuna.PONTUACAO_ACUMULADA.get());
+                int pontuacaoCheckpoint = res.getInt(PartidaColuna.PONTUACAO_CHECKPOINT.get());
+                int ajudaEliminar = res.getInt(PartidaColuna.AJUDA_ELIMINAR.get());
+                int ajudaDica = res.getInt(PartidaColuna.AJUDA_DICA.get());
+                int ajudaPular = res.getInt(PartidaColuna.AJUDA_PULAR.get());
+
+                // Adicionar partida à lista
+                partidas.add(
+                        new Partida(idPartida, aluno, MateriaDAO.buscarPorId(idMateria), partidaStatus, rodada, new Pergunta[15], pontuacaoAcumulada, pontuacaoCheckpoint, ajudaEliminar, ajudaDica, ajudaPular)
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e); // tratar o erro
+        } finally {
+            // Fechar conexão com o banco de dados
+            ConexaoDB.closeConnection();
+        }
+        // Retornar lista de partidas
+        return partidas;
     }
 }

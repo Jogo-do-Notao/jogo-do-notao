@@ -1,6 +1,9 @@
 package com.poliedro.jogodonotao.controller;
 
 import com.poliedro.jogodonotao.App;
+import com.poliedro.jogodonotao.database.dao.PartidaDAO;
+import com.poliedro.jogodonotao.jogo.Partida;
+import com.poliedro.jogodonotao.jogo.PartidaStatus;
 import com.poliedro.jogodonotao.usuario.Aluno;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -8,11 +11,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -20,6 +26,24 @@ import java.util.ResourceBundle;
  * Classe controladora da tela do painel do aluno.
  */
 public class ControlePainelAluno implements Initializable {
+
+    /**
+     * Tabela com as partidas em andamento do aluno.
+     */
+    @FXML
+    private TableView<Partida> partidasEmAndamento;
+
+    @FXML
+    private TableColumn<Partida, String> colunaMateria;
+
+    @FXML
+    private TableColumn<Partida, String> colunaPontuacaoAcumulada;
+
+    @FXML
+    private TableColumn<Partida, String> colunaPontuacaoCheckpoint;
+
+    @FXML
+    private TableColumn<Partida, String> colunaProgresso;
 
     /**
      * Texto de boas-vindas com o nome do aluno.
@@ -58,6 +82,29 @@ public class ControlePainelAluno implements Initializable {
         textRA.setText("RA: " + Aluno.getSessaoAtiva().getRa());
         textTurma.setText("Turma: " + Aluno.getSessaoAtiva().getTurma().getNome());
         textPontuacao.setText(Aluno.getSessaoAtiva().getPontuacaoFormatada());
+
+        // Carregar as partidas em andamento do aluno
+        exibirPartidasEmAndamento();
+    }
+
+    /**
+     * Método para preencher a tabela de partidas em andamento.
+     */
+    private void exibirPartidasEmAndamento() {
+        // Limpar a tabela antes de adicionar os dados
+        partidasEmAndamento.getItems().clear();
+
+        // Carregar partidas em andamento do aluno
+        ArrayList<Partida> partidasEmAndamentoLista = PartidaDAO.buscarPartidas(
+                Aluno.getSessaoAtiva(),
+                PartidaStatus.ANDAMENTO
+        );
+
+        // Adicionar as partidas à tabela
+        for (Partida partida : partidasEmAndamentoLista) {
+            // Adiciona a partida à tabela
+            this.partidasEmAndamento.getItems().add(partida);
+        }
     }
 
     /**
