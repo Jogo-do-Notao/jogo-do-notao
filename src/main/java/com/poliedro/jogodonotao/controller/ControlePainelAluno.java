@@ -74,6 +74,11 @@ public class ControlePainelAluno implements Initializable {
      */
     @FXML
     private Button botaoContinuarPartida;
+    /**
+     * Botão de abandonar partida.
+     */
+    @FXML
+    private Button botaoAbandonarPartida;
 
     /**
      * Método executado ao abrir o scene.
@@ -90,6 +95,9 @@ public class ControlePainelAluno implements Initializable {
         // Fazer binding entre a tabela de partidas em andamento e o botão de continuar partida
         // Habilitar o botão apenas se houver uma partida selecionada
         botaoContinuarPartida.disableProperty().bind(
+                partidasEmAndamento.getSelectionModel().selectedItemProperty().isNull()
+        );
+        botaoAbandonarPartida.disableProperty().bind(
                 partidasEmAndamento.getSelectionModel().selectedItemProperty().isNull()
         );
 
@@ -159,6 +167,18 @@ public class ControlePainelAluno implements Initializable {
         Partida.continuarPartida(
                 partidasEmAndamento.getSelectionModel().getSelectedItem()
         );
+    }
+
+    /**
+     * Desistir de uma partida selecionada.
+     */
+    @FXML
+    void desistirDaPartida(ActionEvent event) {
+        // Obter a partida selecionada na tabela e chamar seu método de abandonar
+        partidasEmAndamento.getSelectionModel().getSelectedItem().abandonar();
+
+        // Atualizar texto da pontuação do aluno
+        textPontuacao.setText(Aluno.getSessaoAtiva().getPontuacaoFormatada());
     }
 
     /**

@@ -1,6 +1,5 @@
 package com.poliedro.jogodonotao.controller.areaAluno.partidas;
 
-import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.jogo.Partida;
 import com.poliedro.jogodonotao.pergunta.Alternativa;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
@@ -121,9 +120,13 @@ public class ControleTelaPartida implements Initializable {
         );
     }
 
+    /**
+     * Abandona a partida atual, mudando seu status e adicionando a pontuação acumulada ao aluno.
+     */
     @FXML
     void desistirDaPartida(ActionEvent event) {
-
+        // Abandonar partida
+        partida.abandonar();
     }
 
     @FXML

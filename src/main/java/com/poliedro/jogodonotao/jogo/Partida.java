@@ -11,10 +11,12 @@ import com.poliedro.jogodonotao.usuario.Aluno;
 import com.poliedro.jogodonotao.utils.Formatador;
 import javafx.animation.PauseTransition;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.Random;
 
 /**
@@ -344,7 +346,7 @@ public class Partida {
      */
     public void setStatus(PartidaStatus status) {
         this.status = status; // atualizar objeto
-        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.STATUS);
+        PartidaDAO.atualizarPartida(this, PartidaDAO.PartidaColuna.STATUS); // atualizar no db
     }
 
     /**
@@ -542,6 +544,50 @@ public class Partida {
     private static void encerrarPartida() {
         // Limpar partida em andamento
         partidaEmAndamento = null;
+    }
+
+    /**
+     * Abandona a partida atual, mudando seu status para "abandonada" e adicionando a pontuação acumulada ao aluno.
+     *
+     * @param redirecionar Se deve redirecionar para a tela de fim da partida. (padrão: {@code true})
+     */
+    public void abandonar() {
+        // Mensagem de confirmação
+        Alert msgConfirmacao = new Alert(Alert.AlertType.CONFIRMATION);
+        msgConfirmacao.setTitle("Desistir da Partida");
+        msgConfirmacao.setHeaderText("Você tem certeza que deseja desistir da partida?");
+        msgConfirmacao.setContentText("A pontuação acumulada será adicionada ao seu perfil, mas você não poderá retomar a partida.");
+        // Obter resposta
+        Optional<ButtonType> decisao = msgConfirmacao.showAndWait();
+
+        // Se cancelou, encerra o método
+        if (decisao.isEmpty() || decisao.get() == ButtonType.CANCEL) {
+            return; // encerrar método
+        }
+
+        // Mensagem de desistência
+        Alert msgSaindo = new Alert(Alert.AlertType.INFORMATION);
+        msgSaindo.setTitle("Desistindo da Partida");
+        msgSaindo.setHeaderText("Desistindo da Partida...");
+        msgSaindo.setContentText("A partida está sendo encerrada.\n\nSua pontuação acumulada será adicionada ao seu perfil.");
+        msgSaindo.show();
+
+        // Encerrar a partida
+        encerrarPartida();
+
+        // Atualizar status da partida
+        this.setStatus(PartidaStatus.ABANDONADA);
+        // Atualizar pontuação do aluno
+        this.ALUNO.setPontuacao(this.getPontuacaoAcumulada());
+
+        // Redirecionar para a tela de fim da partida
+        try {
+            App.changeScene("area-aluno/painel-aluno", "Painel do Aluno");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            msgSaindo.close(); // fechar mensagem de salvamento
+        }
     }
 
     /**
