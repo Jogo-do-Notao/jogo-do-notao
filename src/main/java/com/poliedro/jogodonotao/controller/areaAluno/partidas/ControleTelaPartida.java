@@ -1,5 +1,6 @@
 package com.poliedro.jogodonotao.controller.areaAluno.partidas;
 
+import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.jogo.Partida;
 import com.poliedro.jogodonotao.pergunta.Alternativa;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
@@ -7,6 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
@@ -134,7 +137,17 @@ public class ControleTelaPartida implements Initializable {
      */
     @FXML
     void exibirInstrucoes(ActionEvent event) {
+        // Ícone do jogo
+        Image icon = new Image( // Carregar png dos recursos
+                Objects.requireNonNull(App.class.getResourceAsStream
+                        ("/com/poliedro/jogodonotao/images/logo-poliedro/poliedro-favicon.png")));
+        ImageView iconView = new ImageView(icon);
+        iconView.setFitHeight(48);
+        iconView.setFitWidth(48);
+
+        // Exibir mensagem
         Alert instrucoes = new Alert(Alert.AlertType.INFORMATION);
+        instrucoes.setGraphic(iconView); // Definir ícone
         instrucoes.setTitle("Instruções do Jogo");
         instrucoes.setHeaderText("Como Jogar o Jogo do Notão");
         // Texto das instruções
