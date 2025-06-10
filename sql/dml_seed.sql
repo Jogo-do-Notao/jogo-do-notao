@@ -1150,6 +1150,983 @@ VALUES (@id_pergunta, 'Quiasmo', 0),
 -- ||                      Matemática                             ||
 -- =================================================================
 -- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o resultado de 15% de 200?',
+        'Fácil',
+        'Multiplique 200 por 0,15.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '15', 0),
+    (@id_pergunta, '20', 0),
+    (@id_pergunta, '30', 1),
+    (@id_pergunta, '45', 0),
+    (@id_pergunta, '50', 0);
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Se um quadrado tem lado de 5 cm, qual é a sua área?',
+        'Fácil',
+        'A área do quadrado é o lado elevado ao quadrado.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '10 cm²', 0),
+    (@id_pergunta, '20 cm²', 0),
+    (@id_pergunta, '25 cm²', 1),
+    (@id_pergunta, '30 cm²', 0),
+    (@id_pergunta, '50 cm²', 0);
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o valor de "x" na equação: 2x + 3 = 11?',
+        'Fácil',
+        'Isole o "x" passando os números para o outro lado.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '2', 0),
+    (@id_pergunta, '3', 0),
+    (@id_pergunta, '4', 1),
+    (@id_pergunta, '5', 0),
+    (@id_pergunta, '7', 0);
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Quantos lados tem um hexágono?',
+        'Fácil',
+        'Pense no prefixo "hexa".'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '5', 0),
+    (@id_pergunta, '6', 1),
+    (@id_pergunta, '7', 0),
+    (@id_pergunta, '8', 0),
+    (@id_pergunta, '10', 0);
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é a raiz quadrada de 81?',
+        'Fácil',
+        'Qual número, multiplicado por ele mesmo, resulta em 81?'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '7', 0),
+    (@id_pergunta, '8', 0),
+    (@id_pergunta, '9', 1),
+    (@id_pergunta, '10', 0),
+    (@id_pergunta, '11', 0);
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Se um relógio marca 3 horas, qual é o ângulo formado pelos ponteiros?',
+        'Fácil',
+        'Um círculo completo tem 360 graus.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '45°', 0),
+    (@id_pergunta, '60°', 0),
+    (@id_pergunta, '90°', 1),
+    (@id_pergunta, '120°', 0),
+    (@id_pergunta, '180°', 0);
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é o próximo número na sequência: 2, 4, 6, 8, ...?',
+        'Fácil',
+        'É uma sequência de números pares.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '9', 0),
+    (@id_pergunta, '10', 1),
+    (@id_pergunta, '11', 0),
+    (@id_pergunta, '12', 0),
+    (@id_pergunta, '14', 0);
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o resultado da operação: 5 * (4 + 2)?',
+        'Fácil',
+        'Primeiro resolva o que está dentro dos parênteses.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '22', 0),
+    (@id_pergunta, '25', 0),
+    (@id_pergunta, '30', 1),
+    (@id_pergunta, '32', 0),
+    (@id_pergunta, '40', 0);
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o valor de 2 elevado à terceira potência (2³)?',
+        'Fácil',
+        'É o mesmo que 2 x 2 x 2.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '4', 0),
+    (@id_pergunta, '6', 0),
+    (@id_pergunta, '8', 1),
+    (@id_pergunta, '9', 0),
+    (@id_pergunta, '16', 0);
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Um triângulo com todos os lados iguais é chamado de:',
+        'Fácil',
+        'O prefixo "equi" significa igual.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Isósceles', 0),
+    (@id_pergunta, 'Escaleno', 0),
+    (@id_pergunta, 'Retângulo', 0),
+    (@id_pergunta, 'Equilátero', 1),
+    (@id_pergunta, 'Acutângulo', 0);
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é o resultado de 1/2 + 1/4?',
+        'Fácil',
+        'Encontre o mínimo múltiplo comum dos denominadores.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1/6', 0),
+    (@id_pergunta, '2/6', 0),
+    (@id_pergunta, '3/4', 1),
+    (@id_pergunta, '2/4', 0),
+    (@id_pergunta, '1/3', 0);
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Se um produto custa R$ 50 e tem um desconto de 10%, qual o valor final?',
+        'Fácil',
+        'Calcule 10% de 50 e subtraia do valor original.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'R$ 40', 0),
+    (@id_pergunta, 'R$ 45', 1),
+    (@id_pergunta, 'R$ 48', 0),
+    (@id_pergunta, 'R$ 55', 0),
+    (@id_pergunta, 'R$ 60', 0);
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o perímetro de um retângulo com lados de 4 cm e 6 cm?',
+        'Fácil',
+        'Perímetro é a soma de todos os lados.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '10 cm', 0),
+    (@id_pergunta, '16 cm', 0),
+    (@id_pergunta, '20 cm', 1),
+    (@id_pergunta, '24 cm²', 0),
+    (@id_pergunta, '24 cm', 0);
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Quantos minutos existem em 3 horas?',
+        'Fácil',
+        'Uma hora tem 60 minutos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '120', 0),
+    (@id_pergunta, '150', 0),
+    (@id_pergunta, '180', 1),
+    (@id_pergunta, '210', 0),
+    (@id_pergunta, '240', 0);
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual número é o sucessor de 999?',
+        'Fácil',
+        'É o número que vem imediatamente depois.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '998', 0),
+    (@id_pergunta, '100', 0),
+    (@id_pergunta, '1000', 1),
+    (@id_pergunta, '1001', 0),
+    (@id_pergunta, '9999', 0);
+-- Pergunta 16
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'O que representa o "Pi" (π) em matemática?',
+        'Fácil',
+        'É uma constante relacionada a círculos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'A área do triângulo', 0),
+    (
+        @id_pergunta,
+        'A relação entre o perímetro da circunferência e seu diâmetro',
+        1
+    ),
+    (
+        @id_pergunta,
+        'A hipotenusa de um triângulo retângulo',
+        0
+    ),
+    (@id_pergunta, 'O volume de um cubo', 0),
+    (@id_pergunta, 'Um número primo', 0);
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é o dobro de 25 mais 10?',
+        'Fácil',
+        'Primeiro calcule o dobro de 25.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '50', 0),
+    (@id_pergunta, '60', 1),
+    (@id_pergunta, '35', 0),
+    (@id_pergunta, '70', 0),
+    (@id_pergunta, '45', 0);
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o resultado de 100 dividido por 4?',
+        'Fácil',
+        'Pense em dividir R$ 100 para 4 pessoas.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '20', 0),
+    (@id_pergunta, '25', 1),
+    (@id_pergunta, '30', 0),
+    (@id_pergunta, '40', 0),
+    (@id_pergunta, '50', 0);
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Um ângulo de 180 graus é chamado de:',
+        'Fácil',
+        'É um ângulo que forma uma linha reta.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Agudo', 0),
+    (@id_pergunta, 'Obtuso', 0),
+    (@id_pergunta, 'Reto', 0),
+    (@id_pergunta, 'Raso', 1),
+    (@id_pergunta, 'Completo', 0);
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é a média aritmética simples entre 10, 20 e 30?',
+        'Fácil',
+        'Some os três números e divida o resultado por 3.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '15', 0),
+    (@id_pergunta, '20', 1),
+    (@id_pergunta, '25', 0),
+    (@id_pergunta, '30', 0),
+    (@id_pergunta, '60', 0);
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Quais são as raízes da equação x² - 5x + 6 = 0?',
+        'Médio',
+        'Use a fórmula de Bhaskara.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1 e 6', 0),
+    (@id_pergunta, '2 e 3', 1),
+    (@id_pergunta, '-2 e -3', 0),
+    (@id_pergunta, '-1 e -6', 0),
+    (@id_pergunta, 'Não possui raízes reais', 0);
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é a área de um círculo com raio de 10 cm? (Use π = 3,14)',
+        'Médio',
+        'A fórmula é A = π * r².'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '31,4 cm²', 0),
+    (@id_pergunta, '62,8 cm²', 0),
+    (@id_pergunta, '100 cm²', 0),
+    (@id_pergunta, '314 cm²', 1),
+    (@id_pergunta, '3140 cm²', 0);
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o valor do seno de 30 graus?',
+        'Médio',
+        'Lembre-se da tabela de ângulos notáveis.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1', 0),
+    (@id_pergunta, '1/2', 1),
+    (@id_pergunta, '√3/2', 0),
+    (@id_pergunta, '√2/2', 0),
+    (@id_pergunta, '0', 0);
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o volume de um cubo com aresta de 4 cm?',
+        'Médio',
+        'O volume do cubo é a aresta elevada ao cubo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '12 cm³', 0),
+    (@id_pergunta, '16 cm³', 0),
+    (@id_pergunta, '48 cm³', 0),
+    (@id_pergunta, '64 cm³', 1),
+    (@id_pergunta, '256 cm³', 0);
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Em um triângulo retângulo, os catetos medem 3 cm e 4 cm. Qual a medida da hipotenusa?',
+        'Médio',
+        'Use o Teorema de Pitágoras: a² = b² + c².'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '5 cm', 1),
+    (@id_pergunta, '6 cm', 0),
+    (@id_pergunta, '7 cm', 0),
+    (@id_pergunta, '8 cm', 0),
+    (@id_pergunta, '9 cm', 0);
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual a probabilidade de, ao lançar um dado de 6 faces, obter um número maior que 4?',
+        'Médio',
+        'Os casos favoráveis são 5 e 6.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1/6', 0),
+    (@id_pergunta, '1/3', 1),
+    (@id_pergunta, '1/2', 0),
+    (@id_pergunta, '2/3', 0),
+    (@id_pergunta, '5/6', 0);
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Se log₂(x) = 3, qual o valor de x?',
+        'Médio',
+        'Use a definição de logaritmo: base elevada ao resultado é igual ao logaritmando.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '6', 0),
+    (@id_pergunta, '8', 1),
+    (@id_pergunta, '9', 0),
+    (@id_pergunta, '1/3', 0),
+    (@id_pergunta, '5', 0);
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é a soma dos ângulos internos de um pentágono?',
+        'Médio',
+        'A fórmula é S = (n-2) * 180, onde n é o número de lados.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '180°', 0),
+    (@id_pergunta, '360°', 0),
+    (@id_pergunta, '540°', 1),
+    (@id_pergunta, '720°', 0),
+    (@id_pergunta, '900°', 0);
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Uma loja aumenta o preço de um produto de R$ 80 para R$ 100. Qual foi o percentual de aumento?',
+        'Médio',
+        'Calcule a diferença de preço e divida pelo valor original.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '10%', 0),
+    (@id_pergunta, '15%', 0),
+    (@id_pergunta, '20%', 0),
+    (@id_pergunta, '25%', 1),
+    (@id_pergunta, '30%', 0);
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Resolva o sistema de equações: x + y = 7 e x - y = 1.',
+        'Médio',
+        'Some as duas equações para eliminar o "y".'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'x=3, y=4', 0),
+    (@id_pergunta, 'x=4, y=3', 1),
+    (@id_pergunta, 'x=5, y=2', 0),
+    (@id_pergunta, 'x=2, y=5', 0),
+    (@id_pergunta, 'x=6, y=1', 0);
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o 10º termo da Progressão Aritmética (P.A.) com a₁ = 2 e razão r = 3?',
+        'Médio',
+        'Use a fórmula do termo geral: aₙ = a₁ + (n-1)r.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '27', 0),
+    (@id_pergunta, '29', 1),
+    (@id_pergunta, '30', 0),
+    (@id_pergunta, '32', 0),
+    (@id_pergunta, '35', 0);
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é a equação da reta que passa pelos pontos (1, 2) e (3, 6)?',
+        'Médio',
+        'Encontre o coeficiente angular e depois use a fórmula y - y₀ = m(x - x₀).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'y = x + 1', 0),
+    (@id_pergunta, 'y = 2x', 1),
+    (@id_pergunta, 'y = 3x - 1', 0),
+    (@id_pergunta, 'y = x + 3', 0),
+    (@id_pergunta, 'y = 2x + 1', 0);
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é a área de um losango cujas diagonais medem 10 cm e 8 cm?',
+        'Médio',
+        'A fórmula é A = (D * d) / 2.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '18 cm²', 0),
+    (@id_pergunta, '40 cm²', 1),
+    (@id_pergunta, '80 cm²', 0),
+    (@id_pergunta, '90 cm²', 0),
+    (@id_pergunta, '100 cm²', 0);
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é a juros simples produzidos por um capital de R$ 1.200, aplicado a 5% ao mês, durante 4 meses?',
+        'Médio',
+        'Use a fórmula J = C * i * t.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'R$ 60', 0),
+    (@id_pergunta, 'R$ 120', 0),
+    (@id_pergunta, 'R$ 200', 0),
+    (@id_pergunta, 'R$ 240', 1),
+    (@id_pergunta, 'R$ 300', 0);
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o valor de 3! (fatorial de 3)?',
+        'Médio',
+        'É o produto de todos os inteiros positivos menores ou iguais a 3.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '3', 0),
+    (@id_pergunta, '5', 0),
+    (@id_pergunta, '6', 1),
+    (@id_pergunta, '9', 0),
+    (@id_pergunta, '12', 0);
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'A soma das idades de pai e filho é 45 anos. A idade do pai é 4 vezes a do filho. Quais são as idades?',
+        'Médio',
+        'Monte um sistema de equações: P + F = 45 e P = 4F.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Pai: 30, Filho: 15', 0),
+    (@id_pergunta, 'Pai: 35, Filho: 10', 0),
+    (@id_pergunta, 'Pai: 36, Filho: 9', 1),
+    (@id_pergunta, 'Pai: 40, Filho: 5', 0),
+    (@id_pergunta, 'Pai: 32, Filho: 13', 0);
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual a área de um triângulo equilátero de lado 4 cm?',
+        'Médio',
+        'A fórmula é A = (l² * √3) / 4.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '2√3 cm²', 0),
+    (@id_pergunta, '4√3 cm²', 1),
+    (@id_pergunta, '8√3 cm²', 0),
+    (@id_pergunta, '16 cm²', 0),
+    (@id_pergunta, '16√3 cm²', 0);
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o valor do cosseno de 60 graus?',
+        'Médio',
+        'Lembre-se dos ângulos notáveis, é o mesmo que o seno do seu complemento.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1', 0),
+    (@id_pergunta, '√3/2', 0),
+    (@id_pergunta, '√2/2', 0),
+    (@id_pergunta, '1/2', 1),
+    (@id_pergunta, '0', 0);
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Se f(x) = 2x + 5, qual o valor de f(3)?',
+        'Médio',
+        'Substitua o "x" por 3 na função.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '6', 0),
+    (@id_pergunta, '8', 0),
+    (@id_pergunta, '10', 0),
+    (@id_pergunta, '11', 1),
+    (@id_pergunta, '13', 0);
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é a diagonal de um quadrado de lado 6 cm?',
+        'Médio',
+        'A fórmula é d = l√2.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '6 cm', 0),
+    (@id_pergunta, '6√2 cm', 1),
+    (@id_pergunta, '12 cm', 0),
+    (@id_pergunta, '12√2 cm', 0),
+    (@id_pergunta, '36 cm', 0);
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'De quantas maneiras 5 pessoas podem sentar em 5 cadeiras enfileiradas?',
+        'Difícil',
+        'Isso é um problema de permutação simples.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '25', 0),
+    (@id_pergunta, '60', 0),
+    (@id_pergunta, '120', 1),
+    (@id_pergunta, '240', 0),
+    (@id_pergunta, '720', 0);
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o montante de uma aplicação a juros compostos de R$ 1.000, a 10% ao ano, por 3 anos?',
+        'Difícil',
+        'Use a fórmula M = C * (1 + i)ᵗ.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'R$ 1.300,00', 0),
+    (@id_pergunta, 'R$ 1.331,00', 1),
+    (@id_pergunta, 'R$ 1.400,00', 0),
+    (@id_pergunta, 'R$ 1.452,00', 0),
+    (@id_pergunta, 'R$ 3.000,00', 0);
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o 5º termo da Progressão Geométrica (P.G.) com a₁ = 3 e razão q = 2?',
+        'Difícil',
+        'A fórmula é aₙ = a₁ * q^(n-1).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '24', 0),
+    (@id_pergunta, '30', 0),
+    (@id_pergunta, '32', 0),
+    (@id_pergunta, '48', 1),
+    (@id_pergunta, '64', 0);
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o valor de log₃(81)?',
+        'Difícil',
+        'A que potência o 3 deve ser elevado para resultar em 81?'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '3', 0),
+    (@id_pergunta, '4', 1),
+    (@id_pergunta, '9', 0),
+    (@id_pergunta, '27', 0),
+    (@id_pergunta, '81', 0);
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Uma urna contém 4 bolas azuis e 6 bolas vermelhas. Qual a probabilidade de retirar 2 bolas azuis seguidas, sem reposição?',
+        'Difícil',
+        'Multiplique a probabilidade de tirar a primeira azul pela de tirar a segunda azul.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1/5', 0),
+    (@id_pergunta, '2/15', 1),
+    (@id_pergunta, '4/10', 0),
+    (@id_pergunta, '6/25', 0),
+    (@id_pergunta, '1/3', 0);
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual a área de um hexágono regular de lado 6 cm?',
+        'Difícil',
+        'A área é 6 vezes a área de um triângulo equilátero de mesmo lado.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '36√3 cm²', 0),
+    (@id_pergunta, '54√3 cm²', 1),
+    (@id_pergunta, '72√3 cm²', 0),
+    (@id_pergunta, '108 cm²', 0),
+    (@id_pergunta, '216 cm²', 0);
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é o determinante da matriz [[2, 1], [3, 4]]?',
+        'Difícil',
+        'Calcule o produto da diagonal principal menos o produto da diagonal secundária.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '2', 0),
+    (@id_pergunta, '5', 1),
+    (@id_pergunta, '8', 0),
+    (@id_pergunta, '11', 0),
+    (@id_pergunta, '10', 0);
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é a soma dos infinitos termos da P.G. (1/2, 1/4, 1/8, ...)?',
+        'Difícil',
+        'Use a fórmula da soma infinita: S = a₁ / (1 - q).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1', 1),
+    (@id_pergunta, '2', 0),
+    (@id_pergunta, '1/2', 0),
+    (@id_pergunta, '3/4', 0),
+    (@id_pergunta, 'Infinito', 0);
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Quantos anagramas tem a palavra "CASA"?',
+        'Difícil',
+        'Use a permutação com repetição: n! / (r₁! * r₂! * ...).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '24', 0),
+    (@id_pergunta, '12', 1),
+    (@id_pergunta, '8', 0),
+    (@id_pergunta, '6', 0),
+    (@id_pergunta, '4', 0);
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual é o valor do número complexo z = (1 + i)²?',
+        'Difícil',
+        'Aplique o produto notável (a+b)² = a² + 2ab + b² e lembre que i² = -1.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '2i', 1),
+    (@id_pergunta, '1 - i', 0),
+    (@id_pergunta, '2 - 2i', 0),
+    (@id_pergunta, '2', 0),
+    (@id_pergunta, '-2i', 0);
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o volume de uma esfera de raio 3 cm? (Use π = 3,14)',
+        'Difícil',
+        'A fórmula é V = (4/3) * π * r³.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '28,26 cm³', 0),
+    (@id_pergunta, '37,68 cm³', 0),
+    (@id_pergunta, '113,04 cm³', 1),
+    (@id_pergunta, '94,2 cm³', 0),
+    (@id_pergunta, '314 cm³', 0);
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o coeficiente angular da reta 4x + 2y - 6 = 0?',
+        'Difícil',
+        'Isole o "y" para colocar a equação na forma reduzida y = mx + c.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '4', 0),
+    (@id_pergunta, '2', 0),
+    (@id_pergunta, '-2', 1),
+    (@id_pergunta, '-4', 0),
+    (@id_pergunta, '3', 0);
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Quantos subconjuntos possui um conjunto com 4 elementos?',
+        'Difícil',
+        'O número de subconjuntos é dado por 2ⁿ, onde n é o número de elementos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '4', 0),
+    (@id_pergunta, '8', 0),
+    (@id_pergunta, '16', 1),
+    (@id_pergunta, '24', 0),
+    (@id_pergunta, '32', 0);
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual a área de um setor circular com ângulo central de 60° e raio de 6 cm?',
+        'Difícil',
+        'A área do setor é (ângulo/360) * π * r².'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '2π cm²', 0),
+    (@id_pergunta, '4π cm²', 0),
+    (@id_pergunta, '6π cm²', 1),
+    (@id_pergunta, '8π cm²', 0),
+    (@id_pergunta, '12π cm²', 0);
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o resto da divisão de x³ - 2x² + x + 5 por x - 1?',
+        'Difícil',
+        'Use o Teorema do Resto, calculando P(1).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1', 0),
+    (@id_pergunta, '3', 0),
+    (@id_pergunta, '5', 1),
+    (@id_pergunta, '7', 0),
+    (@id_pergunta, '9', 0);
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'De quantas formas podemos formar uma comissão de 3 pessoas a partir de um grupo de 10?',
+        'Difícil',
+        'Use a fórmula de combinação: C(n, p) = n! / (p! * (n-p)!).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '30', 0),
+    (@id_pergunta, '72', 0),
+    (@id_pergunta, '120', 1),
+    (@id_pergunta, '240', 0),
+    (@id_pergunta, '720', 0);
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o valor da tangente de 45 graus?',
+        'Difícil',
+        'Lembre-se que tan(x) = sen(x) / cos(x).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '0', 0),
+    (@id_pergunta, '1/2', 0),
+    (@id_pergunta, '√3/3', 0),
+    (@id_pergunta, '1', 1),
+    (@id_pergunta, '√3', 0);
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual o volume de um cone com raio da base 5 cm e altura 12 cm?',
+        'Difícil',
+        'A fórmula é V = (1/3) * π * r² * h.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '50π cm³', 0),
+    (@id_pergunta, '75π cm³', 0),
+    (@id_pergunta, '100π cm³', 1),
+    (@id_pergunta, '120π cm³', 0),
+    (@id_pergunta, '300π cm³', 0);
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Qual a solução da inequação 2x - 8 > 4?',
+        'Difícil',
+        'Isole o "x" como faria em uma equação normal.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'x > 2', 0),
+    (@id_pergunta, 'x < 2', 0),
+    (@id_pergunta, 'x > 4', 0),
+    (@id_pergunta, 'x < 6', 0),
+    (@id_pergunta, 'x > 6', 1);
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        2,
+        1,
+        'Se a área de um círculo é 25π cm², qual é o seu diâmetro?',
+        'Difícil',
+        'Primeiro encontre o raio usando A = π * r², depois dobre o valor.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '5 cm', 0),
+    (@id_pergunta, '10 cm', 1),
+    (@id_pergunta, '12,5 cm', 0),
+    (@id_pergunta, '20 cm', 0),
+    (@id_pergunta, '25 cm', 0);
+-- =================================================================
 -- ||                       Biologia                              ||
 -- =================================================================
 -- =================================================================
