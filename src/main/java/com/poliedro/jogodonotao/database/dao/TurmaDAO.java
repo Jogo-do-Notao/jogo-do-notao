@@ -177,7 +177,7 @@ public class TurmaDAO {
                 PreparedStatement stmt = conexao.prepareStatement(sql)
         ) {
             stmt.setString(1, nome);
-            stmt.setInt(2, idProfessor);  // Salva o email do professor
+            stmt.setInt(2, idProfessor);  // Salva o id do professor
             stmt.setString(3, serie);
             stmt.setString(4, descricao);
             int linhasAfetadas = stmt.executeUpdate();

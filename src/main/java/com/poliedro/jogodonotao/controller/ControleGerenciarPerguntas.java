@@ -206,7 +206,7 @@ public class ControleGerenciarPerguntas {
 
     @FXML
     void criarPergunta(ActionEvent event) throws IOException {
-        App.changeScene("area-adm/gerenciar-perguntas/tela-criar-pergunta", "Tela Criar Pergunta");
+        App.abrirTelaCriarPergunta(Professor.getSessaoAtiva().getEmail());
     }
 
     @FXML
