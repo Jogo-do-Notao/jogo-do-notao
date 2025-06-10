@@ -12,7 +12,7 @@ VALUES ('Língua Portuguesa'),
     ('Filosofia'),
     ('Sociologia'),
     ('Inglês'),
-    ('Espanhol'),
+    -- ('Espanhol'),
     ('Artes');
 -- Conta root
 INSERT INTO professor (nome, email, hash_senha, descricao, coordenador)
@@ -9278,10 +9278,620 @@ INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
 (@id_pergunta, 'To start a fight', 0),
 (@id_pergunta, 'To set an animal free', 0),
 (@id_pergunta, 'To make a situation more complicated', 0);
-
 -- =================================================================
 -- ||                       Espanhol                              ||
 -- =================================================================
 -- =================================================================
 -- ||                        Artes                                ||
 -- =================================================================
+-- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Quem pintou a "Mona Lisa"?', 'Fácil', 'Foi um gênio do Renascimento italiano, também inventor e cientista.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Vincent van Gogh', 0),
+(@id_pergunta, 'Pablo Picasso', 0),
+(@id_pergunta, 'Leonardo da Vinci', 1),
+(@id_pergunta, 'Michelangelo', 0),
+(@id_pergunta, 'Claude Monet', 0);
+
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual movimento artístico é conhecido pelo uso de formas geométricas, como cubos e cilindros?', 'Fácil', 'Pablo Picasso foi um de seus pioneiros.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Surrealismo', 0),
+(@id_pergunta, 'Impressionismo', 0),
+(@id_pergunta, 'Cubismo', 1),
+(@id_pergunta, 'Barroco', 0),
+(@id_pergunta, 'Romantismo', 0);
+
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual artista brasileiro(a) pintou o quadro "Abaporu"?', 'Fácil', 'Foi uma figura central do movimento modernista no Brasil.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Di Cavalcanti', 0),
+(@id_pergunta, 'Tarsila do Amaral', 1),
+(@id_pergunta, 'Candido Portinari', 0),
+(@id_pergunta, 'Anita Malfatti', 0),
+(@id_pergunta, 'Romero Britto', 0);
+
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Como se chama uma pintura do próprio artista?', 'Fácil', 'É um retrato de si mesmo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Paisagem', 0),
+(@id_pergunta, 'Natureza-morta', 0),
+(@id_pergunta, 'Retrato', 0),
+(@id_pergunta, 'Autorretrato', 1),
+(@id_pergunta, 'Marinha', 0);
+
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual é o nome da famosa pintura de Vincent van Gogh que retrata um céu noturno e um vilarejo?', 'Fácil', 'O título em português significa "A Noite Estrelada".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Os Girassóis', 0),
+(@id_pergunta, 'A Noite Estrelada', 1),
+(@id_pergunta, 'O Quarto em Arles', 0),
+(@id_pergunta, 'Comedores de Batata', 0),
+(@id_pergunta, 'Auto-Retrato com a Orelha Cortada', 0);
+
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Quais são as três cores primárias?', 'Fácil', 'A mistura delas pode gerar todas as outras cores.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Verde, Roxo e Laranja', 0),
+(@id_pergunta, 'Vermelho, Amarelo e Azul', 1),
+(@id_pergunta, 'Branco, Preto e Cinza', 0),
+(@id_pergunta, 'Rosa, Marrom e Ciano', 0),
+(@id_pergunta, 'Vermelho, Verde e Azul (RGB)', 0);
+
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A arte de criar imagens com pequenos pedaços de pedra ou vidro colorido é chamada de:', 'Fácil', 'Era muito comum na Roma e Bizâncio antigos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Afresco', 0),
+(@id_pergunta, 'Gravura', 0),
+(@id_pergunta, 'Mosaico', 1),
+(@id_pergunta, 'Escultura', 0),
+(@id_pergunta, 'Aquarela', 0);
+
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual artista renascentista pintou o teto da Capela Sistina?', 'Fácil', 'Ele também esculpiu a estátua de Davi.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Rafael', 0),
+(@id_pergunta, 'Donatello', 0),
+(@id_pergunta, 'Leonardo da Vinci', 0),
+(@id_pergunta, 'Michelangelo', 1),
+(@id_pergunta, 'Ticiano', 0);
+
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O movimento artístico que busca representar o mundo dos sonhos e do subconsciente é o:', 'Fácil', 'Salvador Dalí é um de seus artistas mais famosos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Realismo', 0),
+(@id_pergunta, 'Surrealismo', 1),
+(@id_pergunta, 'Cubismo', 0),
+(@id_pergunta, 'Expressionismo', 0),
+(@id_pergunta, 'Fauvismo', 0);
+
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual foi o arquiteto brasileiro responsável pelo planejamento de Brasília?', 'Fácil', 'Ele também projetou a Pampulha em Belo Horizonte.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Lúcio Costa', 0),
+(@id_pergunta, 'Oscar Niemeyer', 1),
+(@id_pergunta, 'Vilanova Artigas', 0),
+(@id_pergunta, 'Lina Bo Bardi', 0),
+(@id_pergunta, 'Affonso Eduardo Reidy', 0);
+
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual é a arte de representar imagens ou objetos em superfícies tridimensionais?', 'Fácil', 'Pode ser feita em mármore, bronze, argila, etc.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Pintura', 0),
+(@id_pergunta, 'Desenho', 0),
+(@id_pergunta, 'Fotografia', 0),
+(@id_pergunta, 'Escultura', 1),
+(@id_pergunta, 'Música', 0);
+
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A famosa pintura "O Grito", que expressa angústia e desespero, foi criada por qual artista?', 'Fácil', 'Ele foi um pintor norueguês, precursor do Expressionismo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Gustav Klimt', 0),
+(@id_pergunta, 'Edvard Munch', 1),
+(@id_pergunta, 'Egon Schiele', 0),
+(@id_pergunta, 'Wassily Kandinsky', 0),
+(@id_pergunta, 'Paul Klee', 0);
+
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual é a principal manifestação artística e cultural do Carnaval brasileiro?', 'Fácil', 'Envolve música, dança, carros alegóricos e fantasias.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O Bumba meu boi', 0),
+(@id_pergunta, 'O desfile das escolas de samba', 1),
+(@id_pergunta, 'A Folia de Reis', 0),
+(@id_pergunta, 'A quadrilha junina', 0),
+(@id_pergunta, 'O Maracatu', 0);
+
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O principal material utilizado para fazer cerâmica e vasos é a:', 'Fácil', 'É um tipo de terra ou barro.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Madeira', 0),
+(@id_pergunta, 'Pedra', 0),
+(@id_pergunta, 'Argila', 1),
+(@id_pergunta, 'Metal', 0),
+(@id_pergunta, 'Areia', 0);
+
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A arte de se expressar através de movimentos corporais ritmados é a:', 'Fácil', 'Pode ser clássica, como o balé, ou popular, como o samba.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Música', 0),
+(@id_pergunta, 'Dança', 1),
+(@id_pergunta, 'Pintura', 0),
+(@id_pergunta, 'Teatro', 0),
+(@id_pergunta, 'Escultura', 0);
+
+-- Pergunta 16
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual escultor francês é o autor da famosa obra "O Pensador"?', 'Fácil', 'Ele é considerado um dos precursores da escultura moderna.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Donatello', 0),
+(@id_pergunta, 'Bernini', 0),
+(@id_pergunta, 'Auguste Rodin', 1),
+(@id_pergunta, 'Brancusi', 0),
+(@id_pergunta, 'Giacometti', 0);
+
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual é a arte de criar imagens através da captura de luz com uma câmera?', 'Fácil', 'O nome significa "escrever com a luz".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Cinema', 0),
+(@id_pergunta, 'Pintura', 0),
+(@id_pergunta, 'Desenho', 0),
+(@id_pergunta, 'Fotografia', 1),
+(@id_pergunta, 'Gravura', 0);
+
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A arte de organizar sons no tempo é chamada de:', 'Fácil', 'É composta por melodia, harmonia e ritmo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Poesia', 0),
+(@id_pergunta, 'Música', 1),
+(@id_pergunta, 'Dança', 0),
+(@id_pergunta, 'Teatro', 0),
+(@id_pergunta, 'Arquitetura', 0);
+
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual é o nome da ferramenta com pelos na ponta, usada para aplicar tinta na tela?', 'Fácil', 'Pode ser de vários tamanhos e formatos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Espátula', 0),
+(@id_pergunta, 'Lápis', 0),
+(@id_pergunta, 'Cinzel', 0),
+(@id_pergunta, 'Pincel', 1),
+(@id_pergunta, 'Rolo', 0);
+
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O Renascimento foi um movimento artístico e cultural que se originou em qual país?', 'Fácil', 'É o país de Leonardo da Vinci e Michelangelo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'França', 0),
+(@id_pergunta, 'Espanha', 0),
+(@id_pergunta, 'Inglaterra', 0),
+(@id_pergunta, 'Alemanha', 0),
+(@id_pergunta, 'Itália', 1);
+
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual era o principal objetivo dos pintores impressionistas?', 'Médio', 'Eles pintavam ao ar livre para observar as mudanças na iluminação.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Representar temas religiosos e mitológicos', 0),
+(@id_pergunta, 'Capturar as impressões momentâneas da luz e da cor', 1),
+(@id_pergunta, 'Criticar a sociedade e a política', 0),
+(@id_pergunta, 'Criar formas geométricas perfeitas', 0),
+(@id_pergunta, 'Expressar emoções e sonhos do subconsciente', 0);
+
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A Semana de Arte Moderna, marco do Modernismo no Brasil, ocorreu em que ano?', 'Médio', 'Comemorou o centenário da Independência do Brasil.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, '1912', 0),
+(@id_pergunta, '1922', 1),
+(@id_pergunta, '1930', 0),
+(@id_pergunta, '1945', 0),
+(@id_pergunta, '1964', 0);
+
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O Barroco é um estilo artístico caracterizado principalmente por:', 'Médio', 'Pense nas igrejas de Ouro Preto, de Aleijadinho.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Simplicidade e linhas retas', 0),
+(@id_pergunta, 'Drama, emoção intensa e riqueza de detalhes', 1),
+(@id_pergunta, 'Cores suaves e temas do cotidiano', 0),
+(@id_pergunta, 'Uso de formas geométricas puras', 0),
+(@id_pergunta, 'Fidelidade à natureza e à luz', 0);
+
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual era o principal tema da Pop Art, de artistas como Andy Warhol?', 'Médio', 'Latas de sopa, garrafas de refrigerante e celebridades eram temas comuns.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A natureza e as paisagens', 0),
+(@id_pergunta, 'A cultura de massa, o consumo e a publicidade', 1),
+(@id_pergunta, 'A mitologia grega e romana', 0),
+(@id_pergunta, 'A espiritualidade e a religião', 0),
+(@id_pergunta, 'A vida da aristocracia', 0);
+
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que é uma gravura?', 'Médio', 'A xilogravura, feita em madeira, é um tipo famoso.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma pintura feita diretamente na parede', 0),
+(@id_pergunta, 'Uma imagem criada a partir da impressão de uma matriz (madeira, metal, pedra)', 1),
+(@id_pergunta, 'Uma escultura feita de argila', 0),
+(@id_pergunta, 'Um tipo de fotografia em preto e branco', 0),
+(@id_pergunta, 'Um desenho feito com carvão', 0);
+
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A monumental pintura "Guernica", que retrata os horrores da guerra, é uma obra de qual artista?', 'Médio', 'É uma obra cubista em preto, branco e cinza.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Salvador Dalí', 0),
+(@id_pergunta, 'Joan Miró', 0),
+(@id_pergunta, 'Pablo Picasso', 1),
+(@id_pergunta, 'Henri Matisse', 0),
+(@id_pergunta, 'Frida Kahlo', 0);
+
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual é a principal diferença entre arte figurativa e arte abstrata?', 'Médio', 'Uma busca representar o mundo como o vemos, a outra não.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A figurativa usa cores e a abstrata não', 0),
+(@id_pergunta, 'A figurativa representa figuras reconhecíveis, enquanto a abstrata foca em formas, cores e linhas', 1),
+(@id_pergunta, 'A figurativa é antiga e a abstrata é moderna', 0),
+(@id_pergunta, 'A figurativa é feita em tela e a abstrata em outros suportes', 0),
+(@id_pergunta, 'Não há diferença significativa', 0);
+
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O estilo arquitetônico das grandes catedrais europeias, com arcos ogivais, vitrais e abóbadas nervuradas, é o:', 'Médio', 'A Catedral de Notre-Dame em Paris é um exemplo famoso.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Românico', 0),
+(@id_pergunta, 'Gótico', 1),
+(@id_pergunta, 'Barroco', 0),
+(@id_pergunta, 'Clássico', 0),
+(@id_pergunta, 'Moderno', 0);
+
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que é a performance como modalidade artística?', 'Médio', 'A obra é a ação do artista, muitas vezes com a participação do público.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma peça de teatro tradicional', 0),
+(@id_pergunta, 'Uma forma de arte em que a obra é a própria ação executada pelo artista em um determinado tempo e lugar', 1),
+(@id_pergunta, 'Uma escultura que se move', 0),
+(@id_pergunta, 'Uma pintura feita muito rapidamente', 0),
+(@id_pergunta, 'Um concerto musical', 0);
+
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual artista é famoso por seus móbiles, esculturas suspensas que se movem com o vento?', 'Médio', 'Foi um artista americano do século XX.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Henry Moore', 0),
+(@id_pergunta, 'Alexander Calder', 1),
+(@id_pergunta, 'Alberto Giacometti', 0),
+(@id_pergunta, 'Jean Arp', 0),
+(@id_pergunta, 'Constantin Brancusi', 0);
+
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O Dadaísmo, movimento de vanguarda do início do século XX, tinha como principal atitude:', 'Médio', 'Eles questionavam a própria definição de arte.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A busca pela beleza clássica', 0),
+(@id_pergunta, 'A exaltação da tecnologia e da velocidade', 0),
+(@id_pergunta, 'A crítica à lógica, a valorização do absurdo e o anti-arte', 1),
+(@id_pergunta, 'A representação fiel da realidade', 0),
+(@id_pergunta, 'A celebração da cultura de massa', 0);
+
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual é a função da perspectiva em uma pintura renascentista?', 'Médio', 'É uma técnica matemática para representar o espaço.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Criar uma sensação de movimento', 0),
+(@id_pergunta, 'Representar a ilusão de profundidade e espaço tridimensional em uma superfície plana', 1),
+(@id_pergunta, 'Deformar as figuras para expressar emoção', 0),
+(@id_pergunta, 'Usar cores que não existem na realidade', 0),
+(@id_pergunta, 'Achatá-la para focar nos detalhes', 0);
+
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A artista brasileira Lygia Clark é famosa por suas obras participativas, como os:', 'Médio', 'São esculturas articuladas que o espectador pode manipular.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Parangolés', 0),
+(@id_pergunta, 'Bichos', 1),
+(@id_pergunta, 'Tropicália', 0),
+(@id_pergunta, 'Relevos espaciais', 0),
+(@id_pergunta, 'Metaesquemas', 0);
+
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual é a principal característica do Romantismo na pintura?', 'Médio', 'Artistas como Goya e Delacroix são expoentes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A razão, a ordem e o equilíbrio', 0),
+(@id_pergunta, 'A emoção, o individualismo e a exaltação da natureza', 1),
+(@id_pergunta, 'A crítica social e a representação do trabalhador', 0),
+(@id_pergunta, 'O uso de cores puras e pinceladas rápidas', 0),
+(@id_pergunta, 'A decomposição da figura em formas geométricas', 0);
+
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Salvador Dalí é o principal nome de qual vanguarda artística?', 'Médio', 'Suas obras exploram o mundo dos sonhos e do irracional.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Cubismo', 0),
+(@id_pergunta, 'Futurismo', 0),
+(@id_pergunta, 'Surrealismo', 1),
+(@id_pergunta, 'Expressionismo', 0),
+(@id_pergunta, 'Dadaísmo', 0);
+
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A ordem arquitetônica grega caracterizada por capitéis com volutas (ornamentos em espiral) é a:', 'Médio', 'É considerada mais elegante que a Dórica e menos ornamentada que a Coríntia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Dórica', 0),
+(@id_pergunta, 'Jônica', 1),
+(@id_pergunta, 'Coríntia', 0),
+(@id_pergunta, 'Toscana', 0),
+(@id_pergunta, 'Compósita', 0);
+
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que é a "Land Art"?', 'Médio', 'A obra de arte é feita na própria paisagem.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A pintura de paisagens', 0),
+(@id_pergunta, 'Uma forma de arte que utiliza a própria natureza como suporte ou matéria-prima', 1),
+(@id_pergunta, 'A criação de jardins e parques', 0),
+(@id_pergunta, 'Fotografias da natureza', 0),
+(@id_pergunta, 'Esculturas feitas de materiais reciclados', 0);
+
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que é um tríptico na pintura?', 'Médio', 'A obra "O Jardim das Delícias", de Bosch, é um famoso exemplo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma pintura com três cores primárias', 0),
+(@id_pergunta, 'Uma obra de arte dividida em três painéis, unidos por dobradiças', 1),
+(@id_pergunta, 'Uma técnica de pintura em três camadas', 0),
+(@id_pergunta, 'Um retrato de três pessoas', 0),
+(@id_pergunta, 'Uma pintura com formato triangular', 0);
+
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual artista ficou conhecido por suas pinturas de "gordinhos", retratando figuras com volumes exagerados?', 'Médio', 'É um artista colombiano.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Diego Rivera', 0),
+(@id_pergunta, 'Frida Kahlo', 0),
+(@id_pergunta, 'Fernando Botero', 1),
+(@id_pergunta, 'Wifredo Lam', 0),
+(@id_pergunta, 'Joaquín Torres García', 0);
+
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O concretismo no Brasil, tanto na poesia quanto nas artes visuais, valorizava principalmente:', 'Médio', 'O foco era na forma e na estrutura.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A expressão dos sentimentos do artista', 0),
+(@id_pergunta, 'A representação de temas nacionais', 0),
+(@id_pergunta, 'O aspecto racional, a forma geométrica e a estrutura visual da obra', 1),
+(@id_pergunta, 'A crítica social e política', 0),
+(@id_pergunta, 'A inspiração na natureza', 0);
+
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que define o conceito de "ready-made" proposto por Marcel Duchamp?', 'Difícil', 'Sua obra "A Fonte" (um urinol) é o exemplo mais famoso.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma obra de arte feita com materiais reciclados', 0),
+(@id_pergunta, 'A escolha de um objeto industrializado, que é retirado de seu contexto e apresentado como arte', 1),
+(@id_pergunta, 'Uma pintura que imita a realidade com perfeição', 0),
+(@id_pergunta, 'Uma escultura feita sob medida para um cliente', 0),
+(@id_pergunta, 'Uma performance artística improvisada', 0);
+
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual era o principal objetivo da escola de design e arquitetura Bauhaus?', 'Difícil', 'Foi fundada por Walter Gropius na Alemanha.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Reviver os estilos artísticos do passado', 0),
+(@id_pergunta, 'Unificar as artes, o artesanato e a tecnologia, criando uma arte funcional para a sociedade industrial', 1),
+(@id_pergunta, 'Desenvolver uma arte puramente decorativa e de luxo', 0),
+(@id_pergunta, 'Criticar a tecnologia e a indústria', 0),
+(@id_pergunta, 'Focar apenas no ensino da pintura clássica', 0);
+
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O conceito de "aura" de uma obra de arte, segundo Walter Benjamin, é perdido com:', 'Difícil', 'Sua análise está no ensaio "A Obra de Arte na Era de sua Reprodutibilidade Técnica".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A crítica dos especialistas', 0),
+(@id_pergunta, 'A reprodução técnica em massa (como a fotografia e o cinema)', 1),
+(@id_pergunta, 'A passagem do tempo', 0),
+(@id_pergunta, 'A restauração da obra', 0),
+(@id_pergunta, 'A exposição em museus', 0);
+
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A principal ruptura do Neoconcretismo brasileiro em relação ao Concretismo foi:', 'Difícil', 'Artistas como Lygia Clark e Hélio Oiticica foram seus expoentes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A rejeição total da geometria', 0),
+(@id_pergunta, 'A reintrodução da subjetividade, da intuição e da participação do espectador', 1),
+(@id_pergunta, 'O uso exclusivo de preto e branco', 0),
+(@id_pergunta, 'A volta à pintura de paisagens', 0),
+(@id_pergunta, 'Adoção de temas políticos explícitos', 0);
+
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que é a "Action Painting" (pintura gestual)?', 'Difícil', 'Jackson Pollock é o artista mais associado a esta técnica.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma pintura que retrata cenas de ação e movimento', 0),
+(@id_pergunta, 'Um estilo em que o processo físico de pintar é o aspecto mais importante, com gestos como gotejar e arremessar tinta', 1),
+(@id_pergunta, 'O uso de robôs e máquinas para pintar', 0),
+(@id_pergunta, 'Uma pintura que muda de cor com a luz', 0),
+(@id_pergunta, 'Uma performance em que o público pinta a obra', 0);
+
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O artista brasileiro Hélio Oiticica criou os "Parangolés", que eram:', 'Difícil', 'As obras só se completavam quando vestidas e movimentadas por pessoas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Esculturas de metal para praças públicas', 0),
+(@id_pergunta, 'Capas, tendas e estandartes coloridos para serem vestidos ou penetrados, rompendo a barreira entre arte e vida', 1),
+(@id_pergunta, 'Pequenas caixas com objetos para serem manipulados', 0),
+(@id_pergunta, 'Pinturas geométricas em preto e branco', 0),
+(@id_pergunta, 'Instalações com luzes de neon', 0);
+
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual a principal diferença entre um afresco e uma pintura a óleo?', 'Difícil', 'A "Última Ceia" de Da Vinci é um famoso exemplo da primeira técnica.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O afresco é sempre abstrato e a pintura a óleo é figurativa', 0),
+(@id_pergunta, 'O afresco é uma técnica de pintura em argamassa ou gesso úmido, enquanto a pintura a óleo usa pigmentos diluídos em óleo sobre tela ou madeira', 1),
+(@id_pergunta, 'O afresco usa apenas cores primárias e a pintura a óleo todas as cores', 0),
+(@id_pergunta, 'O afresco é uma técnica oriental e a pintura a óleo é ocidental', 0),
+(@id_pergunta, 'Não há diferença, são sinônimos', 0);
+
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O movimento artístico "Minimalismo" buscava:', 'Difícil', 'Artistas como Donald Judd e Dan Flavin são expoentes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Criar obras complexas e cheias de detalhes', 0),
+(@id_pergunta, 'Reduzir a arte aos seus elementos essenciais, como a forma geométrica pura, sem expressão pessoal', 1),
+(@id_pergunta, 'Fazer críticas políticas através da arte', 0),
+(@id_pergunta, 'Contar histórias através de pinturas narrativas', 0),
+(@id_pergunta, 'Usar materiais naturais e orgânicos', 0);
+
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A exposição de qual artista em 1917 gerou um grande escândalo e é considerada um estopim para o debate modernista no Brasil?', 'Difícil', 'Monteiro Lobato escreveu uma crítica feroz à sua obra.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Tarsila do Amaral', 0),
+(@id_pergunta, 'Di Cavalcanti', 0),
+(@id_pergunta, 'Anita Malfatti', 1),
+(@id_pergunta, 'Victor Brecheret', 0),
+(@id_pergunta, 'Lasar Segall', 0);
+
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que é uma arte "site-specific"?', 'Difícil', 'A obra não pode ser movida para outro lugar sem perder seu significado.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma obra de arte feita para ser vendida em um site', 0),
+(@id_pergunta, 'Uma obra criada para existir em um local específico, com o qual dialoga', 1),
+(@id_pergunta, 'Uma obra que pode ser instalada em qualquer lugar', 0),
+(@id_pergunta, 'Uma pintura de um lugar específico', 0),
+(@id_pergunta, 'Uma obra feita com materiais encontrados no local', 0);
+
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'Qual a principal diferença entre uma colagem e uma assemblage?', 'Difícil', 'Ambas utilizam materiais diversos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A colagem usa papel e a assemblage usa metal', 0),
+(@id_pergunta, 'A colagem é bidimensional, enquanto a assemblage é tridimensional, incorporando objetos', 1),
+(@id_pergunta, 'A colagem é abstrata e a assemblage é figurativa', 0),
+(@id_pergunta, 'A colagem é uma técnica antiga e a assemblage é contemporânea', 0),
+(@id_pergunta, 'Não há diferença', 0);
+
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O movimento artístico russo que pregava a supremacia do sentimento puro e usava formas geométricas básicas, como o quadrado negro sobre fundo branco, foi o:', 'Difícil', 'Kazimir Malevich foi seu criador.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Construtivismo', 0),
+(@id_pergunta, 'Futurismo', 0),
+(@id_pergunta, 'Suprematismo', 1),
+(@id_pergunta, 'Raionismo', 0),
+(@id_pergunta, 'Realismo Socialista', 0);
+
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que é a técnica do "sfumato", muito utilizada por Leonardo da Vinci?', 'Difícil', 'É especialmente visível no sorriso da Mona Lisa.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O uso de contrastes fortes de luz e sombra', 0),
+(@id_pergunta, 'Uma transição suave e esfumaçada entre as cores e os tons, sem linhas de contorno nítidas', 1),
+(@id_pergunta, 'A aplicação de tinta em pequenas pinceladas pontilhadas', 0),
+(@id_pergunta, 'A deformação da perspectiva para criar efeitos dramáticos', 0),
+(@id_pergunta, 'A pintura em painéis de madeira', 0);
+
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A principal característica da arte do período Rococó é:', 'Difícil', 'Surgiu na França do século XVIII, associado à aristocracia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A dramaticidade e a religiosidade do Barroco', 0),
+(@id_pergunta, 'A leveza, a elegância, o uso de cores pastel e temas relacionados ao amor e ao lazer da nobreza', 1),
+(@id_pergunta, 'A rigidez e a geometria do Neoclassicismo', 0),
+(@id_pergunta, 'A crítica social e a representação do povo', 0),
+(@id_pergunta, 'A abstração geométrica', 0);
+
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O movimento artístico internacional Fluxus, nos anos 60 e 70, tinha como uma de suas ideias centrais:', 'Difícil', 'Artistas como Yoko Ono e Nam June Paik estiveram associados a ele.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A criação de obras de arte valiosas para o mercado', 0),
+(@id_pergunta, 'A dissolução das fronteiras entre a arte e a vida, valorizando o processo e o evento', 1),
+(@id_pergunta, 'A perfeição técnica na pintura e na escultura', 0),
+(@id_pergunta, 'O retorno aos ideais clássicos da Grécia e Roma', 0),
+(@id_pergunta, 'A produção de arte exclusivamente para museus', 0);
+
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A "escola de Barbizon" foi um grupo de pintores na França que se destacou por:', 'Difícil', 'Foram precursores do Impressionismo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Pintar cenas históricas e mitológicas', 0),
+(@id_pergunta, 'Abandonar o estúdio para pintar paisagens realistas ao ar livre', 1),
+(@id_pergunta, 'Desenvolver a técnica da colagem', 0),
+(@id_pergunta, 'Criar as primeiras obras de arte abstrata', 0),
+(@id_pergunta, 'Focar em retratos da burguesia', 0);
+
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que é a técnica da litografia?', 'Difícil', 'É um processo de gravura baseado na repulsão entre água e gordura.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Gravação em uma placa de madeira (xilogravura)', 0),
+(@id_pergunta, 'Desenho sobre uma pedra calcária com um lápis gorduroso para impressão', 1),
+(@id_pergunta, 'Gravação em uma chapa de metal com ácido (água-forte)', 0),
+(@id_pergunta, 'Impressão através de uma tela de seda (serigrafia)', 0),
+(@id_pergunta, 'Impressão digital de alta resolução', 0);
+
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O conceito de "flâneur", o observador errante da cidade moderna, é crucial para entender a obra de qual poeta e crítico de arte?', 'Difícil', 'Ele foi fundamental para a teoria da modernidade na arte.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Stéphane Mallarmé', 0),
+(@id_pergunta, 'Guillaume Apollinaire', 0),
+(@id_pergunta, 'Charles Baudelaire', 1),
+(@id_pergunta, 'Paul Verlaine', 0),
+(@id_pergunta, 'Arthur Rimbaud', 0);
+
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'A "Secessão de Viena", liderada por Gustav Klimt, foi um movimento que buscava:', 'Difícil', 'O nome do movimento significa "separação".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Reviver a arte gótica', 0),
+(@id_pergunta, 'Romper com o conservadorismo da arte acadêmica oficial', 1),
+(@id_pergunta, 'Criar uma arte exclusivamente para a igreja', 0),
+(@id_pergunta, 'Imitar a arte da Grécia Antiga', 0),
+(@id_pergunta, 'Promover o realismo socialista', 0);
+
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (12, 1, 'O que é a apropriação na arte contemporânea?', 'Difícil', 'Sherrie Levine, que fotografou fotografias de outros artistas, é um exemplo radical.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A criação de uma cópia exata de uma obra famosa', 0),
+(@id_pergunta, 'O ato de tomar emprestado, copiar ou alterar imagens e objetos pré-existentes para criar uma nova obra', 1),
+(@id_pergunta, 'A inspiração em estilos artísticos do passado', 0),
+(@id_pergunta, 'A venda de uma obra de arte para um museu', 0),
+(@id_pergunta, 'A restauração de obras de arte antigas', 0);
