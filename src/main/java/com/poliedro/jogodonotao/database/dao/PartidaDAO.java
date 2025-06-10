@@ -285,8 +285,12 @@ public class PartidaDAO {
                 String nomeMateria = res.getString("nome_materia");
 
                 // Obter matéria
-                Materia materia = new Materia(idMateria,
-                        ((nomeMateria == null) ? "Todas as Matérias" : nomeMateria));
+                Materia materia;
+                if (res.wasNull()) {
+                    materia = new Materia(0, "Todas as Matérias");
+                } else {
+                    materia = new Materia(idMateria, nomeMateria);
+                }
 
                 // Adicionar partida à lista
                 partidas.add(
