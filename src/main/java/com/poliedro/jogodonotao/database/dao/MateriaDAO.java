@@ -17,7 +17,7 @@ public class MateriaDAO {
     /**
      * Colunas da tabela {@code materia}.
      */
-    private enum MateriaColuna {
+    public enum MateriaColuna {
         // Colunas
         ID("id_materia"),
         NOME("nome");

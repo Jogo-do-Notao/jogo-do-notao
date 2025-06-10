@@ -248,8 +248,14 @@ public class PartidaDAO {
      * @param partidaStatus Status da partida para filtrar as partidas buscadas.
      */
     public static ArrayList<Partida> buscarPartidas(Aluno aluno, PartidaStatus partidaStatus) {
-        // Query SQL
-        final String sql = "SELECT * FROM partida WHERE " + PartidaColuna.ALUNO.get() + " = ? AND " + PartidaColuna.STATUS.get() + " = ?";
+        // Colunas da query
+        final String materiaIdCol = MateriaDAO.MateriaColuna.ID.get();
+        final String partidaMateriaCol = PartidaColuna.MATERIA.get();
+        final String partidaAlunoCol = PartidaColuna.ALUNO.get();
+        final String partidaStatusCol = PartidaColuna.STATUS.get();
+
+        // Query SQL corrigida com JOIN e vírgulas
+        final String sql = "SELECT p.*, m." + materiaIdCol + ", m.nome AS nome_materia FROM partida p LEFT JOIN materia m ON p." + partidaMateriaCol + " = m." + materiaIdCol + " WHERE p." + partidaAlunoCol + " = ? AND p." + partidaStatusCol + " = ?";
 
         // Lista de partidas a serem retornadas
         ArrayList<Partida> partidas = new ArrayList<>();
@@ -268,26 +274,27 @@ public class PartidaDAO {
 
             // Extrair tuplas correspondentes
             while (res.next()) {
-                // Extrair atributos
                 int idPartida = res.getInt(PartidaColuna.ID.get());
-                int idMateria = res.getInt(PartidaColuna.MATERIA.get());
                 int rodada = res.getInt(PartidaColuna.RODADA.get());
+                int idMateria = res.getInt(PartidaColuna.MATERIA.get());
                 int pontuacaoAcumulada = res.getInt(PartidaColuna.PONTUACAO_ACUMULADA.get());
                 int pontuacaoCheckpoint = res.getInt(PartidaColuna.PONTUACAO_CHECKPOINT.get());
                 int ajudaEliminar = res.getInt(PartidaColuna.AJUDA_ELIMINAR.get());
                 int ajudaDica = res.getInt(PartidaColuna.AJUDA_DICA.get());
                 int ajudaPular = res.getInt(PartidaColuna.AJUDA_PULAR.get());
+                String nomeMateria = res.getString("nome_materia");
+
+                // Obter matéria
+                Materia materia = new Materia(idMateria,
+                        ((nomeMateria == null) ? "Todas as Matérias" : nomeMateria));
 
                 // Adicionar partida à lista
                 partidas.add(
-                        new Partida(idPartida, aluno, MateriaDAO.buscarPorId(idMateria), partidaStatus, rodada, new Pergunta[15], pontuacaoAcumulada, pontuacaoCheckpoint, ajudaEliminar, ajudaDica, ajudaPular)
+                        new Partida(idPartida, aluno, materia, partidaStatus, rodada, new Pergunta[15], pontuacaoAcumulada, pontuacaoCheckpoint, ajudaEliminar, ajudaDica, ajudaPular)
                 );
             }
         } catch (SQLException e) {
             throw new RuntimeException(e); // tratar o erro
-        } finally {
-            // Fechar conexão com o banco de dados
-            ConexaoDB.closeConnection();
         }
         // Retornar lista de partidas
         return partidas;
