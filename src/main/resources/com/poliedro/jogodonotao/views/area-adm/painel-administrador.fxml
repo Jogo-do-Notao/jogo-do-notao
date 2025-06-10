@@ -67,7 +67,7 @@
                         <String fx:value="button-lg" />
                      </styleClass>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#alterarSenha" prefHeight="70.0" text="Alterar senha">
+                  <Button mnemonicParsing="false" onAction="#abrirTelaAlterarSenha" prefHeight="70.0" text="Alterar senha">
                      <font>
                         <Font size="15.0" />
                      </font>

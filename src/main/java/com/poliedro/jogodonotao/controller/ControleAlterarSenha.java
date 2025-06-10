@@ -1,28 +1,33 @@
 package com.poliedro.jogodonotao.controller;
 
+import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.database.dao.AlunoDAO;
 import com.poliedro.jogodonotao.database.dao.ProfessorDAO;
 import com.poliedro.jogodonotao.usuario.Aluno;
 import com.poliedro.jogodonotao.usuario.Professor;
 import com.poliedro.jogodonotao.utils.HashSenha;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.util.Optional;
 
 public class ControleAlterarSenha {
-    @FXML
-    private PasswordField campoConfirmarSenha;
 
     @FXML
-    private PasswordField campoSenha;
+    private TextField campoConfirmarSenha;
 
     @FXML
-    void alterarSenha(javafx.event.ActionEvent event) {
-        String novaSenha = campoSenha.getText();
+    private TextField campoNovaSenha;
+
+
+    @FXML
+    public void alterarSenha(ActionEvent event) {
+        String novaSenha = campoNovaSenha.getText();
         String confirmacaoSenha = campoConfirmarSenha.getText();
 
         // Validar se os campos estão preenchidos
@@ -38,8 +43,8 @@ public class ControleAlterarSenha {
         }
 
         // Validar força da senha (mínimo de 6 caracteres)
-        if (novaSenha.length() < 6) {
-            mostrarAlerta("Senha Fraca", "Senha muito curta!", "A senha deve ter no mínimo 6 caracteres.");
+        if (novaSenha.length() < 5) {
+            mostrarAlerta("Senha Fraca", "Senha muito curta!", "A senha deve ter no mínimo 5 caracteres.");
             return;
         }
 
@@ -60,7 +65,7 @@ public class ControleAlterarSenha {
                 sucesso = AlunoDAO.atualizarSenha(aluno.getId(), hashNovaSenha);
                 
                 if (sucesso) {
-                    aluno.hashSenha = hashNovaSenha;
+                    aluno.setHashSenha(hashNovaSenha);
                 }
             } else if (Professor.getSessaoAtiva() != null) {
                 // Atualizar senha do professor
@@ -79,7 +84,7 @@ public class ControleAlterarSenha {
             if (sucesso) {
                 mostrarAlerta("Sucesso", "Senha alterada com sucesso!", "Sua senha foi atualizada com sucesso.");
                 // Limpar campos após alteração bem-sucedida
-                campoSenha.clear();
+                campoNovaSenha.clear();
                 campoConfirmarSenha.clear();
             } else {
                 mostrarAlerta("Erro", "Falha ao alterar senha", "Ocorreu um erro ao tentar alterar a senha. Por favor, tente novamente.");
@@ -106,5 +111,10 @@ public class ControleAlterarSenha {
         alert.setHeaderText(cabecalho);
         alert.setContentText(conteudo);
         alert.showAndWait();
+    }
+    @FXML
+    void voltarParaPainel(ActionEvent event) throws IOException {
+        App.changeScene("area-adm/painel-administrador", "Painel do Administrador");
+
     }
 }

@@ -38,7 +38,8 @@ public abstract class Usuario {
     public String getHashSenha() {
         return hashSenha;
     }
-}
+    
     public void setHashSenha(String hashSenha) {
-    this.hashSenha = hashSenha;
+        this.hashSenha = hashSenha;
+    }
 }
