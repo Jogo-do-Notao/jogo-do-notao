@@ -513,6 +513,38 @@ public class Partida {
     }
 
     /**
+     * Salva e encerra a partida atual para posterior retorno.
+     */
+    public void sairPartida() {
+        // Mensagem de saindo
+        Alert msgSaindo = new Alert(Alert.AlertType.INFORMATION);
+        msgSaindo.setTitle("Salvando Partida");
+        msgSaindo.setHeaderText("Salvando partida...");
+        msgSaindo.setContentText("Aguarde enquanto a partida é salva...");
+        msgSaindo.show();
+
+        // Encerrar partida em andamento
+        encerrarPartida();
+
+        // Redirecionar para o painel do aluno
+        try {
+            App.changeScene("area-aluno/painel-aluno", "Painel do Aluno");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            msgSaindo.close(); // fechar mensagem de salvamento
+        }
+    }
+
+    /**
+     * Encerra a partida em andamento.
+     */
+    private static void encerrarPartida() {
+        // Limpar partida em andamento
+        partidaEmAndamento = null;
+    }
+
+    /**
      * Encerra a partida após responder corretamente todas as perguntas e atingir o prêmio máximo.
      */
     public void vitoria() {
@@ -520,6 +552,9 @@ public class Partida {
         this.setStatus(PartidaStatus.GANHA);
         // Atualizar pontuação do aluno
         this.ALUNO.setPontuacao(this.getPontuacaoAcumulada());
+
+        // Encerrar partida em andamento
+        encerrarPartida();
 
         // Redirecionar para a tela de fim da partida
         try {
