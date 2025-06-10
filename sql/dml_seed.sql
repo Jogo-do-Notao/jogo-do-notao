@@ -4354,6 +4354,1171 @@ VALUES (@id_pergunta, 'Retilínea', 0),
 -- ||                       Química                               ||
 -- =================================================================
 -- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é o símbolo químico do elemento Ouro?',
+        'Fácil',
+        'Vem do latim "Aurum".'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Ag', 0),
+    (@id_pergunta, 'Ou', 0),
+    (@id_pergunta, 'Au', 1),
+    (@id_pergunta, 'Go', 0),
+    (@id_pergunta, 'Fe', 0);
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual partícula subatômica possui carga elétrica positiva?',
+        'Fácil',
+        'Fica localizada no núcleo do átomo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Elétron', 0),
+    (@id_pergunta, 'Nêutron', 0),
+    (@id_pergunta, 'Próton', 1),
+    (@id_pergunta, 'Fóton', 0),
+    (@id_pergunta, 'Nêutrino', 0);
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Como se chama a passagem do estado líquido para o gasoso?',
+        'Fácil',
+        'Pode ocorrer por ebulição ou evaporação.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Fusão', 0),
+    (@id_pergunta, 'Solidificação', 0),
+    (@id_pergunta, 'Vaporização', 1),
+    (@id_pergunta, 'Condensação', 0),
+    (@id_pergunta, 'Sublimação', 0);
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é o gás mais abundante na atmosfera terrestre?',
+        'Fácil',
+        'Sua fórmula química é N₂.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Oxigênio', 0),
+    (@id_pergunta, 'Gás Carbônico', 0),
+    (@id_pergunta, 'Hidrogênio', 0),
+    (@id_pergunta, 'Nitrogênio', 1),
+    (@id_pergunta, 'Hélio', 0);
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Na fórmula da água, H₂O, o que o "H" representa?',
+        'Fácil',
+        'É o elemento de número atômico 1.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Hélio', 0),
+    (@id_pergunta, 'Oxigênio', 0),
+    (@id_pergunta, 'Hidrogênio', 1),
+    (@id_pergunta, 'Húmus', 0),
+    (@id_pergunta, 'Carbono', 0);
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O sal de cozinha (NaCl) é classificado como:',
+        'Fácil',
+        'É formado pela ligação de dois elementos diferentes.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Um elemento', 0),
+    (@id_pergunta, 'Uma substância simples', 0),
+    (@id_pergunta, 'Uma substância composta', 1),
+    (@id_pergunta, 'Uma mistura heterogênea', 0),
+    (@id_pergunta, 'Uma mistura homogênea', 0);
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é o pH de uma substância neutra, como a água pura?',
+        'Fácil',
+        'A escala de pH vai de 0 a 14.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '0', 0),
+    (@id_pergunta, '5', 0),
+    (@id_pergunta, '7', 1),
+    (@id_pergunta, '9', 0),
+    (@id_pergunta, '14', 0);
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Em qual grupo da Tabela Periódica se encontram os Gases Nobres?',
+        'Fácil',
+        'São os elementos da última coluna da direita.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Grupo 1', 0),
+    (@id_pergunta, 'Grupo 2', 0),
+    (@id_pergunta, 'Grupo 14', 0),
+    (@id_pergunta, 'Grupo 17', 0),
+    (@id_pergunta, 'Grupo 18', 1);
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é o símbolo químico da Prata?',
+        'Fácil',
+        'Vem do latim "Argentum".'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Pr', 0),
+    (@id_pergunta, 'Pt', 0),
+    (@id_pergunta, 'Pa', 0),
+    (@id_pergunta, 'Ag', 1),
+    (@id_pergunta, 'Au', 0);
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'A passagem direta do estado sólido para o gasoso é chamada de:',
+        'Fácil',
+        'É o que acontece com a naftalina.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Fusão', 0),
+    (@id_pergunta, 'Evaporação', 0),
+    (@id_pergunta, 'Condensação', 0),
+    (@id_pergunta, 'Sublimação', 1),
+    (@id_pergunta, 'Solidificação', 0);
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é a menor unidade de um elemento que mantém suas propriedades químicas?',
+        'Fácil',
+        'É a "peça" fundamental da matéria.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Molécula', 0),
+    (@id_pergunta, 'Íon', 0),
+    (@id_pergunta, 'Átomo', 1),
+    (@id_pergunta, 'Composto', 0),
+    (@id_pergunta, 'Célula', 0);
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual tipo de ligação química envolve o compartilhamento de elétrons entre átomos?',
+        'Fácil',
+        'Ocorre geralmente entre ametais.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Ligação Iônica', 0),
+    (@id_pergunta, 'Ligação Metálica', 0),
+    (@id_pergunta, 'Ligação Covalente', 1),
+    (@id_pergunta, 'Ponte de Hidrogênio', 0),
+    (@id_pergunta, 'Ligação de Van der Waals', 0);
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'As colunas verticais da Tabela Periódica são chamadas de:',
+        'Fácil',
+        'Elementos na mesma coluna têm propriedades semelhantes.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Períodos', 0),
+    (@id_pergunta, 'Séries', 0),
+    (@id_pergunta, 'Classes', 0),
+    (@id_pergunta, 'Grupos ou Famílias', 1),
+    (@id_pergunta, 'Níveis', 0);
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual dos seguintes é um exemplo de metal?',
+        'Fácil',
+        'É usado em construções e é atraído por ímãs.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Oxigênio', 0),
+    (@id_pergunta, 'Carbono', 0),
+    (@id_pergunta, 'Enxofre', 0),
+    (@id_pergunta, 'Ferro', 1),
+    (@id_pergunta, 'Hélio', 0);
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Uma reação de combustão, como a queima de papel, consome qual gás da atmosfera?',
+        'Fácil',
+        'É o mesmo gás que usamos para respirar.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Nitrogênio', 0),
+    (@id_pergunta, 'Oxigênio', 1),
+    (@id_pergunta, 'Gás Carbônico', 0),
+    (@id_pergunta, 'Hidrogênio', 0),
+    (@id_pergunta, 'Argônio', 0);
+-- Pergunta 16
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O que é uma mistura homogênea?',
+        'Fácil',
+        'Pense em água com açúcar dissolvido.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Uma substância pura', 0),
+    (
+        @id_pergunta,
+        'Uma mistura com várias fases visíveis',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Uma mistura com apenas uma fase visível',
+        1
+    ),
+    (@id_pergunta, 'Um elemento químico', 0),
+    (@id_pergunta, 'Uma reação química', 0);
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual o número de prótons em um átomo de Carbono (C)?',
+        'Fácil',
+        'É o mesmo que seu número atômico.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '12', 0),
+    (@id_pergunta, '14', 0),
+    (@id_pergunta, '6', 1),
+    (@id_pergunta, '8', 0),
+    (@id_pergunta, '1', 0);
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Uma substância com pH 2 é considerada:',
+        'Fácil',
+        'Valores de pH abaixo de 7 são característicos dessa função inorgânica.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Ácida', 1),
+    (@id_pergunta, 'Básica', 0),
+    (@id_pergunta, 'Neutra', 0),
+    (@id_pergunta, 'Um sal', 0),
+    (@id_pergunta, 'Um óxido', 0);
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é o principal gás liberado na respiração humana?',
+        'Fácil',
+        'Sua fórmula é CO₂.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Oxigênio', 0),
+    (@id_pergunta, 'Nitrogênio', 0),
+    (
+        @id_pergunta,
+        'Gás Carbônico (Dióxido de Carbono)',
+        1
+    ),
+    (@id_pergunta, 'Hidrogênio', 0),
+    (@id_pergunta, 'Vapor de água', 0);
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'A substância que acelera uma reação química sem ser consumida é chamada de:',
+        'Fácil',
+        'As enzimas são exemplos biológicos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Reagente', 0),
+    (@id_pergunta, 'Produto', 0),
+    (@id_pergunta, 'Indicador', 0),
+    (@id_pergunta, 'Solvente', 0),
+    (@id_pergunta, 'Catalisador', 1);
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Átomos do mesmo elemento químico com diferente número de nêutrons são chamados de:',
+        'Médio',
+        'O Carbono-12 e o Carbono-14 são exemplos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Isóbaros', 0),
+    (@id_pergunta, 'Isótonos', 0),
+    (@id_pergunta, 'Isótopos', 1),
+    (@id_pergunta, 'Isômeros', 0),
+    (@id_pergunta, 'Alótropos', 0);
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é a massa molar da água (H₂O)? (Massas atômicas: H=1, O=16)',
+        'Médio',
+        'Some a massa de dois hidrogênios e um oxigênio.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '17 g/mol', 0),
+    (@id_pergunta, '18 g/mol', 1),
+    (@id_pergunta, '20 g/mol', 0),
+    (@id_pergunta, '32 g/mol', 0),
+    (@id_pergunta, '34 g/mol', 0);
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Uma reação química que libera calor para o ambiente é classificada como:',
+        'Médio',
+        '"Exo" significa "para fora".'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Endotérmica', 0),
+    (@id_pergunta, 'Exotérmica', 1),
+    (@id_pergunta, 'Isotérmica', 0),
+    (@id_pergunta, 'De simples troca', 0),
+    (@id_pergunta, 'De síntese', 0);
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual a função orgânica caracterizada pela presença de um grupo hidroxila (-OH) ligado a um carbono saturado?',
+        'Médio',
+        'O etanol, presente em bebidas, é um exemplo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Ácido Carboxílico', 0),
+    (@id_pergunta, 'Aldeído', 0),
+    (@id_pergunta, 'Álcool', 1),
+    (@id_pergunta, 'Éter', 0),
+    (@id_pergunta, 'Cetona', 0);
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'A Lei da Conservação da Massa, de Lavoisier, afirma que:',
+        'Médio',
+        '"Na natureza, nada se cria, nada se perde, tudo se transforma."'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'A massa dos produtos é sempre maior que a dos reagentes',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A soma das massas dos reagentes é igual à soma das massas dos produtos',
+        1
+    ),
+    (
+        @id_pergunta,
+        'A energia de um sistema se conserva',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A temperatura se mantém constante em uma reação',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Um gás ideal ocupa um volume de 22,4 L',
+        0
+    );
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é o nome da reação entre um ácido e uma base, que forma sal e água?',
+        'Médio',
+        'A reação "neutraliza" as propriedades de ambos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Oxidação', 0),
+    (@id_pergunta, 'Esterificação', 0),
+    (@id_pergunta, 'Neutralização', 1),
+    (@id_pergunta, 'Hidrólise', 0),
+    (@id_pergunta, 'Combustão', 0);
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual o valor aproximado da Constante de Avogadro?',
+        'Médio',
+        'Representa o número de partículas em um mol.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '3,14 x 10²³', 0),
+    (@id_pergunta, '6,02 x 10²³', 1),
+    (@id_pergunta, '9,8 x 10⁹', 0),
+    (@id_pergunta, '1,6 x 10⁻¹⁹', 0),
+    (@id_pergunta, '8,31 x 10³', 0);
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'A Molaridade (ou concentração molar) de uma solução é definida como:',
+        'Médio',
+        'É uma das formas mais comuns de expressar a concentração.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Massa do soluto / volume da solução',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Mols do soluto / volume da solução (em litros)',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Mols do soluto / massa do solvente (em kg)',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Massa do soluto / massa da solução',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Volume do soluto / volume da solução',
+        0
+    );
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Hidrocarbonetos que contêm apenas ligações simples entre os carbonos são chamados de:',
+        'Médio',
+        'São também chamados de hidrocarbonetos saturados.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Alcenos', 0),
+    (@id_pergunta, 'Alcinos', 0),
+    (@id_pergunta, 'Alcanos', 1),
+    (@id_pergunta, 'Aromáticos', 0),
+    (@id_pergunta, 'Ciclanos', 0);
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'A chuva ácida é causada principalmente pela emissão de quais óxidos na atmosfera?',
+        'Médio',
+        'São gerados pela queima de combustíveis fósseis.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Óxidos de carbono e silício', 0),
+    (
+        @id_pergunta,
+        'Óxidos de enxofre e nitrogênio',
+        1
+    ),
+    (@id_pergunta, 'Óxidos de sódio e cálcio', 0),
+    (@id_pergunta, 'Óxidos de ferro e alumínio', 0),
+    (@id_pergunta, 'Monóxido de carbono e ozônio', 0);
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O que é um agente oxidante em uma reação de oxirredução?',
+        'Médio',
+        'Ele "rouba" elétrons de outra espécie.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'A espécie que perde elétrons (oxida)',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A espécie que ganha elétrons (reduz)',
+        1
+    ),
+    (
+        @id_pergunta,
+        'A espécie que não participa da reação',
+        0
+    ),
+    (@id_pergunta, 'O catalisador da reação', 0),
+    (@id_pergunta, 'O produto da oxidação', 0);
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é o nome do composto C₂H₅OH?',
+        'Médio',
+        'É o álcool comum.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Metanol', 0),
+    (@id_pergunta, 'Etanol', 1),
+    (@id_pergunta, 'Propanol', 0),
+    (@id_pergunta, 'Ácido acético', 0),
+    (@id_pergunta, 'Acetona', 0);
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O estado de equilíbrio químico é atingido quando:',
+        'Médio',
+        'A reação não para, mas as concentrações ficam constantes.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Todos os reagentes são consumidos',
+        0
+    ),
+    (
+        @id_pergunta,
+        'As velocidades das reações direta e inversa se igualam',
+        1
+    ),
+    (
+        @id_pergunta,
+        'A temperatura do sistema se iguala à do ambiente',
+        0
+    ),
+    (@id_pergunta, 'A pressão para de variar', 0),
+    (@id_pergunta, 'A reação se torna endotérmica', 0);
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Compostos que possuem a mesma fórmula molecular mas diferentes arranjos estruturais são chamados de:',
+        'Médio',
+        'Eles podem ter propriedades físicas e químicas bem diferentes.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Isótopos', 0),
+    (@id_pergunta, 'Alótropos', 0),
+    (@id_pergunta, 'Polímeros', 0),
+    (@id_pergunta, 'Isômeros', 1),
+    (@id_pergunta, 'Híbridos', 0);
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Em uma pilha de Daniell, o fluxo de elétrons vai do:',
+        'Médio',
+        'Os elétrons saem do eletrodo que oxida para o que reduz.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Cobre para o Zinco', 0),
+    (@id_pergunta, 'Zinco para o Cobre', 1),
+    (@id_pergunta, 'Cátodo para o Ânodo', 0),
+    (@id_pergunta, 'Pela ponte salina', 0),
+    (@id_pergunta, 'Não há fluxo de elétrons', 0);
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é a geometria da molécula de amônia (NH₃)?',
+        'Médio',
+        'O nitrogênio tem um par de elétrons não ligante que "empurra" as ligações.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Linear', 0),
+    (@id_pergunta, 'Trigonal plana', 0),
+    (@id_pergunta, 'Piramidal trigonal', 1),
+    (@id_pergunta, 'Angular', 0),
+    (@id_pergunta, 'Tetraédrica', 0);
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual fator NÃO aumenta a velocidade de uma reação química?',
+        'Médio',
+        'Pense no que faria as partículas se moverem mais devagar.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Aumento da temperatura', 0),
+    (
+        @id_pergunta,
+        'Aumento da concentração dos reagentes',
+        0
+    ),
+    (@id_pergunta, 'Adição de um catalisador', 0),
+    (
+        @id_pergunta,
+        'Aumento da superfície de contato',
+        0
+    ),
+    (@id_pergunta, 'Diminuição da temperatura', 1);
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O petróleo é uma mistura complexa de qual tipo de compostos?',
+        'Médio',
+        'Seus componentes são formados apenas por Carbono e Hidrogênio.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Álcoois', 0),
+    (@id_pergunta, 'Hidrocarbonetos', 1),
+    (@id_pergunta, 'Carboidratos', 0),
+    (@id_pergunta, 'Proteínas', 0),
+    (@id_pergunta, 'Sais minerais', 0);
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O diamante e o grafite são formas alotrópicas de qual elemento?',
+        'Médio',
+        'É o elemento base da química orgânica.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Silício', 0),
+    (@id_pergunta, 'Oxigênio', 0),
+    (@id_pergunta, 'Carbono', 1),
+    (@id_pergunta, 'Enxofre', 0),
+    (@id_pergunta, 'Fósforo', 0);
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'A reação de um ácido carboxílico com um álcool forma um éster e água. Como se chama essa reação?',
+        'Médio',
+        'É uma reação orgânica clássica.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Saponificação', 0),
+    (@id_pergunta, 'Hidrogenação', 0),
+    (@id_pergunta, 'Combustão', 0),
+    (@id_pergunta, 'Esterificação', 1),
+    (@id_pergunta, 'Polimerização', 0);
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'De acordo com o Princípio de Le Chatelier, o que acontece com o equilíbrio N₂(g) + 3H₂(g) ⇌ 2NH₃(g) se a pressão for aumentada?',
+        'Difícil',
+        'O sistema tentará reduzir a pressão, favorecendo o lado com menos mols de gás.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Desloca-se para a esquerda (reagentes)',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Desloca-se para a direita (produtos)',
+        1
+    ),
+    (@id_pergunta, 'Não sofre alteração', 0),
+    (
+        @id_pergunta,
+        'A constante de equilíbrio aumenta',
+        0
+    ),
+    (@id_pergunta, 'A reação para', 0);
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é a hibridização do átomo de carbono em uma molécula de eteno (C₂H₄)?',
+        'Difícil',
+        'O eteno possui uma ligação dupla entre os carbonos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'sp', 0),
+    (@id_pergunta, 'sp²', 1),
+    (@id_pergunta, 'sp³', 0),
+    (@id_pergunta, 'sp³d', 0),
+    (@id_pergunta, 'sp³d²', 0);
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é o pH de uma solução de HCl com concentração 0,01 mol/L?',
+        'Difícil',
+        'Lembre-se que pH = -log[H⁺] e que o HCl é um ácido forte.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '0,01', 0),
+    (@id_pergunta, '1', 0),
+    (@id_pergunta, '2', 1),
+    (@id_pergunta, '12', 0),
+    (@id_pergunta, '14', 0);
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Em uma célula eletrolítica, o processo que ocorre no cátodo é a:',
+        'Difícil',
+        'Lembre-se do mnemônico CRAI (Cátodo Reduz, Ânodo Oxida).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Oxidação', 0),
+    (@id_pergunta, 'Redução', 1),
+    (@id_pergunta, 'Fusão', 0),
+    (@id_pergunta, 'Eletrólise', 0),
+    (@id_pergunta, 'Neutralização', 0);
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'A variação de entalpia (ΔH) de uma reação espontânea e a variação de entropia (ΔS) do universo devem ser, respectivamente:',
+        'Difícil',
+        'Pense na energia livre de Gibbs (ΔG = ΔH - TΔS < 0) e na Segunda Lei da Termodinâmica.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Negativa e positiva', 0),
+    (@id_pergunta, 'Positiva e negativa', 0),
+    (@id_pergunta, 'Pode variar e positiva', 1),
+    (@id_pergunta, 'Negativa e negativa', 0),
+    (@id_pergunta, 'Positiva e pode variar', 0);
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O que é uma solução tampão?',
+        'Difícil',
+        'É formada por um ácido fraco e seu sal correspondente, ou uma base fraca e seu sal.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Uma solução com pH exatamente 7',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Uma solução que resiste a grandes variações de pH',
+        1
+    ),
+    (@id_pergunta, 'Uma solução supersaturada', 0),
+    (
+        @id_pergunta,
+        'Uma solução que conduz eletricidade',
+        0
+    ),
+    (@id_pergunta, 'Uma solução colorida', 0);
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual número quântico descreve a orientação de um orbital no espaço?',
+        'Difícil',
+        'Pense nos orbitais p (px, py, pz).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Número Quântico Principal (n)', 0),
+    (@id_pergunta, 'Número Quântico Azimutal (l)', 0),
+    (
+        @id_pergunta,
+        'Número Quântico Magnético (ml)',
+        1
+    ),
+    (@id_pergunta, 'Número Quântico de Spin (ms)', 0),
+    (@id_pergunta, 'Número de Avogadro', 0);
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'A reação de hidrólise de um éster em meio básico é chamada de:',
+        'Difícil',
+        'É o processo utilizado para fabricar sabão.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Esterificação', 0),
+    (@id_pergunta, 'Saponificação', 1),
+    (@id_pergunta, 'Polimerização', 0),
+    (@id_pergunta, 'Neutralização', 0),
+    (@id_pergunta, 'Oxidação de Tollens', 0);
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é a lei da velocidade para uma reação elementar A + 2B → C?',
+        'Difícil',
+        'A velocidade é proporcional ao produto das concentrações dos reagentes, elevadas a seus coeficientes.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'v = k[A][B]', 0),
+    (@id_pergunta, 'v = k[A]²[B]', 0),
+    (@id_pergunta, 'v = k[A][B]²', 1),
+    (@id_pergunta, 'v = k[C]', 0),
+    (@id_pergunta, 'v = k[C]/[A][B]', 0);
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O Princípio da Exclusão de Pauli afirma que:',
+        'Difícil',
+        'Relaciona-se com a distribuição de elétrons em orbitais.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'É impossível saber a posição e a velocidade de um elétron simultaneamente',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Em um mesmo átomo, não podem existir dois elétrons com os quatro números quânticos iguais',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Os elétrons preenchem primeiro os orbitais de menor energia',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A energia é quantizada em pacotes chamados fótons',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A massa se conserva em uma reação química',
+        0
+    );
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O que é um isômero óptico (ou enantiômero)?',
+        'Difícil',
+        'São como a mão direita e a mão esquerda: imagens especulares não sobreponíveis.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Uma molécula que é a imagem especular não sobreponível de outra',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Uma molécula com diferentes posições de um grupo funcional',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Uma molécula com um anel benzênico',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Um isômero com um arranjo cis ou trans',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Uma molécula com um carbono de hibridização sp',
+        0
+    );
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é o produto de solubilidade (Kps) do AgCl, se sua solubilidade é 1x10⁻⁵ mol/L?',
+        'Difícil',
+        'Para AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq), Kps = [Ag⁺][Cl⁻].'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1x10⁻⁵', 0),
+    (@id_pergunta, '2x10⁻⁵', 0),
+    (@id_pergunta, '1x10⁻¹⁰', 1),
+    (@id_pergunta, '1x10⁻²·⁵', 0),
+    (@id_pergunta, '5x10⁻⁶', 0);
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'A Regra de Markovnikov prevê o produto principal na adição de HBr a qual tipo de composto?',
+        'Difícil',
+        'Diz que o hidrogênio se liga ao carbono mais hidrogenado da dupla ligação.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Alcanos', 0),
+    (@id_pergunta, 'Alcenos assimétricos', 1),
+    (@id_pergunta, 'Benzeno', 0),
+    (@id_pergunta, 'Álcoois', 0),
+    (@id_pergunta, 'Cetonas', 0);
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O que é a energia de ativação de uma reação?',
+        'Difícil',
+        'É a "barreira" de energia que os reagentes precisam superar.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'A energia total liberada pela reação',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A energia mínima necessária para que a reação ocorra',
+        1
+    ),
+    (
+        @id_pergunta,
+        'A diferença de energia entre produtos e reagentes',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A energia do estado de equilíbrio',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A energia economizada pelo uso de um catalisador',
+        0
+    );
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'O processo de cobrir um metal com uma fina camada de outro metal, usando eletrólise, é chamado de:',
+        'Difícil',
+        'É usado para proteger contra a corrosão ou para fins estéticos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Anodização', 0),
+    (@id_pergunta, 'Galvanização', 1),
+    (@id_pergunta, 'Passivação', 0),
+    (@id_pergunta, 'Destilação', 0),
+    (@id_pergunta, 'Titulação', 0);
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual dos seguintes compostos é um aromático?',
+        'Difícil',
+        'Sua estrutura é um anel de 6 carbonos com ligações duplas alternadas.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Cicloexano', 0),
+    (@id_pergunta, 'Hexeno', 0),
+    (@id_pergunta, 'Benzeno', 1),
+    (@id_pergunta, 'Acetileno', 0),
+    (@id_pergunta, 'Propeno', 0);
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Para uma reação ser espontânea em qualquer temperatura, ΔH e ΔS devem ser, respectivamente:',
+        'Difícil',
+        'Pense na equação ΔG = ΔH - TΔS. ΔG deve ser sempre negativo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Positivo e Positivo', 0),
+    (@id_pergunta, 'Negativo e Negativo', 0),
+    (@id_pergunta, 'Negativo e Positivo', 1),
+    (@id_pergunta, 'Positivo e Negativo', 0),
+    (@id_pergunta, 'Zero e Positivo', 0);
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Qual é a ordem total da reação com a lei de velocidade v = k[A]¹[B]²?',
+        'Difícil',
+        'É a soma dos expoentes das concentrações na lei da velocidade.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '1', 0),
+    (@id_pergunta, '2', 0),
+    (@id_pergunta, '3', 1),
+    (@id_pergunta, '4', 0),
+    (@id_pergunta, 'Não pode ser determinada', 0);
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'As forças intermoleculares mais fortes presentes em uma amostra de amônia (NH₃) são:',
+        'Difícil',
+        'Ocorrem quando o Hidrogênio está ligado a F, O ou N.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Forças de London (dipolo induzido)',
+        0
+    ),
+    (@id_pergunta, 'Forças dipolo-dipolo', 0),
+    (@id_pergunta, 'Ligações de hidrogênio', 1),
+    (@id_pergunta, 'Ligações iônicas', 0),
+    (@id_pergunta, 'Ligações covalentes', 0);
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        5,
+        1,
+        'Um decaimento beta (β⁻) em um núcleo atômico resulta na:',
+        'Difícil',
+        'Um nêutron se transforma em um próton e um elétron é ejetado.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Diminuição do número de massa em 4',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Aumento do número atômico em 1',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Diminuição do número atômico em 1',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Aumento do número de nêutrons em 1',
+        0
+    ),
+    (@id_pergunta, 'Emissão de um núcleo de Hélio', 0);
+-- =================================================================
 -- ||                       História                              ||
 -- =================================================================
 -- =================================================================
