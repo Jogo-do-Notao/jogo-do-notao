@@ -35,9 +35,6 @@ public class ControleGerenciarPerguntas {
     private TableColumn<Pergunta, DificuldadePergunta> dificuldadeColuna;
 
     @FXML
-    private TableColumn<Pergunta, String> editadoPorColuna;
-
-    @FXML
     private TableColumn<Pergunta, Integer> idColuna;
 
     @FXML

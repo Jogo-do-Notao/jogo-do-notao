@@ -90,7 +90,6 @@
                   <TableColumn fx:id="materiaColuna" prefWidth="200.0" text="Matéria" />
                   <TableColumn fx:id="dificuldadeColuna" prefWidth="180.0" text="Dificuldade" />
                   <TableColumn fx:id="criadoPorColuna" prefWidth="250.0" text="Criado por" />
-                  <TableColumn fx:id="editadoPorColuna" prefWidth="320.0" text="Editado por" />
               </columns>
                <VBox.margin>
                   <Insets />
