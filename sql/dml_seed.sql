@@ -3278,6 +3278,1079 @@ VALUES (@id_pergunta, 'Seiva elaborada e seiva bruta', 0),
 -- ||                        Física                               ||
 -- =================================================================
 -- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual é a unidade de medida de Força no Sistema Internacional (SI)?',
+        'Fácil',
+        'O nome da unidade é uma homenagem ao cientista que formulou as leis do movimento.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Joule', 0),
+    (@id_pergunta, 'Watt', 0),
+    (@id_pergunta, 'Newton', 1),
+    (@id_pergunta, 'Pascal', 0),
+    (@id_pergunta, 'Volt', 0);
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A Primeira Lei de Newton é também conhecida como o Princípio da:',
+        'Fácil',
+        'Um corpo em repouso tende a permanecer em repouso...'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Ação e Reação', 0),
+    (@id_pergunta, 'Inércia', 1),
+    (@id_pergunta, 'Aceleração', 0),
+    (@id_pergunta, 'Energia', 0),
+    (@id_pergunta, 'Gravitação', 0);
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual tipo de energia está associado ao movimento de um corpo?',
+        'Fácil',
+        'O nome vem do grego "kinesis", que significa movimento.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Energia Potencial', 0),
+    (@id_pergunta, 'Energia Térmica', 0),
+    (@id_pergunta, 'Energia Cinética', 1),
+    (@id_pergunta, 'Energia Elástica', 0),
+    (@id_pergunta, 'Energia Nuclear', 0);
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O fenômeno que ocorre quando a luz bate em uma superfície e volta para o seu meio de origem é chamado de:',
+        'Fácil',
+        'É o que nos permite ver nossa imagem em um espelho.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Refração', 0),
+    (@id_pergunta, 'Absorção', 0),
+    (@id_pergunta, 'Difração', 0),
+    (@id_pergunta, 'Reflexão', 1),
+    (@id_pergunta, 'Dispersão', 0);
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual é a grandeza física que mede o grau de agitação das moléculas de um corpo?',
+        'Fácil',
+        'Medimos com um termômetro.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Calor', 0),
+    (@id_pergunta, 'Temperatura', 1),
+    (@id_pergunta, 'Pressão', 0),
+    (@id_pergunta, 'Energia', 0),
+    (@id_pergunta, 'Trabalho', 0);
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Materiais que permitem a passagem de corrente elétrica com facilidade são chamados de:',
+        'Fácil',
+        'Metais como cobre e alumínio são bons exemplos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Isolantes', 0),
+    (@id_pergunta, 'Semicondutores', 0),
+    (@id_pergunta, 'Condutores', 1),
+    (@id_pergunta, 'Resistores', 0),
+    (@id_pergunta, 'Capacitores', 0);
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A força que atrai os corpos para o centro da Terra é chamada de:',
+        'Fácil',
+        'É o motivo pelo qual as coisas caem.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Força Elétrica', 0),
+    (@id_pergunta, 'Força Magnética', 0),
+    (@id_pergunta, 'Força de Atrito', 0),
+    (@id_pergunta, 'Força Peso', 1),
+    (@id_pergunta, 'Força Normal', 0);
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual é a unidade de medida de potência no Sistema Internacional?',
+        'Fácil',
+        'A mesma unidade que mede a potência de lâmpadas e chuveiros elétricos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Joule', 0),
+    (@id_pergunta, 'Ampere', 0),
+    (@id_pergunta, 'Watt', 1),
+    (@id_pergunta, 'Volt', 0),
+    (@id_pergunta, 'Ohm', 0);
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A mudança do estado sólido para o líquido é chamada de:',
+        'Fácil',
+        'É o que acontece com o gelo fora do congelador.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Vaporização', 0),
+    (@id_pergunta, 'Solidificação', 0),
+    (@id_pergunta, 'Condensação', 0),
+    (@id_pergunta, 'Sublimação', 0),
+    (@id_pergunta, 'Fusão', 1);
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual instrumento é usado para medir a corrente elétrica?',
+        'Fácil',
+        'Seu nome vem da unidade de medida da corrente.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Voltímetro', 0),
+    (@id_pergunta, 'Amperímetro', 1),
+    (@id_pergunta, 'Ohmetro', 0),
+    (@id_pergunta, 'Termômetro', 0),
+    (@id_pergunta, 'Barômetro', 0);
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A variação da velocidade em função do tempo é chamada de:',
+        'Fácil',
+        'Quando um carro "acelera", ele está mudando sua velocidade.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Deslocamento', 0),
+    (@id_pergunta, 'Aceleração', 1),
+    (@id_pergunta, 'Força', 0),
+    (@id_pergunta, 'Trabalho', 0),
+    (@id_pergunta, 'Inércia', 0);
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O som é uma onda do tipo:',
+        'Fácil',
+        'Precisa de um meio material para se propagar.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Eletromagnética', 0),
+    (@id_pergunta, 'Mecânica', 1),
+    (@id_pergunta, 'Transversal', 0),
+    (@id_pergunta, 'Luminosa', 0),
+    (@id_pergunta, 'Gravitacional', 0);
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual das cores abaixo NÃO é uma cor primária da luz?',
+        'Fácil',
+        'A mistura das três cores primárias da luz resulta em branco.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Vermelho', 0),
+    (@id_pergunta, 'Verde', 0),
+    (@id_pergunta, 'Azul', 0),
+    (@id_pergunta, 'Amarelo', 1),
+    (@id_pergunta, 'Todas são primárias', 0);
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A mudança de estado gasoso para o líquido é chamada de:',
+        'Fácil',
+        'É o que forma as gotículas de água em uma janela fria.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Fusão', 0),
+    (@id_pergunta, 'Vaporização', 0),
+    (@id_pergunta, 'Condensação', 1),
+    (@id_pergunta, 'Solidificação', 0),
+    (@id_pergunta, 'Sublimação', 0);
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A unidade de medida da frequência de uma onda é:',
+        'Fácil',
+        'O nome homenageia um físico alemão.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Metro', 0),
+    (@id_pergunta, 'Segundo', 0),
+    (@id_pergunta, 'Hertz', 1),
+    (@id_pergunta, 'Newton', 0),
+    (@id_pergunta, 'Decibel', 0);
+-- Pergunta 16
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual é o nome da força que se opõe ao movimento entre duas superfícies em contato?',
+        'Fácil',
+        'É o que nos permite caminhar sem escorregar.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Força Peso', 0),
+    (@id_pergunta, 'Força Normal', 0),
+    (@id_pergunta, 'Força de Atrito', 1),
+    (@id_pergunta, 'Força Centrípeta', 0),
+    (@id_pergunta, 'Empuxo', 0);
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O desvio da luz ao passar de um meio para outro é chamado de:',
+        'Fácil',
+        'É por isso que um lápis parece "quebrado" dentro de um copo com água.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Reflexão', 0),
+    (@id_pergunta, 'Refração', 1),
+    (@id_pergunta, 'Difração', 0),
+    (@id_pergunta, 'Polarização', 0),
+    (@id_pergunta, 'Interferência', 0);
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Um ímã possui dois polos, que são:',
+        'Fácil',
+        'Semelhante aos polos geográficos da Terra.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Positivo e Negativo', 0),
+    (@id_pergunta, 'Leste e Oeste', 0),
+    (@id_pergunta, 'Norte e Sul', 1),
+    (@id_pergunta, 'Atração e Repulsão', 0),
+    (@id_pergunta, 'Entrada e Saída', 0);
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A escala de temperatura mais utilizada no Brasil é a:',
+        'Fácil',
+        'Utilizada na maioria dos países, exceto nos EUA.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Kelvin', 0),
+    (@id_pergunta, 'Fahrenheit', 0),
+    (@id_pergunta, 'Celsius', 1),
+    (@id_pergunta, 'Rankine', 0),
+    (@id_pergunta, 'Newton', 0);
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual é a principal fonte de energia do Sistema Solar?',
+        'Fácil',
+        'É a estrela em torno da qual a Terra orbita.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Lua', 0),
+    (@id_pergunta, 'Júpiter', 0),
+    (@id_pergunta, 'Terra', 0),
+    (@id_pergunta, 'Sol', 1),
+    (@id_pergunta, 'Marte', 0);
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Segundo a 2ª Lei de Newton, se uma força de 10 N é aplicada em um corpo de 2 kg, qual é a sua aceleração?',
+        'Médio',
+        'Use a fórmula F = m * a.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '2 m/s²', 0),
+    (@id_pergunta, '5 m/s²', 1),
+    (@id_pergunta, '10 m/s²', 0),
+    (@id_pergunta, '12 m/s²', 0),
+    (@id_pergunta, '20 m/s²', 0);
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Um carro se move a 72 km/h. Qual é a sua velocidade em m/s?',
+        'Médio',
+        'Para converter km/h para m/s, divida por 3,6.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '10 m/s', 0),
+    (@id_pergunta, '15 m/s', 0),
+    (@id_pergunta, '20 m/s', 1),
+    (@id_pergunta, '25 m/s', 0),
+    (@id_pergunta, '36 m/s', 0);
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'De acordo com a Lei de Ohm, se um resistor de 10 Ω é submetido a uma tensão de 120 V, qual é a corrente que o atravessa?',
+        'Médio',
+        'Use a fórmula V = R * i.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '10 A', 0),
+    (@id_pergunta, '12 A', 1),
+    (@id_pergunta, '120 A', 0),
+    (@id_pergunta, '1200 A', 0),
+    (@id_pergunta, '1,2 A', 0);
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Um objeto de 4 kg está se movendo a 5 m/s. Qual é a sua energia cinética?',
+        'Médio',
+        'A fórmula é Ec = (m * v²) / 2.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '20 J', 0),
+    (@id_pergunta, '40 J', 0),
+    (@id_pergunta, '50 J', 1),
+    (@id_pergunta, '80 J', 0),
+    (@id_pergunta, '100 J', 0);
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A lei que afirma que "a energia total de um sistema isolado permanece constante" é o Princípio da:',
+        'Médio',
+        'A energia não pode ser criada nem destruída, apenas transformada.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Conservação da Massa', 0),
+    (@id_pergunta, 'Conservação da Carga Elétrica', 0),
+    (@id_pergunta, 'Conservação da Energia', 1),
+    (@id_pergunta, 'Conservação do Momento Linear', 0),
+    (@id_pergunta, 'Incerteza de Heisenberg', 0);
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual o tipo de lente usada para corrigir a miopia?',
+        'Médio',
+        'Miopia ocorre quando a imagem se forma antes da retina. A lente deve espalhar os raios de luz.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Convergente', 0),
+    (@id_pergunta, 'Divergente', 1),
+    (@id_pergunta, 'Plana', 0),
+    (@id_pergunta, 'Biconvexa', 0),
+    (@id_pergunta, 'Cilíndrica', 0);
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O processo de transferência de calor por meio de ondas eletromagnéticas é chamado de:',
+        'Médio',
+        'É assim que o Sol aquece a Terra.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Condução', 0),
+    (@id_pergunta, 'Convecção', 0),
+    (@id_pergunta, 'Irradiação', 1),
+    (@id_pergunta, 'Advecção', 0),
+    (@id_pergunta, 'Evaporação', 0);
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A força que um fluido exerce sobre um corpo nele imerso, dirigida para cima, é chamada de:',
+        'Médio',
+        'Recebe o nome do cientista que a descobriu na sua banheira.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Pressão', 0),
+    (@id_pergunta, 'Peso', 0),
+    (@id_pergunta, 'Empuxo', 1),
+    (@id_pergunta, 'Tensão superficial', 0),
+    (@id_pergunta, 'Viscosidade', 0);
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual o trabalho realizado por uma força de 20 N que desloca um objeto por 5 metros na mesma direção e sentido da força?',
+        'Médio',
+        'Trabalho = Força x Deslocamento.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '4 J', 0),
+    (@id_pergunta, '25 J', 0),
+    (@id_pergunta, '50 J', 0),
+    (@id_pergunta, '100 J', 1),
+    (@id_pergunta, '200 J', 0);
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A mudança aparente na frequência de uma onda causada pelo movimento relativo entre a fonte e o observador é conhecida como:',
+        'Médio',
+        'É o que faz o som de uma ambulância parecer mais agudo quando se aproxima e mais grave quando se afasta.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Efeito Joule', 0),
+    (@id_pergunta, 'Efeito Doppler', 1),
+    (@id_pergunta, 'Efeito Estufa', 0),
+    (@id_pergunta, 'Efeito Tyndall', 0),
+    (@id_pergunta, 'Efeito Fotoelétrico', 0);
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Um objeto é abandonado em queda livre (g=10 m/s²). Qual será sua velocidade após 3 segundos?',
+        'Médio',
+        'Use a fórmula v = v₀ + a*t.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '10 m/s', 0),
+    (@id_pergunta, '15 m/s', 0),
+    (@id_pergunta, '30 m/s', 1),
+    (@id_pergunta, '45 m/s', 0),
+    (@id_pergunta, '100 m/s', 0);
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A Terceira Lei de Newton estabelece que para toda ação existe uma reação:',
+        'Médio',
+        'Pense em como um foguete é impulsionado.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'De menor intensidade e sentido oposto',
+        0
+    ),
+    (
+        @id_pergunta,
+        'De mesma intensidade e mesmo sentido',
+        0
+    ),
+    (
+        @id_pergunta,
+        'De mesma intensidade e sentido oposto',
+        1
+    ),
+    (
+        @id_pergunta,
+        'De maior intensidade e mesmo sentido',
+        0
+    ),
+    (@id_pergunta, 'Que ocorre instantes depois', 0);
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual a potência elétrica de um chuveiro que opera com 220 V e é percorrido por uma corrente de 20 A?',
+        'Médio',
+        'Use a fórmula P = V * i.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '11 W', 0),
+    (@id_pergunta, '220 W', 0),
+    (@id_pergunta, '2200 W', 0),
+    (@id_pergunta, '4400 W', 1),
+    (@id_pergunta, '440 W', 0);
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A grandeza física que relaciona a massa de um corpo com o seu volume é a:',
+        'Médio',
+        'Um quilo de chumbo e um quilo de algodão têm massas iguais, mas esta grandeza é diferente.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Pressão', 0),
+    (@id_pergunta, 'Densidade', 1),
+    (@id_pergunta, 'Peso', 0),
+    (@id_pergunta, 'Força', 0),
+    (@id_pergunta, 'Empuxo', 0);
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A soma das energias cinética e potencial de um sistema é chamada de energia:',
+        'Médio',
+        'É a energia total de movimento e posição.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Térmica', 0),
+    (@id_pergunta, 'Elétrica', 0),
+    (@id_pergunta, 'Nuclear', 0),
+    (@id_pergunta, 'Mecânica', 1),
+    (@id_pergunta, 'Química', 0);
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Um espelho convexo sempre forma uma imagem:',
+        'Médio',
+        'Pense nos espelhos de segurança de lojas e garagens.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Real, invertida e maior', 0),
+    (@id_pergunta, 'Virtual, direita e menor', 1),
+    (@id_pergunta, 'Real, direita e menor', 0),
+    (@id_pergunta, 'Virtual, invertida e maior', 0),
+    (
+        @id_pergunta,
+        'Real, direita e do mesmo tamanho',
+        0
+    );
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A Primeira Lei da Termodinâmica é uma aplicação do princípio da conservação de:',
+        'Médio',
+        'Relaciona trabalho, calor e variação da energia interna.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Massa', 0),
+    (@id_pergunta, 'Carga', 0),
+    (@id_pergunta, 'Energia', 1),
+    (@id_pergunta, 'Momento', 0),
+    (@id_pergunta, 'Matéria', 0);
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual é a quantidade de calor necessária para elevar em 10°C a temperatura de 20g de água? (calor específico da água = 1 cal/g°C)',
+        'Médio',
+        'Use a fórmula do calor sensível: Q = m * c * ΔT.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '2 cal', 0),
+    (@id_pergunta, '30 cal', 0),
+    (@id_pergunta, '100 cal', 0),
+    (@id_pergunta, '200 cal', 1),
+    (@id_pergunta, '2000 cal', 0);
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O momento linear (ou quantidade de movimento) de um corpo é o produto de sua massa pela sua:',
+        'Médio',
+        'É uma medida da "inércia em movimento".'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Aceleração', 0),
+    (@id_pergunta, 'Velocidade', 1),
+    (@id_pergunta, 'Posição', 0),
+    (@id_pergunta, 'Força', 0),
+    (@id_pergunta, 'Energia', 0);
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A associação de resistores em série resulta em uma resistência equivalente que é:',
+        'Médio',
+        'Pense em colocar vários obstáculos um após o outro em um caminho.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'A soma das resistências individuais',
+        1
+    ),
+    (
+        @id_pergunta,
+        'A média das resistências individuais',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Menor que a menor das resistências',
+        0
+    ),
+    (
+        @id_pergunta,
+        'O inverso da soma dos inversos',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Igual à maior das resistências',
+        0
+    );
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A lei da indução eletromagnética, que descreve como um campo magnético variável pode gerar uma corrente elétrica, foi formulada por:',
+        'Difícil',
+        'Esta lei é a base para o funcionamento de geradores e transformadores.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Ampère', 0),
+    (@id_pergunta, 'Ohm', 0),
+    (@id_pergunta, 'Faraday', 1),
+    (@id_pergunta, 'Coulomb', 0),
+    (@id_pergunta, 'Maxwell', 0);
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Segundo a Teoria da Relatividade Especial de Einstein, qual das seguintes grandezas NÃO é relativa e sim absoluta?',
+        'Difícil',
+        'É a constante "c" que aparece na famosa equação E=mc².'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Tempo', 0),
+    (@id_pergunta, 'Espaço', 0),
+    (@id_pergunta, 'Massa', 0),
+    (@id_pergunta, 'A velocidade da luz no vácuo', 1),
+    (@id_pergunta, 'Velocidade do observador', 0);
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual o rendimento de uma máquina de Carnot que opera entre as temperaturas de 500 K (fonte quente) e 300 K (fonte fria)?',
+        'Difícil',
+        'A fórmula do rendimento é η = 1 - (Tfria / Tquente).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '20%', 0),
+    (@id_pergunta, '40%', 1),
+    (@id_pergunta, '50%', 0),
+    (@id_pergunta, '60%', 0),
+    (@id_pergunta, '100%', 0);
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O Efeito Fotoelétrico, explicado por Einstein, demonstra que a luz pode se comportar como:',
+        'Difícil',
+        'A luz, neste caso, é composta por pacotes de energia chamados fótons.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Apenas uma onda', 0),
+    (@id_pergunta, 'Uma partícula (fóton)', 1),
+    (@id_pergunta, 'Um fluido', 0),
+    (@id_pergunta, 'Um campo magnético', 0),
+    (@id_pergunta, 'Um gás ideal', 0);
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Em uma colisão perfeitamente elástica entre dois corpos, quais grandezas são conservadas?',
+        'Difícil',
+        'Pense tanto na energia quanto no momento do sistema.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Apenas a energia cinética', 0),
+    (@id_pergunta, 'Apenas o momento linear', 0),
+    (
+        @id_pergunta,
+        'A energia cinética e o momento linear',
+        1
+    ),
+    (@id_pergunta, 'Apenas a energia potencial', 0),
+    (@id_pergunta, 'Nenhuma das duas', 0);
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'A Segunda Lei da Termodinâmica estabelece que a ______ de um sistema isolado tende a aumentar com o tempo.',
+        'Difícil',
+        'Esta grandeza é uma medida do grau de desordem ou aleatoriedade de um sistema.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Energia interna', 0),
+    (@id_pergunta, 'Entropia', 1),
+    (@id_pergunta, 'Temperatura', 0),
+    (@id_pergunta, 'Pressão', 0),
+    (@id_pergunta, 'Entalpia', 0);
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Um objeto colocado a 30 cm de uma lente convergente de distância focal 15 cm terá sua imagem formada a que distância da lente?',
+        'Difícil',
+        'Use a equação dos fabricantes de lentes: 1/f = 1/p + 1/p''.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '10 cm', 0),
+    (@id_pergunta, '15 cm', 0),
+    (@id_pergunta, '20 cm', 0),
+    (@id_pergunta, '30 cm', 1),
+    (@id_pergunta, '-15 cm', 0);
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual é a resistência equivalente de dois resistores, de 10 Ω e 30 Ω, associados em paralelo?',
+        'Difícil',
+        'Use a fórmula 1/Req = 1/R₁ + 1/R₂.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '40 Ω', 0),
+    (@id_pergunta, '20 Ω', 0),
+    (@id_pergunta, '7,5 Ω', 1),
+    (@id_pergunta, '15 Ω', 0),
+    (@id_pergunta, '4 Ω', 0);
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O princípio que afirma ser impossível determinar simultaneamente e com precisão a posição e o momento de uma partícula é o Princípio da:',
+        'Difícil',
+        'É um conceito fundamental da mecânica quântica.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Exclusão de Pauli', 0),
+    (@id_pergunta, 'Incerteza de Heisenberg', 1),
+    (@id_pergunta, 'Equivalência de Einstein', 0),
+    (@id_pergunta, 'Superposição Quântica', 0),
+    (@id_pergunta, 'Dualidade Onda-Partícula', 0);
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual é a força de atração gravitacional entre duas massas de 1 kg cada, separadas por 1 metro de distância? (Use G ≈ 6,67 x 10⁻¹¹ N·m²/kg²)',
+        'Difícil',
+        'A força será numericamente igual à constante de gravitação universal.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '9,8 N', 0),
+    (@id_pergunta, '1 N', 0),
+    (@id_pergunta, '6,67 x 10⁻¹¹ N', 1),
+    (@id_pergunta, '0 N', 0),
+    (@id_pergunta, '1,6 x 10⁻¹⁹ N', 0);
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O período de um pêndulo simples depende principalmente:',
+        'Difícil',
+        'Não depende da massa do objeto, mas sim de seu comprimento e da gravidade local.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Da massa e da amplitude', 0),
+    (
+        @id_pergunta,
+        'Do seu comprimento e da gravidade',
+        1
+    ),
+    (@id_pergunta, 'Apenas da massa', 0),
+    (
+        @id_pergunta,
+        'Apenas da amplitude da oscilação',
+        0
+    ),
+    (@id_pergunta, 'Da cor do objeto', 0);
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'As equações de Maxwell unificaram quais áreas da física?',
+        'Difícil',
+        'Demonstraram que a luz é uma onda composta por esses dois campos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Termodinâmica e Mecânica Quântica',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Eletricidade, Magnetismo e Óptica',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Gravitação e Mecânica Clássica',
+        0
+    ),
+    (@id_pergunta, 'Física Nuclear e Relatividade', 0),
+    (@id_pergunta, 'Acústica e Fluidodinâmica', 0);
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual a capacitância equivalente de dois capacitores de 10 μF e 40 μF associados em série?',
+        'Difícil',
+        'A fórmula para capacitores em série é similar à de resistores em paralelo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '50 μF', 0),
+    (@id_pergunta, '25 μF', 0),
+    (@id_pergunta, '8 μF', 1),
+    (@id_pergunta, '10 μF', 0),
+    (@id_pergunta, '400 μF', 0);
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Um isótopo radioativo tem uma meia-vida de 10 anos. Após 30 anos, qual porcentagem da amostra original terá restado?',
+        'Difícil',
+        '30 anos correspondem a 3 períodos de meia-vida.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '50%', 0),
+    (@id_pergunta, '25%', 0),
+    (@id_pergunta, '12,5%', 1),
+    (@id_pergunta, '6,25%', 0),
+    (@id_pergunta, '0%', 0);
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O fenômeno da supercondutividade é caracterizado por:',
+        'Difícil',
+        'Ocorre em certos materiais a temperaturas extremamente baixas.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Resistência elétrica infinita', 0),
+    (@id_pergunta, 'Resistência elétrica nula', 1),
+    (@id_pergunta, 'Capacitância nula', 0),
+    (@id_pergunta, 'Magnetismo extremamente forte', 0),
+    (@id_pergunta, 'Emissão de luz espontânea', 0);
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O momento de inércia de um corpo depende:',
+        'Difícil',
+        'É a resistência de um corpo à rotação. Não depende da velocidade.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Da velocidade angular do corpo',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Da sua massa e da distribuição dessa massa em relação ao eixo de rotação',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Apenas da sua velocidade linear',
+        0
+    ),
+    (@id_pergunta, 'Apenas da força aplicada', 0),
+    (@id_pergunta, 'Da aceleração angular', 0);
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Qual princípio explica por que um avião voa?',
+        'Difícil',
+        'Relaciona a velocidade de um fluido com a sua pressão.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Princípio de Arquimedes', 0),
+    (@id_pergunta, 'Princípio de Pascal', 0),
+    (@id_pergunta, 'Equação de Torricelli', 0),
+    (@id_pergunta, 'Princípio de Bernoulli', 1),
+    (@id_pergunta, 'Lei de Stevin', 0);
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O que é um buraco negro, em termos de gravidade e velocidade de escape?',
+        'Difícil',
+        'A gravidade é tão intensa que nada pode escapar.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Uma região onde a velocidade de escape é menor que a da luz',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Uma região onde a velocidade de escape é maior que a da luz',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Uma estrela com gravidade zero',
+        0
+    ),
+    (@id_pergunta, 'Um planeta sem atmosfera', 0),
+    (@id_pergunta, 'Uma galáxia sem estrelas', 0);
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'O fenômeno da difração é mais acentuado quando o tamanho do obstáculo ou fenda é:',
+        'Difícil',
+        'A onda contorna o obstáculo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Muito maior que o comprimento de onda',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Da mesma ordem de grandeza do comprimento de onda',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Muito menor que o comprimento de onda',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Independente do comprimento de onda',
+        0
+    ),
+    (@id_pergunta, 'Nulo', 0);
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        4,
+        1,
+        'Um elétron movendo-se perpendicularmente a um campo magnético uniforme descreverá uma trajetória:',
+        'Difícil',
+        'A força magnética atua como uma força centrípeta.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Retilínea', 0),
+    (@id_pergunta, 'Parabólica', 0),
+    (@id_pergunta, 'Circular', 1),
+    (@id_pergunta, 'Helicoidal', 0),
+    (@id_pergunta, 'Hiperbólica', 0);
+-- =================================================================
 -- ||                       Química                               ||
 -- =================================================================
 -- =================================================================
