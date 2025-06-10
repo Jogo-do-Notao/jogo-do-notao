@@ -127,12 +127,24 @@ public class ControleTelaPartida implements Initializable {
 
     @FXML
     void exibirInstrucoes(ActionEvent event) {
-
     }
 
     @FXML
     void sairDaPartida(ActionEvent event) {
+        // Exibir mensagem de confirmacao
+        Alert msgConfir = new Alert(Alert.AlertType.CONFIRMATION);
+        msgConfir.setTitle("Sair da Partida");
+        msgConfir.setHeaderText("Você tem certeza que deseja sair da partida?");
+        msgConfir.setContentText("Seu progresso atual será salvo e você poderá retomar a partida mais tarde.");
+        // Obter resposta
+        Optional<ButtonType> decisao = msgConfir.showAndWait();
 
+        // Se cancelou, encerra o método
+        if (decisao.isEmpty() || decisao.get() == ButtonType.CANCEL) {
+            return; // encerrar método
+        }
+        
+        System.out.println("Sair da partida...");
     }
 
     /**
