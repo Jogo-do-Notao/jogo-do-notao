@@ -81,7 +81,7 @@
             </VBox>
          </children>
       </HBox>
-      <VBox layoutX="33.0" layoutY="220.0" prefHeight="834.0" prefWidth="1809.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12; -fx-border-color: #ee2252; -fx-border-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="220.0">
+      <VBox layoutX="33.0" layoutY="220.0" prefHeight="398.0" prefWidth="913.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12; -fx-border-color: #ee2252; -fx-border-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="220.0">
          <children>
             <TableView fx:id="tabelaAlunos" style="-fx-background-radius: 12;" VBox.vgrow="ALWAYS">
               <columns>
@@ -94,6 +94,22 @@
             </TableView>
          </children>
       </VBox>
+      <Button layoutX="422.0" layoutY="652.0" mnemonicParsing="false" onAction="#excluirAluno" prefHeight="45.0" prefWidth="202.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Excluir Aluno" textAlignment="CENTER" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="422.0" AnchorPane.rightAnchor="400.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/Iconelixeira.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="button-lg" />
+            <String fx:value="button-vermelho" />
+         </styleClass>
+      </Button>
    </children>
    <styleClass>
       <String fx:value="pergunta-bg" />

@@ -11,6 +11,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -129,5 +130,63 @@ public class ControleGerenciarAluno {
     @FXML
     void voltarParaPainel(ActionEvent event) throws IOException {
         App.changeScene("area-adm/painel-administrador", "Painel Administrador");
+    }
+    @FXML
+    void excluirAluno(ActionEvent event) {
+        // Obtém o aluno selecionado na tabela
+        Aluno alunoSelecionado = tabelaAlunos.getSelectionModel().getSelectedItem();
+        
+        // Verifica se um aluno foi selecionado
+        if (alunoSelecionado == null) {
+            Alert alerta = new Alert(AlertType.WARNING);
+            alerta.setTitle("Aviso");
+            alerta.setHeaderText("Nenhum aluno selecionado");
+            alerta.setContentText("Por favor, selecione um aluno para excluir.");
+            alerta.showAndWait();
+            return;
+        }
+        
+        // Mostra confirmação antes de excluir
+        Alert confirmacao = new Alert(AlertType.CONFIRMATION);
+        confirmacao.setTitle("Confirmar Exclusão");
+        confirmacao.setHeaderText("Excluir Aluno");
+        confirmacao.setContentText("Tem certeza que deseja excluir o aluno " + 
+                               alunoSelecionado.getNome() + " (RA: " + alunoSelecionado.getRa() + 
+                               ")?\n\nEsta ação não poderá ser desfeita.");
+        
+        // Mostra o diálogo e espera pela resposta do usuário
+        confirmacao.showAndWait().ifPresent(resposta -> {
+            if (resposta == ButtonType.OK) {
+                try {
+                    // Tenta excluir o aluno
+                    boolean sucesso = AlunoDAO.excluirAluno(alunoSelecionado.getId());
+                    
+                    if (sucesso) {
+                        // Remove da lista e atualiza a tabela
+                        listaCompletaAlunos.remove(alunoSelecionado);
+                        
+                        // Mostra mensagem de sucesso
+                        Alert sucessoAlert = new Alert(AlertType.INFORMATION);
+                        sucessoAlert.setTitle("Sucesso");
+                        sucessoAlert.setHeaderText(null);
+                        sucessoAlert.setContentText("Aluno excluído com sucesso!");
+                        sucessoAlert.showAndWait();
+                    } else {
+                        throw new Exception("Falha ao excluir o aluno no banco de dados");
+                    }
+                } catch (Exception e) {
+                    System.err.println("Erro ao excluir aluno: " + e.getMessage());
+                    e.printStackTrace();
+                    
+                    // Mostra mensagem de erro
+                    Alert erro = new Alert(AlertType.ERROR);
+                    erro.setTitle("Erro");
+                    erro.setHeaderText("Erro ao excluir aluno");
+                    erro.setContentText("Ocorreu um erro ao excluir o aluno. Por favor, tente novamente.\n\n" +
+                                      "Detalhes: " + e.getMessage());
+                    erro.showAndWait();
+                }
+            }
+        });
     }
 }

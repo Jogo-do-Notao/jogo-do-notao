@@ -141,6 +141,7 @@ public class ProfessorDAO {
             throw new RuntimeException(e);
         }
     }
+
     public static ArrayList<Professor> obterProfessores() {
         ArrayList<Professor> professores = new ArrayList<>();
         String sql = "SELECT * FROM professor";
@@ -164,5 +165,100 @@ public class ProfessorDAO {
             throw new RuntimeException(e);
         }
         return professores;
+    }
+
+    /**
+     * Exclui um professor do banco de dados.
+     *
+     * @param idProfessor ID do professor a ser excluído
+     * @return true se a exclusão foi bem-sucedida, false caso contrário
+     */
+    public static boolean excluirProfessor(int idProfessor) {
+        // Primeiro, verificar se o professor existe
+        Professor professor = buscarPorId(idProfessor);
+        if (professor == null) {
+            System.err.println("Erro: Professor com ID " + idProfessor + " não encontrado.");
+            return false;
+        }
+
+        Connection conexao = null;
+        try {
+            conexao = ConexaoDB.getConnection();
+            conexao.setAutoCommit(false); // Inicia transação
+
+            // Primeiro, verificar se o professor é coordenador
+            if (professor.isCoordenador()) {
+                // Se for coordenador, verificar se é o único coordenador
+                String sqlVerificaCoordenadores = "SELECT COUNT(*) AS total FROM professor WHERE coordenador = TRUE";
+                try (PreparedStatement stmt = conexao.prepareStatement(sqlVerificaCoordenadores);
+                     ResultSet rs = stmt.executeQuery()) {
+                    if (rs.next() && rs.getInt("total") <= 1) {
+                        // Se for o único coordenador, não permite a exclusão
+                        System.err.println("Erro: Não é possível excluir o único professor coordenador do sistema.");
+                        return false;
+                    }
+                }
+            }
+
+            // Se chegou aqui, pode prosseguir com a exclusão
+            String sql = "DELETE FROM professor WHERE id_professor = ?";
+            try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+                stmt.setInt(1, idProfessor);
+                int linhasAfetadas = stmt.executeUpdate();
+
+                if (linhasAfetadas > 0) {
+                    conexao.commit(); // Confirma a transação
+                    return true;
+                } else {
+                    conexao.rollback(); // Desfaz a transação
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            try {
+                if (conexao != null) {
+                    conexao.rollback(); // Em caso de erro, faz rollback
+                }
+            } catch (SQLException ex) {
+                System.err.println("Erro ao fazer rollback da transação: " + ex.getMessage());
+            }
+            System.err.println("Erro ao excluir professor: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if (conexao != null) {
+                    conexao.setAutoCommit(true); // Restaura o auto-commit
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("Erro ao fechar conexão: " + e.getMessage());
+            }
+        }
+    }
+
+    /**
+     * Atualiza a senha de um professor no banco de dados.
+     *
+     * @param idProfessor   ID do professor que terá a senha atualizada.
+     * @param novaSenhaHash Nova senha já criptografada.
+     * @return {@code true} se a atualização for bem-sucedida, {@code false} caso contrário.
+     */
+    public static boolean atualizarSenha(int idProfessor, String novaSenhaHash) {
+        String sql = "UPDATE professor SET hash_senha = ? WHERE id_professor = ?";
+
+        try (Connection conexao = ConexaoDB.getConnection();
+             PreparedStatement stmt = conexao.prepareStatement(sql)) {
+
+            stmt.setString(1, novaSenhaHash);
+            stmt.setInt(2, idProfessor);
+
+            int linhasAfetadas = stmt.executeUpdate();
+            return linhasAfetadas > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

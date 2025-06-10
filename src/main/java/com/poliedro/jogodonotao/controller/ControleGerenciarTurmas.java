@@ -16,9 +16,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Button;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class ControleGerenciarTurmas {
 
@@ -150,5 +154,56 @@ public class ControleGerenciarTurmas {
     @FXML
     void voltarParaPainel(ActionEvent event) throws IOException {
         App.changeScene("area-adm/painel-administrador", "Painel Administrador");
+    }
+    @FXML
+    void excluirTurma(ActionEvent event) {
+        // Obtém a turma selecionada na tabela
+        Turma turmaSelecionada = tabelaTurmas.getSelectionModel().getSelectedItem();
+        
+        // Verifica se uma turma foi selecionada
+        if (turmaSelecionada == null) {
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Aviso");
+            alert.setHeaderText("Nenhuma turma selecionada");
+            alert.setContentText("Por favor, selecione uma turma para excluir.");
+            alert.showAndWait();
+            return;
+        }
+        
+        // Confirmação antes de excluir
+        Alert confirmacao = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmacao.setTitle("Confirmar Exclusão");
+        confirmacao.setHeaderText("Excluir Turma");
+        confirmacao.setContentText("Tem certeza que deseja excluir a turma \"" + turmaSelecionada.getNome() + "\"?");
+        
+        Optional<ButtonType> resultado = confirmacao.showAndWait();
+        if (resultado.isPresent() && resultado.get() == ButtonType.OK) {
+            try {
+                // Remove do banco de dados
+                boolean sucesso = TurmaDAO.excluirTurma(turmaSelecionada.getId());
+                
+                if (sucesso) {
+                    // Remove da lista e atualiza a tabela
+                    listaCompletaTurmas.remove(turmaSelecionada);
+                    
+                    Alert sucessoAlert = new Alert(AlertType.INFORMATION);
+                    sucessoAlert.setTitle("Sucesso");
+                    sucessoAlert.setHeaderText(null);
+                    sucessoAlert.setContentText("Turma excluída com sucesso!");
+                    sucessoAlert.showAndWait();
+                } else {
+                    throw new Exception("Falha ao excluir a turma no banco de dados");
+                }
+            } catch (Exception e) {
+                System.err.println("Erro ao excluir turma: " + e.getMessage());
+                e.printStackTrace();
+                
+                Alert erro = new Alert(AlertType.ERROR);
+                erro.setTitle("Erro");
+                erro.setHeaderText("Erro ao excluir turma");
+                erro.setContentText("Ocorreu um erro ao excluir a turma. Por favor, tente novamente.");
+                erro.showAndWait();
+            }
+        }
     }
 }

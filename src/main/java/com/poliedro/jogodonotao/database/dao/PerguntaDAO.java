@@ -250,4 +250,66 @@ public class PerguntaDAO {
 
         return null;
     }
+    
+    /**
+     * Exclui uma pergunta do banco de dados pelo seu ID.
+     *
+     * @param id O ID da pergunta a ser excluída.
+     * @return true se a pergunta foi excluída com sucesso, false caso contrário.
+     */
+    public static boolean excluirPergunta(int id) {
+        // Primeiro, excluímos as alternativas relacionadas à pergunta
+        String sqlAlternativas = "DELETE FROM alternativa WHERE id_pergunta = ?";
+        // Depois, excluímos os registros da tabela de relacionamento pergunta_partida
+        String sqlPerguntaPartida = "DELETE FROM pergunta_partida WHERE id_pergunta = ?";
+        // Por fim, excluímos a pergunta
+        String sqlPergunta = "DELETE FROM pergunta WHERE id_pergunta = ?";
+        
+        Connection conexao = null;
+        try {
+            conexao = ConexaoDB.getConnection();
+            conexao.setAutoCommit(false); // Inicia transação
+            
+            try (PreparedStatement stmtAlternativas = conexao.prepareStatement(sqlAlternativas);
+                 PreparedStatement stmtPerguntaPartida = conexao.prepareStatement(sqlPerguntaPartida);
+                 PreparedStatement stmtPergunta = conexao.prepareStatement(sqlPergunta)) {
+                
+                // Exclui as alternativas
+                stmtAlternativas.setInt(1, id);
+                stmtAlternativas.executeUpdate();
+                
+                // Exclui os registros de relacionamento
+                stmtPerguntaPartida.setInt(1, id);
+                stmtPerguntaPartida.executeUpdate();
+                
+                // Exclui a pergunta
+                stmtPergunta.setInt(1, id);
+                int linhasAfetadas = stmtPergunta.executeUpdate();
+                
+                conexao.commit(); // Confirma as alterações
+                return linhasAfetadas > 0;
+            } catch (SQLException e) {
+                if (conexao != null) {
+                    try {
+                        conexao.rollback(); // Desfaz as alterações em caso de erro
+                    } catch (SQLException ex) {
+                        System.err.println("Erro ao fazer rollback: " + ex.getMessage());
+                    }
+                }
+                throw e;
+            }
+        } catch (SQLException e) {
+            System.err.println("Erro ao excluir pergunta: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (conexao != null) {
+                try {
+                    conexao.setAutoCommit(true); // Restaura o modo de autocommit
+                } catch (SQLException e) {
+                    System.err.println("Erro ao restaurar autocommit: " + e.getMessage());
+                }
+            }
+        }
+    }
 }

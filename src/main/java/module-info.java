@@ -4,6 +4,7 @@ module com.poliedro.jogodonotao {
     requires java.sql;
     requires io.github.cdimascio.dotenv.java;
     requires spring.security.crypto;
+    requires java.desktop;
 
     // Abre os pacotes necessários para o JavaFX
     opens com.poliedro.jogodonotao to javafx.fxml, javafx.base;

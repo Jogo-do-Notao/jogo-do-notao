@@ -99,4 +99,5 @@ public class ControlePainelAdministrador implements Initializable {
         App.changeScene("area-adm/gerenciar-professores/tela-cadastrar-professor", "Adicionar Professor");
 
     }
+
 }

@@ -9,6 +9,8 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -120,5 +122,86 @@ public class ControleGerenciarProfessor {
     @FXML
     void voltarParaPainel(ActionEvent event) throws IOException {
         App.changeScene("area-adm/painel-administrador", "Painel Administrador");
+    }
+    @FXML
+    void excluirProfessor(ActionEvent event) {
+        // Obtém o professor selecionado na tabela
+        Professor professorSelecionado = tabelaProfessores.getSelectionModel().getSelectedItem();
+        
+        // Verifica se um professor foi selecionado
+        if (professorSelecionado == null) {
+            Alert alerta = new Alert(AlertType.WARNING);
+            alerta.setTitle("Aviso");
+            alerta.setHeaderText("Nenhum professor selecionado");
+            alerta.setContentText("Por favor, selecione um professor para excluir.");
+            alerta.showAndWait();
+            return;
+        }
+        
+        // Verifica se está tentando excluir a si mesmo (se houver um usuário logado)
+        // Isso é um exemplo - você precisará implementar a lógica de verificação do usuário logado
+        /*
+        if (professorSelecionado.getId() == UsuarioLogado.getInstancia().getId()) {
+            Alert alerta = new Alert(AlertType.ERROR);
+            alerta.setTitle("Erro");
+            alerta.setHeaderText("Ação não permitida");
+            alerta.setContentText("Você não pode excluir seu próprio usuário.");
+            alerta.showAndWait();
+            return;
+        }
+        */
+        
+        // Mostra confirmação antes de excluir
+        Alert confirmacao = new Alert(AlertType.CONFIRMATION);
+        confirmacao.setTitle("Confirmar Exclusão");
+        confirmacao.setHeaderText("Excluir Professor");
+        confirmacao.setContentText("Tem certeza que deseja excluir o professor " + 
+                               professorSelecionado.getNome() + " (" + professorSelecionado.getEmail() + 
+                               ")?\n\nEsta ação não poderá ser desfeita.");
+        
+        // Mostra o diálogo e espera pela resposta do usuário
+        confirmacao.showAndWait().ifPresent(resposta -> {
+            if (resposta == ButtonType.OK) {
+                try {
+                    // Tenta excluir o professor
+                    boolean sucesso = ProfessorDAO.excluirProfessor(professorSelecionado.getId());
+                    
+                    if (sucesso) {
+                        // Remove da lista e atualiza a tabela
+                        listaCompletaProfessores.remove(professorSelecionado);
+                        
+                        // Mostra mensagem de sucesso
+                        Alert sucessoAlert = new Alert(AlertType.INFORMATION);
+                        sucessoAlert.setTitle("Sucesso");
+                        sucessoAlert.setHeaderText(null);
+                        sucessoAlert.setContentText("Professor excluído com sucesso!");
+                        sucessoAlert.showAndWait();
+                    } else {
+                        throw new Exception("Falha ao excluir o professor no banco de dados");
+                    }
+                } catch (Exception e) {
+                    System.err.println("Erro ao excluir professor: " + e.getMessage());
+                    e.printStackTrace();
+                    
+                    // Mostra mensagem de erro
+                    Alert erro = new Alert(AlertType.ERROR);
+                    erro.setTitle("Erro");
+                    erro.setHeaderText("Erro ao excluir professor");
+                    
+                    // Mensagem mais amigável para o usuário
+                    String mensagemErro = "Ocorreu um erro ao excluir o professor. Por favor, tente novamente.\n\n";
+                    
+                    // Se for o único coordenador, informa ao usuário
+                    if (e.getMessage() != null && e.getMessage().contains("único professor coordenador")) {
+                        mensagemErro += "Não é possível excluir o único professor coordenador do sistema.";
+                    } else {
+                        mensagemErro += "Detalhes: " + e.getMessage();
+                    }
+                    
+                    erro.setContentText(mensagemErro);
+                    erro.showAndWait();
+                }
+            }
+        });
     }
 }

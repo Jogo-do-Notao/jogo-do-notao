@@ -13,6 +13,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -212,4 +213,64 @@ public class ControleGerenciarPerguntas {
     void voltarParaPainel(ActionEvent event) throws IOException {
         App.changeScene("area-adm/painel-administrador", "Painel Administrador");
     }
-}
+    @FXML
+    void excluirPergunta(ActionEvent event) {
+        // Obtém a pergunta selecionada na tabela
+        Pergunta perguntaSelecionada = tabelaPerguntas.getSelectionModel().getSelectedItem();
+
+        // Verifica se uma pergunta foi selecionada
+        if (perguntaSelecionada == null) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+            alerta.setTitle("Aviso");
+            alerta.setHeaderText("Nenhuma pergunta selecionada");
+            alerta.setContentText("Por favor, selecione uma pergunta para excluir.");
+            alerta.showAndWait();
+            return;
+        }
+
+        // Mostra confirmação antes de excluir
+        Alert confirmacao = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmacao.setTitle("Confirmar Exclusão");
+        confirmacao.setHeaderText("Excluir Pergunta");
+        confirmacao.setContentText("Tem certeza que deseja excluir a pergunta com ID " +
+                perguntaSelecionada.getId() + "?\n\n" +
+                "Enunciado: " + perguntaSelecionada.getEnunciado());
+
+        // Mostra o diálogo e espera pela resposta do usuário
+        confirmacao.showAndWait().ifPresent(resposta -> {
+            if (resposta == ButtonType.OK) {
+                try {
+                    // Tenta excluir a pergunta
+                    boolean sucesso = PerguntaDAO.excluirPergunta(perguntaSelecionada.getId());
+
+                    if (sucesso) {
+                        // Remove da lista e atualiza a tabela
+                        listaCompletaPerguntas.remove(perguntaSelecionada);
+
+                        // Mostra mensagem de sucesso
+                        Alert sucessoAlert = new Alert(Alert.AlertType.INFORMATION);
+                        sucessoAlert.setTitle("Sucesso");
+                        sucessoAlert.setHeaderText(null);
+                        sucessoAlert.setContentText("Pergunta excluída com sucesso!");
+                        sucessoAlert.showAndWait();
+                    } else {
+                        throw new Exception("Falha ao excluir a pergunta no banco de dados");
+                    }
+                } catch (Exception e) {
+                    System.err.println("Erro ao excluir pergunta: " + e.getMessage());
+                    e.printStackTrace();
+
+                    // Mostra mensagem de erro
+                    Alert erro = new Alert(Alert.AlertType.ERROR);
+                    erro.setTitle("Erro");
+                    erro.setHeaderText("Erro ao excluir pergunta");
+                    erro.setContentText("Ocorreu um erro ao excluir a pergunta. Por favor, tente novamente.\n\n" +
+                            "Detalhes: " + e.getMessage());
+                    erro.showAndWait();
+                }
+            }
+        });
+    }
+
+
+    }

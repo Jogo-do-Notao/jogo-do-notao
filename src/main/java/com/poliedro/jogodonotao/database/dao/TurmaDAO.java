@@ -188,4 +188,27 @@ public class TurmaDAO {
             throw new RuntimeException(e);
         }
     }
+    
+    /**
+     * Exclui uma turma do banco de dados pelo seu ID.
+     *
+     * @param id O ID da turma a ser excluída.
+     * @return true se a turma foi excluída com sucesso, false caso contrário.
+     */
+    public static boolean excluirTurma(int id) {
+        String sql = "DELETE FROM turma WHERE " + TurmaColuna.ID.get() + " = ?";
+        
+        try (
+            Connection conexao = ConexaoDB.getConnection();
+            PreparedStatement stmt = conexao.prepareStatement(sql)
+        ) {
+            stmt.setInt(1, id);
+            int linhasAfetadas = stmt.executeUpdate();
+            return linhasAfetadas > 0;
+        } catch (SQLException e) {
+            System.err.println("Erro ao excluir turma: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

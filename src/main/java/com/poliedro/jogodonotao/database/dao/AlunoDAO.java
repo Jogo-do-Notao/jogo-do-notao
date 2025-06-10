@@ -326,5 +326,86 @@ public class AlunoDAO {
             this.idTurma = idTurma;
             this.pontuacao = pontuacao;
         }
+
     }
+    /**
+     * Exclui um aluno do banco de dados.
+     *
+     * @param idAluno ID do aluno a ser excluído
+     * @return true se a exclusão foi bem-sucedida, false caso contrário
+     */
+    public static boolean excluirAluno(int idAluno) {
+        Connection conexao = null;
+        try {
+            conexao = ConexaoDB.getConnection();
+            conexao.setAutoCommit(false); // Inicia transação
+
+            // Primeiro, excluir registros relacionados na tabela partida
+            String sqlPartida = "DELETE FROM partida WHERE id_aluno = ?";
+            try (PreparedStatement stmtPartida = conexao.prepareStatement(sqlPartida)) {
+                stmtPartida.setInt(1, idAluno);
+                stmtPartida.executeUpdate();
+            }
+
+            // Depois, excluir o aluno
+            String sqlAluno = "DELETE FROM aluno WHERE id_aluno = ?";
+            try (PreparedStatement stmtAluno = conexao.prepareStatement(sqlAluno)) {
+                stmtAluno.setInt(1, idAluno);
+                int linhasAfetadas = stmtAluno.executeUpdate();
+
+                if (linhasAfetadas > 0) {
+                    conexao.commit(); // Confirma a transação
+                    return true;
+                } else {
+                    conexao.rollback(); // Desfaz a transação
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            try {
+                if (conexao != null) {
+                    conexao.rollback(); // Em caso de erro, faz rollback
+                }
+            } catch (SQLException ex) {
+                System.err.println("Erro ao fazer rollback da transação: " + ex.getMessage());
+            }
+            System.err.println("Erro ao excluir aluno: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if (conexao != null) {
+                    conexao.setAutoCommit(true); // Restaura o auto-commit
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("Erro ao fechar conexão: " + e.getMessage());
+            }
+        }
+    }
+    /**
+     * Atualiza a senha de um aluno no banco de dados.
+     *
+     * @param idAluno ID do aluno que terá a senha atualizada.
+     * @param novaSenhaHash Nova senha já criptografada.
+     * @return {@code true} se a atualização for bem-sucedida, {@code false} caso contrário.
+     */
+    public static boolean atualizarSenha(int idAluno, String novaSenhaHash) {
+        String sql = "UPDATE aluno SET hash_senha = ? WHERE id_aluno = ?";
+
+        try (Connection conexao = ConexaoDB.getConnection();
+             PreparedStatement stmt = conexao.prepareStatement(sql)) {
+
+            stmt.setString(1, novaSenhaHash);
+            stmt.setInt(2, idAluno);
+
+            int linhasAfetadas = stmt.executeUpdate();
+            return linhasAfetadas > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

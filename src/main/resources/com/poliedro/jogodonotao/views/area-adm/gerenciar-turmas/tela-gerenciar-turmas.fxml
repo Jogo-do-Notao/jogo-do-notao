@@ -81,9 +81,9 @@
             </VBox>
          </children>
       </HBox>
-      <VBox layoutX="33.0" layoutY="220.0" prefHeight="834.0" prefWidth="1809.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12; -fx-border-color: #ee2252; -fx-border-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="220.0">
+      <VBox layoutX="33.0" layoutY="220.0" prefHeight="390.0" prefWidth="913.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12; -fx-border-color: #ee2252; -fx-border-radius: 12;" styleClass="sombra" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="220.0">
          <children>
-            <TableView fx:id="tabelaTurmas" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 12;" VBox.vgrow="ALWAYS">
+            <TableView fx:id="tabelaTurmas" prefHeight="421.0" prefWidth="911.0" style="-fx-background-radius: 12;" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="turmaColuna" prefWidth="500.0" text="Turma" />
                 <TableColumn fx:id="professorColuna" prefWidth="500.0" text="Professor" />
@@ -94,6 +94,22 @@
             </TableView>
          </children>
       </VBox>
+      <Button layoutX="402.0" layoutY="632.0" mnemonicParsing="false" onAction="#excluirTurma" prefHeight="45.0" prefWidth="182.0" style="-fx-background-color: #ee2252; -fx-background-radius: 12;" text="Excluir Turma" textAlignment="CENTER" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="420.0" AnchorPane.rightAnchor="422.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/Iconelixeira.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="button-lg" />
+            <String fx:value="button-vermelho" />
+         </styleClass>
+      </Button>
    </children>
    <styleClass>
       <String fx:value="turma-bg" />
