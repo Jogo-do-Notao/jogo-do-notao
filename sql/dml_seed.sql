@@ -6137,6 +6137,1303 @@ INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
 -- ||                      Geografia                              ||
 -- =================================================================
 -- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é o maior oceano do mundo?',
+        'Fácil',
+        'Ele banha a costa oeste das Américas e a leste da Ásia e da Oceania.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Oceano Atlântico', 0),
+    (@id_pergunta, 'Oceano Índico', 0),
+    (@id_pergunta, 'Oceano Pacífico', 1),
+    (@id_pergunta, 'Oceano Ártico', 0),
+    (@id_pergunta, 'Oceano Antártico', 0);
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é a capital do Brasil?',
+        'Fácil',
+        'Foi uma cidade planejada e inaugurada em 1960.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'São Paulo', 0),
+    (@id_pergunta, 'Rio de Janeiro', 0),
+    (@id_pergunta, 'Salvador', 0),
+    (@id_pergunta, 'Brasília', 1),
+    (@id_pergunta, 'Belo Horizonte', 0);
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é o nome do movimento da Terra em torno do Sol?',
+        'Fácil',
+        'Este movimento dura aproximadamente 365 dias e causa as estações do ano.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Rotação', 0),
+    (@id_pergunta, 'Translação', 1),
+    (@id_pergunta, 'Precessão', 0),
+    (@id_pergunta, 'Nutação', 0),
+    (@id_pergunta, 'Revolução', 0);
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A Floresta Amazônica está localizada principalmente em qual continente?',
+        'Fácil',
+        'É o mesmo continente onde fica o Brasil.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'África', 0),
+    (@id_pergunta, 'Ásia', 0),
+    (@id_pergunta, 'América do Sul', 1),
+    (@id_pergunta, 'América do Norte', 0),
+    (@id_pergunta, 'Oceania', 0);
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é a montanha mais alta do mundo?',
+        'Fácil',
+        'Fica na cordilheira do Himalaia.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'K2', 0),
+    (@id_pergunta, 'Aconcágua', 0),
+    (@id_pergunta, 'Monte Everest', 1),
+    (@id_pergunta, 'Monte Fuji', 0),
+    (@id_pergunta, 'Monte Kilimanjaro', 0);
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'As linhas imaginárias horizontais que circulam a Terra são chamadas de:',
+        'Fácil',
+        'A Linha do Equador é a principal delas.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Meridianos', 0),
+    (@id_pergunta, 'Trópicos', 0),
+    (@id_pergunta, 'Paralelos', 1),
+    (@id_pergunta, 'Longitudes', 0),
+    (@id_pergunta, 'Alitudes', 0);
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual país é conhecido como o "País do Sol Nascente"?',
+        'Fácil',
+        'É um arquipélago no leste da Ásia.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'China', 0),
+    (@id_pergunta, 'Coreia do Sul', 0),
+    (@id_pergunta, 'Japão', 1),
+    (@id_pergunta, 'Índia', 0),
+    (@id_pergunta, 'Egito', 0);
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é o maior deserto quente do mundo?',
+        'Fácil',
+        'Localiza-se no norte da África.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Deserto do Atacama', 0),
+    (@id_pergunta, 'Deserto de Gobi', 0),
+    (@id_pergunta, 'Deserto do Saara', 1),
+    (@id_pergunta, 'Deserto da Arábia', 0),
+    (@id_pergunta, 'Deserto da Antártida', 0);
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Em quantas regiões o Brasil é dividido pelo IBGE?',
+        'Fácil',
+        'São elas: Norte, Nordeste, Centro-Oeste, Sudeste e Sul.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, '3', 0),
+    (@id_pergunta, '4', 0),
+    (@id_pergunta, '5', 1),
+    (@id_pergunta, '6', 0),
+    (@id_pergunta, '7', 0);
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual rio é o mais longo do mundo?',
+        'Fácil',
+        'Há uma disputa, mas geralmente ele ou o Amazonas ocupam o primeiro lugar.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Rio Mississippi', 0),
+    (@id_pergunta, 'Rio Nilo', 1),
+    (@id_pergunta, 'Rio Yangtze', 0),
+    (@id_pergunta, 'Rio Congo', 0),
+    (@id_pergunta, 'Rio Danúbio', 0);
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A representação plana da superfície da Terra é chamada de:',
+        'Fácil',
+        'Usamos para nos localizar e encontrar caminhos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Globo', 0),
+    (@id_pergunta, 'Maquete', 0),
+    (@id_pergunta, 'Mapa', 1),
+    (@id_pergunta, 'Fotografia', 0),
+    (@id_pergunta, 'Desenho', 0);
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é o maior país do mundo em área territorial?',
+        'Fácil',
+        'Ocupa uma grande parte da Ásia e da Europa.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'China', 0),
+    (@id_pergunta, 'Canadá', 0),
+    (@id_pergunta, 'Estados Unidos', 0),
+    (@id_pergunta, 'Rússia', 1),
+    (@id_pergunta, 'Brasil', 0);
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que é um vulcão?',
+        'Fácil',
+        'É uma estrutura geológica que expele lava e gases.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Uma montanha muito alta', 0),
+    (
+        @id_pergunta,
+        'Uma abertura na crosta terrestre por onde o magma sobe à superfície',
+        1
+    ),
+    (@id_pergunta, 'Um tipo de terremoto', 0),
+    (@id_pergunta, 'Uma depressão no terreno', 0),
+    (@id_pergunta, 'Uma caverna subterrânea', 0);
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual o clima predominante na maior parte do Brasil?',
+        'Fácil',
+        'É caracterizado por altas temperaturas na maior parte do ano.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Temperado', 0),
+    (@id_pergunta, 'Polar', 0),
+    (@id_pergunta, 'Tropical', 1),
+    (@id_pergunta, 'Desértico', 0),
+    (@id_pergunta, 'Frio de montanha', 0);
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual continente é conhecido como o "Velho Mundo"?',
+        'Fácil',
+        'É o berço da civilização ocidental.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'América', 0),
+    (@id_pergunta, 'Oceania', 0),
+    (@id_pergunta, 'Ásia', 0),
+    (@id_pergunta, 'Europa', 1),
+    (@id_pergunta, 'Antártida', 0);
+-- Pergunta 16
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é a capital da Argentina?',
+        'Fácil',
+        'É famosa pelo tango.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Santiago', 0),
+    (@id_pergunta, 'Montevidéu', 0),
+    (@id_pergunta, 'Buenos Aires', 1),
+    (@id_pergunta, 'Lima', 0),
+    (@id_pergunta, 'Bogotá', 0);
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que é a vegetação de um lugar?',
+        'Fácil',
+        'Relaciona-se com as plantas nativas.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'O conjunto de animais', 0),
+    (@id_pergunta, 'O conjunto de rios', 0),
+    (@id_pergunta, 'O conjunto de plantas', 1),
+    (@id_pergunta, 'O tipo de relevo', 0),
+    (@id_pergunta, 'O clima da região', 0);
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Onde está localizado o Egito?',
+        'Fácil',
+        'É um país transcontinental.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Na América do Sul', 0),
+    (@id_pergunta, 'Na Europa', 0),
+    (@id_pergunta, 'No nordeste da África', 1),
+    (@id_pergunta, 'Na Oceania', 0),
+    (@id_pergunta, 'No sul da Ásia', 0);
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é o nome do movimento de rotação da Terra sobre seu próprio eixo?',
+        'Fácil',
+        'Este movimento dura aproximadamente 24 horas e causa o dia e a noite.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Translação', 0),
+    (@id_pergunta, 'Rotação', 1),
+    (@id_pergunta, 'Órbita', 0),
+    (@id_pergunta, 'Eclipse', 0),
+    (@id_pergunta, 'Solstício', 0);
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A Cordilheira dos Andes se estende por qual continente?',
+        'Fácil',
+        'Percorre a costa oeste deste continente.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'África', 0),
+    (@id_pergunta, 'América do Sul', 1),
+    (@id_pergunta, 'América do Norte', 0),
+    (@id_pergunta, 'Europa', 0),
+    (@id_pergunta, 'Ásia', 0);
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual bioma brasileiro é caracterizado por clima semiárido e vegetação adaptada à falta de água (xerófita)?',
+        'Médio',
+        'É predominante no sertão nordestino.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Cerrado', 0),
+    (@id_pergunta, 'Caatinga', 1),
+    (@id_pergunta, 'Pampa', 0),
+    (@id_pergunta, 'Mata Atlântica', 0),
+    (@id_pergunta, 'Pantanal', 0);
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que são as placas tectônicas?',
+        'Médio',
+        'Seu movimento causa terremotos e vulcanismo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Camadas da atmosfera', 0),
+    (
+        @id_pergunta,
+        'Grandes blocos rochosos que compõem a crosta terrestre',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Zonas de alta pressão no oceano',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Correntes de ar que influenciam o clima',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Regiões de planície sedimentar',
+        0
+    );
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é a principal característica do clima Mediterrâneo?',
+        'Médio',
+        'Pense no clima da Grécia, Itália e sul da Espanha.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Chuvas abundantes o ano todo', 0),
+    (@id_pergunta, 'Invernos frios e secos', 0),
+    (
+        @id_pergunta,
+        'Verões quentes e secos, e invernos amenos e chuvosos',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Baixas temperaturas e neve durante o inverno',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Altas temperaturas e alta umidade constantes',
+        0
+    );
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O processo de migração de pessoas do campo para a cidade é chamado de:',
+        'Médio',
+        'Foi muito intenso no Brasil durante o século XX.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Migração pendular', 0),
+    (@id_pergunta, 'Êxodo rural', 1),
+    (@id_pergunta, 'Nomadismo', 0),
+    (@id_pergunta, 'Transumância', 0),
+    (@id_pergunta, 'Imigração', 0);
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é o nome do fenômeno climático que consiste no aquecimento anormal das águas do Oceano Pacífico?',
+        'Médio',
+        'Afeta o clima em várias partes do mundo, inclusive no Brasil.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'La Niña', 0),
+    (@id_pergunta, 'El Niño', 1),
+    (@id_pergunta, 'Efeito Estufa', 0),
+    (@id_pergunta, 'Monção', 0),
+    (@id_pergunta, 'Inversão Térmica', 0);
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O MERCOSUL é um bloco econômico formado por países de qual continente?',
+        'Médio',
+        'Brasil e Argentina são membros fundadores.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Europa', 0),
+    (@id_pergunta, 'Ásia', 0),
+    (@id_pergunta, 'América do Sul', 1),
+    (@id_pergunta, 'América do Norte', 0),
+    (@id_pergunta, 'África', 0);
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A latitude é a distância em graus de um ponto qualquer da Terra em relação à:',
+        'Médio',
+        'É a principal linha imaginária horizontal.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Meridiano de Greenwich', 0),
+    (@id_pergunta, 'Linha do Equador', 1),
+    (@id_pergunta, 'Trópico de Câncer', 0),
+    (@id_pergunta, 'Círculo Polar Ártico', 0),
+    (@id_pergunta, 'Trópico de Capricórnio', 0);
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual tipo de relevo é caracterizado por superfícies elevadas e relativamente planas, com altitudes superiores a 300 metros?',
+        'Médio',
+        'O Planalto Central brasileiro é um exemplo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Planície', 0),
+    (@id_pergunta, 'Depressão', 0),
+    (@id_pergunta, 'Planalto', 1),
+    (@id_pergunta, 'Montanha', 0),
+    (@id_pergunta, 'Chapada', 0);
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A densidade demográfica de um país é calculada pela divisão do número de habitantes pela:',
+        'Médio',
+        'Resulta em habitantes por quilômetro quadrado.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Taxa de natalidade', 0),
+    (@id_pergunta, 'Área total do país', 1),
+    (@id_pergunta, 'Renda per capita', 0),
+    (@id_pergunta, 'População urbana', 0),
+    (@id_pergunta, 'Expectativa de vida', 0);
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é a principal fonte de energia da matriz energética brasileira?',
+        'Médio',
+        'É uma fonte renovável ligada aos rios.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Petróleo', 0),
+    (@id_pergunta, 'Carvão Mineral', 0),
+    (@id_pergunta, 'Hidrelétrica', 1),
+    (@id_pergunta, 'Eólica', 0),
+    (@id_pergunta, 'Nuclear', 0);
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A teoria que explica a deriva dos continentes e a formação dos oceanos é a:',
+        'Médio',
+        'Relaciona-se com o movimento das grandes placas da crosta.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Teoria do Big Bang', 0),
+    (@id_pergunta, 'Teoria da Tectônica de Placas', 1),
+    (@id_pergunta, 'Teoria da Evolução', 0),
+    (@id_pergunta, 'Teoria Geocêntrica', 0),
+    (@id_pergunta, 'Teoria da Geração Espontânea', 0);
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que são rios perenes?',
+        'Médio',
+        'O Rio São Francisco é um exemplo no semiárido.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Rios que secam durante a estação seca',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Rios que nunca secam, com fluxo de água o ano todo',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Rios que correm em direção ao mar',
+        0
+    ),
+    (@id_pergunta, 'Afluentes de rios maiores', 0),
+    (
+        @id_pergunta,
+        'Rios que correm em terrenos planos',
+        0
+    );
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual camada da atmosfera é responsável por filtrar a maior parte da radiação ultravioleta do Sol?',
+        'Médio',
+        'A camada de ozônio está localizada nela.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Troposfera', 0),
+    (@id_pergunta, 'Estratosfera', 1),
+    (@id_pergunta, 'Mesosfera', 0),
+    (@id_pergunta, 'Termosfera', 0),
+    (@id_pergunta, 'Exosfera', 0);
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O processo de desgaste, transporte e deposição de rochas e solos é chamado de:',
+        'Médio',
+        'A água e o vento são seus principais agentes.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Tectonismo', 0),
+    (@id_pergunta, 'Vulcanismo', 0),
+    (@id_pergunta, 'Erosão', 1),
+    (@id_pergunta, 'Metamorfismo', 0),
+    (@id_pergunta, 'Intemperismo', 0);
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual dos seguintes países NÃO faz parte do G7 (Grupo dos Sete)?',
+        'Médio',
+        'O grupo é formado pelas economias mais industrializadas do mundo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Canadá', 0),
+    (@id_pergunta, 'Japão', 0),
+    (@id_pergunta, 'Itália', 0),
+    (@id_pergunta, 'Brasil', 1),
+    (@id_pergunta, 'Alemanha', 0);
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que é a escala de um mapa?',
+        'Médio',
+        'Indica quantas vezes a realidade foi reduzida.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'O conjunto de símbolos usados no mapa',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A relação entre a distância no mapa e a distância real',
+        1
+    ),
+    (@id_pergunta, 'A direção do norte geográfico', 0),
+    (
+        @id_pergunta,
+        'A projeção cartográfica utilizada',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A altitude do terreno representado',
+        0
+    );
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O Estreito de Gibraltar separa quais dois continentes?',
+        'Médio',
+        'Também conecta o Mar Mediterrâneo ao Oceano Atlântico.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Ásia e África', 0),
+    (@id_pergunta, 'Europa e África', 1),
+    (
+        @id_pergunta,
+        'América do Norte e América do Sul',
+        0
+    ),
+    (@id_pergunta, 'Europa e Ásia', 0),
+    (@id_pergunta, 'Austrália e Ásia', 0);
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é o bioma de campos temperados encontrado no sul do Brasil?',
+        'Médio',
+        'Também é conhecido como Campos Sulinos ou Campanha Gaúcha.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Cerrado', 0),
+    (@id_pergunta, 'Pantanal', 0),
+    (@id_pergunta, 'Pampa', 1),
+    (@id_pergunta, 'Caatinga', 0),
+    (@id_pergunta, 'Mata de Araucárias', 0);
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O IDH (Índice de Desenvolvimento Humano) é um indicador social que considera três dimensões. Qual das seguintes NÃO é uma delas?',
+        'Médio',
+        'O índice foi criado pela ONU.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Educação (anos de estudo)', 0),
+    (@id_pergunta, 'Renda (RNB per capita)', 0),
+    (@id_pergunta, 'Saúde (expectativa de vida)', 0),
+    (
+        @id_pergunta,
+        'Segurança pública (taxa de criminalidade)',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Todas as outras são dimensões do IDH',
+        0
+    );
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A forma de relevo que se origina do acúmulo de sedimentos trazidos por rios, geralmente em suas fozes, é chamada de:',
+        'Médio',
+        'A foz do Rio Nilo é um exemplo famoso.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Planalto', 0),
+    (@id_pergunta, 'Chapada', 0),
+    (@id_pergunta, 'Delta', 1),
+    (@id_pergunta, 'Falésia', 0),
+    (@id_pergunta, 'Cânion', 0);
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A Projeção de Mercator é um tipo de projeção cartográfica que:',
+        'Difícil',
+        'É muito usada na navegação, mas distorce as áreas dos polos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Mantém as áreas dos continentes em proporção correta, mas distorce as formas.',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Preserva as formas dos continentes (é conforme), mas distorce as áreas, especialmente perto dos polos.',
+        1
+    ),
+    (
+        @id_pergunta,
+        'É uma projeção equidistante, mantendo as distâncias a partir de um ponto central.',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Mostra a Terra como um círculo, com o polo no centro.',
+        0
+    ),
+    (@id_pergunta, 'Não possui nenhuma distorção.', 0);
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que são "hotspots" de biodiversidade?',
+        'Difícil',
+        'O Cerrado e a Mata Atlântica são exemplos brasileiros.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Áreas com alta atividade vulcânica',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Regiões com grande número de espécies endêmicas e alto grau de ameaça',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Pontos de intensa especulação imobiliária em áreas naturais',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Zonas de confluência de correntes marítimas quentes',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Cidades com os maiores índices de poluição do ar',
+        0
+    );
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A transição demográfica é um modelo que descreve a mudança nas taxas de:',
+        'Difícil',
+        'Passa de altas taxas para baixas taxas, com um período de grande crescimento populacional no meio.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Urbanização e industrialização',
+        0
+    ),
+    (@id_pergunta, 'Natalidade e mortalidade', 1),
+    (@id_pergunta, 'Emigração e imigração', 0),
+    (@id_pergunta, 'Alfabetização e escolaridade', 0),
+    (@id_pergunta, 'Crescimento do PIB e inflação', 0);
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é a principal diferença entre intemperismo químico e intemperismo físico?',
+        'Difícil',
+        'Um altera a composição das rochas, o outro apenas as fragmenta.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'O físico ocorre em climas quentes e o químico em climas frios',
+        0
+    ),
+    (
+        @id_pergunta,
+        'O químico altera a composição mineralógica da rocha, enquanto o físico apenas a desagrega',
+        1
+    ),
+    (
+        @id_pergunta,
+        'O físico é causado pela água, e o químico pelo vento',
+        0
+    ),
+    (
+        @id_pergunta,
+        'O químico forma cavernas e o físico forma dunas',
+        0
+    ),
+    (@id_pergunta, 'Não há diferença entre eles', 0);
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O "Círculo de Fogo do Pacífico" é uma área conhecida por sua intensa atividade sísmica e vulcânica devido ao:',
+        'Difícil',
+        'É uma zona onde várias placas se encontram.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Clima equatorial', 0),
+    (
+        @id_pergunta,
+        'Encontro de placas tectônicas (convergência e subducção)',
+        1
+    ),
+    (@id_pergunta, 'Grande profundidade do oceano', 0),
+    (
+        @id_pergunta,
+        'Influência de correntes marítimas frias',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Elevado número de testes nucleares na região',
+        0
+    );
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que foi a "Revolução Verde"?',
+        'Difícil',
+        'Ocorreu em meados do século XX e visava aumentar a produção agrícola.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Um movimento ambientalista global contra o desmatamento',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A modernização da agricultura com uso de sementes melhoradas, fertilizantes e agrotóxicos',
+        1
+    ),
+    (
+        @id_pergunta,
+        'A transição para fontes de energia renováveis',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A criação de partidos políticos com pauta ecológica',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Uma revolução popular por reforma agrária no México',
+        0
+    );
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que são "rios de voo" na Amazônia?',
+        'Difícil',
+        'É um processo que transporta umidade para outras regiões do Brasil.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Rotas de aviões que seguem o curso dos rios',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Massas de ar carregadas de umidade, geradas pela evapotranspiração da floresta',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Projetos de transposição de bacias hidrográficas',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Um tipo de chuva de granizo que ocorre na região',
+        0
+    ),
+    (@id_pergunta, 'Nuvens com formato de rios', 0);
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Em cartografia, curvas de nível são linhas que unem pontos de mesma:',
+        'Difícil',
+        'Em um mapa topográfico, quanto mais próximas as linhas, mais íngreme é o terreno.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Latitude', 0),
+    (@id_pergunta, 'Longitude', 0),
+    (@id_pergunta, 'Temperatura', 0),
+    (@id_pergunta, 'Altitude ou cota', 1),
+    (@id_pergunta, 'Pressão atmosférica', 0);
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A Doutrina do "Mar Territorial" e da "Zona Econômica Exclusiva" são convenções internacionais que tratam de:',
+        'Difícil',
+        'Define os direitos de um país sobre as águas e os recursos adjacentes à sua costa.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Proteção da vida marinha', 0),
+    (
+        @id_pergunta,
+        'Soberania e direitos de exploração dos Estados costeiros sobre o mar',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Regulamentação da pesca em alto-mar',
+        0
+    ),
+    (@id_pergunta, 'Prevenção da poluição marinha', 0),
+    (
+        @id_pergunta,
+        'Rotas de navegação internacionais',
+        0
+    );
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O processo de gentrificação em áreas urbanas refere-se a:',
+        'Difícil',
+        'Muitas vezes ocorre em bairros históricos ou centrais.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Criação de grandes parques e áreas verdes',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A "enobrecimento" de uma área, com a chegada de moradores de maior renda e a expulsão da população original',
+        1
+    ),
+    (
+        @id_pergunta,
+        'A verticalização e construção de arranha-céus',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A expansão da periferia e a formação de favelas',
+        0
+    ),
+    (
+        @id_pergunta,
+        'O processo de industrialização da cidade',
+        0
+    );
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual é a principal característica das rochas metamórficas?',
+        'Difícil',
+        'O mármore, originado do calcário, é um exemplo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'São formadas pelo resfriamento do magma',
+        0
+    ),
+    (
+        @id_pergunta,
+        'São formadas pela deposição e compactação de sedimentos',
+        0
+    ),
+    (
+        @id_pergunta,
+        'São formadas pela transformação de outras rochas sob alta pressão e temperatura',
+        1
+    ),
+    (
+        @id_pergunta,
+        'São sempre encontradas no fundo dos oceanos',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Contêm grande quantidade de fósseis',
+        0
+    );
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que são as correntes de convecção do manto terrestre?',
+        'Difícil',
+        'São consideradas o "motor" que move as placas tectônicas.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Correntes de água subterrânea aquecida',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Movimentos circulares de material magmático, que sobe quando quente e desce quando frio',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Ondas de choque geradas por terremotos',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Linhas de força do campo magnético terrestre',
+        0
+    ),
+    (@id_pergunta, 'Fluxos de lava na superfície', 0);
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O Aquífero Guarani, um dos maiores reservatórios de água subterrânea do mundo, está localizado no subsolo de quais países?',
+        'Difícil',
+        'O Brasil abriga a maior parte dele.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Apenas no Brasil', 0),
+    (
+        @id_pergunta,
+        'Brasil, Paraguai, Uruguai e Argentina',
+        1
+    ),
+    (@id_pergunta, 'Brasil, Bolívia e Peru', 0),
+    (@id_pergunta, 'Chile, Argentina e Bolívia', 0),
+    (@id_pergunta, 'Venezuela, Colômbia e Brasil', 0);
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que é a "Diáspora Africana"?',
+        'Difícil',
+        'Foi um processo forçado que durou séculos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'A migração de animais da savana',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A dispersão de povos africanos pelo mundo, principalmente devido ao tráfico de escravos',
+        1
+    ),
+    (
+        @id_pergunta,
+        'A expansão de desertos no continente africano',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A divisão do continente africano pelas potências europeias',
+        0
+    ),
+    (
+        @id_pergunta,
+        'O movimento de independência das nações africanas',
+        0
+    );
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'Qual das seguintes cidades é considerada uma "cidade global alfa++", o mais alto nível na hierarquia urbana mundial?',
+        'Difícil',
+        'São os centros mais importantes da economia global.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'São Paulo', 0),
+    (@id_pergunta, 'Tóquio', 0),
+    (@id_pergunta, 'Londres', 1),
+    (@id_pergunta, 'Paris', 0),
+    (@id_pergunta, 'Xangai', 0);
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'A Teoria dos Lugares Centrais, de Walter Christaller, explica a organização e a hierarquia de qual fenômeno geográfico?',
+        'Difícil',
+        'Relaciona o tamanho, o número e a distribuição das cidades.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Zonas climáticas', 0),
+    (@id_pergunta, 'Redes urbanas', 1),
+    (@id_pergunta, 'Bacias hidrográficas', 0),
+    (@id_pergunta, 'Placas tectônicas', 0),
+    (@id_pergunta, 'Biomas terrestres', 0);
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O que é o "albedo" de uma superfície?',
+        'Difícil',
+        'Superfícies claras, como a neve, têm um albedo alto.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'A capacidade de reter calor', 0),
+    (
+        @id_pergunta,
+        'O percentual de radiação solar que é refletido pela superfície',
+        1
+    ),
+    (@id_pergunta, 'A taxa de evaporação da água', 0),
+    (@id_pergunta, 'A rugosidade do terreno', 0),
+    (@id_pergunta, 'A acidez do solo', 0);
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O Protocolo de Kyoto foi um tratado internacional que visava:',
+        'Difícil',
+        'Foi um dos primeiros grandes acordos sobre mudanças climáticas.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Proteger espécies ameaçadas de extinção',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Reduzir as emissões de gases de efeito estufa',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Banir o uso de minas terrestres',
+        0
+    ),
+    (@id_pergunta, 'Combater a desertificação', 0),
+    (@id_pergunta, 'Proteger a camada de ozônio', 0);
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'O conceito de "fronteira agrícola" no Brasil refere-se:',
+        'Difícil',
+        'Atualmente, a região conhecida como MATOPIBA é um exemplo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Às fronteiras internacionais do país',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Às áreas de avanço da produção agropecuária sobre ecossistemas nativos',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Aos limites de terras indígenas demarcadas',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Às áreas de agricultura irrigada no semiárido',
+        0
+    ),
+    (
+        @id_pergunta,
+        'À produção de alimentos orgânicos',
+        0
+    );
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        7,
+        1,
+        'As monções asiáticas são um fenômeno climático caracterizado por:',
+        'Difícil',
+        'São cruciais para a agricultura em países como a Índia.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Secas prolongadas durante o verão',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A inversão sazonal dos ventos, que provoca um verão muito chuvoso e um inverno seco',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Ondas de frio extremo vindas da Sibéria',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A ocorrência de tufões e ciclones tropicais',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Temperaturas amenas durante todo o ano',
+        0
+    );
+-- =================================================================
 -- ||                      Filosofia                              ||
 -- =================================================================
 -- =================================================================
