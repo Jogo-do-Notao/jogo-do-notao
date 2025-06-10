@@ -125,18 +125,6 @@ public class ControleTelaPartida implements Initializable {
      */
     @FXML
     void desistirDaPartida(ActionEvent event) {
-        // Mensagem de confirmação
-        Alert msgConfirmacao = new Alert(Alert.AlertType.CONFIRMATION);
-        msgConfirmacao.setTitle("Desistir do Jogo");
-        msgConfirmacao.setHeaderText("Você tem certeza que deseja desistir do jogo?");
-        msgConfirmacao.setContentText("A pontuação acumulada será adicionada ao seu perfil, mas você não poderá retomar a partida.");
-        // Obter resposta
-        Optional<ButtonType> decisao = msgConfirmacao.showAndWait();
-
-        // Se cancelou, encerra o método
-        if (decisao.isEmpty() || decisao.get() == ButtonType.CANCEL) {
-            return; // encerrar método
-        }
         // Abandonar partida
         partida.abandonar();
     }
