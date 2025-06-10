@@ -10,10 +10,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -71,6 +68,12 @@ public class ControlePainelAluno implements Initializable {
      */
     @FXML
     private Text textPontuacao;
+
+    /**
+     * Botão de continuar partida.
+     */
+    @FXML
+    private Button botaoContinuarPartida;
 
     /**
      * Método executado ao abrir o scene.
@@ -138,6 +141,14 @@ public class ControlePainelAluno implements Initializable {
             alert.close();
         });
         pause.play();
+    }
+
+    /**
+     * Método para continuar a partida selecionada na tabela de partidas em andamento.
+     */
+    @FXML
+    void continuarPartida(ActionEvent event) {
+
     }
 
     /**

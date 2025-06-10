@@ -8,6 +8,7 @@
   /* aparência */
   -fx-background-color: -zinc-100;
   -fx-background-radius: 16px;
+  -fx-border-radius: 16px;
   /* sombra */
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 24, 0, 0, 8);
 
@@ -38,6 +39,12 @@
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.22), 4, 0, 0, 2);
   /* tipografia */
   -fx-text-fill: black;
+}
+/* Tab em foco */
+.tab-options .toggle-button:focused {
+  /* borda */
+  -fx-border-color: transparent;
+  /* -fx-border-radius: 15px; */
 }
 /* Tab ao passar o mouse */
 .tab-options .toggle-button:hover {

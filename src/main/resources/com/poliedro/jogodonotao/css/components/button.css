@@ -100,7 +100,6 @@
 /* azul desabilitado */
 .button-azul:disabled {
   -fx-background-color: -poliedro-azul-950;
-  -fx-text-fill: -poliedro-azul-700;
 }
 
 /* Vermelho */
@@ -121,7 +120,6 @@
 /* vermelho desabilitado */
 .button-vermelho:disabled {
   -fx-background-color: -poliedro-vermelho-950;
-  -fx-text-fill: -poliedro-vermelho-700;
 }
 
 /* Laranja */

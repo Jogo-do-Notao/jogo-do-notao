@@ -156,7 +156,7 @@
                </children>
             </VBox>
             <Pane HBox.hgrow="ALWAYS" />
-            <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra">
+            <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: -zinc-100; -fx-background-radius: 12;" styleClass="sombra" HBox.hgrow="ALWAYS">
                <children>
                   <HBox alignment="CENTER">
                      <children>
@@ -169,7 +169,7 @@
                            </HBox.margin>
                         </Text>
                         <Pane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onAction="#iniciarNovaPartida" text="+ Iniciar nova partida">
+                        <Button mnemonicParsing="false" onAction="#iniciarNovaPartida" text="Iniciar nova partida">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -177,6 +177,13 @@
                               <String fx:value="button-lg" />
                               <String fx:value="button-laranja" />
                            </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../icons/criar.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                      </children>
                   </HBox>
@@ -215,6 +222,22 @@
                         <TableColumn fx:id="colunaPontuacaoCheckpoint" minWidth="0.0" prefWidth="169.59994506835938" text="Pontuação Checkpoint" />
                     </columns>
                   </TableView>
+                  <Button fx:id="botaoContinuarPartida" disable="true" mnemonicParsing="false" onAction="#continuarPartida" text="Continuar Partida">
+                     <VBox.margin>
+                        <Insets bottom="-4.0" top="-4.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="button-lg" />
+                        <String fx:value="button-azul" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icons/game.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
