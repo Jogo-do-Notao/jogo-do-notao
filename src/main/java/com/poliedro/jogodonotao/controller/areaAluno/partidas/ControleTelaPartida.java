@@ -1,5 +1,6 @@
 package com.poliedro.jogodonotao.controller.areaAluno.partidas;
 
+import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.jogo.Partida;
 import com.poliedro.jogodonotao.pergunta.Alternativa;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
@@ -143,8 +144,9 @@ public class ControleTelaPartida implements Initializable {
         if (decisao.isEmpty() || decisao.get() == ButtonType.CANCEL) {
             return; // encerrar método
         }
-        
-        System.out.println("Sair da partida...");
+
+        // Salvar e sair da partida
+        partida.sairPartida();
     }
 
     /**
