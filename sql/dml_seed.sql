@@ -8667,6 +8667,619 @@ INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
 -- ||                        Inglês                               ||
 -- =================================================================
 -- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What is the color of the sky on a clear day?', 'Fácil', 'It starts with the letter B.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Green', 0),
+(@id_pergunta, 'Red', 0),
+(@id_pergunta, 'Blue', 1),
+(@id_pergunta, 'Yellow', 0),
+(@id_pergunta, 'Black', 0);
+
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which word is the opposite of "hot"?', 'Fácil', 'Pense no clima do inverno.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Warm', 0),
+(@id_pergunta, 'Cold', 1),
+(@id_pergunta, 'Sunny', 0),
+(@id_pergunta, 'Dry', 0),
+(@id_pergunta, 'Fast', 0);
+
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'How do you say "gato" in English?', 'Fácil', 'It rhymes with "hat".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Dog', 0),
+(@id_pergunta, 'Mouse', 0),
+(@id_pergunta, 'Bird', 0),
+(@id_pergunta, 'Cat', 1),
+(@id_pergunta, 'Fish', 0);
+
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What is the plural of "book"?', 'Fácil', 'Apenas adicione a letra "s".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Booken', 0),
+(@id_pergunta, 'Books', 1),
+(@id_pergunta, 'Bookes', 0),
+(@id_pergunta, 'Bice', 0),
+(@id_pergunta, 'Bookies', 0);
+
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Complete the sentence: "I ___ a student."', 'Fácil', 'É a forma do verbo "to be" para a primeira pessoa do singular.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'is', 0),
+(@id_pergunta, 'are', 0),
+(@id_pergunta, 'am', 1),
+(@id_pergunta, 'be', 0),
+(@id_pergunta, 'was', 0);
+
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What do you use to write on a blackboard?', 'Fácil', 'É um objeto branco ou colorido, feito de giz.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Pen', 0),
+(@id_pergunta, 'Pencil', 0),
+(@id_pergunta, 'Chalk', 1),
+(@id_pergunta, 'Marker', 0),
+(@id_pergunta, 'Crayon', 0);
+
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which of these is a fruit?', 'Fácil', 'It can be red or green and keeps the doctor away.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Carrot', 0),
+(@id_pergunta, 'Potato', 0),
+(@id_pergunta, 'Apple', 1),
+(@id_pergunta, 'Broccoli', 0),
+(@id_pergunta, 'Onion', 0);
+
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What is the number that comes after nine?', 'Fácil', 'Começa com a letra "T".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Eight', 0),
+(@id_pergunta, 'Seven', 0),
+(@id_pergunta, 'Eleven', 0),
+(@id_pergunta, 'Ten', 1),
+(@id_pergunta, 'Twelve', 0);
+
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What do people drink in the morning to wake up?', 'Fácil', 'É uma bebida escura e quente.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Juice', 0),
+(@id_pergunta, 'Water', 0),
+(@id_pergunta, 'Coffee', 1),
+(@id_pergunta, 'Soda', 0),
+(@id_pergunta, 'Milk', 0);
+
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'In the sentence "She runs fast", what is "she"?', 'Fácil', 'É uma palavra usada para se referir a uma pessoa do sexo feminino.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A verb', 0),
+(@id_pergunta, 'An adjective', 0),
+(@id_pergunta, 'A pronoun', 1),
+(@id_pergunta, 'A noun', 0),
+(@id_pergunta, 'An adverb', 0);
+
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which month comes before April?', 'Fácil', 'O nome do mês lembra uma ação de caminhar.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'May', 0),
+(@id_pergunta, 'February', 0),
+(@id_pergunta, 'June', 0),
+(@id_pergunta, 'March', 1),
+(@id_pergunta, 'January', 0);
+
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'How do you say "obrigado" in English?', 'Fácil', 'É uma das palavras mais comuns para agradecer.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Please', 0),
+(@id_pergunta, 'Sorry', 0),
+(@id_pergunta, 'Thank you', 1),
+(@id_pergunta, 'Hello', 0),
+(@id_pergunta, 'Goodbye', 0);
+
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What is the simple past of the verb "go"?', 'Fácil', 'É um verbo irregular.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Goed', 0),
+(@id_pergunta, 'Gone', 0),
+(@id_pergunta, 'Went', 1),
+(@id_pergunta, 'Going', 0),
+(@id_pergunta, 'Goes', 0);
+
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which animal says "moo"?', 'Fácil', 'Este animal nos dá leite.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A sheep', 0),
+(@id_pergunta, 'A pig', 0),
+(@id_pergunta, 'A cow', 1),
+(@id_pergunta, 'A chicken', 0),
+(@id_pergunta, 'A horse', 0);
+
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Complete: "An ___ a day keeps the doctor away."', 'Fácil', 'É uma fruta.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'orange', 0),
+(@id_pergunta, 'banana', 0),
+(@id_pergunta, 'apple', 1),
+(@id_pergunta, 'egg', 0),
+(@id_pergunta, 'avocado', 0);
+
+-- Pergunta 16
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What is the capital of the USA?', 'Fácil', 'Não é Nova Iorque.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Los Angeles', 0),
+(@id_pergunta, 'Chicago', 0),
+(@id_pergunta, 'Washington, D.C.', 1),
+(@id_pergunta, 'Miami', 0),
+(@id_pergunta, 'New York City', 0);
+
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which word is a synonym for "big"?', 'Fácil', 'Começa com a letra "L".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Small', 0),
+(@id_pergunta, 'Short', 0),
+(@id_pergunta, 'Large', 1),
+(@id_pergunta, 'Thin', 0),
+(@id_pergunta, 'Little', 0);
+
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Where do you sleep in a house?', 'Fácil', 'O nome do cômodo tem a palavra "bed".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Kitchen', 0),
+(@id_pergunta, 'Bathroom', 0),
+(@id_pergunta, 'Living room', 0),
+(@id_pergunta, 'Bedroom', 1),
+(@id_pergunta, 'Garage', 0);
+
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What do you wear on your feet?', 'Fácil', 'Pode ser tênis, sapatos, sandálias...');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Hats', 0),
+(@id_pergunta, 'Gloves', 0),
+(@id_pergunta, 'Shoes', 1),
+(@id_pergunta, 'Pants', 0),
+(@id_pergunta, 'Shirts', 0);
+
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which preposition completes the sentence: "The cat is ___ the table."', 'Fácil', 'Indica que algo está em cima de uma superfície.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'in', 0),
+(@id_pergunta, 'under', 0),
+(@id_pergunta, 'on', 1),
+(@id_pergunta, 'at', 0),
+(@id_pergunta, 'of', 0);
+
+
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which sentence is in the Present Perfect Tense?', 'Médio', 'Fala de uma ação passada com relevância no presente.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'I went to the store yesterday.', 0),
+(@id_pergunta, 'I have seen that movie before.', 1),
+(@id_pergunta, 'I am watching a movie now.', 0),
+(@id_pergunta, 'I will see a movie tomorrow.', 0),
+(@id_pergunta, 'I usually see movies on weekends.', 0);
+
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'The phrasal verb "give up" means:', 'Médio', 'É o que você não deve fazer quando estuda inglês.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'To distribute', 0),
+(@id_pergunta, 'To stop trying; to quit', 1),
+(@id_pergunta, 'To offer something', 0),
+(@id_pergunta, 'To return something', 0),
+(@id_pergunta, 'To continue', 0);
+
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'If you do something "once in a blue moon", you do it:', 'Médio', 'A "lua azul" é um evento astronômico raro.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Every day', 0),
+(@id_pergunta, 'Very rarely', 1),
+(@id_pergunta, 'Every month', 0),
+(@id_pergunta, 'At night', 0),
+(@id_pergunta, 'Only when you are sad', 0);
+
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Choose the correct modal verb: "You ___ study for the test if you want to pass."', 'Médio', 'Indica uma forte recomendação ou necessidade.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'can', 0),
+(@id_pergunta, 'should', 1),
+(@id_pergunta, 'may', 0),
+(@id_pergunta, 'might', 0),
+(@id_pergunta, 'could', 0);
+
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What is the comparative form of the adjective "good"?', 'Médio', 'É uma forma irregular, não se usa "-er" ou "more".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Gooder', 0),
+(@id_pergunta, 'More good', 0),
+(@id_pergunta, 'Better', 1),
+(@id_pergunta, 'Best', 0),
+(@id_pergunta, 'Goodest', 0);
+
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which of these is used to cook food, like soup?', 'Médio', 'É um recipiente fundo, geralmente de metal.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A plate', 0),
+(@id_pergunta, 'A fork', 0),
+(@id_pergunta, 'A pot', 1),
+(@id_pergunta, 'A glass', 0),
+(@id_pergunta, 'A napkin', 0);
+
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'The expression "It''s raining cats and dogs" means:', 'Médio', 'É uma forma figurada de descrever o tempo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Animals are falling from the sky', 0),
+(@id_pergunta, 'It is raining very heavily', 1),
+(@id_pergunta, 'It is just a light shower', 0),
+(@id_pergunta, 'It is a sunny day', 0),
+(@id_pergunta, 'There is a lot of noise outside', 0);
+
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'A person who designs buildings is called a(n):', 'Médio', 'Pense em "arquitetura".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Engineer', 0),
+(@id_pergunta, 'Architect', 1),
+(@id_pergunta, 'Plumber', 0),
+(@id_pergunta, 'Carpenter', 0),
+(@id_pergunta, 'Artist', 0);
+
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Complete: "I look forward ___ hearing from you."', 'Médio', 'É uma preposição comum em finais de e-mails formais.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'for', 0),
+(@id_pergunta, 'to', 1),
+(@id_pergunta, 'at', 0),
+(@id_pergunta, 'in', 0),
+(@id_pergunta, 'with', 0);
+
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which word is a synonym for "beautiful"?', 'Médio', 'É frequentemente usado para descrever paisagens ou pessoas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ugly', 0),
+(@id_pergunta, 'Pretty', 1),
+(@id_pergunta, 'Old', 0),
+(@id_pergunta, 'Sad', 0),
+(@id_pergunta, 'Angry', 0);
+
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What is the gerund of the verb "swim"?', 'Médio', 'Lembre-se de dobrar a última consoante.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Swam', 0),
+(@id_pergunta, 'Swiming', 0),
+(@id_pergunta, 'Swimming', 1),
+(@id_pergunta, 'To swim', 0),
+(@id_pergunta, 'Swum', 0);
+
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'If something is "expensive", it:', 'Médio', 'É o oposto de "cheap" (barato).');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Is easy to find', 0),
+(@id_pergunta, 'Costs a lot of money', 1),
+(@id_pergunta, 'Is very small', 0),
+(@id_pergunta, 'Is very old', 0),
+(@id_pergunta, 'Is a different color', 0);
+
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What does the abbreviation "e.g." stand for?', 'Médio', 'Vem do latim "exempli gratia".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'And so on', 0),
+(@id_pergunta, 'For example', 1),
+(@id_pergunta, 'In other words', 0),
+(@id_pergunta, 'Approximately', 0),
+(@id_pergunta, 'Etcetera', 0);
+
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Choose the correct question word: "___ do you live? - I live in Brazil."', 'Médio', 'A pergunta é sobre um lugar.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Who', 0),
+(@id_pergunta, 'What', 0),
+(@id_pergunta, 'When', 0),
+(@id_pergunta, 'Where', 1),
+(@id_pergunta, 'Why', 0);
+
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'The superlative form of "difficult" is:', 'Médio', 'Use "the most" para adjetivos longos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Difficultest', 0),
+(@id_pergunta, 'More difficult', 0),
+(@id_pergunta, 'The most difficult', 1),
+(@id_pergunta, 'The difficultest', 0),
+(@id_pergunta, 'Most difficult', 0);
+
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'A person from Japan is called:', 'Médio', 'O sufixo é "-ese".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Japonian', 0),
+(@id_pergunta, 'Japish', 0),
+(@id_pergunta, 'Japanese', 1),
+(@id_pergunta, 'Japon', 0),
+(@id_pergunta, 'Japonese', 0);
+
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which sentence uses "will" to express a future intention?', 'Médio', 'É uma decisão tomada no momento da fala.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'I am going to travel next month.', 0),
+(@id_pergunta, 'The phone is ringing. I will get it!', 1),
+(@id_pergunta, 'Look at the clouds! It is going to rain.', 0),
+(@id_pergunta, 'I might go to the party.', 0),
+(@id_pergunta, 'I am traveling to London now.', 0);
+
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'If you "break a leg", someone is wishing you:', 'Médio', 'É uma expressão idiomática usada no teatro.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Bad luck', 0),
+(@id_pergunta, 'Good luck', 1),
+(@id_pergunta, 'To be careful', 0),
+(@id_pergunta, 'To have an accident', 0),
+(@id_pergunta, 'To go to the hospital', 0);
+
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'An "uncountable noun" is a noun that:', 'Médio', 'Pense em "water" ou "information".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Does not exist', 0),
+(@id_pergunta, 'Cannot be counted and does not have a plural form', 1),
+(@id_pergunta, 'Is always singular', 0),
+(@id_pergunta, 'Is always plural', 0),
+(@id_pergunta, 'Is a proper noun', 0);
+
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which word is an adverb? "She sings beautifully."', 'Médio', 'Adverbs often end in "-ly" and modify verbs.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'She', 0),
+(@id_pergunta, 'sings', 0),
+(@id_pergunta, 'beautifully', 1),
+(@id_pergunta, 'beautiful', 0),
+(@id_pergunta, 'song', 0);
+
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Complete the Third Conditional sentence: "If I had studied harder, I ___ the exam."', 'Difícil', 'A estrutura é "If + past perfect, would have + past participle".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'would pass', 0),
+(@id_pergunta, 'would have passed', 1),
+(@id_pergunta, 'will pass', 0),
+(@id_pergunta, 'passed', 0),
+(@id_pergunta, 'pass', 0);
+
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'The sentence "The book was written by a famous author" is in the:', 'Difícil', 'O foco está no objeto que sofre a ação.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Active Voice', 0),
+(@id_pergunta, 'Passive Voice', 1),
+(@id_pergunta, 'Present Perfect', 0),
+(@id_pergunta, 'Future Tense', 0),
+(@id_pergunta, 'Imperative Mood', 0);
+
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What does the idiom "to bite the bullet" mean?', 'Difícil', 'Imagine um soldado antigo tendo que suportar a dor de uma cirurgia sem anestesia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'To eat something very hard', 0),
+(@id_pergunta, 'To face a difficult situation with courage', 1),
+(@id_pergunta, 'To go to the dentist', 0),
+(@id_pergunta, 'To stop talking', 0),
+(@id_pergunta, 'To get angry', 0);
+
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which phrasal verb means "to invent a story or excuse"?', 'Difícil', 'É frequentemente usado com "an excuse" ou "a story".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Look up to', 0),
+(@id_pergunta, 'Make up', 1),
+(@id_pergunta, 'Run into', 0),
+(@id_pergunta, 'Take off', 0),
+(@id_pergunta, 'Get along', 0);
+
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'The word "although" is a conjunction that introduces a clause of:', 'Difícil', 'É sinônimo de "even though" ou "in spite of the fact that".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Reason', 0),
+(@id_pergunta, 'Contrast or concession', 1),
+(@id_pergunta, 'Time', 0),
+(@id_pergunta, 'Condition', 0),
+(@id_pergunta, 'Purpose', 0);
+
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'In Reported Speech, "I am happy" becomes:', 'Difícil', 'O tempo verbal geralmente "volta um passo" no passado.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'He said he is happy.', 0),
+(@id_pergunta, 'He said he was happy.', 1),
+(@id_pergunta, 'He said he will be happy.', 0),
+(@id_pergunta, 'He said I am happy.', 0),
+(@id_pergunta, 'He said he has been happy.', 0);
+
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'The word "ubiquitous" means:', 'Difícil', 'Pense em smartphones no mundo de hoje.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Very rare', 0),
+(@id_pergunta, 'Present, appearing, or found everywhere', 1),
+(@id_pergunta, 'Extremely beautiful', 0),
+(@id_pergunta, 'Difficult to understand', 0),
+(@id_pergunta, 'Completely useless', 0);
+
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Choose the correct relative pronoun: "The woman ___ car was stolen went to the police."', 'Difícil', 'Indica posse.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'who', 0),
+(@id_pergunta, 'whose', 1),
+(@id_pergunta, 'which', 0),
+(@id_pergunta, 'that', 0),
+(@id_pergunta, 'whom', 0);
+
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'If a plan "goes south", it:', 'Difícil', 'A direção "sul" aqui tem uma conotação negativa.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Becomes successful', 0),
+(@id_pergunta, 'Fails or goes wrong', 1),
+(@id_pergunta, 'Is postponed', 0),
+(@id_pergunta, 'Moves to a warmer place', 0),
+(@id_pergunta, 'Is kept secret', 0);
+
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'A "plethora" of options means:', 'Difícil', 'É um sinônimo de "excess" ou "abundance".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A lack of options', 0),
+(@id_pergunta, 'A large or excessive amount of options', 1),
+(@id_pergunta, 'A few good options', 0),
+(@id_pergunta, 'Confusing options', 0),
+(@id_pergunta, 'Only two options', 0);
+
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which sentence uses a subjunctive mood?', 'Difícil', 'É usado para expressar desejos, sugestões ou situações hipotéticas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'He is a good student.', 0),
+(@id_pergunta, 'I suggest that he be more careful.', 1),
+(@id_pergunta, 'He was here yesterday.', 0),
+(@id_pergunta, 'He will arrive soon.', 0),
+(@id_pergunta, 'Be careful!', 0);
+
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'The expression "the elephant in the room" refers to:', 'Difícil', 'É um problema que todos veem, mas ninguém quer discutir.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'The biggest person in a group', 0),
+(@id_pergunta, 'An obvious major problem or controversial issue that is being ignored', 1),
+(@id_pergunta, 'A very quiet person', 0),
+(@id_pergunta, 'An unexpected surprise', 0),
+(@id_pergunta, 'A popular topic of conversation', 0);
+
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Complete the sentence: "Not only ___ late, but he also forgot the documents."', 'Difícil', 'Quando uma frase começa com "not only", ocorre uma inversão entre sujeito e verbo auxiliar.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'he was', 0),
+(@id_pergunta, 'was he', 1),
+(@id_pergunta, 'he is', 0),
+(@id_pergunta, 'is he', 0),
+(@id_pergunta, 'he did be', 0);
+
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'A "meritocracy" is a system in which advancement is based on:', 'Difícil', 'A palavra combina "mérito" e "poder".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Wealth and social class', 0),
+(@id_pergunta, 'Individual ability or achievement', 1),
+(@id_pergunta, 'Age and experience', 0),
+(@id_pergunta, 'Popularity', 0),
+(@id_pergunta, 'Family connections', 0);
+
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'To "juxtapose" two things is to:', 'Difícil', 'Artistas fazem isso para criar um efeito de contraste.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Combine them into one', 0),
+(@id_pergunta, 'Place them close together for contrasting effect', 1),
+(@id_pergunta, 'Separate them as much as possible', 0),
+(@id_pergunta, 'Analyze them individually', 0),
+(@id_pergunta, 'Destroy them both', 0);
+
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'What is the meaning of "ephemeral"?', 'Difícil', 'Pense na vida de uma borboleta.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Lasting forever', 0),
+(@id_pergunta, 'Lasting for a very short time', 1),
+(@id_pergunta, 'Extremely important', 0),
+(@id_pergunta, 'Weak and fragile', 0),
+(@id_pergunta, 'Bright and colorful', 0);
+
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'The sentence "I wish I were taller" expresses a:', 'Difícil', 'Usa o passado do subjuntivo para falar sobre o presente.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A plan for the future', 0),
+(@id_pergunta, 'A wish or regret about a present situation', 1),
+(@id_pergunta, 'A command', 0),
+(@id_pergunta, 'A past habit', 0),
+(@id_pergunta, 'A scientific fact', 0);
+
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Someone who is "gregarious" is:', 'Difícil', 'Vem do latim "grex", que significa rebanho.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Shy and introverted', 0),
+(@id_pergunta, 'Fond of company; sociable', 1),
+(@id_pergunta, 'Angry and irritable', 0),
+(@id_pergunta, 'Lazy and unmotivated', 0),
+(@id_pergunta, 'Highly intelligent', 0);
+
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'Which tag question is correct? "She speaks French, ___?"', 'Difícil', 'A "tag" geralmente usa o verbo auxiliar oposto da frase principal.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'is she', 0),
+(@id_pergunta, 'doesn''t she', 1),
+(@id_pergunta, 'does she', 0),
+(@id_pergunta, 'isn''t she', 0),
+(@id_pergunta, 'speaks she not', 0);
+
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (10, 1, 'The idiom "to let the cat out of the bag" means:', 'Difícil', 'É o oposto de "to keep a secret".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'To buy a pet', 0),
+(@id_pergunta, 'To reveal a secret carelessly or by mistake', 1),
+(@id_pergunta, 'To start a fight', 0),
+(@id_pergunta, 'To set an animal free', 0),
+(@id_pergunta, 'To make a situation more complicated', 0);
+
+-- =================================================================
 -- ||                       Espanhol                              ||
 -- =================================================================
 -- =================================================================
