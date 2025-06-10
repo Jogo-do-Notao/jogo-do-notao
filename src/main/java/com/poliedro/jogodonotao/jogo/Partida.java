@@ -393,12 +393,12 @@ public class Partida {
      */
     public static void criarPartida(Materia materia) {
         // Exibir mensagem de criando partida
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Criando Partida");
-        alert.setHeaderText("Criando Partida...");
-        alert.setContentText("A partida está sendo criada.\n\nMatéria selecionada: " + (
+        Alert msg = new Alert(Alert.AlertType.INFORMATION);
+        msg.setTitle("Criando Partida");
+        msg.setHeaderText("Criando Partida...");
+        msg.setContentText("A partida está sendo criada.\n\nMatéria selecionada: " + (
                 materia == null ? "Todas as Matérias" : materia.getNome()) + ".");
-        alert.show();
+        msg.show();
 
         // Criar partida no banco de dados e atribuir nova partida a partida em andamento
         assert materia != null; // Garantir que a matéria não é nula
@@ -412,7 +412,39 @@ public class Partida {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            alert.close();
+            msg.close(); // fechar mensagem
+        });
+        pause.play();
+    }
+
+    /**
+     * Retoma a partida em andamento.
+     *
+     * @param partida Partida em andamento que será retomada.
+     */
+    public static void continuarPartida(Partida partida) {
+        // Exibir mensagem de retomando partida
+        Alert msg = new Alert(Alert.AlertType.INFORMATION);
+        msg.setTitle("Retomando Partida");
+        msg.setHeaderText("Retomando Partida...");
+        msg.setContentText("A partida está sendo retomada.\n" +
+                "\nMatéria: " + (partida.getMATERIA() == null ? "Todas as Matérias" : partida.getMATERIA().getNome()) + "." +
+                "\nRodada: " + partida.getRodada() + "/15" +
+                "\nPontuação Acumulada: " + partida.getPontuacaoAcumuladaFormatada() + "." +
+                "\nPontuação do Checkpoint: " + partida.getPontuacaoCheckpointFormatada() + ".");
+
+        // Atribuir partida em andamento
+        partidaEmAndamento = partida;
+
+        // Espera 1 segundo antes de trocar a cena e fechar o alerta
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        pause.setOnFinished(event -> {
+            try { // Abrir tela de partida
+                App.changeScene("area-aluno/partida/tela-partida", "Partida em Andamento");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            msg.close(); // fechar mensagem
         });
         pause.play();
     }

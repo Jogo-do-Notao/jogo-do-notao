@@ -112,7 +112,8 @@ public class ControlePainelAluno implements Initializable {
 
         // Configurar as colunas
         colunaMateria.setCellValueFactory(cellData -> // Matéria
-                new SimpleStringProperty(cellData.getValue().getMATERIA().getNome()));
+                new SimpleStringProperty(
+                        (cellData.getValue().getMATERIA() == null) ? "Todas as Matérias" : cellData.getValue().getMATERIA().getNome()));
         colunaProgresso.setCellValueFactory(cellData -> // Progresso
                 new SimpleStringProperty(cellData.getValue().getRodada() + "/15"));
         colunaPontuacaoAcumulada.setCellValueFactory(cellData -> // Pontuação acumulada
@@ -154,7 +155,10 @@ public class ControlePainelAluno implements Initializable {
      */
     @FXML
     void continuarPartida(ActionEvent event) {
-        System.out.println("Carregar partida");
+        // Obter a partida selecionada na tabela e continuar a partida
+        Partida.continuarPartida(
+                partidasEmAndamento.getSelectionModel().getSelectedItem()
+        );
     }
 
     /**
