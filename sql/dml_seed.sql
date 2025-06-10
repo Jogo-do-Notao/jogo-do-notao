@@ -7437,8 +7437,1232 @@ VALUES (
 -- ||                      Filosofia                              ||
 -- =================================================================
 -- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Qual filósofo grego é famoso pela frase "Só sei que nada sei"?', 'Fácil', 'Ele foi o mestre de Platão e não deixou obras escritas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Aristóteles', 0),
+(@id_pergunta, 'Platão', 0),
+(@id_pergunta, 'Sócrates', 1),
+(@id_pergunta, 'Pitágoras', 0),
+(@id_pergunta, 'Heráclito', 0);
+
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A passagem do pensamento mítico para o racional, na Grécia Antiga, é conhecida como a passagem do:', 'Fácil', 'Logos é a palavra grega para razão ou discurso racional.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Caos para a Ordem', 0),
+(@id_pergunta, 'Mito para o Logos', 1),
+(@id_pergunta, 'Belo para o Bom', 0),
+(@id_pergunta, 'Um para o Múltiplo', 0),
+(@id_pergunta, 'Divino para o Humano', 0);
+
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Qual filósofo afirmou "Penso, logo existo" (Cogito, ergo sum)?', 'Fácil', 'É considerado o pai da filosofia moderna e do racionalismo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'John Locke', 0),
+(@id_pergunta, 'Immanuel Kant', 0),
+(@id_pergunta, 'René Descartes', 1),
+(@id_pergunta, 'Voltaire', 0),
+(@id_pergunta, 'Baruch Spinoza', 0);
+
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A palavra "Filosofia" tem origem grega e significa:', 'Fácil', '"Philo" significa amor e "Sophia" significa sabedoria.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Amor à sabedoria', 1),
+(@id_pergunta, 'Dono da verdade', 0),
+(@id_pergunta, 'Estudo da natureza', 0),
+(@id_pergunta, 'Busca pela felicidade', 0),
+(@id_pergunta, 'Ciência da alma', 0);
+
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A Ética é o ramo da filosofia que estuda:', 'Fácil', 'Está relacionada ao que é certo e errado.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A natureza do conhecimento', 0),
+(@id_pergunta, 'A estrutura da realidade', 0),
+(@id_pergunta, 'Os princípios da moral e da conduta humana', 1),
+(@id_pergunta, 'A organização política da sociedade', 0),
+(@id_pergunta, 'A beleza e a arte', 0);
+
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Platão utilizou uma famosa alegoria para explicar sua teoria do conhecimento. Qual é ela?', 'Fácil', 'Envolve prisioneiros acorrentados que só conseguem ver sombras.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Alegoria da Carruagem', 0),
+(@id_pergunta, 'Mito de Sísifo', 0),
+(@id_pergunta, 'Alegoria da Caverna', 1),
+(@id_pergunta, 'Mito de Prometeu', 0),
+(@id_pergunta, 'O Navio dos Insensatos', 0);
+
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Qual destes filósofos foi um importante pensador do Iluminismo?', 'Fácil', 'Defendia a liberdade de expressão e criticava a Igreja e a monarquia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Santo Agostinho', 0),
+(@id_pergunta, 'Voltaire', 1),
+(@id_pergunta, 'Sêneca', 0),
+(@id_pergunta, 'Heráclito', 0),
+(@id_pergunta, 'Nietzsche', 0);
+
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O conceito de "política", como o estudo da organização da cidade-estado (pólis), surgiu em qual civilização?', 'Fácil', 'Esta civilização também nos deu a filosofia e a democracia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Egípcia', 0),
+(@id_pergunta, 'Romana', 0),
+(@id_pergunta, 'Grega', 1),
+(@id_pergunta, 'Persa', 0),
+(@id_pergunta, 'Babilônica', 0);
+
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é um argumento "ad hominem"?', 'Fácil', 'É considerado uma falácia lógica, um erro de argumentação.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um argumento baseado em autoridade', 0),
+(@id_pergunta, 'Atacar a pessoa que apresenta o argumento, em vez do argumento em si', 1),
+(@id_pergunta, 'Um argumento que apela à emoção', 0),
+(@id_pergunta, 'Generalizar a partir de poucos casos', 0),
+(@id_pergunta, 'Um argumento circular', 0);
+
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Aristóteles, discípulo de Platão, foi o fundador de qual escola filosófica?', 'Fácil', 'O nome da escola vem do local onde ele costumava dar suas aulas em Atenas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Academia', 0),
+(@id_pergunta, 'Jardim', 0),
+(@id_pergunta, 'Pórtico', 0),
+(@id_pergunta, 'Liceu', 1),
+(@id_pergunta, 'Escola de Mileto', 0);
+
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é o "bem" para um filósofo utilitarista?', 'Fácil', 'O lema é "a maior felicidade para o maior número de pessoas".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Aquilo que gera mais prazer e felicidade para a maioria', 1),
+(@id_pergunta, 'Seguir a vontade de Deus', 0),
+(@id_pergunta, 'Agir por dever', 0),
+(@id_pergunta, 'Desenvolver as virtudes', 0),
+(@id_pergunta, 'Acumular poder', 0);
+
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A corrente filosófica que defende que o conhecimento vem principalmente da experiência sensorial é chamada de:', 'Fácil', 'John Locke é um de seus principais representantes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Racionalismo', 0),
+(@id_pergunta, 'Ceticismo', 0),
+(@id_pergunta, 'Idealismo', 0),
+(@id_pergunta, 'Empirismo', 1),
+(@id_pergunta, 'Existencialismo', 0);
+
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é a Estética na filosofia?', 'Fácil', 'Está relacionada à percepção da beleza.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O estudo da lógica', 0),
+(@id_pergunta, 'O estudo do belo e da arte', 1),
+(@id_pergunta, 'O estudo da moral', 0),
+(@id_pergunta, 'O estudo da política', 0),
+(@id_pergunta, 'O estudo do ser', 0);
+
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O filósofo Nicolau Maquiavel escreveu qual famosa obra sobre política?', 'Fácil', 'O título da obra é o nome de um governante ideal.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A República', 0),
+(@id_pergunta, 'O Príncipe', 1),
+(@id_pergunta, 'Leviatã', 0),
+(@id_pergunta, 'Do Contrato Social', 0),
+(@id_pergunta, 'Utopia', 0);
+
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é o oposto do determinismo?', 'Fácil', 'Relaciona-se com a capacidade de fazer escolhas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Fatalismo', 0),
+(@id_pergunta, 'Livre-arbítrio', 1),
+(@id_pergunta, 'Ceticismo', 0),
+(@id_pergunta, 'Nihilismo', 0),
+(@id_pergunta, 'Racionalismo', 0);
+
+-- Pergunta 16
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A filosofia medieval foi fortemente influenciada por qual religião?', 'Fácil', 'Santo Agostinho e São Tomás de Aquino são seus maiores expoentes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Islamismo', 0),
+(@id_pergunta, 'Cristianismo', 1),
+(@id_pergunta, 'Budismo', 0),
+(@id_pergunta, 'Judaísmo', 0),
+(@id_pergunta, 'Hinduísmo', 0);
+
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Qual ramo da filosofia se pergunta "O que é o ser?" ou "O que é a realidade"?', 'Fácil', 'Também é chamada de "filosofia primeira".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ética', 0),
+(@id_pergunta, 'Epistemologia', 0),
+(@id_pergunta, 'Lógica', 0),
+(@id_pergunta, 'Metafísica', 1),
+(@id_pergunta, 'Política', 0);
+
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Os sofistas, na Grécia Antiga, eram conhecidos principalmente por serem mestres em:', 'Fácil', 'Eles ensinavam em troca de pagamento.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Matemática', 0),
+(@id_pergunta, 'Retórica e oratória', 1),
+(@id_pergunta, 'Medicina', 0),
+(@id_pergunta, 'Astronomia', 0),
+(@id_pergunta, 'Ética', 0);
+
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é o "Contrato Social" para filósofos como Hobbes, Locke e Rousseau?', 'Fácil', 'É um acordo para formar uma sociedade organizada.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um documento que se assina ao nascer', 0),
+(@id_pergunta, 'Um pacto hipotético entre indivíduos para criar o Estado', 1),
+(@id_pergunta, 'Um tipo de contrato de trabalho', 0),
+(@id_pergunta, 'Uma lei que regula o comércio', 0),
+(@id_pergunta, 'A constituição de um país', 0);
+
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A filosofia conhecida como Estoicismo, de Sêneca e Marco Aurélio, defendia:', 'Fácil', 'A busca pela paz de espírito.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A busca desenfreada pelo prazer', 0),
+(@id_pergunta, 'A aceitação serena do destino e o controle das paixões', 1),
+(@id_pergunta, 'A dúvida radical sobre todas as coisas', 0),
+(@id_pergunta, 'A superioridade dos sentimentos sobre a razão', 0),
+(@id_pergunta, 'A tomada do poder político', 0);
+
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Para Aristóteles, o objetivo final da vida humana, a felicidade plena, é chamada de:', 'Médio', 'Não é apenas um sentimento, mas uma vida virtuosa e bem vivida.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ataraxia', 0),
+(@id_pergunta, 'Eudaimonia', 1),
+(@id_pergunta, 'Hedonismo', 0),
+(@id_pergunta, 'Apatia', 0),
+(@id_pergunta, 'Sofrosina', 0);
+
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Qual filósofo defendia que a mente humana, ao nascer, é uma "tábula rasa" (folha em branco)?', 'Médio', 'Ele é um dos principais expoentes do empirismo britânico.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'René Descartes', 0),
+(@id_pergunta, 'Platão', 0),
+(@id_pergunta, 'John Locke', 1),
+(@id_pergunta, 'Gottfried Leibniz', 0),
+(@id_pergunta, 'Immanuel Kant', 0);
+
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O "Imperativo Categórico" é o conceito central da ética de qual filósofo?', 'Médio', 'Ele afirma: "Age de tal modo que a máxima da tua vontade possa valer sempre como princípio de uma legislação universal."');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Jeremy Bentham', 0),
+(@id_pergunta, 'Friedrich Nietzsche', 0),
+(@id_pergunta, 'Immanuel Kant', 1),
+(@id_pergunta, 'Aristóteles', 0),
+(@id_pergunta, 'Jean-Paul Sartre', 0);
+
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A dialética, como um método de tese, antítese e síntese, é fundamental no sistema filosófico de:', 'Médio', 'Este filósofo idealista alemão foi uma grande inspiração para pensadores posteriores.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Schopenhauer', 0),
+(@id_pergunta, 'Hegel', 1),
+(@id_pergunta, 'Kierkegaard', 0),
+(@id_pergunta, 'Spinoza', 0),
+(@id_pergunta, 'Fichte', 0);
+
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Para Thomas Hobbes, o "estado de natureza" do homem é caracterizado por:', 'Médio', 'A vida seria "solitária, pobre, sórdida, brutal e curta".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Paz e cooperação', 0),
+(@id_pergunta, 'A "guerra de todos contra todos"', 1),
+(@id_pergunta, 'A busca pela igualdade social', 0),
+(@id_pergunta, 'O desenvolvimento da razão', 0),
+(@id_pergunta, 'A existência de direitos naturais', 0);
+
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Para Friedrich Nietzsche, o conceito que representa o homem que supera a moralidade tradicional e cria seus próprios valores é o:', 'Médio', 'Em alemão, "Übermensch".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Bom selvagem', 0),
+(@id_pergunta, 'Cidadão virtuoso', 0),
+(@id_pergunta, 'Super-homem (Além-do-homem)', 1),
+(@id_pergunta, 'Homem cordial', 0),
+(@id_pergunta, 'Animal político', 0);
+
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O existencialismo, de filósofos como Jean-Paul Sartre, tem como lema principal:', 'Médio', 'Primeiro existimos, depois nos definimos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A essência precede a existência', 0),
+(@id_pergunta, 'A existência precede a essência', 1),
+(@id_pergunta, 'Tudo é permitido', 0),
+(@id_pergunta, 'Deus está morto', 0),
+(@id_pergunta, 'Conhece-te a ti mesmo', 0);
+
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Na filosofia de Platão, o mundo que percebemos com os nossos sentidos é chamado de:', 'Médio', 'É o mundo das aparências, das cópias imperfeitas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Mundo das Ideias', 0),
+(@id_pergunta, 'Mundo Sensível', 1),
+(@id_pergunta, 'Mundo Inteligível', 0),
+(@id_pergunta, 'Hiperurânio', 0),
+(@id_pergunta, 'Cosmos', 0);
+
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Para Rousseau, o homem nasce bom, mas é corrompido pela:', 'Médio', 'Ele critica as instituições e a propriedade privada.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Natureza', 0),
+(@id_pergunta, 'Religião', 0),
+(@id_pergunta, 'Sociedade', 1),
+(@id_pergunta, 'Razão', 0),
+(@id_pergunta, 'Educação', 0);
+
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A Escola de Frankfurt, de filósofos como Adorno e Horkheimer, criou o conceito de:', 'Médio', 'É a transformação da cultura em mercadoria.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Vontade de Poder', 0),
+(@id_pergunta, 'Indústria Cultural', 1),
+(@id_pergunta, 'Banalidade do Mal', 0),
+(@id_pergunta, 'Sociedade do Espetáculo', 0),
+(@id_pergunta, 'Arqueologia do Saber', 0);
+
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é o Ceticismo na filosofia?', 'Médio', 'Pirro de Élis foi um de seus primeiros expoentes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A crença de que tudo é relativo', 0),
+(@id_pergunta, 'A doutrina que afirma a impossibilidade de se chegar a uma certeza absoluta', 1),
+(@id_pergunta, 'A busca pela verdade através da fé', 0),
+(@id_pergunta, 'A negação da existência de Deus', 0),
+(@id_pergunta, 'A afirmação de que a razão é a única fonte de conhecimento', 0);
+
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Aristóteles descreveu o ser humano como um "zoon politikon", o que significa:', 'Médio', 'O homem se realiza plenamente na vida em comunidade, na pólis.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Animal Racional', 0),
+(@id_pergunta, 'Animal Político', 1),
+(@id_pergunta, 'Animal Falante', 0),
+(@id_pergunta, 'Animal Social', 0),
+(@id_pergunta, 'Animal que ri', 0);
+
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A filosofia de Epicuro defendia a busca da felicidade através:', 'Médio', 'A felicidade seria a ausência de dor e perturbação.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Da riqueza material', 0),
+(@id_pergunta, 'Dos prazeres moderados e da tranquilidade da alma (ataraxia)', 1),
+(@id_pergunta, 'Do poder político', 0),
+(@id_pergunta, 'Do cumprimento estrito do dever', 0),
+(@id_pergunta, 'Da negação de todos os prazeres', 0);
+
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é a "banalidade do mal", segundo Hannah Arendt?', 'Médio', 'Ela desenvolveu este conceito ao analisar o julgamento de um oficial nazista.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A ideia de que o mal é inerente a todos os seres humanos', 0),
+(@id_pergunta, 'A prática do mal por pessoas comuns que abdicam de pensar criticamente', 1),
+(@id_pergunta, 'O mal que é praticado por prazer sádico', 0),
+(@id_pergunta, 'A ideia de que o mal não existe, é apenas ausência do bem', 0),
+(@id_pergunta, 'O mal como uma força sobrenatural', 0);
+
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Na visão de Maquiavel, um príncipe, para manter o poder, deve:', 'Médio', 'Para ele, a política tem uma lógica própria, separada da moral comum.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ser sempre bom e justo', 0),
+(@id_pergunta, 'Agir de acordo com a necessidade, podendo usar da crueldade se for preciso', 1),
+(@id_pergunta, 'Obedecer cegamente às leis da Igreja', 0),
+(@id_pergunta, 'Distribuir toda a sua riqueza com o povo', 0),
+(@id_pergunta, 'Consultar o povo para todas as decisões', 0);
+
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O filósofo que dividiu as funções do Estado em Poder Executivo, Legislativo e Judiciário foi:', 'Médio', 'Sua teoria da separação dos poderes influenciou muitas constituições modernas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Hobbes', 0),
+(@id_pergunta, 'Rousseau', 0),
+(@id_pergunta, 'Montesquieu', 1),
+(@id_pergunta, 'Voltaire', 0),
+(@id_pergunta, 'Locke', 0);
+
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é a Maiêutica Socrática?', 'Médio', 'Sócrates dizia que sua mãe era parteira, e ele também, mas de ideias.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um método de ensino baseado na memorização', 0),
+(@id_pergunta, 'A arte de "dar à luz" as ideias através do diálogo e de perguntas', 1),
+(@id_pergunta, 'Um tipo de discurso para convencer multidões', 0),
+(@id_pergunta, 'Uma técnica de meditação para alcançar a paz interior', 0),
+(@id_pergunta, 'Um sistema de classificação de plantas e animais', 0);
+
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Qual é a principal crítica que a filosofia faz ao senso comum?', 'Médio', 'A filosofia busca um conhecimento mais rigoroso.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ser muito complicado e abstrato', 0),
+(@id_pergunta, 'Ser fragmentário, assistemático e muitas vezes baseado em preconceitos', 1),
+(@id_pergunta, 'Ser acessível a todas as pessoas', 0),
+(@id_pergunta, 'Ser baseado na experiência prática', 0),
+(@id_pergunta, 'Ser inútil para a vida cotidiana', 0);
+
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A ideia do "bom selvagem", de que o homem é bom por natureza, é associada a qual filósofo?', 'Médio', 'Ele também escreveu "Do Contrato Social".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Hobbes', 0),
+(@id_pergunta, 'Locke', 0),
+(@id_pergunta, 'Kant', 0),
+(@id_pergunta, 'Rousseau', 1),
+(@id_pergunta, 'Montesquieu', 0);
+
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A "Navalha de Ockham" é um princípio filosófico que afirma que:', 'Médio', 'Também é conhecido como princípio da parcimônia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A realidade é mais complexa do que parece', 0),
+(@id_pergunta, 'Entre duas teorias que explicam o mesmo, a mais simples é provavelmente a correta', 1),
+(@id_pergunta, 'Deve-se duvidar de tudo que não pode ser provado', 0),
+(@id_pergunta, 'A verdade absoluta não pode ser alcançada', 0),
+(@id_pergunta, 'Tudo que existe tem uma razão de ser', 0);
+
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Na Crítica da Razão Pura, Kant busca resolver a disputa entre racionalismo e empirismo através dos conceitos de:', 'Difícil', 'Ele distingue entre o que pode ser conhecido a priori e a posteriori.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ideias inatas e tábula rasa', 0),
+(@id_pergunta, 'Juízos analíticos, sintéticos e sintéticos a priori', 1),
+(@id_pergunta, 'Mundo das Ideias e Mundo Sensível', 0),
+(@id_pergunta, 'Dialética e materialismo', 0),
+(@id_pergunta, 'Impressões e ideias', 0);
+
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Para Baruch Spinoza, Deus é:', 'Difícil', 'Sua visão é panteísta.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um criador pessoal e transcendente', 0),
+(@id_pergunta, 'Idêntico à Natureza, a substância única de tudo que existe', 1),
+(@id_pergunta, 'Uma ilusão criada pela mente humana', 0),
+(@id_pergunta, 'O motor imóvel do universo', 0),
+(@id_pergunta, 'O legislador moral do universo', 0);
+
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O conceito de "rizoma" na filosofia de Deleuze e Guattari se opõe a qual modelo de pensamento tradicional?', 'Difícil', 'Pense em um sistema sem centro e com múltiplas conexões, em oposição a um com raiz e tronco.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ao pensamento dialético', 0),
+(@id_pergunta, 'Ao pensamento arbóreo, hierárquico e linear', 1),
+(@id_pergunta, 'Ao pensamento empírico', 0),
+(@id_pergunta, 'Ao pensamento cético', 0),
+(@id_pergunta, 'Ao pensamento analítico', 0);
+
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'No existencialismo de Albert Camus, o "Absurdo" nasce do confronto entre:', 'Difícil', 'É a condição fundamental da existência humana para ele.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O bem e o mal', 0),
+(@id_pergunta, 'A razão humana em busca de sentido e o silêncio irracional do mundo', 1),
+(@id_pergunta, 'A liberdade individual e as regras sociais', 0),
+(@id_pergunta, 'A vida e a morte', 0),
+(@id_pergunta, 'O indivíduo e a sociedade', 0);
+
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é a "epoché" na fenomenologia de Edmund Husserl?', 'Difícil', 'É o primeiro passo do método fenomenológico.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A análise da linguagem', 0),
+(@id_pergunta, 'A suspensão do juízo sobre a existência do mundo exterior para focar na consciência', 1),
+(@id_pergunta, 'A interpretação de textos históricos', 0),
+(@id_pergunta, 'A busca pelas causas primeiras da realidade', 0),
+(@id_pergunta, 'A dedução lógica a partir de axiomas', 0);
+
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A teoria das "quatro causas" de Aristóteles inclui quais causas?', 'Difícil', 'Ele as usava para explicar a existência de qualquer coisa.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Lógica, Ética, Política e Estética', 0),
+(@id_pergunta, 'Material, Formal, Eficiente e Final', 1),
+(@id_pergunta, 'Primeira, Segunda, Terceira e Quarta', 0),
+(@id_pergunta, 'Divina, Humana, Natural e Artificial', 0),
+(@id_pergunta, 'Passado, Presente, Futuro e Eternidade', 0);
+
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Para Michel Foucault, o poder não é apenas repressivo, mas também:', 'Difícil', 'Ele argumenta que o poder cria e molda os indivíduos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ineficaz', 0),
+(@id_pergunta, 'Produtivo, pois produz saberes, discursos e sujeitos', 1),
+(@id_pergunta, 'Exclusivo do Estado', 0),
+(@id_pergunta, 'Sempre violento', 0),
+(@id_pergunta, 'Um sinônimo de conhecimento', 0);
+
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é o "problema de Gettier" na epistemologia?', 'Difícil', 'Desafia a definição tradicional de conhecimento como "crença verdadeira justificada".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A questão de se podemos provar a existência de outras mentes', 0),
+(@id_pergunta, 'Um contraexemplo que mostra que uma crença pode ser verdadeira e justificada, mas não ser conhecimento', 1),
+(@id_pergunta, 'O problema da indução, de justificar a crença em leis universais', 0),
+(@id_pergunta, 'A dificuldade de definir o que é "verdade"', 0),
+(@id_pergunta, 'O debate sobre se o conhecimento é inato ou adquirido', 0);
+
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'No pensamento de Arthur Schopenhauer, o mundo fenomênico é uma representação de uma realidade essencial, que ele chama de:', 'Difícil', 'É uma força cega, irracional e insaciável que move tudo o que existe.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O Espírito Absoluto', 0),
+(@id_pergunta, 'A Vontade', 1),
+(@id_pergunta, 'O Eterno Retorno', 0),
+(@id_pergunta, 'O Inconsciente Coletivo', 0),
+(@id_pergunta, 'A Mônada', 0);
+
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Qual filósofo, em "O Leviatã", argumenta que a soberania do Estado deve ser absoluta para evitar o caos do estado de natureza?', 'Difícil', 'Para ele, o pacto social implica em ceder a liberdade a um poder central.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'John Locke', 0),
+(@id_pergunta, 'Thomas Hobbes', 1),
+(@id_pergunta, 'Jean-Jacques Rousseau', 0),
+(@id_pergunta, 'Montesquieu', 0),
+(@id_pergunta, 'Platão', 0);
+
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O conceito de "Dasein" (ser-aí) é central na obra "Ser e Tempo" de qual filósofo?', 'Difícil', 'Ele se dedicou a investigar a questão do "sentido do Ser".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Edmund Husserl', 0),
+(@id_pergunta, 'Martin Heidegger', 1),
+(@id_pergunta, 'Jean-Paul Sartre', 0),
+(@id_pergunta, 'G. W. F. Hegel', 0),
+(@id_pergunta, 'Ludwig Wittgenstein', 0);
+
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é o "paradoxo do navio de Teseu"?', 'Difícil', 'É um problema filosófico sobre identidade e persistência ao longo do tempo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um paradoxo lógico sobre o movimento', 0),
+(@id_pergunta, 'Se todas as partes de um objeto são substituídas, ele continua sendo o mesmo objeto?', 1),
+(@id_pergunta, 'Um dilema ético sobre sacrifício', 0),
+(@id_pergunta, 'Um problema sobre a existência do livre-arbítrio', 0),
+(@id_pergunta, 'Um quebra-cabeça sobre a natureza da verdade', 0);
+
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Para David Hume, o princípio da causalidade (a ideia de que um evento causa outro) é:', 'Difícil', 'Ele era um empirista radical.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma lei lógica da razão', 0),
+(@id_pergunta, 'Um hábito mental formado pela observação repetida de eventos conjugados', 1),
+(@id_pergunta, 'Uma verdade revelada por Deus', 0),
+(@id_pergunta, 'Uma propriedade intrínseca dos objetos', 0),
+(@id_pergunta, 'Uma categoria a priori do entendimento', 0);
+
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O conceito de "sociedade do espetáculo", onde as relações sociais são mediadas por imagens, foi desenvolvido por:', 'Difícil', 'Ele foi um pensador ligado à Internacional Situacionista.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Jean Baudrillard', 0),
+(@id_pergunta, 'Guy Debord', 1),
+(@id_pergunta, 'Gilles Deleuze', 0),
+(@id_pergunta, 'Jürgen Habermas', 0),
+(@id_pergunta, 'Michel Foucault', 0);
+
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A distinção de Simone de Beauvoir, "não se nasce mulher, torna-se mulher", significa que:', 'Difícil', 'É uma das frases mais famosas do feminismo existencialista.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O gênero é uma construção social e cultural, não um destino biológico', 1),
+(@id_pergunta, 'A biologia feminina é irrelevante', 0),
+(@id_pergunta, 'Apenas mulheres adultas são verdadeiramente mulheres', 0),
+(@id_pergunta, 'As mulheres devem se esforçar para se tornarem masculinas', 0),
+(@id_pergunta, 'A identidade de gênero pode ser escolhida livremente a qualquer momento', 0);
+
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'Qual destes é um exemplo de um "dilema moral" clássico discutido em ética?', 'Difícil', 'Envolve um trem desgovernado e uma escolha difícil.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O Paradoxo do Mentiroso', 0),
+(@id_pergunta, 'O Dilema do Bonde (Trolley Problem)', 1),
+(@id_pergunta, 'O Problema da Indução', 0),
+(@id_pergunta, 'O Paradoxo de Zenão', 0),
+(@id_pergunta, 'O Gato de Schrödinger', 0);
+
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A filosofia de Ludwig Wittgenstein em sua segunda fase, nas "Investigações Filosóficas", argumenta que o significado de uma palavra é:', 'Difícil', 'Ele se afasta da ideia de que as palavras apenas representam objetos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Definido por sua correspondência com um objeto no mundo', 0),
+(@id_pergunta, 'Seu uso em um determinado "jogo de linguagem"', 1),
+(@id_pergunta, 'Uma imagem mental privada', 0),
+(@id_pergunta, 'Fixado por uma definição de dicionário', 0),
+(@id_pergunta, 'Inato à mente humana', 0);
+
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O que é o "véu da ignorância" no pensamento político de John Rawls?', 'Difícil', 'É uma experiência de pensamento para definir princípios de justiça.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A incapacidade das pessoas de entenderem política', 0),
+(@id_pergunta, 'Uma situação hipotética onde ninguém conhece sua própria posição social para escolher princípios justos', 1),
+(@id_pergunta, 'A censura imposta por governos autoritários', 0),
+(@id_pergunta, 'O preconceito que impede o diálogo racional', 0),
+(@id_pergunta, 'A ideia de que a ignorância é uma bênção', 0);
+
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'O conceito de "eterno retorno" em Nietzsche sugere que devemos:', 'Difícil', 'É uma forma de afirmar a vida em sua totalidade.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Tentar escapar do ciclo de reencarnações', 0),
+(@id_pergunta, 'Viver cada momento como se fôssemos repeti-lo infinitamente', 1),
+(@id_pergunta, 'Acreditar que a história se repete', 0),
+(@id_pergunta, 'Buscar uma vida após a morte', 0),
+(@id_pergunta, 'Arrepender-se dos erros do passado', 0);
+
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (8, 1, 'A ideia de que o universo é composto por substâncias indivisíveis chamadas "mônadas" foi proposta por qual filósofo racionalista?', 'Difícil', 'Ele também é conhecido por seu otimismo metafísico de que este é "o melhor dos mundos possíveis".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Descartes', 0),
+(@id_pergunta, 'Spinoza', 0),
+(@id_pergunta, 'Leibniz', 1),
+(@id_pergunta, 'Kant', 0),
+(@id_pergunta, 'Hegel', 0);
+
+
+-- =================================================================
 -- ||                      Sociologia                             ||
 -- =================================================================
+-- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual é o principal objeto de estudo da Sociologia?', 'Fácil', 'Ela estuda as relações entre as pessoas e os grupos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O corpo humano', 0),
+(@id_pergunta, 'A mente individual', 0),
+(@id_pergunta, 'A sociedade e as relações sociais', 1),
+(@id_pergunta, 'O passado da humanidade', 0),
+(@id_pergunta, 'A política e o Estado', 0);
+
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O conjunto de costumes, crenças, artes e leis de um grupo social é chamado de:', 'Fácil', 'É tudo aquilo que o ser humano produz ao viver em sociedade.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Genética', 0),
+(@id_pergunta, 'Cultura', 1),
+(@id_pergunta, 'Instinto', 0),
+(@id_pergunta, 'Geografia', 0),
+(@id_pergunta, 'Governo', 0);
+
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Para Émile Durkheim, as regras e normas que "coagem" o indivíduo a agir de certa forma são chamadas de:', 'Fácil', 'É um fato social.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ações Sociais', 0),
+(@id_pergunta, 'Fatos Sociais', 1),
+(@id_pergunta, 'Leis Naturais', 0),
+(@id_pergunta, 'Vontades Individuais', 0),
+(@id_pergunta, 'Instintos', 0);
+
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O processo pelo qual aprendemos as regras e os valores da sociedade em que vivemos é a:', 'Fácil', 'Começa na família e continua na escola e em outros grupos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Educação formal', 0),
+(@id_pergunta, 'Socialização', 1),
+(@id_pergunta, 'Adaptação biológica', 0),
+(@id_pergunta, 'Revolução', 0),
+(@id_pergunta, 'Globalização', 0);
+
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual sociólogo é considerado o "pai da Sociologia" por ter criado o termo e defendido uma ciência da sociedade?', 'Fácil', 'Ele é o fundador do Positivismo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Émile Durkheim', 0),
+(@id_pergunta, 'Max Weber', 0),
+(@id_pergunta, 'Auguste Comte', 1),
+(@id_pergunta, 'Herbert Spencer', 0),
+(@id_pergunta, 'Zygmunt Bauman', 0);
+
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A divisão da sociedade em camadas ou estratos, com diferentes níveis de riqueza, prestígio e poder, é chamada de:', 'Fácil', 'Pode ser por castas, estamentos ou classes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Democracia', 0),
+(@id_pergunta, 'Estratificação Social', 1),
+(@id_pergunta, 'Cultura de Massa', 0),
+(@id_pergunta, 'Solidariedade Social', 0),
+(@id_pergunta, 'Anomia Social', 0);
+
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Julgar outras culturas a partir dos valores e padrões da sua própria cultura é um exemplo de:', 'Fácil', 'É o oposto do relativismo cultural.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Globalização', 0),
+(@id_pergunta, 'Alteridade', 0),
+(@id_pergunta, 'Etnocentrismo', 1),
+(@id_pergunta, 'Exotismo', 0),
+(@id_pergunta, 'Antropologia', 0);
+
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual destas é considerada uma instituição social fundamental?', 'Fácil', 'É o primeiro grupo social do qual a maioria das pessoas faz parte.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um time de futebol', 0),
+(@id_pergunta, 'Um grupo de amigos', 0),
+(@id_pergunta, 'A Família', 1),
+(@id_pergunta, 'Um fã-clube', 0),
+(@id_pergunta, 'Uma empresa privada', 0);
+
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual sociólogo clássico se dedicou a entender a "ação social" e seus diferentes tipos?', 'Fácil', 'Ele é um dos "três porquinhos" da sociologia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Auguste Comte', 0),
+(@id_pergunta, 'Max Weber', 1),
+(@id_pergunta, 'Talcott Parsons', 0),
+(@id_pergunta, 'Émile Durkheim', 0),
+(@id_pergunta, 'Norbert Elias', 0);
+
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O conceito de cidadania está relacionado principalmente a:', 'Fácil', 'Envolve participar da vida em sociedade e ter acesso a garantias.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Ter um emprego fixo', 0),
+(@id_pergunta, 'Ser membro de uma religião', 0),
+(@id_pergunta, 'Direitos e deveres de um indivíduo em um Estado', 1),
+(@id_pergunta, 'Morar em uma cidade grande', 0),
+(@id_pergunta, 'Falar o idioma oficial do país', 0);
+
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é um movimento social?', 'Fácil', 'O movimento feminista e o movimento ambientalista são exemplos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O deslocamento de pessoas entre cidades', 0),
+(@id_pergunta, 'Uma ação coletiva organizada para promover ou resistir a uma mudança social', 1),
+(@id_pergunta, 'Uma festa popular ou carnaval', 0),
+(@id_pergunta, 'O crescimento da população de um país', 0),
+(@id_pergunta, 'Uma eleição para presidente', 0);
+
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A capacidade de impor a própria vontade sobre os outros, mesmo contra a resistência destes, é a definição sociológica de:', 'Fácil', 'Pode ser exercida de várias formas, não apenas pela força.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Cultura', 0),
+(@id_pergunta, 'Carisma', 0),
+(@id_pergunta, 'Poder', 1),
+(@id_pergunta, 'Trabalho', 0),
+(@id_pergunta, 'Amizade', 0);
+
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual o nome do processo de intensificação das trocas e da interdependência entre os países em escala mundial?', 'Fácil', 'A internet é um de seus maiores símbolos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Industrialização', 0),
+(@id_pergunta, 'Urbanização', 0),
+(@id_pergunta, 'Nacionalismo', 0),
+(@id_pergunta, 'Globalização', 1),
+(@id_pergunta, 'Isolacionismo', 0);
+
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A sociologia que busca entender a sociedade a partir da interpretação dos sentidos e significados que os indivíduos dão às suas ações é chamada de:', 'Fácil', 'Max Weber é o principal representante dessa abordagem.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Positivista', 0),
+(@id_pergunta, 'Compreensiva', 1),
+(@id_pergunta, 'Funcionalista', 0),
+(@id_pergunta, 'Estruturalista', 0),
+(@id_pergunta, 'Crítica', 0);
+
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual sociólogo clássico comparou a sociedade a um "organismo vivo", onde cada parte tem uma função?', 'Fácil', 'Essa visão é chamada de funcionalismo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Max Weber', 0),
+(@id_pergunta, 'Émile Durkheim', 1),
+(@id_pergunta, 'Auguste Comte', 0),
+(@id_pergunta, 'Georg Simmel', 0),
+(@id_pergunta, 'Ferdinand Tönnies', 0);
+
+-- Pergunta 16
+INSERT INTO pergunta (id_pergunta, titulo, dificuldade, dica) VALUES (9, 1, 'O que é a "indústria cultural", segundo Adorno e Horkheimer?', 'Fácil', 'Relaciona-se com a produção em massa de filmes, músicas e programas de TV.');
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O conjunto de museus e teatros de uma cidade', 0),
+(@id_pergunta, 'A transformação da cultura em mercadoria para consumo em massa', 1),
+(@id_pergunta, 'A cultura popular e o folclore de um povo', 0),
+(@id_pergunta, 'A produção de equipamentos para artistas', 0),
+(@id_pergunta, 'O setor industrial de um país', 0);
+
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A migração de pessoas do campo para as cidades é um fenômeno sociológico conhecido como:', 'Fácil', 'Foi um processo muito intenso durante a Revolução Industrial.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Globalização', 0),
+(@id_pergunta, 'Gentrificação', 0),
+(@id_pergunta, 'Êxodo Rural', 1),
+(@id_pergunta, 'Turismo', 0),
+(@id_pergunta, 'Migração pendular', 0);
+
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é "status social"?', 'Fácil', 'Pode ser atribuído (nascimento) ou adquirido (profissão).');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A quantidade de dinheiro que uma pessoa tem', 0),
+(@id_pergunta, 'A posição que um indivíduo ocupa na estrutura social, associada a um grau de prestígio', 1),
+(@id_pergunta, 'A opinião política de uma pessoa', 0),
+(@id_pergunta, 'O estado civil de um indivíduo', 0),
+(@id_pergunta, 'O número de amigos nas redes sociais', 0);
+
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O estudo das populações humanas, seu tamanho, distribuição e composição, é chamado de:', 'Fácil', 'Usa dados como taxas de natalidade e mortalidade.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Geopolítica', 0),
+(@id_pergunta, 'Psicologia Social', 0),
+(@id_pergunta, 'Demografia', 1),
+(@id_pergunta, 'Antropologia', 0),
+(@id_pergunta, 'Economia', 0);
+
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O conceito de "tipo ideal" como uma ferramenta para a análise sociológica foi desenvolvido por:', 'Fácil', 'Ele usou essa ferramenta para estudar a burocracia e a dominação.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Émile Durkheim', 0),
+(@id_pergunta, 'Max Weber', 1),
+(@id_pergunta, 'Auguste Comte', 0),
+(@id_pergunta, 'Talcott Parsons', 0),
+(@id_pergunta, 'Pierre Bourdieu', 0);
+
+
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Para Durkheim, a "solidariedade mecânica" é típica de qual tipo de sociedade?', 'Médio', 'É baseada na semelhança entre os indivíduos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Sociedades complexas e industriais', 0),
+(@id_pergunta, 'Sociedades tradicionais e com pouca divisão do trabalho', 1),
+(@id_pergunta, 'Sociedades globais e conectadas', 0),
+(@id_pergunta, 'Sociedades pós-modernas', 0),
+(@id_pergunta, 'Sociedades anárquicas', 0);
+
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A dominação baseada na crença na santidade das tradições e na legitimidade daqueles que foram chamados a governar por elas é, para Weber, a dominação:', 'Médio', 'Reis e patriarcas são exemplos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Racional-legal', 0),
+(@id_pergunta, 'Carismática', 0),
+(@id_pergunta, 'Tradicional', 1),
+(@id_pergunta, 'Democrática', 0),
+(@id_pergunta, 'Burocrática', 0);
+
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é "anomia social" no pensamento de Émile Durkheim?', 'Médio', 'Ocorre em momentos de grande mudança social.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um estado de perfeita harmonia social', 0),
+(@id_pergunta, 'Um sentimento de pertencimento a um grupo', 0),
+(@id_pergunta, 'Uma situação de ausência ou enfraquecimento das normas sociais', 1),
+(@id_pergunta, 'A divisão do trabalho em uma sociedade', 0),
+(@id_pergunta, 'A consciência coletiva de um povo', 0);
+
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é a "mobilidade social"?', 'Médio', 'Pode ser ascendente ou descendente.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A capacidade de se mudar de uma cidade para outra', 0),
+(@id_pergunta, 'A mudança de posição de um indivíduo ou grupo na estrutura social', 1),
+(@id_pergunta, 'A participação em diversos grupos sociais ao mesmo tempo', 0),
+(@id_pergunta, 'A velocidade com que as notícias se espalham', 0),
+(@id_pergunta, 'A troca de governo em uma eleição', 0);
+
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O conceito de "habitus", como um sistema de disposições duráveis que molda nossas práticas e percepções, foi desenvolvido por:', 'Médio', 'Este sociólogo francês também falou sobre capital cultural e simbólico.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Michel Foucault', 0),
+(@id_pergunta, 'Pierre Bourdieu', 1),
+(@id_pergunta, 'Anthony Giddens', 0),
+(@id_pergunta, 'Zygmunt Bauman', 0),
+(@id_pergunta, 'Jürgen Habermas', 0);
+
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual é a principal característica da burocracia, segundo a análise de Max Weber?', 'Médio', 'É uma forma de organização baseada em regras claras e hierarquia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A lentidão e a ineficiência', 0),
+(@id_pergunta, 'A impessoalidade e a racionalidade na aplicação das regras', 1),
+(@id_pergunta, 'A corrupção e o nepotismo', 0),
+(@id_pergunta, 'A liderança carismática', 0),
+(@id_pergunta, 'A ausência de regras formais', 0);
+
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A ideia de "modernidade líquida", onde as relações sociais e as identidades são fluidas e instáveis, é de autoria de:', 'Médio', 'Foi um sociólogo polonês-britânico.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Pierre Bourdieu', 0),
+(@id_pergunta, 'Zygmunt Bauman', 1),
+(@id_pergunta, 'Ulrich Beck', 0),
+(@id_pergunta, 'Anthony Giddens', 0),
+(@id_pergunta, 'Manuel Castells', 0);
+
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual a diferença fundamental entre senso comum e conhecimento sociológico?', 'Médio', 'A sociologia utiliza métodos e teorias específicas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O senso comum é sempre falso e a sociologia é sempre verdadeira', 0),
+(@id_pergunta, 'A sociologia busca ser sistemática, rigorosa e crítica, enquanto o senso comum é fragmentário e acrítico', 1),
+(@id_pergunta, 'Não há diferença, a sociologia apenas complica o senso comum', 0),
+(@id_pergunta, 'O senso comum é prático e a sociologia é puramente teórica', 0),
+(@id_pergunta, 'Apenas sociólogos podem entender a sociedade', 0);
+
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A ideia de que a religião funciona como um "cimento social", reforçando a coesão do grupo, é central no pensamento de qual sociólogo?', 'Médio', 'Ele estudou as religiões totêmicas dos aborígenes australianos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Max Weber', 0),
+(@id_pergunta, 'Émile Durkheim', 1),
+(@id_pergunta, 'Auguste Comte', 0),
+(@id_pergunta, 'Georg Simmel', 0),
+(@id_pergunta, 'Herbert Spencer', 0);
+
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é "relativismo cultural"?', 'Médio', 'É uma postura metodológica importante para antropólogos e sociólogos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Acreditar que todas as culturas são iguais e devem se tornar uma só', 0),
+(@id_pergunta, 'A ideia de que as práticas e valores de uma cultura devem ser entendidos em seus próprios termos', 1),
+(@id_pergunta, 'A crença de que a própria cultura é superior às outras', 0),
+(@id_pergunta, 'A mistura de diferentes elementos culturais', 0),
+(@id_pergunta, 'A negação da existência da cultura', 0);
+
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A "Ação Social Afetiva", para Max Weber, é aquela guiada por:', 'Médio', 'Pense em uma ação motivada por um forte sentimento.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Cálculo racional de custos e benefícios', 0),
+(@id_pergunta, 'Sentimentos, paixões ou estados emocionais', 1),
+(@id_pergunta, 'Costumes e hábitos arraigados', 0),
+(@id_pergunta, 'Crença em valores éticos ou religiosos', 0),
+(@id_pergunta, 'Leis e regulamentos', 0);
+
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'No livro "Casa-Grande & Senzala", qual sociólogo brasileiro analisou a formação da sociedade patriarcal e miscigenada do Brasil?', 'Médio', 'Ele valorizou a contribuição das três raças (indígena, africana e europeia).');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Sérgio Buarque de Holanda', 0),
+(@id_pergunta, 'Florestan Fernandes', 0),
+(@id_pergunta, 'Gilberto Freyre', 1),
+(@id_pergunta, 'Darcy Ribeiro', 0),
+(@id_pergunta, 'Caio Prado Júnior', 0);
+
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que distingue o conceito sociológico de "gênero" do conceito de "sexo"?', 'Médio', 'Um é biológico, o outro é uma construção social.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Não há diferença, são sinônimos', 0),
+(@id_pergunta, 'Gênero refere-se às construções sociais e culturais do masculino e feminino, enquanto sexo se refere às características biológicas', 1),
+(@id_pergunta, 'Sexo é um conceito ultrapassado e gênero é o termo moderno', 0),
+(@id_pergunta, 'Gênero se aplica apenas a humanos e sexo a animais', 0),
+(@id_pergunta, 'Gênero é uma escolha e sexo é uma imposição', 0);
+
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O conceito de "sociedade em rede", que enfatiza o papel das tecnologias de informação e comunicação, foi popularizado por:', 'Médio', 'É um sociólogo espanhol contemporâneo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Anthony Giddens', 0),
+(@id_pergunta, 'Jürgen Habermas', 0),
+(@id_pergunta, 'Manuel Castells', 1),
+(@id_pergunta, 'Zygmunt Bauman', 0),
+(@id_pergunta, 'Pierre Bourdieu', 0);
+
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Em uma pirâmide etária de um país desenvolvido, qual formato é mais comum?', 'Médio', 'Países desenvolvidos costumam ter baixas taxas de natalidade e alta expectativa de vida.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Base larga e topo estreito', 0),
+(@id_pergunta, 'Base e topo com larguras semelhantes, ou topo mais largo', 1),
+(@id_pergunta, 'Formato de losango', 0),
+(@id_pergunta, 'Base estreita e topo largo', 0),
+(@id_pergunta, 'Formato triangular perfeito', 0);
+
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Para Max Weber, a "ética protestante" (especialmente a calvinista) teve um papel importante no desenvolvimento de qual sistema econômico?', 'Médio', 'A valorização do trabalho e da poupança teria contribuído para o "espírito" desse sistema.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Feudalismo', 0),
+(@id_pergunta, 'Socialismo', 0),
+(@id_pergunta, 'Capitalismo', 1),
+(@id_pergunta, 'Mercantilismo', 0),
+(@id_pergunta, 'Comunismo primitivo', 0);
+
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual das seguintes é uma característica de uma "comunidade", segundo Ferdinand Tönnies?', 'Médio', 'É baseada em laços afetivos e de parentesco.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Relações impessoais e contratuais', 0),
+(@id_pergunta, 'Laços fortes, íntimos e baseados na vontade essencial (Wesenwille)', 1),
+(@id_pergunta, 'Grande divisão do trabalho', 0),
+(@id_pergunta, 'Foco no interesse individual', 0),
+(@id_pergunta, 'Existência de um Estado burocrático', 0);
+
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O conceito de "ideologia" pode ser entendido em sociologia como:', 'Médio', 'Pode ser usado para justificar e manter as relações de poder existentes.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A opinião pessoal de cada indivíduo', 0),
+(@id_pergunta, 'Um conjunto de ideias, crenças e valores que orienta o comportamento e mascara a realidade social', 1),
+(@id_pergunta, 'O plano de governo de um partido político', 0),
+(@id_pergunta, 'A capacidade de ter ideias criativas', 0),
+(@id_pergunta, 'Uma mentira intencional', 0);
+
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A ideia do "homem cordial", que descreve uma suposta característica do brasileiro de ser guiado pela afetividade e por relações pessoais, foi proposta por:', 'Médio', 'Ele é o autor de "Raízes do Brasil".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Gilberto Freyre', 0),
+(@id_pergunta, 'Darcy Ribeiro', 0),
+(@id_pergunta, 'Sérgio Buarque de Holanda', 1),
+(@id_pergunta, 'Florestan Fernandes', 0),
+(@id_pergunta, 'Celso Furtado', 0);
+
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A dominação "carismática" de Weber se baseia:', 'Médio', 'Líderes revolucionários e profetas religiosos são exemplos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Na obediência a leis e estatutos', 0),
+(@id_pergunta, 'Na devoção a qualidades extraordinárias, santas ou heroicas de uma pessoa', 1),
+(@id_pergunta, 'No poder econômico', 0),
+(@id_pergunta, 'No respeito aos costumes e tradições', 0),
+(@id_pergunta, 'No uso da força militar', 0);
+
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Em seu estudo sobre "O Suicídio", Durkheim identifica um tipo de suicídio que ocorre devido a uma integração social excessiva, onde o indivíduo se sacrifica pelo grupo. Qual é?', 'Difícil', 'Ocorre, por exemplo, em contextos militares ou seitas religiosas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Suicídio Egoísta', 0),
+(@id_pergunta, 'Suicídio Anômico', 0),
+(@id_pergunta, 'Suicídio Altruísta', 1),
+(@id_pergunta, 'Suicídio Fatalista', 0),
+(@id_pergunta, 'Suicídio Patológico', 0);
+
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A "jaula de aço" da racionalização, para Max Weber, refere-se a:', 'Difícil', 'É uma consequência do avanço da burocracia e do capitalismo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Um sistema prisional de alta segurança', 0),
+(@id_pergunta, 'Ao aprisionamento do indivíduo em um mundo desencantado, governado pela lógica instrumental e pela burocracia', 1),
+(@id_pergunta, 'A estrutura de uma fábrica na Revolução Industrial', 0),
+(@id_pergunta, 'A liberdade proporcionada pela tecnologia', 0),
+(@id_pergunta, 'A rigidez das tradições religiosas', 0);
+
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O conceito de "violência simbólica" de Pierre Bourdieu descreve:', 'Difícil', 'É uma forma de violência suave, invisível, que impõe significados como legítimos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A violência física entre grupos rivais', 0),
+(@id_pergunta, 'A imposição de uma cultura dominante sobre grupos dominados, fazendo com que estes a vejam como natural', 1),
+(@id_pergunta, 'A violência representada na mídia e nas artes', 0),
+(@id_pergunta, 'A ameaça de uso da força pelo Estado', 0),
+(@id_pergunta, 'O uso de símbolos para incitar a violência', 0);
+
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Para Michel Foucault, o "biopoder" é:', 'Difícil', 'É um poder que se exerce sobre a vida, tanto do indivíduo (disciplina) quanto da população (biopolítica).');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O poder das indústrias farmacêuticas', 0),
+(@id_pergunta, 'Um conjunto de técnicas de poder voltadas para administrar e regular a vida das populações', 1),
+(@id_pergunta, 'O poder dos seres vivos sobre o meio ambiente', 0),
+(@id_pergunta, 'A força biológica de um indivíduo', 0),
+(@id_pergunta, 'Um tipo de energia renovável', 0);
+
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é a "imaginação sociológica" para C. Wright Mills?', 'Difícil', 'É a capacidade de conectar problemas pessoais a questões sociais mais amplas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A capacidade de criar teorias sociológicas complexas', 0),
+(@id_pergunta, 'A qualidade mental que permite ver a relação entre biografias individuais e a história social', 1),
+(@id_pergunta, 'O uso da ficção para entender a sociedade', 0),
+(@id_pergunta, 'A imaginação dos fundadores da sociologia', 0),
+(@id_pergunta, 'A habilidade de prever o futuro da sociedade', 0);
+
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'No livro "O Processo Civilizador", Norbert Elias analisa:', 'Difícil', 'Ele estuda a transformação dos costumes e das emoções na Europa ao longo dos séculos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O desenvolvimento do capitalismo', 0),
+(@id_pergunta, 'A história da formação do Estado moderno e a modelagem do autocontrole dos indivíduos', 1),
+(@id_pergunta, 'A evolução das espécies', 0),
+(@id_pergunta, 'O processo de urbanização no Brasil', 0),
+(@id_pergunta, 'A história dos processos judiciais', 0);
+
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A teoria da "construção social da realidade" de Berger e Luckmann afirma que:', 'Difícil', 'A realidade não é algo dado, mas sim produzido e mantido pelas interações humanas.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A realidade objetiva não existe, tudo é subjetivo', 0),
+(@id_pergunta, 'A sociedade é um produto humano e o homem é um produto social', 1),
+(@id_pergunta, 'A realidade é determinada pela estrutura econômica', 0),
+(@id_pergunta, 'A realidade é uma construção puramente linguística', 0),
+(@id_pergunta, 'Apenas arquitetos e engenheiros constroem a realidade', 0);
+
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O conceito de "capital cultural" de Bourdieu refere-se a:', 'Difícil', 'Pode ser incorporado (modos de falar), objetivado (livros, quadros) ou institucionalizado (diplomas).');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'O dinheiro investido em atividades culturais', 0),
+(@id_pergunta, 'O conhecimento, as habilidades e as competências valorizadas socialmente que um indivíduo possui', 1),
+(@id_pergunta, 'A capital de um país com muitos museus', 0),
+(@id_pergunta, 'A capacidade de criar obras de arte', 0),
+(@id_pergunta, 'O conjunto de todos os bens culturais de uma nação', 0);
+
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é a "sociedade de risco", segundo o sociólogo Ulrich Beck?', 'Difícil', 'Nela, os principais problemas são os riscos criados pelo próprio desenvolvimento tecnológico.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Uma sociedade com altas taxas de criminalidade', 0),
+(@id_pergunta, 'Uma fase da modernidade em que a sociedade lida com os riscos e as incertezas que ela mesma produz', 1),
+(@id_pergunta, 'Uma sociedade que pratica esportes radicais', 0),
+(@id_pergunta, 'O mercado financeiro de alto risco', 0),
+(@id_pergunta, 'Uma sociedade à beira de uma guerra', 0);
+
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A teoria do "agir comunicativo" de Jürgen Habermas propõe que:', 'Difícil', 'Ele busca um fundamento para a razão e a democracia na linguagem.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Toda ação social é estratégica e visa ao sucesso individual', 0),
+(@id_pergunta, 'A comunicação é a base da dominação social', 0),
+(@id_pergunta, 'É possível alcançar o entendimento mútuo através do diálogo livre e racional', 1),
+(@id_pergunta, 'A comunicação de massa sempre manipula o público', 0),
+(@id_pergunta, 'A linguagem é uma estrutura que determina o pensamento', 0);
+
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Em "O Segundo Sexo", Simone de Beauvoir afirma que "não se nasce mulher, torna-se mulher" para argumentar que:', 'Difícil', 'Sua análise distingue o sexo biológico do gênero social.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A biologia feminina é irrelevante para a vida social', 0),
+(@id_pergunta, 'A feminilidade é uma construção social e cultural imposta às mulheres', 1),
+(@id_pergunta, 'As mulheres são superiores aos homens', 0),
+(@id_pergunta, 'A identidade de gênero é uma escolha puramente individual', 0),
+(@id_pergunta, 'Apenas mulheres adultas podem ser consideradas mulheres', 0);
+
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A distinção entre "solidariedade orgânica" e "mecânica" foi proposta por qual sociólogo?', 'Difícil', 'A orgânica é baseada na interdependência e na divisão do trabalho.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Max Weber', 0),
+(@id_pergunta, 'Ferdinand Tönnies', 0),
+(@id_pergunta, 'Émile Durkheim', 1),
+(@id_pergunta, 'Georg Simmel', 0),
+(@id_pergunta, 'Talcott Parsons', 0);
+
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O conceito de "racismo estrutural" afirma que:', 'Difícil', 'O racismo não é apenas um ato individual, mas está presente nas instituições.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Apenas algumas pessoas são racistas', 0),
+(@id_pergunta, 'O racismo é uma parte normalizada e constituinte das instituições, práticas e cultura de uma sociedade', 1),
+(@id_pergunta, 'O racismo é um problema que só existe em estruturas governamentais', 0),
+(@id_pergunta, 'O racismo pode ser combatido apenas com leis mais duras', 0),
+(@id_pergunta, 'A estrutura de um prédio pode ser racista', 0);
+
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Para Florestan Fernandes, a modernização no Brasil ocorreu de forma:', 'Difícil', 'Ele analisou a dificuldade do negro em se integrar na sociedade de classes após a abolição.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Completa e inclusiva, beneficiando todos os grupos sociais', 0),
+(@id_pergunta, 'Conservadora e desigual, mantendo privilégios e estruturas arcaicas', 1),
+(@id_pergunta, 'Lenta, mas gradual e justa', 0),
+(@id_pergunta, 'Rápida e revolucionária, destruindo toda a ordem anterior', 0),
+(@id_pergunta, 'Impulsionada exclusivamente por capital estrangeiro', 0);
+
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é a "teoria da dependência" na sociologia latino-americana?', 'Difícil', 'Analisa a relação entre países centrais e periféricos.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A teoria de que os indivíduos dependem da sociedade para sobreviver', 0),
+(@id_pergunta, 'A análise de que o subdesenvolvimento dos países periféricos é uma consequência do desenvolvimento dos países centrais', 1),
+(@id_pergunta, 'O estudo da dependência química como um problema social', 0),
+(@id_pergunta, 'A teoria de que a cultura depende da economia', 0),
+(@id_pergunta, 'O estudo da dependência emocional nas relações familiares', 0);
+
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual sociólogo usou a metáfora do "desfile" para explicar a relação entre o indivíduo e a sociedade, onde só vemos o que está perto de nós?', 'Difícil', 'Ele foi um dos expoentes da Escola de Chicago.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Erving Goffman', 0),
+(@id_pergunta, 'C. Wright Mills', 0),
+(@id_pergunta, 'Robert Park', 0),
+(@id_pergunta, 'Howard S. Becker', 0),
+(@id_pergunta, 'Norbert Elias', 1);
+
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A abordagem sociológica de Erving Goffman, que usa metáforas do teatro para analisar as interações sociais, é chamada de:', 'Difícil', 'Ele fala em "palco", "bastidores" e "representação do eu".');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Análise funcionalista', 0),
+(@id_pergunta, 'Abordagem dramatúrgica', 1),
+(@id_pergunta, 'Teoria do conflito', 0),
+(@id_pergunta, 'Etnometodologia', 0),
+(@id_pergunta, 'Estruturalismo', 0);
+
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'O que é a "dupla consciência", conceito desenvolvido por W. E. B. Du Bois?', 'Difícil', 'Descreve a sensação de se ver através dos olhos dos outros, especialmente em um contexto de opressão racial.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'A capacidade de falar duas línguas', 0),
+(@id_pergunta, 'O sentimento de ter duas almas ou identidades conflitantes, uma americana e outra negra, para os afro-americanos', 1),
+(@id_pergunta, 'A consciência de classe e a consciência de gênero', 0),
+(@id_pergunta, 'A capacidade de ser consciente de si e do outro ao mesmo tempo', 0),
+(@id_pergunta, 'Um distúrbio psicológico', 0);
+
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'A ideia de "pós-modernidade" como um período de incredulidade em relação às "grandes narrativas" (ou metanarrativas) foi proposta por:', 'Difícil', 'Ele questionou as grandes teorias que prometiam a emancipação humana, como o Iluminismo.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Michel Foucault', 0),
+(@id_pergunta, 'Jean-François Lyotard', 1),
+(@id_pergunta, 'Jacques Derrida', 0),
+(@id_pergunta, 'Gilles Deleuze', 0),
+(@id_pergunta, 'Jean Baudrillard', 0);
+
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica) VALUES (9, 1, 'Qual a principal crítica que a teoria do sistema-mundo de Immanuel Wallerstein faz às teorias de modernização?', 'Difícil', 'Sua teoria divide o mundo em centro, semiperiferia e periferia.');
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta) VALUES
+(@id_pergunta, 'Que elas ignoram os fatores culturais', 0),
+(@id_pergunta, 'Que elas analisam os países de forma isolada, ignorando que eles fazem parte de um único sistema capitalista mundial', 1),
+(@id_pergunta, 'Que elas são muito otimistas sobre o progresso', 0),
+(@id_pergunta, 'Que elas se focam demais na Europa', 0),
+(@id_pergunta, 'Que elas não usam dados estatísticos suficientes', 0);
 -- =================================================================
 -- ||                        Inglês                               ||
 -- =================================================================
