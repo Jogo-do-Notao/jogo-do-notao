@@ -206,6 +206,7 @@ public class ControleTelaPartida implements Initializable {
             } else {
                 /* Incorreto */
                 // Finalizar partida
+                partida.derrota();
             }
 
         }
