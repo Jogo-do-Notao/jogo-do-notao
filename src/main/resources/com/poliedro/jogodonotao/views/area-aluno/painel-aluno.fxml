@@ -10,7 +10,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -187,15 +186,6 @@
                         </Button>
                      </children>
                   </HBox>
-                  <StackPane prefHeight="35.0" prefWidth="747.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -zinc-500;" text="Para iniciar uma nova partida em uma disciplina, é necessário concluir a partida anterior primeiro." StackPane.alignment="TOP_CENTER">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </StackPane>
                   <HBox alignment="CENTER" style="-fx-background-color: #1fb4c3; -fx-background-radius: 12;">
                      <children>
                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Partidas em andamento" textAlignment="CENTER" wrappingWidth="541.8756103515625" HBox.hgrow="ALWAYS">
