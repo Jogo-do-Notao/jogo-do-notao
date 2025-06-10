@@ -177,7 +177,7 @@ public class ControlePainelAluno implements Initializable {
         // Obter a partida selecionada na tabela e chamar seu método de abandonar
         partidasEmAndamento.getSelectionModel().getSelectedItem().abandonar();
 
-        // Atualizar pontuação do aluno
+        // Atualizar texto da pontuação do aluno
         textPontuacao.setText(Aluno.getSessaoAtiva().getPontuacaoFormatada());
     }
 

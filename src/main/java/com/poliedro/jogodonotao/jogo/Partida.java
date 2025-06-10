@@ -548,6 +548,8 @@ public class Partida {
 
     /**
      * Abandona a partida atual, mudando seu status para "abandonada" e adicionando a pontuação acumulada ao aluno.
+     *
+     * @param redirecionar Se deve redirecionar para a tela de fim da partida. (padrão: {@code true})
      */
     public void abandonar() {
         // Mensagem de confirmação
@@ -576,7 +578,7 @@ public class Partida {
         // Atualizar status da partida
         this.setStatus(PartidaStatus.ABANDONADA);
         // Atualizar pontuação do aluno
-        this.ALUNO.setPontuacao(this.getPontuacaoCheckpoint());
+        this.ALUNO.setPontuacao(this.getPontuacaoAcumulada());
 
         // Redirecionar para a tela de fim da partida
         try {
