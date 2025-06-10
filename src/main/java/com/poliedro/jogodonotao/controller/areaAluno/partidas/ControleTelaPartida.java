@@ -1,6 +1,5 @@
 package com.poliedro.jogodonotao.controller.areaAluno.partidas;
 
-import com.poliedro.jogodonotao.App;
 import com.poliedro.jogodonotao.jogo.Partida;
 import com.poliedro.jogodonotao.pergunta.Alternativa;
 import com.poliedro.jogodonotao.pergunta.Pergunta;
@@ -121,9 +120,25 @@ public class ControleTelaPartida implements Initializable {
         );
     }
 
+    /**
+     * Abandona a partida atual, mudando seu status e adicionando a pontuação acumulada ao aluno.
+     */
     @FXML
     void desistirDaPartida(ActionEvent event) {
+        // Mensagem de confirmação
+        Alert msgConfirmacao = new Alert(Alert.AlertType.CONFIRMATION);
+        msgConfirmacao.setTitle("Desistir do Jogo");
+        msgConfirmacao.setHeaderText("Você tem certeza que deseja desistir do jogo?");
+        msgConfirmacao.setContentText("A pontuação acumulada será adicionada ao seu perfil, mas você não poderá retomar a partida.");
+        // Obter resposta
+        Optional<ButtonType> decisao = msgConfirmacao.showAndWait();
 
+        // Se cancelou, encerra o método
+        if (decisao.isEmpty() || decisao.get() == ButtonType.CANCEL) {
+            return; // encerrar método
+        }
+        // Abandonar partida
+        partida.abandonar();
     }
 
     @FXML

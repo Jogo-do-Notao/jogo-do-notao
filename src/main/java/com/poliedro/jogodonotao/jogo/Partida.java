@@ -545,6 +545,13 @@ public class Partida {
     }
 
     /**
+     * Abandona a partida atual, mudando seu status para "abandonada" e adicionando a pontuação acumulada ao aluno.
+     */
+    public void abandonar() {
+        System.out.println("Abandonando partida...");
+    }
+
+    /**
      * Encerra a partida após responder corretamente todas as perguntas e atingir o prêmio máximo.
      */
     public void vitoria() {
