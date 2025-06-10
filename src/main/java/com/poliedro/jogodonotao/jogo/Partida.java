@@ -548,8 +548,6 @@ public class Partida {
 
     /**
      * Abandona a partida atual, mudando seu status para "abandonada" e adicionando a pontuação acumulada ao aluno.
-     *
-     * @param redirecionar Se deve redirecionar para a tela de fim da partida. (padrão: {@code true})
      */
     public void abandonar() {
         // Mensagem de confirmação
@@ -602,6 +600,35 @@ public class Partida {
         // Encerrar partida em andamento
         encerrarPartida();
 
+        // Redirecionar para a tela de fim da partida
+        try {
+            App.changeScene("area-aluno/partida/tela-partida-concluida", "Partida Concluída");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Encerra a partida após responder incorretamente uma pergunta.
+     */
+    public void derrota() {
+        // Mensagem de derrota
+        Alert msgDerrota = new Alert(Alert.AlertType.ERROR);
+        msgDerrota.setTitle("Partida Perdida");
+        msgDerrota.setHeaderText("Você perdeu a partida!");
+        msgDerrota.setContentText("Você errou a pergunta. " +
+                "A pontuação do checkpoint será salva no seu perfil.\n\n" +
+                "Você perdeu os " + this.getPontuacaoAcumuladaFormatada() +
+                ", mas ganhou " + this.getPontuacaoCheckpointFormatada() + ".\n\n");
+        msgDerrota.show();
+
+        // Adicionar pontuação do checkpoint ao aluno
+        this.ALUNO.setPontuacao(this.getPontuacaoCheckpoint());
+        // Atualizar status da partida
+        this.setStatus(PartidaStatus.PERDIDA);
+
+        // Encerrar partida em andamento
+        encerrarPartida();
         // Redirecionar para a tela de fim da partida
         try {
             App.changeScene("area-aluno/partida/tela-partida-concluida", "Partida Concluída");
