@@ -462,7 +462,8 @@ public class Partida {
         // Sortear pergunta aleatória
         Random rd = new Random();
         Pergunta perguntaSorteada = PerguntaDAO.buscarPorId(
-                listaPerguntas.get(rd.nextInt(listaPerguntas.size())));
+                listaPerguntas.get(rd.nextInt(listaPerguntas.size())), // ID sorteado
+                this);
 
         this.perguntas[this.rodada - 1] = perguntaSorteada; // Adicionar pergunta ao array
         return perguntaSorteada; // retornar pergunta sorteada
