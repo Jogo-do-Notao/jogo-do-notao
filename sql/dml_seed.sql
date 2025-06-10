@@ -2130,6 +2130,1151 @@ VALUES (@id_pergunta, '5 cm', 0),
 -- ||                       Biologia                              ||
 -- =================================================================
 -- =================================================================
+-- ||                     PERGUNTAS FÁCEIS                        ||
+-- =================================================================
+-- Pergunta 1
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual organela celular é responsável pela respiração celular e produção de energia (ATP)?',
+        'Fácil',
+        'É conhecida como a "usina de energia" da célula.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Ribossomo', 0),
+    (@id_pergunta, 'Complexo de Golgi', 0),
+    (@id_pergunta, 'Mitocôndria', 1),
+    (@id_pergunta, 'Lisossomo', 0),
+    (@id_pergunta, 'Núcleo', 0);
+-- Pergunta 2
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual é o processo pelo qual as plantas produzem seu próprio alimento usando a luz solar?',
+        'Fácil',
+        'Envolve a clorofila e a conversão de gás carbônico em glicose.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Respiração', 0),
+    (@id_pergunta, 'Transpiração', 0),
+    (@id_pergunta, 'Fotossíntese', 1),
+    (@id_pergunta, 'Digestão', 0),
+    (@id_pergunta, 'Fagocitose', 0);
+-- Pergunta 3
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual dos reinos a seguir agrupa seres procariontes, como as bactérias?',
+        'Fácil',
+        'É o reino mais primitivo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Reino Fungi', 0),
+    (@id_pergunta, 'Reino Plantae', 0),
+    (@id_pergunta, 'Reino Animalia', 0),
+    (@id_pergunta, 'Reino Monera', 1),
+    (@id_pergunta, 'Reino Protista', 0);
+-- Pergunta 4
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual é o nome da molécula que carrega a informação genética dos seres vivos?',
+        'Fácil',
+        'Sua sigla é DNA.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'RNA', 0),
+    (@id_pergunta, 'Proteína', 0),
+    (@id_pergunta, 'Carboidrato', 0),
+    (@id_pergunta, 'Lipídio', 0),
+    (@id_pergunta, 'Ácido Desoxirribonucleico', 1);
+-- Pergunta 5
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual sistema do corpo humano é responsável pelo transporte de oxigênio e nutrientes?',
+        'Fácil',
+        'Envolve o coração, sangue e vasos sanguíneos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Sistema Nervoso', 0),
+    (@id_pergunta, 'Sistema Digestório', 0),
+    (@id_pergunta, 'Sistema Respiratório', 0),
+    (@id_pergunta, 'Sistema Cardiovascular', 1),
+    (@id_pergunta, 'Sistema Esquelético', 0);
+-- Pergunta 6
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Animais que se alimentam exclusivamente de plantas são chamados de:',
+        'Fácil',
+        'Pense em vacas, coelhos e cavalos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Carnívoros', 0),
+    (@id_pergunta, 'Onívoros', 0),
+    (@id_pergunta, 'Herbívoros', 1),
+    (@id_pergunta, 'Detritívoros', 0),
+    (@id_pergunta, 'Insetívoros', 0);
+-- Pergunta 7
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual é o maior osso do corpo humano?',
+        'Fácil',
+        'Fica localizado na coxa.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Úmero', 0),
+    (@id_pergunta, 'Fêmur', 1),
+    (@id_pergunta, 'Tíbia', 0),
+    (@id_pergunta, 'Costela', 0),
+    (@id_pergunta, 'Crânio', 0);
+-- Pergunta 8
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O conjunto de todos os ecossistemas da Terra é chamado de:',
+        'Fácil',
+        'É a camada do planeta onde existe vida.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Comunidade', 0),
+    (@id_pergunta, 'População', 0),
+    (@id_pergunta, 'Biosfera', 1),
+    (@id_pergunta, 'Habitat', 0),
+    (@id_pergunta, 'Nicho ecológico', 0);
+-- Pergunta 9
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual vitamina é obtida principalmente através da exposição à luz solar?',
+        'Fácil',
+        'É importante para a saúde dos ossos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Vitamina C', 0),
+    (@id_pergunta, 'Vitamina A', 0),
+    (@id_pergunta, 'Vitamina B12', 0),
+    (@id_pergunta, 'Vitamina D', 1),
+    (@id_pergunta, 'Vitamina K', 0);
+-- Pergunta 10
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual dos seguintes animais é um mamífero?',
+        'Fácil',
+        'A principal característica é a presença de glândulas mamárias.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Tubarão', 0),
+    (@id_pergunta, 'Sapo', 0),
+    (@id_pergunta, 'Baleia', 1),
+    (@id_pergunta, 'Pinguim', 0),
+    (@id_pergunta, 'Jacaré', 0);
+-- Pergunta 11
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A gripe é uma doença causada por um:',
+        'Fácil',
+        'É um agente infeccioso microscópico que se replica dentro de células vivas.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Fungo', 0),
+    (@id_pergunta, 'Vírus', 1),
+    (@id_pergunta, 'Bactéria', 0),
+    (@id_pergunta, 'Protozoário', 0),
+    (@id_pergunta, 'Verme', 0);
+-- Pergunta 12
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual é a principal função das raízes de uma planta?',
+        'Fácil',
+        'Além de fixar a planta, ela absorve algo essencial do solo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Realizar fotossíntese', 0),
+    (@id_pergunta, 'Produzir flores', 0),
+    (@id_pergunta, 'Absorver água e nutrientes', 1),
+    (@id_pergunta, 'Armazenar energia solar', 0),
+    (@id_pergunta, 'Realizar a polinização', 0);
+-- Pergunta 13
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O estudo das células é chamado de:',
+        'Fácil',
+        'O nome vem do grego "kytos" (célula) + "logos" (estudo).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Genética', 0),
+    (@id_pergunta, 'Zoologia', 0),
+    (@id_pergunta, 'Botânica', 0),
+    (@id_pergunta, 'Citologia', 1),
+    (@id_pergunta, 'Ecologia', 0);
+-- Pergunta 14
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual gás é essencial para a respiração da maioria dos seres vivos?',
+        'Fácil',
+        'Está presente no ar que inspiramos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Gás Carbônico (CO₂)', 0),
+    (@id_pergunta, 'Nitrogênio (N₂)', 0),
+    (@id_pergunta, 'Oxigênio (O₂)', 1),
+    (@id_pergunta, 'Hidrogênio (H₂)', 0),
+    (@id_pergunta, 'Hélio (He)', 0);
+-- Pergunta 15
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Como são chamados os seres vivos que produzem o seu próprio alimento?',
+        'Fácil',
+        'O nome significa "que se alimenta por si mesmo".'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Consumidores', 0),
+    (@id_pergunta, 'Decompositores', 0),
+    (@id_pergunta, 'Heterotróficos', 0),
+    (@id_pergunta, 'Autotróficos', 1),
+    (@id_pergunta, 'Parasitas', 0);
+-- Pergunta 16
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual é o órgão central do sistema nervoso humano?',
+        'Fácil',
+        'Está protegido pelo crânio.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Coração', 0),
+    (@id_pergunta, 'Pulmão', 0),
+    (@id_pergunta, 'Fígado', 0),
+    (@id_pergunta, 'Estômago', 0),
+    (@id_pergunta, 'Cérebro', 1);
+-- Pergunta 17
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A transformação da lagarta em borboleta é um exemplo de:',
+        'Fácil',
+        'É um processo de grande mudança na forma do corpo de um animal.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Evolução', 0),
+    (@id_pergunta, 'Metamorfose', 1),
+    (@id_pergunta, 'Adaptação', 0),
+    (@id_pergunta, 'Mutação', 0),
+    (@id_pergunta, 'Clonagem', 0);
+-- Pergunta 18
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Em uma cadeia alimentar, os fungos e as bactérias são classificados como:',
+        'Fácil',
+        'Eles reciclam a matéria orgânica morta.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Produtores', 0),
+    (@id_pergunta, 'Consumidores primários', 0),
+    (@id_pergunta, 'Consumidores secundários', 0),
+    (@id_pergunta, 'Decompositores', 1),
+    (@id_pergunta, 'Predadores de topo', 0);
+-- Pergunta 19
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual o nome do açúcar encontrado no leite?',
+        'Fácil',
+        'Pessoas com intolerância a ele não produzem a enzima lactase.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Glicose', 0),
+    (@id_pergunta, 'Frutose', 0),
+    (@id_pergunta, 'Sacarose', 0),
+    (@id_pergunta, 'Lactose', 1),
+    (@id_pergunta, 'Amido', 0);
+-- Pergunta 20
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual dos cinco sentidos está relacionado ao olfato?',
+        'Fácil',
+        'É o sentido que nos permite perceber os cheiros.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Visão', 0),
+    (@id_pergunta, 'Audição', 0),
+    (@id_pergunta, 'Paladar', 0),
+    (@id_pergunta, 'Tato', 0),
+    (@id_pergunta, 'Olfato', 1);
+-- =================================================================
+-- ||                     PERGUNTAS MÉDIAS                        ||
+-- =================================================================
+-- Pergunta 21
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A teoria da evolução por seleção natural foi proposta por qual cientista?',
+        'Médio',
+        'Ele viajou o mundo a bordo do navio HMS Beagle.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Gregor Mendel', 0),
+    (@id_pergunta, 'Louis Pasteur', 0),
+    (@id_pergunta, 'Charles Darwin', 1),
+    (@id_pergunta, 'Lamarck', 0),
+    (@id_pergunta, 'Lineu', 0);
+-- Pergunta 22
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual é o nome do processo de divisão celular que origina os gametas?',
+        'Médio',
+        'Reduz o número de cromossomos pela metade.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Mitose', 0),
+    (@id_pergunta, 'Meiose', 1),
+    (@id_pergunta, 'Brotamento', 0),
+    (@id_pergunta, 'Cissiparidade', 0),
+    (@id_pergunta, 'Fragmentação', 0);
+-- Pergunta 23
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual tipo sanguíneo é considerado o "doador universal"?',
+        'Médio',
+        'Não possui antígenos A ou B em suas hemácias.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'A+', 0),
+    (@id_pergunta, 'B-', 0),
+    (@id_pergunta, 'AB+', 0),
+    (@id_pergunta, 'O-', 1),
+    (@id_pergunta, 'A-', 0);
+-- Pergunta 24
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Em genética, um indivíduo que possui dois alelos diferentes para uma característica é chamado de:',
+        'Médio',
+        'O prefixo "hetero" significa diferente.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Homozigoto dominante', 0),
+    (@id_pergunta, 'Homozigoto recessivo', 0),
+    (@id_pergunta, 'Heterozigoto', 1),
+    (@id_pergunta, 'Híbrido', 0),
+    (@id_pergunta, 'Puro', 0);
+-- Pergunta 25
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A relação ecológica em que ambas as espécies se beneficiam e a convivência é obrigatória é chamada de:',
+        'Médio',
+        'Um exemplo clássico são os liquens (associação entre algas e fungos).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Comensalismo', 0),
+    (@id_pergunta, 'Parasitismo', 0),
+    (@id_pergunta, 'Mutualismo', 1),
+    (@id_pergunta, 'Predatismo', 0),
+    (@id_pergunta, 'Competição', 0);
+-- Pergunta 26
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual hormônio é responsável pela regulação dos níveis de açúcar no sangue?',
+        'Médio',
+        'É produzido no pâncreas e sua falta causa a diabetes.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Adrenalina', 0),
+    (@id_pergunta, 'Testosterona', 0),
+    (@id_pergunta, 'Insulina', 1),
+    (@id_pergunta, 'Estrogênio', 0),
+    (@id_pergunta, 'Tiroxina', 0);
+-- Pergunta 27
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'As plantas que não possuem vasos condutores de seiva, como os musgos, são classificadas como:',
+        'Médio',
+        'Elas são de pequeno porte e dependem da água para a reprodução.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Gimnospermas', 0),
+    (@id_pergunta, 'Angiospermas', 0),
+    (@id_pergunta, 'Pteridófitas', 0),
+    (@id_pergunta, 'Briófitas', 1),
+    (@id_pergunta, 'Algas', 0);
+-- Pergunta 28
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Onde ocorre a maior parte da digestão e absorção de nutrientes no corpo humano?',
+        'Médio',
+        'É um longo tubo que se divide em duodeno, jejuno e íleo.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Estômago', 0),
+    (@id_pergunta, 'Intestino Grosso', 0),
+    (@id_pergunta, 'Intestino Delgado', 1),
+    (@id_pergunta, 'Fígado', 0),
+    (@id_pergunta, 'Esôfago', 0);
+-- Pergunta 29
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A febre amarela e a dengue são doenças transmitidas pelo mesmo vetor, que é o mosquito:',
+        'Médio',
+        'O nome científico dele é Aedes aegypti.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Anopheles', 0),
+    (@id_pergunta, 'Culex', 0),
+    (@id_pergunta, 'Aedes aegypti', 1),
+    (@id_pergunta, 'Lutzomyia', 0),
+    (@id_pergunta, 'Triatoma infestans', 0);
+-- Pergunta 30
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual é a principal função dos glóbulos brancos (leucócitos) no sangue?',
+        'Médio',
+        'Eles fazem parte do sistema imunológico.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Transportar oxigênio', 0),
+    (@id_pergunta, 'Coagulação sanguínea', 0),
+    (@id_pergunta, 'Defesa do organismo', 1),
+    (@id_pergunta, 'Transportar nutrientes', 0),
+    (@id_pergunta, 'Produzir hormônios', 0);
+-- Pergunta 31
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O processo de transcrição gênica consiste na:',
+        'Médio',
+        'É o primeiro passo para a expressão de um gene.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Duplicação da molécula de DNA', 0),
+    (
+        @id_pergunta,
+        'Síntese de uma molécula de RNA a partir de um molde de DNA',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Síntese de proteínas nos ribossomos',
+        0
+    ),
+    (@id_pergunta, 'Divisão do núcleo celular', 0),
+    (@id_pergunta, 'Correção de erros no DNA', 0);
+-- Pergunta 32
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Estruturas análogas em biologia evolutiva são aquelas que:',
+        'Médio',
+        'Exemplo: asas de insetos e asas de aves.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Possuem a mesma origem embrionária, mas funções diferentes',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Possuem origens embrionárias diferentes, mas a mesma função',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Não possuem função aparente no organismo',
+        0
+    ),
+    (
+        @id_pergunta,
+        'São idênticas em função e origem',
+        0
+    ),
+    (@id_pergunta, 'Existem apenas em fósseis', 0);
+-- Pergunta 33
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O bioma brasileiro caracterizado por uma vegetação de savana, com árvores tortuosas e gramíneas, é o:',
+        'Médio',
+        'É considerado o "berço das águas" do Brasil.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Amazônia', 0),
+    (@id_pergunta, 'Mata Atlântica', 0),
+    (@id_pergunta, 'Cerrado', 1),
+    (@id_pergunta, 'Caatinga', 0),
+    (@id_pergunta, 'Pampa', 0);
+-- Pergunta 34
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual das seguintes doenças NÃO é uma Infecção Sexualmente Transmissível (IST)?',
+        'Médio',
+        'É transmitida pela picada de um inseto infectado.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'AIDS (HIV)', 0),
+    (@id_pergunta, 'Sífilis', 0),
+    (@id_pergunta, 'Gonorreia', 0),
+    (@id_pergunta, 'Malária', 1),
+    (@id_pergunta, 'HPV', 0);
+-- Pergunta 35
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'As enzimas são moléculas de qual tipo de composto orgânico?',
+        'Médio',
+        'Elas atuam como catalisadores biológicos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Carboidratos', 0),
+    (@id_pergunta, 'Lipídios', 0),
+    (@id_pergunta, 'Proteínas', 1),
+    (@id_pergunta, 'Ácidos Nucleicos', 0),
+    (@id_pergunta, 'Vitaminas', 0);
+-- Pergunta 36
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'No olho humano, a estrutura responsável por focar a luz na retina é o:',
+        'Médio',
+        'Funciona como uma lente convergente.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Íris', 0),
+    (@id_pergunta, 'Pupila', 0),
+    (@id_pergunta, 'Cristalino', 1),
+    (@id_pergunta, 'Córnea', 0),
+    (@id_pergunta, 'Nervo óptico', 0);
+-- Pergunta 37
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual das alternativas descreve corretamente a Primeira Lei de Mendel?',
+        'Médio',
+        'Também é conhecida como Lei da Segregação dos Fatores.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Os alelos para características diferentes segregam-se de forma independente.',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Cada característica é determinada por um par de fatores que se separam na formação dos gametas.',
+        1
+    ),
+    (
+        @id_pergunta,
+        'As características adquiridas durante a vida são passadas aos descendentes.',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Apenas os mais aptos sobrevivem e se reproduzem.',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Existe uma dominância incompleta entre os alelos.',
+        0
+    );
+-- Pergunta 38
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Os corais são animais pertencentes a qual filo?',
+        'Médio',
+        'O nome do filo se refere à presença de células urticantes.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Porifera', 0),
+    (@id_pergunta, 'Cnidaria', 1),
+    (@id_pergunta, 'Mollusca', 0),
+    (@id_pergunta, 'Annelida', 0),
+    (@id_pergunta, 'Echinodermata', 0);
+-- Pergunta 39
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O ciclo do nitrogênio é fundamental para os seres vivos porque este elemento é um componente essencial de:',
+        'Médio',
+        'Pense nas moléculas que formam os músculos e carregam a informação genética.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Carboidratos e Lipídios', 0),
+    (@id_pergunta, 'Apenas Água', 0),
+    (@id_pergunta, 'Proteínas e Ácidos Nucleicos', 1),
+    (@id_pergunta, 'Sais minerais e Vitaminas', 0),
+    (@id_pergunta, 'Glicose e Frutose', 0);
+-- Pergunta 40
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual parte do sistema nervoso autônomo é responsável por preparar o corpo para situações de "luta ou fuga"?',
+        'Médio',
+        'Aumenta a frequência cardíaca e libera adrenalina.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Sistema Nervoso Central', 0),
+    (
+        @id_pergunta,
+        'Sistema Nervoso Parassimpático',
+        0
+    ),
+    (@id_pergunta, 'Sistema Nervoso Simpático', 1),
+    (@id_pergunta, 'Sistema Nervoso Somático', 0),
+    (@id_pergunta, 'Arco reflexo', 0);
+-- =================================================================
+-- ||                     PERGUNTAS DIFÍCEIS                      ||
+-- =================================================================
+-- Pergunta 41
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O processo de formação de novas espécies a partir de um ancestral comum é chamado de:',
+        'Difícil',
+        'É um dos principais mecanismos da macroevolução.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Seleção artificial', 0),
+    (@id_pergunta, 'Deriva genética', 0),
+    (@id_pergunta, 'Especiação', 1),
+    (@id_pergunta, 'Convergência adaptativa', 0),
+    (@id_pergunta, 'Irradiação adaptativa', 0);
+-- Pergunta 42
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Na fotossíntese, a fase escura (ou ciclo de Calvin) ocorre em qual parte do cloroplasto?',
+        'Difícil',
+        'É na matriz gelatinosa do cloroplasto, onde o CO₂ é fixado.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Membrana externa', 0),
+    (@id_pergunta, 'Tilacoides', 0),
+    (@id_pergunta, 'Granum', 0),
+    (@id_pergunta, 'Estroma', 1),
+    (@id_pergunta, 'Membrana interna', 0);
+-- Pergunta 43
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual das seguintes condições genéticas é um exemplo de aneuploidia?',
+        'Difícil',
+        'Envolve a alteração no número de um ou mais cromossomos.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Anemia falciforme', 0),
+    (
+        @id_pergunta,
+        'Síndrome de Down (Trissomia do 21)',
+        1
+    ),
+    (@id_pergunta, 'Fenilcetonúria', 0),
+    (@id_pergunta, 'Albinismo', 0),
+    (@id_pergunta, 'Hemofilia', 0);
+-- Pergunta 44
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A bomba de sódio e potássio é um exemplo de:',
+        'Difícil',
+        'Move íons contra o gradiente de concentração, com gasto de ATP.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Transporte ativo', 1),
+    (@id_pergunta, 'Difusão simples', 0),
+    (@id_pergunta, 'Difusão facilitada', 0),
+    (@id_pergunta, 'Osmose', 0),
+    (@id_pergunta, 'Endocitose', 0);
+-- Pergunta 45
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A Segunda Lei de Mendel, ou Lei da Segregação Independente, só é válida para genes que se localizam em:',
+        'Difícil',
+        'Se os genes estiverem no mesmo cromossomo, pode ocorrer ligação gênica (linkage).'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Cromossomos homólogos diferentes',
+        1
+    ),
+    (@id_pergunta, 'No mesmo cromossomo', 0),
+    (@id_pergunta, 'Cromossomos sexuais', 0),
+    (
+        @id_pergunta,
+        'Apenas em cromossomos autossômicos',
+        0
+    ),
+    (@id_pergunta, 'No DNA mitocondrial', 0);
+-- Pergunta 46
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O processo de magnificação trófica (ou bioacumulação) refere-se:',
+        'Difícil',
+        'Um exemplo clássico é o acúmulo de DDT ou mercúrio.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Ao aumento da biomassa ao longo da cadeia alimentar',
+        0
+    ),
+    (
+        @id_pergunta,
+        'À perda de energia a cada nível trófico',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Ao acúmulo de compostos não biodegradáveis nos níveis mais altos da cadeia alimentar',
+        1
+    ),
+    (
+        @id_pergunta,
+        'À diversidade de espécies em um ecossistema',
+        0
+    ),
+    (@id_pergunta, 'À sucessão ecológica primária', 0);
+-- Pergunta 47
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'No ciclo cardíaco, o som "TUM" corresponde ao fechamento de quais valvas?',
+        'Difícil',
+        'É o primeiro som (bulha) que se ouve em uma ausculta cardíaca.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Valvas aórtica e pulmonar', 0),
+    (
+        @id_pergunta,
+        'Valvas tricúspide e mitral (atrioventriculares)',
+        1
+    ),
+    (@id_pergunta, 'Apenas a valva mitral', 0),
+    (@id_pergunta, 'Apenas a valva aórtica', 0),
+    (
+        @id_pergunta,
+        'Não corresponde ao fechamento de valvas',
+        0
+    );
+-- Pergunta 48
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O Operon Lac, em bactérias, é um exemplo de mecanismo de:',
+        'Difícil',
+        'Controla quando um gene deve ou não ser expresso.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Mutação gênica', 0),
+    (@id_pergunta, 'Replicação do DNA', 0),
+    (@id_pergunta, 'Regulação da expressão gênica', 1),
+    (@id_pergunta, 'Crossing-over', 0),
+    (@id_pergunta, 'Tradução de proteínas', 0);
+-- Pergunta 49
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A teoria endossimbiótica explica a origem de quais organelas celulares eucarióticas?',
+        'Difícil',
+        'Essas organelas possuem DNA próprio e dupla membrana.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Retículo endoplasmático e Complexo de Golgi',
+        0
+    ),
+    (@id_pergunta, 'Mitocôndrias e Cloroplastos', 1),
+    (@id_pergunta, 'Lisossomos e Peroxissomos', 0),
+    (@id_pergunta, 'Núcleo e Ribossomos', 0),
+    (@id_pergunta, 'Centríolos e Vacúolos', 0);
+-- Pergunta 50
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual hormônio vegetal está relacionado com o amadurecimento dos frutos e a queda das folhas?',
+        'Difícil',
+        'É um gás liberado pelas plantas.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Auxina', 0),
+    (@id_pergunta, 'Giberelina', 0),
+    (@id_pergunta, 'Citocinina', 0),
+    (@id_pergunta, 'Etileno', 1),
+    (@id_pergunta, 'Ácido abscísico', 0);
+-- Pergunta 51
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A reação em cadeia da polimerase (PCR) é uma técnica de biologia molecular usada para:',
+        'Difícil',
+        'É fundamental para testes de DNA e diagnóstico de doenças.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Separar proteínas por tamanho', 0),
+    (@id_pergunta, 'Clonar organismos inteiros', 0),
+    (
+        @id_pergunta,
+        'Amplificar (fazer muitas cópias) de um segmento específico de DNA',
+        1
+    ),
+    (@id_pergunta, 'Sequenciar o genoma completo', 0),
+    (
+        @id_pergunta,
+        'Produzir anticorpos monoclonais',
+        0
+    );
+-- Pergunta 52
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Em vertebrados, a principal excreta nitrogenada dos peixes é a(o) ______, enquanto a das aves é o(a) ______.',
+        'Difícil',
+        'Pense na toxicidade e na necessidade de água para diluição de cada excreta.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Ureia; Amônia', 0),
+    (@id_pergunta, 'Ácido úrico; Ureia', 0),
+    (@id_pergunta, 'Amônia; Ácido úrico', 1),
+    (@id_pergunta, 'Ureia; Ácido úrico', 0),
+    (@id_pergunta, 'Amônia; Ureia', 0);
+-- Pergunta 53
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O potencial de ação em um neurônio é desencadeado pela:',
+        'Difícil',
+        'Inicia-se quando o estímulo atinge o limiar de excitação.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Saída de íons potássio (K+)', 0),
+    (
+        @id_pergunta,
+        'Entrada de íons sódio (Na+) através de canais voltagem-dependentes',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Ação da bomba de sódio e potássio',
+        0
+    ),
+    (@id_pergunta, 'Entrada de íons cloreto (Cl-)', 0),
+    (
+        @id_pergunta,
+        'Liberação de neurotransmissores na fenda sináptica',
+        0
+    );
+-- Pergunta 54
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O "crossing-over" ou permutação gênica, que aumenta a variabilidade genética, ocorre em qual fase da meiose?',
+        'Difícil',
+        'É a primeira subfase da primeira divisão meiótica.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Prófase I', 1),
+    (@id_pergunta, 'Metáfase I', 0),
+    (@id_pergunta, 'Anáfase II', 0),
+    (@id_pergunta, 'Telófase II', 0),
+    (@id_pergunta, 'Prófase II', 0);
+-- Pergunta 55
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Plantas de dia curto florescem quando:',
+        'Difícil',
+        'O nome pode enganar; o fator determinante é a duração da noite.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'O período de luz é maior que um valor crítico',
+        0
+    ),
+    (
+        @id_pergunta,
+        'O período de escuridão ininterrupta é maior que um valor crítico',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Recebem um flash de luz durante a noite',
+        0
+    ),
+    (@id_pergunta, 'A temperatura está elevada', 0),
+    (
+        @id_pergunta,
+        'O dia e a noite têm a mesma duração',
+        0
+    );
+-- Pergunta 56
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'Qual o papel da transcriptase reversa no ciclo de vida de retrovírus como o HIV?',
+        'Difícil',
+        'O nome da enzima já indica sua função contrária à usual.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'Sintetizar RNA a partir de DNA',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Sintetizar DNA a partir de um molde de RNA',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Destruir o DNA da célula hospedeira',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Montar novas partículas virais',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Inserir o DNA viral no genoma do hospedeiro',
+        0
+    );
+-- Pergunta 57
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'A estrutura que impede o alimento de entrar no sistema respiratório durante a deglutição é a:',
+        'Difícil',
+        'É uma cartilagem que fecha a entrada da laringe.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Faringe', 0),
+    (@id_pergunta, 'Laringe', 0),
+    (@id_pergunta, 'Glote', 0),
+    (@id_pergunta, 'Epiglote', 1),
+    (@id_pergunta, 'Traqueia', 0);
+-- Pergunta 58
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O equilíbrio de Hardy-Weinberg descreve uma situação hipotética em que:',
+        'Difícil',
+        'Nessa situação, não ocorre evolução.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (
+        @id_pergunta,
+        'A seleção natural atua intensamente',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A população está evoluindo rapidamente',
+        0
+    ),
+    (
+        @id_pergunta,
+        'As frequências alélicas e genotípicas de uma população permanecem constantes',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Ocorrem altas taxas de mutação e migração',
+        0
+    ),
+    (
+        @id_pergunta,
+        'A população é pequena e sofre deriva genética',
+        0
+    );
+-- Pergunta 59
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'No sistema imune, os linfócitos T auxiliares (CD4) são responsáveis principalmente por:',
+        'Difícil',
+        'Eles são o principal alvo do vírus HIV.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Produzir anticorpos', 0),
+    (
+        @id_pergunta,
+        'Ativar outras células do sistema imune, como linfócitos B e T citotóxicos',
+        1
+    ),
+    (
+        @id_pergunta,
+        'Realizar fagocitose de patógenos',
+        0
+    ),
+    (
+        @id_pergunta,
+        'Destruir diretamente células infectadas',
+        0
+    ),
+    (@id_pergunta, 'Atuar como células de memória', 0);
+-- Pergunta 60
+INSERT INTO pergunta (id_materia, criador, titulo, dificuldade, dica)
+VALUES (
+        3,
+        1,
+        'O xilema e o floema são tecidos vegetais responsáveis, respectivamente, pelo transporte de:',
+        'Difícil',
+        'Lembre-se: um transporta a seiva bruta e o outro a seiva elaborada.'
+    );
+SET @id_pergunta = LAST_INSERT_ID();
+INSERT INTO alternativa (id_pergunta, titulo, correta)
+VALUES (@id_pergunta, 'Seiva elaborada e seiva bruta', 0),
+    (@id_pergunta, 'Seiva bruta e seiva elaborada', 1),
+    (@id_pergunta, 'Gases e água', 0),
+    (@id_pergunta, 'Hormônios e nutrientes', 0),
+    (@id_pergunta, 'Açúcares e sais minerais', 0);
+-- =================================================================
 -- ||                        Física                               ||
 -- =================================================================
 -- =================================================================
