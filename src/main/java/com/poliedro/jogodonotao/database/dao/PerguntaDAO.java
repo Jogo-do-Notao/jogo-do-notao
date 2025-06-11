@@ -108,7 +108,7 @@ public class PerguntaDAO {
      *
      * @param id ID da pergunta a ser obtida.
      */
-    public static Pergunta buscarPorId(int id) {
+    public static Pergunta buscarPorId(int id, Partida partida) {
         final String sql = "SELECT * FROM pergunta WHERE " + PerguntaColuna.ID.get() + " = ?";
 
         try (
@@ -133,9 +133,14 @@ public class PerguntaDAO {
                 Professor criador = ProfessorDAO.buscarPorId(criadorId); // Criador (professor)
                 Materia materia = MateriaDAO.buscarPorId(materiaId); // Matéria
 
-                return new Pergunta(
+                // Criar instância
+                Pergunta pergunta = new Pergunta(
                         idPergunta, enunciado, alternativas, dificuldade, dica, criador, materia
                 );
+                // Registrar na tabela pergunta_partida
+                PerguntaPartidaDAO.registrarPergunta(pergunta, partida);
+                // Retornar pergunta
+                return pergunta;
             }
             // Se não for encontrada
             return null;
@@ -252,7 +257,7 @@ public class PerguntaDAO {
 
         return null;
     }
-    
+
     /**
      * Exclui uma pergunta do banco de dados pelo seu ID.
      *
@@ -266,28 +271,28 @@ public class PerguntaDAO {
         String sqlPerguntaPartida = "DELETE FROM pergunta_partida WHERE id_pergunta = ?";
         // Por fim, excluímos a pergunta
         String sqlPergunta = "DELETE FROM pergunta WHERE id_pergunta = ?";
-        
+
         Connection conexao = null;
         try {
             conexao = ConexaoDB.getConnection();
             conexao.setAutoCommit(false); // Inicia transação
-            
+
             try (PreparedStatement stmtAlternativas = conexao.prepareStatement(sqlAlternativas);
                  PreparedStatement stmtPerguntaPartida = conexao.prepareStatement(sqlPerguntaPartida);
                  PreparedStatement stmtPergunta = conexao.prepareStatement(sqlPergunta)) {
-                
+
                 // Exclui as alternativas
                 stmtAlternativas.setInt(1, id);
                 stmtAlternativas.executeUpdate();
-                
+
                 // Exclui os registros de relacionamento
                 stmtPerguntaPartida.setInt(1, id);
                 stmtPerguntaPartida.executeUpdate();
-                
+
                 // Exclui a pergunta
                 stmtPergunta.setInt(1, id);
                 int linhasAfetadas = stmtPergunta.executeUpdate();
-                
+
                 conexao.commit(); // Confirma as alterações
                 return linhasAfetadas > 0;
             } catch (SQLException e) {
