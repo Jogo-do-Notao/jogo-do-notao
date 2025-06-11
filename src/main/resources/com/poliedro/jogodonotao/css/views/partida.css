@@ -149,3 +149,9 @@
 .scroll-pane.scroll-enunciado > .viewport {
   -fx-background-color: -poliedro-azul-600;
 }
+
+/* Barra de progresso */
+.progress-bar .bar {
+  /* Gradiente */
+  -fx-background-color: linear-gradient(to right, #1fb4c3, #00bbac, #42c087, #7abf5c, #b0b931, #ccac19, #e69c14, #fe8827, #fe7231, #fc5a3b, #f64147, #ee2252);
+}
