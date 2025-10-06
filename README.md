@@ -29,7 +29,7 @@
 ## 🧑🏻‍💻 Integrantes do Projeto
 
 |                               Aluno                               |     RA     | Função |
-|:-----------------------------------------------------------------:|:----------:|:------:|
+| :---------------------------------------------------------------: | :--------: | :----: |
 |   [Alexandre Raminelli](https://github.com/alexandreraminelli)    | 24.01625-0 |        |
 | [Felipe Eros Bressani Bittencourt](https://github.com/FelipeEros) | 25.00262-7 |        |
 |          [Gabriel Borges](https://github.com/Gab250169)           | 25.01694-0 |        |
@@ -37,6 +37,7 @@
 | [Vinicius Cavalcante Tavarez](https://github.com/viniciusct0626)  | 25.01685-8 |        |
 
 ---
+
 <!-- Tecnologias -->
 
 ## 🛠️ Tecnologias Utilizadas
@@ -118,3 +119,53 @@ mvn clean package
 O arquivo `.jar` será criado na pasta `target/` com o nome `jogo-do-notao-1.0-SNAPSHOT-jar-with-dependencies.jar`.
 
 > Nota: é necessário ter o JDK 24 ou superior para executar o arquivo `.jar`.
+
+---
+
+<!-- Capturas de Tela -->
+
+## 📸 Capturas de Tela
+
+### Tela de Login
+
+<img src="./docs/screenshots/tela-login.png" alt="Tela de Login">
+
+### Painel do Aluno
+
+<img src="./docs/screenshots/painel-aluno.png" alt="Painel do Aluno">
+
+### Tela de Criar Nova Partida
+
+<img src="./docs/screenshots/tela-criar-nova-partida.png" alt="Tela de Criar Nova Partida">
+
+### Tela da Partida
+
+<img src="./docs/screenshots/tela-partida.png" alt="Tela da Partida">
+
+### Painel do Professor
+
+<img src="./docs/screenshots/painel-professor.png" alt="Painel do Professor">
+
+### Tela de Gerenciar Turmas
+
+<img src="./docs/screenshots/tela-gerenciar-turmas.png" alt="Tela de Gerenciar Turmas">
+
+### Tela de Criar Turma
+
+<img src="./docs/screenshots/tela-criar-turma.png" alt="Tela de Criar Turma">
+
+### Tela de Gerenciar Alunos
+
+<img src="./docs/screenshots/tela-gerenciar-alunos.png" alt="Tela de Gerenciar Alunos">
+
+### Tela de Adicionar Aluno
+
+<img src="./docs/screenshots/tela-adicionar-aluno.png" alt="Tela de Adicionar Aluno">
+
+### Tela de Gerenciar Professores
+
+<img src="./docs/screenshots/tela-gerenciar-professores.png" alt="Tela de Gerenciar Professores">
+
+### Tela de Adicionar Professor
+
+<img src="./docs/screenshots/tela-adicionar-professor.png" alt="Tela de Adicionar Professor">
